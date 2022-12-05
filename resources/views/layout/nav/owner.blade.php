@@ -5,7 +5,7 @@
             <span>{{__('dashboard') }}</span>
         </a>
     </li>
-    
+
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
             <i class="bi bi-gear-fill"></i>
@@ -32,7 +32,7 @@
                 </ul>
             </li>
 		</ul>
-        
+
     </li>
 
 
@@ -73,7 +73,7 @@
             </li>
             <li><a href="{{route(currentUser().'.plabel')}}" >{{__('Product Label')}}</a></li>
 		</ul>
-        
+
     </li>
 
     <li class="sidebar-item has-sub">
@@ -81,7 +81,7 @@
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.purchase.index')}}">{{__('List')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.purchase.create')}}">{{__('Add New')}}</a></li>
-		</ul>   
+		</ul>
     </li>
 
     <li class="sidebar-item has-sub">
@@ -89,15 +89,15 @@
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.sales.index')}}">{{__('List')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.sales.create')}}">{{__('Add New')}}</a></li>
-		</ul>   
+		</ul>
     </li>
 
-    
+
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-sign-turn-right-fill"></i><span>{{__('Transfer')}}</span></a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.transfer.index')}}">{{__('List')}}</a></li>
-		</ul>   
+		</ul>
     </li>
 
     <li class="sidebar-item has-sub">
@@ -117,7 +117,7 @@
                 </ul>
             </li>
 		</ul>
-        
+
     </li>
 
 
@@ -138,7 +138,7 @@
                 </ul>
             </li>
 		</ul>
-        
+
     </li>
 
     <li class="sidebar-item has-sub">
@@ -175,7 +175,7 @@
                 </ul>
             </li>
 		</ul>
-        
+
     </li>
 
     <li class="sidebar-item has-sub">
@@ -186,7 +186,7 @@
             <li><a href="{{route(currentUser().'.sreport')}}" >{{__('Stock Report')}}</a></li>
             <li><a href="{{route(currentUser().'.salreport')}}" >{{__('Sales Report')}}</a></li>
 		</ul>
-        
+
     </li>
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-receipt"></i><span>{{__('Voucher')}}</span>
@@ -195,6 +195,6 @@
             <li><a href="{{route(currentUser().'.credit.index')}}" >{{__('Credit Voucher')}}</a></li>
 
 		</ul>
-        
+
     </li>
 </ul>

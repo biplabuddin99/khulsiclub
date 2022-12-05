@@ -7,7 +7,7 @@
             <span>{{__('dashboard') }}</span>
         </a>
     </li>
-    
+
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
             <i class="bi bi-gear-fill"></i>
@@ -19,6 +19,13 @@
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.admin.index')}}">{{__('List')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.admin.create')}}">{{__('Add New')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Slider')}}</a>
+                <ul class="submenu">
+                    <li class="py-1"><a href="{{route(currentUser().'.slider.index')}}">{{__('List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.slider.create')}}">{{__('Add New')}}</a></li>
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
