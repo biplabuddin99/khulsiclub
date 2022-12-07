@@ -29,10 +29,19 @@
 
                                     <div class="row">
                                         <div class="form-group">
-                                            <label for="Fathers">2. Father's/Husband's Name:</label>
+                                            <label for="Fathers">2. Father's Name:</label>
                                             <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers')}}" name="Fathers">
                                             @if($errors->has('Fathers'))
                                                 <span class="text-danger"> {{ $errors->first('Fathers') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="husbanName">2.1 Husband's Name:</label>
+                                            <input type="text" id="husbanName" class="form-control" value="{{ old('husbanName')}}" name="husbanName">
+                                            @if($errors->has('husbanName'))
+                                                <span class="text-danger"> {{ $errors->first('husbanName') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -146,12 +155,24 @@
                                     </div> --}}
                                 </div>
                                 <div class="row">
-                                    <div class="form-group">
-                                        <label for="nationalid">6. National ID No/Passport No/Driving License No:</label>
-                                        <input type="text" id="nationalid" class="form-control" name="nationalid">
-                                            @if($errors->has('nationalid'))
-                                                <span class="text-danger"> {{ $errors->first('nationalid') }}</span>
-                                            @endif
+                                    <label for="nationalid">6. </label>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <select  class="form-control form-select" name="credit">
+                                                <option value="">National ID No</option>
+                                                <option value="">Passport No</option>
+                                                <option value="">Driving License No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            {{-- <label for="nationalid">6. National ID No/Passport No/Driving License No:</label> --}}
+                                            <input type="text" id="nationalid" class="form-control" name="nationalid">
+                                                @if($errors->has('nationalid'))
+                                                    <span class="text-danger"> {{ $errors->first('nationalid') }}</span>
+                                                @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -197,10 +218,10 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="distic">Dist:</label>
-                                                <input type="text" id="distic" class="form-control" name="distic">
-                                                    @if($errors->has('distic'))
-                                                        <span class="text-danger"> {{ $errors->first('distic') }}</span>
+                                                <label for="district">Dist:</label>
+                                                <input type="text" id="district" class="form-control" name="district">
+                                                    @if($errors->has('district'))
+                                                        <span class="text-danger"> {{ $errors->first('district') }}</span>
                                                     @endif
                                             </div>
                                         </div>
@@ -229,10 +250,10 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="date">Date:</label>
-                                                <input type="date" id="date" class="form-control" name="date">
-                                                    @if($errors->has('date'))
-                                                        <span class="text-danger"> {{ $errors->first('date') }}</span>
+                                                <label for="othersdate">Date:</label>
+                                                <input type="othersdate" id="othersdate" class="form-control" name="othersdate">
+                                                    @if($errors->has('othersdate'))
+                                                        <span class="text-danger"> {{ $errors->first('othersdate') }}</span>
                                                     @endif
                                             </div>
                                         </div>
@@ -326,10 +347,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group ms-5">
-                                            <label for="issuingAuthotity">3)Issuing Authotity:</label>
-                                            <input type="text" id="issuingAuthotity" class="form-control" name="issuingAuthotity">
-                                                @if($errors->has('issuingAuthotity'))
-                                                    <span class="text-danger"> {{ $errors->first('issuingAuthotity') }}</span>
+                                            <label for="issuingAuthority">3)Issuing Authority:</label>
+                                            <input type="text" id="issuingAuthority" class="form-control" name="issuingAuthority">
+                                                @if($errors->has('issuingAuthority'))
+                                                    <span class="text-danger"> {{ $errors->first('issuingAuthority') }}</span>
                                                 @endif
                                         </div>
                                     </div>
@@ -365,10 +386,25 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="detailschildresns" class="mt-3">15. Details of Childresns:(Must be Added with Birth Certificate copy):</label>
-                                        <input type="text" id="detailschildresns" class="form-control" name="detailschildresns">
+                                        <table class="table mb-5">
+                                            <thead>
+                                                <tr class="bg-primary text-white">
+                                                    <th class="p-2">Serial</th>
+                                                    <th class="p-2">Name</th>
+                                                    <th class="p-2">Sex</th>
+                                                    <th class="p-2">Date of Birth</th>
+                                                    <th class="p-2">Occupation With Address</th>
+                                                    <th class="p-2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="details_data">
+
+                                            </tbody>
+                                        </table>
+                                        {{-- <input type="text" id="detailschildresns" class="form-control" name="detailschildresns">
                                             @if($errors->has('detailschildresns'))
                                                 <span class="text-danger"> {{ $errors->first('detailschildresns') }}</span>
-                                            @endif
+                                            @endif --}}
                                     </div>
                                 </div>
                                 <div class="row">
