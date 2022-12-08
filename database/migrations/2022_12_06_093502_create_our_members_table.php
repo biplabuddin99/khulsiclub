@@ -42,6 +42,9 @@ return new class extends Migration
             $table->string('member_no')->nullable();
             $table->string('mr_mis')->nullable();
             $table->string('other_address')->nullable();
+            $table->string('signature_founder_president')->nullable();
+            $table->string('signature_founder_vicepresident')->nullable();
+            $table->string('remarks')->nullable();
             $table->string('update_incometax')->nullable();
             $table->string('emergency_contact')->nullable();
             $table->string('passport_notype')->nullable();

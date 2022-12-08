@@ -18,7 +18,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="fullName">1. FULL Name(Block Capital Letter)</label>
                                             <input type="text" id="fullName" class="form-control" value="{{ old('fullName')}}" name="fullName">
                                             @if($errors->has('fullName'))
@@ -28,7 +28,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="Fathers">2. Father's Name:</label>
                                             <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers')}}" name="Fathers">
                                             @if($errors->has('Fathers'))
@@ -37,7 +37,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="husbanName">2.1 Husband's Name:</label>
                                             <input type="text" id="husbanName" class="form-control" value="{{ old('husbanName')}}" name="husbanName">
                                             @if($errors->has('husbanName'))
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="mothersName">3. Mother's Name:</label>
                                             <input type="text" id="mothersName" class="form-control" value="{{ old('mothersName')}}" name="mothersName">
                                             @if($errors->has('mothersName'))
@@ -56,7 +56,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="nominee">4. Nominee:</label>
                                             <input type="text" id="nominee" class="form-control" name="nominee">
                                                 @if($errors->has('nominee'))
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="dateOfBirth">5. Date and Place of Birth:</label>
                                             <input type="text" id="dateOfBirth" class="form-control" name="dateOfBirth">
                                                 @if($errors->has('dateOfBirth'))
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-md-4 col-4 offset-1">
                                             <div class="form-group">
                                                 <label for="nationality">Nationality:</label>
                                                 <input type="text" id="nationality" class="form-control" name="nationality">
@@ -83,7 +83,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-md-4 col-4 offset-1">
                                             <div class="form-group">
                                                 <label for="profession">Profession:</label>
                                                 <input type="text" id="profession" class="form-control" name="profession">
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-12">
-                                            <div class="form-group">
+                                            <div class="form-group col-8 offset-2">
                                                 <label for="cellno">Cell No:</label>
                                                 <input type="text" id="cellno" class="form-control" name="cellno">
                                                     @if($errors->has('cellno'))
@@ -104,7 +104,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
-                                            <div class="form-group">
+                                            <div class="form-group col-8 offset-2">
                                                 <label for="tel">Tel:</label>
                                                 <input type="text" id="tel" class="form-control" name="tel">
                                                     @if($errors->has('tel'))
@@ -115,7 +115,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-12">
-                                            <div class="form-group">
+                                            <div class="form-group col-8 offset-2">
                                                 <label for="fax">Fax:</label>
                                                 <input type="text" id="fax" class="form-control" name="fax">
                                                     @if($errors->has('fax'))
@@ -124,7 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
-                                            <div class="form-group">
+                                            <div class="form-group col-8 offset-2">
                                                 <label for="email">E-mail:</label>
                                                 <input type="email" id="email" class="form-control" name="email">
                                                     @if($errors->has('email'))
@@ -134,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
-                                        <div class="form-group">
+                                        <div class="form-group col-8 offset-2">
                                             <label for="bloodGroup">Blood Group:</label>
                                                 <select class="form-control" name="bloodGroup" id="blood">
                                                     <option value="">Select Blood Group</option>
