@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Exception;
 
 class SliderController extends Controller
 {
@@ -25,7 +26,8 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('slider.create');
+
     }
 
     /**
@@ -36,7 +38,29 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $slider=new Slider;
+            if($request->hasFile('Picture')){
+                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
+                $request->Picture->move(public_path('uploads/Slide_image'), $PictureName);
+                $slider->image=$PictureName;
+            }
+            $slider->link=$request->Link;
+            $slider->short_title=$request->ShortTitle;
+            $slider->long_title=$request->LongTitle;
+            if($slider->save())
+            return redirect()->route(currentUser().'.slider.index');
+            // Toastr::success('Slider Create Successfully!');
+        else
+            return redirect()->back();
+            // Toastr::success('Please try Again!');
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -56,9 +80,10 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider)
+    public function edit($id)
     {
-        //
+        $slider=Slider::findOrFail(encryptor('decrypt',$id));
+        return view('slider.edit',compact('slider'));
     }
 
     /**
@@ -68,9 +93,31 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slider $slider)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $slider=Slider::findOrFail(encryptor('decrypt',$id));
+            if($request->hasFile('Picture')){
+                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
+                $request->Picture->move(public_path('uploads/Slide_image'), $PictureName);
+                $slider->image=$PictureName;
+            }
+            $slider->link=$request->Link;
+            $slider->short_title=$request->ShortTitle;
+            $slider->long_title=$request->LongTitle;
+            if($slider->save())
+            return redirect()->route(currentUser().'.slider.index');
+            // Toastr::success('Slider Update Successfully!');
+        else
+            return redirect()->back();
+            // Toastr::success('Please try Again!');
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -79,8 +126,11 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy($id)
     {
-        //
+        $cat= Slider::findOrFail(encryptor('decrypt',$id));
+        $cat->delete();
+        // Toastr::warning('Slider Deleted Permanently!');
+        return redirect()->back();
     }
 }

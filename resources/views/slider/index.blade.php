@@ -34,23 +34,19 @@
                             @forelse($sliders as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td>{{$p->name}}</td>
-                                <td>{{$p->email}}</td>
-                                <td>{{$p->contact_no}}</td>
-                                <td>{{$p->role?->type}}</td>
-                                <td>{{$p->company?->name}}</td>
-                                <td>{{$p->branch?->name}}</td>
-                                <td><img width="50px" src="{{asset('uploads/users/'.$p->image)}}" alt=""></td>
-                                <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
+                                <td><img width="50px" src="{{asset('uploads/Slide_image/'.$p->image)}}" alt=""></td>
+                                <td>{{$p->link}}</td>
+                                <td>{{$p->short_title}}</td>
+                                <td>{{$p->long_title}}</td>
                                 <!-- or <td>{{ $p->status == 1?"Active":"Inactive" }}</td>-->
                                 <td class="white-space-nowrap">
-                                    <a href="{{route(currentUser().'.users.edit',encryptor('encrypt',$p->id))}}">
+                                    <a href="{{route(currentUser().'.slider.edit',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.users.destroy',encryptor('encrypt',$p->id))}}" method="post">
+                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.slider.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -58,7 +54,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <th colspan="8" class="text-center">No Pruduct Found</th>
+                                <th colspan="8" class="text-center">No Data Found</th>
                             </tr>
                             @endforelse
                         </tbody>
