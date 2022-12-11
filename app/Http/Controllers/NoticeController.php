@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Notice;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
 class NoticeController extends Controller
@@ -15,7 +16,8 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        //
+        $notices=Notice::all();
+        return view('notice.index',compact('notices'));
     }
 
     /**
@@ -44,20 +46,21 @@ class NoticeController extends Controller
             $notice->unpublished_date=$request->unpublishedDate;
             if($request->hasFile('Picture')){
                 $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
-                $request->Picture->move(public_path('uploads/Slide_image'), $PictureName);
+                $request->Picture->move(public_path('uploads/notice_image'), $PictureName);
                 $notice->image=$PictureName;
             }
             if($request->hasFile('noticefile')){
                 $noticefileName = rand(111,999).time().'.'.$request->noticefile->extension();
-                $request->noticefile->move(public_path('uploads/Slide_image'), $noticefileName);
+                $request->noticefile->move(public_path('uploads/notice_image'), $noticefileName);
                 $notice->noticefile=$noticefileName;
             }
-            if($notice->save())
+            if($notice->save()){
+            Toastr::success('Slider Create Successfully!');
             return redirect()->route(currentUser().'.notice.index');
-            // Toastr::success('Slider Create Successfully!');
-        else
+            }else{
             return redirect()->back();
-            // Toastr::success('Please try Again!');
+            Toastr::success('Please try Again!');
+            }
 
         }
         catch (Exception $e){
@@ -84,9 +87,10 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Notice $notice)
+    public function edit($id)
     {
-        //
+        $notice=Notice::findOrFail(encryptor('decrypt',$id));
+        return view('notice.edit',compact('notice'));
     }
 
     /**
@@ -96,9 +100,38 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Notice $notice)
+    public function update(Request $request,$id)
     {
-        //
+        try{
+            $notice=Notice::findOrFail(encryptor('decrypt',$id));
+            $notice->title=$request->title;
+            $notice->details=$request->Details;
+            $notice->published_date=$request->publishedDate;
+            $notice->unpublished_date=$request->unpublishedDate;
+            if($request->hasFile('Picture')){
+                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
+                $request->Picture->move(public_path('uploads/notice_image'), $PictureName);
+                $notice->image=$PictureName;
+            }
+            if($request->hasFile('noticefile')){
+                $noticefileName = rand(111,999).time().'.'.$request->noticefile->extension();
+                $request->noticefile->move(public_path('uploads/notice_image'), $noticefileName);
+                $notice->noticefile=$noticefileName;
+            }
+            if($notice->save()){
+                Toastr::success('Notice Update Successfully!');
+            return redirect()->route(currentUser().'.notice.index');
+             }else{
+            return redirect()->back();
+            Toastr::success('Please try Again!');
+        }
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -107,8 +140,11 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notice $notice)
+    public function destroy($id)
     {
-        //
+        $cat= Notice::findOrFail(encryptor('decrypt',$id));
+        $cat->delete();
+        Toastr::warning('Notice Deleted Permanently!');
+        return redirect()->back();
     }
 }

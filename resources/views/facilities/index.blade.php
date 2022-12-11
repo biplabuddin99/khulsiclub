@@ -11,7 +11,7 @@
 
             <div class="card">
                 <div>
-                <a class="float-end" href="{{route(currentUser().'.notice.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+                <a class="float-end" href="{{route(currentUser().'.facilities.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
                 </div>
                 @if(Session::has('response'))
                     {!!Session::get('response')['message']!!}
@@ -24,29 +24,27 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Title')}}</th>
-                                <th scope="col">{{__('Details')}}</th>
                                 <th scope="col">{{__('Image')}}</th>
-                                <th scope="col">{{__('Notice File')}}</th>
+                                <th scope="col">{{__('Details')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($notices as $p)
+                            @forelse($facilities as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->title}}</td>
+                                <td><img width="50px" src="{{asset('uploads/facilities/'.$p->image)}}" alt=""></td>
                                 <td>{{$p->details}}</td>
-                                <td><img width="50px" src="{{asset('uploads/notice_image/'.$p->image)}}" alt=""></td>
-                                <td><img width="50px" src="{{asset('uploads/notice_image/'.$p->noticefile)}}" alt=""></td>
                                 <!-- or <td>{{ $p->status == 1?"Active":"Inactive" }}</td>-->
                                 <td class="white-space-nowrap">
-                                    <a href="{{route(currentUser().'.notice.edit',encryptor('encrypt',$p->id))}}">
+                                    <a href="{{route(currentUser().'.facilities.edit',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.notice.destroy',encryptor('encrypt',$p->id))}}" method="post">
+                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.facilities.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>

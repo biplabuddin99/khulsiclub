@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OurMember;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
 class OurMemberController extends Controller
@@ -94,15 +95,17 @@ class OurMemberController extends Controller
             $member->membership_applied=$request->categorymembership;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
-            if($member->save())
+            if($member->save()){
+            Toastr::success('our Member Create Successfully!');
             return redirect()->route(currentUser().'.ourMember.index');
-            // Toastr::success('our Member Create Successfully!');
-        else
+            }else{
+            Toastr::success('Please try Again!');
             return redirect()->back();
-            // Toastr::success('Please try Again!');
+            }
 
         }
         catch (Exception $e){
+            Toastr::success('Please try Again!');
             dd($e);
             return back()->withInput();
 
@@ -199,12 +202,13 @@ class OurMemberController extends Controller
             $member->membership_applied=$request->categorymembership;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
-            if($member->save())
+            if($member->save()){
+            Toastr::success('our Member Update Successfully!');
             return redirect()->route(currentUser().'.ourMember.index');
-            // Toastr::success('our Member Update Successfully!');
-        else
+            }else{
+            Toastr::success('Please try Again!');
             return redirect()->back();
-            // Toastr::success('Please try Again!');
+            }
         }
         catch (Exception $e){
             dd($e);
@@ -225,7 +229,7 @@ class OurMemberController extends Controller
     {
         $cat= OurMember::findOrFail(encryptor('decrypt',$id));
         $cat->delete();
-        // Toastr::warning('Member Deleted Permanently!');
+        Toastr::warning('Member Deleted Permanently!');
         return redirect()->back();
     }
 }

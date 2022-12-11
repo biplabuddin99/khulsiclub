@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
 class SliderController extends Controller
@@ -48,12 +49,13 @@ class SliderController extends Controller
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;
             $slider->long_title=$request->LongTitle;
-            if($slider->save())
+            if($slider->save()){
+            Toastr::success('Slider Create Successfully!');
             return redirect()->route(currentUser().'.slider.index');
-            // Toastr::success('Slider Create Successfully!');
-        else
-            return redirect()->back();
-            // Toastr::success('Please try Again!');
+            } else{
+            Toastr::success('Please try Again!');
+             return redirect()->back();
+            }
 
         }
         catch (Exception $e){
@@ -105,12 +107,13 @@ class SliderController extends Controller
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;
             $slider->long_title=$request->LongTitle;
-            if($slider->save())
+            if($slider->save()){
+            Toastr::success('Slider Update Successfully!');
             return redirect()->route(currentUser().'.slider.index');
-            // Toastr::success('Slider Update Successfully!');
-        else
+            } else{
+             Toastr::success('Please try Again!');
             return redirect()->back();
-            // Toastr::success('Please try Again!');
+            }
 
         }
         catch (Exception $e){
@@ -130,7 +133,7 @@ class SliderController extends Controller
     {
         $cat= Slider::findOrFail(encryptor('decrypt',$id));
         $cat->delete();
-        // Toastr::warning('Slider Deleted Permanently!');
+        Toastr::warning('Slider Deleted Permanently!');
         return redirect()->back();
     }
 }
