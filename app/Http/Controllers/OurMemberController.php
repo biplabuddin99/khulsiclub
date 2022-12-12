@@ -119,9 +119,10 @@ class OurMemberController extends Controller
      * @param  \App\Models\OurMember  $ourMember
      * @return \Illuminate\Http\Response
      */
-    public function show(OurMember $ourMember)
+    public function show($id)
     {
-        //
+        $show_data=OurMember::findOrFail(encryptor('decrypt',$id));
+        return view('ourmember.show',compact('show_data'));
     }
 
     /**

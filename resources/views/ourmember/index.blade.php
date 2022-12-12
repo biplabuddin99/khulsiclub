@@ -42,6 +42,9 @@
                                     <a href="{{route(currentUser().'.ourMember.edit',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
+                                    <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$p->id))}}">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
                                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
