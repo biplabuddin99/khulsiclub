@@ -450,7 +450,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="donermember" name="categorymembership" value="Donor Member">
+                                                <input type="radio" id="donermember" name="categorymembership" value="1">
                                                     @if($errors->has('donermember'))
                                                         <span class="text-danger"> {{ $errors->first('donermember') }}</span>
                                                     @endif
@@ -459,7 +459,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="servicemember" name="categorymembership" value="Service Member">
+                                                <input type="radio" id="servicemember" name="categorymembership" value="2">
                                                     @if($errors->has('servicemember'))
                                                         <span class="text-danger"> {{ $errors->first('servicemember') }}</span>
                                                     @endif
@@ -470,7 +470,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="lifemember" name="categorymembership" value="Life Member">
+                                                <input type="radio" id="lifemember" name="categorymembership" value="3">
                                                     @if($errors->has('lifemember'))
                                                         <span class="text-danger"> {{ $errors->first('lifemember') }}</span>
                                                     @endif
@@ -479,7 +479,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="temporarymember" name="categorymembership" value="Temporary Member">
+                                                <input type="radio" id="temporarymember" name="categorymembership" value="4">
                                                     @if($errors->has('temporarymember'))
                                                         <span class="text-danger"> {{ $errors->first('temporarymember') }}</span>
                                                     @endif
@@ -490,7 +490,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="permanentmember" name="categorymembership" value="Permanent Member">
+                                                <input type="radio" id="permanentmember" name="categorymembership" value="5">
                                                     @if($errors->has('permanentmember'))
                                                         <span class="text-danger"> {{ $errors->first('permanentmember') }}</span>
                                                     @endif
@@ -499,7 +499,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="honorarymember" name="categorymembership" value="Honorary Member">
+                                                <input type="radio" id="honorarymember" name="categorymembership" value="6">
                                                     @if($errors->has('honorarymember'))
                                                         <span class="text-danger"> {{ $errors->first('honorarymember') }}</span>
                                                     @endif
@@ -510,7 +510,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="cprporatemember" name="categorymembership" value="Corporate Member">
+                                                <input type="radio" id="cprporatemember" name="categorymembership" value="7">
                                                     @if($errors->has('cprporatemember'))
                                                         <span class="text-danger"> {{ $errors->first('cprporatemember') }}</span>
                                                     @endif
@@ -519,7 +519,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="diplomatedmember" name="categorymembership" value="Diplomate and Foreing National Member">
+                                                <input type="radio" id="diplomatedmember" name="categorymembership" value="8">
                                                     @if($errors->has('diplomatedmember'))
                                                         <span class="text-danger"> {{ $errors->first('diplomatedmember') }}</span>
                                                     @endif

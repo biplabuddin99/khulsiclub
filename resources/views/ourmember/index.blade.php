@@ -39,12 +39,12 @@
                                 <td>{{$p->profession}}</td>
                                 <td>{{$p->cell_number}}</td>
                                 <td class="white-space-nowrap">
+                                    <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$p->id))}}">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </a>&nbsp;
                                     <a href="{{route(currentUser().'.ourMember.edit',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$p->id))}}">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
+                                    </a> &nbsp;
                                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>

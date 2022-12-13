@@ -44,13 +44,14 @@
 
         .photo{
 
-            text-align: center;
+            margin: auto;
+            padding-top: 2.3rem;
 
 
         }
         .pdiv{
             position: relative;
-            background-color: #92a8d1;
+            background-color: rgba(53, 123, 189, 0.6);
             padding: 10px;
 
         }
@@ -96,24 +97,44 @@
             width: 80%;
             outline: 0;
             border-style: solid;
-            border-width: 1px 0 0;
+            border-width: 0 0 1px;
             border-color: blue
         }
         .bottom2input {
             width: 32%;
             outline: 0;
             border-style: solid;
-            border-width: 1px 0 0;
+            border-width: 0 0 1px;
             border-color: blue
+        }
+        .bg1{
+            background-image: url("{{ asset('./images/bg1.png')}}");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .bg2{
+            background-image: url("{{ asset('./images/bg2.png')}}");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .bg3{
+            background-image: url("{{ asset('./images/bg3.png')}}");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .bg4{
+            background-image: url("{{ asset('./images/bg4.png')}}");
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
 
     </style>
 </head>
 <body>
 
-    <div  style="width:800px; margin:0 auto;">
+    <div class="bg1"  style="width:800px; margin:0 auto;">
         <div>
-            <img src="{{ asset('./images/Screenshot_2.jpg')}}" width="100%" height="70px" alt="">
+            <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="100%" height="70px" alt="">
         </div>
         <div style="margin-bottom: 3rem; margin-top: 3rem;">
             <h1 class="font" style="text-align: center;">Application For Membership Form </h1>
@@ -127,7 +148,7 @@
                 <p style="margin: 0px;">Tell:03-657221,2550131</p>
             </div>
             <div class="pbox">
-                <td class="photo"><p>Photo 4 Copies Passport Size</p></td>
+                <td ><p class="photo">Photo 4 Copies Passport Size</p></td>
             </div>
         </div>
         <div style="margin-top: 3rem; margin-bottom: 3rem;">
@@ -181,7 +202,7 @@
         </form>
 
     </div>
-    <div  style="width:800px; margin:0 auto;">
+    <div class="bg4" style="width:800px; margin:0 auto;">
 
         <form action="">
             <table class = "gfg2" style=" width:100%">
@@ -257,10 +278,10 @@
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tr>
-                    <th style="text-align: left; width: 10%; padding-bottom: 30px;">Date:</th>
-                    <td ><input type="text" class="bottominput" value="{{ $show_data->others_date }}"></td>
-                    <td ><img width="50px" src="{{asset('uploads/signature/'.$show_data->signature_applicant)}}" alt="">
-                        <p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid;">Signature of Applicant</p></td>
+                    <th style="text-align: left; width: 10%; padding-bottom: 5px;">Date:</th>
+                    <td style="padding-bottom: 5px;"><input type="text" class="bottominput" value="{{ $show_data->others_date }}"></td>
+                    <td style="margin: 0px;"><img width="100px" src="{{asset('uploads/our_member/'.$show_data->signature_applicant)}}" alt="">
+                        <p style="margin: 0px; border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid;">Signature of Applicant</p></td>
                 </tr>
             </table>
             <div>
@@ -268,8 +289,8 @@
             </div>
             <table class = "gfg2" style=" width:100%; margin-bottom: 30px;">
                 <tr>
-                    <td ><input type="text" class="bottom2input" ></td>
-                    <td >Mebmer No:</td>
+                    <td ><input type="text" class="bottom2input" value="{{ $show_data->identify_president }}"></td>
+                    <td >Mebmer No:   {{ $show_data->member_no }}</td>
                 </tr>
             </table>
         </form>
@@ -277,18 +298,18 @@
     </div>
 
 
-    <div  style="width:800px; margin:0 auto;">
+    <div class="bg3" style="width:800px; margin:0 auto;">
 
         <form action="">
             <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
                         <th  style="text-align: left; width: 12%;">Mr./Mrs.:</th>
-                        <td><input type="text" class="binput" ></td>
+                        <td><input type="text" class="binput" value="{{ $show_data->mr_mis }}"></td>
                     </tr>
                     <tr>
                         <th style="text-align: left; width: 12%;">Address:</th>
-                        <td ><input type="text" class="binput" ></td>
+                        <td ><input type="text" class="binput" value="{{ $show_data->other_address }}"></td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="text" class="binput" ></td>
@@ -299,15 +320,15 @@
                 <p>The constitution of club do here by
                     declare you as the Donor, Life Service, Permanent, Temporary, Corporate, Honorary,
                     Diplomat and Foreign National Member of the <b style="color: red;">Chittagong Khulshi Club Ltd.</b>
-                    and you Membership No. is<input type="text" class="finput"></p>
+                    and you Membership No. is<input type="text" class="finput" value="{{ $show_data->member_no }}"></p>
             </div>
             <div>
                 <p><b>Thank you</b></p>
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tr>
-                    <td ><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
-                    <td ><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder Vice President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
+                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_president)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
+                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_vicepresident)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder Vice President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
                 </tr>
             </table>
             <div>
@@ -316,7 +337,7 @@
             <table class = "gfg3" style=" width:100%; margin-bottom: 30px;">
                 <tbody >
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td><input type="text" class="binput" value="{{ $show_data->remarks }}"></td>
                     </tr>
                     <tr>
                         <td><input type="text" class="binput" ></td>
@@ -362,18 +383,18 @@
         </form>
 
     </div>
-	<div  style="width:800px; margin:0 auto;">
+	<div class="bg2" style="width:800px; margin:0 auto;">
 
         <form action="">
             <table class = "gfg4" style=" width:100%">
                 <tbody >
                     <tr>
                         <th  style="text-align: left; width: 43%;">12.Updated Income Tax Paid With TIN/GIR No.</th>
-                        <td ><input type="text" class="binput" ></td>
+                        <td ><input type="text" class="binput" value="{{ $show_data->update_incometax }}"></td>
                     </tr>
                     <tr>
                         <th style="text-align: left; width: 43%;">13.Emergency Contact Person Name and Cell No:</th>
-                        <td ><input type="text" class="binput" ></td>
+                        <td ><input type="text" class="binput" value="{{ $show_data->emergency_contact }}"></td>
                     </tr>
                 </tbody>
             </table>
@@ -383,19 +404,19 @@
                     <table class = "gfg4" style=" width:100%">
                         <tr>
                             <th style="text-align: left; width: 30%;">1) Passport No and Type:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->passport_notype }}"></td>
                         </tr>
                         <tr>
                             <th style="text-align: left; width: 30%;">2) Place and Date of Issue:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->pdate_issue }}"></td>
                         </tr>
                         <tr>
                             <th style="text-align: left; width: 30%;">3) Issuing Authority:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->issuing_authority }}"></td>
                         </tr>
                         <tr>
                             <th style="text-align: left; width: 30%;">4) Validity:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->validity }}"></td>
                         </tr>
 
                     </table>
@@ -407,11 +428,11 @@
                     <table class = "gfg4" style=" width:100%">
                         <tr>
                             <th style="text-align: left; width: 30%;">1) Name of Spouse:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->name_spouse }}"></td>
                         </tr>
                         <tr>
                             <th style="text-align: left; width: 30%;">2) Occupation of Spouse:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->occupation_spouse }}"></td>
                         </tr>
                     </table>
                 </div>
@@ -475,20 +496,20 @@
                 <div style="padding-left: 40px;">
                     <table class = "gfg4" style=" width:100%">
                         <tr>
-                            <td ><input type="checkbox">&nbsp;Donor Member</td>
-                            <td ><input type="checkbox">&nbsp;Service Member</td>
+                            <td ><input type="checkbox" value="1" {{ $show_data->membership_applied=="1" ? "checked":"" }}>&nbsp;Donor Member</td>
+                            <td ><input type="checkbox" value="2" {{ $show_data->membership_applied=="2" ? "checked":"" }}>&nbsp;Service Member</td>
                         </tr>
                         <tr>
-                            <td ><input type="checkbox">&nbsp;Life Member</td>
-                            <td ><input type="checkbox">&nbsp;Temporary Member</td>
+                            <td ><input type="checkbox" value="3" {{ $show_data->membership_applied=="3" ? "checked":"" }}>&nbsp;Life Member</td>
+                            <td ><input type="checkbox" value="4" {{ $show_data->membership_applied=="4" ? "checked":"" }}>&nbsp;Temporary Member</td>
                         </tr>
                         <tr>
-                            <td ><input type="checkbox">&nbsp;Permanent Member</td>
-                            <td ><input type="checkbox">&nbsp;Honorary Member</td>
+                            <td ><input type="checkbox" value="5" {{ $show_data->membership_applied=="5" ? "checked":"" }}>&nbsp;Permanent Member</td>
+                            <td ><input type="checkbox" value="6" {{ $show_data->membership_applied=="6" ? "checked":"" }}>&nbsp;Honorary Member</td>
                         </tr>
                         <tr>
-                            <td ><input type="checkbox">&nbsp;Corporate Member</td>
-                            <td ><input type="checkbox">&nbsp;Diplomate and Foreing National Member</td>
+                            <td ><input type="checkbox" value="7" {{ $show_data->membership_applied=="7" ? "checked":"" }}>&nbsp;Corporate Member</td>
+                            <td ><input type="checkbox" value="8" {{ $show_data->membership_applied=="8" ? "checked":"" }}>&nbsp;Diplomate and Foreing National Member</td>
                         </tr>
 
                     </table>
@@ -502,11 +523,11 @@
                     <table class = "gfg4" style=" width:100%">
                         <tr>
                             <th style="text-align: left; width: 20%;">a) Name:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->proposed_name }}"></td>
                         </tr>
                         <tr>
                             <th style="text-align: left; width: 20%;">b) Membership No:</th>
-                            <td ><input type="text" class="sinput" ></td>
+                            <td ><input type="text" class="sinput" value="{{ $show_data->membership_no }}"></td>
                         </tr>
 
                     </table>

@@ -414,7 +414,7 @@
                                     <div class="row">
                                         <div class="form-group ms-5">
                                             <label for="occupationSpouse">2)Pccupation of Spouse:</label>
-                                            <input type="text" id="occupationSpouse" class="form-control" value="{{ old('occupationSpouse',$member->occupation_spouse)}}" name="">
+                                            <input type="text" id="occupationSpouse" class="form-control" value="{{ old('occupation_spouse',$member->occupation_spouse)}}" name="occupationSpouse">
                                                 @if($errors->has('occupationSpouse'))
                                                     <span class="text-danger"> {{ $errors->first('occupationSpouse') }}</span>
                                                 @endif
@@ -452,7 +452,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="donermember" name="categorymembership" value="Donor Member" {{ old('Donor Member',$member->membership_applied)=="Donor Member" ? "checked":"" }}>
+                                                <input type="radio" id="donermember" name="categorymembership" value="1" {{ old('categorymembership',$member->membership_applied)=="1" ? "checked":"" }}>
                                                     @if($errors->has('donermember'))
                                                         <span class="text-danger"> {{ $errors->first('donermember') }}</span>
                                                     @endif
@@ -461,7 +461,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="servicemember" name="categorymembership" value="Service Member" {{ old('Service Member',$member->membership_applied)=="Service Member" ? "checked":"" }}>
+                                                <input type="radio" id="servicemember" name="categorymembership" value="2" {{ old('categorymembership',$member->membership_applied)=="2" ? "checked":"" }}>
                                                     @if($errors->has('servicemember'))
                                                         <span class="text-danger"> {{ $errors->first('servicemember') }}</span>
                                                     @endif
@@ -472,7 +472,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="lifemember" name="categorymembership" value="Life Member" {{ old('Life Member',$member->membership_applied)=="Life Member" ? "checked":"" }}>
+                                                <input type="radio" id="lifemember" name="categorymembership" value="3" {{ old('categorymembership',$member->membership_applied)=="3" ? "checked":"" }}>
                                                     @if($errors->has('lifemember'))
                                                         <span class="text-danger"> {{ $errors->first('lifemember') }}</span>
                                                     @endif
@@ -481,7 +481,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="temporarymember" name="categorymembership" value="Temporary Member" {{ old('Temporary Member',$member->membership_applied)=="Temporary Member" ? "checked":"" }}>
+                                                <input type="radio" id="temporarymember" name="categorymembership" value="4" {{ old('categorymembership',$member->membership_applied)=="4" ? "checked":"" }}>
                                                     @if($errors->has('temporarymember'))
                                                         <span class="text-danger"> {{ $errors->first('temporarymember') }}</span>
                                                     @endif
@@ -492,7 +492,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="permanentmember" name="categorymembership" value="Permanent Member" {{ old('Permanent Member',$member->membership_applied)=="Permanent Member" ? "checked":"" }}>
+                                                <input type="radio" id="permanentmember" name="categorymembership" value="5" {{ old('categorymembership',$member->membership_applied)=="5" ? "checked":"" }}>
                                                     @if($errors->has('permanentmember'))
                                                         <span class="text-danger"> {{ $errors->first('permanentmember') }}</span>
                                                     @endif
@@ -501,7 +501,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="honorarymember" name="categorymembership" value="Honorary Member" {{ old('Honorary Member',$member->membership_applied)=="Honorary Member" ? "checked":"" }}>
+                                                <input type="radio" id="honorarymember" name="categorymembership" value="6" {{ old('categorymembership',$member->membership_applied)=="6" ? "checked":"" }}>
                                                     @if($errors->has('honorarymember'))
                                                         <span class="text-danger"> {{ $errors->first('honorarymember') }}</span>
                                                     @endif
@@ -512,7 +512,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="cprporatemember" name="categorymembership" value="Corporate Member" {{ old('Corporate Member',$member->membership_applied)=="Corporate Member" ? "checked":"" }}>
+                                                <input type="radio" id="cprporatemember" name="categorymembership" value="7" {{ old('categorymembership',$member->membership_applied)=="7" ? "checked":"" }}>
                                                     @if($errors->has('cprporatemember'))
                                                         <span class="text-danger"> {{ $errors->first('cprporatemember') }}</span>
                                                     @endif
@@ -521,7 +521,7 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <input type="radio" id="diplomatedmember" name="categorymembership" value="Diplomate and Foreing National Member" {{ old('Diplomate and Foreing National Member',$member->membership_applied)=="Diplomate and Foreing National Member" ? "checked":"" }}>
+                                                <input type="radio" id="diplomatedmember" name="categorymembership" value="8" {{ old('categorymembership',$member->membership_applied)=="8" ? "checked":"" }}>
                                                     @if($errors->has('diplomatedmember'))
                                                         <span class="text-danger"> {{ $errors->first('diplomatedmember') }}</span>
                                                     @endif
