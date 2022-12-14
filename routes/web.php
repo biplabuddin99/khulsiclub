@@ -17,7 +17,7 @@ use App\Http\Controllers\FacilitiesController as facilities;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
-
+use App\Http\Controllers\FrontendController as front;
 /* Middleware */
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isOwner;
@@ -34,10 +34,10 @@ use App\Http\Middleware\isSalesman;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [front::class,'index'])->name('front');
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
 Route::post('/register', [auth::class,'signUpStore'])->name('register.store');
-Route::get('/', [auth::class,'signInForm'])->name('signIn');
+Route::get('/admin', [auth::class,'signInForm'])->name('signIn');
 Route::get('/login', [auth::class,'signInForm'])->name('login');
 Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
