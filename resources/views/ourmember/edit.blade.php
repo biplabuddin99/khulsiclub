@@ -436,6 +436,46 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="details_data">
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td><input type="text" id="Name1" class="form-control" name="Name1" value="{{ $member->childresns_name1 }}" placeholder=" Enter Name"></td>
+                                                    <td><input type="radio" id="male1" name="gender1" value="11" {{ old('gender1',$member->gender1)=="11" ? "checked":"" }}> <label for="male1">Male</label>
+                                                        <input type="radio" id="female1" name="gender1" value="12" {{ old('gender1',$member->gender1)=="12" ? "checked":"" }}> <label for="female1">Female</label></td>
+                                                    <td><input type="date" id="birth_date1" class="form-control" name="birth_date1" value="{{ $member->birth_date1 }}" placeholder="Date of Birth"></td>
+                                                    <td><input type="text" id="occupation1" class="form-control" name="occupation1" value="{{ $member->occupation1 }}"  placeholder="Occupation With Address"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td><input type="text" id="Name2" class="form-control" name="Name2" value="{{ $member->childresns_name2 }}" placeholder=" Enter Name"></td>
+                                                    <td><input type="radio" id="male2" name="gender2" value="21" {{ old('gender2',$member->gender2)=="21" ? "checked":"" }}> <label for="male2">Male</label>
+                                                        <input type="radio" id="female2" name="gender2" value="22" {{ old('gender2',$member->gender2)=="22" ? "checked":"" }}> <label for="female2">Female</label></td>
+                                                    <td><input type="date" id="birth_date2" class="form-control" name="birth_date2" value="{{ $member->birth_date2 }}" placeholder="Date of Birth"></td>
+                                                    <td><input type="text" id="occupation2" class="form-control" name="occupation2" value="{{ $member->occupation2 }}"  placeholder="Occupation With Address"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3.</td>
+                                                    <td><input type="text" id="Name3" class="form-control" name="Name3" value="{{ $member->childresns_name3 }}" placeholder=" Enter Name"></td>
+                                                    <td><input type="radio" id="male3" name="gender3" value="31" {{ old('gender3',$member->gender3)=="31" ? "checked":"" }}> <label for="male3">Male</label>
+                                                        <input type="radio" id="female3" name="gender3" value="32" {{ old('gender3',$member->gender3)=="32" ? "checked":"" }}> <label for="female3">Female</label></td>
+                                                    <td><input type="date" id="birth_date3" class="form-control" name="birth_date3" value="{{ $member->birth_date3 }}" placeholder="Date of Birth"></td>
+                                                    <td><input type="text" id="occupation3" class="form-control" name="occupation3" value="{{ $member->occupation3 }}"  placeholder="Occupation With Address"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.</td>
+                                                    <td><input type="text" id="Name4" class="form-control" name="Name4" value="{{ $member->childresns_name4 }}" placeholder=" Enter Name"></td>
+                                                    <td><input type="radio" id="male4" name="gender4" value="41" {{ old('gender4',$member->gender4)=="41" ? "checked":"" }}> <label for="male4">Male</label>
+                                                        <input type="radio" id="female4" name="gender4" value="42" {{ old('gender4',$member->gender4)=="42" ? "checked":"" }}> <label for="female4">Female</label></td>
+                                                    <td><input type="date" id="birth_date4" class="form-control" name="birth_date4" value="{{ $member->birth_date4 }}" placeholder="Date of Birth"></td>
+                                                    <td><input type="text" id="occupation4" class="form-control" name="occupation4" value="{{ $member->occupation4 }}" placeholder="Occupation With Address"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5.</td>
+                                                    <td><input type="text" id="Name5" class="form-control" name="Name5" value="{{ $member->childresns_name5 }}" placeholder=" Enter Name"></td>
+                                                    <td><input type="radio" id="male5" name="gender5" value="51"  {{ old('gender5',$member->gender5)=="51" ? "checked":"" }}> <label for="male5">Male</label>
+                                                        <input type="radio" id="female5" name="gender5" value="52"  {{ old('gender5',$member->gender5)=="52" ? "checked":"" }}> <label for="female5">Female</label></td>
+                                                    <td><input type="date" id="birth_date5" class="form-control" name="birth_date5" value="{{ $member->birth_date5 }}" placeholder="Date of Birth"></td>
+                                                    <td><input type="text" id="occupation5" class="form-control" name="occupation5" value="{{ $member->occupation5 }}" placeholder="Occupation With Address"></td>
+                                                </tr>
 
                                             </tbody>
                                         </table>

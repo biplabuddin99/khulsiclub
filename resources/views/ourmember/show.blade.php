@@ -454,38 +454,38 @@
 
                     <tr style="text-align: center;">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">1.</th>
-                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->childresns_name1 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($show_data->gender1==11) Male @elseif($show_data->gender1==12) Female @else @endif </td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->birth_date1 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->occupation1 }}</td>
                     </tr>
                     <tr style="text-align: center;">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">2.</th>
-                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->childresns_name2 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($show_data->gender2==21) Male @elseif($show_data->gender2==22) Female @else @endif </td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->birth_date2 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->occupation2 }}</td>
                     </tr>
                     <tr style="text-align: center;">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">3.</th>
-                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->childresns_name3 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($show_data->gender3==31) Male @elseif($show_data->gender3==32) Female @else @endif</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->birth_date3 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->occupation3 }}</td>
                     </tr>
                     <tr style="text-align: center;">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">4.</th>
-                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->childresns_name4 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($show_data->gender4==41) Male @elseif($show_data->gender4==42) Female @else @endif</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->birth_date4 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->occupation4 }}</td>
                     </tr>
                     <tr style="text-align: center;">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">5.</th>
-                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->childresns_name5 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($show_data->gender5==51) Male @elseif($show_data->gender5==52) Female @else  @endif</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->birth_date5 }}</td>
+                        <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $show_data->occupation5 }}</td>
                     </tr>
                 </tbody>
             </table>

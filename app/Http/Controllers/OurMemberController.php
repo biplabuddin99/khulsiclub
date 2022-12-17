@@ -221,6 +221,26 @@ class OurMemberController extends Controller
             $member->name_spouse=$request->namespouse;
             $member->occupation_spouse=$request->occupationSpouse;
             $member->membership_applied=$request->categorymembership;
+            $member->childresns_name1=$request->Name1;
+            $member->childresns_name2=$request->Name2;
+            $member->childresns_name3=$request->Name3;
+            $member->childresns_name4=$request->Name4;
+            $member->childresns_name5=$request->Name5;
+            $member->gender1=$request->gender1;
+            $member->gender2=$request->gender2;
+            $member->gender3=$request->gender3;
+            $member->gender4=$request->gender4;
+            $member->gender5=$request->gender5;
+            $member->birth_date1=$request->birth_date1;
+            $member->birth_date2=$request->birth_date2;
+            $member->birth_date3=$request->birth_date3;
+            $member->birth_date4=$request->birth_date4;
+            $member->birth_date5=$request->birth_date5;
+            $member->occupation1=$request->occupation1;
+            $member->occupation2=$request->occupation2;
+            $member->occupation3=$request->occupation3;
+            $member->occupation4=$request->occupation4;
+            $member->occupation5=$request->occupation5;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
             if($member->save()){
