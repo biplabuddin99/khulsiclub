@@ -14,6 +14,8 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\OurMemberController as member;
 use App\Http\Controllers\NoticeController as notice;
 use App\Http\Controllers\FacilitiesController as facilities;
+use App\Http\Controllers\PhotoGallaryCategoryController as pGalleryCat;
+use App\Http\Controllers\PhotoGallaryController as pGallery;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
@@ -59,6 +61,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('ourMember',member::class,['as'=>'admin']);
         Route::resource('notice',notice::class,['as'=>'admin']);
         Route::resource('facilities',facilities::class,['as'=>'admin']);
+        Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'admin']);
+        Route::resource('pGallery',pGallery::class,['as'=>'admin']);
 
     });
 });
