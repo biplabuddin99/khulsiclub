@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\photoGallaryCategory;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class PhotoGallaryCategoryController extends Controller
 {
@@ -14,7 +16,8 @@ class PhotoGallaryCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $pGalleryCat=photoGallaryCategory::paginate(10);
+        return view('pGalleryCat.index',compact('pGalleryCat'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PhotoGallaryCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pGalleryCat.create');
     }
 
     /**
@@ -35,7 +38,32 @@ class PhotoGallaryCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $pgc=new photoGallaryCategory;
+
+            $pgc->name=$request->name;
+            $pgc->status=0;
+            if($request->hasFile('feature_image')){
+                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);
+                $pgc->feature_image=$feature_image;
+            }
+            if($pgc->save()){
+            Toastr::success('Photo Category Create Successfully!');
+            return redirect()->route(currentUser().'.pGalleryCat.index');
+            }else{
+            Toastr::success('Please try Again!');
+            return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::success('Please try Again!');
+            dd($e);
+            return back()->withInput();
+
+        }
+
     }
 
     /**
@@ -55,9 +83,10 @@ class PhotoGallaryCategoryController extends Controller
      * @param  \App\Models\photoGallaryCategory  $photoGallaryCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(photoGallaryCategory $photoGallaryCategory)
+    public function edit($id)
     {
-        //
+        $pGalleryCat=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
+        return view('pGalleryCat.edit',compact('pGalleryCat'));
     }
 
     /**
@@ -67,9 +96,32 @@ class PhotoGallaryCategoryController extends Controller
      * @param  \App\Models\photoGallaryCategory  $photoGallaryCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, photoGallaryCategory $photoGallaryCategory)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $pgc=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
+            $pgc->name=$request->name;
+            $pgc->status=0;
+            if($request->hasFile('feature_image')){
+                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);
+                $pgc->feature_image=$feature_image;
+            }
+            if($pgc->save()){
+            Toastr::success('Photo Category Updated Successfully!');
+            return redirect()->route(currentUser().'.pGalleryCat.index');
+            }else{
+            Toastr::success('Please try Again!');
+            return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::success('Please try Again!');
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
