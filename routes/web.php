@@ -16,6 +16,8 @@ use App\Http\Controllers\NoticeController as notice;
 use App\Http\Controllers\FacilitiesController as facilities;
 use App\Http\Controllers\PhotoGallaryCategoryController as pGalleryCat;
 use App\Http\Controllers\PhotoGallaryController as pGallery;
+use App\Http\Controllers\VideoGalleryController as vGallery;
+use App\Http\Controllers\VideoGallaryCategoryController as vGalleryCat;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
@@ -63,6 +65,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('facilities',facilities::class,['as'=>'admin']);
         Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'admin']);
         Route::resource('pGallery',pGallery::class,['as'=>'admin']);
+        Route::resource('vgallery',vGallery::class,['as'=>'admin']);
+        Route::resource('vgalleryCat',vGalleryCat::class,['as'=>'admin']);
 
     });
 });

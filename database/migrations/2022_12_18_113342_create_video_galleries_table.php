@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('video_gallary_captions', function (Blueprint $table) {
+        Schema::create('video_galleries', function (Blueprint $table) {
             $table->id();
             $table->string('caption')->nullable();
             $table->string('feature_image')->nullable();
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('publish_date')->nullable();
             $table->date('unpublished_date')->nullable();
             $table->string('status')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('video_gallary_captions');
+        Schema::dropIfExists('video_galleries');
     }
 };

@@ -64,6 +64,20 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('VideoG Caption')}}</a>
+                <ul class="submenu">
+                    <li class="py-1"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.vgallery.create')}}">{{__('Add New')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('VideoG Category')}}</a>
+                <ul class="submenu">
+                    <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.create')}}">{{__('Add New')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Country')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.country.index')}}">{{__('List')}}</a></li>
