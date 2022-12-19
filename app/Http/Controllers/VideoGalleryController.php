@@ -83,9 +83,10 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(VideoGallery $videoGallery)
+    public function edit($id)
     {
-        //
+        $videogallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
+        return view('video_gallery.edit',compact('videogallery'));
     }
 
     /**
@@ -95,9 +96,34 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, VideoGallery $videoGallery)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $vgallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
+            $vgallery->caption=$request->caption;
+            $vgallery->video_id=$request->videoId;
+            $vgallery->publish_date=$request->publishedDate;
+            $vgallery->unpublished_date=$request->unpublishedDate;
+            if($request->hasFile('FeatureImage')){
+                $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
+                $request->FeatureImage->move(public_path('uploads/vgallery_image'), $FeatureImageName);
+                $vgallery->feature_image=$FeatureImageName;
+            }
+            $vgallery->status=$request->status;
+            if($vgallery->save()){
+            Toastr::success('Video Gallery Updateed Successfully!');
+            return redirect()->route(currentUser().'.vgallery.index');
+            }else{
+            return redirect()->back();
+            Toastr::success('Please try Again!');
+            }
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -106,8 +132,11 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VideoGallery $videoGallery)
+    public function destroy($id)
     {
-        //
+        $vgallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
+        $vgallery->delete();
+        Toastr::warning('Slider Deleted Permanently!');
+        return redirect()->back();
     }
 }

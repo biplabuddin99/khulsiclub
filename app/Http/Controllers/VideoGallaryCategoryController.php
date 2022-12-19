@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\VideoGallaryCategory;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class VideoGallaryCategoryController extends Controller
 {
@@ -14,7 +16,8 @@ class VideoGallaryCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $vgallery_cat=VideoGallaryCategory::all();
+        return view('video_gallery_category.index',compact('vgallery_cat'));
     }
 
     /**
@@ -24,7 +27,7 @@ class VideoGallaryCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('video_gallery_category.create');
     }
 
     /**
@@ -35,7 +38,29 @@ class VideoGallaryCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $vgallerycat=new VideoGallaryCategory;
+            $vgallerycat->name=$request->name;
+            if($request->hasFile('FeatureImage')){
+                $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
+                $request->FeatureImage->move(public_path('uploads/vgallerycat_image'), $FeatureImageName);
+                $vgallerycat->feature_img=$FeatureImageName;
+            }
+            $vgallerycat->status=$request->status;
+            if($vgallerycat->save()){
+            Toastr::success('Video Gallery Category Create Successfully!');
+            return redirect()->route(currentUser().'.vgalleryCat.index');
+            }else{
+            return redirect()->back();
+            Toastr::success('Please try Again!');
+            }
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -55,9 +80,10 @@ class VideoGallaryCategoryController extends Controller
      * @param  \App\Models\VideoGallaryCategory  $videoGallaryCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(VideoGallaryCategory $videoGallaryCategory)
+    public function edit($id)
     {
-        //
+        $videogallery_cat=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
+        return view('video_gallery_category.edit',compact('videogallery_cat'));
     }
 
     /**
@@ -67,9 +93,31 @@ class VideoGallaryCategoryController extends Controller
      * @param  \App\Models\VideoGallaryCategory  $videoGallaryCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, VideoGallaryCategory $videoGallaryCategory)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $vgallerycat=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
+            $vgallerycat->name=$request->name;
+            if($request->hasFile('FeatureImage')){
+                $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
+                $request->FeatureImage->move(public_path('uploads/vgallerycat_image'), $FeatureImageName);
+                $vgallerycat->feature_img=$FeatureImageName;
+            }
+            $vgallerycat->status=$request->status;
+            if($vgallerycat->save()){
+            Toastr::success('Video Gallery Category Updated Successfully!');
+            return redirect()->route(currentUser().'.vgalleryCat.index');
+            }else{
+            return redirect()->back();
+            Toastr::success('Please try Again!');
+            }
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -78,8 +126,11 @@ class VideoGallaryCategoryController extends Controller
      * @param  \App\Models\VideoGallaryCategory  $videoGallaryCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VideoGallaryCategory $videoGallaryCategory)
+    public function destroy($id)
     {
-        //
+        $vgallery=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
+        $vgallery->delete();
+        Toastr::warning('Video Category Deleted Permanently!');
+        return redirect()->back();
     }
 }

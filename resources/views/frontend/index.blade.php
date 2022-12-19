@@ -540,7 +540,7 @@
             <h4><span> BECOME A</span> MEMBER</h4>
           </div>
           <div class="col-sm-6">
-            <a class="button" href="#">Apply Now</a>
+            <a class="button" href="{{route(currentUser().'.ourMember.create')}}">Apply Now</a>
           </div>
         </div>
       </div>
