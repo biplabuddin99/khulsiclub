@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Facilities;
 use App\Models\Frontend;
 use App\Models\Notice;
+use App\Models\photoGallaryCategory;
+use App\Models\setting;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,9 @@ class FrontendController extends Controller
         $slider=Slider::get();
         $notice=Notice::get();
         $facilities=Facilities::get();
-        return view('frontend.index',compact('slider','notice','facilities'));
+        $pgallery_cat=photoGallaryCategory::get();
+        $setting=setting::first();
+        return view('frontend.index',compact('slider','notice','facilities','pgallery_cat','setting'));
     }
 
     /**

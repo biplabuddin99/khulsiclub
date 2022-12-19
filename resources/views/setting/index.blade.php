@@ -19,7 +19,6 @@
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Contact')}}</th>
-                                        <th scope="col">{{__('Address')}}</th>
                                         <th scope="col">{{__('Email')}}</th>
                                         <th scope="col">{{__('We Accept')}}</th>
                                         <th scope="col">{{__('Header logo')}}</th>
@@ -35,7 +34,6 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$s->contact_no}}</td>
-                                        <td>{{$s->address}}</td>
                                         <td>{{$s->email_address}}</td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->we_accept)}}" alt=""></td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->header_logo)}}" alt=""></td>
@@ -57,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-            
+
         </div>
     </section>
     <!-- Bordered table end -->

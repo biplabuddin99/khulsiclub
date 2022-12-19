@@ -50,7 +50,7 @@
         <div class="col-sm-4 text-center d-flex">
           <img
             class="img-fluid logo"
-            src="{{ asset('img/khulsi_club_logo.png')}}"
+            src="{{asset('uploads/settings/'.$setting->header_logo)}}"
             alt="khulsi_club"
           />
           <!-- Logo end -->
@@ -529,7 +529,27 @@
         <div class="container">
           <h4 class="pt-5">Gallery</h4>
           <div class="row justify-content-center pb-5">
+            @forelse ($pgallery_cat as $p)
             <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="card rounded-4 shadow mb-3">
+                  <img src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
+                  <div class="heading">
+                    <h4>{{$p->name}}</h4>
+                  </div>
+                </div>
+              </div>
+            @empty
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="card rounded-4 shadow mb-3">
+                  <img src="{{ asset('img/slider1.png')}}" alt="" />
+                  <div class="heading">
+                    <h4>AGE -2021</h4>
+                  </div>
+                </div>
+              </div>
+            @endforelse
+
+            {{-- <div class="col-sm-6 col-md-4 col-lg-4">
               <div class="card rounded-4 shadow mb-3">
                 <img src="{{ asset('img/slider1.png')}}" alt="" />
                 <div class="heading">
@@ -560,15 +580,7 @@
                   <h4>AGE -2021</h4>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4">
-              <div class="card rounded-4 shadow mb-3">
-                <img src="{{ asset('img/slider1.png')}}" alt="" />
-                <div class="heading">
-                  <h4>AGE -2021</h4>
-                </div>
-              </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -596,13 +608,13 @@
         <div class="row">
           <div class="col-sm-4 d-flex justify-content-center">
             <i class="bi bi-headset"></i>
-            <p>HAVE QUESTIONS? ASK A SPECIALIST</p>
+            <p>{{ $setting->footer_top_p1_text }}</p>
           </div>
           <div class="col-sm-4">
-            <p id="support-number">16488</p>
+            <p id="support-number">{{ $setting->footer_top_p2_text }}</p>
           </div>
           <div class="col-sm-4">
-            <p>6 DAYS A WEEK FROM 10:00 AM TO 6:00PM</p>
+            <p>{{ $setting->footer_top_p3_text }}</p>
           </div>
         </div>
       </div>
@@ -613,7 +625,7 @@
       <div class="footer">
         <div class="container">
           <div class="footer-logo">
-            <img src="{{ asset('img/khulsi_club_logo.png')}}" alt="" />
+            <img src="{{asset('uploads/settings/'.$setting->footer_logo)}}" alt="" />
           </div>
           <div class="row footer-nav">
             <div class="col-sm-4">
@@ -622,16 +634,16 @@
                 <span
                   ><i class="bi bi-geo-alt-fill"></i>
                   <p>
-                    s BDBL Bhaban (Level 5 - West), 12 Kawran Bazar, Dhaka -1215
+                    {{ $setting->address }}
                   </p>
                 </span>
                 <span>
                   <i class="bi bi-telephone-fill"></i>
-                  <p>16247</p>
+                  <p>{{ $setting->contact_no }}</p>
                 </span>
                 <span>
                   <i class="bi bi-envelope-fill"></i>
-                  <p>khulsiclaub@khulsiclub.com</p>
+                  <p>{{ $setting->email_address }}</p>
                 </span>
               </div>
             </div>
@@ -639,10 +651,11 @@
             <div class="col-sm-4 justify-content-end">
               <h6>Connet With Us</h6>
               <div class="social-icon">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-twitter"></i>
-                <i class="bi bi-linkedin"></i>
-                <i class="bi bi-youtube"></i>
+                <a href="{{ $setting->facebook_link }}"><i class="bi bi-facebook"></i></a>
+                <a href="{{ $setting->twitter_link }}"><i class="bi bi-twitter"></i></a>
+                <a href="{{ $setting->linkdin_link }}"><i class="bi bi-linkedin"></i></a>
+                <a href="{{ $setting->youtube_link }}"><i class="bi bi-youtube"></i></a>
+
               </div>
             </div>
           </div>
