@@ -42,7 +42,7 @@ class PhotoGallaryCategoryController extends Controller
             $pgc=new photoGallaryCategory;
 
             $pgc->name=$request->name;
-            $pgc->status=0;
+            $pgc->status=$request->status;
             if($request->hasFile('feature_image')){
                 $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
                 $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);
@@ -101,7 +101,7 @@ class PhotoGallaryCategoryController extends Controller
         try{
             $pgc=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
             $pgc->name=$request->name;
-            $pgc->status=0;
+            $pgc->status=$request->status;
             if($request->hasFile('feature_image')){
                 $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
                 $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);

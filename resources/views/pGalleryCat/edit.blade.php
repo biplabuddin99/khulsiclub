@@ -31,6 +31,16 @@
                                               placeholder="feature image" name="feature_image">
                                       </div>
                                   </div>
+                                  <div class="col-md-6 col-12">
+                                      <div class="form-group">
+                                          <label for="date">{{__('Status')}}</label>
+                                          <select class="form-control form-select" name="status">
+                                            <option value="">Select Status</option>
+                                                <option value="0" {{ old('status',$pGalleryCat->status)=="0"?"selected":""}}>Inactive</option>
+                                                <option value="1" {{ old('status',$pGalleryCat->status)=="1"?"selected":""}}>Active</option>
+                                        </select>
+                                      </div>
+                                  </div>
                                   
                                   <div class="col-12 d-flex justify-content-end">
                                   <img width="80px" height="40px" class="float-first" src="{{asset('uploads/pGcategory/'.$pGalleryCat->feature_image)}}" alt="">

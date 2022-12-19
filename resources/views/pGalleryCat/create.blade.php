@@ -30,6 +30,16 @@
                                               placeholder="feature image" name="feature_image">
                                       </div>
                                   </div>
+                                  <div class="col-md-6 col-12">
+                                      <div class="form-group">
+                                          <label for="date">{{__('Status')}}</label>
+                                          <select class="form-control form-select" value="{{ old('status')}}" name="status">
+                                            <option value="">Select Status</option>
+                                                <option value="0">Inactive</option>
+                                                <option value="1">Active</option>
+                                        </select>
+                                      </div>
+                                  </div>
                                   
                                   <div class="col-12 d-flex justify-content-end">
                                       <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
