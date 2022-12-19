@@ -20,6 +20,7 @@
                                             <label for="Picture">Image</label>
                                             <input type="file" id="Picture" class="form-control"
                                                 placeholder="Picture" name="Picture">
+                                                <span class="text-danger">(Max With/Height: 900px * 600px)</span>
                                                 @if($errors->has('Picture'))
                                                     <span class="text-danger"> {{ $errors->first('Picture') }}</span>
                                                 @endif

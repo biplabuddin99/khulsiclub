@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facilities;
 use App\Models\Frontend;
+use App\Models\Notice;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -14,7 +17,10 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $slider=Slider::get();
+        $notice=Notice::get();
+        $facilities=Facilities::get();
+        return view('frontend.index',compact('slider','notice','facilities'));
     }
 
     /**

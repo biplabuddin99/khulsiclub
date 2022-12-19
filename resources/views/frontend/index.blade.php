@@ -152,7 +152,25 @@
           ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+            @forelse ($slider as $slide)
+              <div class="carousel-item active">
+                    <img
+                    src="{{asset('uploads/Slide_image/'.$slide->image)}}"
+                    class="d-block w-100 slider-img"
+                    alt="..."
+                    />
+              </div>
+            @empty
+            <div class="carousel-item active">
+              <img
+                src="{{ asset('img/slider2.jpg')}}"
+                class="d-block w-100 slider-img"
+                alt="..."
+              />
+            </div>
+
+            @endforelse
+          {{-- <div class="carousel-item">
             <img
               src="{{ asset('img/slider2.jpg')}}"
               class="d-block w-100 slider-img"
@@ -165,14 +183,7 @@
               class="d-block w-100 slider-img"
               alt="..."
             />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="{{ asset('img/slider2.jpg')}}"
-              class="d-block w-100 slider-img"
-              alt="..."
-            />
-          </div>
+          </div> --}}
         </div>
         <button
           class="carousel-control-prev"
@@ -275,7 +286,26 @@
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
+                @forelse ($notice as $notic)
+
                 <div class="carousel-item active">
+                    <img
+                      src="{{asset('uploads/notice_image/'.$notic->image)}}"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                @empty
+                <div class="carousel-item active">
+                    <img
+                      src="{{ asset('img/slider-3-2.jpg')}}"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                @endforelse
+
+                {{-- <div class="carousel-item">
                   <img
                     src="{{ asset('img/slider-3-2.jpg')}}"
                     class="d-block w-100"
@@ -288,14 +318,7 @@
                     class="d-block w-100"
                     alt="..."
                   />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="{{ asset('img/slider-3-2.jpg')}}"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
+                </div> --}}
               </div>
               <button
                 class="carousel-control-prev"
@@ -333,7 +356,29 @@
             </div>
             <hr />
             <div>
-              <div class="d-flex">
+                @forelse ($notice as $n)
+
+                <div class="d-flex">
+                    <span class="material-symbols-outlined me-2">
+                      arrow_forward
+                    </span>
+                    <p>
+                        {{$n->title}}
+                    </p>
+                  </div>
+                @empty
+                <div class="d-flex">
+                    <span class="material-symbols-outlined me-2">
+                      arrow_forward
+                    </span>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolores, numquam?
+                    </p>
+                  </div>
+                @endforelse
+
+              {{-- <div class="d-flex">
                 <span class="material-symbols-outlined me-2">
                   arrow_forward
                 </span>
@@ -368,16 +413,7 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Dolores, numquam?
                 </p>
-              </div>
-              <div class="d-flex">
-                <span class="material-symbols-outlined me-2">
-                  arrow_forward
-                </span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolores, numquam?
-                </p>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
@@ -390,11 +426,19 @@
         <div class="container my-4">
           <h4>Facilities</h4>
           <div class="row justify-content-center">
+            @forelse ($facilities as $fac)
             <div class="col-sm-4 col-md-3 col-lg-2">
-              <img src="{{ asset('img/fasi.jpg')}}" alt="" />
-              <p>Restaurent</p>
+                <img src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
+                <p>{{$fac->title}}</p>
             </div>
-            <div class="col-sm-4 col-md-3 col-lg-2">
+            @empty
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                    <img src="{{ asset('img/fasi.jpg')}}" alt="" />
+                    <p>Restaurent</p>
+                </div>
+            @endforelse
+
+            {{-- <div class="col-sm-4 col-md-3 col-lg-2">
               <img src="{{ asset('img/fasi.jpg')}}" alt="" />
               <p>restaurent</p>
             </div>
@@ -417,7 +461,7 @@
             <div class="col-sm-4 col-md-3 col-lg-2">
               <img src="{{ asset('img/fasi.jpg')}}" alt="" />
               <p>Restaurent</p>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>

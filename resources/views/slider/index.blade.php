@@ -34,7 +34,7 @@
                             @forelse($sliders as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td><img width="50px" src="{{asset('uploads/Slide_image/'.$p->image)}}" alt=""></td>
+                                <td><img width="100px" src="{{asset('uploads/Slide_image/'.$p->image)}}" alt=""></td>
                                 <td>{{$p->link}}</td>
                                 <td>{{$p->short_title}}</td>
                                 <td>{{$p->long_title}}</td>
