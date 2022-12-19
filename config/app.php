@@ -55,7 +55,7 @@ return [
 
     'url' => env('APP_URL', "http://localhost"),
 
-    'asset_url' => env('ASSET_URL', "http://localhost/mtladmin/").'/public',
+    'asset_url' => env('ASSET_URL', "http://localhost/khulsiclub/").'/public',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Dhaka',
 
     /*
     |--------------------------------------------------------------------------

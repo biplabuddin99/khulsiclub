@@ -115,6 +115,7 @@ class OurMemberController extends Controller
             $member->occupation5=$request->occupation5;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
+            $member->status=1;
             if($member->save()){
             Toastr::success('our Member Create Successfully!');
             return redirect()->route(currentUser().'.ourMember.index');

@@ -76,6 +76,7 @@ return new class extends Migration
             $table->string('occupation5')->nullable();
             $table->string('proposed_name')->nullable();
             $table->string('membership_no')->nullable();
+            $table->integer('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

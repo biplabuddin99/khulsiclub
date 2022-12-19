@@ -411,7 +411,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group ms-5">
-                                            <label for="occupationSpouse">2)Pccupation of Spouse:</label>
+                                            <label for="occupationSpouse">2)Occupation of Spouse:</label>
                                             <input type="text" id="occupationSpouse" class="form-control" name="occupationSpouse">
                                                 @if($errors->has('occupationSpouse'))
                                                     <span class="text-danger"> {{ $errors->first('occupationSpouse') }}</span>
@@ -421,7 +421,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
-                                        <label for="detailschildresns" class="mt-3">15. Details of Childresns:(Must be Added with Birth Certificate copy):</label>
+                                        <label for="detailschildresns" class="mt-3">15. Details of Children:(Must be Added with Birth Certificate copy):</label>
                                         <table class="table mb-5">
                                             <thead>
                                                 <tr class="bg-primary text-white text-center">
@@ -603,5 +603,4 @@
         </div>
     </section>
     <!-- // Basic multiple Column Form section end -->
-</div>
 @endsection

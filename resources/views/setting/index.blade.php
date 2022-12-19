@@ -11,10 +11,15 @@
         <div class="row" id="table-bordered">
             <div class="col-12">
                 <div class="card">
+                    @if(!$settings)
+                    <div>
+                        <a class="float-end" href="{{route(currentUser().'.settings.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+                    </div>
+                    @endif
+                    
                         <!-- table bordered -->
                         <div class="table-responsive">
                             <table class="table table-bordered mb-0">
-                            <a class="float-end" href="{{route(currentUser().'.settings.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>

@@ -46,7 +46,9 @@ Route::get('/admin', [auth::class,'signInForm'])->name('signIn');
 Route::get('/login', [auth::class,'signInForm'])->name('login');
 Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
-
+Route::get('/registration', [front::class,'mem_regi'])->name('member.registration');
+Route::post('/registration/save', [front::class,'mem_regi_store'])->name('member.registration.store');
+Route::get('/registration/success/{id}', [front::class,'mem_regi_success'])->name('member.registration.success');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
