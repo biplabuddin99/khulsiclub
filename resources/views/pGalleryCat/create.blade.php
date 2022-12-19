@@ -12,10 +12,9 @@
                       <div class="card-body">
                           <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.pGalleryCat.store')}}">
                               @csrf
-                              <div class="row">
-                                  <div class="col-md-6 col-12">
-                                      <div class="form-group">
-                                          <label for="name">{{__('Name')}}</label>
+                                  <div class="row mb-3">
+                                      <label for="name" class="col-sm-2 offset-1 col-form-label">{{__('Name')}}</label>
+                                      <div class="col-sm-6 offset-1">
                                           <input type="text" id="name" value="{{ old('name')}}" class="form-control"
                                               placeholder="Category Name" name="name">
                                       </div>
@@ -23,16 +22,16 @@
                                       <span class="text-danger"> {{ $errors->first('category') }}</span>
                                       @endif
                                   </div>
-                                  <div class="col-md-6 col-12">
-                                      <div class="form-group">
-                                          <label for="image">{{__('Feature Image')}}</label>
+                                  <div class="row mb-3">
+                                      <label for="image" class="col-sm-2 offset-1 col-form-label">{{__('Feature Image')}}</label>
+                                      <div class="col-sm-6 offset-1">
                                           <input type="file" id="feature_image" class="form-control"
                                               placeholder="feature image" name="feature_image">
                                       </div>
                                   </div>
-                                  <div class="col-md-6 col-12">
-                                      <div class="form-group">
-                                          <label for="date">{{__('Status')}}</label>
+                                  <div class="row mb-3">
+                                      <label for="date" class="col-sm-2 offset-1 col-form-label">{{__('Status')}}</label>
+                                      <div class="col-sm-6 offset-1">
                                           <select class="form-control form-select" value="{{ old('status')}}" name="status">
                                             <option value="">Select Status</option>
                                                 <option value="0">Inactive</option>
@@ -41,11 +40,10 @@
                                       </div>
                                   </div>
                                   
-                                  <div class="col-12 d-flex justify-content-end">
+                                  <div class="col-8 offset-2 d-flex justify-content-end">
                                       <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
                                       
                                   </div>
-                              </div>
                           </form>
                       </div>
                   </div>
