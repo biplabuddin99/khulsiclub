@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\photoGallary;
+use App\Models\setting;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
-class PhotoGallaryController extends Controller
+class SettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class PhotoGallaryController extends Controller
      */
     public function index()
     {
-        $pGallery=photoGallary::paginate(10);
-        return view('pGallery.index',compact('pGallery'));
+        $settings=setting::paginate(10);
+        return view('settings.index',compact('settings'));
     }
 
     /**
@@ -27,7 +27,7 @@ class PhotoGallaryController extends Controller
      */
     public function create()
     {
-        return view('pGallery.create');
+        return view('settings.create');
     }
 
     /**
@@ -38,8 +38,9 @@ class PhotoGallaryController extends Controller
      */
     public function store(Request $request)
     {
+        
         try{
-            $pgc=new photoGallary;
+            $pgc=new setting;
 
             $pgc->Caption=$request->Caption;
             $pgc->publish_date=$request->publish_date;
@@ -70,10 +71,10 @@ class PhotoGallaryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\photoGallary  $photoGallary
+     * @param  \App\Models\setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function show(photoGallary $photoGallary)
+    public function show(setting $setting)
     {
         //
     }
@@ -81,60 +82,33 @@ class PhotoGallaryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\photoGallary  $photoGallary
+     * @param  \App\Models\setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(setting $setting)
     {
-        $pGallery=photoGallary::findOrFail(encryptor('decrypt',$id));
-        return view('pGallery.edit',compact('pGallery'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\photoGallary  $photoGallary
+     * @param  \App\Models\setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, setting $setting)
     {
-        try{
-            $pgc= photoGallary::findOrFail(encryptor('decrypt',$id));
-
-            $pgc->Caption=$request->Caption;
-            $pgc->publish_date=$request->publish_date;
-            $pgc->unpublish_date=$request->unpublish_date;
-            $pgc->status=$request->status;
-            if($request->hasFile('feature_image')){
-                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
-                $request->feature_image->move(public_path('uploads/pGgallery'), $feature_image);
-                $pgc->feature_image=$feature_image;
-            }
-            if($pgc->save()){
-            Toastr::success('Photo Gallery Updated Successfully!');
-            return redirect()->route(currentUser().'.pGallery.index');
-            }else{
-            Toastr::success('Please try Again!');
-            return redirect()->back();
-            }
-
-        }
-        catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
-            return back()->withInput();
-
-        }
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\photoGallary  $photoGallary
+     * @param  \App\Models\setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function destroy(photoGallary $photoGallary)
+    public function destroy(setting $setting)
     {
         //
     }
