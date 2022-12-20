@@ -29,7 +29,7 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
-                <a href="#" class='sidebar-link'> {{__('OUR MEMBERS')}}</a>
+                <a href="#" class='sidebar-link'> {{__('Our Members')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.ourMember.index')}}">{{__('List')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.ourMember.create')}}">{{__('Add New')}}</a></li>
@@ -67,14 +67,14 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
-                <a href="#" class='sidebar-link'> {{__('VideoG Caption')}}</a>
+                <a href="#" class='sidebar-link'> {{__('Video Gallery Caption')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('List')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.vgallery.create')}}">{{__('Add New')}}</a></li>
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
-                <a href="#" class='sidebar-link'> {{__('VideoG Category')}}</a>
+                <a href="#" class='sidebar-link'> {{__('Video Gallery Category')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('List')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.create')}}">{{__('Add New')}}</a></li>
