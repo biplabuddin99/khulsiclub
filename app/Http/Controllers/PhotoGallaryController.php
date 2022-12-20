@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\photoGallary;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class PhotoGallaryController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -45,11 +47,9 @@ class PhotoGallaryController extends Controller
             $pgc->publish_date=$request->publish_date;
             $pgc->unpublish_date=$request->unpublish_date;
             $pgc->status=$request->status;
-            if($request->hasFile('feature_image')){
-                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
-                $request->feature_image->move(public_path('uploads/pGgallery'), $feature_image);
-                $pgc->feature_image=$feature_image;
-            }
+            if($request->has('feature_image'))
+                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
+
             if($pgc->save()){
             Toastr::success('Photo Gallery Create Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');
@@ -106,11 +106,12 @@ class PhotoGallaryController extends Controller
             $pgc->publish_date=$request->publish_date;
             $pgc->unpublish_date=$request->unpublish_date;
             $pgc->status=$request->status;
-            if($request->hasFile('feature_image')){
-                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
-                $request->feature_image->move(public_path('uploads/pGgallery'), $feature_image);
-                $pgc->feature_image=$feature_image;
-            }
+            
+            $path='uploads/pGgallery';
+            if($request->has('feature_image') && $request->feature_image)
+            if($this->deleteImage($pgc->feature_image,$path))
+                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
+            
             if($pgc->save()){
             Toastr::success('Photo Gallery Updated Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');
