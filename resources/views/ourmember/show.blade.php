@@ -145,7 +145,7 @@
             <div class="tbl1">
                 <p style="margin: 0px;">Govt. Reg No: CH-10511/13</p>
                 <p style="margin: 0px;">Sanmar Spring Valley,(2463/A/52),1st floor)</p>
-                <p style="margin: 0px;">Zakir Hossain,Khulsi,Chittagong.</p>
+                <p style="margin: 0px;">Zakir Hossain,Khulshi,Chittagong.</p>
                 <p style="margin: 0px;">Tell:03-657221,2550131</p>
             </div>
             <div class="pbox">
