@@ -25,17 +25,17 @@
         }
         .gfg2 {
             border-collapse:separate;
-            border-spacing:0 30px;
+            border-spacing:0 40px;
             }
 
         .gfg3 {
             border-collapse:separate;
-            border-spacing:0 20px;
+            border-spacing:0 25px;
         }
 
         .gfg4 {
             border-collapse:separate;
-            border-spacing:0 10px;
+            border-spacing:0 15px;
         }
         .dtable,td, th{
 
@@ -45,19 +45,20 @@
         .photo{
 
             margin: auto;
-            padding-top: 2.3rem;
+            padding-top: 3rem;
 
 
         }
         .pdiv{
             position: relative;
             background-color: rgba(53, 123, 189, 0.6);
-            padding: 10px;
+            padding: 20px 12px 20px 12px;
+
 
         }
         .pbox{
             width: 120px;
-            height: 114px;
+            height: 134px;
             border-style: solid;
             border-radius: 1rem;
             border-width: 2px;
@@ -154,17 +155,17 @@
         <div style="margin-top: 3rem; margin-bottom: 3rem;">
             <p>Form Number:</p>
         </div>
-        <div>
+        <div style="margin-top: 1rem; margin-bottom: 1rem;">
             <p style="margin: 0px;">To</p>
             <p style="margin: 0px;"><b>The Founder President/Founder Vice President</b></p>
             <p style="margin: 0px;">Chittagong Khulshi Club Ltd</p>
             <p style="margin: 0px;">Chittagong</p>
         </div>
-        <div style="margin-top: 1rem; margin-bottom: 1rem;">
+        <div style="margin-top: 1rem; margin-bottom: 3rem;">
             <p style="margin: 0px;">Submission For Chittagong Khulsi Club Ltd Membership Form</p>
         </div>
         <form action="">
-            <table class = "gfg" style="margin-bottom: 4rem; width:100%">
+            <table class = "gfg" style="margin-bottom: 5rem; width:100%">
                 <tbody >
                     <tr>
                         <th style="text-align: left; width: 35%;">1.Full Name (Block Capital Letter):</th>
@@ -243,7 +244,7 @@
                 </tr>
 
                 <tr>
-                    <th style="text-align: right; width: 20%;">Bill:</th>
+                    <th style="text-align: right; width: 20%;">Vill:</th>
                     <td ><input type="text" class="sinput" value="{{ $show_data->village }}"></td>
                     <th style="text-align: right;">P.O:</th>
                     <td ><input type="text" class="sinput" value="{{ $show_data->postoffice }}"></td>
@@ -273,8 +274,8 @@
             </table>
             <div>
                 <p>Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
-                    I further declare that the above statement / particulars are correct therfore, request you to become a Donor, Life, Service, Permanent,
-                    Temporary, Corporate,Honorary,Diplomat and Foreign National Member as per constitution of the <b style="color: red;">Chittagong Khulshi Club Ltd</b></p>
+                    I further declare that the above statement / particulars are correct therefore, request you to become a Donor, Life, Service, Permanent,
+                    Temporary, Corporate,Honorable,Diplomatic and Foreign National Member as per constitution of the <b style="color: red;">Chittagong Khulshi Club Ltd</b></p>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tr>
@@ -317,9 +318,9 @@
                 </tbody>
             </table>
             <div>
-                <p>The constitution of club do here by
-                    declare you as the Donor, Life Service, Permanent, Temporary, Corporate, Honorary,
-                    Diplomat and Foreign National Member of the <b style="color: red;">Chittagong Khulshi Club Ltd.</b>
+                <p>The constitution of club do hereby
+                    declare you as the Donor, Life Service, Permanent, Temporary, Corporate, Honorable,
+                    Diplomatic and Foreign National Member of the <b style="color: red;">Chittagong Khulshi Club Ltd.</b>
                     and you Membership No. is<input type="text" class="finput" value="{{ $show_data->member_no }}"></p>
             </div>
             <div>
@@ -438,7 +439,7 @@
                 </div>
             </div>
             <div>
-                <p><b>15.Details of Children:(Must be Added with Birth Certificate copy</b></p>
+                <p><b>15.Details of Children's:(Must be Added with Birth Certificate copy</b></p>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid;">
                 <thead style="padding-top: 10px; padding-bottom: 5px;">
