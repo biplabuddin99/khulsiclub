@@ -328,8 +328,8 @@
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tr>
-                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_president)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
-                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_vicepresident)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder Vice President<br><b>Chittagong Khulsi Club Ltd.</b></p></td>
+                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_president)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder President<br><b>Chittagong Khulshi Club Ltd.</b></p></td>
+                    <td ><img width="100px" src="{{asset('uploads/signature/'.$show_data->signature_founder_vicepresident)}}" alt=""><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Founder Vice President<br><b>Chittagong Khulshi Club Ltd.</b></p></td>
                 </tr>
             </table>
             <div>
@@ -517,7 +517,7 @@
                 </div>
             </div>
             <div>
-                <p><b>17.Proposed by (Any Member of Chittagong Khulsi Club Ltd.):</b></p>
+                <p><b>17.Proposed by (Any Member of Chittagong Khulshi Club Ltd.):</b></p>
             </div>
             <div>
                 <div style="padding-left: 40px;">
