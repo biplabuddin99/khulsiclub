@@ -11,7 +11,7 @@ use App\Models\setting;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-
+use Exception;
 class FrontendController extends Controller
 {
     /**

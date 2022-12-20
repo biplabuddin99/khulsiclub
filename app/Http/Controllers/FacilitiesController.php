@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Facilities;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class FacilitiesController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -41,11 +43,8 @@ class FacilitiesController extends Controller
         try{
             $facilities=new Facilities;
             $facilities->title=$request->title;
-            if($request->hasFile('Picture')){
-                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
-                $request->Picture->move(public_path('uploads/facilities'), $PictureName);
-                $facilities->image=$PictureName;
-            }
+            if($request->has('Picture'))
+            $facilities->image=$this->resizeImage($request->Picture,'uploads/facilities',true,640,360,false);
             $facilities->details=$request->Details;
             $facilities->save();
             Toastr::success('Facilities Create Successfully!');
@@ -94,11 +93,12 @@ class FacilitiesController extends Controller
         try{
             $facilities=Facilities::findOrFail(encryptor('decrypt',$id));
             $facilities->title=$request->title;
-            if($request->hasFile('Picture')){
-                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
-                $request->Picture->move(public_path('uploads/facilities'), $PictureName);
-                $facilities->image=$PictureName;
-            }
+
+            $path='uploads/facilities';
+            if($request->has('Picture') && $request->Picture)
+            if($this->deleteImage($facilities->image,$path))
+            $facilities->image=$this->resizeImage($request->Picture,$path,true,640,360,false);
+
             $facilities->details=$request->Details;
             if($facilities->save()){
                 Toastr::success('Facilities Update Successfully!');
