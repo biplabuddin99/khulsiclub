@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Users List'))
+@section('pageTitle',trans('Our Member List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -13,7 +13,7 @@
                     {!!Session::get('response')['message']!!}
                 @endif
                 <div>
-                    <a class="btn btn-sm btn-primary float-end" href="{{route(currentUser().'.ourMember.create')}}"><i class="bi bi-pencil-square"></i></a>
+                    <a class="float-end" href="{{route(currentUser().'.ourMember.create')}}"><i class="bi bi-plus-square-fill"></i></a>
                 </div>
                 <!-- table bordered -->
                 <div class="table-responsive">

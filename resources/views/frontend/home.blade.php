@@ -30,13 +30,13 @@
             aria-label="Slide 1"
           ></button>
           @endforelse
-          
+
         </div>
         <div class="carousel-inner">
             @forelse ($slider as $slide)
               <div class="carousel-item {{$loop->index==0?'active':''}}">
                     <img
-                    src="{{asset('uploads/Slide_image/'.$slide->image)}}"
+                    src="{{asset('uploads/Slide_image/thumb/'.$slide->image)}}"
                     class="d-block w-100 slider-img"
                     alt="..."
                     />
@@ -176,7 +176,7 @@
                     </p>
                   </div>
                 @endforelse
-                
+
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@
           <div class="row justify-content-center">
             @forelse ($facilities as $fac)
               <div class="col-sm-4 col-md-3 col-lg-2">
-                <img src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
+                <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
                 <p>{{$fac->title}}</p>
               </div>
             @empty
@@ -200,7 +200,7 @@
                 <p>Restaurent</p>
               </div>
             @endforelse
-            
+
           </div>
         </div>
       </div>
@@ -287,7 +287,7 @@
                 </div>
               </div>
             @endforelse
-            
+
           </div>
         </div>
       </div>
@@ -310,3 +310,4 @@
     </section>
     <!-- Member Reg. ends -->
     @endsection
+

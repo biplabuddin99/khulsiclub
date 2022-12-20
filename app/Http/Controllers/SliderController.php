@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class SliderController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -41,11 +43,8 @@ class SliderController extends Controller
     {
         try{
             $slider=new Slider;
-            if($request->hasFile('Picture')){
-                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
-                $request->Picture->move(public_path('uploads/Slide_image'), $PictureName);
-                $slider->image=$PictureName;
-            }
+            if($request->has('Picture'))
+            $slider->image=$this->resizeImage($request->Picture,'uploads/Slide_image',true,900,600,false);
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;
             $slider->long_title=$request->LongTitle;
@@ -99,11 +98,12 @@ class SliderController extends Controller
     {
         try{
             $slider=Slider::findOrFail(encryptor('decrypt',$id));
-            if($request->hasFile('Picture')){
-                $PictureName = rand(111,999).time().'.'.$request->Picture->extension();
-                $request->Picture->move(public_path('uploads/Slide_image'), $PictureName);
-                $slider->image=$PictureName;
-            }
+
+            $path='uploads/Slide_image';
+            if($request->has('Picture') && $request->Picture)
+            if($this->deleteImage($slider->image,$path))
+                $slider->image=$this->resizeImage($request->Picture,$path,true,900,600,false);
+
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;
             $slider->long_title=$request->LongTitle;
