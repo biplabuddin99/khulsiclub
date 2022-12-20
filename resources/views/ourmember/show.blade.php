@@ -162,7 +162,7 @@
             <p style="margin: 0px;">Chittagong</p>
         </div>
         <div style="margin-top: 1rem; margin-bottom: 3rem;">
-            <p style="margin: 0px;">Submission For Chittagong Khulsi Club Ltd Membership Form</p>
+            <p style="margin: 0px;">Submission For Chittagong Khulshi Club Ltd Membership Form</p>
         </div>
         <form action="">
             <table class = "gfg" style="margin-bottom: 5rem; width:100%">
