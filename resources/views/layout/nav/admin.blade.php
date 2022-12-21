@@ -50,7 +50,7 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item">
-                <a href="{{route(currentUser().'.settings.index')}}"> {{__('Settings')}}</a>
+                <a href="{{route(currentUser().'.settings.index')}}"> {{__('Manage Website')}}</a>
             </li>
             <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Notice')}}</a>
