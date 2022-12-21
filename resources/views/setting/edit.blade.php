@@ -120,7 +120,7 @@
                                   </div>
                                   
                                   <div class="col-8 offset-2 d-flex justify-content-end">
-                                      <button type="submit" class="btn btn-primary me-1 mb-1"><b>{{__('Save')}}:</b></button>
+                                      <button type="submit" class="btn btn-primary me-1 mb-1"><b>{{__('Save')}}</b></button>
                                       
                                   </div>
                           </form>

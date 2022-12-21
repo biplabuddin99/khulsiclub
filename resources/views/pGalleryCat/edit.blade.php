@@ -14,7 +14,7 @@
                               @csrf
                               @method('patch')
                                   <div class="row mb-3">
-                                      <label for="name"class="col-sm-2 offset-1 col-form-label">{{__('Name')}}</label>
+                                      <label for="name"class="col-sm-2 offset-1 col-form-label"><b>{{__('Name')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="text" id="name" value="{{ old('name',$pGalleryCat->name)}}" class="form-control"
                                               placeholder="Category Name" name="name">
@@ -24,14 +24,14 @@
                                       @endif
                                   </div>
                                   <div class="row mb-3">
-                                      <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('Feature Image')}}</label>
+                                      <label for="image"class="col-sm-2 offset-1 col-form-label"><b>{{__('Feature Image')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="file" id="feature_image" class="form-control"
                                               placeholder="feature image" name="feature_image">
                                       </div>
                                   </div>
                                   <div class="row mb-3">
-                                      <label for="date"class="col-sm-2 offset-1 col-form-label">{{__('Status')}}</label>
+                                      <label for="date"class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
                                           <select class="form-control form-select" name="status">
                                             <option value="">Select Status</option>
