@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\photoGallaryCategory;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class PhotoGallaryCategoryController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -43,11 +45,9 @@ class PhotoGallaryCategoryController extends Controller
 
             $pgc->name=$request->name;
             $pgc->status=$request->status;
-            if($request->hasFile('feature_image')){
-                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
-                $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);
-                $pgc->feature_image=$feature_image;
-            }
+            if($request->has('feature_image'))
+                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,200,200,false);
+
             if($pgc->save()){
             Toastr::success('Photo Category Create Successfully!');
             return redirect()->route(currentUser().'.pGalleryCat.index');
@@ -102,11 +102,12 @@ class PhotoGallaryCategoryController extends Controller
             $pgc=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
             $pgc->name=$request->name;
             $pgc->status=$request->status;
-            if($request->hasFile('feature_image')){
-                $feature_image = rand(11,99).time().'.'.$request->feature_image->extension();
-                $request->feature_image->move(public_path('uploads/pGcategory'), $feature_image);
-                $pgc->feature_image=$feature_image;
-            }
+
+            $path='uploads/pGcategory';
+            if($request->has('feature_image') && $request->feature_image)
+            if($this->deleteImage($pgc->feature_image,$path))
+                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
+
             if($pgc->save()){
             Toastr::success('Photo Category Updated Successfully!');
             return redirect()->route(currentUser().'.pGalleryCat.index');
