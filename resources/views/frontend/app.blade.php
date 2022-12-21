@@ -51,7 +51,7 @@
         <div class="col-sm-4 text-center d-flex">
           <img
             class="img-fluid logo"
-            src="{{asset('uploads/settings/'.$setting->header_logo)}}"
+            src="{{asset('uploads/settings/'.$setting?->header_logo)}}"
             alt="khulsi_club"
           />
           <!-- Logo end -->
@@ -123,7 +123,7 @@
         </nav>
       </div>
     </header>
-    
+
     @yield('content')
 
     <!--  support -->
@@ -132,13 +132,13 @@
         <div class="row">
           <div class="col-sm-4 d-flex justify-content-center">
             <i class="bi bi-headset"></i>
-            <p>{{ $setting->footer_top_p1_text }}</p>
+            <p>{{ $setting?->footer_top_p1_text }}</p>
           </div>
           <div class="col-sm-4">
-            <p id="support-number">{{ $setting->footer_top_p2_text }}</p>
+            <p id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
           <div class="col-sm-4">
-            <p>{{ $setting->footer_top_p3_text }}</p>
+            <p>{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@
       <div class="footer">
         <div class="container">
           <div class="footer-logo">
-            <img src="{{asset('uploads/settings/'.$setting->footer_logo)}}" alt="" />
+            <img src="{{asset('uploads/settings/'.$setting?->footer_logo)}}" alt="" />
           </div>
           <div class="row footer-nav">
             <div class="col-sm-4">
@@ -158,16 +158,16 @@
                 <span
                   ><i class="bi bi-geo-alt-fill"></i>
                   <p>
-                    {{ $setting->address }}
+                    {{ $setting?->address }}
                   </p>
                 </span>
                 <span>
                   <i class="bi bi-telephone-fill"></i>
-                  <p>{{ $setting->contact_no }}</p>
+                  <p>{{ $setting?->contact_no }}</p>
                 </span>
                 <span>
                   <i class="bi bi-envelope-fill"></i>
-                  <p>{{ $setting->email_address }}</p>
+                  <p>{{ $setting?->email_address }}</p>
                 </span>
               </div>
             </div>
@@ -175,10 +175,10 @@
             <div class="col-sm-4 justify-content-end">
               <h6>Connet With Us</h6>
               <div class="social-icon">
-                <a href="{{ $setting->facebook_link }}"><i class="bi bi-facebook"></i></a>
-                <a href="{{ $setting->twitter_link }}"><i class="bi bi-twitter"></i></a>
-                <a href="{{ $setting->linkdin_link }}"><i class="bi bi-linkedin"></i></a>
-                <a href="{{ $setting->youtube_link }}"><i class="bi bi-youtube"></i></a>
+                <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook"></i></a>
+                <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter"></i></a>
+                <a href="{{ $setting?->linkdin_link }}"><i class="bi bi-linkedin"></i></a>
+                <a href="{{ $setting?->youtube_link }}"><i class="bi bi-youtube"></i></a>
 
               </div>
             </div>

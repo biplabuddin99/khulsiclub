@@ -421,7 +421,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
-                                        <label for="detailschildresns" class="mt-3">15. Details of Children:(Must be Added with Birth Certificate copy):</label>
+                                        <label for="detailschildresns" class="mt-3">15. Details of Childrens:(Must be Added with Birth Certificate copy):</label>
                                         <table class="table mb-5">
                                             <thead>
                                                 <tr class="bg-primary text-white text-center">
