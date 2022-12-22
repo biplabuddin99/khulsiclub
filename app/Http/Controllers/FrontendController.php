@@ -30,6 +30,21 @@ class FrontendController extends Controller
         $facilities=Facilities::get();
         $pgallery_cat=photoGallaryCategory::get();
         $donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
+        // $do=OurMember::all()->groupBy('membership_applied');
+        // if($do){
+        // $do->map(function($group, $key){
+        //     // assign keys so that its meaningful
+        //     if($key == 1) {
+        //        return [
+        //          'membership' => $group->count()
+        //        ];
+               
+        //     }
+        //     //dhhghg
+            
+        //   });
+        //   $don = $do;
+        // }
         return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor'));
     }
 
