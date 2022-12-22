@@ -81,6 +81,13 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Blog Category')}}</a>
+                <ul class="submenu">
+                    <li class="py-1"><a href="{{route(currentUser().'.blogcategory.index')}}">{{__('List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.blogcategory.create')}}">{{__('Add New')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Country')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.country.index')}}">{{__('List')}}</a></li>
