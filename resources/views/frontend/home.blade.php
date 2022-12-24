@@ -74,7 +74,8 @@
     <!-- slider end -->
     <!-- Member Counter -->
     <section class="member-counter container my-5">
-      <div class="row text-center">
+
+      {{--<!-- <div class="row text-center">
         @forelse($donor as $d)
           <div class="col">
             <div class="card p-1 shadow mb-3">
@@ -86,7 +87,68 @@
         @empty
 
         @endforelse
+      </div> -->--}}
+      <div class="row text-center">
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$donor}}</p>
+              <p>Donor Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Service}}</p>
+              <p>Service Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Life}}</p>
+              <p>Life Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Temporary}}</p>
+              <p>Temporary Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p class="counter">{{$Permanent}}</p>
+              <p>Permanent Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Honorary}}</p>
+              <p>Honorary Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Corporate}}</p>
+              <p>Corporate Member</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card p-1 shadow mb-3">
+              <span class="material-icons"> person_add </span>
+              <p>{{$Diplomate}}</p>
+              <p>Diplomate Member</p>
+            </div>
+          </div>
       </div>
+
+
+      
     </section>
     <!-- Member counter end -->
     <!-- Blog slide & Notice Section -->
@@ -310,4 +372,15 @@
     </section>
     <!-- Member Reg. ends -->
     @endsection
+    @push('scripts')
+    <script>
+      $(document).ready(function(){
+          
+        $('.counter').counterUp({
+                    delay: 10,
+                    time: 2000
+                });
+      });
+    </script>
+    @endpush
 
