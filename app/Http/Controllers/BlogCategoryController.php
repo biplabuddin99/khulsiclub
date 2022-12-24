@@ -47,7 +47,7 @@ class BlogCategoryController extends Controller
             $blogcat->feature_image=$this->resizeImage($request->feature_image,'uploads/BlogCategory',true,520,350,false);
             $blogcat->status=$request->status;
             if($blogcat->save()){
-            Toastr::success('Video Blog Create Successfully!');
+            Toastr::success('Blog Category Create Successfully!');
             return redirect()->route(currentUser().'.blogcategory.index');
             }else{
             return redirect()->back();
@@ -79,9 +79,10 @@ class BlogCategoryController extends Controller
      * @param  \App\Models\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogCategory $blogCategory)
+    public function edit($id)
     {
-        //
+        $blogcat=BlogCategory::findOrFail(encryptor('decrypt',$id));
+        return view('blogcategory.edit',compact('blogcat'));
     }
 
     /**
@@ -91,9 +92,28 @@ class BlogCategoryController extends Controller
      * @param  \App\Models\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogCategory $blogCategory)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $blogcat=BlogCategory::findOrFail(encryptor('decrypt',$id));
+            $blogcat->category_name=$request->name;
+            if($request->has('feature_image'))
+            $blogcat->feature_image=$this->resizeImage($request->feature_image,'uploads/BlogCategory',true,520,350,false);
+            $blogcat->status=$request->status;
+            if($blogcat->save()){
+            Toastr::success('Blog Category Updated Successfully!');
+            return redirect()->route(currentUser().'.blogcategory.index');
+            }else{
+            return redirect()->back();
+            Toastr::success('Please try Again!');
+            }
+
+        }
+        catch (Exception $e){
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -102,8 +122,11 @@ class BlogCategoryController extends Controller
      * @param  \App\Models\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogCategory $blogCategory)
+    public function destroy($id)
     {
-        //
+        $blogcat=BlogCategory::findOrFail(encryptor('decrypt',$id));
+        $blogcat->delete();
+        Toastr::warning('BlogCat Deleted Permanently!');
+        return redirect()->back();
     }
 }

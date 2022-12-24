@@ -10,13 +10,13 @@
               <div class="card">
                   <div class="card-content">
                       <div class="card-body">
-                          <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.blogcategory.update',encryptor('encrypt',$pGalleryCat->id))}}">
+                          <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.blogcategory.update',encryptor('encrypt',$blogcat->id))}}">
                               @csrf
                               @method('patch')
                                   <div class="row mb-3">
                                       <label for="name"class="col-sm-2 offset-1 col-form-label"><b>{{__('Name')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
-                                          <input type="text" id="name" value="{{ old('name',$pGalleryCat->name)}}" class="form-control"
+                                          <input type="text" id="name" value="{{ old('name',$blogcat->category_name)}}" class="form-control"
                                               placeholder="Category Name" name="name">
                                       </div>
                                       @if($errors->has('category'))
@@ -35,14 +35,14 @@
                                       <div class="col-sm-6 offset-1">
                                           <select class="form-control form-select" name="status">
                                             <option value="">Select Status</option>
-                                                <option value="0" {{ old('status',$pGalleryCat->status)=="0"?"selected":""}}>Inactive</option>
-                                                <option value="1" {{ old('status',$pGalleryCat->status)=="1"?"selected":""}}>Active</option>
+                                                <option value="0" {{ old('status',$blogcat->status)=="0"?"selected":""}}>Inactive</option>
+                                                <option value="1" {{ old('status',$blogcat->status)=="1"?"selected":""}}>Active</option>
                                         </select>
                                       </div>
                                   </div>
 
                                   <div class="col-8 offset-2 d-flex justify-content-end">
-                                  <img width="80px" height="40px" class="float-first" src="{{asset('uploads/pGcategory/'.$pGalleryCat->feature_image)}}" alt="">
+                                  <img width="80px" height="40px" class="float-first" src="{{asset('uploads/BlogCategory/'.$blogcat->feature_image)}}" alt="">
                                       <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
 
                                   </div>
