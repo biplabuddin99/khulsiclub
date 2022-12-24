@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\tag;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class TagController extends Controller
 {
@@ -14,7 +16,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tag=tag::paginate(10);
+        return view('tag.index',compact('tag'));
     }
 
     /**
@@ -24,7 +27,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('tag.create');
     }
 
     /**
@@ -35,7 +38,26 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $tag=new tag;
+
+            $tag->tag_name=$request->tag;
+
+            if($tag->save()){
+            Toastr::success('Tag Create Successfully!');
+            return redirect()->route(currentUser().'.tag.index');
+            }else{
+            Toastr::success('Please try Again!');
+            return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::success('Please try Again!');
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
@@ -55,9 +77,10 @@ class TagController extends Controller
      * @param  \App\Models\tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(tag $tag)
+    public function edit($id)
     {
-        //
+        $tag = tag::findOrFail(encryptor('decrypt',$id));
+        return view('tag.edit',compact('tag'));
     }
 
     /**
@@ -67,9 +90,28 @@ class TagController extends Controller
      * @param  \App\Models\tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tag $tag)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $tag= tag::findOrFail(encryptor('decrypt',$id));
+
+            $tag->tag_name=$request->tag;
+
+            if($tag->save()){
+            Toastr::success('Tag Updated Successfully!');
+            return redirect()->route(currentUser().'.tag.index');
+            }else{
+            Toastr::success('Please try Again!');
+            return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::success('Please try Again!');
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**

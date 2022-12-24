@@ -19,6 +19,7 @@ use App\Http\Controllers\PhotoGallaryController as pGallery;
 use App\Http\Controllers\VideoGalleryController as vGallery;
 use App\Http\Controllers\VideoGallaryCategoryController as vGalleryCat;
 use App\Http\Controllers\SettingController as settings;
+use App\Http\Controllers\TagController as tag;
 use App\Http\Controllers\BlogCategoryController as blogcat;
 use App\Http\Controllers\BlogController as blog;
 
@@ -71,6 +72,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'admin']);
         Route::resource('pGallery',pGallery::class,['as'=>'admin']);
         Route::resource('settings',settings::class,['as'=>'admin']);
+        Route::resource('tag',tag::class,['as'=>'admin']);
         Route::resource('vgallery',vGallery::class,['as'=>'admin']);
         Route::resource('vgalleryCat',vGalleryCat::class,['as'=>'admin']);
         Route::resource('blogcategory',blogcat::class,['as'=>'admin']);
