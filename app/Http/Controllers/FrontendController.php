@@ -29,7 +29,15 @@ class FrontendController extends Controller
                         })->latest()->limit(12)->get();
         $facilities=Facilities::get();
         $pgallery_cat=photoGallaryCategory::get();
-        $donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
+        //$donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
+        $donor = OurMember::where('membership_applied',1)->count();
+        $Service = OurMember::where('membership_applied',2)->count();
+        $Life = OurMember::where('membership_applied',3)->count();
+        $Temporary = OurMember::where('membership_applied',4)->count();
+        $Permanent = OurMember::where('membership_applied',5)->count();
+        $Honorary = OurMember::where('membership_applied',6)->count();
+        $Corporate = OurMember::where('membership_applied',7)->count();
+        $Diplomate = OurMember::where('membership_applied',7)->count();
         // $do=OurMember::all()->groupBy('membership_applied');
         // if($do){
         // $do->map(function($group, $key){
@@ -45,7 +53,7 @@ class FrontendController extends Controller
         //   });
         //   $don = $do;
         // }
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor'));
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate'));
     }
 
     /**
