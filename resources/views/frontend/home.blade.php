@@ -120,7 +120,7 @@
           <div class="col">
             <div class="card p-1 shadow mb-3">
               <span class="material-icons"> person_add </span>
-              <p>{{$Permanent}}</p>
+              <p class="counter">{{$Permanent}}</p>
               <p>Permanent Member</p>
             </div>
           </div>
@@ -372,4 +372,15 @@
     </section>
     <!-- Member Reg. ends -->
     @endsection
+    @push('scripts')
+    <script>
+      $(document).ready(function(){
+          
+        $('.counter').counterUp({
+                    delay: 10,
+                    time: 2000
+                });
+      });
+    </script>
+    @endpush
 
