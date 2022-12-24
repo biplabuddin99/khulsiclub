@@ -23,19 +23,27 @@
                                         <th scope="col">{{__('Description')}}</th>
                                         <th scope="col">{{__('Author Name')}}</th>
                                         <th scope="col">{{__('Publish Date')}}</th>
-                                        <th scope="col">{{__('Unpublish Date')}}</th>
-                                        <th scope="col">{{__('Feature Image')}}</th>
-                                        <th scope="col">{{__('Status')}}</th>
+                                        {{-- <th scope="col">{{__('Status')}}</th> --}}
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($blog as $b)
-
+                                    <tr class="text-center">
+                                    <th scope="row">{{ ++$loop->index }}</th>
+                                        <td>{{$b->blog_category?->category_name}}</td>
+                                        <td>{{$b->title}}</td>
+                                        <td>{{$b->description}}</td>
+                                        <td>{{$b->author_name}}</td>
+                                        <td>{{$b->published_date}}</td>
+                                        {{-- <td>{{ $b->status == 1?"Active":"Inactive" }}</td> --}}
+                                        <td class="white-space-nowrap">
+                                            <a class="ebutton" href="{{route(currentUser().'.blog.edit',encryptor('encrypt',$b->id))}}">Edit</a>
+                                        </td>
                                     </tr>
                                     @empty
                                     <tr>
-                                        <th colspan="6" class="text-center">No Data Found</th>
+                                        <th colspan="7" class="text-center">No Data Found</th>
                                     </tr>
                                     @endforelse
                                 </tbody>

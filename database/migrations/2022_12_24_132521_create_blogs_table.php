@@ -19,13 +19,14 @@ return new class extends Migration
             $table->foreign('blog_category_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->string('title');
             $table->longText('description');
-            $table->string('tag')->nullable();
+            $table->string('tag_id')->nullable();
             $table->string('author_name')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->date('published_date');
             $table->date('unpublished_date')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
