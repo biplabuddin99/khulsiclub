@@ -43,12 +43,9 @@
       <!-- Logo Section -->
       <div class="row">
         <div id="scroll-hide1" class="col-sm-4 mt-3 mobile-device">
-          <div class="d-flex">
-            <span class="material-symbols-outlined"> search </span><p>Search</p>
-          </div>
+          
         </div>
         <div class="col-sm-4 text-center d-flex">
-          <!-- <img class="img-fluid logo" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="khulsi_club"/> -->
           <!-- Logo end -->
           <div class="mobile-device-icon pt-3 m-auto">
             <div class="dropdown">
@@ -57,12 +54,10 @@
                 <span class="material-symbols-outlined"> menu </span>
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Member Login</a></li>
+                <li><a class="dropdown-item" href="#">Become a Member</a></li>
               </ul>
             </div>
-            <!-- <span class="material-symbols-outlined"> menu </span> -->
           </div>
         </div>
         <div class="col-sm-4 mt-2 mobile-device" id="scroll-hide2">
@@ -78,32 +73,36 @@
       <!-- navigation -->
       <div class="row">
         <div class="mt-2 mobile-device">
-          <nav id="nav" class="navbar navbar-expand-lg bg-light p-2 rounded-3 shadow">
             <div class="container-fluid">
-              <div class="col-sm-2 ">
-                <img class="img-fluid logo" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="khulsi_club"/>
-              </div>
-              <div id="nav-text" class="col-sm-8 m-auto">
-                <ul class="navbar-nav text-center">
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Club Facilities</a></li>
-                  <li class="nav-item"><a class="nav-link">Members</a></li>
-                  <li class="nav-item"><a class="nav-link">Publications</a></li>
-                  <li class="nav-item"><a class="nav-link">Media</a></li>
-                  <li class="nav-item"><a class="nav-link">Contact Us</a></li>
-                </ul>
-              </div>
-              <div id="scroll-hide1" class="col-sm-2 mt-3 mobile-device  justify-content-end">
-                <div class="d-flex">
-                  <span class="material-symbols-outlined text-secondary"><i class="bi bi-search"></i></span>
-                  <span class="material-symbols-outlined text-primary"><i class="bi bi-facebook"></i></span>
-                  <span class="material-symbols-outlined"><i class="bi bi-twitter"></i></span>
-                  <span class="material-symbols-outlined"><i class="bi bi-instagram"></i></span>
+              <div class="row">
+                <div class="col-sm-2">
+                  <img class="img-fluid logo w-100" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="khulsi_club"/>
+                </div>
+                <div class="col-sm-10 ms-auto">
+                  <nav id="nav" class="navbar navbar-expand-lg bg-light p-2 rounded-3 shadow">
+                    <div id="nav-text" class="ms-auto">
+                      <ul class="navbar-nav text-center ms-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Club Facilities</a></li>
+                        <li class="nav-item"><a class="nav-link">Members</a></li>
+                        <li class="nav-item"><a class="nav-link">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link">Media</a></li>
+                        <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+                      </ul>
+                    </div>
+                    <div id="scroll-hide1" class="mt-1 mobile-device  justify-content-end">
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined text-secondary"><i class="bi bi-search"></i></span>
+                        <span class="material-symbols-outlined text-primary"><i class="bi bi-facebook"></i></span>
+                        <span class="material-symbols-outlined"><i class="bi bi-instagram"></i></span>
+                        <span class="material-symbols-outlined"><i class="bi bi-twitter"></i></span>
+                      </div>
+                    </div>
+                  </nav>
                 </div>
               </div>
             </div>
-          </nav>
         </div>
       </div>
     </header>
