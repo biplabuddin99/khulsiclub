@@ -250,7 +250,7 @@
       <div class="facilities text-center py-5">
         <div class="container my-4">
           <h4>Facilities</h4>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center owl-carousel owl-theme">
             @forelse ($facilities as $fac)
               <div class="col-sm-4 col-md-3 col-lg-2">
                 <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
@@ -374,13 +374,19 @@
     @endsection
     @push('scripts')
     <script>
-      $(document).ready(function(){
+      // $(document).ready(function(){
           
-        $('.counter').counterUp({
-                    delay: 10,
-                    time: 2000
-                });
-      });
+      //   $('.counter').counterUp({
+      //               delay: 10,
+      //               time: 2000
+      //           });
+      // });
+
+      $(document).ready(function() {
+ 
+        $(".owl-carousel").owlCarousel();
+
+        });
     </script>
     @endpush
 
