@@ -74,20 +74,6 @@
     <!-- slider end -->
     <!-- Member Counter -->
     <section class="member-counter container my-5">
-
-      {{--<!-- <div class="row text-center">
-        @forelse($donor as $d)
-          <div class="col">
-            <div class="card p-1 shadow mb-3">
-              <span class="material-icons"> person_add </span>
-              <p>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $d->created_at)->year}}</p>
-              <p>{{$d->full_name}}</p>
-            </div>
-          </div>
-        @empty
-
-        @endforelse
-      </div> -->--}}
       <div class="row text-center">
           <div class="col">
             <div class="card p-1 shadow mb-3">
@@ -250,14 +236,16 @@
       <div class="facilities text-center py-5">
         <div class="container my-4">
           <h4>Facilities</h4>
-          <div class="row justify-content-center owl-carousel owl-theme">
+          <div class="row justify-content-center owl-facilities owl-theme">
             @forelse ($facilities as $fac)
-              <div class="col-sm-4 col-md-3 col-lg-2">
-                <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
-                <p>{{$fac->title}}</p>
+              <div class="col-12 item  d-flex justify-content-center">
+                <figure>
+                  <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
+                  <figcaption>{{$fac->title}}</figcaption>
+                </figure>
               </div>
             @empty
-              <div class="col-sm-4 col-md-3 col-lg-2">
+              <div class="col-12 justify-content-center">
                 <img src="{{ asset('img/fasi.jpg')}}" alt="" />
                 <p>Restaurent</p>
               </div>
@@ -276,8 +264,8 @@
     <!-- OUr Member -->
     <section class="container member pb-5">
       <h4>Our Members</h4>
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-3 col-lg-3">
+      <div class="row justify-content-center owl-member owl-theme">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -288,7 +276,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-sm-4 col-md-3 col-lg-3">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -299,7 +287,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-sm-4 col-md-3 col-lg-3">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -310,7 +298,18 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-sm-4 col-md-3 col-lg-3">
+        <div class="col-12 item">
+          <div class="shadow p-2 rounded-4 mb-3">
+            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
+            <p>Md. Rafique Uddin Babul</p>
+            <p>Chairman</p>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-linkedin"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -329,10 +328,10 @@
       <div class="galler-background">
         <div class="container">
           <h4 class="pt-5">Gallery</h4>
-          <div class="row justify-content-center pb-5">
+          <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
-            <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="card rounded-4 shadow mb-3">
+              <div class="col-12 item bg-transparent">
+                <div class="card rounded-4 shadow mb-3 bg-transparent">
                   <img src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
                   <div class="heading">
                     <h4>{{$p->name}}</h4>
@@ -340,9 +339,9 @@
                 </div>
               </div>
             @empty
-            <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="card rounded-4 shadow mb-3">
-                  <img src="{{ asset('img/slider1.png')}}" alt="" />
+            <div class="col-12 item bg-transparent">
+              <div class="card rounded-4 shadow mb-3 bg-transparent">
+                  <img src="{{ asset('img/galary.pngz')}}" alt="" />
                   <div class="heading">
                     <h4>AGE -2021</h4>
                   </div>
@@ -382,11 +381,47 @@
       //           });
       // });
 
-      $(document).ready(function() {
+     
  
-        $(".owl-carousel").owlCarousel();
+        $('.owl-facilities').owlCarousel({
+          loop:true,
+          autoPlay:true,
+          slideSpeed:1000,
+          margin:10,
+          responsive: true,
+          items : 5,
+          itemsDesktop : [1199,4],
+          itemsDesktopSmall : [980,3],
+          itemsTablet: [768,2],
+          itemsMobile : [479,1]
+        })
 
-        });
+        $('.owl-member').owlCarousel({
+          loop:true,
+          autoPlay:true,
+          slideSpeed:1000,
+          margin:25,
+          responsive: true,
+          items : 4,
+          itemsDesktop : [1199,4],
+          itemsDesktopSmall : [980,3],
+          itemsTablet: [768,2],
+          itemsMobile : [479,1]
+        })
+        $('.owl-gallery').owlCarousel({
+          loop:true,
+          autoPlay:true,
+          slideSpeed:1000,
+          margin:25,
+          responsive: true,
+          items : 4,
+          itemsDesktop : [1199,4],
+          itemsDesktopSmall : [980,3],
+          itemsTablet: [768,2],
+          itemsMobile : [479,1]
+        })
+
+        
     </script>
     @endpush
 
