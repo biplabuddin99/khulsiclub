@@ -49,24 +49,25 @@
               <span class="navbar-toggler-icon"></span>
             </button>
         <div class="row">
-          <div class="col-sm-2 logo-sec">
+          <div class="col-sm-2 col-7 logo-sec">
             <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
           </div>
 
-          <div class="col-sm-10 header-right">
-            <div class="d-flex justify-content-end">
+          <div class="col-sm-10 col-5 header-right">
+            <div class="d-flex justify-content-end d-none d-sm-flex">
               <a id="text-right-dec" href="#">Member Login</a>
               <a href="#">Become a Member</a>
             </div>
             
             <div class="row">
-              <div class="col-sm-8 d-flex justify-content-center" >
+              <div class="col-sm-8 col-12 d-flex justify-content-center" >
+                
                 <nav class="navbar navbar-expand-lg navbar-light">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
                         <a class="nav-link" href="">Home</a>
@@ -89,11 +90,17 @@
                       <li class="nav-item">
                         <a class="nav-link" href="">Contact Us</a>
                       </li>
+                      <li class="nav-item d-flex d-sm-none">
+                        <a class="nav-link" href="">Member Login</a>
+                      </li>
+                      <li class="nav-item d-flex d-sm-none">
+                        <a class="nav-link" href="">Become a Member</a>
+                      </li>
                     </ul>
                   </div>
                 </nav>
               </div>
-              <div class="col-sm-4 d-flex justify-content-end mt-4">
+              <div class="col-sm-4 d-none d-sm-flex d-flex justify-content-end mt-4">
                 <div class="social-icon">
                   <i class="bi bi-facebook"></i>
                   <i class="bi bi-twitter"></i>
