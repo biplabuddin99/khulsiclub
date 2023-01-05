@@ -49,11 +49,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!--OWL CSS-->
+    <!-- Basic stylesheet -->
+    <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css')}}">
+    
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css')}}">
   </head>
   <body>
         <!-- header section -->
-        <header class="bg-white">
+    <header class="bg-white">
       <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
         <div class="row">
           <div class="col-sm-2 logo-sec">
             <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
@@ -64,9 +73,10 @@
               <a id="text-right-dec" href="#">Member Login</a>
               <a href="#">Become a Member</a>
             </div>
+            
             <div class="row">
-              <div class="col-sm-8 d-flex justify-content-center">
-                <div class="navbar navbar-expand-lg">
+              <div class="col-sm-8 d-flex justify-content-center" >
+                <div class="navbar navbar-expand-lg collapse navbar-collapse" id="collapsibleNavbar">
                   <ul class="navbar-nav">
                     <li class="nav-item">
                       <a class="nav-link" href="">Home</a>
@@ -197,5 +207,9 @@
     ></script>
     <!-- My JS -->
     <script src="{{ asset('js/app.js')}}"></script>
+
+    <!-- owl js -->
+    <script src="{{ asset('assets/js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{ asset('owl-carousel/owl.carousel.js')}}"></script>
   </body>
 </html>
