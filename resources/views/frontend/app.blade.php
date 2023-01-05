@@ -35,74 +35,73 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <!-- header section -->
-    <header id="header" class="container bg-light">
-      <!-- header for Desktop -->
-      <!-- Logo Section -->
-      <div class="row">
-        <div id="scroll-hide1" class="col-sm-4 mt-3 mobile-device">
-          
-        </div>
-        <div class="col-sm-4 text-center d-flex">
-          <!-- Logo end -->
-          <div class="mobile-device-icon pt-3 m-auto">
-            <div class="dropdown">
-              <button class="btn dropdown-toggle"
-                type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="material-symbols-outlined"> menu </span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Member Login</a></li>
-                <li><a class="dropdown-item" href="#">Become a Member</a></li>
-              </ul>
-            </div>
+        <!-- header section -->
+        <header class="bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2 logo-sec">
+            <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
           </div>
-        </div>
-        <div class="col-sm-4 mt-2 mobile-device" id="scroll-hide2">
-          <div class="navbar navbar-expand-lg justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a href="" class="nav-link"> Member Login</a></li>
-              <li class="nav-item"><a href="" class="nav-link">Become a Member</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      <!-- navigation -->
-      <div class="row">
-        <div class="mt-2 mobile-device">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-sm-2">
-                  <img class="img-fluid logo w-100" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="khulsi_club"/>
+          <div class="col-sm-10 header-right">
+            <div class="d-flex justify-content-end">
+              <a id="text-right-dec" href="#">Member Login</a>
+              <a href="#">Become a Member</a>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 d-flex justify-content-center">
+                <div class="navbar navbar-expand-lg">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Club Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Members</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Media</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Contact Us</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-sm-10 ms-auto">
-                  <nav id="nav" class="navbar navbar-expand-lg bg-light p-2 rounded-3 shadow">
-                    <div id="nav-text" class="ms-auto">
-                      <ul class="navbar-nav text-center ms-auto">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Club Facilities</a></li>
-                        <li class="nav-item"><a class="nav-link">Members</a></li>
-                        <li class="nav-item"><a class="nav-link">Publications</a></li>
-                        <li class="nav-item"><a class="nav-link">Media</a></li>
-                        <li class="nav-item"><a class="nav-link">Contact Us</a></li>
-                      </ul>
-                    </div>
-                    <div id="scroll-hide1" class="mt-1 mobile-device  justify-content-end">
-                      <div class="d-flex">
-                        <span class="material-symbols-outlined text-secondary"><i class="bi bi-search"></i></span>
-                        <span class="material-symbols-outlined text-primary"><i class="bi bi-facebook"></i></span>
-                        <span class="material-symbols-outlined"><i class="bi bi-instagram"></i></span>
-                        <span class="material-symbols-outlined"><i class="bi bi-twitter"></i></span>
-                      </div>
-                    </div>
-                  </nav>
+              </div>
+              <div class="col-sm-4 d-flex justify-content-end mt-4">
+                <div class="social-icon">
+                  <i class="bi bi-facebook"></i>
+                  <i class="bi bi-twitter"></i>
+                  <i class="bi bi-linkedin"></i>
+                  <i class="bi bi-youtube"></i>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </header>
