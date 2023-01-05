@@ -35,26 +35,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <!--OWL CSS-->
     <!-- Basic stylesheet -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css')}}">
-    
-    <!-- Default Theme -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css')}}">
+    
   </head>
   <body>
         <!-- header section -->
@@ -76,31 +61,37 @@
             
             <div class="row">
               <div class="col-sm-8 d-flex justify-content-center" >
-                <div class="navbar navbar-expand-lg collapse navbar-collapse" id="collapsibleNavbar">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Club Facilities</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Members</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Media</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Club Facilities</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Members</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Publications</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Media</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
               </div>
               <div class="col-sm-4 d-flex justify-content-end mt-4">
                 <div class="social-icon">
@@ -211,5 +202,6 @@
     <!-- owl js -->
     <script src="{{ asset('assets/js/jquery-1.9.1.min.js')}}"></script>
     <script src="{{ asset('owl-carousel/owl.carousel.js')}}"></script>
+    @stack('scripts')
   </body>
 </html>
