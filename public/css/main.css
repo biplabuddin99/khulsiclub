@@ -21,75 +21,31 @@ body {
   text-decoration: none;
   color: #fff;
 }
-.ebutton {
-  background-color: #0cccee; /* Green */
-  border: none;
-  color: white;
-  padding: 5px 50px 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius:20px;
-}
-
-.ebutton:hover {
-  color: #e0ebec;
-}
 .button:hover {
   color: #fff;
 }
 /* header */
-.logo {
-  max-width: 250px;
+.logo-sec img {
+  max-width: 200px;
+  padding: 20px;
+}
+.header-right div:nth-of-type(1) a {
   margin-top: 10px;
-}
-header {
-  margin-top: 30px;
-}
-header div:nth-of-type(1) span {
-  margin-right: 10px;
-  color: var(--red);
-}
-header div:nth-of-type(3) .navbar-nav li a {
-  padding: 0 10px 0 10px;
-  border-right: 2px solid var(--red);
-  height: 25px;
-}
-header div:nth-of-type(3) .navbar-nav li:last-child a {
-  border: none;
-}
-/* nav */
-header div:nth-of-type(2) {
+  text-decoration: none;
+  color: var(--gray);
   font-weight: 400;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 2px solid var(--red);
 }
-/* mobile nav */
-.mobile-device-icon {
-  display: none;
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
+.header-right div:nth-of-type(1) a:last-child {
+  padding-right: 0;
+  margin-right: 0;
+  border-right: none;
 }
-.offnav {
-  position: absolute;
-  left: 0;
-}
-/*  Scrolling nav */
-.scroll {
-  position: sticky;
-  top: 50px;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.699);
-  backdrop-filter: blur(100px);
-}
-/* .scroll-nav {
-  margin-left: 500px;
-} */
 /* slider */
 .carousel-item {
-  height: 500px;
+  height: 720px;
 }
 /* Member Counter */
 .member-counter .card {
@@ -162,7 +118,7 @@ header div:nth-of-type(2) {
   }
   20% {
     left: 100px;
-    bottom: 350px;
+    bottom: 300px;
   }
   40% {
     left: 500px;
@@ -170,7 +126,7 @@ header div:nth-of-type(2) {
   }
   60% {
     left: 1000px;
-    bottom: 350px;
+    bottom: 300px;
   }
   80% {
     left: 0px;
@@ -197,7 +153,7 @@ header div:nth-of-type(2) {
   }
   20% {
     right: 100px;
-    top: 350px;
+    top: 300px;
   }
   40% {
     right: 500px;
@@ -205,7 +161,7 @@ header div:nth-of-type(2) {
   }
   60% {
     right: 1000px;
-    top: 350px;
+    top: 300px;
   }
   80% {
     right: 0px;
@@ -232,7 +188,7 @@ header div:nth-of-type(2) {
   }
   20% {
     right: 200px;
-    top: 350px;
+    top: 300px;
   }
   40% {
     right: 200px;
@@ -240,7 +196,7 @@ header div:nth-of-type(2) {
   }
   60% {
     right: 1000px;
-    top: 350px;
+    top: 300px;
   }
   80% {
     right: 0px;
