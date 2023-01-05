@@ -161,7 +161,9 @@
                 </span>
               </div>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29517.720495069392!2d91.77593198146408!3d22.36438531830408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd9835bc79051%3A0xb69949986154c96c!2sChittagong%20Khulshi%20Club%20Limited!5e0!3m2!1sen!2sbd!4v1672945885992!5m2!1sen!2sbd" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             <div class="col-sm-4 justify-content-end">
               <h6>Connet With Us</h6>
               <div class="social-icon">
