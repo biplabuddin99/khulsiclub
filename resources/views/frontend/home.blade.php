@@ -367,11 +367,11 @@
     </section>
     <!-- Gallery end -->
     <!-- Member Reg. -->
-    <section class="member-reg pt-5">
+    <section class="container-fluid member-reg pt-5">
       <div class="member-reg-backgroud">
         <div class="row">
           <div class="col-sm-6">
-            <h4><span> BECOME A</span> MEMBER</h4>
+            <h4 class="pb-4 pb-sm-0 text-center"><span> BECOME A</span> MEMBER</h4>
           </div>
           <div class="col-sm-6">
             <a class="button" href="{{route('member.registration')}}">Apply Now</a>

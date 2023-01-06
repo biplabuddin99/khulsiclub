@@ -117,15 +117,15 @@ body {
     bottom: 10px;
   }
   20% {
-    left: 100px;
+    left: 10%;
     bottom: 300px;
   }
   40% {
-    left: 500px;
+    left: 50%;
     bottom: 10px;
   }
   60% {
-    left: 1000px;
+    left: 85%;
     bottom: 300px;
   }
   80% {
@@ -152,15 +152,15 @@ body {
     top: 10px;
   }
   20% {
-    right: 100px;
+    right: 10%;
     top: 300px;
   }
   40% {
-    right: 500px;
+    right: 50%;
     top: 10px;
   }
   60% {
-    right: 1000px;
+    right: 85%;
     top: 300px;
   }
   80% {
@@ -183,19 +183,19 @@ body {
 }
 @keyframes facilitics-circle3 {
   0% {
-    right: 100px;
+    right: 10%;
     top: 10px;
   }
   20% {
-    right: 200px;
+    right: 20%;
     top: 300px;
   }
   40% {
-    right: 200px;
+    right: 20%;
     top: 10px;
   }
   60% {
-    right: 1000px;
+    right: 85%;
     top: 300px;
   }
   80% {
@@ -203,7 +203,7 @@ body {
     top: 10px;
   }
   100% {
-    right: 100px;
+    right: 10%;
     top: 10px;
   }
 }
@@ -315,17 +315,17 @@ body {
 }
 /* member reg */
 .member-reg {
-  background-image: url(../img/become-a-member.png);
+  background-image: url(../img/become-a-member.jpg);
   background-size: cover;
   height: 500px;
 }
 .member-reg .member-reg-backgroud {
   position: relative;
   height: 300px;
-  max-width: 1000px;
-  top: 100px;
-  right: 200px;
-  left: 200px;
+  width: 85%;
+  top: 50px;
+  /*right: 200px;
+  left: 200px;*/
   background: linear-gradient(
     99.46deg,
     #fff7f7 23.63%,
@@ -333,6 +333,7 @@ body {
   );
   backdrop-filter: blur(13px);
   border-radius: 16px;
+  margin: 0 auto;
 }
 .member-reg div {
   display: flex;
