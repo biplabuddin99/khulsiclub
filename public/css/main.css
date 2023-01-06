@@ -232,7 +232,7 @@ body {
   padding-top: 50px;
 }
 .member img {
-  border-radius: 30px;
+  /*border-radius: 30px;*/
   max-width: 200px;
 }
 .member p:nth-of-type(1) {
