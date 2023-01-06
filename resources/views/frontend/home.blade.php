@@ -1,7 +1,17 @@
 @extends('frontend.app')
 @section('pageTitle',trans('Home'))
 @section('pageSubTitle',trans('List'))
-
+<style>
+  
+@media screen and (max-width: 575px) {
+  .member .shadow{
+    box-shadow: 0 0 0 rgba(255,255,255,.15)!important;
+  }
+  .owl-controls{
+    display: none !important;
+  }
+}
+  </style>
 @section('content')
     <!-- slider -->
     <section class="slider mt-3">
@@ -265,7 +275,7 @@
     <section class="container member pb-5">
       <h4>Our Members</h4>
       <div class="row justify-content-center owl-member owl-theme">
-        <div class="col-12 item mx-2">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -276,7 +286,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item mx-2">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -287,7 +297,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item mx-2">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -298,7 +308,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item mx-2">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -309,7 +319,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item mx-2">
+        <div class="col-12 item">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
