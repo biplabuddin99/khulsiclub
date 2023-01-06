@@ -1,20 +1,10 @@
 @extends('frontend.app')
 @section('pageTitle',trans('Home'))
 @section('pageSubTitle',trans('List'))
-<style>
-  
-@media screen and (max-width: 575px) {
-  .member .shadow{
-    box-shadow: 0 0 0 rgba(255,255,255,.15)!important;
-  }
-  .owl-controls{
-    display: none !important;
-  }
-}
-  </style>
+
 @section('content')
     <!-- slider -->
-    <section class="slider mt-3">
+    <section class="slider">
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
