@@ -45,9 +45,6 @@
         <!-- header section -->
     <header class="bg-white">
       <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
         <div class="row">
           <div class="col-sm-2 col-7 logo-sec">
             <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
@@ -63,7 +60,7 @@
               <div class="col-sm-8 col-12 d-flex justify-content-center" >
                 
                 <nav class="navbar navbar-expand-lg navbar-light">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler my-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
