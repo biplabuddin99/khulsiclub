@@ -46,8 +46,8 @@
     <header class="bg-white">
       <div class="container">
         <div class="row">
-          <div class="col-sm-2  logo-sec">
-            <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
+          <div class="col-sm-2 col-7  logo-sec">
+            <img class="w-100" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
           </div>
 
           <div class="col-sm-10 col-5 header-right">
@@ -67,7 +67,11 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="">Home
+                          <button class="float-end me-4 d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                            ×
+                          </button>
+                        </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="">About Us</a>
