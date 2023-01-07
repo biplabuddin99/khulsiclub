@@ -507,7 +507,7 @@ footer img {
     padding-top: 5px;
     width: 81%;
     overflow-y: auto;
-    min-height: 100vh;
+    height: 100vh;
   }
   .navbar-collapse{
     position: fixed;
@@ -518,7 +518,7 @@ footer img {
     background: rgba(18, 15, 15, 0.57);
     padding-top: 0px;
     padding-left: 0px;
-    min-height: 100vh;
+    height: 100vh;
   }
   .home-menu-toggle{
     border-radius: 18px;
