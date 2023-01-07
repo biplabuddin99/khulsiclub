@@ -46,7 +46,7 @@
     <header class="bg-white">
       <div class="container">
         <div class="row">
-          <div class="col-sm-2 col-7 logo-sec">
+          <div class="col-sm-2  logo-sec">
             <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
           </div>
 
