@@ -330,9 +330,9 @@
           <h4 class="pt-5">Gallery</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
-              <div class="col-12 item bg-transparent">
-                <div class="card rounded-4 shadow mb-3 bg-transparent">
-                  <img src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
+              <div class="col-12 item bg-transparent pe-2 ps-2">
+                <div class="card rounded-4 shadow mb-3 bg-transparent ">
+                  <img src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
                   <div class="heading">
                     <h4>{{$p->name}}</h4>
                   </div>

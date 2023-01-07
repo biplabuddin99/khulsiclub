@@ -46,7 +46,7 @@ class PhotoGallaryCategoryController extends Controller
             $pgc->name=$request->name;
             $pgc->status=$request->status;
             if($request->has('feature_image'))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,200,200,false);
+                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,700,300,false);
 
             if($pgc->save()){
             Toastr::success('Photo Category Create Successfully!');
@@ -106,7 +106,7 @@ class PhotoGallaryCategoryController extends Controller
             $path='uploads/pGcategory';
             if($request->has('feature_image') && $request->feature_image)
             if($this->deleteImage($pgc->feature_image,$path))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
+                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,700,300,false);
 
             if($pgc->save()){
             Toastr::success('Photo Category Updated Successfully!');
