@@ -51,41 +51,47 @@
           </div>
 
           <div class="col-sm-10 col-5 header-right">
-            <div class="d-flex justify-content-end d-none d-sm-flex">
-              <a id="text-right-dec" href="#">Member Login</a>
+              
+            <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-sm-flex scicon">
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-twitter"></i>
+              <i class="bi bi-linkedin"></i>
+              <i class="bi bi-youtube"></i>
+
+              <a  id="text-right-dec" href="#">Member Login</a>
               <a href="#">Become a Member</a>
             </div>
             
             <div class="row">
-              <div class="col-sm-8 col-12 d-flex justify-content-center" >
+              <div class="col-sm-12 col-12 d-flex justify-content-end " >
                 
                 <nav class="navbar navbar-expand-lg navbar-light">
                   <button class="navbar-toggler my-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="">Home
+                  <div style="margin-top: -13px;" class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav mr-auto ">
+                      <li class="nav-item me-4 ">
+                        <a class="nav-link " href="">Home
                           <button class="float-end me-4 d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                             ×
                           </button>
                         </a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item me-4">
                         <a class="nav-link" href="">About Us</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item me-4">
                         <a class="nav-link" href="">Club Facilities</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item me-4">
                         <a class="nav-link" href="">Members</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item me-4">
                         <a class="nav-link" href="">Publications</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item me-4">
                         <a class="nav-link" href="">Media</a>
                       </li>
                       <li class="nav-item">
@@ -101,14 +107,14 @@
                   </div>
                 </nav>
               </div>
-              <div class="col-sm-4 d-none d-sm-flex d-flex justify-content-end mt-4">
+              <!-- <div class="col-sm-4 d-none d-sm-flex d-flex justify-content-end mt-4">
                 <div class="social-icon">
                   <i class="bi bi-facebook"></i>
                   <i class="bi bi-twitter"></i>
                   <i class="bi bi-linkedin"></i>
                   <i class="bi bi-youtube"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

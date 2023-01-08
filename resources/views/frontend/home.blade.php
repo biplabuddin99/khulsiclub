@@ -76,56 +76,56 @@
     <section class="member-counter container my-5">
       <div class="row text-center">
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$donor}}</p>
               <p>Donor Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Service}}</p>
               <p>Service Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Life}}</p>
               <p>Life Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Temporary}}</p>
               <p>Temporary Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p class="counter">{{$Permanent}}</p>
               <p>Permanent Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Honorary}}</p>
               <p>Honorary Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Corporate}}</p>
               <p>Corporate Member</p>
             </div>
           </div>
           <div class="col">
-            <div class="card p-1 shadow mb-3">
+            <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Diplomate}}</p>
               <p>Diplomate Member</p>
@@ -241,7 +241,7 @@
               <div class="col-12 item  d-flex justify-content-center">
                 <figure>
                   <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
-                  <figcaption>{{$fac->title}}</figcaption>
+                  <p>{{$fac->title}}</p>
                 </figure>
               </div>
             @empty
@@ -265,7 +265,7 @@
     <section class="container member pb-5">
       <h4>Our Members</h4>
       <div class="row justify-content-center owl-member owl-theme">
-        <div class="col-12 item">
+        <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -276,7 +276,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item">
+        <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -287,7 +287,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item">
+        <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -298,7 +298,7 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item">
+        <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -309,8 +309,8 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item">
-          <div class="shadow p-2 rounded-4 mb-3">
+        <div class="col-12 item pe-3 ps-3">
+          <div class="shadow p-2  rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
             <p>Chairman</p>
@@ -325,12 +325,12 @@
     <!-- Our Members end -->
     <!-- Gallery -->
     <section class="gallery">
-      <div class="galler-background">
+      <div class="galler-background py-3">
         <div class="container">
           <h4 class="pt-5">Gallery</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
-              <div class="col-12 item bg-transparent pe-2 ps-2">
+              <div class="col-12 item bg-transparent pe-3 ps-3">
                 <div class="card rounded-4 shadow mb-3 bg-transparent ">
                   <img src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
                   <div class="heading">
@@ -414,7 +414,7 @@
           slideSpeed:1000,
           margin:25,
           responsive: true,
-          items : 4,
+          items : 3,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
           itemsTablet: [768,2],
