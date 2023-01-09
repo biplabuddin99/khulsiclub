@@ -34,8 +34,8 @@ return new class extends Migration
             $table->string('postoffice')->nullable();
             $table->string('upazila')->nullable();
             $table->string('district')->nullable();
-            $table->string('present_address')->nullable();
-            $table->string('office_address')->nullable();
+            $table->text('present_address')->nullable();
+            $table->text('office_address')->nullable();
             $table->string('others_date')->nullable();
             $table->string('signature_applicant')->nullable();
             $table->string('identify_president')->nullable();
@@ -77,9 +77,12 @@ return new class extends Migration
             $table->string('proposed_name')->nullable();
             $table->string('membership_no')->nullable();
             $table->string('image')->nullable();
-            $table->string('show_font')->default(0);
-            $table->string('order_b')->default(0);
-            $table->string('order_b')->default(0);
+            $table->integer('show_font')->default(0)->nullable();
+            $table->integer('order_b')->default(0)->nullable();
+            $table->string('fb_link')->nullable();
+            $table->string('twter_link')->nullable();
+            $table->string('linkdin_link')->nullable();
+            $table->string('youtube_link')->nullable();
             $table->integer('status')->default(0);
             $table->softDeletes();
             $table->timestamps();

@@ -56,10 +56,10 @@
               <i class="bi bi-facebook"></i>
               <i class="bi bi-twitter"></i>
               <i class="bi bi-linkedin"></i>
-              <i class="bi bi-youtube"></i>
+             <i class="bi bi-youtube"></i>
 
               <a  id="text-right-dec" href="#">Member Login</a>
-              <a href="#">Become a Member</a>
+              <a href="#" class="become-member">Become a Member</a>
             </div>
             
             <div class="row">
@@ -71,7 +71,7 @@
                   </button>
                 
                   <div style="margin-top: -13px;" class="collapse navbar-collapse " id="navbarNav">
-                    <ul class="navbar-nav mr-auto ">
+                    <ul class="navbar-nav mr-auto pb-2 ">
                       <li class="nav-item me-4 ">
                         <a class="nav-link " href="">Home
                           <button class="float-end me-4 d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">

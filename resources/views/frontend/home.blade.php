@@ -210,7 +210,7 @@
                       arrow_forward
                     </span>
                     <p>
-                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" style="text-decoration: none; color: #515152;">{{$n->title}}</a>
+                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" style="text-decoration: none; color: #515152; ">{{$n->title}}</a>
                     </p>
                     
                   </div>
