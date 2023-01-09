@@ -38,22 +38,8 @@ class FrontendController extends Controller
         $Honorary = OurMember::where('membership_applied',6)->count();
         $Corporate = OurMember::where('membership_applied',7)->count();
         $Diplomate = OurMember::where('membership_applied',7)->count();
-        // $do=OurMember::all()->groupBy('membership_applied');
-        // if($do){
-        // $do->map(function($group, $key){
-        //     // assign keys so that its meaningful
-        //     if($key == 1) {
-        //        return [
-        //          'membership' => $group->count()
-        //        ];
-               
-        //     }
-        //     //dhhghg
-            
-        //   });
-        //   $don = $do;
-        // }
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate'));
+        $ourMember = OurMember::where('show_font',1)->get();
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember'));
     }
 
     /**

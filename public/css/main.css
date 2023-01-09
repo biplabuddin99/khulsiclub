@@ -66,8 +66,14 @@ body {
     padding-right: 14px !important;
 
 }
+.notice_title{
+  text-decoration: none;
+  color: #515152;
+}
+.notice_title:hover{
+  color: #454575;
+}
 .become-member{
-  
   margin-top: 10px;
   text-decoration: none;
   color: var(--gray);
@@ -76,6 +82,9 @@ body {
   padding-right: 0;
   margin-right: 0;
   border-right: none;
+}
+.become-member:hover{
+  color: #515152;
 }
 /* slider */
 .carousel-item {
@@ -277,6 +286,18 @@ body {
 .member p:nth-of-type(2) {
   color: var(--red);
   margin-bottom: 2px;
+}
+.bi-facebook{
+  color: #3b5998 !important;
+}
+.bi-twitter{
+  color: #00acee !important;
+}
+.bi-linkedin{
+  color: #0072b1 !important;
+}
+.bi-youtube{
+  color: #ff0000 !important;
 }
 .social-icon .bi-facebook,
 .member i:nth-of-type(1) {

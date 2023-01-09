@@ -210,7 +210,7 @@
                       arrow_forward
                     </span>
                     <p>
-                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" style="text-decoration: none; color: #515152; ">{{$n->title}}</a>
+                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
                     </p>
                     
                   </div>
@@ -266,7 +266,20 @@
     <section class="container member pb-5">
       <h4>Our Members</h4>
       <div class="row justify-content-center owl-member owl-theme">
+      @forelse ($ourMember as $member)
         <div class="col-12 item pe-3 ps-3">
+          <div class="shadow p-2 rounded-4 mb-3">
+            <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
+            <p>{{$member->full_name}}</p>
+            <p>{{$member->profession}}</p>
+            <a href="{{$member->fb_link}}" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="{{$member->twter_link}}" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="{{$member->linkdin_link}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="{{$member->youtube_link}}" target="_blank"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      @empty
+      <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
@@ -277,50 +290,8 @@
             <i class="bi bi-youtube"></i>
           </div>
         </div>
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2 rounded-4 mb-3">
-            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-            <p>Md. Rafique Uddin Babul</p>
-            <p>Chairman</p>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-youtube"></i>
-          </div>
-        </div>
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2 rounded-4 mb-3">
-            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-            <p>Md. Rafique Uddin Babul</p>
-            <p>Chairman</p>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-youtube"></i>
-          </div>
-        </div>
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2 rounded-4 mb-3">
-            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-            <p>Md. Rafique Uddin Babul</p>
-            <p>Chairman</p>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-youtube"></i>
-          </div>
-        </div>
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2  rounded-4 mb-3">
-            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-            <p>Md. Rafique Uddin Babul</p>
-            <p>Chairman</p>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-youtube"></i>
-          </div>
-        </div>
+      @endforelse
+        
       </div>
     </section>
     <!-- Our Members end -->

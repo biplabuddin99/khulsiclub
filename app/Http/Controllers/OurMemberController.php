@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\OurMember;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
 class OurMemberController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -115,6 +117,16 @@ class OurMemberController extends Controller
             $member->occupation5=$request->occupation5;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
+
+            if($request->has('image'))
+                $member->image=$this->resizeImage($request->image,'uploads/member_image',true,140,175,false);
+
+            $member->fb_link=$request->fb_link;
+            $member->show_font=0;
+            $member->order_b=0;
+            $member->twter_link=$request->twter_link;
+            $member->linkdin_link=$request->linkdin_link;
+            $member->youtube_link=$request->youtube_link;
             $member->status=1;
             if($member->save()){
             Toastr::success('our Member Create Successfully!');
@@ -244,6 +256,18 @@ class OurMemberController extends Controller
             $member->occupation5=$request->occupation5;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
+
+            $path='uploads/member_image';
+            if($request->has('image') && $request->image)
+            if($this->deleteImage($member->image,$path))
+                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+
+            $member->fb_link=$request->fb_link;
+            $member->show_font=$request->show_font;
+            $member->order_b=$request->order_b;
+            $member->twter_link=$request->twter_link;
+            $member->linkdin_link=$request->linkdin_link;
+            $member->youtube_link=$request->youtube_link;
             if($member->save()){
             Toastr::success('our Member Update Successfully!');
             return redirect()->route(currentUser().'.ourMember.index');

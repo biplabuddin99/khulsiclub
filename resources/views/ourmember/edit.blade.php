@@ -32,7 +32,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <label for="Fathers">2. Father's Name:</label>
-                                            <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers')}}" name="Fathers">
+                                            <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers',$member->father_name)}}" name="Fathers">
                                             @if($errors->has('Fathers'))
                                                 <span class="text-danger"> {{ $errors->first('Fathers',$member->father_name) }}</span>
                                             @endif
@@ -78,6 +78,56 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
+                                                <label for="photo">Photo:</label>
+                                                <input type="file" id="image" class="form-control" name="image">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="show">Show Font:</label>
+                                                    <select class="form-control form-select" name="show_font" id="show_font">
+                                                        <option value="">Select Show Font</option>
+                                                        <option value="1" {{ old('show_font',$member->show_font)=='1' ? 'selected':''}}>Yes</option>
+                                                        <option value="0" {{ old('show_font',$member->show_font)=='0' ? 'selected':''}}>No</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="orderby">Order By:</label>
+                                                    <select class="form-control form-select" name="order_b" id="order_b">
+                                                        <option value="">Select Order By</option>
+                                                        <option value="1" {{ old('order_b',$member->order_b)=='1' ? 'selected':''}}>Yes</option>
+                                                        <option value="0" {{ old('order_b',$member->order_b)=='0' ? 'selected':''}}>No</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="facebook">Facebook link:</label>
+                                                <input type="text" id="fb_link" class="form-control" value="{{ old('nationality',$member->fb_link)}}" name="fb_link">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="twitter">Twitter link:</label>
+                                                <input type="text" id="twter_link" class="form-control" value="{{ old('nationality',$member->twter_link)}}" name="twter_link">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="linkedin">Linkedin link:</label>
+                                                <input type="text" id="linkdin_link" class="form-control" value="{{ old('nationality',$member->linkdin_link)}}" name="linkdin_link">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="youtube">Youtube link:</label>
+                                                <input type="text" id="youtube_link" class="form-control" value="{{ old('nationality',$member->youtube_link)}}" name="youtube_link">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
                                                 <label for="nationality">Nationality:</label>
                                                 <input type="text" id="nationality" class="form-control" value="{{ old('nationality',$member->nationality)}}" name="nationality">
                                                     @if($errors->has('nationality'))
@@ -94,8 +144,6 @@
                                                     @endif
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="cellno">Cell No:</label>
@@ -114,8 +162,6 @@
                                                     @endif
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="fax">Fax:</label>
@@ -138,7 +184,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="bloodGroup">Blood Group:</label>
-                                                <select class="form-control" name="bloodGroup" id="blood">
+                                                <select class="form-control form-select" name="bloodGroup" id="blood">
                                                     <option value="">Select Blood Group</option>
                                                     <option value="A+" {{ old('patientBlood',$member->blood_group)=='A+' ? 'selected':''}}>A+</option>
                                                     <option value="A-"{{ old('patientBlood',$member->blood_group)=='A-' ? 'selected':''}}>A-</option>

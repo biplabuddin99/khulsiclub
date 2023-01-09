@@ -53,10 +53,10 @@
           <div class="col-sm-10 col-5 header-right">
               
             <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-sm-flex scicon">
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-linkedin"></i>
-             <i class="bi bi-youtube"></i>
+              <a class="pt-2" href="#"><i class="bi bi-facebook"></i></a>
+              <a class="pt-2" href="#"><i class="bi bi-twitter"></i></a>
+              <a class="pt-2" href="#"><i class="bi bi-linkedin"></i></a>
+              <a class="pt-2" href="#"><i class="bi bi-youtube"></i></a>
 
               <a  id="text-right-dec" href="#">Member Login</a>
               <a href="#" class="become-member">Become a Member</a>
