@@ -61,6 +61,11 @@ body {
   height: 22px;
   border-right: 2px solid var(--red);
 }
+.nav_a_padding{
+  padding-left: 14px !important;
+    padding-right: 14px !important;
+
+}
 .become-member{
   
   margin-top: 10px;

@@ -70,38 +70,38 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
-                  <div style="margin-top: -13px;" class="collapse navbar-collapse " id="navbarNav">
+                  <div style="margin-top: -5px;" class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav mr-auto pb-2 ">
-                      <li class="nav-item me-4 ">
-                        <a class="nav-link " href="">Home
-                          <button class="float-end me-4 d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">Home
+                          <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                             ×
                           </button>
                         </a>
                       </li>
-                      <li class="nav-item me-4">
-                        <a class="nav-link" href="">About Us</a>
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">About Us</a>
                       </li>
-                      <li class="nav-item me-4">
-                        <a class="nav-link" href="">Club Facilities</a>
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">Club Facilities</a>
                       </li>
-                      <li class="nav-item me-4">
-                        <a class="nav-link" href="">Members</a>
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">Members</a>
                       </li>
-                      <li class="nav-item me-4">
-                        <a class="nav-link" href="">Publications</a>
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">Publications</a>
                       </li>
-                      <li class="nav-item me-4">
-                        <a class="nav-link" href="">Media</a>
+                      <li class="nav-item ">
+                        <a class="nav-link nav_a_padding" href="">Media</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="">Contact Us</a>
+                        <a class="nav-link nav_a_padding" href="">Contact Us</a>
                       </li>
                       <li class="nav-item d-flex d-sm-none">
-                        <a class="nav-link" href="">Member Login</a>
+                        <a class="nav-link nav_a_padding" href="">Member Login</a>
                       </li>
                       <li class="nav-item d-flex d-sm-none">
-                        <a class="nav-link" href="">Become a Member</a>
+                        <a class="nav-link nav_a_padding" href="">Become a Member</a>
                       </li>
                     </ul>
                   </div>
