@@ -76,6 +76,10 @@ return new class extends Migration
             $table->string('occupation5')->nullable();
             $table->string('proposed_name')->nullable();
             $table->string('membership_no')->nullable();
+            $table->string('image')->nullable();
+            $table->string('show_font')->default(0);
+            $table->string('order_b')->default(0);
+            $table->string('order_b')->default(0);
             $table->integer('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
