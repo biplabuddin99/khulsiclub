@@ -210,8 +210,9 @@
                       arrow_forward
                     </span>
                     <p>
-                        {{$n->title}}
+                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" style="text-decoration: none; color: #515152;">{{$n->title}}</a>
                     </p>
+                    
                   </div>
                 @empty
                 <div class="d-flex">
