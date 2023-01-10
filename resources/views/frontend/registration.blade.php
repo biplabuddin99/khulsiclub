@@ -73,6 +73,36 @@
                                   </div>
                               </div>
                               <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="photo">Photo:</label>
+                                            <input type="file" id="image" class="form-control" name="image">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="facebook">Facebook link:</label>
+                                            <input type="text" id="fb_link" class="form-control" name="fb_link">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="twitter">Twitter link:</label>
+                                            <input type="text" id="twter_link" class="form-control" name="twter_link">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="linkedin">Linkedin link:</label>
+                                            <input type="text" id="linkdin_link" class="form-control" name="linkdin_link">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="youtube">Youtube link:</label>
+                                            <input type="text" id="youtube_link" class="form-control" name="youtube_link">
+                                        </div>
+                                    </div>
                                   <div class="col-md-6 col-12">
                                       <div class="form-group">
                                           <label for="nationality">Nationality:</label>
@@ -91,8 +121,6 @@
                                               @endif
                                       </div>
                                   </div>
-                              </div>
-                              <div class="row">
                                   <div class="col-md-6 col-12">
                                       <div class="form-group">
                                           <label for="cellno">Cell No:</label>
@@ -111,8 +139,6 @@
                                               @endif
                                       </div>
                                   </div>
-                              </div>
-                              <div class="row">
                                   <div class="col-md-6 col-12">
                                       <div class="form-group">
                                           <label for="fax">Fax:</label>
@@ -135,7 +161,7 @@
                               <div class="col-md-6 col-12">
                                   <div class="form-group">
                                       <label for="bloodGroup">Blood Group:</label>
-                                          <select class="form-control" name="bloodGroup" id="blood">
+                                          <select class="form-control form-select" name="bloodGroup" id="blood">
                                               <option value="">Select Blood Group</option>
                                               <option value="A+" {{ old('patientBlood')=='A+' ? 'selected':''}}>A+</option>
                                               <option value="A-"{{ old('patientBlood')=='A-' ? 'selected':''}}>A-</option>

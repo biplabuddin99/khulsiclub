@@ -10,10 +10,12 @@ use App\Models\OurMember;
 use App\Models\setting;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 class FrontendController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -137,6 +139,16 @@ class FrontendController extends Controller
             $member->occupation5=$request->occupation5;
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
+
+            if($request->has('image'))
+                $member->image=$this->resizeImage($request->image,'uploads/member_image',true,140,175,false);
+
+            $member->fb_link=$request->fb_link;
+            $member->show_font=0;
+            $member->order_b=0;
+            $member->twter_link=$request->twter_link;
+            $member->linkdin_link=$request->linkdin_link;
+            $member->youtube_link=$request->youtube_link;
             $member->status=0;
             if($member->save()){
                 Toastr::success('our Member Create Successfully!');
