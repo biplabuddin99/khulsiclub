@@ -70,7 +70,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
-                  <div style="margin-top: -5px;" class="collapse navbar-collapse " id="navbarNav">
+                  <div style="margin-top: 10px;" class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav mr-auto pb-2 ">
                       <li class="nav-item ">
                         <a class="nav-link nav_a_padding" href="">Home
@@ -95,7 +95,7 @@
                         <a class="nav-link nav_a_padding" href="">Media</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link nav_a_padding" href="">Contact Us</a>
+                        <a class="nav-link nav_contact_padding" href="">Contact Us</a>
                       </li>
                       <li class="nav-item d-flex d-sm-none">
                         <a class="nav-link nav_a_padding" href="">Member Login</a>
