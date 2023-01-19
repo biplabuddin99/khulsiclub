@@ -36,6 +36,13 @@
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Benefits')}}</a>
+                <ul class="submenu">
+                    <li class="py-1"><a href="{{route(currentUser().'.benefit.index')}}">{{__('List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.benefit.create')}}">{{__('Add New')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Photo Gallery Category')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('List')}}</a></li>

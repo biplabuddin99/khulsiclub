@@ -124,6 +124,12 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
+                                                <label for="company">Company:</label>
+                                                <input type="text" id="company" class="form-control" name="company">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
                                                 <label for="cellno">Cell No:</label>
                                                 <input type="text" id="cellno" class="form-control" name="cellno">
                                                     @if($errors->has('cellno'))

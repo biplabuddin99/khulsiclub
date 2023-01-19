@@ -139,9 +139,12 @@
                                             <div class="form-group">
                                                 <label for="profession">Profession:</label>
                                                 <input type="text" id="profession" class="form-control" value="{{ old('profession',$member->profession)}}" name="profession">
-                                                    @if($errors->has('profession'))
-                                                        <span class="text-danger"> {{ $errors->first('profession') }}</span>
-                                                    @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="company">Company:</label>
+                                                <input type="text" id="company" class="form-control" value="{{ old('profession',$member->company)}}" name="company">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">

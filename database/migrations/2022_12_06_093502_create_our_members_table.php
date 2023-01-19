@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('birth_date')->nullable();
             $table->string('nationality')->nullable();
             $table->string('profession')->nullable();
+            $table->string('company')->nullable();
             $table->string('cell_number')->nullable();
             $table->string('tel_number')->nullable();
             $table->string('fax_number')->nullable();
@@ -41,7 +42,7 @@ return new class extends Migration
             $table->string('identify_president')->nullable();
             $table->string('member_no')->nullable();
             $table->string('mr_mis')->nullable();
-            $table->string('other_address')->nullable();
+            $table->text('other_address')->nullable();
             $table->string('signature_founder_president')->nullable();
             $table->string('signature_founder_vicepresident')->nullable();
             $table->string('remarks')->nullable();

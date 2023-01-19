@@ -51,6 +51,7 @@ class OurMemberController extends Controller
             $member->birth_date=$request->dateOfBirth;
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
+            $member->company=$request->company;
             $member->cell_number=$request->cellno;
             $member->tel_number=$request->tel;
             $member->fax_number=$request->fax;
@@ -190,6 +191,7 @@ class OurMemberController extends Controller
             $member->birth_date=$request->dateOfBirth;
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
+            $member->company=$request->company;
             $member->cell_number=$request->cellno;
             $member->tel_number=$request->tel;
             $member->fax_number=$request->fax;

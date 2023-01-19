@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facilities;
+use App\Models\BenefitsOfMember;
 use App\Models\Frontend;
 use App\Models\Notice;
 use App\Models\photoGallaryCategory;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
+use DB;
 class FrontendController extends Controller
 {
     use ImageHandleTraits;
@@ -41,7 +43,8 @@ class FrontendController extends Controller
         $Corporate = OurMember::where('membership_applied',7)->count();
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember'));
+        $benefit = BenefitsOfMember::all();
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit'));
     }
 
     /**
@@ -73,6 +76,7 @@ class FrontendController extends Controller
             $member->birth_date=$request->dateOfBirth;
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
+            $member->company=$request->company;
             $member->cell_number=$request->cellno;
             $member->tel_number=$request->tel;
             $member->fax_number=$request->fax;

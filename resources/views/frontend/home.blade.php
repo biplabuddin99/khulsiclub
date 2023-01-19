@@ -194,37 +194,37 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-5 notice">
-            <div class="mt-3 d-flex">
+            <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
               <p>Notice</p>
-              <span class="material-symbols-outlined text-align-end">
-                arrow_circle_right
-              </span>
             </div>
-            <hr />
             <div>
                 @forelse ($notice as $n)
 
-                <div class="d-flex">
-                    <span class="material-symbols-outlined me-2">
-                      arrow_forward
-                    </span>
+                  <div class="notice-title">
                     <p>
-                    <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
+                      <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
                     </p>
-                    
-                  </div>
+                    <div class="d-flex notice-time">
+                      <span class="material-symbols-outlined"> alarm </span>
+                      <p>{{$n->published_date}}</p>
+                    </div>
+                </div>
                 @empty
-                <div class="d-flex">
-                    <span class="material-symbols-outlined me-2">
-                      arrow_forward
-                    </span>
+                <div class="notice-title">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Dolores, numquam?
                     </p>
-                  </div>
+                    <div class="d-flex notice-time">
+                      <span class="material-symbols-outlined"> alarm </span>
+                      <p>10/01/2023</p>
+                    </div>
+                </div>
                 @endforelse
+                <div class="views-notice">
+                  <a href="#">Views All Notices</a>
+                </div>
 
             </div>
           </div>
@@ -236,7 +236,7 @@
     <section class="facilities-main">
       <div class="facilities text-center py-5">
         <div class="container my-4">
-          <h4>Facilities</h4>
+          <h4 class="section-title">Facilities</h4>
           <div class="row justify-content-center owl-facilities owl-theme">
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
@@ -271,26 +271,31 @@
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
             <p>{{$member->full_name}}</p>
-            <p>{{$member->profession}}</p>
-            <a href="{{$member->fb_link}}" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="{{$member->twter_link}}" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="{{$member->linkdin_link}}" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="{{$member->youtube_link}}" target="_blank"><i class="bi bi-youtube"></i></a>
+            <p>{{$member->company}}, {{$member->profession}}</p>
+            <p>@if($member->membership_applied == 1) {{__('Donor Member') }}
+
+               @elseif ($member->membership_applied == 2) {{__('Service Member') }}
+               @elseif ($member->membership_applied == 3) {{__('Life Member') }}
+               @elseif ($member->membership_applied == 4) {{__('Temporary Member') }}
+               @elseif ($member->membership_applied == 5) {{__('Permanent Member') }}
+               @elseif ($member->membership_applied == 6) {{__('Honorary Member') }}
+               @elseif ($member->membership_applied == 7) {{__('Corporate Member') }}
+               @elseif ($member->membership_applied == 8) {{__('Diplomate Member') }}
+
+               @else {{__('') }} @endif</p>
           </div>
         </div>
       @empty
-      <div class="col-12 item pe-3 ps-3">
+        <div class="col-12 item pe-3 ps-3">
           <div class="shadow p-2 rounded-4 mb-3">
             <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
             <p>Md. Rafique Uddin Babul</p>
-            <p>Chairman</p>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-youtube"></i>
+            <p>Sizzing Group, Managing Director</p>
+            <p>Liffe Member; LM-002</p>
           </div>
         </div>
       @endforelse
+      
         
       </div>
     </section>
@@ -328,33 +333,45 @@
       <div class="gallery-bootom-overlay"></div>
     </section>
     <!-- Gallery end -->
-    <!-- Member Reg. -->
-    <section class="container-fluid member-reg pt-5">
-      <div class="member-reg-backgroud">
-        <div class="row">
-          <div class="col-sm-6">
-            <h4 class="pb-4 pb-sm-0 text-center"><span> BECOME A</span> MEMBER</h4>
-          </div>
-          <div class="col-sm-6">
-            <a class="button" href="{{route('member.registration')}}">Apply Now</a>
+    
+    <!-- Facilities -->
+    <section class="facilities-main">
+      <div class="facilities text-center5">
+        <!-- Gallery end -->
+        <!-- member reg. start -->
+        <div class="justify-content-center p-5 bg-light member-section">
+          <div class="p-5 rounded shadow">
+            <div class="row member-inner">
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <p>Benefits of Members</p>
+                <ul class="navbar-nav">
+                @forelse ($benefit as $b)
+                  <li class="nav-item">
+                    <span>{{$b->benefit}}</span>
+                  </li>
+                @empty
+                <li class="nav-item">
+                    <span>Advocacy for Software & ITES</span>
+                </li>
+                @endforelse
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <p>Become a Member</p>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <a class="shadow" href="{{route('member.registration')}}">Apply Now</a>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- member reg. end -->
       </div>
     </section>
-    <!-- Member Reg. ends -->
+    <!-- Facilities ends -->
     @endsection
     @push('scripts')
     <script>
-      // $(document).ready(function(){
-          
-      //   $('.counter').counterUp({
-      //               delay: 10,
-      //               time: 2000
-      //           });
-      // });
-
-     
- 
         $('.owl-facilities').owlCarousel({
           loop:true,
           autoPlay:true,
