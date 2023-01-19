@@ -222,27 +222,27 @@ body {
 @keyframes facilitics-circle1 {
   0% {
     left: 0;
-    bottom: 10px;
+    top: 0;
   }
   20% {
     left: 10%;
-    bottom: 300px;
+    top: 1000px;
   }
   40% {
     left: 50%;
-    bottom: 10px;
+    top: 1000px;
   }
   60% {
     left: 85%;
-    bottom: 300px;
+    top: 300px;
   }
   80% {
     left: 0px;
-    bottom: 10px;
+    top: 0px;
   }
   100% {
     left: 0px;
-    bottom: 10px;
+    top: 0px;
   }
 }
 .facilitics-circle2 {
@@ -292,11 +292,11 @@ body {
 @keyframes facilitics-circle3 {
   0% {
     right: 10%;
-    top: 10px;
+    top: 20px;
   }
   20% {
     right: 20%;
-    top: 300px;
+    top: 1000px;
   }
   40% {
     right: 20%;
@@ -304,7 +304,7 @@ body {
   }
   60% {
     right: 85%;
-    top: 300px;
+    top: 1000px;
   }
   80% {
     right: 0px;
@@ -410,6 +410,16 @@ body {
   font-size: 15px;
   margin: 10px;
   
+}
+/* member */
+.memberdiv {
+  position: relative;
+}
+.member-background {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.527);
+  backdrop-filter: blur(30px);
+  z-index: 3;
 }
 /* gallery */
 .gallery {

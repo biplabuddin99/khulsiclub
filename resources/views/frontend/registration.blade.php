@@ -345,7 +345,7 @@
                                           @endif
                                   </div>
                               </div>
-                              <div class="row">
+                              <!--<div class="row">
                                   <div class="col-md-6 col-12">
                                       <div class="form-group">
                                           <label for="signaturefounderpresident">Signature Of Founder President:</label>
@@ -364,7 +364,7 @@
                                               @endif
                                       </div>
                                   </div>
-                              </div>
+                              </div>-->
                               <div class="col-md-12 col-12">
                                   <div class="form-group">
                                       <label for="remarks">Remarks:</label>
@@ -466,43 +466,43 @@
                                       <tbody id="details_data">
                                           <tr>
                                               <td>1.</td>
-                                              <td><input type="text" id="Name1" class="form-control" name="Name1" placeholder=" Enter Name"></td>
-                                              <td><input type="radio" id="male1" name="gender1" value="11"> <label for="male1">Male</label>
-                                                  <input type="radio" id="female1" name="gender1" value="12"> <label for="female1">Female</label></td>
-                                              <td><input type="date" id="birth_date1" class="form-control" name="birth_date1" placeholder="Date of Birth"></td>
-                                              <td><input type="text" id="occupation1" class="form-control" name="occupation1" placeholder="Occupation With Address"></td>
+                                              <td><input type="text" id="Name1" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                              <td><input type="radio" id="male1" name="cgender[1]" value="1"> <label for="male1">Male</label>
+                                                  <input type="radio" id="female1" name="cgender[1]" value="2"> <label for="female1">Female</label></td>
+                                              <td><input type="date" id="birth_date1" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                              <td><input type="text" id="occupation1" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
                                           </tr>
                                           <tr>
                                               <td>2.</td>
-                                              <td><input type="text" id="Name2" class="form-control" name="Name2" placeholder=" Enter Name"></td>
-                                              <td><input type="radio" id="male2" name="gender2" value="21"> <label for="male2">Male</label>
-                                                  <input type="radio" id="female2" name="gender2" value="22"> <label for="female2">Female</label></td>
-                                              <td><input type="date" id="birth_date2" class="form-control" name="birth_date2" placeholder="Date of Birth"></td>
-                                              <td><input type="text" id="occupation2" class="form-control" name="occupation2" placeholder="Occupation With Address"></td>
+                                              <td><input type="text" id="Name2" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                              <td><input type="radio" id="male2" name="cgender[2]" value="1"> <label for="male2">Male</label>
+                                                  <input type="radio" id="female2" name="cgender[2]" value="2"> <label for="female2">Female</label></td>
+                                              <td><input type="date" id="birth_date2" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                              <td><input type="text" id="occupation2" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
                                           </tr>
                                           <tr>
                                               <td>3.</td>
-                                              <td><input type="text" id="Name3" class="form-control" name="Name3" placeholder=" Enter Name"></td>
-                                              <td><input type="radio" id="male3" name="gender3" value="31"> <label for="male3">Male</label>
-                                                  <input type="radio" id="female3" name="gender3" value="32"> <label for="female3">Female</label></td>
-                                              <td><input type="date" id="birth_date3" class="form-control" name="birth_date3" placeholder="Date of Birth"></td>
-                                              <td><input type="text" id="occupation3" class="form-control" name="occupation3" placeholder="Occupation With Address"></td>
+                                              <td><input type="text" id="Name3" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                              <td><input type="radio" id="male3" name="cgender[3]" value="1"> <label for="male3">Male</label>
+                                                  <input type="radio" id="female3" name="cgender[3]" value="2"> <label for="female3">Female</label></td>
+                                              <td><input type="date" id="birth_date3" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                              <td><input type="text" id="occupation3" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
                                           </tr>
                                           <tr>
                                               <td>4.</td>
-                                              <td><input type="text" id="Name4" class="form-control" name="Name4" placeholder=" Enter Name"></td>
-                                              <td><input type="radio" id="male4" name="gender4" value="41"> <label for="male4">Male</label>
-                                                  <input type="radio" id="female4" name="gender4" value="42"> <label for="female4">Female</label></td>
-                                              <td><input type="date" id="birth_date4" class="form-control" name="birth_date4" placeholder="Date of Birth"></td>
-                                              <td><input type="text" id="occupation4" class="form-control" name="occupation4" placeholder="Occupation With Address"></td>
+                                              <td><input type="text" id="Name4" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                              <td><input type="radio" id="male4" name="cgender[4]" value="1"> <label for="male4">Male</label>
+                                                  <input type="radio" id="female4" name="cgender[4]" value="2"> <label for="female4">Female</label></td>
+                                              <td><input type="date" id="birth_date4" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                              <td><input type="text" id="occupation4" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
                                           </tr>
                                           <tr>
                                               <td>5.</td>
-                                              <td><input type="text" id="Name5" class="form-control" name="Name5" placeholder=" Enter Name"></td>
-                                              <td><input type="radio" id="male5" name="gender5" value="51"> <label for="male5">Male</label>
-                                                  <input type="radio" id="female5" name="gender5" value="52"> <label for="female5">Female</label></td>
-                                              <td><input type="date" id="birth_date5" class="form-control" name="birth_date5" placeholder="Date of Birth"></td>
-                                              <td><input type="text" id="occupation5" class="form-control" name="occupation5" placeholder="Occupation With Address"></td>
+                                              <td><input type="text" id="Name5" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                              <td><input type="radio" id="male5" name="cgender[5]" value="1"> <label for="male5">Male</label>
+                                                  <input type="radio" id="female5" name="cgender[5]" value="2"> <label for="female5">Female</label></td>
+                                              <td><input type="date" id="birth_date5" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                              <td><input type="text" id="occupation5" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
                                           </tr>
 
                                       </tbody>

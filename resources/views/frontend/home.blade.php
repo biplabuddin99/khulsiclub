@@ -263,42 +263,44 @@
     </section>
     <!-- Facilities ends -->
     <!-- OUr Member -->
-    <section class="container member pb-5">
-      <h4>Our Members</h4>
-      <div class="row justify-content-center owl-member owl-theme">
-      @forelse ($ourMember as $member)
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2 rounded-4 mb-3">
-            <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
-            <p>{{$member->full_name}}</p>
-            <p>{{$member->company}}, {{$member->profession}}</p>
-            <p>@if($member->membership_applied == 1) {{__('Donor Member') }}
+    <div class="memberdiv">
+      <div class="member-background">
+        <section class="container member pb-5">
+          <h4>Our Members</h4>
+          <div class="row justify-content-center owl-member owl-theme">
+          @forelse ($ourMember as $member)
+            <div class="col-12 item pe-3 ps-3">
+              <div class="shadow p-2 rounded-4 mb-3" style="background: #FFF">
+                <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
+                <p>{{$member->full_name}}</p>
+                <p>{{$member->company}}, {{$member->profession}}</p>
+                <p>@if($member->membership_applied == 1) {{__('Donor Member') }}
 
-               @elseif ($member->membership_applied == 2) {{__('Service Member') }}
-               @elseif ($member->membership_applied == 3) {{__('Life Member') }}
-               @elseif ($member->membership_applied == 4) {{__('Temporary Member') }}
-               @elseif ($member->membership_applied == 5) {{__('Permanent Member') }}
-               @elseif ($member->membership_applied == 6) {{__('Honorary Member') }}
-               @elseif ($member->membership_applied == 7) {{__('Corporate Member') }}
-               @elseif ($member->membership_applied == 8) {{__('Diplomate Member') }}
+                  @elseif ($member->membership_applied == 2) {{__('Service Member') }}
+                  @elseif ($member->membership_applied == 3) {{__('Life Member') }}
+                  @elseif ($member->membership_applied == 4) {{__('Temporary Member') }}
+                  @elseif ($member->membership_applied == 5) {{__('Permanent Member') }}
+                  @elseif ($member->membership_applied == 6) {{__('Honorary Member') }}
+                  @elseif ($member->membership_applied == 7) {{__('Corporate Member') }}
+                  @elseif ($member->membership_applied == 8) {{__('Diplomate Member') }}
 
-               @else {{__('') }} @endif</p>
+                  @else {{__('') }} @endif</p>
+              </div>
+            </div>
+          @empty
+            <div class="col-12 item pe-3 ps-3">
+              <div class="shadow p-2 rounded-4 mb-3"style="background: #FFF">
+                <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
+                <p>Md. Rafique Uddin Babul</p>
+                <p>Sizzing Group, Managing Director</p>
+                <p>Liffe Member; LM-002</p>
+              </div>
+            </div>
+          @endforelse
           </div>
-        </div>
-      @empty
-        <div class="col-12 item pe-3 ps-3">
-          <div class="shadow p-2 rounded-4 mb-3">
-            <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-            <p>Md. Rafique Uddin Babul</p>
-            <p>Sizzing Group, Managing Director</p>
-            <p>Liffe Member; LM-002</p>
-          </div>
-        </div>
-      @endforelse
-      
-        
+        </section>
       </div>
-    </section>
+    </div>
     <!-- Our Members end -->
     <!-- Gallery -->
     <section class="gallery">
