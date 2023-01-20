@@ -335,13 +335,17 @@
       <div class="gallery-bootom-overlay"></div>
     </section>
     <!-- Gallery end -->
-    
     <!-- Facilities -->
-    <section class="facilities-main">
+    <section class="facilities-main px-5">
       <div class="facilities text-center5">
         <!-- Gallery end -->
         <!-- member reg. start -->
-        <div class="justify-content-center p-5 bg-light member-section">
+        <div class="justify-content-center bg-light member-section shadow">
+        <span class="bubble1"></span>
+        <span class="bubble2"></span>
+        <span class="bubble3"></span>
+        <span class="bubble4"></span>
+        <span class="bubble5"></span>
           <div class="p-5 rounded shadow">
             <div class="row member-inner">
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
