@@ -464,14 +464,7 @@ body {
 .member-inner div:nth-of-type(1) ul li {
   margin-bottom: 10px;
 }
-.member-inner div:nth-of-type(1) ul li::before {
-  display: inline-block;
-  content: "\F134";
-  vertical-align: -0.125em;
-  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
-  background-repeat: no-repeat;
-  background-size: 1rem 1rem;
-}
+
 .member-inner div:nth-of-type(2) p {
   text-align: center;
   height: 300px;
@@ -740,7 +733,7 @@ footer img {
 
 
 .facilities-main {
-  padding: 4rem 0;
+  /*padding: 4rem 0;*/
   background: hsla(0, 0%, 95.7%, .68)
 }
 .facilities-main .member-section {

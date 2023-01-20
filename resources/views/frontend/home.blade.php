@@ -255,8 +255,8 @@
           </div>
         </div>
       </div>
-      <!-- backgourd overlay animate clircle -->
-      <div class="facilites-bg-shadow"></div>
+      <!-- backgourd overlay animate clircle 
+      <div class="facilites-bg-shadow"></div>-->
       <div class="facilitics-circle1"></div>
       <div class="facilitics-circle2"></div>
       <div class="facilitics-circle3"></div>
@@ -353,11 +353,11 @@
                 <ul class="navbar-nav">
                 @forelse ($benefit as $b)
                   <li class="nav-item">
-                    <span>{{$b->benefit}}</span>
+                    <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
                   </li>
                 @empty
                 <li class="nav-item">
-                    <span>Advocacy for Software & ITES</span>
+                    <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
                 </li>
                 @endforelse
                 </ul>
