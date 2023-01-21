@@ -60,7 +60,7 @@
                                               name="linkdin_link">
                                       </div>
                                   </div>
-                                  <div class="row mb-3">
+                                  <div class="row mb-3 d-none">
                                       <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('We Accept')}}</label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="file" class="form-control" name="we_accept">
@@ -79,42 +79,42 @@
                                       </div>
                                   </div>
                                   <div class="row mb-3">
-                                      <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('Footer1 Image')}}</label>
-                                      <div class="col-sm-6 offset-1">
-                                          <input type="file" class="form-control" name="footer_top_p1_image">
-                                      </div>
-                                  </div>
-                                  <div class="row mb-3">
                                       <label for="text"class="col-sm-2 offset-1 col-form-label">{{__('Footer1 text')}}</label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="text" value="{{ old('footer_top_p1_text')}}" class="form-control"
-                                              name="footer_top_p1_text">
-                                      </div>
-                                  </div>
+                                          name="footer_top_p1_text">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="text"class="col-sm-2 offset-1 col-form-label">{{__('Footer2 text')}}</label>
+                                        <div class="col-sm-6 offset-1">
+                                            <input type="text" value="{{ old('footer_top_p2_text')}}" class="form-control"
+                                            name="footer_top_p2_text">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="text"class="col-sm-2 offset-1 col-form-label">{{__('Footer3 text')}}</label>
+                                        <div class="col-sm-6 offset-1">
+                                            <input type="text" value="{{ old('footer_top_p3_text')}}" class="form-control"
+                                            name="footer_top_p3_text">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('We Accept img 1')}}</label>
+                                        <div class="col-sm-6 offset-1">
+                                            <input type="file" class="form-control" name="footer_top_p1_image">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('We Accept img 2')}}</label>
+                                        <div class="col-sm-6 offset-1">
+                                            <input type="file" class="form-control" name="footer_top_p2_image">
+                                        </div>
+                                    </div>
                                   <div class="row mb-3">
-                                      <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('Footer2 Image')}}</label>
-                                      <div class="col-sm-6 offset-1">
-                                          <input type="file" class="form-control" name="footer_top_p2_image">
-                                      </div>
-                                  </div>
-                                  <div class="row mb-3">
-                                      <label for="text"class="col-sm-2 offset-1 col-form-label">{{__('Footer2 text')}}</label>
-                                      <div class="col-sm-6 offset-1">
-                                          <input type="text" value="{{ old('footer_top_p2_text')}}" class="form-control"
-                                              name="footer_top_p2_text">
-                                      </div>
-                                  </div>
-                                  <div class="row mb-3">
-                                      <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('Footer3 Image')}}</label>
+                                      <label for="image"class="col-sm-2 offset-1 col-form-label">{{__('We Accept img 3')}}</label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="file" class="form-control" name="footer_top_p3_image">
-                                      </div>
-                                  </div>
-                                  <div class="row mb-3">
-                                      <label for="text"class="col-sm-2 offset-1 col-form-label">{{__('Footer3 text')}}</label>
-                                      <div class="col-sm-6 offset-1">
-                                          <input type="text" value="{{ old('footer_top_p3_text')}}" class="form-control"
-                                              name="footer_top_p3_text">
                                       </div>
                                   </div>
                                   

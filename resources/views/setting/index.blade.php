@@ -25,12 +25,12 @@
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Contact')}}</th>
                                         <th scope="col">{{__('Email')}}</th>
-                                        <th scope="col">{{__('We Accept')}}</th>
+                                        <!-- <th scope="col">{{__('We Accept')}}</th> -->
                                         <th scope="col">{{__('Header logo')}}</th>
                                         <th scope="col">{{__('Footer logo')}}</th>
-                                        <th scope="col">{{__('Footer1 Image')}}</th>
-                                        <th scope="col">{{__('Footer2 Image')}}</th>
-                                        <th scope="col">{{__('Footer3 Image')}}</th>
+                                        <th scope="col">{{__('We Accept img 1')}}</th>
+                                        <th scope="col">{{__('We Accept img 2')}}</th>
+                                        <th scope="col">{{__('We Accept img 3')}}</th>
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
                                 </thead>
@@ -40,7 +40,7 @@
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$s->contact_no}}</td>
                                         <td>{{$s->email_address}}</td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->we_accept)}}" alt=""></td>
+                                        <!-- <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->we_accept)}}" alt=""></td> -->
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->header_logo)}}" alt=""></td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_logo)}}" alt=""></td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_top_p1_image)}}" alt=""></td>

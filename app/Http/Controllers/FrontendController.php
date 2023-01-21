@@ -33,7 +33,7 @@ class FrontendController extends Controller
                             $query->orWhereNull('unpublished_date');
                         })->latest()->limit(12)->get();
         $facilities=Facilities::get();
-        $pgallery_cat=photoGallaryCategory::get();
+        $pgallery_cat=photoGallaryCategory::where('status',1)->get();
         //$donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
         $donor = OurMember::where('membership_applied',1)->count();
         $Service = OurMember::where('membership_applied',2)->count();

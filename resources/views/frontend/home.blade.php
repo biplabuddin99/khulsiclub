@@ -207,7 +207,7 @@
                     </p>
                     <div class="d-flex notice-time">
                       <span class="material-symbols-outlined"> alarm </span>
-                      <p>{{$n->published_date}}</p>
+                      <p>{{date('j F, Y', strtotime($n->published_date))}} </p>
                     </div>
                 </div>
                 @empty
@@ -218,7 +218,7 @@
                     </p>
                     <div class="d-flex notice-time">
                       <span class="material-symbols-outlined"> alarm </span>
-                      <p>10/01/2023</p>
+                      <p>19 January, 2023</p>
                     </div>
                 </div>
                 @endforelse
@@ -265,24 +265,24 @@
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="member-background">
-        <section class="container member pb-5">
+        <section class="container member pb-5 ">
           <h4>Our Members</h4>
-          <div class="row justify-content-center owl-member owl-theme">
+          <div class="row owl-member owl-theme">
           @forelse ($ourMember as $member)
             <div class="col-12 item pe-3 ps-3">
-              <div class="shadow p-2 rounded-4 mb-3" style="background: #FFF">
+              <div class="shadow p-2 rounded-4 mb-3 memeber-card">
                 <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
                 <p>{{$member->full_name}}</p>
                 <p>{{$member->company}}, {{$member->profession}}</p>
-                <p>@if($member->membership_applied == 1) {{__('Donor Member') }}
+                <p>@if($member->membership_applied == 1) {{__('Donor Member - DM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
 
-                  @elseif ($member->membership_applied == 2) {{__('Service Member') }}
-                  @elseif ($member->membership_applied == 3) {{__('Life Member') }}
-                  @elseif ($member->membership_applied == 4) {{__('Temporary Member') }}
-                  @elseif ($member->membership_applied == 5) {{__('Permanent Member') }}
-                  @elseif ($member->membership_applied == 6) {{__('Honorary Member') }}
-                  @elseif ($member->membership_applied == 7) {{__('Corporate Member') }}
-                  @elseif ($member->membership_applied == 8) {{__('Diplomate Member') }}
+                  @elseif ($member->membership_applied == 2) {{__('Service Member - SM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 3) {{__('Life Member - LM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 4) {{__('Temporary Member - TM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 5) {{__('Permanent Member - PM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 6) {{__('Honorary Member - HM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 7) {{__('Corporate Member - CM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                  @elseif ($member->membership_applied == 8) {{__('Diplomate Member - DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
 
                   @else {{__('') }} @endif</p>
               </div>
@@ -293,7 +293,7 @@
                 <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
                 <p>Md. Rafique Uddin Babul</p>
                 <p>Sizzing Group, Managing Director</p>
-                <p>Liffe Member; LM-002</p>
+                <p>Liffe Member - LM-002</p>
               </div>
             </div>
           @endforelse
