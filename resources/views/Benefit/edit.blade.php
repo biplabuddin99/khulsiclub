@@ -14,14 +14,14 @@
                               @csrf
                               @method('patch')
                                   <div class="row mb-3">
-                                  <label for="benefit" class="col-sm-2 offset-1 col-form-label"><b>{{__('Benefit')}}:</b></label>
-                                      <div class="col-sm-6 offset-1">
-                                          <input type="text" id="benefit" value="{{ old('benefit',$benefit->benefit)}}" class="form-control"
+                                  <label for="benefit" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Benefit')}}:</b></label>
+                                      <div class="col-sm-6 offset-1 m-0">
+                                          <input type="text" id="benefit" value="{{ old('benefit',$benefit->benefit)}}" class="form-control text-start"
                                               placeholder="Benefit" name="benefit">
                                       </div>
                                   </div>
                                   
-                                  <div class="col-8 offset-2 d-flex justify-content-end">
+                                  <div class="col-6 offset-3 d-flex justify-content-end">
                                       <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
                                       
                                   </div>
