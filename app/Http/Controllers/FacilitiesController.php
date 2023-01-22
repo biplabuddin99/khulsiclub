@@ -44,7 +44,7 @@ class FacilitiesController extends Controller
             $facilities=new Facilities;
             $facilities->title=$request->title;
             if($request->has('Picture'))
-            $facilities->image=$this->resizeImage($request->Picture,'uploads/facilities',true,640,360,false);
+            $facilities->image=$this->resizeImage($request->Picture,'uploads/facilities',true,660,380,false);
             $facilities->details=$request->Details;
             $facilities->save();
             Toastr::success('Facilities Create Successfully!');
@@ -97,7 +97,7 @@ class FacilitiesController extends Controller
             $path='uploads/facilities';
             if($request->has('Picture') && $request->Picture)
             if($this->deleteImage($facilities->image,$path))
-            $facilities->image=$this->resizeImage($request->Picture,$path,true,640,360,false);
+            $facilities->image=$this->resizeImage($request->Picture,$path,true,660,380,false);
 
             $facilities->details=$request->Details;
             if($facilities->save()){

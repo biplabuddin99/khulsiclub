@@ -77,21 +77,21 @@
       <div class="row text-center">
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons pt-2"> person_add </span>
               <p>{{$donor}}</p>
               <p>Donor Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons pt-2"> person_add </span>
               <p>{{$Service}}</p>
               <p>Service Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons pt-2"> person_add </span>
               <p>{{$Life}}</p>
               <p>Life Member</p>
             </div>
@@ -192,6 +192,7 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+            <p class="news-event-text">News & Events</p>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-5 notice">
             <div class="mt-3 d-flex notice-div-one">
@@ -201,8 +202,8 @@
             <div>
                 @forelse ($notice as $n)
 
-                  <div class="notice-title">
-                    <p>
+                  <div class="notice-title notice-div-two">
+                    <p class="mb-0">
                       <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
                     </p>
                     <div class="d-flex notice-time">
@@ -236,7 +237,7 @@
     <section class="facilities-main">
       <div class="facilities text-center py-5">
         <div class="container my-4">
-          <h4 class="section-title">Facilities</h4>
+          <h4 class="section-title">FACILITIES</h4>
           <div class="row justify-content-center owl-facilities owl-theme">
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
@@ -266,34 +267,38 @@
     <div class="memberdiv">
       <div class="member-background">
         <section class="container member pb-5 ">
-          <h4>Our Members</h4>
+          <h4>OUR MEMBERS</h4>
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $member)
             <div class="col-12 item pe-3 ps-3">
-              <div class="shadow p-2 rounded-4 mb-3 memeber-card">
-                <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
-                <p>{{$member->full_name}}</p>
-                <p>{{$member->company}}, {{$member->profession}}</p>
-                <p>@if($member->membership_applied == 1) {{__('Donor Member - DM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+              <div class="shadow p-2 mb-3 memeber-card ">
+                <div class="border-member">
+                  <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
+                  <p>{{$member->full_name}}</p>
+                  <p>{{$member->company}}, {{$member->profession}}</p>
+                  <p>@if($member->membership_applied == 1) {{__('Donor Member, DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
 
-                  @elseif ($member->membership_applied == 2) {{__('Service Member - SM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 3) {{__('Life Member - LM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 4) {{__('Temporary Member - TM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 5) {{__('Permanent Member - PM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 6) {{__('Honorary Member - HM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 7) {{__('Corporate Member - CM-') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                  @elseif ($member->membership_applied == 8) {{__('Diplomate Member - DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 2) {{__('Service Member, SM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 3) {{__('Life Member, LM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 4) {{__('Temporary Member, TM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 5) {{__('Permanent Member, PM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 6) {{__('Honorary Member, HM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 7) {{__('Corporate Member, CM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
+                    @elseif ($member->membership_applied == 8) {{__('Diplomate Member DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
 
-                  @else {{__('') }} @endif</p>
+                    @else {{__('') }} @endif</p>
+                </div>
               </div>
             </div>
           @empty
             <div class="col-12 item pe-3 ps-3">
-              <div class="shadow p-2 rounded-4 mb-3"style="background: #FFF">
-                <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
-                <p>Md. Rafique Uddin Babul</p>
-                <p>Sizzing Group, Managing Director</p>
-                <p>Liffe Member - LM-002</p>
+              <div class="shadow p-2 mb-3"style="background: #FFF">
+                <div class="border-member">
+                  <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
+                  <p>Md. Rafique Uddin Babul</p>
+                  <p>Sizzing Group, Managing Director</p>
+                  <p>Liffe Member - LM-002</p>
+                </div>
               </div>
             </div>
           @endforelse
@@ -306,7 +311,7 @@
     <section class="gallery">
       <div class="galler-background py-3">
         <div class="container">
-          <h4 class="pt-5">Gallery</h4>
+          <h4 class="pt-5">GALLERY</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
@@ -384,7 +389,7 @@
           slideSpeed:1000,
           margin:10,
           responsive: true,
-          items : 5,
+          items : 3,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
           itemsTablet: [768,2],

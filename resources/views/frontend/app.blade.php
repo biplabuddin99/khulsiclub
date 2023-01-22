@@ -43,7 +43,7 @@
   </head>
   <body>
         <!-- header section -->
-    <header class="bg-white">
+    <header class="bg-white sticky-top">
       <div class="container">
         <div class="row">
           <div class="col-sm-2 col-7  logo-sec">
@@ -128,11 +128,11 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 d-flex justify-content-center">
-            <i class="bi bi-headset"></i>
+          <i class="bi bi-headset"></i>
             <p>{{ $setting?->footer_top_p1_text }}</p>
           </div>
           <div class="col-sm-4">
-            <p id="support-number">{{ $setting?->footer_top_p2_text }}</p>
+            <p class="support-border" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
           <div class="col-sm-4">
             <p>{{ $setting?->footer_top_p3_text }}</p>
@@ -192,7 +192,7 @@
           <hr />
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-3 copyright">
-              <p>&copy 2022 BASIS</p>
+              <p>&copy copyright 2023 CKCL</p>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4 d-flex payment-img">
               <p>We Accept</p>
