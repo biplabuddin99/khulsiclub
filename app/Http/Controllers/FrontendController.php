@@ -139,13 +139,15 @@ class FrontendController extends Controller
 
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){
-                        $mc=new MemberChildren;
-                        $mc->member_id=$member->id;
-                        $mc->name=$cname;
-                        $mc->gender=$request->cgender[$i];
-                        $mc->birth_date=$request->cbirth_date[$i];
-                        $mc->occupation=$request->coccupation[$i];
-                        $mc->save();
+                        if($cname){
+                            $mc=new MemberChildren;
+                            $mc->member_id=$member->id;
+                            $mc->name=$cname;
+                            $mc->gender=$request->cgender[$i];
+                            $mc->birth_date=$request->cbirth_date[$i];
+                            $mc->occupation=$request->coccupation[$i];
+                            $mc->save();
+                        }
                     }
                 }
 
@@ -158,7 +160,7 @@ class FrontendController extends Controller
             }
         }
         catch (Exception $e){
-            //dd($e);
+            dd($e);
             Toastr::success('Please try Again!');
             return back()->withInput();
         }

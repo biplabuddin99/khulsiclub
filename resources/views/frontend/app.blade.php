@@ -57,7 +57,7 @@
               <a class="pt-2" href="#"><i class="bi bi-youtube"></i></a>
 
               <a  id="text-right-dec" href="#">Member Login</a>
-              <a href="#" class="become-member">Become a Member</a>
+              <a href="{{route('member.registration')}}" class="become-member">Become a Member</a>
             </div>
             
             <div class="row">
