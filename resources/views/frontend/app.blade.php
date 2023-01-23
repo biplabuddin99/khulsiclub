@@ -45,7 +45,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-2 col-7  logo-sec">
-            <img class="w-100" src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
+            <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
           </div>
 
           <div class="col-sm-10 col-5 header-right">
@@ -218,6 +218,8 @@
       crossorigin="anonymous"
     ></script>
 
+
+    
     <!-- owl js -->
     <script src="{{ asset('assets/js/jquery-1.9.1.min.js')}}"></script>
     <script src="{{ asset('owl-carousel/owl.carousel.js')}}"></script>

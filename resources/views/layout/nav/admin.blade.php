@@ -60,7 +60,7 @@
         </ul>
     </li>
     <li class="submenu-item sidebar-item">
-        <a href="{{route(currentUser().'.settings.index')}}"><i class="bi bi-gear-fill"></i> {{__('Manage Website')}}</a>
+        <a href="{{route(currentUser().'.settings.index')}}"><i class="bi bi-gear-fill"></i> &nbsp;&nbsp;&nbsp;{{__('Manage Website')}}</a>
     </li>
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-person-fill"></i> <span>{{__('User')}}</span></a>

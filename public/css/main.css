@@ -49,8 +49,23 @@ body {
 /* header */
 
 .logo-sec img {
-  max-width: 400px;
-  padding-top: 20px;
+  padding-top: 32px;
+  animation: bscale;
+  animation-duration: 1s;
+}
+@keyframes bscale {
+  from {height: 75px;}
+  to {height: 92px;}
+}
+.shrink img {
+  height: 63px;
+  padding-top: 15px;
+  animation: scale;
+  animation-duration: 1s;
+}
+@keyframes scale {
+  from {height: 75px;}
+  to {height: 63px;}
 }
 .nav-item a:hover {
     color: var(--red);
@@ -462,6 +477,7 @@ body {
 .gallery .card {
   background-color: #fff;
   backdrop-filter: blur(100px);
+  border: none !important;
 }
 .gallery .card img {
   /* border: 5px solid rgb(243, 240, 240);

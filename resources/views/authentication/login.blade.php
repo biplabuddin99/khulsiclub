@@ -33,7 +33,7 @@
 <div class="text-center mt-3 text-lg fs-4">
     <p class="text-gray-600 m-0">Don't have an account? <a href="{{route('register')}}" class="font-bold">Sign
             up</a>.</p>
-    <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
+    <p><a class="font-bold" href="#">Forgot password?</a>.</p>
 </div>
 
 
