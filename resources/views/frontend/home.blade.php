@@ -77,58 +77,58 @@
       <div class="row text-center">
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons pt-2"> person_add </span>
+              <span class="material-icons"> person_add </span>
               <p>{{$donor}}</p>
-              <p>Donor Member</p>
+              <p class="my-auto">Donor Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons pt-2"> person_add </span>
+              <span class="material-icons"> person_add </span>
               <p>{{$Service}}</p>
-              <p>Service Member</p>
+              <p class="my-auto">Service Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons pt-2"> person_add </span>
+              <span class="material-icons"> person_add </span>
               <p>{{$Life}}</p>
-              <p>Life Member</p>
+              <p class="my-auto">Life Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Temporary}}</p>
-              <p>Temporary Member</p>
+              <p class="my-auto">Temporary Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p class="counter">{{$Permanent}}</p>
-              <p>Permanent Member</p>
+              <p class="my-auto">Permanent Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Honorary}}</p>
-              <p>Honorary Member</p>
+              <p class="my-auto">Honorary Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Corporate}}</p>
-              <p>Corporate Member</p>
+              <p class="my-auto">Corporate Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
               <span class="material-icons"> person_add </span>
               <p>{{$Diplomate}}</p>
-              <p>Diplomate Member</p>
+              <p class="my-auto">Diplomate Member</p>
             </div>
           </div>
       </div>

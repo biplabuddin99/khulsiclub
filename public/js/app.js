@@ -1,4 +1,4 @@
-const header = document.getElementById("header");
+/*const header = document.getElementById("header");
 const nav = document.getElementById("nav");
 const scrollHide1 = document.getElementById("scroll-hide1");
 const scrollHide2 = document.getElementById("scroll-hide2");
@@ -21,5 +21,14 @@ window.onscroll = function () {
     scrollHide2.classList.remove("d-none");
     navText.classList.add("m-auto");
     navText.classList.remove("ms-auto");
+  }
+};*/
+const headeroffset=$('.sticky-top').offset();
+window.onscroll = function () {
+  console.log(window.pageYOffset);
+  if (window.pageYOffset > 200) {
+    $(".scicon").addClass('d-sm-none');
+  } else {
+      $(".scicon").removeClass('d-sm-none');
   }
 };
