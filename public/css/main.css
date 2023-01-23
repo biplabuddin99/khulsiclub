@@ -353,12 +353,13 @@ body {
   font-weight: bold;
 }
 .facilities div img {
-  max-width: 190px;
+  max-width: 332px;
   /* border-radius: 10px; */
 }
 .facilities div p {
   margin-top: 5px;
   font-weight: 600;
+  font-size: 24px;
 }
 .facilities div p::first-letter {
   color: var(--red);
