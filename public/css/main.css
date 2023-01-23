@@ -47,9 +47,7 @@ body {
   color: #e0ebec;
 }
 /* header */
-header {
-    height: 90px;
-}
+
 .logo-sec img {
   max-width: 400px;
   padding-top: 20px;
