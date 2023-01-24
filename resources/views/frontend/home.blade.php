@@ -204,7 +204,7 @@
 
                   <div class="notice-title notice-div-two">
                     <p class="mb-0">
-                      <a href="{{asset('uploads/notice_image/'.$notic->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
+                      <a href="{{asset('uploads/notice_image/'.$n->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
                     </p>
                     <div class="d-flex notice-time">
                       <span class="material-symbols-outlined"> alarm </span>

@@ -26,7 +26,6 @@
                                 <th scope="col">{{__('Title')}}</th>
                                 <th scope="col">{{__('Details')}}</th>
                                 <th scope="col">{{__('Image')}}</th>
-                                <th scope="col">{{__('Notice File')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
@@ -37,7 +36,6 @@
                                 <td>{{$p->title}}</td>
                                 <td>{{$p->details}}</td>
                                 <td><img width="50px" src="{{asset('uploads/notice_image/'.$p->image)}}" alt=""></td>
-                                <td><img width="50px" src="{{asset('uploads/notice_image/'.$p->noticefile)}}" alt=""></td>
                                 <!-- or <td>{{ $p->status == 1?"Active":"Inactive" }}</td>-->
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.notice.edit',encryptor('encrypt',$p->id))}}">

@@ -439,7 +439,7 @@
                 </div>
             </div>
             <div>
-                <p><b>15.Details of Children's:(Must be Added with Birth Certificate copy</b></p>
+                <p><b>15.Details of Children's:(Must be Added with Birth Certificate copy)</b></p>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid;">
                 <thead style="padding-top: 10px; padding-bottom: 5px;">
