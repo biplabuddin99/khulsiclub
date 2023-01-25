@@ -45,7 +45,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-2 col-7 logo-sec">
-            <img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" />
+            <a href="http://localhost/khulsiclub/"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" /></a>
           </div>
 
           <div class="col-sm-10 col-5 header-right">
