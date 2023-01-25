@@ -58,14 +58,14 @@ body {
   to {height: 92px;}
 }
 .shrink img {
-  height: 63px;
-  padding-top: 15px;
+  height: 58px;
+  padding-top: 7px;
   animation: scale;
   animation-duration: 1s;
 }
 @keyframes scale {
   from {height: 75px;}
-  to {height: 63px;}
+  to {height: 58px;}
 }
 .nav-item a:hover {
     color: var(--red);
@@ -109,12 +109,12 @@ body {
   color: #515152;
 }
 /* slider */
-.carousel-item {
+/* .carousel-item {
   height: 720px;
 }
 .carousel-item img {
   height: 720px;
-}
+} */
 /* Member Counter */
 .member-counter .card {
   height: 100px;
