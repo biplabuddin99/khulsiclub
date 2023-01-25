@@ -44,11 +44,11 @@
     <header class="bg-white sticky-top">
       <div class="container">
         <div class="row">
-          <div class="col-sm-2 col-7 logo-sec">
-            <a href="http://localhost/khulsiclub/"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" /></a>
+          <div class="col-sm-4 col-7 logo-sec">
+            <a href="http://localhost/khulsiclub/"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
           </div>
 
-          <div class="col-sm-10 col-5 header-right">
+          <div class="col-sm-8 col-5 header-right">
               
             <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-sm-flex scicon">
               <a class="pt-2" href="#"><i class="bi bi-facebook"></i></a>
@@ -63,7 +63,7 @@
             <div class="row">
               <div class="col-sm-12 col-12 d-flex justify-content-end " >
                 
-                <nav class="navbar navbar-expand-lg navbar-light">
+                <nav class="navbar navbar-expand-lg navbar-light pb-0">
                   <button class="navbar-toggler my-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>

@@ -77,56 +77,56 @@
       <div class="row text-center">
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$donor}}</p>
               <p class="my-auto">Donor Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Service}}</p>
               <p class="my-auto">Service Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Life}}</p>
               <p class="my-auto">Life Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Temporary}}</p>
               <p class="my-auto">Temporary Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p class="counter">{{$Permanent}}</p>
               <p class="my-auto">Permanent Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Honorary}}</p>
               <p class="my-auto">Honorary Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Corporate}}</p>
               <p class="my-auto">Corporate Member</p>
             </div>
           </div>
           <div class="col">
             <div class="card p-1 shadow my-2">
-              <span class="material-icons"> person_add </span>
+              <span class="material-icons"> groups </span>
               <p>{{$Diplomate}}</p>
               <p class="my-auto">Diplomate Member</p>
             </div>
@@ -147,7 +147,7 @@
               class="carousel slide"
               data-bs-ride="carousel"
             >
-              <div class="carousel-inner">
+              <div class="carousel-inner shadow">
                 @forelse ($notice as $notic)
 
                 <div class="carousel-item {{$loop->index==0?'active':''}}">
@@ -197,9 +197,9 @@
           <div class="col-sm-12 col-md-12 col-lg-5 notice">
             <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
-              <p>Notice</p>
+              <p class="fs-4 mb-1 pt-1">Notice</p>
             </div>
-            <div>
+            <div class="height-300">
                 @forelse ($notice as $n)
 
                   <div class="notice-title notice-div-two">
@@ -208,7 +208,7 @@
                     </p>
                     <div class="d-flex notice-time">
                       <span class="material-symbols-outlined"> alarm </span>
-                      <p>{{date('j F, Y', strtotime($n->published_date))}} </p>
+                      <p class="mb-2">{{date('j F, Y', strtotime($n->published_date))}} </p>
                     </div>
                 </div>
                 @empty
@@ -219,15 +219,15 @@
                     </p>
                     <div class="d-flex notice-time">
                       <span class="material-symbols-outlined"> alarm </span>
-                      <p>19 January, 2023</p>
+                      <p class="mb-2">19 January, 2023</p>
                     </div>
                 </div>
                 @endforelse
+            </div>
                 <div class="views-notice">
                   <a href="#">Views All Notices</a>
                 </div>
 
-            </div>
           </div>
         </div>
       </div>

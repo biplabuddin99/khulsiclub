@@ -26,7 +26,7 @@ window.onscroll = function () {
 const headeroffset=$('.sticky-top').offset();
 window.onscroll = function () {
   console.log(window.pageYOffset);
-  if (window.pageYOffset > 200) {
+  if (window.pageYOffset >= 200) {
     $(".scicon").addClass('d-sm-none');
     $('.logo-sec').addClass('shrink');
   } else {

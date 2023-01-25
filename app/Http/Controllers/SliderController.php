@@ -44,7 +44,7 @@ class SliderController extends Controller
         try{
             $slider=new Slider;
             if($request->has('Picture'))
-            $slider->image=$this->resizeImage($request->Picture,'uploads/Slide_image',true,1366,583,false);
+            $slider->image=$this->resizeImage($request->Picture,'uploads/Slide_image',true,1920,803,true);
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;
             $slider->long_title=$request->LongTitle;
@@ -102,7 +102,7 @@ class SliderController extends Controller
             $path='uploads/Slide_image';
             if($request->has('Picture') && $request->Picture)
             if($this->deleteImage($slider->image,$path))
-                $slider->image=$this->resizeImage($request->Picture,$path,true,1366,583,false);
+                $slider->image=$this->resizeImage($request->Picture,$path,true,1920,803,true);
 
             $slider->link=$request->Link;
             $slider->short_title=$request->ShortTitle;

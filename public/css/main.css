@@ -154,19 +154,22 @@ body {
 .top-nav a {
   margin-right: 10px !important;
 }
+.height-300{
+  height: 300px;
+}
 .notice-div-one {
   border-top: 3px solid rgb(48, 48, 48) !important;
-  border-bottom: 1px solid rgb(48, 48, 48);
+  border-bottom: 3px solid rgb(48, 48, 48);
 }
 .notice-div-two {
-  border-bottom: 1px solid rgb(48, 48, 48);
+  border-bottom: 1px solid #e1e1e1;
 }
 .notice-div-one p,
 .notice-div-one span {
   padding-top: 10px;
 }
 .notice-title {
-  margin-top: 20px;
+  margin-top: 7px;
 }
 .notice-title p {
   color: var(--red);
@@ -374,7 +377,7 @@ body {
   overflow: hidden;
 }
 .memeber-card{
-  height: 292px;
+  height: 325px;
 }
 .member div p {
   margin-top: 5px;
