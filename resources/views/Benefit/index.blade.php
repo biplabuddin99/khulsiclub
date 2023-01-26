@@ -48,6 +48,9 @@
                                     @endforelse
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-end my-3">
+                                {!! $benefit->links()!!}
+                            </div>
                         </div>
                     </div>
                 </div>

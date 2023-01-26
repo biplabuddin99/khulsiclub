@@ -242,8 +242,11 @@
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
                 <figure>
-                  <img src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
-                  <p>{{$fac->title}}</p>
+                  <img class="shadow zoom" src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
+                  
+                  <div class="facilities-heading">
+                    <h4>{{$fac->title}}</h4>
+                  </div>
                 </figure>
               </div>
             @empty
@@ -315,8 +318,8 @@
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
-                <div class="card mb-3 bg-transparent ">
-                  <img src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
+                <div class="card mb-3 shadow bg-transparent ">
+                  <img  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
                   <div class="heading">
                     <h4>{{$p->name}}</h4>
                   </div>
@@ -324,7 +327,7 @@
               </div>
             @empty
               <div class="col-12 item bg-transparent">
-                <div class="card mb-3 bg-transparent">
+                <div class="card mb-3 shadow bg-transparent">
                   <img src="{{ asset('img/galary.pngz')}}" alt="" />
                   <div class="heading">
                     <h4>AGE -2021</h4>
@@ -364,16 +367,19 @@
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                 <p>Benefits of Members</p>
                 <ul class="navbar-nav">
-                @forelse ($benefit as $b)
-                  <li class="nav-item">
-                    <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
-                  </li>
-                @empty
-                <li class="nav-item">
-                    <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
-                </li>
-                @endforelse
+                  @forelse ($benefit as $b)
+                    <li class="nav-item">
+                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                    </li>
+                  @empty
+                    <li class="nav-item">
+                        <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
+                    </li>
+                  @endforelse
                 </ul>
+                <div>
+                  <a class="btn btn-sm btn-danger" href="{{route('member.benefit')}}">View more</a>
+                </div>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                 <p>Become a Member</p>

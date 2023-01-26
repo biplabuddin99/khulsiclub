@@ -45,7 +45,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-7 logo-sec">
-            <a href="http://localhost/khulsiclub/"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
+            <a href="{{route('front')}}"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
           </div>
 
           <div class="col-sm-8 col-5 header-right">
@@ -127,7 +127,7 @@
         <div class="row">
           <div class="col-sm-4 d-flex justify-content-center">
           <i class="bi bi-headset"></i>
-            <p class="my-auto">{{ $setting?->footer_top_p1_text }}</p>
+            <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
           <div class="col-sm-4">
             <p class="support-border my-auto" id="support-number">{{ $setting?->footer_top_p2_text }}</p>

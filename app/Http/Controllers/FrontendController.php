@@ -44,7 +44,7 @@ class FrontendController extends Controller
         $Corporate = OurMember::where('membership_applied',7)->count();
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
-        $benefit = BenefitsOfMember::all();
+        $benefit = BenefitsOfMember::latest()->take(7)->get();
         return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit'));
     }
 
@@ -56,6 +56,16 @@ class FrontendController extends Controller
     public function mem_regi()
     {
         return view('frontend.registration');
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function benefit()
+    {
+        $benefit=BenefitsOfMember::all();
+        return view('frontend.benefit',compact('benefit'));
     }
 
     /**

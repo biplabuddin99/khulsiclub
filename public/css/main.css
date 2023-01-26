@@ -513,6 +513,8 @@ body {
 }
 .member-inner div:nth-of-type(1) ul li {
   margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .member-inner div:nth-of-type(2) p {
@@ -561,14 +563,14 @@ body {
   font-size: 40px;
   margin-right: 10px;
   /* margin-top: 30px; */
-  margin: auto;
+  /* margin: auto; */
 }
 .support p {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   /* margin-top: 30px; */
-  margin: auto;
+  /* margin: auto; */
 }
 #support-number {
   font-size: 40px;
@@ -798,9 +800,35 @@ footer img {
   /*padding: 4rem 0;*/
   background: hsla(0, 0%, 95.7%, .68)
 }
+.facilities-heading {
+  position: absolute;
+  bottom: 16px;
+  height: 50px;
+  opacity: 0.8;
+  background-color: #fff;
+  /*border-radius: 0 0 20px 20px;*/
+  overflow: hidden;
+  width: 332px;
+  font-size: 14px;
+}
+.facilities-heading h4 {
+  font-size: 22px;
+}
 .facilities-main .member-section {
   position: relative;
-  overflow: hidden
+  
+}
+figure{
+  overflow: hidden;
+}
+.zoom {
+  transition: transform .8s; /* Animation */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.zoom:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 @-webkit-keyframes move {

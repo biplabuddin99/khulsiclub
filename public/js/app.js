@@ -34,3 +34,4 @@ window.onscroll = function () {
       $('.logo-sec').removeClass('shrink');
   }
 };
+
