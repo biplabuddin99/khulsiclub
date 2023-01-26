@@ -377,7 +377,7 @@
                     </li>
                   @endforelse
                 </ul>
-                <div>
+                <div class="ps-1">
                   <a class="btn btn-sm btn-danger" href="{{route('member.benefit')}}">View more</a>
                 </div>
               </div>
