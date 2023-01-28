@@ -59,6 +59,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-end my-3">
+                        {!! $sliders->links()!!}
+                    </div>
                 </div>
             </div>
         </div>

@@ -61,6 +61,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-end my-3">
+                        {!! $ourmember->links()!!}
+                    </div>
                 </div>
             </div>
         </div>

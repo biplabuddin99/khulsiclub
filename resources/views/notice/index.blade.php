@@ -57,6 +57,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-end my-3">
+                        {!! $notices->links()!!}
+                    </div>
                 </div>
             </div>
         </div>
