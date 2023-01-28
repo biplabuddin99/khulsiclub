@@ -241,8 +241,8 @@
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
-                <figure>
-                  <img class="shadow zoom" src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
+                <figure class="shadow">
+                  <img class=" zoom" src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
                   
                   <div class="facilities-heading">
                     <h4>{{$fac->title}}</h4>
