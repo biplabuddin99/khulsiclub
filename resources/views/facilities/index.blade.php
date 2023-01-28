@@ -57,6 +57,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-end my-3">
+                        {!! $facilities->links()!!}
+                    </div>
                 </div>
             </div>
         </div>
