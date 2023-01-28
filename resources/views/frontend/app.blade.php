@@ -225,7 +225,7 @@
           duration: 2500,
           delay: 400
         });
-        ScrollReveal().reveal('.support .text-1,.scicon a', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.support .text-1', { delay: 100, origin: 'left' });
         ScrollReveal().reveal('.support .text-2', { delay: 100, origin: 'top' });
         ScrollReveal().reveal('.support .text-3', { delay: 100, origin: 'right' });
     </script>
