@@ -3,6 +3,7 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
+
     <!-- slider -->
     <section class="slider">
       <div
@@ -357,6 +358,7 @@
         <!-- Gallery end -->
         <!-- member reg. start -->
         <div class="justify-content-center bg-light member-section shadow">
+          <span class="shape"></span>
         <span class="bubble1"></span>
         <span class="bubble2"></span>
         <span class="bubble3"></span>
@@ -381,8 +383,8 @@
                   <a class="btn btn-sm btn-danger" href="{{route('member.benefit')}}">View more</a>
                 </div>
               </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text">
-                <p>Become a Member</p>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text my-auto">
+                <p><span>BECOME A <span class="theme-color">MEMBER</span></span></p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 apply-text">
                 <a class="shadow" href="{{route('member.registration')}}">Apply Now</a>
