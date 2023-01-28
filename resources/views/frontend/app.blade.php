@@ -125,14 +125,14 @@
     <section class="support justify-content-center">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4 d-flex justify-content-center">
+          <div class="col-sm-4 d-flex justify-content-center text-1">
           <i class="bi bi-headset"></i>
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 text-2">
             <p class="support-border my-auto" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 text-3">
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>
@@ -217,6 +217,18 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ 
+          reset: true ,
+          distance: '60px',
+          duration: 2500,
+          delay: 400
+        });
+        ScrollReveal().reveal('.support .text-1,.scicon a', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.support .text-2', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.support .text-3', { delay: 100, origin: 'right' });
+    </script>
 
 
     

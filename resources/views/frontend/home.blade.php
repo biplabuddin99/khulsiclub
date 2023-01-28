@@ -74,63 +74,63 @@
     <!-- slider end -->
     <!-- Member Counter -->
     <section class="member-counter container my-5">
-      <div class="row text-center">
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$donor}}</p>
-              <p class="my-auto">Donor Member</p>
-            </div>
+      <div class="row text-center member-animate">
+        <div class="col member-1">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$donor}}</p>
+            <p class="my-auto">Donor Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Service}}</p>
-              <p class="my-auto">Service Member</p>
-            </div>
+        </div>
+        <div class="col member-2">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Service}}</p>
+            <p class="my-auto">Service Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Life}}</p>
-              <p class="my-auto">Life Member</p>
-            </div>
+        </div>
+        <div class="col member-3">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Life}}</p>
+            <p class="my-auto">Life Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Temporary}}</p>
-              <p class="my-auto">Temporary Member</p>
-            </div>
+        </div>
+        <div class="col member-4">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Temporary}}</p>
+            <p class="my-auto">Temporary Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p class="counter">{{$Permanent}}</p>
-              <p class="my-auto">Permanent Member</p>
-            </div>
+        </div>
+        <div class="col member-5">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p class="counter">{{$Permanent}}</p>
+            <p class="my-auto">Permanent Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Honorary}}</p>
-              <p class="my-auto">Honorary Member</p>
-            </div>
+        </div>
+        <div class="col member-6">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Honorary}}</p>
+            <p class="my-auto">Honorary Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Corporate}}</p>
-              <p class="my-auto">Corporate Member</p>
-            </div>
+        </div>
+        <div class="col member-7">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Corporate}}</p>
+            <p class="my-auto">Corporate Member</p>
           </div>
-          <div class="col">
-            <div class="card p-1 shadow my-2">
-              <span class="material-icons"> groups </span>
-              <p>{{$Diplomate}}</p>
-              <p class="my-auto">Diplomate Member</p>
-            </div>
+        </div>
+        <div class="col member-8">
+          <div class="card p-1 shadow my-2">
+            <span class="material-icons"> groups </span>
+            <p>{{$Diplomate}}</p>
+            <p class="my-auto">Diplomate Member</p>
           </div>
+        </div>
       </div>
 
 
@@ -210,7 +210,7 @@
                       <span class="material-symbols-outlined"> alarm </span>
                       <p class="mb-2">{{date('j F, Y', strtotime($n->published_date))}} </p>
                     </div>
-                </div>
+                  </div>
                 @empty
                 <div class="notice-title">
                     <p>
@@ -237,8 +237,8 @@
     <section class="facilities-main">
       <div class="facilities text-center py-5">
         <div class="container my-4">
-          <h4 class="section-title">FACILITIES</h4>
-          <div class="row justify-content-center owl-facilities owl-theme">
+          <h4 class="section-title animate-title">FACILITIES</h4>
+          <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
                 <figure>
@@ -270,7 +270,7 @@
     <div class="memberdiv">
       <div class="member-background">
         <section class="container member pb-5 ">
-          <h4>OUR MEMBERS</h4>
+          <h4 class="animate-title">OUR MEMBERS</h4>
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $member)
             <div class="col-12 item pe-3 ps-3">
@@ -314,7 +314,7 @@
     <section class="gallery">
       <div class="galler-background py-3">
         <div class="container">
-          <h4 class="pt-5">GALLERY</h4>
+          <h4 class="pt-5 animate-title">GALLERY</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
@@ -365,8 +365,8 @@
           <div class="p-5 rounded shadow">
             <div class="row member-inner">
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                <p>Benefits of Members</p>
-                <ul class="navbar-nav">
+                <p class="animate-title">Benefits of Members</p>
+                <ul class="navbar-nav benefit">
                   @forelse ($benefit as $b)
                     <li class="nav-item">
                       <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
@@ -377,14 +377,14 @@
                     </li>
                   @endforelse
                 </ul>
-                <div class="ps-1">
+                <div class="ps-1 viewbutton">
                   <a class="btn btn-sm btn-danger" href="{{route('member.benefit')}}">View more</a>
                 </div>
               </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text">
                 <p>Become a Member</p>
               </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 apply-text">
                 <a class="shadow" href="{{route('member.registration')}}">Apply Now</a>
               </div>
             </div>
@@ -436,6 +436,22 @@
         })
 
         
+    </script>
+    <script>
+        ScrollReveal({ 
+          reset: true ,
+          distance: '60px',
+          duration: 2500,
+          delay: 400
+        });
+        ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 50, origin: 'right', interval: 30  });
+        ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities, .gallery .item', { delay: 200,  origin: 'bottom', interval: 30 });
+        ScrollReveal().reveal('.viewbutton', { delay: 400,  origin: 'bottom' });
+        ScrollReveal().reveal('.become-member-text', { delay: 400,  origin: 'top' });
+        ScrollReveal().reveal('.apply-text', { delay: 400,  origin: 'right' });
+        ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 100,  origin: 'left' });
+        ScrollReveal().reveal('.benefit li', { delay: 200,  origin: 'left', interval: 30 });
+        ScrollReveal().reveal('.memberdiv .memeber-card', { delay: 200,  origin: 'top', interval: 50 });
     </script>
     @endpush
 

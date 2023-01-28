@@ -816,6 +816,7 @@ footer img {
 }
 .facilities-main .member-section {
   position: relative;
+  overflow: hidden;
   
 }
 figure{
