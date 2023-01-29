@@ -505,7 +505,7 @@ body {
   bottom: 0px;
   left: 0;
   right: 0;
-  height: 50px;
+  /* height: 50px; */
   opacity: 0.8;
   background-color: #fff;
   /*border-radius: 0 0 20px 20px;*/
@@ -513,7 +513,9 @@ body {
 }
 .gallery .card .heading h4 {
   color: var(--red);
-  font-size: 20px;
+  font-size: 1.3vw;
+  margin: auto;
+  padding: 5px;
 }
 /* member reg {this secition chanage on 17 january} */
 .member-inner div:nth-of-type(1) p {
@@ -817,8 +819,8 @@ footer img {
 }
 .facilities-heading {
   position: absolute;
-  bottom: 16px;
-  height: 50px;
+  bottom: 0px;
+  /* height: 50px; */
   opacity: 0.8;
   background-color: #fff;
   /*border-radius: 0 0 20px 20px;*/
@@ -828,6 +830,8 @@ footer img {
 }
 .facilities-heading h4 {
   font-size: 22px;
+  margin: auto;
+  padding: 5px;
 }
 .facilities-main .member-section {
   position: relative;
@@ -836,6 +840,7 @@ footer img {
 }
 figure{
   overflow: hidden;
+  margin: 0;
 }
 .zoom {
   transition: transform .8s; /* Animation */
