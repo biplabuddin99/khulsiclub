@@ -45,7 +45,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-7 logo-sec">
-            <a href="{{route('front')}}"><img src="{{asset('uploads/settings/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
+            <a href="{{route('front')}}"><img src="{{asset('uploads/settings/header_logo/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
           </div>
 
           <div class="col-sm-8 col-5 header-right">
@@ -144,7 +144,7 @@
       <div class="footer">
         <div class="container">
           <div class="footer-logo">
-            <img src="{{asset('uploads/settings/'.$setting?->footer_logo)}}" alt="" />
+            <img src="{{asset('uploads/settings/footer_logo/'.$setting?->footer_logo)}}" alt="" />
           </div>
           <div class="row footer-nav">
             <div class="col-sm-4">
@@ -194,9 +194,9 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4 d-flex payment-img">
               <p>We Accept</p>
-              <img class="img-fluid" src="{{asset('uploads/settings/'.$setting?->footer_top_p1_image)}}" alt="" />
-              <img class="img-fluid" src="{{asset('uploads/settings/'.$setting?->footer_top_p2_image)}}" alt="" />
-              <img class="img-fluid" src="{{asset('uploads/settings/'.$setting?->footer_top_p3_image)}}" alt="" />
+              <img class="img-fluid" src="{{asset('uploads/settings/we_accept_1/'.$setting?->footer_top_p1_image)}}" alt="" />
+              <img class="img-fluid" src="{{asset('uploads/settings/we_accept_2/'.$setting?->footer_top_p2_image)}}" alt="" />
+              <img class="img-fluid" src="{{asset('uploads/settings/we_accept_3/'.$setting?->footer_top_p3_image)}}" alt="" />
             </div>
             <div class="col-sm-12 col-md-12 col-lg-5 mt-2 developer">
               Developed By :Texture Software Technology Ltd

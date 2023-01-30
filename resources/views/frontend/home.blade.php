@@ -251,9 +251,14 @@
                 </figure>
               </div>
             @empty
-              <div class="col-12 justify-content-center">
-                <img src="{{ asset('img/fasi.jpg')}}" alt="" />
-                <p>Restaurent</p>
+              <div class="col-12 item  d-flex justify-content-center">
+                <figure class="shadow">
+                  <img class=" zoom" src="{{ asset('img/fasi.jpg')}}" alt="" />
+                  
+                  <div class="facilities-heading">
+                    <h4>Restaurent</h4>
+                  </div>
+                </figure>
               </div>
             @endforelse
 
@@ -327,9 +332,10 @@
                 </div>
               </div>
             @empty
-              <div class="col-12 item bg-transparent">
-                <div class="card mb-3 shadow bg-transparent">
-                  <img src="{{ asset('img/galary.pngz')}}" alt="" />
+
+              <div class="col-12 item bg-transparent pe-3 ps-3">
+                <div class="card mb-3 shadow bg-transparent ">
+                  <img  src="{{ asset('img/slider-3-1.png')}}" alt="" />
                   <div class="heading">
                     <h4>AGE -2021</h4>
                   </div>
@@ -447,13 +453,13 @@
           delay: 400
         });
         ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 50, origin: 'right', interval: 30  });
-        ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities, .gallery .item', { delay: 200,  origin: 'bottom', interval: 30 });
+        ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities', { delay: 200,  origin: 'bottom', interval: 30 });
         ScrollReveal().reveal('.viewbutton', { delay: 400,  origin: 'bottom' });
         ScrollReveal().reveal('.become-member-text', { delay: 400,  origin: 'top' });
         ScrollReveal().reveal('.apply-text', { delay: 400,  origin: 'right' });
         ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 100,  origin: 'left' });
         ScrollReveal().reveal('.benefit li', { delay: 200,  origin: 'left', interval: 30 });
-        ScrollReveal().reveal('.memberdiv .memeber-card', { delay: 200,  origin: 'top', interval: 50 });
+        // ScrollReveal().reveal('.memberdiv .memeber-card', { delay: 200,  origin: 'top', interval: 30 });
     </script>
     @endpush
 

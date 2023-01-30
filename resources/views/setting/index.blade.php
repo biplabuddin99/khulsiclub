@@ -41,11 +41,11 @@
                                         <td>{{$s->contact_no}}</td>
                                         <td>{{$s->email_address}}</td>
                                         <!-- <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->we_accept)}}" alt=""></td> -->
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->header_logo)}}" alt=""></td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_logo)}}" alt=""></td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_top_p1_image)}}" alt=""></td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_top_p2_image)}}" alt=""></td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/'.$s->footer_top_p3_image)}}" alt=""></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/header_logo/'.$s->header_logo)}}" alt=""></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/footer_logo/'.$s->footer_logo)}}" alt=""></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/we_accept_1/'.$s->footer_top_p1_image)}}" alt=""></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/we_accept_2/'.$s->footer_top_p2_image)}}" alt=""></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/we_accept_3/'.$s->footer_top_p3_image)}}" alt=""></td>
                                         <td class="white-space-nowrap">
                                             <a class="ebutton" href="{{route(currentUser().'.settings.edit',encryptor('encrypt',$s->id))}}">Edit</a>
                                         </td>
