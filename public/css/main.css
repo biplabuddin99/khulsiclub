@@ -496,6 +496,15 @@ body {
   background-color: #fff;
   backdrop-filter: blur(100px);
   border: none !important;
+  border-radius: 0px;
+  overflow: hidden;
+}
+.gallery-zoom {
+  transition: transform .8s; /* Animation */
+  /* overflow: hidden; */
+}
+.gallery-zoom:hover {
+  transform: scale(1.5);
 }
 .gallery .card img {
   /* border: 5px solid rgb(243, 240, 240);
@@ -849,6 +858,7 @@ figure{
   margin: 0 auto;
   overflow: hidden;
 }
+
 
 .zoom:hover {
   transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */

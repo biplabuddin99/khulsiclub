@@ -325,7 +325,7 @@
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
                 <div class="card mb-3 shadow bg-transparent ">
-                  <img  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
+                  <img class="gallery-zoom"  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
                   <div class="heading">
                     <h4>{{$p->name}}</h4>
                   </div>
@@ -459,7 +459,7 @@
         ScrollReveal().reveal('.apply-text', { delay: 400,  origin: 'right' });
         ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 100,  origin: 'left' });
         ScrollReveal().reveal('.benefit li', { delay: 200,  origin: 'left', interval: 30 });
-        // ScrollReveal().reveal('.memberdiv .memeber-card', { delay: 200,  origin: 'top', interval: 30 });
+        ScrollReveal().reveal('.memberdiv .owl-member, .gallery .owl-gallery', { delay: 200,  origin: 'top', interval: 30 });
     </script>
     @endpush
 
