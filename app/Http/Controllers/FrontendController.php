@@ -68,6 +68,12 @@ class FrontendController extends Controller
         return view('frontend.benefit',compact('benefit'));
     }
 
+    public function aboutUS()
+    {
+        $about=BenefitsOfMember::all();
+        return view('About.about-us',compact('about'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

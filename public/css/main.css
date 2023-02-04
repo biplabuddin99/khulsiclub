@@ -86,14 +86,54 @@ body {
   border-right: 2px solid var(--red);
 }
 .nav_a_padding{
-  padding-left: 14px !important;
-    padding-right: 14px !important;
+  padding-left: 8px !important;
+    padding-right: 8px !important;
 
 }
 .nav_contact_padding{
   padding-left: 14px !important;
     padding-right: 0px !important;
 
+}
+.dropdown {
+  position: relative;
+  
+}
+.mega-menu {
+	padding: 10px 0px ! important;
+	width: 700px;
+  margin-top: 0px;
+  border-radius: 3px;
+	}
+.small-menu {
+	width: 250px;
+  margin-top: 0px;
+  border-radius: 3px;
+	}
+.dropdown-menu .subMenu a {
+  text-decoration: none;
+  color: #515152;
+  font-size: 14px;
+  padding-left: 0;
+}
+.dropdown-menu .subMenu a:hover {
+  color: var(--red);
+}
+.dropdown-menu li {
+  list-style: none;
+}
+.dropdown-menu h4 a {
+  text-decoration: none;
+  color: #464444;
+  font-size: 17px;
+  font-weight: bolder;
+}
+@media (min-width: 992px){
+
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+      
+  }
 }
 .member-section .shape {
   width: 400px;
@@ -574,6 +614,65 @@ body {
   text-decoration: none;
   color: #fff;
 }
+/* about us page start */
+.breadcrumb a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 1192px){
+.container-wrapper {
+    padding-left: 75px;
+    padding-right: 75px;
+}
+}
+.container-wrapper {
+  margin: 0 auto;
+}
+.sideber-nav {
+  list-style: none;
+}
+.sideber-nav a {
+  text-decoration: none;
+  color: #515152;
+}
+.page-title {
+  background-color: var(--red);
+  color: white;
+  border-radius: 4px;
+}
+.page-title h6 {
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.about-support {
+  background-color: var(--red);
+  height: auto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 5px;
+}
+.sidebar-menu.vue-affix {
+  top: 0!important;
+  width: 280px;
+  -webkit-animation: FadeUp 1s ease forwards;
+  animation: FadeUp 1s ease forwards;
+}
+.leftside-menu .card {
+  /* position: relative; */
+  overflow: hidden;
+  height: 540px;
+}
+.rounded-10 {
+  border-radius: 10px;
+}
+/* about us page end */
 
 /* support */
 .support {
@@ -587,6 +686,7 @@ body {
   padding-bottom: 20px;
   margin-top: 40px;
 }
+
 .support i {
   font-size: 40px;
   margin-right: 10px;

@@ -77,20 +77,84 @@
                           </button>
                         </a>
                       </li>
-                      <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">About Us</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          About Us
+                        </a>
+                        <div class="dropDown dropdown-menu mega-menu megamenu-lg" aria-labelledby="navbarDropdown">
+                          <div class="row m-0">
+                            <div class="col-lg-4 pe-0">
+                              <ul class="ps-2">
+                                <h4 class="menu-head">
+                                  <a href="{{route('member.about1')}}">About</a>
+                                </h4>
+                                <li class="subMenu"><a href="">Core values</a></li>
+                                <li class="subMenu"><a href="">Mission</a></li>
+                                <li class="subMenu"><a href="">Vission</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-lg-4 pe-0">
+                              <ul class="ps-2">
+                                <h4 class="menu-head">
+                                  <a href="">Our Team</a>
+                                </h4>
+                                <li class="subMenu"><a href="">Core values</a></li>
+                                <li class="subMenu"><a href="">Mission</a></li>
+                                <li class="subMenu"><a href="">Vission</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-lg-4 pe-0">
+                              <ul class="ps-2">
+                                <h4 class="menu-head">
+                                  <a href="">Committees & Forums</a>
+                                </h4>
+                                <li class="subMenu"><a href="">Core values</a></li>
+                                <li class="subMenu"><a href="">Mission</a></li>
+                                <li class="subMenu"><a href="">Vission</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </li>
-                      <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">Club Facilities</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Club Facilities
+                        </a>
+                          <ul class="ps-4 dropdown-menu small-menu">
+                            <li class="subMenu"><a href="">Core values</a></li>
+                            <li class="subMenu"><a href="">Mission</a></li>
+                            <li class="subMenu"><a href="">Vission</a></li>
+                          </ul>
                       </li>
-                      <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">Members</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Members
+                        </a>
+                          <ul class="ps-4 dropdown-menu small-menu">
+                            <li class="subMenu"><a href="">Core values</a></li>
+                            <li class="subMenu"><a href="">Mission</a></li>
+                            <li class="subMenu"><a href="">Vission</a></li>
+                          </ul>
                       </li>
-                      <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">Publications</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Publications
+                        </a>
+                          <ul class="ps-4 dropdown-menu small-menu">
+                            <li class="subMenu"><a href="">Core values</a></li>
+                            <li class="subMenu"><a href="">Mission</a></li>
+                            <li class="subMenu"><a href="">Vission</a></li>
+                          </ul>
                       </li>
-                      <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">Media</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Media
+                        </a>
+                          <ul class="ps-4 dropdown-menu small-menu">
+                            <li class="subMenu"><a href="">Core values</a></li>
+                            <li class="subMenu"><a href="">Mission</a></li>
+                            <li class="subMenu"><a href="">Vission</a></li>
+                          </ul>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link nav_contact_padding" href="">Contact Us</a>

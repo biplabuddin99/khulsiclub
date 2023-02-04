@@ -50,6 +50,7 @@ Route::get('/admin', [auth::class,'signInForm'])->name('signIn');
 Route::get('/login', [auth::class,'signInForm'])->name('login');
 Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
+Route::get('/about-us-1', [front::class,'aboutUS'])->name('member.about1');
 Route::get('/benfit_of_membrer', [front::class,'benefit'])->name('member.benefit');
 Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registration');
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
