@@ -81,8 +81,8 @@
                         <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           About Us
                         </a>
-                        <div class="dropDown dropdown-menu mega-menu megamenu-lg" aria-labelledby="navbarDropdown">
-                          <div class="row m-0">
+                        <div class="dropDown dropdown-menu mega-menu shadow megamenu-lg" aria-labelledby="navbarDropdown">
+                          <div class="row m-0 ">
                             <div class="col-lg-4 pe-0">
                               <ul class="ps-2">
                                 <h4 class="menu-head">
@@ -120,7 +120,7 @@
                         <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Club Facilities
                         </a>
-                          <ul class="ps-4 dropdown-menu small-menu">
+                          <ul class="ps-4 dropdown-menu shadow small-menu">
                             <li class="subMenu"><a href="">Core values</a></li>
                             <li class="subMenu"><a href="">Mission</a></li>
                             <li class="subMenu"><a href="">Vission</a></li>
@@ -130,7 +130,7 @@
                         <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Members
                         </a>
-                          <ul class="ps-4 dropdown-menu small-menu">
+                          <ul class="ps-4 dropdown-menu shadow small-menu">
                             <li class="subMenu"><a href="">Core values</a></li>
                             <li class="subMenu"><a href="">Mission</a></li>
                             <li class="subMenu"><a href="">Vission</a></li>
@@ -140,7 +140,7 @@
                         <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Publications
                         </a>
-                          <ul class="ps-4 dropdown-menu small-menu">
+                          <ul class="ps-4 dropdown-menu shadow small-menu">
                             <li class="subMenu"><a href="">Core values</a></li>
                             <li class="subMenu"><a href="">Mission</a></li>
                             <li class="subMenu"><a href="">Vission</a></li>
@@ -150,7 +150,7 @@
                         <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Media
                         </a>
-                          <ul class="ps-4 dropdown-menu small-menu">
+                          <ul class="ps-4 dropdown-menu shadow small-menu">
                             <li class="subMenu"><a href="">Core values</a></li>
                             <li class="subMenu"><a href="">Mission</a></li>
                             <li class="subMenu"><a href="">Vission</a></li>
