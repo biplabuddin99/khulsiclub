@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
-            <div class="page-title" id="grad">
+            <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">About Us</h6>
             </div>
             <p class="text-justify">

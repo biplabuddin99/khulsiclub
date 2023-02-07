@@ -55,7 +55,7 @@ class FrontendController extends Controller
      */
     public function mem_regi()
     {
-        return view('frontend.registration');
+        return view('frontend.memberProfile');
     }
     /**
      * Show the form for creating a new resource.
@@ -67,6 +67,25 @@ class FrontendController extends Controller
         $benefit=BenefitsOfMember::all();
         return view('frontend.benefit',compact('benefit'));
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function memberProfile()
+    {
+        
+        $users=OurMember::where(currentUserId())->first();
+        // dd(currentUserId());
+        return view('frontend.memberProfile',compact('users'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
 
     public function aboutUS()
     {
@@ -204,6 +223,7 @@ class FrontendController extends Controller
     {
         //
     }
+    
 
     /**
      * Update the specified resource in storage.

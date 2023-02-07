@@ -286,12 +286,12 @@
         ScrollReveal({ 
           reset: true ,
           distance: '60px',
-          duration: 2500,
-          delay: 400
+          duration: 800,
+          delay: 200
         });
-        ScrollReveal().reveal('.support .text-1', { delay: 100, origin: 'left' });
-        ScrollReveal().reveal('.support .text-2', { delay: 100, origin: 'top' });
-        ScrollReveal().reveal('.support .text-3', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.support .text-1', { delay: 200, origin: 'left' });
+        ScrollReveal().reveal('.support .text-2', { delay: 200, origin: 'top' });
+        ScrollReveal().reveal('.support .text-3', { delay: 200, origin: 'right' });
     </script>
 
 

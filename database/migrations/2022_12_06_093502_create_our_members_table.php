@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('our_members', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
+            $table->unsignedBigInteger('role_id')->index();
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->string('father_name')->nullable();
             $table->string('husban_name')->nullable();
             $table->string('mother_name')->nullable();
@@ -27,7 +29,8 @@ return new class extends Migration
             $table->string('cell_number')->nullable();
             $table->string('tel_number')->nullable();
             $table->string('fax_number')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->unique();
+            $table->string('password');
             $table->string('blood_group')->nullable();
             $table->string('national_id')->nullable();
             $table->string('qualification')->nullable();

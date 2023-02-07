@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\OurMember;
 use App\Models\Settings\Company;
 use App\Models\Settings\Branch;
 use App\Http\Traits\ResponseTrait;
@@ -20,6 +21,28 @@ class AuthenticationController extends Controller
         return view('authentication.register');
     }
 
+    public function memberSignUpForm(){
+        return view('frontend.memberRegister');
+    }
+
+    public function memberSignUpStore(Request $request){
+        try{
+            $user=new OurMember;
+            $user->company=$request->CompanyName;
+            $user->cell_number=$request->PhoneNumber;
+            $user->email=$request->EmailAddress;
+            $user->password=Hash::make($request->password);
+            $user->role_id=5;
+            if($user->save())
+                return redirect('memberLogin')->with($this->resMessageHtml(true,null,'Successfully Registred'));
+            else
+                return redirect('memberLogin')->with($this->resMessageHtml(false,'error','Please try again'));
+        }catch(Exception $e){
+            dd($e);
+            return redirect('memberLogin')->with($this->resMessageHtml(false,'error','Please try again'));
+        }
+
+    }
     public function signUpStore(SignupRequest $request){
         try{
             $company=new Company;
@@ -54,7 +77,26 @@ class AuthenticationController extends Controller
     public function signInForm(){
         return view('authentication.login');
     }
+    public function memberSignInForm(){
+        return view('frontend.memberLogin');
+    }
 
+    public function memberSignInCheck(Request $request){
+        try{
+            $member=OurMember::where('email',$request->EmailAddress)->first();
+            if($member){
+                if(Hash::check($request->password , $member->password)){
+                    $this->memberSetSession($member);
+                    return redirect()->route($member->role->identity.'.dashboard')->with($this->resMessageHtml(true,null,'Successfully login'));
+                }else
+                    return redirect()->route('memberLogin')->with($this->resMessageHtml(false,'error','Your email or password is wrong!'));
+            }else
+                return redirect()->route('memberLogin')->with($this->resMessageHtml(false,'error','Your email or password is wrong!'));
+        }catch(Exception $e){
+            dd($e);
+            return redirect()->route('memberLogin')->with($this->resMessageHtml(false,'error','Your email or password is wrong!'));
+        }
+    }
     public function signInCheck(SigninRequest $request){
         try{
             $user=User::where('contact_no',$request->PhoneNumber)->first();
@@ -72,6 +114,15 @@ class AuthenticationController extends Controller
         }
     }
 
+    public function memberSetSession($member){
+        return request()->session()->put(
+                [
+                    'userId'=>encryptor('encrypt',$member->id),
+                    'roleIdentity'=>encryptor('encrypt',$member->role->identity),
+                    'userName'=>encryptor('encrypt',$member->full_name)
+                ]
+            );
+    }
     public function setSession($user){
         return request()->session()->put(
                 [
@@ -90,5 +141,9 @@ class AuthenticationController extends Controller
     public function singOut(){
         request()->session()->flush();
         return redirect('login')->with($this->resMessageHtml(false,'error',currentUserId()));
+    }
+    public function memberSingOut(){
+        request()->session()->flush();
+        return redirect('memberLogin')->with($this->resMessageHtml(false,'error',currentUserId()));
     }
 }

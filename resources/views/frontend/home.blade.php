@@ -393,7 +393,7 @@
                 <p><span>BECOME A <span class="theme-color">MEMBER</span></span></p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 apply-text">
-                <a class="shadow" href="{{route('member.registration')}}">Apply Now</a>
+                <a class="shadow" href="{{route('member_registration')}}">Apply Now</a>
               </div>
             </div>
           </div>
@@ -449,15 +449,15 @@
         ScrollReveal({ 
           reset: true ,
           distance: '60px',
-          duration: 2500,
-          delay: 400
+          duration: 800,
+          delay: 200
         });
-        ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 50, origin: 'right', interval: 30  });
+        ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 200, origin: 'right', interval: 30  });
         ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities', { delay: 200,  origin: 'bottom', interval: 30 });
-        ScrollReveal().reveal('.viewbutton', { delay: 400,  origin: 'bottom' });
-        ScrollReveal().reveal('.become-member-text', { delay: 400,  origin: 'top' });
-        ScrollReveal().reveal('.apply-text', { delay: 400,  origin: 'right' });
-        ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 100,  origin: 'left' });
+        ScrollReveal().reveal('.viewbutton', { delay: 200,  origin: 'bottom' });
+        ScrollReveal().reveal('.become-member-text', { delay: 200,  origin: 'top' });
+        ScrollReveal().reveal('.apply-text', { delay: 200,  origin: 'right' });
+        ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 200,  origin: 'left' });
         ScrollReveal().reveal('.benefit li', { delay: 200,  origin: 'left', interval: 30 });
         ScrollReveal().reveal('.memberdiv .owl-member, .gallery .owl-gallery', { delay: 200,  origin: 'top', interval: 30 });
     </script>

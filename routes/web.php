@@ -28,6 +28,7 @@ use App\Http\Controllers\Products\UnitController as unit;
 
 use App\Http\Controllers\FrontendController as front;
 /* Middleware */
+use App\Http\Middleware\isMember;
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isOwner;
 use App\Http\Middleware\isSalesmanager;
@@ -43,6 +44,15 @@ use App\Http\Middleware\isSalesman;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/memberRegister', [auth::class,'memberSignUpForm'])->name('member_registration');
+Route::post('/memberRegister', [auth::class,'memberSignUpStore'])->name('memberRegister.store');
+Route::get('/memberLogin', [auth::class,'memberSignInForm'])->name('memberLogin');
+Route::post('/memberLogin', [auth::class,'memberSignInCheck'])->name('memberlogin.check');
+Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut');
+
+Route::get('/profile', [front::class,'memberProfile'])->name('member.profile');
+//Route::post('/profile', [profile::class,'adminProfile'])->name('admin.profile.update');
+
 Route::get('/', [front::class,'index'])->name('front');
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
 Route::post('/register', [auth::class,'signUpStore'])->name('register.store');
@@ -102,6 +112,12 @@ Route::group(['middleware'=>isSalesmanager::class],function(){
 Route::group(['middleware'=>isSalesman::class],function(){
     Route::prefix('salesman')->group(function(){
         Route::get('/dashboard', [dash::class,'salesmanDashboard'])->name('salesman.dashboard');
+
+    });
+});
+Route::group(['middleware'=>isMember::class],function(){
+    Route::prefix('member')->group(function(){
+        Route::get('/loggedMember', [dash::class,'memberDashboard'])->name('member.dashboard');
 
     });
 });

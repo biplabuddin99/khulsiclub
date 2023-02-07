@@ -690,7 +690,7 @@ body {
   text-decoration: none;
   color: #515152;
 }
-.page-title {
+.about-title {
   background-color: var(--red);
   color: white;
   border-radius: 4px;
@@ -933,6 +933,21 @@ footer img {
   .member .shadow{
     box-shadow: 0 0 0 rgba(255,255,255,.15)!important;
   }
+  .merber-reg-card .card .shape {
+    width: 400px;
+    height: 400px;
+    background: var(--red);
+    opacity: .2;
+    position: absolute !important;
+    top: 0;
+    right: -150px;
+    border-radius: 80px;
+    transform: rotate(45deg);
+}
+  .merber-reg-card .card {
+    position: relative !important;
+    overflow: hidden;
+}
   .navbar-nav{
     padding-left: 30px;
     background: #FFF;

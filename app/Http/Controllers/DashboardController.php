@@ -33,4 +33,10 @@ class DashboardController extends Controller
     public function salesmanDashboard(){
         return view('dasbhoard.salesman');
     }
+    /*
+    * member dashboard
+    */
+    public function memberDashboard(){
+        return view('frontend.member');
+    }
 }

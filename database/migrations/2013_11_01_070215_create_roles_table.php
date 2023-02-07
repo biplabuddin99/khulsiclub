@@ -39,6 +39,11 @@ return new class extends Migration
                 'type' => 'Sales Man',
                 'identity' => 'salesman',
                 'created_at' => Carbon::now()
+            ],
+            [
+                'type' => 'Member',
+                'identity' => 'member',
+                'created_at' => Carbon::now()
             ]
         ]);
         
