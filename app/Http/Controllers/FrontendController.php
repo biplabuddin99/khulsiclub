@@ -76,7 +76,7 @@ class FrontendController extends Controller
     public function memberProfile()
     {
         
-        $users=OurMember::where(currentUserId())->first();
+        $users=OurMember::where('id',currentUserId())->first();
         // dd(currentUserId());
         return view('frontend.memberProfile',compact('users'));
     }
