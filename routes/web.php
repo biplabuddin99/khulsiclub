@@ -50,8 +50,8 @@ Route::get('/memberLogin', [auth::class,'memberSignInForm'])->name('memberLogin'
 Route::post('/memberLogin', [auth::class,'memberSignInCheck'])->name('memberlogin.check');
 Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut');
 
-Route::get('/profile', [front::class,'memberProfile'])->name('member.profile');
-//Route::post('/profile', [profile::class,'adminProfile'])->name('admin.profile.update');
+
+//Route::post('/profile', [member::class,'adminProfile'])->name('member.profile.update');
 
 Route::get('/', [front::class,'index'])->name('front');
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
@@ -64,7 +64,7 @@ Route::get('/about-us-1', [front::class,'aboutUS'])->name('member.about1');
 Route::get('/benfit_of_membrer', [front::class,'benefit'])->name('member.benefit');
 Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registration');
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
-Route::get('/become_a_member/{id}', [front::class,'mem_regi_success'])->name('member.registration.success');
+//Route::get('/become_a_member/{id}', [front::class,'mem_regi_success'])->name('member.registration.success');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
@@ -118,6 +118,9 @@ Route::group(['middleware'=>isSalesman::class],function(){
 Route::group(['middleware'=>isMember::class],function(){
     Route::prefix('member')->group(function(){
         Route::get('/loggedMember', [dash::class,'memberDashboard'])->name('member.dashboard');
+        Route::get('/profile', [member::class,'memberProfile'])->name('member.profile');
+        Route::get('/password_change', [member::class,'memberPassword'])->name('member.password');
+        Route::resource('ourMember',member::class,['as'=>'member']);
 
     });
 });

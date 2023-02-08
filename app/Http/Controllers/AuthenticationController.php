@@ -10,6 +10,8 @@ use App\Models\Settings\Company;
 use App\Models\Settings\Branch;
 use App\Http\Traits\ResponseTrait;
 use App\Http\Requests\Authentication\SignupRequest;
+use App\Http\Requests\Authentication\MemberSignupRequest;
+use App\Http\Requests\Authentication\MemberSigninRequest;
 use App\Http\Requests\Authentication\SigninRequest;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -22,10 +24,10 @@ class AuthenticationController extends Controller
     }
 
     public function memberSignUpForm(){
-        return view('frontend.memberRegister');
+        return view('frontend.members.memberRegister');
     }
 
-    public function memberSignUpStore(Request $request){
+    public function memberSignUpStore(MemberSignupRequest $request){
         try{
             $user=new OurMember;
             $user->company=$request->CompanyName;
@@ -78,10 +80,10 @@ class AuthenticationController extends Controller
         return view('authentication.login');
     }
     public function memberSignInForm(){
-        return view('frontend.memberLogin');
+        return view('frontend.members.memberLogin');
     }
 
-    public function memberSignInCheck(Request $request){
+    public function memberSignInCheck(MemberSigninRequest $request){
         try{
             $member=OurMember::where('email',$request->EmailAddress)->first();
             if($member){

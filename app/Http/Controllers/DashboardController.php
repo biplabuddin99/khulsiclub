@@ -37,6 +37,6 @@ class DashboardController extends Controller
     * member dashboard
     */
     public function memberDashboard(){
-        return view('frontend.member');
+        return view('frontend.members.member');
     }
 }

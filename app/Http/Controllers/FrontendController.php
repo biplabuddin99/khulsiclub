@@ -67,19 +67,7 @@ class FrontendController extends Controller
         $benefit=BenefitsOfMember::all();
         return view('frontend.benefit',compact('benefit'));
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function memberProfile()
-    {
-        
-        $users=OurMember::where('id',currentUserId())->first();
-        // dd(currentUserId());
-        return view('frontend.memberProfile',compact('users'));
-    }
+    
     /**
      * Show the form for editing the specified resource.
      *
