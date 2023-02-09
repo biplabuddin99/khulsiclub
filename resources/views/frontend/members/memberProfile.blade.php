@@ -13,10 +13,9 @@
                     @endif
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.ourMember.update',encryptor('encrypt',$member->id))}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">
                                 @csrf
-                                @method('PATCH')
-                                <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$member->id)}}">
+                                @method('POST')
                                 <div class="row">
                                     <div class="row">
                                         <div class="form-group">
@@ -79,16 +78,6 @@
                                             <div class="form-group">
                                                 <label for="photo">Photo:</label>
                                                 <input type="file" id="image" class="form-control" name="image">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="show">Show Font:</label>
-                                                    <select class="form-control form-select" name="show_font" id="show_font">
-                                                        <option value="">Select Show Font</option>
-                                                        <option value="1" {{ old('show_font',$member->show_font)=='1' ? 'selected':''}}>Yes</option>
-                                                        <option value="0" {{ old('show_font',$member->show_font)=='0' ? 'selected':''}}>No</option>
-                                                    </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
@@ -182,24 +171,24 @@
                                                     @endif
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="bloodGroup">Blood Group:</label>
-                                                <select class="form-control form-select" name="bloodGroup" id="blood">
-                                                    <option value="">Select Blood Group</option>
-                                                    <option value="A+" {{ old('patientBlood',$member->blood_group)=='A+' ? 'selected':''}}>A+</option>
-                                                    <option value="A-"{{ old('patientBlood',$member->blood_group)=='A-' ? 'selected':''}}>A-</option>
-                                                    <option value="B+"{{ old('patientBlood',$member->blood_group)=='B+' ? 'selected':''}}>B+</option>
-                                                    <option value="B-"{{ old('patientBlood',$member->blood_group)=='B-' ? 'selected':''}}>B-</option>
-                                                    <option value="O+"{{ old('patientBlood',$member->blood_group)=='O+' ? 'selected':''}}>O+</option>
-                                                    <option value="O-"{{ old('patientBlood',$member->blood_group)=='O-' ? 'selected':''}}>O-</option>
-                                                    <option value="AB+"{{ old('patientBlood',$member->blood_group)=='AB+' ? 'selected':''}}>AB+</option>
-                                                    <option value="AB-"{{ old('patientBlood',$member->blood_group)=='AB-' ? 'selected':''}}>AB-</option>
-                                                </select>
-                                                @if($errors->has('bloodGroup'))
-                                                    <span class="text-danger"> {{ $errors->first('bloodGroup') }}</span>
-                                                @endif
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="bloodGroup">Blood Group:</label>
+                                                    <select class="form-control form-select" name="bloodGroup" id="blood">
+                                                        <option value="">Select Blood Group</option>
+                                                        <option value="A+" {{ old('patientBlood',$member->blood_group)=='A+' ? 'selected':''}}>A+</option>
+                                                        <option value="A-"{{ old('patientBlood',$member->blood_group)=='A-' ? 'selected':''}}>A-</option>
+                                                        <option value="B+"{{ old('patientBlood',$member->blood_group)=='B+' ? 'selected':''}}>B+</option>
+                                                        <option value="B-"{{ old('patientBlood',$member->blood_group)=='B-' ? 'selected':''}}>B-</option>
+                                                        <option value="O+"{{ old('patientBlood',$member->blood_group)=='O+' ? 'selected':''}}>O+</option>
+                                                        <option value="O-"{{ old('patientBlood',$member->blood_group)=='O-' ? 'selected':''}}>O-</option>
+                                                        <option value="AB+"{{ old('patientBlood',$member->blood_group)=='AB+' ? 'selected':''}}>AB+</option>
+                                                        <option value="AB-"{{ old('patientBlood',$member->blood_group)=='AB-' ? 'selected':''}}>AB-</option>
+                                                    </select>
+                                                    @if($errors->has('bloodGroup'))
+                                                        <span class="text-danger"> {{ $errors->first('bloodGroup') }}</span>
+                                                    @endif
+                                            </div>
                                         </div>
                                     </div>
                                     {{-- <div class="col-md-6 col-12">

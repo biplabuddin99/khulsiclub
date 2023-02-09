@@ -12,6 +12,7 @@ use App\Http\Controllers\Settings\Location\UpazilaController as upazila;
 use App\Http\Controllers\Settings\Location\ThanaController as thana;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\OurMemberController as member;
+use App\Http\Controllers\MemberPanel;
 use App\Http\Controllers\NoticeController as notice;
 use App\Http\Controllers\FacilitiesController as facilities;
 use App\Http\Controllers\PhotoGallaryCategoryController as pGalleryCat;
@@ -118,9 +119,11 @@ Route::group(['middleware'=>isSalesman::class],function(){
 Route::group(['middleware'=>isMember::class],function(){
     Route::prefix('member')->group(function(){
         Route::get('/loggedMember', [dash::class,'memberDashboard'])->name('member.dashboard');
-        Route::get('/profile', [member::class,'memberProfile'])->name('member.profile');
-        Route::get('/password_change', [member::class,'memberPassword'])->name('member.password');
-        Route::resource('ourMember',member::class,['as'=>'member']);
+        Route::get('/profile', [MemberPanel::class,'memberProfile'])->name('member.profile');
+        Route::post('/profileUpdate/update', [MemberPanel::class,'memberProfileUpdate'])->name('profile.update');
+        Route::get('/password_change', [MemberPanel::class,'memberPassword'])->name('member.password');
+        Route::post('/password_update/update', [MemberPanel::class,'mem_pass_update'])->name('member.password.store');
+        Route::get('/memberPrint', [MemberPanel::class,'mem_regi_success'])->name('member.registration.success');
 
     });
 });

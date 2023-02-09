@@ -35,7 +35,7 @@
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
                             <li class="nav-item my-2"><a href="{{route('member.profile')}}">Profile Update</a></li>
-                            <li class="nav-item my-2"><a href="">Print Form</a></li>
+                            <li class="nav-item my-2"><a href="{{route('member.registration.success')}}">Print Form</a></li>
                             <li class="nav-item my-2"><a href="{{route('member.password')}}">Password Change</a></li>
                             <li class="nav-item my-2"><a href="{{route('memberLogOut')}}">Logout</a></li>
                         </ul>

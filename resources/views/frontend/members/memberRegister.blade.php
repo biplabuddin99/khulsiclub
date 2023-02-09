@@ -24,7 +24,7 @@
                   {!!Session::get('response')['message']!!}
               @endif
               <div class="text-center pt-4">
-                <h4>Want to be a members of BASIS</h4>
+                <h4 style="font-weight: bolder;">Want to be a members of Club</h4>
                 <p>Member Registration</p>
               </div>
               <div class=" p-4" style="position:relative; z-index: 100;">

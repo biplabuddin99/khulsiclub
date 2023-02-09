@@ -8,7 +8,9 @@
     <div class="row">
         <div class="col-12">
             <div class="card shadow">
-                <form action="" method="post">
+                <form action="{{route('member.password.store')}}" method="post">
+                    @csrf
+                    @method('POST')
                     <div class="row py-4">
                         <div class="col-10 offset-1 py-2">
                             <label for="Old">Old Password</label>

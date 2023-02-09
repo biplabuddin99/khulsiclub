@@ -36,8 +36,6 @@
     <!-- Basic stylesheet -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css')}}">
-    
-    
   </head>
   <body>
         <!-- header section -->

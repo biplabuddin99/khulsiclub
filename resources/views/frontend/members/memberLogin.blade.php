@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="text-center pt-4">
-                        <span><i class="bi bi-person-circle" style="font-size: 3rem"></i></span>
+                        <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
                         <p>Login</p>
                         <p>Become a Member</p>
                     </div>

@@ -2,95 +2,98 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Facilities;
-use App\Models\BenefitsOfMember;
-use App\Models\Frontend;
-use App\Models\Notice;
-use App\Models\photoGallaryCategory;
 use App\Models\OurMember;
 use App\Models\MemberChildren;
-use App\Models\setting;
-use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Hash;
 use Exception;
-use DB;
-class FrontendController extends Controller
+
+class MemberPanel extends Controller
 {
     use ImageHandleTraits;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $today=\Carbon\Carbon::today()->toDateString();
-        $slider=Slider::get();
-        $notice=Notice::where('published_date', '<=',$today)->where(function ($query) use ($today) {
-                            $query->where('unpublished_date', '>',$today);
-                            $query->orWhereNull('unpublished_date');
-                        })->latest()->limit(12)->get();
-        $facilities=Facilities::get();
-        $pgallery_cat=photoGallaryCategory::where('status',1)->get();
-        //$donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
-        $donor = OurMember::where('membership_applied',1)->count();
-        $Service = OurMember::where('membership_applied',2)->count();
-        $Life = OurMember::where('membership_applied',3)->count();
-        $Temporary = OurMember::where('membership_applied',4)->count();
-        $Permanent = OurMember::where('membership_applied',5)->count();
-        $Honorary = OurMember::where('membership_applied',6)->count();
-        $Corporate = OurMember::where('membership_applied',7)->count();
-        $Diplomate = OurMember::where('membership_applied',7)->count();
-        $ourMember = OurMember::where('show_font',1)->get();
-        $benefit = BenefitsOfMember::latest()->take(6)->get();
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function mem_regi()
-    {
-        return view('frontend.memberProfile');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function benefit()
-    {
-        $benefit=BenefitsOfMember::all();
-        return view('frontend.benefit',compact('benefit'));
-    }
-    
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
-
-    public function aboutUS()
+    public function memberProfile()
     {
-        $about=BenefitsOfMember::all();
-        return view('About.about-us',compact('about'));
+        
+        $member=OurMember::where('id',currentUserId())->first();
+        // dd(currentUserId());
+        return view('frontend.members.memberProfile',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function memberPassword()
+    {
+        
+        $member=OurMember::where('id',currentUserId())->first();
+        // dd(currentUserId());
+        return view('frontend.members.memberPassword',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function mem_pass_update(Request $request)
+    {
+        
+        try{
+            $member=OurMember::findOrFail(currentUserId());
+
+                $this->validate($request, [
+                    'old_password'          => 'required',
+                    'new_password'              => 'required',
+                    'password_confirmation' => 'required|confirmed'
+            ]);
+
+            $member->password = Hash::make($request->password);
+            if($member->save()){
+                Toastr::success('Password Updated Successfully!');
+                return redirect()->route('member.password');
+            }else{
+            Toastr::success('Please try Again!');
+            return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::success('Please try Again!');
+            dd($e);
+            return back()->withInput();
+
+        }
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the form for creating a new resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function mem_regi_store(Request $request)
+    public function mem_regi_success()
+    {
+        $show_data=OurMember::findOrFail(currentUserId());
+        return view('frontend.members.registration_success',compact('show_data'));
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function memberProfileUpdate(Request $request)
     {
         try{
-            $member=new OurMember;
+            $member=OurMember::findOrFail(currentUserId());
 
             $member->full_name=$request->fullName;
             $member->father_name=$request->Fathers;
@@ -105,6 +108,8 @@ class FrontendController extends Controller
             $member->tel_number=$request->tel;
             $member->fax_number=$request->fax;
             $member->email=$request->email;
+            $member->role_id=5;
+
             $member->blood_group=$request->bloodGroup;
             $member->national_id=$request->nationalid;
             $member->qualification=$request->qualification;
@@ -125,7 +130,7 @@ class FrontendController extends Controller
             $member->member_no=$request->memberNo;
             $member->mr_mis=$request->mrormis;
             $member->other_address=$request->otheraddress;
-            /*if($request->hasFile('signaturefounderpresident')){
+            if($request->hasFile('signaturefounderpresident')){
                 $signaturefounderpresident = rand(1111,9999).time().'.'.$request->signaturefounderpresident->extension();
                 $request->signaturefounderpresident->move(public_path('uploads/signature'), $signaturefounderpresident);
                 $member->signature_founder_president=$signaturefounderpresident;
@@ -134,7 +139,7 @@ class FrontendController extends Controller
                 $foundervicepresident = rand(11,99).time().'.'.$request->foundervicepresident->extension();
                 $request->foundervicepresident->move(public_path('uploads/signature'), $foundervicepresident);
                 $member->signature_founder_vicepresident=$foundervicepresident;
-            }*/
+            }
             $member->remarks=$request->remarks;
             $member->update_incometax=$request->updateincometax;
             $member->emergency_contact=$request->emergencycontact;
@@ -148,22 +153,25 @@ class FrontendController extends Controller
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
 
-            if($request->has('image'))
-                $member->image=$this->resizeImage($request->image,'uploads/member_image',true,140,175,false);
+            $path='uploads/member_image';
+            if($request->has('image') && $request->image)
+            if($this->deleteImage($member->image,$path))
+                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
 
             $member->fb_link=$request->fb_link;
-            $member->show_font=0;
-            $member->order_b=0;
+            $member->show_font=$request->show_font;
+            $member->order_b=$request->order_b;
             $member->twter_link=$request->twter_link;
             $member->linkdin_link=$request->linkdin_link;
             $member->youtube_link=$request->youtube_link;
-            $member->status=0;
             if($member->save()){
-
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){
                         if($cname){
-                            $mc=new MemberChildren;
+                            if($request->id[$i])
+                                $mc=MemberChildren::find($request->id[$i]);
+                            else
+                                $mc=new MemberChildren;
                             $mc->member_id=$member->id;
                             $mc->name=$cname;
                             $mc->gender=$request->cgender[$i];
@@ -173,10 +181,8 @@ class FrontendController extends Controller
                         }
                     }
                 }
-
-
-                Toastr::success('our Member Create Successfully!');
-                return redirect()->route('member.registration.success',encryptor('encrypt',$member->id));
+                Toastr::success('Member Update Successfully!');
+                return redirect()->route('member.registration.success');
             }else{
                 Toastr::success('Please try Again!');
                 return redirect()->back();
@@ -184,55 +190,10 @@ class FrontendController extends Controller
         }
         catch (Exception $e){
             dd($e);
-            Toastr::success('Please try Again!');
             return back()->withInput();
+            Toastr::success('Please try Again!');
+
         }
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    // public function mem_regi_success($id)
-    // {
-    //     $show_data=OurMember::findOrFail(encryptor('decrypt',$id));
-    //     return view('frontend.registration_success',compact('show_data'));
-    // }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Frontend $frontend)
-    {
-        //
-    }
-    
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Frontend $frontend)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Frontend $frontend)
-    {
-        //
     }
 }

@@ -150,9 +150,9 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="cellno">Cell No:</label>
-                                                <input type="text" id="cellno" class="form-control" value="{{ old('cellno',$member->cell_number)}}" name="cellno">
-                                                    @if($errors->has('cellno'))
-                                                        <span class="text-danger"> {{ $errors->first('cellno') }}</span>
+                                                <input type="text"class="form-control" value="{{ old('CellNo',$member->cell_number)}}" name="CellNo">
+                                                    @if($errors->has('CellNo'))
+                                                        <span class="text-danger"> {{ $errors->first('CellNo') }}</span>
                                                     @endif
                                             </div>
                                         </div>
@@ -177,30 +177,39 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="email">E-mail:</label>
-                                                <input type="email" id="email" class="form-control" value="{{ old('email',$member->email)}}" name="email">
-                                                    @if($errors->has('email'))
-                                                        <span class="text-danger"> {{ $errors->first('email') }}</span>
+                                                <input type="email" class="form-control" value="{{ old('emailAddress',$member->email)}}" name="emailAddress">
+                                                    @if($errors->has('emailAddress'))
+                                                        <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
                                                     @endif
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="bloodGroup">Blood Group:</label>
-                                                <select class="form-control form-select" name="bloodGroup" id="blood">
-                                                    <option value="">Select Blood Group</option>
-                                                    <option value="A+" {{ old('patientBlood',$member->blood_group)=='A+' ? 'selected':''}}>A+</option>
-                                                    <option value="A-"{{ old('patientBlood',$member->blood_group)=='A-' ? 'selected':''}}>A-</option>
-                                                    <option value="B+"{{ old('patientBlood',$member->blood_group)=='B+' ? 'selected':''}}>B+</option>
-                                                    <option value="B-"{{ old('patientBlood',$member->blood_group)=='B-' ? 'selected':''}}>B-</option>
-                                                    <option value="O+"{{ old('patientBlood',$member->blood_group)=='O+' ? 'selected':''}}>O+</option>
-                                                    <option value="O-"{{ old('patientBlood',$member->blood_group)=='O-' ? 'selected':''}}>O-</option>
-                                                    <option value="AB+"{{ old('patientBlood',$member->blood_group)=='AB+' ? 'selected':''}}>AB+</option>
-                                                    <option value="AB-"{{ old('patientBlood',$member->blood_group)=='AB-' ? 'selected':''}}>AB-</option>
-                                                </select>
-                                                @if($errors->has('bloodGroup'))
-                                                    <span class="text-danger"> {{ $errors->first('bloodGroup') }}</span>
-                                                @endif
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="password">Password:</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                                    @if($errors->has('password'))
+                                                        <span class="text-danger"> {{ $errors->first('password') }}</span>
+                                                    @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="bloodGroup">Blood Group:</label>
+                                                    <select class="form-control form-select" name="bloodGroup" id="blood">
+                                                        <option value="">Select Blood Group</option>
+                                                        <option value="A+" {{ old('patientBlood',$member->blood_group)=='A+' ? 'selected':''}}>A+</option>
+                                                        <option value="A-"{{ old('patientBlood',$member->blood_group)=='A-' ? 'selected':''}}>A-</option>
+                                                        <option value="B+"{{ old('patientBlood',$member->blood_group)=='B+' ? 'selected':''}}>B+</option>
+                                                        <option value="B-"{{ old('patientBlood',$member->blood_group)=='B-' ? 'selected':''}}>B-</option>
+                                                        <option value="O+"{{ old('patientBlood',$member->blood_group)=='O+' ? 'selected':''}}>O+</option>
+                                                        <option value="O-"{{ old('patientBlood',$member->blood_group)=='O-' ? 'selected':''}}>O-</option>
+                                                        <option value="AB+"{{ old('patientBlood',$member->blood_group)=='AB+' ? 'selected':''}}>AB+</option>
+                                                        <option value="AB-"{{ old('patientBlood',$member->blood_group)=='AB-' ? 'selected':''}}>AB-</option>
+                                                    </select>
+                                                    @if($errors->has('bloodGroup'))
+                                                        <span class="text-danger"> {{ $errors->first('bloodGroup') }}</span>
+                                                    @endif
+                                            </div>
                                         </div>
                                     </div>
                                     {{-- <div class="col-md-6 col-12">
