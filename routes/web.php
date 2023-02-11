@@ -122,7 +122,7 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/profile', [MemberPanel::class,'memberProfile'])->name('member.profile');
         Route::post('/profileUpdate/update', [MemberPanel::class,'memberProfileUpdate'])->name('profile.update');
         Route::get('/password_change', [MemberPanel::class,'memberPassword'])->name('member.password');
-        Route::post('/password_update/update', [MemberPanel::class,'mem_pass_update'])->name('member.password.store');
+        Route::post('/password_update', [MemberPanel::class,'mem_pass_update'])->name('member.passwordUpdate');
         Route::get('/memberPrint', [MemberPanel::class,'mem_regi_success'])->name('member.registration.success');
 
     });

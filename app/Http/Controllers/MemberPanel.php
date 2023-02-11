@@ -6,6 +6,7 @@ use App\Models\OurMember;
 use App\Models\MemberChildren;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -23,7 +24,6 @@ class MemberPanel extends Controller
     {
         
         $member=OurMember::where('id',currentUserId())->first();
-        // dd(currentUserId());
         return view('frontend.members.memberProfile',compact('member'));
     }
     /**
@@ -36,7 +36,6 @@ class MemberPanel extends Controller
     {
         
         $member=OurMember::where('id',currentUserId())->first();
-        // dd(currentUserId());
         return view('frontend.members.memberPassword',compact('member'));
     }
     /**
@@ -45,34 +44,37 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+
     public function mem_pass_update(Request $request)
     {
-        
-        try{
-            $member=OurMember::findOrFail(currentUserId());
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
 
-                $this->validate($request, [
-                    'old_password'          => 'required',
-                    'new_password'              => 'required',
-                    'password_confirmation' => 'required|confirmed'
-            ]);
-
-            $member->password = Hash::make($request->password);
-            if($member->save()){
-                Toastr::success('Password Updated Successfully!');
-                return redirect()->route('member.password');
-            }else{
-            Toastr::success('Please try Again!');
-            return redirect()->back();
-            }
-
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
-        catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
-            return back()->withInput();
 
+        $user = OurMember::findOrFail(currentUserId());
+
+        if (!(Hash::check($request->get('current_password'), $user->password))) {
+            return redirect()->back()
+                ->with('error', 'Your current password does not matches with the password you provided. Please try again.');
         }
+
+        if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
+            return redirect()->back()
+                ->with('error', 'New Password cannot be same as your current password. Please choose a different password.');
+        }
+
+        $user->password = Hash::make($request->get('new_password'));
+        $user->save();
+
+        return redirect()->back()
+            ->with('success', 'Password changed successfully!');
     }
 
     /**

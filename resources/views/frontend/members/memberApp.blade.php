@@ -24,30 +24,39 @@
 </section>
 <div class="container py-4">
     <div class="row">
-        <div class="col-lg-3 mobileview">
-            <div class="sidebar-menu vue-affix affix-top ">
-                <div class="leftside-menu">
-                    <div class="card  py-4 me-4 rounded-10 bg-light">
-                        <span class="shape"></span>
-                        <span class="shape2"></span>
-                        <div class="card-header">
-                            <h5>{{encryptor('decrypt', request()->session()->get('userName'))}}</h5>
+        <div class="col-lg-3">
+            <div>
+                <div class="card sidebar shadow-sm mb-3">
+                    <div class="card-header">
+                        <div class="user">
+                            <div class="userName text-center">
+                                <h5 class="text-uppercase">{{encryptor('decrypt', request()->session()->get('userName'))}}</h5>
+                            </div>
                         </div>
-                        <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><a href="{{route('member.profile')}}">Profile Update</a></li>
-                            <li class="nav-item my-2"><a href="{{route('member.registration.success')}}">Print Form</a></li>
-                            <li class="nav-item my-2"><a href="{{route('member.password')}}">Password Change</a></li>
-                            <li class="nav-item my-2"><a href="{{route('memberLogOut')}}">Logout</a></li>
-                        </ul>
-
+                    </div>
+                </div>
+                <div class="card sidemenu shadow-sm mb-3">
+                    <div class="card-body">
+                        <nav class="navbar navbar-expand-lg navbar-light pb-0">
+                            <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                                <div id="memberNav" class="navbar-collapse collapse">
+                                    <ul class="nav flex-column w-100">
+                                        <li class="nav-item"><a class="nav-link" href="{{route('member.dashboard')}}">Dashborad</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('member.profile')}}">Registration Form</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('member.registration.success')}}">Print Form</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('member.password')}}">Password Change</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('memberLogOut')}}">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </button>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
-            <div class="about-title" id="grad">
-                <h6 class="text-uppercase p-1">Profile</h6>
-            </div>
 
             @yield('memberContent')
         </div>
