@@ -912,25 +912,6 @@ footer img {
   .member .shadow{
     box-shadow: 0 0 0 rgba(255,255,255,.15)!important;
   }
-  .merber-reg-card .card .shape {
-    width: 400px;
-    height: 400px;
-    background: var(--red);
-    opacity: .2;
-    position: absolute !important;
-    top: 0;
-    right: -150px;
-    border-radius: 80px;
-    transform: rotate(45deg);
-}
-  .merber-reg-card .card {
-    position: relative !important;
-    overflow: hidden;
-}
- #sidemenu ul li a {
-  text-decoration: none;
-  color: #464444 !important;
-}
   .navbar-nav{
     padding-left: 30px;
     background: #FFF;
@@ -939,7 +920,7 @@ footer img {
     overflow-y: auto;
     height: 100vh;
   }
-  .navbar-collapse{
+  .navbar-collapse-top{
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1197,4 +1178,46 @@ figure{
       -webkit-transform: rotate(1turn) translate(-165px) rotate(-1turn);
       transform: rotate(1turn) translate(-165px) rotate(-1turn)
   }
+}
+
+
+.sidemenu ul li a {
+  text-decoration: none;
+  color: #646262 !important;
+}
+.sidemenu ul li a:hover{
+  color: var(--red) !important;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.merber-reg-card .card .shape {
+  width: 400px;
+  height: 400px;
+  background: var(--red);
+  opacity: .1;
+  position: absolute !important;
+  top: 0;
+  right: -150px;
+  border-radius: 80px;
+  transform: rotate(45deg);
+}
+.merber-reg-card .card {
+  position: relative !important;
+  overflow: hidden;
+}
+.sidemenu, .sidebar{
+  border-left: 3px solid;
+  color: var(--red);
+}
+.member-service .notice, .company-info, .Payment-info{
+  border-top: 3px solid;
+  color: var(--red);
+}
+.regi-form .card-header {
+  border-top: 3px solid;
+  color: var(--red);
+}
+.sidebar h5 {
+  font-weight: bold;
+  letter-spacing: 1px;
 }

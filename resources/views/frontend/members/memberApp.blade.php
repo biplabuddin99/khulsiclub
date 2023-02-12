@@ -44,7 +44,7 @@
                                 <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><a class="nav-link" href="{{route('member.dashboard')}}">Dashborad</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{{route('member.profile')}}">Registration Form</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{route('member.profile')}}">Profile Update</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('member.registration.success')}}">Print Form</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('member.password')}}">Password Change</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{route('memberLogOut')}}">Logout</a></li>

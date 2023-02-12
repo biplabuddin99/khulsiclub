@@ -7,7 +7,7 @@
     <div class="member-service">
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-md-12 ">
-                <div class="card company-info shadow-sm mb-3">
+                <div class="card regi-form shadow-sm mb-3">
                     <div class="card-header">
                         <h5>Registration Form</h5>
                     </div>

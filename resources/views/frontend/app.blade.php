@@ -66,7 +66,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 
-                  <div style="margin-top: 10px;" class="collapse navbar-collapse " id="navbarNav">
+                  <div style="margin-top: 10px;" class="collapse navbar-collapse navbar-collapse-top " id="navbarNav">
                     <ul class="navbar-nav mr-auto pb-2 ">
                       <li class="nav-item ">
                         <a class="nav-link nav_a_padding" href="">Home

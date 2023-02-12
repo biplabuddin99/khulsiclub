@@ -8,19 +8,8 @@
 <section class="container py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-          <div class="card shadow" style="overflow: hidden;">
-                                <span class="shape" style="
-                                    width: 400px;
-                                    height: 400px;
-                                    background: var(--red);
-                                    opacity: .1;
-                                    position: absolute !important;
-                                    top: 0;
-                                    right: -150px;
-                                    border-radius: 80px;
-                                    transform: rotate(45deg);
-                                    
-                                "></span>
+          <div class="card shadow" >
+                                <span class="shape"></span>
                                 @if(Session::has('response'))
                                     {!!Session::get('response')['message']!!}
                                 @endif
