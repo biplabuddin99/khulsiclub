@@ -187,7 +187,7 @@
 <body>
     
     <div>
-        <a href="{{route('member.dashboard')}}" class="btn no-print"> Go To Home Page</a>
+        <a href="{{route('member.dashboard')}}" class="btn no-print"> Go To Dashboard</a>
         <button class="no-print btn" type="button" onclick="window.print()" style="float:right"> 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                 <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>

@@ -299,30 +299,6 @@
     <script src="{{ asset('owl-carousel/owl.carousel.js')}}"></script>
     <!-- My JS -->
     <script src="{{ asset('js/app.js')}}"></script>
-    
-    <script>
-      $(document).ready(function() {
-          $('.next-step').click(function() {
-          var currentTab = $(this).closest('.tab-pane').attr('id');
-          var nextTab = $(this).closest('.tab-pane').next().attr('id');
-
-          $('#' + currentTab).removeClass('show active');
-          $('#' + currentTab + '-tab').removeClass('active');
-          $('#' + nextTab).addClass('show active');
-          $('#' + nextTab + '-tab').addClass('active');
-      });
-
-          $('.prev-step').click(function() {
-              var currentTab = $(this).closest('.tab-pane').attr('id');
-              var prevTab = $(this).closest('.tab-pane').prev().attr('id');
-
-              $('#' + currentTab).removeClass('show active');
-              $('#' + currentTab + '-tab').removeClass('active');
-              $('#' + prevTab).addClass('show active');
-              $('#' + prevTab + '-tab').addClass('active');
-          });
-      });
-    </script>
     @stack('scripts')
   </body>
 </html>

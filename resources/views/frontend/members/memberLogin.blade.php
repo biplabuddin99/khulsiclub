@@ -8,17 +8,15 @@
 <section class="container py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-          <div class="card shadow" >
-                                <span class="shape"></span>
-                                @if(Session::has('response'))
-                                    {!!Session::get('response')['message']!!}
-                                @endif
+          <div class="card shadow">
+                <span class="shape"></span>
+                @if(Session::has('response'))
+                    {!!Session::get('response')['message']!!}
+                @endif
               <div class="row">
-                <div class="col-lg-4" style="background-color: #f0dedb; vertical-align: middle;">
-                    <div class="loginSideText align-middle h-100 ">
-                        <div class="body text-center justify-content-center align-middle h-100" style="display: flex;
-    justify-content: center;
-    align-items: center;">
+                <div class="col-lg-4 logo-side-section">
+                    <div class="loginSideText h-100 ">
+                        <div class="body h-100">
                             <img class="align-self-center" src="{{asset('img/khulsi_club_logo.png')}}" width="200px" alt="side image" >
                         </div>
                     </div>
@@ -29,13 +27,13 @@
                         <p>Login</p>
                         <p>Become a Member</p>
                     </div>
-                    <div class=" p-4" style="position:relative; z-index: 100;">
+                    <div class="p-4 mem-form">
                         <form class="form" method="post" action="{{route('memberlogin.check')}}">
                             @csrf
                             <div class="col-12 py-2">
                                 <div class="form-group">
                                     <label for="company">Email Address:</label>
-                                    <input type="text" id="EmailAddress" class="form-control" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress" style="background-color: transparent;">
+                                    <input type="text" id="EmailAddress" class="form-control input-bg" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
                                 </div>
                                 @if($errors->has('EmailAddress'))
                                     <small class="d-block text-danger">
@@ -46,7 +44,7 @@
                             <div class="col-12 py-2">
                                 <div class="form-group">
                                     <label for="company">password:</label>
-                                    <input type="password" id="password" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password" style="background-color: transparent;">
+                                    <input type="password" id="password" class="form-control input-bg" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
                                 </div>
                                 @if($errors->has('password'))
                                     <small class="d-block text-danger">

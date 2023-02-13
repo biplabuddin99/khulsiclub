@@ -22,7 +22,7 @@
                             <tr>
                                 <th width="40">Contact No</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('contact'))}}</td>
+                                <td width="58">{{encryptor('decrypt', request()->session()->get('phone'))}}</td>
                             </tr>
                             <tr>
                                 <th width="40">Email</th>
@@ -43,7 +43,7 @@
                             <tr>
                                 <th width="40">Application Status</th>
                                 <td width="2">:</td>
-                                <td width="58">	Incomplete</td>
+                                <td width="58"><p class="badge text-center badge-info">Application Incomplete</p></td>
                             </tr>
                         </table>
                     </div>

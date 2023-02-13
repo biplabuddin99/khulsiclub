@@ -3,7 +3,7 @@
 @section('pageSubTitle',trans('details'))
 @extends('frontend.members.memberApp')
 @section('memberContent')
-<div class="regi-form">
+<div class="regi-form tab-pane">
     <div class="member-service">
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-md-12 ">
@@ -15,28 +15,28 @@
                         <form method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">
                             @csrf
                             @method('POST')
-                            <div class="steps d-flex flex-column">
-                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <div class="steps progress-tabmenu d-flex flex-column">
+                                <ul class="nav nav-pills mt-3 mb-5" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link step-1-tab active" id="step-1-tab" data-toggle="pill" href="#step-1" role="tab" aria-controls="step-1" aria-selected="true">1</a>
+                                        <a class="nav-link step-1-tab active" id="step-1-tab" data-toggle="pill" href="#step-1" role="tab" aria-controls="step-1" aria-selected="true"><span>1</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link step-2-tab" id="step-2-tab" data-toggle="pill" href="#step-2" role="tab" aria-controls="step-2" aria-selected="false">2</a>
+                                        <a class="nav-link step-2-tab" id="step-2-tab" data-toggle="pill" href="#step-2" role="tab" aria-controls="step-2" aria-selected="false"><span>2</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link step-3-tab" id="step-3-tab" data-toggle="pill" href="#step-3" role="tab" aria-controls="step-3" aria-selected="false">3</a>
+                                        <a class="nav-link step-3-tab" id="step-3-tab" data-toggle="pill" href="#step-3" role="tab" aria-controls="step-3" aria-selected="false"><span>3</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link step-4-tab" id="step-4-tab" data-toggle="pill" href="#step-4" role="tab" aria-controls="step-4" aria-selected="false">4</a>
+                                        <a class="nav-link step-4-tab" id="step-4-tab" data-toggle="pill" href="#step-4" role="tab" aria-controls="step-4" aria-selected="false"><span>4</span></a>
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="step-1" role="tabpanel" aria-labelledby="step-1-tab">
                                         <!-- Step 1 -->
-                                        <div class="row">
+                                        <div class="row mt-4">
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
-                                                    <label for="fullName">Full Name(Block Capital Letter)</label>
+                                                    <label for="fullName">Full Name</label>
                                                     <input type="text" id="fullName" class="form-control" value="{{ old('fullName',$member->full_name)}}" name="fullName">
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@
                                         </div>
                                         
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-primary next-step">Next Step</button>
+                                            <button type="button" class="btn btn-success next-step">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="step-2-tab">
@@ -252,7 +252,7 @@
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="othersdate">Date:</label>
-                                                    <input type="othersdate" id="othersdate" class="form-control" value="{{ old('othersdate',$member->others_date)}}" name="othersdate">
+                                                    <input type="date" id="othersdate" class="form-control" value="{{ old('othersdate',$member->others_date)}}" name="othersdate">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
@@ -277,8 +277,8 @@
                                         </div>
                                         
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous Step</button>
-                                            <button type="button" class="btn btn-primary next-step m-2">Next Step</button>
+                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
+                                            <button type="button" class="btn btn-success next-step m-2">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="step-3-tab">
@@ -370,19 +370,19 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous Step</button>
-                                            <button type="button" class="btn btn-primary next-step m-2">Next Step</button>
+                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
+                                            <button type="button" class="btn btn-success next-step m-2">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="step-4-tab">
                                         <!-- Step 4 -->
                                         <div class="row">
                                             <div class="col-lg-12 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
+                                                <div class="py-2">
                                                     <label for="detailschildresns" class="mt-3">Details of Children:(Must be Added with Birth Certificate copy):</label>
-                                                    <table class="table table-striped table-responsive mb-5">
+                                                    <table class="table table-striped mb-5">
                                                         <thead>
-                                                            <tr class="bg-primary text-white">
+                                                            <tr class="bg-primary text-center text-white">
                                                                 <th scope="col">Serial</th>
                                                                 <th scope="col">Name</th>
                                                                 <th scope="col">Sex</th>
@@ -393,7 +393,7 @@
                                                         <tbody id="details_data">
                                                             @if($member->children)
                                                             @foreach($member->children as $c)
-                                                                <tr>
+                                                                <tr class="text-center">
                                                                     <td>{{$j=$loop->index + 1}}.
                                                                         <input type="hidden" name="id[]" value="{{$c->id}}">
                                                                     </td>
@@ -401,13 +401,13 @@
                                                                     <td><input type="radio" id="male{{$loop->index}}" name="cgender[{{$loop->index}}]" value="1" {{ old('cgender',$c->gender)=="1" ? "checked":"" }}> <label for="male{{$loop->index}}">Male</label>
                                                                         <input type="radio" id="female{{$loop->index}}" name="cgender[{{$loop->index}}]" value="2" {{ old('cgender',$c->gender)=="2" ? "checked":"" }}> <label for="female{{$loop->index}}">Female</label></td>
                                                                     <td><input type="date" id="birth_date{{$loop->index}}" class="form-control" name="cbirth_date[]" value="{{ $c->birth_date }}" placeholder="Date of Birth"></td>
-                                                                    <td><input type="text" id="occupation{{$loop->index}}" class="form-control" name="coccupation[]" value="{{ $c->occupation }}"  placeholder="Occupation With Address"></td>
+                                                                    <td><input type="text" id="occupation{{$loop->index}}" class="form-control" name="coccupation[]" value="{{ $c->occupation }}"  placeholder="Occupation"></td>
                                                                 </tr>
                                                             @endforeach
                                                             @endif
                                                             
                                                             @for($i=$member->children->count();$i<5;$i++ )
-                                                            <tr>
+                                                            <tr class="text-center">
                                                                 <td>{{$j=$i + 1}}.
                                                                     <input type="hidden" name="id[]" value="">
                                                                 </td>
@@ -415,7 +415,7 @@
                                                                 <td><input type="radio" id="male{{$i}}" name="cgender[{{$i}}]" value="1" {{ old('cgender')=="1" ? "checked":"" }}> <label for="male{{$i}}">Male</label>
                                                                     <input type="radio" id="female{{$i}}" name="cgender[{{$i}}]" value="2" {{ old('cgender')=="2" ? "checked":"" }}> <label for="female{{$i}}">Female</label></td>
                                                                 <td><input type="date" id="birth_date{{$i}}" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
-                                                                <td><input type="text" id="occupation{{$i}}" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
+                                                                <td><input type="text" id="occupation{{$i}}" class="form-control" name="coccupation[]" placeholder="Occupation"></td>
                                                             </tr>
                                                             @endfor
 
@@ -499,8 +499,8 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous Step</button>
-                                            <button type="submit" class="btn btn-success m-2">Save</button>
+                                            <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
+                                            <button type="submit" class="btn btn-info m-2">Update</button>
                                         </div>
                                     </div>
                                 </div>
