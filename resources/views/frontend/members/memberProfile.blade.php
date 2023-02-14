@@ -140,7 +140,7 @@
                                         </div>
                                         
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-success next-step">Next</button>
+                                            <button type="button" class="btn btn-danger next-step">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="step-2-tab">
@@ -278,7 +278,7 @@
                                         
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
                                             <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
-                                            <button type="button" class="btn btn-success next-step m-2">Next</button>
+                                            <button type="button" class="btn btn-danger next-step m-2">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="step-3-tab">
@@ -371,7 +371,7 @@
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
                                             <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
-                                            <button type="button" class="btn btn-success next-step m-2">Next</button>
+                                            <button type="button" class="btn btn-danger next-step m-2">Next</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="step-4-tab">
@@ -382,7 +382,7 @@
                                                     <label for="detailschildresns" class="mt-3">Details of Children:(Must be Added with Birth Certificate copy):</label>
                                                     <table class="table table-striped mb-5">
                                                         <thead>
-                                                            <tr class="bg-primary text-center text-white">
+                                                            <tr class="bg-danger text-center text-white">
                                                                 <th scope="col">Serial</th>
                                                                 <th scope="col">Name</th>
                                                                 <th scope="col">Sex</th>
@@ -500,7 +500,7 @@
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
                                             <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
-                                            <button type="submit" class="btn btn-info m-2">Update</button>
+                                            <button type="submit" class="btn btn-danger m-2">Update</button>
                                         </div>
                                     </div>
                                 </div>

@@ -47,16 +47,6 @@ class FrontendController extends Controller
         $benefit = BenefitsOfMember::latest()->take(6)->get();
         return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function mem_regi()
-    {
-        return view('frontend.memberProfile');
-    }
     /**
      * Show the form for creating a new resource.
      *

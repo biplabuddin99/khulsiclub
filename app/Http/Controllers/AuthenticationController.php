@@ -40,7 +40,7 @@ class AuthenticationController extends Controller
             else
                 return redirect('memberLogin')->with($this->resMessageHtml(false,'error','Please try again'));
         }catch(Exception $e){
-            dd($e);
+            //dd($e);
             return redirect('memberLogin')->with($this->resMessageHtml(false,'error','Please try again'));
         }
 
@@ -95,7 +95,7 @@ class AuthenticationController extends Controller
             }else
                 return redirect()->route('memberLogin')->with($this->resMessageHtml(false,'error','Your email or password is wrong!'));
         }catch(Exception $e){
-            dd($e);
+            //dd($e);
             return redirect()->route('memberLogin')->with($this->resMessageHtml(false,'error','Your email or password is wrong!'));
         }
     }

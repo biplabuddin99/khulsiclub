@@ -183,7 +183,7 @@ class MemberPanel extends Controller
                         }
                     }
                 }
-                Toastr::success('Member Update Successfully!');
+                Toastr::success('Profile Updated Successfully!');
                 return redirect()->route('member.registration.success');
             }else{
                 Toastr::success('Please try Again!');
@@ -191,7 +191,7 @@ class MemberPanel extends Controller
             }
         }
         catch (Exception $e){
-            dd($e);
+            //dd($e);
             return back()->withInput();
             Toastr::success('Please try Again!');
 

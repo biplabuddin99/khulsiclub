@@ -79,7 +79,7 @@
                     </div>
                     <div class="row py-4">
                         <div class="col-lg-6 col-sm-12 col-md-12 d-flex justify-content-start">
-                            <button type="submit" class="btn btn-success me-1 mb-1">Submit</button>
+                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-md-12 d-flex justify-content-end">
                             <span class="pt-2 me-1">If you are already registered ?</span>

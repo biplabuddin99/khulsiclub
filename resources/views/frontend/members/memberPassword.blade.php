@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="col-12 d-flex justify-content-end py-2">
-                                <button type="submit" class="btn btn-success">Update</button>
+                                <button type="submit" class="btn btn-danger">Update</button>
                             </div>
                         </div>
                         
