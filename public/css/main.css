@@ -659,6 +659,7 @@ body {
     padding-right: 75px;
 }
 }
+
 .container-wrapper {
   margin: 0 auto;
 }
@@ -668,6 +669,21 @@ body {
 .sideber-nav a {
   text-decoration: none;
   color: #515152;
+  padding-left: 12px;
+}
+.sideber-nav li a.active {
+  color: var(--red) !important;
+}
+.sideber-nav .nav-item .bi{
+  position: absolute;
+  left: 14px;
+  font-size: 11px;
+  padding-top: 4px;
+  color: var(--red);
+}
+.sideber-nav a:hover {
+  font-weight: bolder !important;
+  letter-spacing: 1px !important;
 }
 .about-title {
   background-color: var(--red);

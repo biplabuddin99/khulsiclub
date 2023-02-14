@@ -9,7 +9,7 @@
             <div class="col-lg-12 col-sm-12 col-md-12 ">
                 <div class="card regi-form shadow-sm mb-3">
                     <div class="card-header">
-                        <h5>Registration Form</h5>
+                        <h5>Update Your Profile</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">

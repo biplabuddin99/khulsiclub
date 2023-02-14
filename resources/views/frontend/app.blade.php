@@ -69,7 +69,7 @@
                   <div style="margin-top: 10px;" class="collapse navbar-collapse navbar-collapse-top " id="navbarNav">
                     <ul class="navbar-nav mr-auto pb-2 ">
                       <li class="nav-item ">
-                        <a class="nav-link nav_a_padding" href="">Home
+                        <a class="nav-link nav_a_padding" href="{{route('front')}}">Home
                           <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                             ×
                           </button>

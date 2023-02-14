@@ -33,7 +33,7 @@
                             <div class="col-12 py-2">
                                 <div class="form-group">
                                     <label for="company">Email Address:</label>
-                                    <input type="text" id="EmailAddress" class="form-control input-bg" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
+                                    <input type="text" id="EmailAddress" class="form-control input-bg" placeholder="ie: member@mail.com" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
                                 </div>
                                 @if($errors->has('EmailAddress'))
                                     <small class="d-block text-danger">
@@ -44,7 +44,7 @@
                             <div class="col-12 py-2">
                                 <div class="form-group">
                                     <label for="company">password:</label>
-                                    <input type="password" id="password" class="form-control input-bg" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                    <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
                                 </div>
                                 @if($errors->has('password'))
                                     <small class="d-block text-danger">

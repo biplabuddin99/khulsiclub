@@ -16,9 +16,11 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-end bg-transparent mb-0">
                         <li class="breadcrumb-item">
-                            <a href="" class="breadcrumb-item router-link-active">Home</a>
+                            <a href="{{route('front')}}" class="breadcrumb-item router-link-active">Home</a>
                         </li>
-                        <li class="breadcrumb-item">About us</li>
+                        <li class="breadcrumb-item">
+                            <a href="{{route('member.about1')}}">About us</a>
+                        </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
                 </nav>
@@ -38,9 +40,9 @@
                             <h5>About us</h5>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><a href="">About Khulsi Club</a></li>
-                            <li class="nav-item my-2"><a href="">Benefits</a></li>
-                            <li class="nav-item my-2"><a href="">Facilities</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.about1')}}">About Khulsi Club</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.benefit')}}">Benefits</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Facilities</a></li>
                         </ul>
 
                     </div>

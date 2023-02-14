@@ -36,22 +36,51 @@
                     <form action="{{route('member.passwordUpdate')}}" method="post">
                         @csrf
                         <div class="row p-3">
-                            <div class="col-12 py-2">
-                                <label for="current_password">Current Password:</label>
-                                <input type="password" class="form-control" id="current_password" name="current_password">
+                            
+                            <div class="col-lg-4 col-sm-6 col-md-12  py-1">
+                                <label for="current_password" class="form-label">Current Password</label>
                             </div>
-                            <div class="col-12 py-2">
-                                <label for="new_password">New Password:</label>
-                                <input type="password" class="form-control" id="new_password" name="new_password">
+                            <div class="col-lg-8 col-sm-6 col-md-12 py-1">
+                                <input type="password" class="form-control" id="current_password" name="current_password" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'">
                             </div>
-                            <div class="col-12 py-2">
-                                <label for="new_password_confirmation">Confirm New Password:</label>
-                                <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation">
+
+
+                            <div class="col-lg-4 col-sm-6 col-md-12 py-1">
+                                <label for="new_password" class="form-label">New Password</label>
                             </div>
+                            <div class="col-lg-8 col-sm-6 col-md-12 py-1">
+                                <input type="password" class="form-control" id="new_password" name="new_password" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'">
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-md-12 py-1">
+                                <label for="new_password_confirmation" class="form-label">Confirm New Password</label>
+                            </div>
+                            <div class="col-lg-8 col-sm-6 col-md-12 py-1">
+                                <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'">
+                            </div>
+
                             <div class="col-12 d-flex justify-content-end py-2">
                                 <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </div>
+                        <!-- <table class="table table-sm table-borderless">
+                            <tr>
+                                <th width="1">Current Password</th>
+                                <td width="1">:</td>
+                                <td width="98"><input type="password" class="form-control" id="current_password" name="current_password"></td>
+                            </tr>
+                            <tr>
+                                <th width="1">New Password</th>
+                                <td width="1">:</td>
+                                <td width="98"><input type="password" class="form-control" id="new_password" name="new_password"></td>
+                            </tr>
+                            <tr>
+                                <th width="1">Confirm New Password</th>
+                                <td width="1">:</td>
+                                <td width="98"><input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation"></td>
+                            </tr>
+                        </table> -->
+                        
                     </form>
                 </div>
             </div>
