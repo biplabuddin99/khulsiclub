@@ -78,7 +78,7 @@ class FrontendController extends Controller
     public function aboutUS()
     {
         $about=BenefitsOfMember::all();
-        return view('About.about-us',compact('about'));
+        return view('frontend.About.about-us',compact('about'));
     }
 
     /**

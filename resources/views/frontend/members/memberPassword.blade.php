@@ -63,23 +63,6 @@
                                 <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </div>
-                        <!-- <table class="table table-sm table-borderless">
-                            <tr>
-                                <th width="1">Current Password</th>
-                                <td width="1">:</td>
-                                <td width="98"><input type="password" class="form-control" id="current_password" name="current_password"></td>
-                            </tr>
-                            <tr>
-                                <th width="1">New Password</th>
-                                <td width="1">:</td>
-                                <td width="98"><input type="password" class="form-control" id="new_password" name="new_password"></td>
-                            </tr>
-                            <tr>
-                                <th width="1">Confirm New Password</th>
-                                <td width="1">:</td>
-                                <td width="98"><input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation"></td>
-                            </tr>
-                        </table> -->
                         
                     </form>
                 </div>

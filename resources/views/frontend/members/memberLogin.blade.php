@@ -14,54 +14,54 @@
                     {!!Session::get('response')['message']!!}
                 @endif
               <div class="row">
-                <div class="col-lg-4 logo-side-section">
-                    <div class="loginSideText h-100 ">
-                        <div class="body h-100">
-                            <img class="align-self-center" src="{{asset('img/khulsi_club_logo.png')}}" width="200px" alt="side image" >
+                    <div class="col-lg-4 logo-side-section">
+                        <div class="loginSideText h-100 ">
+                            <div class="body h-100">
+                                <img class="align-self-center" src="{{asset('img/khulsi_club_logo.png')}}" width="200px" alt="side image" >
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="text-center pt-4">
-                        <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                        <p>Login</p>
-                        <p>Become a Member</p>
-                    </div>
-                    <div class="p-4 mem-form">
-                        <form class="form" method="post" action="{{route('memberlogin.check')}}">
-                            @csrf
-                            <div class="col-12 py-2">
-                                <div class="form-group">
-                                    <label for="company">Email Address:</label>
-                                    <input type="text" id="EmailAddress" class="form-control input-bg" placeholder="ie: member@mail.com" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
+                    <div class="col-lg-8">
+                        <div class="text-center pt-4">
+                            <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
+                            <p>Login</p>
+                            <p>Become a Member</p>
+                        </div>
+                        <div class="p-4 mem-form">
+                            <form class="form" method="post" action="{{route('memberlogin.check')}}">
+                                @csrf
+                                <div class="col-12 py-2">
+                                    <div class="form-group">
+                                        <label for="company">Email Address:</label>
+                                        <input type="text" id="EmailAddress" class="form-control input-bg" placeholder="ie: member@mail.com" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
+                                    </div>
+                                    @if($errors->has('EmailAddress'))
+                                        <small class="d-block text-danger">
+                                            {{$errors->first('EmailAddress')}}
+                                        </small>
+                                    @endif
                                 </div>
-                                @if($errors->has('EmailAddress'))
-                                    <small class="d-block text-danger">
-                                        {{$errors->first('EmailAddress')}}
-                                    </small>
-                                @endif
-                            </div>
-                            <div class="col-12 py-2">
-                                <div class="form-group">
-                                    <label for="company">password:</label>
-                                    <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                <div class="col-12 py-2">
+                                    <div class="form-group">
+                                        <label for="company">password:</label>
+                                        <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                    </div>
+                                    @if($errors->has('password'))
+                                        <small class="d-block text-danger">
+                                            {{$errors->first('password')}}
+                                        </small>
+                                    @endif
                                 </div>
-                                @if($errors->has('password'))
-                                    <small class="d-block text-danger">
-                                        {{$errors->first('password')}}
-                                    </small>
-                                @endif
-                            </div>
-                            <div>
-                                <a href="">Forgot Password?</a><br>
-                                <span>Don't have an account? </span><a href="{{route('member_registration')}}">Sign up.</a>
-                            </div>
-                            <div class="col-12 py-4 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-danger">Login</button>
-                            </div>
-                        </form>
+                                <div>
+                                    <a href="">Forgot Password?</a><br>
+                                    <span>Don't have an account? </span><a href="{{route('member_registration')}}">Sign up.</a>
+                                </div>
+                                <div class="col-12 py-4 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Login</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
               </div>
           </div>
       </div>
