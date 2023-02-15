@@ -142,13 +142,13 @@
     <section class="pb-5">
       <div class="container notice-blog bg-light shadow rounded-3">
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-7 mt-4">
-            <div
-              id="carouselExampleControls"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner shadow">
+          <div class="col-sm-12 col-md-12 col-lg-7">
+              <div class="mt-3 d-flex notice-div-one ">
+                <span class="material-icons me-2"> today </span>
+                <p class="fs-4 mb-1 pt-1">News & Events</p>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner notice-carousel shadow">
                 @forelse ($notice as $notic)
 
                 <div class="carousel-item {{$loop->index==0?'active':''}}">
@@ -168,32 +168,15 @@
                   </div>
                 @endforelse
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-            <p class="news-event-text">News & Events</p>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-5 notice">
             <div class="mt-3 d-flex notice-div-one">

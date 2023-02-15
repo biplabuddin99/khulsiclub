@@ -191,10 +191,10 @@
           <i class="bi bi-headset"></i>
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
-          <div class="col-sm-4 text-2">
-            <p class="support-border my-auto" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
+          <div class="col-sm-4 d-flex justify-content-between text-2">
+            <p class="my-auto" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
-          <div class="col-sm-4 text-3">
+          <div class="col-sm-4 d-flex justify-content-center text-3">
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>

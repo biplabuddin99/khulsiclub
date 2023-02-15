@@ -17,7 +17,7 @@
                     <div class="col-lg-4 logo-side-section">
                         <div class="loginSideText h-100 ">
                             <div class="body h-100">
-                                <img class="align-self-center" src="{{asset('img/khulsi_club_logo.png')}}" width="200px" alt="side image" >
+                                <img class="align-self-center p-3" src="{{asset('img/khlogo3.png')}}" width="140px" alt="side image" >
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,6 @@
                         <div class="text-center pt-4">
                             <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
                             <p>Login</p>
-                            <p>Become a Member</p>
                         </div>
                         <div class="p-4 mem-form">
                             <form class="form" method="post" action="{{route('memberlogin.check')}}">

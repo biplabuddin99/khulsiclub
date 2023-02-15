@@ -34,9 +34,9 @@
                                       <label for="date"class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
                                           <select class="form-control form-select" name="status">
-                                            <option value="">Select Status</option>
-                                                <option value="0" {{ old('status',$pGalleryCat->status)=="0"?"selected":""}}>Inactive</option>
-                                                <option value="1" {{ old('status',$pGalleryCat->status)=="1"?"selected":""}}>Active</option>
+                                              <option value="">Select Status</option>
+                                              <option value="1" {{ old('status',$pGalleryCat->status)=="1"?"selected":""}}>Active</option>
+                                              <option value="0" {{ old('status',$pGalleryCat->status)=="0"?"selected":""}}>Inactive</option>
                                         </select>
                                       </div>
                                   </div>

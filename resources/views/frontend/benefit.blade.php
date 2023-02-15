@@ -8,11 +8,11 @@
         <!-- Gallery end -->
         <!-- member reg. start -->
         <div class="container p-0 justify-content-center bg-light member-section shadow">
-        <span class="bubble1"></span>
+        <!-- <span class="bubble1"></span>
         <span class="bubble2"></span>
         <span class="bubble3"></span>
         <span class="bubble4"></span>
-        <span class="bubble5"></span>
+        <span class="bubble5"></span> -->
           <div class="p-5 rounded shadow">
             <div class="row member-inner">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">

@@ -50,23 +50,23 @@ body {
 /* header */
 
 .logo-sec img {
-  padding-top: 32px;
+  padding-top: 19px;
   animation: bscale;
   animation-duration: 1s;
 }
 @keyframes bscale {
   from {height: 75px;}
-  to {height: 92px;}
+  to {height: 83px;}
 }
 .shrink img {
-  height: 58px;
+  height: 50px;
   padding-top: 7px;
   animation: scale;
   animation-duration: 1s;
 }
 @keyframes scale {
   from {height: 75px;}
-  to {height: 58px;}
+  to {height: 50px;}
 }
 .nav-item a:hover {
     color: var(--red);
@@ -243,7 +243,7 @@ body {
   margin-right: 10px !important;
 }
 .height-300{
-  height: 300px;
+  height: 344px;
 }
 .notice-div-one {
   border-top: 3px solid rgb(48, 48, 48) !important;
@@ -256,8 +256,11 @@ body {
 .notice-div-one span {
   padding-top: 10px;
 }
-.notice-title {
+.notice-title, .notice-carousel {
   margin-top: 7px;
+}
+.notice-carousel {
+  margin-top: 12px;
 }
 .notice-title p {
   color: var(--red);
@@ -811,15 +814,27 @@ body {
   /* margin-top: 30px; */
   /* margin: auto; */
 }
-#support-number {
-  font-size: 40px;
-  
+.support .text-2:before {
+  background-color: #f1eded;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  width: 4px;
 }
-.support-border{
-  border: solid;
-  border-top: #FFF;
-  border-bottom: #FFF;
-  height: 60px;
+.support .text-2:after {
+  background-color: #f1eded;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  width: 4px;
+}
+#support-number {
+  font-size: 30px;
+  
 }
 /* footer */
 footer {

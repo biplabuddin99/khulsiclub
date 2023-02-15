@@ -28,6 +28,7 @@ use App\Http\Controllers\BenefitsOfMemberController as benefit;
 use App\Http\Controllers\Products\UnitController as unit;
 
 use App\Http\Controllers\FrontendController as front;
+use App\Http\Controllers\MenuSettingController as menu;
 /* Middleware */
 use App\Http\Middleware\isMember;
 use App\Http\Middleware\isAdmin;
@@ -92,6 +93,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('blogcategory',blogcat::class,['as'=>'admin']);
         Route::resource('blog',blog::class,['as'=>'admin']);
         Route::resource('benefit',benefit::class,['as'=>'admin']);
+        Route::resource('menu',menu::class,['as'=>'admin']);
+        Route::post('image-upload', [menu::class, 'storeImage'])->name('image.upload');
 
     });
 });

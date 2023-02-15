@@ -110,10 +110,13 @@
     </div>
 <script src="{{ asset('/assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('/assets/js/app.js') }}"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
 @stack('scripts')
 
   {{-- tostr --}}
-  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
 </body>
