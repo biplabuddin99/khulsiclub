@@ -557,6 +557,10 @@ body {
   z-index: 3;
 }
 /* gallery */
+.gallery .card img {
+  height: 186px;
+  object-fit: cover;
+}
 .gallery {
   position: relative;
 }
