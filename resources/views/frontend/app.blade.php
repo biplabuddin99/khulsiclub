@@ -227,7 +227,7 @@
                   <p>{{ $setting?->email_address }}</p>
                 </span>
               </div>
-              <h5 class="mt-4 mb-2">Connet With Us</h5>
+              <h5 class="mt-4 mb-2">Connect With Us</h5>
               <div class="social-icon">
                 <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
                 <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
