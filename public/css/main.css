@@ -951,9 +951,20 @@ footer img {
     padding-left: 30px;
     background: #FFF;
     padding-top: 5px;
-    width: 81%;
+    padding-bottom: 5px;
+    width: 100%;
     overflow-y: auto;
-    height: 100vh;
+  }
+  .viewbutton{
+    padding:15px;
+    background: rgba(255,255,255,0.4);
+  }
+  .member-inner div:nth-of-type(2) p {
+    height: 200px;
+  }
+  .member-inner div:nth-of-type(3) {
+    height: 100px;
+    justify-content: center;
   }
   .navbar-collapse-top{
     position: fixed;
@@ -971,6 +982,23 @@ footer img {
     border: 0.5px solid red;
     color: red;
     background: #FFF;
+  }
+  .support .text-2:before {
+    height: 4px;
+    position: absolute;
+    vertical-align: middle;
+    width: 95%;
+    top: 0;
+  }
+  .support .text-2:after {
+    height: 4px;
+    position: absolute;
+    vertical-align: middle;
+    width: 95%;
+    bottom: 0;
+  }
+  .support p {
+    line-height: 60px;
   }
 }
 
