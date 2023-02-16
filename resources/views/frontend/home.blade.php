@@ -146,26 +146,26 @@
               <div class="mt-3 d-flex notice-div-one ">
                 <span class="material-icons me-2"> today </span>
                 <p class="fs-4 mb-1 pt-1">News & Events</p>
-            </div>
+              </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner notice-carousel shadow">
                 @forelse ($notice as $notic)
 
-                <div class="carousel-item {{$loop->index==0?'active':''}}">
+                <div class="carousel-item {{$loop->index==0?'active':''}} text-center">
                     <img
                       src="{{asset('uploads/notice_image/'.$notic->image)}}"
                       class="d-block w-100"
                       alt="..."
                     />
-                  </div>
+                </div>
                 @empty
-                <div class="carousel-item active">
-                    <img
+                <div class="carousel-item active text-center">
+                    <!-- <img
                       src="{{ asset('img/slider-3-2.jpg')}}"
                       class="d-block w-100"
-                      alt="..."
-                    />
-                  </div>
+                      alt="..."/> -->
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/zhje63IEdO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 @endforelse
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

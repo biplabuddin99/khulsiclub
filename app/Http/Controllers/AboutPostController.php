@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\menu_setting;
+use App\Models\about_post;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
-class MenuSettingController extends Controller
+class AboutPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class MenuSettingController extends Controller
      */
     public function index()
     {
-        $menu = menu_setting::paginate(10);
-        return view('Menu.index',compact('menu'));
+        $post = about_post::paginate(10);
+        return view('Post.index',compact('post'));
     }
 
     /**
@@ -27,7 +27,7 @@ class MenuSettingController extends Controller
      */
     public function create()
     {
-        return view('Menu.create');
+        return view('Post.create');
     }
 
     /**
@@ -50,6 +50,7 @@ class MenuSettingController extends Controller
             return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
         }
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -59,16 +60,16 @@ class MenuSettingController extends Controller
     public function store(Request $request)
     {
         try{
-            $menu=new menu_setting;
+            $post= new about_post();
 
-            $menu->page_title=$request->title;
-            $menu->details=$request->details;
-            $menu->published=$request->published;
+            $post->page_title=$request->title;
+            $post->details=$request->details;
+            $post->published=$request->published;
             
 
-            if($menu->save()){
-            Toastr::success('Menu Create Successfully!');
-            return redirect()->route(currentUser().'.menu.index');
+            if($post->save()){
+            Toastr::success('Post created Successfully!');
+            return redirect()->route(currentUser().'.post.index');
             }else{
             Toastr::success('Please try Again!');
             return redirect()->back();
@@ -86,10 +87,10 @@ class MenuSettingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\menu_setting  $menu_setting
+     * @param  \App\Models\about_post  $about_post
      * @return \Illuminate\Http\Response
      */
-    public function show(menu_setting $menu_setting)
+    public function show(about_post $about_post)
     {
         //
     }
@@ -97,35 +98,35 @@ class MenuSettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\menu_setting  $menu_setting
+     * @param  \App\Models\about_post  $about_post
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $menu = menu_setting::findOrFail(encryptor('decrypt',$id));
-        return view('Menu.edit',compact('menu'));
+        $post = about_post::findOrFail(encryptor('decrypt',$id));
+        return view('Post.edit',compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\menu_setting  $menu_setting
+     * @param  \App\Models\about_post  $about_post
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         try{
-            $menu= menu_setting::findOrFail(encryptor('decrypt',$id));
+            $post= about_post::findOrFail(encryptor('decrypt',$id));
 
-            $menu->page_title=$request->title;
-            $menu->details=$request->details;
-            $menu->published=$request->published;
+            $post->page_title=$request->title;
+            $post->details=$request->details;
+            $post->published=$request->published;
             
 
-            if($menu->save()){
-            Toastr::success('Menu Updated Successfully!');
-            return redirect()->route(currentUser().'.menu.index');
+            if($post->save()){
+            Toastr::success('Post Updated Successfully!');
+            return redirect()->route(currentUser().'.post.index');
             }else{
             Toastr::success('Please try Again!');
             return redirect()->back();
@@ -143,10 +144,10 @@ class MenuSettingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\menu_setting  $menu_setting
+     * @param  \App\Models\about_post  $about_post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(menu_setting $menu_setting)
+    public function destroy(about_post $about_post)
     {
         //
     }

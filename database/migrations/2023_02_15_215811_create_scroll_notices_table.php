@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('scroll_notices', function (Blueprint $table) {
             $table->id();
-            $table->string('text');
+            $table->text('text');
             $table->string('published_date');
             $table->string('unpublished_date');
             $table->timestamps();

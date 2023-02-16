@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Facilities;
 use App\Models\BenefitsOfMember;
+use App\Models\about_post;
 use App\Models\Frontend;
 use App\Models\Notice;
 use App\Models\photoGallaryCategory;
@@ -67,7 +68,7 @@ class FrontendController extends Controller
 
     public function aboutUS()
     {
-        $about=BenefitsOfMember::all();
+        $about= about_post::where('published',1)->first();
         return view('frontend.About.about-us',compact('about'));
     }
 

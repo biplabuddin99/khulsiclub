@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Menu List'))
+@section('pageTitle',trans('Post List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -14,7 +14,7 @@
                         <!-- table bordered -->
                         <div class="table-responsive">
                             <table class="table table-bordered mb-0">
-                            <a class="float-end" href="{{route(currentUser().'.menu.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+                            <a class="float-end" href="{{route(currentUser().'.post.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
@@ -25,7 +25,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($menu as $m)
+                                    @forelse($post as $m)
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$m->page_title}}</td>
@@ -33,7 +33,7 @@
                                         
                                         <td>{{ $m->published == 1?"Show":"Hide" }}</td>
                                         <td class="white-space-nowrap">
-                                            <a class="ebutton" href="{{route(currentUser().'.menu.edit',encryptor('encrypt',$m->id))}}">Edit</a>
+                                            <a class="ebutton" href="{{route(currentUser().'.post.edit',encryptor('encrypt',$m->id))}}">Edit</a>
                                         </td>
                                     </tr>
                                     @empty
@@ -44,7 +44,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-end my-3">
-                                {!! $menu->links()!!}
+                                {!! $post->links()!!}
                             </div>
                         </div>
                     </div>

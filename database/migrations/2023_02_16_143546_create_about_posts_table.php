@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menu_settings', function (Blueprint $table) {
+        Schema::create('about_posts', function (Blueprint $table) {
             $table->id();
             $table->string('page_title');
-            $table->string('details');
+            $table->text('details');
             $table->string('published')->default(0);
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_settings');
+        Schema::dropIfExists('about_posts');
     }
 };

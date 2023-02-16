@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\scroll_notice;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class ScrollNoticeController extends Controller
 {
@@ -14,7 +16,8 @@ class ScrollNoticeController extends Controller
      */
     public function index()
     {
-        //
+        $srn = scroll_notice::paginate(10);
+        return view('Scroll_notice.index',compact('srn'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ScrollNoticeController extends Controller
      */
     public function create()
     {
-        //
+        return view('Scroll_notice.create');
     }
 
     /**
@@ -35,7 +38,28 @@ class ScrollNoticeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $srn = new scroll_notice();
+
+            $srn->text = $request->text;
+            $srn->published_date = $request->published_date;
+            $srn->unpublished_date = $request->unpublished_date;
+
+            if($srn->save()){
+                Toastr::success('Created Successfully');
+                return redirect()->route(currentUser().'.scrollN.index');
+            }else{
+                Toastr::success('please try again');
+                return redirect()->back();
+            }
+
+        }
+        catch(Exception $e){
+            Toastr::success('Please try again');
+            dd($e);
+            return back()->withInput();
+        }
+        
     }
 
     /**
@@ -55,9 +79,10 @@ class ScrollNoticeController extends Controller
      * @param  \App\Models\scroll_notice  $scroll_notice
      * @return \Illuminate\Http\Response
      */
-    public function edit(scroll_notice $scroll_notice)
+    public function edit($id)
     {
-        //
+        $srn = scroll_notice::findOrFail(encryptor('decrypt', $id));
+        return view('Scroll_notice.edit',compact('srn'));
     }
 
     /**
@@ -67,9 +92,29 @@ class ScrollNoticeController extends Controller
      * @param  \App\Models\scroll_notice  $scroll_notice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, scroll_notice $scroll_notice)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $srn = scroll_notice::findOrFail(encryptor('decrypt', $id));
+
+            $srn->text = $request->text;
+            $srn->published_date = $request->published_date;
+            $srn->unpublished_date = $request->unpublished_date;
+
+            if($srn->save()){
+                Toastr::success('Updated Successfully');
+                return redirect()->route(currentUser().'.scrollN.index');
+            }else{
+                Toastr::success('Please Try again');
+                return redirect()->back();
+            }
+
+        }
+        catch(Exception $e){
+            Toastr::success('Please try again');
+            dd($e);
+            return back()->withInput();
+        }
     }
 
     /**

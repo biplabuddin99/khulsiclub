@@ -1,7 +1,7 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update Menu'))
-@section('pageSubTitle',trans('Update'))
+@section('pageTitle',trans('Create about post'))
+@section('pageSubTitle',trans('Create'))
 
 @section('content')
   <section id="multiple-column-form">
@@ -10,16 +10,15 @@
               <div class="card">
                   <div class="card-content">
                       <div class="card-body">
-                          <form class="form" method="post" action="{{route(currentUser().'.menu.update',encryptor('encrypt',$menu->id))}}">
+                          <form class="form" method="post" action="{{route(currentUser().'.post.store')}}">
                               @csrf
-                              @method('patch')
                                 <div class="row mb-3">
                                     <div class="col-12">
                                         <label for="title"><b>{{__('Title')}}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" id="title" value="{{ old('title',$menu->page_title)}}" class="form-control"
-                                            placeholder="Menu title" name="title">
+                                        <input type="text" id="title" value="{{ old('title')}}" class="form-control"
+                                            placeholder="Post title" name="title">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -27,7 +26,7 @@
                                         <label for="details"><b>{{__('Details')}}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="details" class="form-control ckeditor" id="Ck"  rows="5">{{ old('details',$menu->details)}}</textarea>
+                                        <textarea name="details" class="form-control ckeditor" id="Ck"  rows="5">{{ old('details')}}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -37,8 +36,8 @@
                                     <div class="col-12">
                                         <select class="form-control form-select" value="{{ old('published')}}" name="published" required>
                                             <option value="">Select Published</option>
-                                            <option value="1" {{ old('published',$menu->published)=="1"?"selected":""}}>Show</option>
-                                            <option value="0" {{ old('published',$menu->published)=="0"?"selected":""}}>Hide</option>
+                                            <option value="1">Show</option>
+                                            <option value="0">Hide</option>
                                         </select>
                                     </div>
                                 </div>
@@ -60,8 +59,11 @@
 @push('scripts')
 <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 <script>
+
+
     ClassicEditor
             .create( document.querySelector( '.ckeditor' ),{
+
                 ckfinder: {
                     uploadUrl: '{{route('image.upload').'?_token='.csrf_token()}}',
                 }
@@ -85,4 +87,7 @@
 </script>
 
 @endpush
+
+
+
 
