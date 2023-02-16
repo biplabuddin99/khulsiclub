@@ -17,7 +17,7 @@
                             <tr>
                                 <th width="40">Name</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('userName'))}}</td>
+                                <td width="58">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
                             </tr>
                             <tr>
                                 <th width="40">Contact No</th>

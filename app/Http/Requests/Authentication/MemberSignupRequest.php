@@ -25,6 +25,8 @@ class MemberSignupRequest extends FormRequest
     {
         return [
             'PhoneNumber'=>'required|max:255',
+            'givenName'=>'required|max:255',
+            'surname'=>'required|max:255',
             'EmailAddress'=>'required|unique:our_members,email',
             'password'=>'required|confirmed'
         ];

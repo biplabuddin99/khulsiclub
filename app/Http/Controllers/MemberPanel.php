@@ -97,7 +97,8 @@ class MemberPanel extends Controller
         try{
             $member=OurMember::findOrFail(currentUserId());
 
-            $member->full_name=$request->fullName;
+            $member->given_name=$request->given_name;
+            $member->surname=$request->surname;
             $member->father_name=$request->Fathers;
             $member->husban_name=$request->husbanName;
             $member->mother_name=$request->mothersName;
@@ -167,6 +168,12 @@ class MemberPanel extends Controller
             $member->linkdin_link=$request->linkdin_link;
             $member->youtube_link=$request->youtube_link;
             if($member->save()){
+                request()->session()->put(
+                    [
+                        'full_name'=>encryptor('encrypt',$member->full_name),
+                        'email'=>encryptor('encrypt',$member->email),
+                        'phone'=>encryptor('encrypt',$member->cell_number),
+                    ]);
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){
                         if($cname){

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('our_members', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
+            $table->string('given_name');
+            $table->string('surname');
             $table->unsignedBigInteger('role_id')->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->string('father_name')->nullable();

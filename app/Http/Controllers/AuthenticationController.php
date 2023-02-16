@@ -30,7 +30,8 @@ class AuthenticationController extends Controller
     public function memberSignUpStore(MemberSignupRequest $request){
         try{
             $user=new OurMember;
-            $user->full_name=$request->fullName;
+            $user->given_name=$request->givenName;
+            $user->surname=$request->surname;
             $user->cell_number=$request->PhoneNumber;
             $user->email=$request->EmailAddress;
             $user->password=Hash::make($request->password);
@@ -123,7 +124,7 @@ class AuthenticationController extends Controller
                     'roleIdentity'=>encryptor('encrypt',$member->role->identity),
                     'email'=>encryptor('encrypt',$member->email),
                     'phone'=>encryptor('encrypt',$member->cell_number),
-                    'userName'=>encryptor('encrypt',$member->full_name)
+                    'full_name'=>encryptor('encrypt',$member->full_name)
                 ]
             );
     }

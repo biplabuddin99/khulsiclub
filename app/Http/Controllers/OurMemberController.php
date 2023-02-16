@@ -47,7 +47,8 @@ class OurMemberController extends Controller
         try{
             $member=new OurMember;
 
-            $member->full_name=$request->fullName;
+            $member->given_name=$request->given_name;
+            $member->surname=$request->surname;
             $member->father_name=$request->Fathers;
             $member->husban_name=$request->husbanName;
             $member->mother_name=$request->mothersName;
@@ -182,7 +183,8 @@ class OurMemberController extends Controller
         try{
             $member=OurMember::findOrFail(encryptor('decrypt',$id));
 
-            $member->full_name=$request->fullName;
+            $member->given_name=$request->given_name;
+            $member->surname=$request->surname;
             $member->father_name=$request->Fathers;
             $member->husban_name=$request->husbanName;
             $member->mother_name=$request->mothersName;

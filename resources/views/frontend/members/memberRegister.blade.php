@@ -20,11 +20,27 @@
                 <form class="form" method="post" enctype="multipart/form-data" action="{{route('memberRegister.store')}}">
                     @csrf
                     <div class="row">
-                    <div class="col-12 py-2">
+                    <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" class="form-control input-bg" placeholder="Your Full Name" onfocus="this.placeholder = ''" value="{{ old('fullName')}}" onblur="this.placeholder = 'Your Full Name'" name="fullName">
+                        <label for="givenName">Given Name</label>
+                            <input type="text" id="givenName" class="form-control input-bg" placeholder="Your given Name" onfocus="this.placeholder = ''" value="{{ old('givenName')}}" onblur="this.placeholder = 'Your given Name'" name="givenName">
                         </div>
+                        @if($errors->has('givenName'))
+                            <small class="d-block text-danger">
+                                {{$errors->first('givenName')}}
+                            </small>
+                        @endif
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-12 py-2">
+                        <div class="form-group">
+                        <label for="surname">Surname</label>
+                            <input type="text" id="surname" class="form-control input-bg" placeholder="Your surname" onfocus="this.placeholder = ''" value="{{ old('surname')}}" onblur="this.placeholder = 'Your surname'" name="surname">
+                        </div>
+                        @if($errors->has('surname'))
+                            <small class="d-block text-danger">
+                                {{$errors->first('surname')}}
+                            </small>
+                        @endif
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="form-group">

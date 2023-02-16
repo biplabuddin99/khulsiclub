@@ -30,7 +30,7 @@
                     <div class="card-header">
                         <div class="user">
                             <div class="userName text-center">
-                                <h5 class="text-uppercase">{{encryptor('decrypt', request()->session()->get('userName'))}}</h5>
+                                <h5 class="text-uppercase">{{encryptor('decrypt', request()->session()->get('full_name'))}}</h5>
                             </div>
                         </div>
                     </div>

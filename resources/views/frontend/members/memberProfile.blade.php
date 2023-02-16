@@ -30,14 +30,23 @@
                                         <a class="nav-link step-4-tab" id="step-4-tab" data-toggle="pill" href="#step-4" role="tab" aria-controls="step-4" aria-selected="false"><span>4</span></a>
                                     </li>
                                 </ul>
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-sm btn-info text-white">Save as Draft</button>
+                                </div>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="step-1" role="tabpanel" aria-labelledby="step-1-tab">
                                         <!-- Step 1 -->
                                         <div class="row mt-4">
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
-                                                    <label for="fullName">Full Name</label>
-                                                    <input type="text" id="fullName" class="form-control" value="{{ old('fullName',$member->full_name)}}" name="fullName">
+                                                    <label for="givenName">Given Name</label>
+                                                    <input type="text" id="givenName" class="form-control" value="{{ old('given_name',$member->given_name)}}" name="given_name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="surname">Surname</label>
+                                                    <input type="text" id="surname" class="form-control" value="{{ old('surname',$member->surname)}}" name="surname">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">

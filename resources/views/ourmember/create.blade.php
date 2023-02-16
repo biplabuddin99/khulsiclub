@@ -19,10 +19,19 @@
                                 <div class="row">
                                     <div class="row">
                                         <div class="form-group">
-                                            <label for="fullName">1. FULL Name(Block Capital Letter)</label>
-                                            <input type="text" id="fullName" class="form-control" value="{{ old('fullName')}}" name="fullName">
-                                            @if($errors->has('fullName'))
-                                                <span class="text-danger"> {{ $errors->first('fullName') }}</span>
+                                            <label for="givenName">Given Name</label>
+                                            <input type="text" id="givenName" class="form-control" value="{{ old('given_name')}}" name="given_name">
+                                            @if($errors->has('given_name'))
+                                                <span class="text-danger"> {{ $errors->first('given_name') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="surname">Surname</label>
+                                            <input type="text" id="surname" class="form-control" value="{{ old('surname')}}" name="surname">
+                                            @if($errors->has('surname'))
+                                                <span class="text-danger"> {{ $errors->first('surname') }}</span>
                                             @endif
                                         </div>
                                     </div>
