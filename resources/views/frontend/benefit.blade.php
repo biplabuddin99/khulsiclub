@@ -15,26 +15,39 @@
         <span class="bubble5"></span> -->
           <div class="p-5 rounded shadow">
             <div class="row member-inner">
-              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="col-12">
                 <p>Benefits of Members</p>
-                <ul class="navbar-nav">
-                  @forelse ($benefit as $b)
-                    <li class="nav-item">
-                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
-                    </li>
+              </div>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-6 col-md-3">
+                    <ul class="navbar-nav">
+                    @forelse ($benefit as $b)
+                      <li role="button" class="nav-item" onmouseover="show_details({{$b->id}})">
+                        <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                      </li>
+                    @empty
+                      <li class="nav-item">
+                          <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
+                      </li>
+                    @endforelse
+                    </ul>
+                  </div>
+                  
+                  <div class="col-sm-6 col-md-9">
+                    @forelse ($benefit as $i=>$b)
+                    <span class="description des{{$b->id}} @if($i!=0) hidden @endif ">
+                      <i class="bi bi-file-earmark-font-fill"></i> <span>{{$b->description}}</span>
+                    </span>
                   @empty
-                    <li class="nav-item">
+                    <p class="nav-item">
                         <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
-                    </li>
+                    </p>
                   @endforelse
-                </ul>
+                  </div>
+                </div>
               </div>
-              <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                <p>Become a Member</p>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                <a class="shadow" href="{{route('member.registration')}}">Apply Now</a>
-              </div> -->
+              
             </div>
           </div>
         </div>
@@ -43,3 +56,11 @@
     </section>
 <!-- // Basic multiple Column Form section end -->
     @endsection
+@push('scripts')
+<script>
+  function show_details(e){
+    $('.description').hide();
+    $('.des'+e).show();
+  }
+</script>
+@endpush

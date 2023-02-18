@@ -18,7 +18,8 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
-                                        <th scope="col">{{__('Benefits')}}</th>
+                                        <th scope="col">{{__('Title')}}</th>
+                                        <th scope="col">{{__('Details')}}</th>
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
                                 </thead>
@@ -27,6 +28,7 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$b->benefit}}</td>
+                                        <td>{{$b->description}}</td>
                                         <td class="white-space-nowrap">
                                             <a href="{{route(currentUser().'.benefit.edit',encryptor('encrypt',$b->id))}}">
                                                 <i class="bi bi-pencil-square"></i>

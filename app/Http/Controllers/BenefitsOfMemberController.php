@@ -40,20 +40,18 @@ class BenefitsOfMemberController extends Controller
     {
         try{
             $b=new BenefitsOfMember;
-
             $b->benefit=$request->benefit;
+            $b->description=$request->description;
             if($b->save()){
-            Toastr::success('Benefits Create Successfully!');
-            return redirect()->route(currentUser().'.benefit.index');
+                Toastr::success('Benefits Create Successfully!');
+                return redirect()->route(currentUser().'.benefit.index');
             }else{
-            Toastr::success('Please try Again!');
-            return redirect()->back();
+                Toastr::success('Please try Again!');
+                return redirect()->back();
             }
-
         }
         catch (Exception $e){
             Toastr::success('Please try Again!');
-            dd($e);
             return back()->withInput();
 
         }
@@ -92,23 +90,21 @@ class BenefitsOfMemberController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $b= BenefitsOfMember::findOrFail(encryptor('decrypt',$id));;
-
+            $b= BenefitsOfMember::findOrFail(encryptor('decrypt',$id));
             $b->benefit=$request->benefit;
+            $b->description=$request->description;
             if($b->save()){
-            Toastr::success('Benefits Updated Successfully!');
-            return redirect()->route(currentUser().'.benefit.index');
+                Toastr::success('Benefits Updated Successfully!');
+                return redirect()->route(currentUser().'.benefit.index');
             }else{
-            Toastr::success('Please try Again!');
-            return redirect()->back();
+                Toastr::success('Please try Again!');
+                return redirect()->back();
             }
 
         }
         catch (Exception $e){
             Toastr::success('Please try Again!');
-            dd($e);
             return back()->withInput();
-
         }
     }
 
@@ -121,7 +117,11 @@ class BenefitsOfMemberController extends Controller
     public function destroy($id)
     {
         $b= BenefitsOfMember::findOrFail(encryptor('decrypt',$id));
-        $b->delete();
+        if($b->delete()){
+            Toastr::success('Benefits Deleted Successfully!');
+        }else{
+            Toastr::success('Please try Again!');
+        }
         return redirect()->back();
     }
 }
