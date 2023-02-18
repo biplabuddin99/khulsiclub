@@ -68,12 +68,17 @@ body {
 }
 .scicon-none{
   display: none;
-  animation: scale;
+  animation: hide;
   animation-duration: 1s;
 }
 @keyframes scale {
   from {height: 60px;}
   to {height: 50px;}
+}
+
+@keyframes hide {
+  from {height: 100%;}
+  to {height: 0;}
 }
 .nav-item a:hover {
     color: var(--red);
