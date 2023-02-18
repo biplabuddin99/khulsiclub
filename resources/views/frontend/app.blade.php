@@ -187,14 +187,14 @@
     <section class="support justify-content-center">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4 d-flex justify-content-center text-1">
-          <i class="bi bi-headset"></i>
+          <div class="col-md-4 d-flex justify-content-center text-1">
+          <i class="bi bi-headset my-auto"></i>
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
-          <div class="col-sm-4 d-flex text-center justify-content-between my-3 py-3 py-sm-0 text-2">
-            <p class="my-auto w-100 text-center" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
+          <div class="col-md-4 d-flex text-center justify-content-between my-3 py-3 py-sm-0 text-2">
+            <p class="my-auto py-sm-2 py-md-0 w-100 text-center" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
-          <div class="col-sm-4 d-flex justify-content-center text-3">
+          <div class="col-md-4 d-flex justify-content-center text-3">
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>

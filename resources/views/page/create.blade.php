@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Create about post'))
+@section('pageTitle',trans('Create page'))
 @section('pageSubTitle',trans('Create'))
 
 @section('content')
@@ -10,7 +10,7 @@
               <div class="card">
                   <div class="card-content">
                       <div class="card-body">
-                          <form class="form" method="post" action="{{route(currentUser().'.post.store')}}">
+                          <form class="form" method="post" action="{{route(currentUser().'.page.store')}}">
                               @csrf
                                 <div class="row mb-3">
                                     <div class="col-12">

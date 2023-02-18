@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update post'))
+@section('pageTitle',trans('Update page'))
 @section('pageSubTitle',trans('Update'))
 
 @section('content')
@@ -10,7 +10,7 @@
               <div class="card">
                   <div class="card-content">
                       <div class="card-body">
-                          <form class="form" method="post" action="{{route(currentUser().'.post.update',encryptor('encrypt',$post->id))}}">
+                          <form class="form" method="post" action="{{route(currentUser().'.page.update',encryptor('encrypt',$page->id))}}">
                               @csrf
                               @method('patch')
                                 <div class="row mb-3">
@@ -18,7 +18,7 @@
                                         <label for="title"><b>{{__('Title')}}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" id="title" value="{{ old('title',$post->page_title)}}" class="form-control"
+                                        <input type="text" id="title" value="{{ old('title',$page->page_title)}}" class="form-control"
                                             placeholder="Post title" name="title">
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                         <label for="details"><b>{{__('Details')}}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="details" class="form-control ckeditor" id="Ck"  rows="5">{{ old('details',$post->details)}}</textarea>
+                                        <textarea name="details" class="form-control ckeditor" id="Ck"  rows="5">{{ old('details',$page->details)}}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -37,8 +37,8 @@
                                     <div class="col-12">
                                         <select class="form-control form-select" value="{{ old('published')}}" name="published" required>
                                             <option value="">Select Published</option>
-                                            <option value="1" {{ old('published',$post->published)=="1"?"selected":""}}>Show</option>
-                                            <option value="0" {{ old('published',$post->published)=="0"?"selected":""}}>Hide</option>
+                                            <option value="1" {{ old('published',$page->published)=="1"?"selected":""}}>Show</option>
+                                            <option value="0" {{ old('published',$page->published)=="0"?"selected":""}}>Hide</option>
                                         </select>
                                     </div>
                                 </div>

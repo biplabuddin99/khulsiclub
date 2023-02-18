@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('about_posts', function (Blueprint $table) {
+        Schema::create('front_menus', function (Blueprint $table) {
             $table->id();
-            $table->string('page_title');
-            $table->text('details');
-            $table->string('published')->default(0);
+            $table->integer('menu_type')->comment('1 page 2 list page');
+            $table->integer('rang');
+            $table->integer('parent_id')->default(0)->nullable();
+            $table->string('name',500)->nullable();
+            $table->string('href',500)->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('about_posts');
+        Schema::dropIfExists('front_menus');
     }
 };

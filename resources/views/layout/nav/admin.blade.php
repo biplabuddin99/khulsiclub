@@ -57,6 +57,9 @@
                     <li class="py-1"><a href="{{route(currentUser().'.unit.create')}}">{{__('Add New')}}</a></li>
                 </ul>
             </li>
+            <li class="submenu-item sidebar-item">
+                <a href="{{route(currentUser().'.front_menu.index')}}" class='sidebar-link'> {{__('Manage Menu')}}</a>
+            </li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item">
@@ -70,10 +73,10 @@
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-person-fill"></i> <span>{{__('About Post')}}</span></a>
+        <a href="#" class='sidebar-link'><i class="bi bi-person-fill"></i> <span>{{__('Web Page')}}</span></a>
         <ul class="submenu">
-            <li class="py-1"><a href="{{route(currentUser().'.post.index')}}">{{__('List')}}</a></li>
-            <li class="py-1"><a href="{{route(currentUser().'.post.create')}}">{{__('Add New')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.page.index')}}">{{__('List')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.page.create')}}">{{__('Add New')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\about_post;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 
-class AboutPostController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class AboutPostController extends Controller
      */
     public function index()
     {
-        $post = about_post::paginate(10);
-        return view('Post.index',compact('post'));
+        $page = Page::paginate(10);
+        return view('page.index',compact('page'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AboutPostController extends Controller
      */
     public function create()
     {
-        return view('Post.create');
+        return view('page.create');
     }
 
     /**
@@ -60,16 +60,16 @@ class AboutPostController extends Controller
     public function store(Request $request)
     {
         try{
-            $post= new about_post();
+            $page= new Page();
 
-            $post->page_title=$request->title;
-            $post->details=$request->details;
-            $post->published=$request->published;
+            $page->page_title=$request->title;
+            $page->details=$request->details;
+            $page->published=$request->published;
             
 
-            if($post->save()){
+            if($page->save()){
             Toastr::success('Post created Successfully!');
-            return redirect()->route(currentUser().'.post.index');
+            return redirect()->route(currentUser().'.page.index');
             }else{
             Toastr::success('Please try Again!');
             return redirect()->back();
@@ -87,10 +87,10 @@ class AboutPostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\about_post  $about_post
+     * @param  \App\Models\Page  $Page
      * @return \Illuminate\Http\Response
      */
-    public function show(about_post $about_post)
+    public function show(Page $page)
     {
         //
     }
@@ -98,35 +98,35 @@ class AboutPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\about_post  $about_post
+     * @param  \App\Models\Page  $Page
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $post = about_post::findOrFail(encryptor('decrypt',$id));
-        return view('Post.edit',compact('post'));
+        $page = Page::findOrFail(encryptor('decrypt',$id));
+        return view('page.edit',compact('page'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\about_post  $about_post
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         try{
-            $post= about_post::findOrFail(encryptor('decrypt',$id));
+            $page= Page::findOrFail(encryptor('decrypt',$id));
 
-            $post->page_title=$request->title;
-            $post->details=$request->details;
-            $post->published=$request->published;
+            $page->page_title=$request->title;
+            $page->details=$request->details;
+            $page->published=$request->published;
             
 
-            if($post->save()){
+            if($page->save()){
             Toastr::success('Post Updated Successfully!');
-            return redirect()->route(currentUser().'.post.index');
+            return redirect()->route(currentUser().'.page.index');
             }else{
             Toastr::success('Please try Again!');
             return redirect()->back();
@@ -144,10 +144,10 @@ class AboutPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\about_post  $about_post
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(about_post $about_post)
+    public function destroy(Page $page)
     {
         //
     }
