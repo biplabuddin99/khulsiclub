@@ -75,7 +75,7 @@
                             @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                               @if($rows_second) 
                               <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle nav_a_padding" href="{{url($mf->href)}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   {{$mf->name}}
                                   @if($i==0)
                                     <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -90,11 +90,11 @@
                                       <div class="col-md-4 pe-0 ">
                                         <ul class="ps-2">
                                           <h4 class="menu-head">
-                                            <a href="{{route('member.about1')}}">{{$ms->name}}</a>
+                                            <a href="{{url($ms->href)}}">{{$ms->name}}</a>
                                           </h4>
                                           @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
                                           @forelse($rows_third as $mt)
-                                          <li class="subMenu"><a href="">{{$mt->name}}</a></li>
+                                          <li class="subMenu"><a href="{{url($mt->href)}}">{{$mt->name}}</a></li>
                                           @empty
 
                                           @endforelse
@@ -107,7 +107,7 @@
                               @else
 
                                 <li class="nav-item ">
-                                  <a class="nav-link nav_a_padding" href="{{route('front')}}">{{$mf->name}}
+                                  <a class="nav-link nav_a_padding" href="{{url($mf->href)}}">{{$mf->name}}
                                     @if($i==0)
                                     <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                       ×
@@ -134,7 +134,7 @@
                                     <div class="col-lg-4 pe-0">
                                       <ul class="ps-2">
                                         <h4 class="menu-head">
-                                          <a href="{{route('member.about1')}}">About</a>
+                                          <a href="">About</a>
                                         </h4>
                                         <li class="subMenu"><a href="">Core values</a></li>
                                         <li class="subMenu"><a href="">Mission</a></li>

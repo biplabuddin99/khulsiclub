@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Facilities;
 use App\Models\BenefitsOfMember;
-use App\Models\about_post;
+use App\Models\Page;
 use App\Models\Frontend;
 use App\Models\Notice;
 use App\Models\photoGallaryCategory;
@@ -59,17 +59,11 @@ class FrontendController extends Controller
         return view('frontend.benefit',compact('benefit'));
     }
     
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-
-    public function aboutUS()
+    /* get daynamic page */
+    public function page($slug)
     {
-        $about= about_post::where('published',1)->first();
-        return view('frontend.About.about-us',compact('about'));
+        $page_data= Page::where('page_slug',"$slug")->where('published',1)->first();
+        return view('frontend.Page.index',compact('page_data'));
     }
 
     /**

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">{{$about->page_title}}</h3>
+                <h3 class="mb-0">{{$page_data->page_title}}</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
@@ -19,7 +19,7 @@
                             <a href="{{route('front')}}" class="breadcrumb-item router-link-active">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{route('member.about1')}}">About us</a>
+                            <a href="">{{$page_data->page_title}}</a>
                         </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
@@ -37,11 +37,11 @@
                         <span class="shape"></span>
                         <span class="shape2"></span>
                         <div class="card-header">
-                            <h5>{{$about->page_title}}</h5>
+                            <h5>{{$page_data->page_title}}</h5>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.about1')}}">About Khulsi Club</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.benefit')}}">Benefits</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">About Khulsi Club</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Benefits</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Facilities</a></li>
                         </ul>
 
@@ -51,10 +51,10 @@
         </div>
         <div class="col-lg-9 px-2 ">
             <div class="about-title" id="grad">
-                <h6 class="text-uppercase p-1">{{$about->page_title}}</h6>
+                <h6 class="text-uppercase p-1">{{$page_data->page_title}}</h6>
             </div>
             <p class="text-justify">
-                {!!$about->details!!}
+                {!!$page_data->details!!}
             </p>
         </div>
     </div>

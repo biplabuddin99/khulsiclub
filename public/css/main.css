@@ -85,7 +85,7 @@ body {
 .logo-sec img {
   padding-top: 11px;
   animation: bscale;
-  animation-duration: 1s;
+  animation-duration: 0.2s;
 }
 @keyframes bscale {
   from {height: 75px;}
@@ -95,12 +95,12 @@ body {
   height: 50px;
   padding-top: 7px;
   animation: scale;
-  animation-duration: 1s;
+  animation-duration: 0.2s;
 }
 .scicon-none{
   display: none;
   animation: hide;
-  animation-duration: 1s;
+  animation-duration: 0.2s;
 }
 @keyframes scale {
   from {height: 60px;}
@@ -853,8 +853,8 @@ body {
 .sidebar-menu.vue-affix {
   top: 0!important;
   width: 280px;
-  -webkit-animation: FadeUp 1s ease forwards;
-  animation: FadeUp 1s ease forwards;
+  -webkit-animation: FadeUp 0.2s ease forwards;
+  animation: FadeUp 0.2s ease forwards;
 }
 .leftside-menu .card {
   /* position: relative; */
