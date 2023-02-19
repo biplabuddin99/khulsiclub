@@ -1,7 +1,15 @@
 @extends('layout.app')
 @section('pageTitle',trans('Frontend Menu List'))
 @section('pageSubTitle',trans('List'))
+@push('styles')
 
+<link href="{{ asset('assets/ddmenu/css/style.css') }}" rel="stylesheet" type="text/css" />
+<style>
+    .insertion_div{
+        display: none;
+    }
+</style>
+@endpush
 @section('content')
 
 <!-- Bordered table start -->
@@ -18,10 +26,9 @@
 
                 <?php
                     $menu_lnk=array(
-                                'প্রথম পাতা'					=>'',
-                                'প্রতিষ্ঠান পরিচিতি' 				=>'home/about',
-                                'প্রতিষ্ঠাতা ও জমি দাতা' 			=>'home/founder',
-                                'দাতা সদস্য' 					=>'home/donnor_list'
+                                'Home'					=>'/',
+                                'Blank'					=>'#',
+                                'Contact Us' 			=>'contact_us'
                                 );
                 ?>
 
@@ -33,17 +40,18 @@
                             <div class="widget" style="min-height:500px;">
                                 <div class="widget-content padding">
                                     <div class="widget-content padding">
-                                        <a class="btn btn-info" href="javascript:void(0);" onclick=" $('.reset').click(); $('.insertion_div').show();$('[name=id]').val(0);">
+                                        <a class="btn btn-info" href="javascript:void(0);" onclick=" $('.reset').click(); $('.insertion_div').toggle();$('[name=id]').val(0);">
                                             <i class="fa fa-plus" aria-hidden="true"></i>Add New Menu
-                                        </a>
-                                        <div class="insertion_div"><hr/>
+                                        </a><hr/>
+                                        <div class="insertion_div">
                                             <ul class="nav nav-tabs">
-                                                <li class="active"><a class="link" data-toggle="tab" href="#link">From List</a></li>
-                                                <li><a class="page" data-toggle="tab" href="#page">From Page</a></li>
+                                                <li class="nav-item"><a class="nav-link link active"data-bs-toggle="tab" href="#link">From List</a></li>
+                                                <li class="nav-item"><a class="nav-link page" data-bs-toggle="tab" href="#page">From Page</a></li>
                                             </ul>
-                                            <div class="tab-content">
-                                                <div id="link" class="tab-pane fade in active">
-                                                    <form class="menu_form" action="m_save" method="POST">
+                                            <div class="tab-content pt-3">
+                                                <div id="link" class="tab-pane container active">
+                                                    <form class="menu_form" action="{{route(currentUser().'.front_menu.save')}}" method="POST">
+                                                        @csrf
                                                         <div class="form-group">
                                                             <label>Menu Name</label>
                                                             <input type="text" class="form-control" name="name" required>
@@ -66,8 +74,9 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div id="page" class="tab-pane fade">
-                                                    <form class="menu_form" action="m_save" method="POST">
+                                                <div id="page" class="tab-pane container fade">
+                                                    <form class="menu_form" action="{{route(currentUser().'.front_menu.save')}}" method="POST">
+                                                        @csrf
                                                         <div class="form-group">
                                                             <label>Menu Name</label>
                                                             <input type="text" class="form-control" name="name" required>
@@ -76,10 +85,10 @@
                                                         <div class="form-group">
                                                             <label>Menu Link</label>
                                                             <select class="form-control" name="href">
-                                                                <option value=''>Select post</option>
+                                                                <option value=''>Select Page</option>
                                                                 <?php if($pages){
                                                                         foreach($pages as $mp){ ?>
-                                                                        <option value="home/page/<?= $mp['id'] ?>"><?= $mp['page_title'] ?></option>
+                                                                        <option value="page/<?= $mp['page_slug'] ?>"><?= $mp['page_title'] ?></option>
                                                                 <?php } } ?>
                                                             </select>
                                                         </div>
@@ -114,14 +123,21 @@
                                                     <td><?= $nl['href'];?></td>
                                                     <td>
                                                         <?php if($nl['status']==1){ ?>
-                                                        <?=anchor("web_conf/menu/m_disable/0/".$nl['id'],"Active",array('onclick' => "return confirm('Do you want to Inactive this menu')",'class'=>'label label-success'))?>
+                                                            <a href="#" onclick="return confirm('Do you want to inactive this menu')" class="label label-success">Active</a>
                                                         <?php } else { ?>
-                                                        <?=anchor("web_conf/menu/m_disable/1/".$nl['id'],"Inactive",array('onclick' => "return confirm('Do you want to Active this menu')",'class'=>'label label-danger'))?>
+                                                            <a href="#" onclick="return confirm('Do you want to active this menu')" class="label label-danger">Inactive</a>
                                                         <?php } ?>
                                                     </td>
                                                     <td>
-                                                        <a class="" href="javascript:void(0)" onclick="edit('<?= $nl['id'];?>','<?= explode('/',$nl['href'])[1];?>')"><i class="fa fa-edit"></i></a>
-                                                        <?=anchor("web_conf/menu/m_delete/".$nl['id'],"<i class=\"fa fa-trash\"></i>",array('onclick' => "return confirm('Do you want to delete this menu')"))?>
+                                                        <a href="">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>&nbsp;
+                                                        <button class="btn btn-link btn-sm" type="button" onclick="edit('{{$nl->id}}','<?= explode('/',$nl->href)[0];?>')">
+                                                            <i class="bi bi-pencil-square"></i>
+                                                        </button> &nbsp;
+                                                        <a href="{{route(currentUser().'.front_menu.detroy',$nl->id)}}" onclick="return confirm('Are you sure to delete this?')">
+                                                            <i class="bi bi-trash"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <?php $i++; } ?>
@@ -139,17 +155,16 @@
                                 * @return echo string
                                 */
                                 function menu_showNested($parentID) {
-                                    $ci = &get_instance();
                                     $sql = "SELECT * FROM front_menus WHERE parent_id='$parentID' and status='1' ORDER BY rang";
                                     $rowsm = DB::select($sql);
-                                    if ($rowsm->count() > 0) {
+                                    if ($rowsm) {
                                         echo "\n";
                                         echo "<ol class='dd-list'>\n";
-                                            foreach($rowsm as $row) {
+                                            foreach($rowsm as $i=>$row) {
                                                 echo "\n";
                                                 
                                                 echo "<li class='dd-item' data-id='{$row->id}'>\n";
-                                                    echo "<div class='dd-handle'>{$row->id}: {$row->name}</div>\n";
+                                                    echo "<div class='dd-handle'>".++$i.": {$row->name}</div>\n";
                                                 
                                                     // Run this function again (it would stop running when the mysql_num_result is 0
                                                     menu_showNested($row->id);
@@ -172,12 +187,12 @@
                                     echo "<div class='dd' id='nestableMenu'>\n\n";
                                         echo "<ol class='dd-list'>\n";
                                         
-                                            foreach($rows as $row) {
+                                            foreach($rows as $i=>$row) {
                                                 
                                                 echo "\n";
                                                 
                                                 echo "<li class='dd-item' data-id='{$row->id}'>";
-                                                    echo "<div class='dd-handle'>{$row->id}: {$row->name}</div>";
+                                                    echo "<div class='dd-handle'>".++$i.": {$row->name}</div>";
                                                 
                                                 
                                                 menu_showNested($row->id);
@@ -204,7 +219,7 @@
 @endsection
 
 @push('scripts')
-<script src="template/ddmenu/js/jquery.nestable.js"></script>
+<script src="{{ asset('assets/ddmenu/js/jquery.nestable.js') }}"></script>
 <script type="text/javascript">
 
 	window.onload=function(){
@@ -220,7 +235,7 @@
 				output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
 				var jsonstring=window.JSON.stringify(list.nestable('serialize'));
 				
-				$.post(baseUrl+"web_conf/menu/mss",{ jsonstring:jsonstring },function(data, status){ /*document.getElementById('ss').innerHTML=data;*/ });
+				$.get("{{route(currentUser().'.front_menu.mss')}}",{ jsonstring:jsonstring },function(data, status){ /*document.getElementById('ss').innerHTML=data;*/ });
 	
 				
 				 //$.get(baseUrl+"web_conf/menu/mss/"+jsonstring, function(data){ alert(data);   });
@@ -268,20 +283,14 @@
 			}
 		}
 		
-		if(ohref=='post_cat'){
-			$('.post_cat').click();
-			$('#post_cat [name=id]').val(id);
-			$('#post_cat [name=name]').val(name);
-			$('#post_cat [name=href]').val(href);
-		}
-		else if(ohref=='page'){
-			$('.page').click();
+        if(ohref=='page'){
+            $('[href="#page"]').tab('show');
 			$('#page [name=id]').val(id);
 			$('#page [name=name]').val(name);
 			$('#page [name=href]').val(href);
 		}
 		else{
-			$('.link').click();
+            $('[href="#link"]').tab('show');
 			$('#link [name=id]').val(id);
 			$('#link [name=name]').val(name);
 			$('#link [name=href]').val(href);

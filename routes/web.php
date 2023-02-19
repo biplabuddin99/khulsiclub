@@ -98,7 +98,10 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
-        Route::resource('front_menu',frontMenu::class,['as'=>'admin']);
+        Route::get('front_menu', [frontMenu::class, 'index'])->name('admin.front_menu.index');
+        Route::post('menu_save_update/{id?}', [frontMenu::class, 'save_update'])->name('admin.front_menu.save');
+        Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('admin.front_menu.mss');
+        Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('admin.front_menu.detroy');
 
     });
 });

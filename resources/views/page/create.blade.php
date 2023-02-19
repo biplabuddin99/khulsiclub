@@ -4,6 +4,12 @@
 @section('pageSubTitle',trans('Create'))
 
 @section('content')
+<style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+        border:1px solid #AAA !important;
+    }
+</style>
   <section id="multiple-column-form">
       <div class="row match-height">
           <div class="col-12">
@@ -19,6 +25,9 @@
                                     <div class="col-12">
                                         <input type="text" id="title" value="{{ old('title')}}" class="form-control"
                                             placeholder="Post title" name="title">
+                                            @if($errors->has('title'))
+                                                <span class="text-danger"> {{ $errors->first('title') }}</span>
+                                            @endif
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -26,7 +35,9 @@
                                         <label for="details"><b>{{__('Details')}}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="details" class="form-control ckeditor" id="Ck"  rows="5">{{ old('details')}}</textarea>
+                                        <div id="toolbar-container"></div>
+                                        <textarea name="details" id="ckeditordetails" class="d-none">{{ old('details')}}</textarea>
+                                        <div class="form-control ck-editor__editable ck-editor__editable_inline" id="ckeditor"  rows="5">{{ old('details')}}</div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -57,32 +68,25 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+<script src="{{ asset('assets/ckeditor5-build-decoupled-document/ckeditor.js') }}"></script>
 <script>
-
-
-    ClassicEditor
-            .create( document.querySelector( '.ckeditor' ),{
-
+    $('#ckeditor').blur(function(){
+        $('#ckeditordetails').val($(this).html());
+    })
+DecoupledEditor
+.create( document.querySelector( '#ckeditor' ),{
                 ckfinder: {
                     uploadUrl: '{{route('image.upload').'?_token='.csrf_token()}}',
                 }
             })
             .then( editor => {
-                editor.ui.view.editable.element.style.height = '500px';
-                
+                const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+                toolbarContainer.appendChild( editor.ui.view.toolbar.element );
             } )
             .catch( error => {
                 console.error( error );
             } );
-
-    // ClassicEditor.create( document.querySelector( '.ckeditor' ) )
-    //     .then( editor => {
-    //         editor.ui.view.editable.element.style.height = '500px';
-    //     } )
-    //     .catch( error => {
-    //         console.error( error );
-    //     } );
     
 </script>
 

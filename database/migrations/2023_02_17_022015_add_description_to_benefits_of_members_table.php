@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('benefits_of_members', function (Blueprint $table) {
-            $table->text('description')->nullable();
+            $table->text('description')->after('benefit')->nullable();
         });
     }
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Requests\Page\AddNewRequest;
+use App\Http\Requests\Page\UpdateRequest;
 use Exception;
 
 class PageController extends Controller
@@ -57,12 +59,13 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try{
             $page= new Page();
 
             $page->page_title=$request->title;
+            $page->page_slug=strtolower(str_replace(' ', '_', $request->title));
             $page->details=$request->details;
             $page->published=$request->published;
             
@@ -114,12 +117,13 @@ class PageController extends Controller
      * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try{
             $page= Page::findOrFail(encryptor('decrypt',$id));
 
             $page->page_title=$request->title;
+            $page->page_slug=strtolower(str_replace(' ', '_', $request->title));
             $page->details=$request->details;
             $page->published=$request->published;
             

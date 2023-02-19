@@ -1,19 +1,20 @@
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();
-
-  if (scroll > 200) {
-    $(".scicon").addClass('scicon-none');
-    $('.logo-sec').addClass('shrink');
-  } else {
-    $(".scicon").removeClass('scicon-none');
-    $('.logo-sec').removeClass('shrink');
-  }
+    if (window.scrollY > 100 && !$(".scicon").hasClass('d-sm-none')) {
+        $("header").addClass('sticky-top');
+        $(".scicon").addClass('d-sm-none');
+        $('.logo-sec').addClass('shrink');
+	} else if (window.scrollY < 100) {
+        $("header").removeClass('sticky-top');
+    	$(".scicon").removeClass('d-sm-none');
+        $('.logo-sec').removeClass('shrink');
+	}
+  
 });
-
-
 
 // Member profile jQuery start
 $(document).ready(function() {
+
   $('.next-step').click(function() {
       var currentTab = $(this).closest('.tab-pane').attr('id');
       var nextTab = $(this).closest('.tab-pane').next().attr('id');
