@@ -7,6 +7,7 @@ use App\Models\BenefitsOfMember;
 use App\Models\Page;
 use App\Models\Frontend;
 use App\Models\Notice;
+use App\Models\scroll_notice;
 use App\Models\photoGallaryCategory;
 use App\Models\OurMember;
 use App\Models\MemberChildren;
@@ -33,6 +34,10 @@ class FrontendController extends Controller
                             $query->where('unpublished_date', '>',$today);
                             $query->orWhereNull('unpublished_date');
                         })->latest()->limit(12)->get();
+        $scroll_notice=scroll_notice::where('published_date', '<=',$today)->where(function ($query) use ($today) {
+                            $query->where('unpublished_date', '>',$today);
+                            $query->orWhereNull('unpublished_date');
+                        })->latest()->limit(12)->get();
         $facilities=Facilities::get();
         $pgallery_cat=photoGallaryCategory::where('status',1)->get();
         //$donor=OurMember::where('membership_applied',1)->latest()->limit(9)->get();
@@ -46,7 +51,7 @@ class FrontendController extends Controller
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
         $benefit = BenefitsOfMember::latest()->take(6)->get();
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit'));
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','scroll_notice'));
     }
     /**
      * Show the form for creating a new resource.

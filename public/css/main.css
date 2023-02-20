@@ -18,7 +18,7 @@ header {
     height: 100px;
 }
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -36,9 +36,6 @@ header.sticky-top {
     transform: translateY(-40px);
     box-shadow: 0 -12px 20px 1px #000;
     padding-top: 30px;
-}
-.main{
-  margin-top: 100px;
 }
 body {
   font-family: "Montserrat-Regular";
@@ -83,9 +80,9 @@ body {
 /* header */
 
 .logo-sec img {
-  padding-top: 11px;
+  padding-top: 21px;
   animation: bscale;
-  animation-duration: 0.2s;
+  animation-duration: 0.9s;
 }
 @keyframes bscale {
   from {height: 75px;}
@@ -95,7 +92,7 @@ body {
   height: 50px;
   padding-top: 7px;
   animation: scale;
-  animation-duration: 0.2s;
+  animation-duration: 0.9s;
 }
 .scicon-none{
   display: none;
@@ -302,6 +299,30 @@ body {
   font-weight: bold;
 }
 /* Notice */
+.carousel .n-item-center{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+.carousel-item .notice-img{
+    vertical-align: middle;
+}
+
+marquee ul li{
+  display: inline;
+  list-style: none;
+}
+marquee ul{
+  display:flex;
+}
+marquee p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--red);
+}
 
 .notice_title{
   text-decoration: none;
@@ -376,8 +397,8 @@ body {
   color: #fff;
 }
 
-.notice-blog .carousel {
-  height: 380px;
+.notice-blog .carousel-inner {
+  height: 350px;
 }
 .notice-blog .carousel-item img {
   height: 350px;

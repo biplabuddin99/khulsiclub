@@ -33,7 +33,7 @@
                                         <td>{{$m->unpublished_date}}</td>
                                         
                                         <td class="white-space-nowrap">
-                                            <a class="ebutton" href="{{route(currentUser().'.scrollN.edit',encryptor('encrypt',$m->id))}}">Edit</a>
+                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.scrollN.edit',encryptor('encrypt',$m->id))}}">Edit</a>
                                         </td>
                                     </tr>
                                     @empty

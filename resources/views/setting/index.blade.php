@@ -47,7 +47,7 @@
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/we_accept_2/'.$s->footer_top_p2_image)}}" alt=""></td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/settings/we_accept_3/'.$s->footer_top_p3_image)}}" alt=""></td>
                                         <td class="white-space-nowrap">
-                                            <a class="ebutton" href="{{route(currentUser().'.settings.edit',encryptor('encrypt',$s->id))}}">Edit</a>
+                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.settings.edit',encryptor('encrypt',$s->id))}}">Edit</a>
                                         </td>
                                     </tr>
                                     @empty

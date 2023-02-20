@@ -73,14 +73,14 @@
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-person-fill"></i> <span>{{__('Web Page')}}</span></a>
+        <a href="#" class='sidebar-link'><i class="bi bi-files"></i><span>{{__('Web Page')}}</span></a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.page.index')}}">{{__('List')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.page.create')}}">{{__('Add New')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-person-fill"></i> <span>{{__('Scroll Notice')}}</span></a>
+        <a href="#" class='sidebar-link'><i class="bi bi-distribute-vertical"></i> <span>{{__('Scroll Notice')}}</span></a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('List')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.scrollN.create')}}">{{__('Add New')}}</a></li>

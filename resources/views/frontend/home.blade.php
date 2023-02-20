@@ -6,30 +6,19 @@
 
     <!-- slider -->
     <section class="slider">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="true"
-      >
+      <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="true">
         <div class="carousel-indicators">
           @forelse ($slider as $slide)
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
+          <button type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="{{$loop->index}}"
             class="{{$loop->index==0?'active':''}}"
             {{$loop->index==0?'aria-current="true"':''}}
-            aria-label="Slide {{++$loop->index}}"
-          ></button>
+            aria-label="Slide {{++$loop->index}}">
+          </button>
           @empty
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Slide 1">
+          </button>
           @endforelse
 
         </div>
@@ -38,35 +27,21 @@
               <div class="carousel-item {{$loop->index==0?'active':''}}">
                     <img
                     src="{{asset('uploads/Slide_image/thumb/'.$slide->image)}}"
-                    class="d-block w-100 slider-img"
-                    alt="..."
-                    />
+                    class="d-block w-100 slider-img" alt="..." />
               </div>
             @empty
             <div class="carousel-item active">
-              <img
-                src="{{ asset('img/slider2.jpg')}}"
-                class="d-block w-100 slider-img"
-                alt="..."
-              />
+              <img src="{{ asset('img/slider2.jpg')}}" class="d-block w-100 slider-img" alt="..." />
             </div>
             @endforelse
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next" >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -148,26 +123,35 @@
                 <p class="fs-4 mb-1 pt-1">News & Events</p>
               </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner notice-carousel shadow">
+              <div class="carousel-inner n-item-center notice-carousel shadow text-center">
                 @forelse ($notice as $notic)
 
-                <div class="carousel-item {{$loop->index==0?'active':''}} text-center">
+                <div class="carousel-item  {{$loop->index==0?'active':''}}">
                     <img
                       src="{{asset('uploads/notice_image/'.$notic->image)}}"
-                      class="d-block w-100"
+                      class="d-block w-100 notice-img"
                       alt="..."
                     />
                 </div>
                 @empty
-                <div class="carousel-item active text-center">
+                <div class="carousel-item active">
                     <!-- <img
                       src="{{ asset('img/slider-3-2.jpg')}}"
                       class="d-block w-100"
                       alt="..."/> -->
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/zhje63IEdO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/zhje63IEdO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 @endforelse
               </div>
+              <marquee width="98%" direction="left" height="content-fit" class="pt-2">
+                <ul class="m-0">
+                  @forelse ($scroll_notice as $sn)
+                  <li><p>{{$sn->text}}</p></li>
+                  @empty
+                  <li><p>There is no update at this momment</p></li>
+                  @endforelse
+                </ul>
+              </marquee>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -422,7 +406,7 @@
           items : 3,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
-          itemsTablet: [768,2],
+          itemsTablet: [768,1],
           itemsMobile : [479,1]
         })
 

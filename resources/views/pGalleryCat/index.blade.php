@@ -32,7 +32,7 @@
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/pGcategory/'.$cat->feature_image)}}" alt=""></td>
                                         <td>{{ $cat->status == 1?"Active":"Inactive" }}</td>
                                         <td class="white-space-nowrap">
-                                            <a class="ebutton" href="{{route(currentUser().'.pGalleryCat.edit',encryptor('encrypt',$cat->id))}}">Edit</a>
+                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.pGalleryCat.edit',encryptor('encrypt',$cat->id))}}">Edit</a>
                                         </td>
                                     </tr>
                                     @empty

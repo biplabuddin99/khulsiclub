@@ -29,7 +29,7 @@
                                     
                                     <td>{{ $m->published == 1?"Show":"Hide" }}</td>
                                     <td class="white-space-nowrap">
-                                        <a class="ebutton" href="{{route(currentUser().'.page.edit',encryptor('encrypt',$m->id))}}">Edit</a>
+                                        <a class="btn btn-sm btn-success" href="{{route(currentUser().'.page.edit',encryptor('encrypt',$m->id))}}">Edit</a>
                                     </td>
                                 </tr>
                                 @empty
