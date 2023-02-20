@@ -704,7 +704,7 @@ marquee p{
 }
 .gallery .card .heading h4 {
   color: var(--red);
-  font-size: 1.3vw;
+  font-size: 20px;
   margin: auto;
   padding: 5px;
 }
