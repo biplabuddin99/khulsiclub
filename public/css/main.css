@@ -311,6 +311,10 @@ body {
 marquee ul li{
   display: inline;
   list-style: none;
+  border-right:1px solid var(--red);
+}
+marquee ul li:last-child{
+  border-right:0;
 }
 marquee ul{
   display:flex;
@@ -342,7 +346,7 @@ marquee p{
   margin-right: 10px !important;
 }
 .height-300{
-  height: 344px;
+  height: 314px;
 }
 .notice-div-one {
   border-top: 3px solid rgb(48, 48, 48) !important;

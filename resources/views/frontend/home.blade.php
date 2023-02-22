@@ -6,17 +6,17 @@
 
     <!-- slider -->
     <section class="slider">
-      <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="true">
+      <div id="sliderDiv"  class="carousel slide" data-interval="3000"  data-bs-ride="carousel">
         <div class="carousel-indicators">
           @forelse ($slider as $slide)
-          <button type="button" data-bs-target="#carouselExampleIndicators"
+          <button type="button" data-bs-target="#sliderDiv"
             data-bs-slide-to="{{$loop->index}}"
             class="{{$loop->index==0?'active':''}}"
             {{$loop->index==0?'aria-current="true"':''}}
             aria-label="Slide {{++$loop->index}}">
           </button>
           @empty
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+          <button type="button" data-bs-target="#sliderDiv" data-bs-slide-to="0"
             class="active" aria-current="true" aria-label="Slide 1">
           </button>
           @endforelse
@@ -35,16 +35,16 @@
             </div>
             @endforelse
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#sliderDiv"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-next" type="button" data-bs-target="#sliderDiv"
           data-bs-slide="next" >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </button> -->
       </div>
     </section>
     <!-- slider end -->
@@ -124,34 +124,22 @@
               </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                <div class="carousel-item active">
+                 <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 @forelse ($notice as $notic)
-
-                <div class="carousel-item  {{$loop->index==0?'active':''}}">
-                    <img
-                      src="{{asset('uploads/notice_image/'.$notic->image)}}"
-                      class="d-block w-100 notice-img"
-                      alt="..."
-                    />
+                <div class="carousel-item ">
+                  <img
+                    src="{{asset('uploads/notice_image/'.$notic->image)}}"
+                    class="d-block w-100 notice-img"
+                    alt="..."/>
                 </div>
                 @empty
                 <div class="carousel-item active">
-                    <!-- <img
-                      src="{{ asset('img/slider-3-2.jpg')}}"
-                      class="d-block w-100"
-                      alt="..."/> -->
-                      <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/zhje63IEdO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 @endforelse
               </div>
-              <marquee width="98%" direction="left" height="content-fit" class="pt-2">
-                <ul class="m-0">
-                  @forelse ($scroll_notice as $sn)
-                  <li><p>{{$sn->text}}</p></li>
-                  @empty
-                  <li><p>There is no update at this momment</p></li>
-                  @endforelse
-                </ul>
-              </marquee>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -169,7 +157,6 @@
             </div>
             <div class="height-300">
                 @forelse ($notice as $n)
-
                   <div class="notice-title notice-div-two">
                     <p class="mb-0">
                       <a href="{{asset('uploads/notice_image/'.$n->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
@@ -181,21 +168,32 @@
                   </div>
                 @empty
                 <div class="notice-title">
-                    <p>
+                  <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Dolores, numquam?
-                    </p>
-                    <div class="d-flex notice-time">
-                      <span class="material-symbols-outlined"> alarm </span>
-                      <p class="mb-2">19 January, 2023</p>
-                    </div>
+                  </p>
+                  <div class="d-flex notice-time">
+                    <span class="material-symbols-outlined"> alarm </span>
+                    <p class="mb-2">19 January, 2023</p>
+                  </div>
                 </div>
-                @endforelse
+              @endforelse
             </div>
-                <div class="views-notice">
-                  <a href="#">Views All Notices</a>
-                </div>
-
+            <div class="views-notice">
+              <a href="#">Views All Notices</a>
+            </div>
+          </div>
+          <div class="col-12">
+              <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
+                <ul class="m-0">
+                  @forelse ($scroll_notice as $sn)
+                    <li><p>{{$sn->text}}</p></li>
+                  @empty
+                    <li><p class="px-2">There is no update at this momment</p></li>
+                    <li><p class="px-2">There is no update at this momment</p></li>
+                  @endforelse
+                </ul>
+              </marquee>
           </div>
         </div>
       </div>
@@ -372,6 +370,7 @@
     @endsection
     @push('scripts')
     <script>
+      
         $('.owl-facilities').owlCarousel({
           loop:true,
           autoPlay:true,
