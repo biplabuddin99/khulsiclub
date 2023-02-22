@@ -1,8 +1,8 @@
 
 @extends('layout.app')
 
-@section('pageTitle',trans('Create Video Gallery Category'))
-@section('pageSubTitle',trans('Create'))
+@section('pageTitle',trans('Update Video Album'))
+@section('pageSubTitle',trans('Update'))
 
 @section('content')
   <!-- // Basic multiple Column Form section start -->

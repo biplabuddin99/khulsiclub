@@ -1,7 +1,4 @@
 @extends('frontend.app')
-@section('pageTitle',trans('Home'))
-@section('pageSubTitle',trans('List'))
-
 @section('content')
 <!-- // Basic multiple Column Form section start -->
 <section class="container py-4">

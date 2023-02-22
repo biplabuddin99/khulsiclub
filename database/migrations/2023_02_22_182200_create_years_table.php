@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('video_galleries', function (Blueprint $table) {
+        Schema::create('years', function (Blueprint $table) {
             $table->id();
-            $table->string('caption')->nullable();
-            $table->string('feature_image')->nullable();
-            $table->string('video_gallary_category_id');
-            $table->string('year_id');
-            $table->string('status')->default(0);
-            $table->softDeletes();
+            $table->string('year')->nullable();
+            $table->string('feature_photo')->nullable();
+            $table->string('feature_video')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('video_galleries');
+        Schema::dropIfExists('years');
     }
 };

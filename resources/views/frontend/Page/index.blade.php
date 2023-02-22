@@ -1,7 +1,4 @@
 @extends('frontend.app')
-@section('pageTitle',trans('About us'))
-@section('pageSubTitle',trans('details'))
-
 @section('content')
 <section class="about-support">
     <span class="shape"></span>

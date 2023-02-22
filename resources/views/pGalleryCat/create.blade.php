@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Create Photo Gallery Category'))
+@section('pageTitle',trans('Create Photo Album'))
 @section('pageSubTitle',trans('Create'))
 
 @section('content')

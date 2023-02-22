@@ -21,17 +21,29 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Publish Date')}}:</b></label>
+                                <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Album')}}:</b></label>
                                 <div class="col-sm-6 offset-1">
-                                    <input type="date" value="{{ old('publish_date',$pGallery->publish_date)}}" class="form-control"
-                                        placeholder="Publish date" name="publish_date">
+                                    <select class="form-control form-select" name="album" id="album">
+                                        <option value="">Select Album</option>
+                                        @forelse($pGalleryCat as $d)
+                                            <option value="{{$d->id}}" {{ old('album',$pGallery->photo_gallary_category_id)==$d->id?"selected":""}}> {{ $d->name}}</option>
+                                        @empty
+                                            <option value="">No Data found</option>
+                                        @endforelse
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Unpublish Date')}}:</b></label>
+                                <label for="year" class="col-sm-2 offset-1 col-form-label"><b>{{__('Photo Year')}}:</b></label>
                                 <div class="col-sm-6 offset-1">
-                                    <input type="date" value="{{ old('unpublish_date',$pGallery->unpublish_date)}}" class="form-control"
-                                        placeholder="Unpublish date" name="unpublish_date">
+                                    <select class="form-control form-select" name="year" id="year">
+                                        <option value="">Select Photo year</option>
+                                        @forelse($year as $d)
+                                            <option value="{{$d->id}}" {{ old('year',$pGallery->year_id)==$d->id?"selected":""}}> {{ $d->year}}</option>
+                                        @empty
+                                            <option value="">No Data found</option>
+                                        @endforelse
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-3">

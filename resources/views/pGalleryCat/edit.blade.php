@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update Photo Gallery Category'))
+@section('pageTitle',trans('Update Photo Album'))
 @section('pageSubTitle',trans('Update'))
 
 @section('content')

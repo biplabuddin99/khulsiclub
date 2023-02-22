@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\photoGallary;
+use App\Models\year;
+use App\Models\photoGallaryCategory;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
@@ -29,7 +31,9 @@ class PhotoGallaryController extends Controller
      */
     public function create()
     {
-        return view('pGallery.create');
+        $pGalleryCat= photoGallaryCategory::all();
+        $year = year::all();
+        return view('pGallery.create',compact('year','pGalleryCat'));
     }
 
     /**
@@ -44,8 +48,8 @@ class PhotoGallaryController extends Controller
             $pgc=new photoGallary;
 
             $pgc->Caption=$request->Caption;
-            $pgc->publish_date=$request->publish_date;
-            $pgc->unpublish_date=$request->unpublish_date;
+            $pgc->photo_gallary_category_id=$request->album;
+            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
             if($request->has('feature_image'))
                 $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
@@ -86,8 +90,10 @@ class PhotoGallaryController extends Controller
      */
     public function edit($id)
     {
+        $pGalleryCat= photoGallaryCategory::all();
+        $year = year::all();
         $pGallery=photoGallary::findOrFail(encryptor('decrypt',$id));
-        return view('pGallery.edit',compact('pGallery'));
+        return view('pGallery.edit',compact('pGallery','year','pGalleryCat'));
     }
 
     /**
@@ -103,8 +109,8 @@ class PhotoGallaryController extends Controller
             $pgc= photoGallary::findOrFail(encryptor('decrypt',$id));
 
             $pgc->Caption=$request->Caption;
-            $pgc->publish_date=$request->publish_date;
-            $pgc->unpublish_date=$request->unpublish_date;
+            $pgc->photo_gallary_category_id=$request->album;
+            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
             
             $path='uploads/pGgallery';

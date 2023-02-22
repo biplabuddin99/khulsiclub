@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Video Gallery Category List'))
+@section('pageTitle',trans('Video Album List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')

@@ -23,9 +23,10 @@
             <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Gallery')}}</a>
                 <ul class="submenu">
-                    <li class="py-1"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('Photo Category')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.year.index')}}">{{__('Album Year')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('Photo Album')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.pGallery.index')}}">{{__('Photo')}}</a></li>
-                    <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('Video Category')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('Video Album')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('Video')}}</a></li>
                 </ul>
             </li>
