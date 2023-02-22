@@ -35,7 +35,7 @@
             </div>
             @endforelse
         </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#sliderDiv"
+        <button class="carousel-control-prev" type="button" data-bs-target="#sliderDiv"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -44,7 +44,7 @@
           data-bs-slide="next" >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button> -->
+        </button>
       </div>
     </section>
     <!-- slider end -->
@@ -189,8 +189,7 @@
                   @forelse ($scroll_notice as $sn)
                     <li><p>{{$sn->text}}</p></li>
                   @empty
-                    <li><p class="px-2">There is no update at this momment</p></li>
-                    <li><p class="px-2">There is no update at this momment</p></li>
+                    {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
                   @endforelse
                 </ul>
               </marquee>
@@ -378,6 +377,11 @@
           margin:10,
           responsive: true,
           items : 3,
+          navigation:true,
+          navigationText: [
+            "<i class='bi bi-chevron-left'></i>",
+            "<i class='bi bi-chevron-right'></i>"
+          ],
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
           itemsTablet: [768,1],
@@ -390,6 +394,11 @@
           slideSpeed:1000,
           margin:25,
           responsive: true,
+          navigation:true,
+          navigationText: [
+            "<span class='bi bi-chevron-left'></span>",
+            "<span class='bi bi-chevron-right'></span>"
+          ],
           items : 4,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
@@ -402,6 +411,11 @@
           slideSpeed:1000,
           margin:25,
           responsive: true,
+          navigation:true,
+          navigationText: [
+            "<i class='bi bi-chevron-left'></i>",
+            "<i class='bi bi-chevron-right'></i>"
+          ],
           items : 3,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],

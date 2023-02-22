@@ -9,8 +9,6 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +34,8 @@
     <!-- Basic stylesheet -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css')}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
   </head>
   <body>
         <!-- header section -->
@@ -62,7 +62,7 @@
                   <div class="col-sm-12 col-12 d-flex justify-content-end " >
                     
                     <nav class="navbar navbar-expand-lg navbar-light pb-0">
-                      <button class="navbar-toggler my-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                     

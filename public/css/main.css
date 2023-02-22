@@ -1073,7 +1073,7 @@ footer img {
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     z-index: 4;
     background: rgba(18, 15, 15, 0.57);
     padding-top: 0px;
@@ -1103,11 +1103,54 @@ footer img {
   .support p {
     line-height: 60px;
   }
+  header {
+    height: 82px;
+  }
+  .logo-sec img {
+    padding-top: 15px;
+  }
+  header.sticky-top {
+    -webkit-transform: translateY(-23px);
+    transform: translateY(-23px);
+    box-shadow: 0 -12px 20px 1px #000;
+    padding-top: 13px;
+  }
+  .sticky-top .logo-sec img {
+    padding-top: 5px;
+  }
 }
 
-  .owl-controls{
+  /* .owl-controls{
+    display: none !important;
+  } */
+  .owl-pagination{
     display: none !important;
   }
+  .owl-theme .owl-controls .owl-buttons div {
+    font-weight: bold;
+    color: #a9040a;
+    padding: 14px 10px;
+    padding: 3px 11px;
+    font-size: 35px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: transparent;
+    opacity: 1;
+}
+.owl-prev{
+  position: absolute;
+    left: -24px;
+    top: 59px;
+}
+.owl-next{
+  position: absolute;
+    right: -47px;
+    top: 59px;
+}
+.member .owl-prev,.member .owl-next {
+  top: 104px;
+}
 /*1200px  */
 
 @media screen and (max-width: 1200px) {

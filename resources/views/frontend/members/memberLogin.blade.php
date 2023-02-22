@@ -21,7 +21,7 @@
                     <div class="col-lg-8">
                         <div class="text-center pt-4">
                             <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                            <p>Login</p>
+                            <p>Become a Member Login </p>
                         </div>
                         <div class="p-4 mem-form">
                             <form class="form" method="post" action="{{route('memberlogin.check')}}">
