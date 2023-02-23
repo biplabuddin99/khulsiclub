@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\VideoGallery;
+use App\Models\VideoGallaryCategory;
+use App\Models\year;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
@@ -27,7 +29,9 @@ class VideoGalleryController extends Controller
      */
     public function create()
     {
-        return view('video_gallery.create');
+        $vGalleryCat= VideoGallaryCategory::all();
+        $year = year::all();
+        return view('video_gallery.create',compact('vGalleryCat','year'));
     }
 
     /**
@@ -41,9 +45,8 @@ class VideoGalleryController extends Controller
         try{
             $vgallery=new VideoGallery;
             $vgallery->caption=$request->caption;
-            $vgallery->video_id=$request->videoId;
-            $vgallery->publish_date=$request->publishedDate;
-            $vgallery->unpublished_date=$request->unpublishedDate;
+            $vgallery->video_gallary_category_id=$request->album;
+            $vgallery->year_id=$request->year;
             if($request->hasFile('FeatureImage')){
                 $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
                 $request->FeatureImage->move(public_path('uploads/vgallery_image'), $FeatureImageName);
@@ -85,8 +88,10 @@ class VideoGalleryController extends Controller
      */
     public function edit($id)
     {
+        $vGalleryCat= VideoGallaryCategory::all();
+        $year = year::all();
         $videogallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
-        return view('video_gallery.edit',compact('videogallery'));
+        return view('video_gallery.edit',compact('videogallery','vGalleryCat','year'));
     }
 
     /**
@@ -101,9 +106,8 @@ class VideoGalleryController extends Controller
         try{
             $vgallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
             $vgallery->caption=$request->caption;
-            $vgallery->video_id=$request->videoId;
-            $vgallery->publish_date=$request->publishedDate;
-            $vgallery->unpublished_date=$request->unpublishedDate;
+            $vgallery->video_gallary_category_id=$request->album;
+            $vgallery->year_id=$request->year;
             if($request->hasFile('FeatureImage')){
                 $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
                 $request->FeatureImage->move(public_path('uploads/vgallery_image'), $FeatureImageName);

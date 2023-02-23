@@ -25,9 +25,8 @@
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Caption')}}</th>
                                 <th scope="col">{{__('Feature Image')}}</th>
-                                <th scope="col">{{__('Video Id')}}</th>
-                                <th scope="col">{{__('Publish Date')}}</th>
-                                <th scope="col">{{__('Unpublish Date')}}</th>
+                                <th scope="col">{{__('Album')}}</th>
+                                <th scope="col">{{__('Video Year')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
@@ -38,9 +37,8 @@
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->caption}}</td>
                                 <td><img width="50px" src="{{asset('uploads/vgallery_image/'.$p->feature_image)}}" alt=""></td>
-                                <td>{{$p->video_id}}</td>
-                                <td>{{$p->publish_date }}</td>
-                                <td>{{$p->unpublished_date }}</td>
+                                <td>{{$p->video_gallary_category?->name}}</td>
+                                <td>{{$p->year?->year }}</td>
                                 <td>{{ $p->status == 1?"Active":"Inactive" }}</td>
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.vgallery.edit',encryptor('encrypt',$p->id))}}">

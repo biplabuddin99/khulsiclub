@@ -1503,3 +1503,96 @@ figure{
   -webkit-box-pack: center;
   justify-content: center;
 }
+
+/* membership css start */
+.member-search h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: .2125rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.searchBox {
+  background: transparent;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0;
+  border-radius: 50px;
+  border: 1px solid var(--red);
+}
+.searchBox input {
+  padding: 0.8rem;
+  width: 90%;
+  border-radius: 50px;
+  border: 0;
+  outline: none;
+}
+.searchBox span {
+  background: var(--red);
+  color: #fff;
+  height: 100%;
+  padding: 0.325rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0.1225rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.search-menu li a {
+  position: relative;
+  padding: 0.125rem;
+  color: var(--red);
+  font-size: 12px;
+  text-decoration: none;
+}
+.search-menu li a:before {
+  content: "|";
+  padding-right: 0.2em;
+}
+.btn-explore, .btn-explore:hover {
+  color: #fff;
+  background: #616161;
+  border-radius: 50px;
+}
+.search-list-item h1 {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  color: var(--red);
+}
+.search-list-item h5 {
+  font-size: 12px;
+  font-weight: 700;
+}
+.search-list-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.search-list-item small {
+  font-size: 14px;
+  font-weight: 700;
+  color: #999;
+}
+.search-list-item p {
+  font-size: 13px;
+  color: #000;
+}
+.btn-outline-explore, .btn-outline-explore:hover {
+  color: #ed1c24;
+  border: 2px solid #ed1c24;
+  border-radius: 50px;
+}
+.search-list-item a{
+  text-decoration: none;
+  color: #000;
+}
+/* membership css end */

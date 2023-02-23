@@ -32,6 +32,18 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    public function memberlist()
+    {
+        
+        $member=OurMember::all();
+        return view('frontend.membership.memberList',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
     public function memberPassword()
     {
         

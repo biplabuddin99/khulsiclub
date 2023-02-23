@@ -179,7 +179,7 @@
                                   Members
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
-                                    <li class="subMenu"><a href="">Core values</a></li>
+                                    <li class="subMenu"><a href="{{route('member.list')}}">Member List</a></li>
                                     <li class="subMenu"><a href="">Mission</a></li>
                                     <li class="subMenu"><a href="">Vission</a></li>
                                   </ul>

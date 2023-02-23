@@ -40,30 +40,30 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="videoId">Video Id:</label>
-                                            <input type="text" class="form-control" id="videoId"
-                                                placeholder="video Id" name="videoId" rows="3" value="{{ old('videoId',$videogallery->video_id )}}">
+                                            <label for="videoId">{{__('Album')}}:</label>
+                                            <select class="form-control form-select" name="album" id="album">
+                                                <option value="">Select Album</option>
+                                                @forelse($vGalleryCat as $d)
+                                                    <option value="{{$d->id}}" {{ old('album',$videogallery->video_gallary_category_id)==$d->id?"selected":""}}> {{ $d->name}}</option>
+                                                @empty
+                                                    <option value="">No Data found</option>
+                                                @endforelse
+                                            </select>
                                         </div>
                                     </div>
 
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="publishedDate">Published Date</label>
-                                            <input type="date" id="publishedDate" class="form-control" value="{{ old('publishedDate',$videogallery->publish_date)}}" name="publishedDate">
-                                            @if($errors->has('publishedDate'))
-                                                <span class="text-danger"> {{ $errors->first('publishedDate') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="unpublishedDate">Unpublished Date</label>
-                                            <input type="date" id="unpublishedDate" class="form-control" value="{{ old('unpublishedDate',$videogallery->unpublished_date)}}" name="unpublishedDate">
-                                            @if($errors->has('unpublishedDate'))
-                                                <span class="text-danger"> {{ $errors->first('unpublishedDate') }}</span>
-                                            @endif
+                                            <label for="photoyear">{{__('Video Year')}}:</label>
+                                            <select class="form-control form-select" name="year" id="year">
+                                                <option value="">Select video year</option>
+                                                @forelse($year as $d)
+                                                <option value="{{$d->id}}" {{ old('year',$videogallery->year_id)==$d->id?"selected":""}}> {{ $d->year}}</option>
+                                                @empty
+                                                    <option value="">No Data found</option>
+                                                @endforelse
+                                            </select>
                                         </div>
                                     </div>
                                     <fieldset class="col-md-6 col-12">

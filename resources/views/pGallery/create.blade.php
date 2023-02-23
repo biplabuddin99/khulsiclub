@@ -22,7 +22,7 @@
                             <div class="row mb-3">
                                 <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Album')}}:</b></label>
                                 <div class="col-sm-6 offset-1">
-                                    <select class="form-control form-select" name="album" id="album">
+                                    <select class="form-control form-select" name="album" id="album" required>
                                         <option value="">Select Album</option>
                                         @forelse($pGalleryCat as $d)
                                             <option value="{{$d->id}}" {{ old('album')==$d->id?"selected":""}}> {{ $d->name}}</option>
@@ -35,7 +35,7 @@
                             <div class="row mb-3">
                                 <label for="year" class="col-sm-2 offset-1 col-form-label"><b>{{__('Photo Year')}}:</b></label>
                                 <div class="col-sm-6 offset-1">
-                                    <select class="form-control form-select" name="year" id="year">
+                                    <select class="form-control form-select" name="year" id="year" required>
                                         <option value="">Select Photo year</option>
                                         @forelse($year as $d)
                                             <option value="{{$d->id}}" {{ old('year')==$d->id?"selected":""}}> {{ $d->year}}</option>
