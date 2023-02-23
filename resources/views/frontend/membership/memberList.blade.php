@@ -199,12 +199,12 @@
                     <div class="card card-body shadow-sm">
                         <div class="search-list-item row ">
                             <div class="col-lg-2 align-self-center text-center">
-                                <img src="" alt="Logo">
+                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
                             </div>
-                            <div class="col-lg-2 text-center border-right pl-0 pr-0">
+                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
                                 <h1>[AF-03-09-017]</h1>
                                 <h5>Affiliate Member</h5>
-                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom">[PDF Profile]</a>
+                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
                             </div>
                             <div class="col-lg-6">
                                 <h4><a href="">Link3 Technologies Limited</a></h4>
@@ -217,12 +217,12 @@
                         </div>
                         <div class="search-list-item row ">
                             <div class="col-lg-2 align-self-center text-center">
-                                <img src="" alt="Logo">
+                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
                             </div>
-                            <div class="col-lg-2 text-center border-right pl-0 pr-0">
+                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
                                 <h1>[AF-03-09-017]</h1>
                                 <h5>Affiliate Member</h5>
-                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom">[PDF Profile]</a>
+                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
                             </div>
                             <div class="col-lg-6">
                                 <h4><a href="">Link3 Technologies Limited</a></h4>
@@ -233,6 +233,26 @@
                                 <a href="" class="btn btn-sm btn-outline-explore">Details</a>
                             </div>
                         </div>
+                        <div class="search-list-item row ">
+                            <div class="col-lg-2 align-self-center text-center">
+                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
+                            </div>
+                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
+                                <h1>[AF-03-09-017]</h1>
+                                <h5>Affiliate Member</h5>
+                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <h4><a href="">Link3 Technologies Limited</a></h4>
+                                <small>Establishment: May 2000</small>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad itaque porro dicta minus excepturi consectetur illo ea corporis sunt?</p>
+                            </div>
+                            <div class="col-lg-2 align-self-center text-center">
+                                <a href="" class="btn btn-sm btn-outline-explore">Details</a>
+                            </div>
+                        </div>
+                       
+                        
                     </div>
                 </div>
             </div>

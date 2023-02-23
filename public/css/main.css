@@ -1561,7 +1561,7 @@ figure{
   border-radius: 50px;
 }
 .search-list-item h1 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   padding: 0.5rem;
   margin-bottom: 0;
@@ -1570,10 +1570,12 @@ figure{
 .search-list-item h5 {
   font-size: 12px;
   font-weight: 700;
+  letter-spacing: .5px;
 }
 .search-list-item h4 {
   font-size: 20px;
   font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0;
 }
@@ -1594,5 +1596,9 @@ figure{
 .search-list-item a{
   text-decoration: none;
   color: #000;
+}
+.search-list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e6e6e6;
 }
 /* membership css end */
