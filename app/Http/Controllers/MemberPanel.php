@@ -34,8 +34,7 @@ class MemberPanel extends Controller
      */
     public function memberlist()
     {
-        
-        $member=OurMember::all();
+        $member=OurMember::paginate(10);
         return view('frontend.membership.memberList',compact('member'));
     }
     /**
@@ -119,6 +118,12 @@ class MemberPanel extends Controller
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
             $member->company=$request->company;
+            $member->description=$request->description;
+            if($request->hasFile('attach_pdf')){
+                $filename = rand(111,999).time().'.'.$request->attach_pdf->extension();
+                $request->attach_pdf->move(public_path('uploads/company_pdf'), $filename);
+                $member->attach_pdf=$filename;
+            }
             $member->cell_number=$request->cellno;
             $member->tel_number=$request->tel;
             $member->fax_number=$request->fax;

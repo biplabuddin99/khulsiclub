@@ -1555,10 +1555,23 @@ figure{
   content: "|";
   padding-right: 0.2em;
 }
+.search-menu li:first-child a:before {
+  content: "";
+}
 .btn-explore, .btn-explore:hover {
   color: #fff;
-  background: #616161;
+  background: var(--red);
   border-radius: 50px;
+  border-color: transparent;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.advance-search-body legend {
+  float: none !important;
+  width: 155px; 
+  padding: 0 !important;
+  margin-bottom: 0.5rem;
 }
 .search-list-item h1 {
   font-size: 16px;
@@ -1589,9 +1602,10 @@ figure{
   color: #000;
 }
 .btn-outline-explore, .btn-outline-explore:hover {
-  color: #ed1c24;
+  color: #ed1c24 !important;
   border: 2px solid #ed1c24;
   border-radius: 50px;
+  font-weight: bold;
 }
 .search-list-item a{
   text-decoration: none;

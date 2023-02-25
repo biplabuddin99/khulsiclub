@@ -143,11 +143,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row">
                 <div class="col-lg-12">
-                    <fieldset class="data-search-body border">
-                        <legend style="width: 155px;">
-                            <button class="btn btn-explore" type="button" data-bs-toggle="collapse" data-bs-target="#advance-search" aria-expanded="false" aria-controls="advance-search">
+                    <fieldset class="advance-search-body border">
+                        <legend >
+                            <button class=" btn-explore" type="button" data-bs-toggle="collapse" data-bs-target="#advance-search" aria-expanded="false" aria-controls="advance-search">
                                 Advance Search
                             </button>
                         </legend>
@@ -155,7 +155,7 @@
                             <form action="" class="row">
                                 <div class="form-group pb-3">
                                     <label for="all_member"> <input type="radio" id="all_member" name="radio" checked="checked"> All</label>
-                                    <label for="donor_member"> <input type="radio" id="donor_member" name="radio"> Donor</label>
+                                    <label for="donor_member"> <input type="radio" id="donor_member" name="radio"> Donor Member</label>
                                     <label for="life_member"> <input type="radio" id="life_member" name="radio"> Life Member</label>
                                     <label for="service_member"> <input type="radio" id="service_member" name="radio"> Service Member</label>
                                     <label for="pm_member"> <input type="radio" id="pm_member" name="radio"> Parmanent Member</label>
@@ -197,62 +197,57 @@
             <div class="row py-3">
                 <div class="col-lg-12">
                     <div class="card card-body shadow-sm">
+                        @forelse ($member as $m)
                         <div class="search-list-item row ">
                             <div class="col-lg-2 align-self-center text-center">
-                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
+                                <img src="{{asset('uploads/member_image/thumb/'.$m->image)}}" alt="No Image" width="100px">
+                            </div>
+                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
+                                <h1> [{{str_pad($m->id, 3, "0", STR_PAD_LEFT)}}]</h1>
+                                <h5>
+                                    @if ($m->membership_applied == 1){{'Donor Member'}}
+                                    @elseif($m->membership_applied == 2){{'Service Member'}}
+                                    @elseif($m->membership_applied == 3){{'Life Member'}}
+                                    @elseif($m->membership_applied == 4){{'Temporary Member'}}
+                                    @elseif($m->membership_applied == 5){{'Permanent Member'}}
+                                    @elseif($m->membership_applied == 6){{'Honorary Member'}}
+                                    @elseif($m->membership_applied == 7){{'Corporate Member'}}
+                                    @elseif($m->membership_applied == 8){{'Diplomate Member'}}
+                                    @endif
+                                </h5>
+                                <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                                <h4><a href="">{{$m->company}}</a></h4>
+                                <p>{{$m->description}}</p>
+                            </div>
+                            <div class="col-lg-2 align-self-center text-center">
+                                <a href="#" class="btn btn-sm btn-outline-explore">More Details</a>
+                            </div>
+                        </div>
+                        @empty
+                        <div class="search-list-item row ">
+                            <div class="col-lg-2 align-self-center text-center">
+                                <img src="{{asset('img/noLogo.jpg')}}" alt="No Image" width="100px">
                             </div>
                             <div class="col-lg-2 text-center border-end ps-0 pe-0">
                                 <h1>[AF-03-09-017]</h1>
                                 <h5>Affiliate Member</h5>
-                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
+                                <a href="#" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 align-self-center">
                                 <h4><a href="">Link3 Technologies Limited</a></h4>
-                                <small>Establishment: May 2000</small>
+                                <!-- <small>Establishment: May 2000</small> -->
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad itaque porro dicta minus excepturi consectetur illo ea corporis sunt?</p>
                             </div>
                             <div class="col-lg-2 align-self-center text-center">
-                                <a href="" class="btn btn-sm btn-outline-explore">Details</a>
+                                <a href="#" class="btn btn-sm btn-outline-explore">More Details</a>
                             </div>
                         </div>
-                        <div class="search-list-item row ">
-                            <div class="col-lg-2 align-self-center text-center">
-                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
-                            </div>
-                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
-                                <h1>[AF-03-09-017]</h1>
-                                <h5>Affiliate Member</h5>
-                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
-                            </div>
-                            <div class="col-lg-6">
-                                <h4><a href="">Link3 Technologies Limited</a></h4>
-                                <small>Establishment: May 2000</small>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad itaque porro dicta minus excepturi consectetur illo ea corporis sunt?</p>
-                            </div>
-                            <div class="col-lg-2 align-self-center text-center">
-                                <a href="" class="btn btn-sm btn-outline-explore">Details</a>
-                            </div>
+                        @endforelse
+                        <div class="d-flex justify-content-end mt-2">
+                            {!! $member->links()!!}
                         </div>
-                        <div class="search-list-item row ">
-                            <div class="col-lg-2 align-self-center text-center">
-                                <img src="{{asset('img/khlogo3.png')}}" alt="Logo" width="100px">
-                            </div>
-                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
-                                <h1>[AF-03-09-017]</h1>
-                                <h5>Affiliate Member</h5>
-                                <a href="" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
-                            </div>
-                            <div class="col-lg-6">
-                                <h4><a href="">Link3 Technologies Limited</a></h4>
-                                <small>Establishment: May 2000</small>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad itaque porro dicta minus excepturi consectetur illo ea corporis sunt?</p>
-                            </div>
-                            <div class="col-lg-2 align-self-center text-center">
-                                <a href="" class="btn btn-sm btn-outline-explore">Details</a>
-                            </div>
-                        </div>
-                       
-                        
                     </div>
                 </div>
             </div>

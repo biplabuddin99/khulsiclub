@@ -136,6 +136,18 @@
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
+                                                    <label for="description">Description</label>
+                                                    <textarea class="form-control" name="description" id="description"  rows="2">{{old('description',$member->description)}}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="attach_pdf">PDF Profile:</label>
+                                                    <input type="file" id="attach_pdf" class="form-control" name="attach_pdf">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
                                                     <label for="cellno">Cell No:</label>
                                                     <input type="text" id="cellno" class="form-control" value="{{ old('cellno',$member->cell_number)}}" name="cellno">
                                                         @if($errors->has('cellno'))
