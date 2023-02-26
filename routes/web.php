@@ -59,9 +59,9 @@ Route::post('/memberLogin', [auth::class,'memberSignInCheck'])->name('memberlogi
 Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut');
 
 // Member login
-Route::get('/memLogin', [auth::class,'memSignInForm'])->name('memLogin');
-Route::post('/memLogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
-Route::get('/memLogOut', [auth::class,'memSingOut'])->name('memLogOut');
+Route::get('/mlogin', [auth::class,'memSignInForm'])->name('memLogin');
+Route::post('/mlogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
+Route::get('/mlogOut', [auth::class,'memSingOut'])->name('memLogOut');
 
 
 Route::get('/', [front::class,'index'])->name('front');
@@ -76,7 +76,7 @@ Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registra
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
-Route::get('pGallery', [photo::class,'pGallery'])->name('pGallery');
+Route::get('photo_gallery', [photo::class,'pGallery'])->name('pGallery');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
