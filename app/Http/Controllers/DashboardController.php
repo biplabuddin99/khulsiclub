@@ -39,4 +39,10 @@ class DashboardController extends Controller
     public function memberDashboard(){
         return view('frontend.members.member');
     }
+    /*
+    * member dashboard
+    */
+    public function memDashboard(){
+        return view('frontend.memDashboard.member');
+    }
 }

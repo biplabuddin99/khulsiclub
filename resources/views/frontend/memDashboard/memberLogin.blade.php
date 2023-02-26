@@ -21,20 +21,19 @@
                     <div class="col-lg-8">
                         <div class="text-center pt-4">
                             <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                            <p class="p-0 m-0">Login</p>
-                            <p>Become a Member</p>
+                            <p>Member Login</p>
                         </div>
                         <div class="p-4 mem-form">
-                            <form class="form" method="post" action="{{route('memberlogin.check')}}">
+                            <form class="form" method="post" action="{{route('memlogin.check')}}">
                                 @csrf
                                 <div class="col-12 py-2">
                                     <div class="form-group">
-                                        <label for="company">Email Address:</label>
-                                        <input type="text" id="EmailAddress" class="form-control input-bg" placeholder="ie: member@mail.com" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
+                                        <label for="memberId">Member ID</label>
+                                        <input type="text" id="memberId" class="form-control input-bg" placeholder="Member id" onfocus="this.placeholder = ''" value="{{ old('memberId')}}" onblur="this.placeholder = 'Member id'" name="memberId">
                                     </div>
-                                    @if($errors->has('EmailAddress'))
+                                    @if($errors->has('memberId'))
                                         <small class="d-block text-danger">
-                                            {{$errors->first('EmailAddress')}}
+                                            {{$errors->first('memberId')}}
                                         </small>
                                     @endif
                                 </div>
@@ -50,8 +49,7 @@
                                     @endif
                                 </div>
                                 <div>
-                                    <a href="">Forgot Password?</a><br>
-                                    <span>Don't have an account? </span><a href="{{route('member_registration')}}">Sign up.</a>
+                                    <a href="">Forgot Password?</a>
                                 </div>
                                 <div class="col-12 py-4 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-danger">Login</button>

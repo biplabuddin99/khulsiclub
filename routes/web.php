@@ -30,6 +30,7 @@ use App\Http\Controllers\Products\UnitController as unit;
 
 use App\Http\Controllers\FrontendController as front;
 use App\Http\Controllers\PageController as page;
+use App\Http\Controllers\MediaController as photo;
 use App\Http\Controllers\ScrollNoticeController as scrollN;
 use App\Http\Controllers\FrontMenuController as frontMenu;
 /* Middleware */
@@ -49,14 +50,19 @@ use App\Http\Middleware\isSalesman;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Become a member login
 Route::get('/memberRegister', [auth::class,'memberSignUpForm'])->name('member_registration');
 Route::post('/memberRegister', [auth::class,'memberSignUpStore'])->name('memberRegister.store');
 Route::get('/memberLogin', [auth::class,'memberSignInForm'])->name('memberLogin');
 Route::post('/memberLogin', [auth::class,'memberSignInCheck'])->name('memberlogin.check');
 Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut');
 
+// Member login
+Route::get('/memLogin', [auth::class,'memSignInForm'])->name('memLogin');
+Route::post('/memLogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
+Route::get('/memLogOut', [auth::class,'memSingOut'])->name('memLogOut');
 
-//Route::post('/profile', [member::class,'adminProfile'])->name('member.profile.update');
 
 Route::get('/', [front::class,'index'])->name('front');
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
@@ -70,6 +76,7 @@ Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registra
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
+Route::get('pGallery', [photo::class,'pGallery'])->name('pGallery');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
@@ -130,6 +137,7 @@ Route::group(['middleware'=>isSalesman::class],function(){
 });
 Route::group(['middleware'=>isMember::class],function(){
     Route::prefix('member')->group(function(){
+        Route::get('/loggedMem', [dash::class,'memDashboard'])->name('member.memdashboard');
         Route::get('/loggedMember', [dash::class,'memberDashboard'])->name('member.dashboard');
         Route::get('/profile', [MemberPanel::class,'memberProfile'])->name('member.profile');
         Route::post('/profileUpdate/update', [MemberPanel::class,'memberProfileUpdate'])->name('profile.update');

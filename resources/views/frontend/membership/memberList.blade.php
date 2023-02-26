@@ -37,7 +37,7 @@
                             <h4>Membership</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Member List</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.list')}}">Member List</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Member Services</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Non-Member Services</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Membership Process</a></li>
@@ -218,7 +218,7 @@
                                 <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
                             </div>
                             <div class="col-lg-6 align-self-center">
-                                <h4><a href="">{{$m->company}}</a></h4>
+                                <h4><a href="#">{{$m->company}}</a></h4>
                                 <p>{{$m->description}}</p>
                             </div>
                             <div class="col-lg-2 align-self-center text-center">

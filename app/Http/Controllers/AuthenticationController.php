@@ -12,6 +12,7 @@ use App\Http\Traits\ResponseTrait;
 use App\Http\Requests\Authentication\SignupRequest;
 use App\Http\Requests\Authentication\MemberSignupRequest;
 use App\Http\Requests\Authentication\MemberSigninRequest;
+use App\Http\Requests\Authentication\MemSigninRequest;
 use App\Http\Requests\Authentication\SigninRequest;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -83,7 +84,26 @@ class AuthenticationController extends Controller
     public function memberSignInForm(){
         return view('frontend.members.memberLogin');
     }
+    public function memSignInForm(){
+        return view('frontend.memDashboard.memberLogin');
+    }
 
+    public function memSignInCheck(MemSigninRequest $request){
+        try{
+            $member=OurMember::where('member_id',$request->memberId)->first();
+            if($member){
+                if(Hash::check($request->password , $member->password)){
+                    $this->memberSetSession($member);
+                    return redirect()->route($member->role->identity.'.memdashboard')->with($this->resMessageHtml(true,null,'Successfully login'));
+                }else
+                    return redirect()->route('memLogin')->with($this->resMessageHtml(false,'error','Your id or password is wrong!'));
+            }else
+                return redirect()->route('memLogin')->with($this->resMessageHtml(false,'error','Your id or password is wrong!'));
+        }catch(Exception $e){
+            //dd($e);
+            return redirect()->route('memLogin')->with($this->resMessageHtml(false,'error','Your id or password is wrong!'));
+        }
+    }
     public function memberSignInCheck(MemberSigninRequest $request){
         try{
             $member=OurMember::where('email',$request->EmailAddress)->first();
@@ -146,6 +166,10 @@ class AuthenticationController extends Controller
     public function singOut(){
         request()->session()->flush();
         return redirect('login')->with($this->resMessageHtml(false,'error',currentUserId()));
+    }
+    public function memSingOut(){
+        request()->session()->flush();
+        return redirect('memLogin')->with($this->resMessageHtml(false,'error',currentUserId()));
     }
     public function memberSingOut(){
         request()->session()->flush();
