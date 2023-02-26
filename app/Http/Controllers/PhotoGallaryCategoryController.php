@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\photoGallaryCategory;
+use App\Models\year;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
@@ -29,7 +30,8 @@ class PhotoGallaryCategoryController extends Controller
      */
     public function create()
     {
-        return view('pGalleryCat.create');
+        $year = year::all();
+        return view('pGalleryCat.create',compact('year'));
     }
 
     /**
@@ -44,6 +46,7 @@ class PhotoGallaryCategoryController extends Controller
             $pgc=new photoGallaryCategory;
 
             $pgc->name=$request->name;
+            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
             if($request->has('feature_image'))
                 $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,700,300,false);
@@ -85,8 +88,9 @@ class PhotoGallaryCategoryController extends Controller
      */
     public function edit($id)
     {
+        $year = year::all();
         $pGalleryCat=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
-        return view('pGalleryCat.edit',compact('pGalleryCat'));
+        return view('pGalleryCat.edit',compact('pGalleryCat','year'));
     }
 
     /**
@@ -101,6 +105,7 @@ class PhotoGallaryCategoryController extends Controller
         try{
             $pgc=photoGallaryCategory::findOrFail(encryptor('decrypt',$id));
             $pgc->name=$request->name;
+            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
 
             $path='uploads/pGcategory';
