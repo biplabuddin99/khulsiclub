@@ -30,7 +30,7 @@ use App\Http\Controllers\Products\UnitController as unit;
 
 use App\Http\Controllers\FrontendController as front;
 use App\Http\Controllers\PageController as page;
-use App\Http\Controllers\MediaController as photo;
+use App\Http\Controllers\MediaController as media;
 use App\Http\Controllers\ScrollNoticeController as scrollN;
 use App\Http\Controllers\FrontMenuController as frontMenu;
 /* Middleware */
@@ -76,7 +76,9 @@ Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registra
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
-Route::get('pGallery', [photo::class,'pGallery'])->name('pGallery');
+Route::get('pGallery', [media::class,'pGallery'])->name('pGallery');
+Route::get('/album/{slug}', [media::class,'album'])->name('album');
+Route::get('/photo/{slug}', [media::class,'photo'])->name('photo');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){

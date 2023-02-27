@@ -94,7 +94,7 @@
                                           </h4>
                                           @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
                                           @forelse($rows_third as $mt)
-                                          <li class="subMenu"><a href="{{url($mt->href)}}">{{$mt->name}}</a></li>
+                                          <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
                                           @empty
 
                                           @endforelse
@@ -136,9 +136,9 @@
                                         <h4 class="menu-head">
                                           <a href="">About</a>
                                         </h4>
-                                        <li class="subMenu"><a href="">Core values</a></li>
-                                        <li class="subMenu"><a href="">Mission</a></li>
-                                        <li class="subMenu"><a href="">Vission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                       </ul>
                                     </div>
                                     <div class="col-lg-4 pe-0">
@@ -146,9 +146,9 @@
                                         <h4 class="menu-head">
                                           <a href="">Our Team</a>
                                         </h4>
-                                        <li class="subMenu"><a href="">Core values</a></li>
-                                        <li class="subMenu"><a href="">Mission</a></li>
-                                        <li class="subMenu"><a href="">Vission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                       </ul>
                                     </div>
                                     <div class="col-lg-4 pe-0">
@@ -156,9 +156,9 @@
                                         <h4 class="menu-head">
                                           <a href="">Committees & Forums</a>
                                         </h4>
-                                        <li class="subMenu"><a href="">Core values</a></li>
-                                        <li class="subMenu"><a href="">Mission</a></li>
-                                        <li class="subMenu"><a href="">Vission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                        <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                       </ul>
                                     </div>
                                   </div>
@@ -169,9 +169,9 @@
                                   Club Facilities
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
-                                    <li class="subMenu"><a href="">Core values</a></li>
-                                    <li class="subMenu"><a href="">Mission</a></li>
-                                    <li class="subMenu"><a href="">Vission</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item dropdown">
@@ -179,9 +179,9 @@
                                   Members
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
-                                    <li class="subMenu"><a href="{{route('member.list')}}">Member List</a></li>
-                                    <li class="subMenu"><a href="">Mission</a></li>
-                                    <li class="subMenu"><a href="">Vission</a></li>
+                                    <li class="subMenu"><a href="{{route('member.list')}}"><span><i class="bi bi-chevron-double-right"></i></span> Member List</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item dropdown">
@@ -189,9 +189,9 @@
                                   Publications
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
-                                    <li class="subMenu"><a href="">Core values</a></li>
-                                    <li class="subMenu"><a href="">Mission</a></li>
-                                    <li class="subMenu"><a href="">Vission</a></li>
+                                    <li class="subMenu"><a href=""> <span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item dropdown">
@@ -199,8 +199,8 @@
                                   Media
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
-                                    <li class="subMenu"><a href="{{route('pGallery')}}">Photo Gallery</a></li>
-                                    <li class="subMenu"><a href="">Video Gallery</a></li>
+                                    <li class="subMenu"><a href="{{route('pGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Photo Gallery</a></li>
+                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Video Gallery</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item">

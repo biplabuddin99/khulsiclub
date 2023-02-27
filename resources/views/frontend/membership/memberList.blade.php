@@ -164,27 +164,15 @@
                                     <label for="corporate_member"> <input type="radio" id="corporate_member" name="radio"> Corporate Member</label>
                                     <label for="diplomate_member"> <input type="radio" id="diplomate_member" name="radio"> Diplomate Member</label>
                                 </div>
-                                <div class="form-group col-lg-2 p-1">
-                                    <label for="" class="mb-0">Service</label>
-                                    <input type="text" name="service" id="" class="form-control form-control-sm shadow-none">
-                                </div>
-                                <div class="form-group col-lg-2 p-1">
-                                    <label for="" class="mb-0">Product</label>
-                                    <input type="text" name="product" id="" class="form-control form-control-sm shadow-none">
-                                </div>
-                                <div class="form-group col-lg-2 p-1">
-                                    <label for="" class="mb-0">Location</label>
-                                    <input type="text" name="location" id="" class="form-control form-control-sm shadow-none">
-                                </div>
-                                <div class="form-group col-lg-3 p-1">
+                                <div class="form-group col-lg-5 p-1">
                                     <label for="" class="mb-0">Membership ID</label>
                                     <input type="text" name="member_id" id="" class="form-control form-control-sm shadow-none">
                                 </div>
-                                <div class="form-group col-lg-2 p-1">
+                                <div class="form-group col-lg-5 p-1">
                                     <label for="" class="mb-0">Rep. Name</label>
                                     <input type="text" name="repName" id="" class="form-control form-control-sm shadow-none">
                                 </div>
-                                <div class="form-group col-lg-1 align-self-end p-1">
+                                <div class="form-group col-lg-2 align-self-end p-1">
                                     <button type="button" class="btn btn-sm btn-danger">
                                     <i class="bi bi-search"></i>
                                     </button>

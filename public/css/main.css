@@ -202,7 +202,7 @@ body {
 .dropdown-menu .subMenu a {
   text-decoration: none;
   color: #515152;
-  font-size: 14px;
+  font-size: 12px;
   padding-left: 0;
 }
 .dropdown-menu .subMenu a:hover {
@@ -239,8 +239,17 @@ body {
 .dropdown-menu h4 a {
   text-decoration: none;
   color: #464444;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bolder;
+}
+.dropdown-menu .subMenu a span {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: -12px;
+  font-size: 10px;
+}
+.dropdown-menu .subMenu a {
+  margin-left: 10px;
 }
 @media (min-width: 992px){
 
@@ -1162,7 +1171,6 @@ footer img {
     display: block;
   }
 }
-
 .facilities-main .bubble1 {
   width: 100px;
   height: 100px;

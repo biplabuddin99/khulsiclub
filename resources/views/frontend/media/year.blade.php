@@ -46,20 +46,32 @@
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
-            <div class="row gallery photo align-items-center">
-                @forelse ($photo as $p)
-                <div class="col-lg-3">
-                    <div class="card card-gallery shadow-sm">
-                        <a href="{{asset('uploads/pGgallery/'.$p->feature_image)}}" data-toggle="lightbox" data-gallery="gallery">
-                            <img src="{{asset('uploads/pGgallery/thumb/'.$p->feature_image)}}" class="img-fluid">
-                        </a>
-                    </div>
+            <div class="row gallery photo">
+                @forelse ($photoYear as $p)
+                <div class="col-lg-4 text-center">
+                    <a href="{{route('album',$p->id)}}">
+                        <div class="card shadow-sm mb-3">
+                            <div class="card-gallery">
+                                <img class="img-fluid" src="{{asset('uploads/yearPhoto/thumb/'.$p->feature_photo)}}" alt="">
+                            </div>
+                            <div class="card-body my-2">
+                                <h4>Photos of {{$p->year}}</h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 @empty
-                <div class="col-lg-3">
-                    <div class="card card-gallery shadow-sm">
-                        <img class="img-fluid" data-src="" src="" alt="" lazy="loaded">
-                    </div>
+                <div class="col-lg-4 text-center">
+                    <a href="">
+                        <div class="card shadow-sm mb-3">
+                            <div class="card-gallery">
+                                <img class="img-fluid" src="{{asset('img/fasi.jpg')}}" alt="">
+                            </div>
+                            <div class="card-body my-2">
+                                <h4>Photos of 2022</h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 @endforelse
             </div>
