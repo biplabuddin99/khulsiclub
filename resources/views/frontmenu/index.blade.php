@@ -28,6 +28,9 @@
                     $menu_lnk=array(
                                 'Home'					=>'/',
                                 'Blank'					=>'#',
+                                'Member Login' 		    =>'mlogin',
+                                'Mamber List' 		    =>'memberlist',
+                                'Photo Gallery' 		=>'photo_gallery',
                                 'Contact Us' 			=>'contact_us'
                                 );
                 ?>
