@@ -28,6 +28,20 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
+                                            <label for="year">{{__('Video Year')}}:</label>
+                                            <select class="form-control form-select" name="year" id="year" required>
+                                                <option value="">Select Video year</option>
+                                                @forelse($year as $d)
+                                                    <option value="{{$d->id}}" {{ old('year',$videogallery_cat->year_id)==$d->id?"selected":""}}> {{ $d->year}}</option>
+                                                @empty
+                                                    <option value="">No Data found</option>
+                                                @endforelse
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
                                             <label for="FeatureImage">Feature Image</label>
                                             <input type="file" id="FeatureImage" class="form-control"
                                                 placeholder="FeatureImage" name="FeatureImage">

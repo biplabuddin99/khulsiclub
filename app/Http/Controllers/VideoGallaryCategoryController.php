@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\VideoGallaryCategory;
+use App\Models\year;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
@@ -27,7 +28,8 @@ class VideoGallaryCategoryController extends Controller
      */
     public function create()
     {
-        return view('video_gallery_category.create');
+        $year = year::all();
+        return view('video_gallery_category.create',compact('year'));
     }
 
     /**
@@ -41,6 +43,7 @@ class VideoGallaryCategoryController extends Controller
         try{
             $vgallerycat=new VideoGallaryCategory;
             $vgallerycat->name=$request->name;
+            $vgallerycat->year_id=$request->year;
             if($request->hasFile('FeatureImage')){
                 $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
                 $request->FeatureImage->move(public_path('uploads/vgallerycat_image'), $FeatureImageName);
@@ -82,8 +85,9 @@ class VideoGallaryCategoryController extends Controller
      */
     public function edit($id)
     {
+        $year = year::all();
         $videogallery_cat=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
-        return view('video_gallery_category.edit',compact('videogallery_cat'));
+        return view('video_gallery_category.edit',compact('videogallery_cat','year'));
     }
 
     /**
@@ -98,6 +102,7 @@ class VideoGallaryCategoryController extends Controller
         try{
             $vgallerycat=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
             $vgallerycat->name=$request->name;
+            $vgallerycat->year_id=$request->year;
             if($request->hasFile('FeatureImage')){
                 $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
                 $request->FeatureImage->move(public_path('uploads/vgallerycat_image'), $FeatureImageName);

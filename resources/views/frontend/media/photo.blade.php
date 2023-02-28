@@ -37,8 +37,8 @@
                             <h4>Media Center</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Photo Gallery</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Vieo Gallery</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('pGallery')}}">Photo Gallery</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('vGallery')}}">Vieo Gallery</a></li>
                         </ul>
 
                     </div>

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">Photo Gallery</h3>
+                <h3 class="mb-0">Video Gallery</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
@@ -16,7 +16,7 @@
                             <a href="#" class="breadcrumb-item router-link-active">Media</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="">photo gallery</a>
+                            <a href="">Video gallery</a>
                         </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
@@ -47,15 +47,15 @@
         </div>
         <div class="col-lg-9 px-2 ">
             <div class="row gallery photo">
-                @forelse ($photoYear as $p)
+                @forelse ($videoYear as $p)
                 <div class="col-lg-4 text-center">
-                    <a href="{{route('album',$p->id)}}">
+                    <a href="{{route('vAlbum',$p->id)}}">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/yearPhoto/thumb/'.$p->feature_photo)}}" alt="">
+                                <img class="img-fluid" src="{{asset('uploads/yearVideo/thumb/'.$p->feature_video)}}" alt="">
                             </div>
                             <div class="card-body my-2">
-                                <h4>Photos of {{$p->year}}</h4>
+                                <h4>Videos of {{$p->year}}</h4>
                             </div>
                         </div>
                     </a>
@@ -68,7 +68,7 @@
                                 <img class="img-fluid" src="{{asset('img/fasi.jpg')}}" alt="">
                             </div>
                             <div class="card-body my-2">
-                                <h4>Photos of 2022</h4>
+                                <h4>Videos of 2022</h4>
                             </div>
                         </div>
                     </a>

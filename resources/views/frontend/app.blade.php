@@ -200,7 +200,7 @@
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
                                     <li class="subMenu"><a href="{{route('pGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Photo Gallery</a></li>
-                                    <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Video Gallery</a></li>
+                                    <li class="subMenu"><a href="{{route('vGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Video Gallery</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item">

@@ -31,6 +31,7 @@
                                 'Member Login' 		    =>'mlogin',
                                 'Mamber List' 		    =>'memberlist',
                                 'Photo Gallery' 		=>'photo_gallery',
+                                'Video Gallery' 		=>'video_gallery',
                                 'Contact Us' 			=>'contact_us'
                                 );
                 ?>

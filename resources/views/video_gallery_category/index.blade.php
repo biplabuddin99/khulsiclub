@@ -24,6 +24,7 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Video Year')}}</th>
                                 <th scope="col">{{__('Feature Image')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
@@ -34,6 +35,7 @@
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->name}}</td>
+                                <td>{{$p->year?->year}}</td>
                                 <td><img width="50px" src="{{asset('uploads/vgallerycat_image/'.$p->feature_img)}}" alt=""></td>
                                 <td>{{ $p->status == 1?"Active":"Inactive" }}</td>
                                 <td class="white-space-nowrap">

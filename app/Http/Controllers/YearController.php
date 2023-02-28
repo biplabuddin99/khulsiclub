@@ -108,7 +108,7 @@ class YearController extends Controller
             if($this->deleteImage($y->feature_photo,$path))
                 $y->feature_photo=$this->resizeImage($request->feature_photo,$path,true,400,300,false);
 
-            $path2='uploads/yearPhoto';
+            $path2='uploads/yearVideo';
             if($request->has('feature_video') && $request->feature_video)
             if($this->deleteImage($y->feature_video,$path2))
                 $y->feature_video=$this->resizeImage($request->feature_video,$path2,true,400,300,false);
