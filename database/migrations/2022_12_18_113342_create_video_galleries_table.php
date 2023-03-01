@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('video_galleries', function (Blueprint $table) {
             $table->id();
             $table->string('caption')->nullable();
-            $table->string('feature_image')->nullable();
+            $table->string('link');
             $table->string('video_gallary_category_id');
-            $table->string('year_id');
             $table->string('status')->default(0);
             $table->softDeletes();
             $table->timestamps();

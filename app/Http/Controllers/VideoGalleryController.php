@@ -30,8 +30,7 @@ class VideoGalleryController extends Controller
     public function create()
     {
         $vGalleryCat= VideoGallaryCategory::all();
-        $year = year::all();
-        return view('video_gallery.create',compact('vGalleryCat','year'));
+        return view('video_gallery.create',compact('vGalleryCat'));
     }
 
     /**
@@ -46,12 +45,8 @@ class VideoGalleryController extends Controller
             $vgallery=new VideoGallery;
             $vgallery->caption=$request->caption;
             $vgallery->video_gallary_category_id=$request->album;
-            $vgallery->year_id=$request->year;
-            if($request->hasFile('FeatureImage')){
-                $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
-                $request->FeatureImage->move(public_path('uploads/vgallery_image'), $FeatureImageName);
-                $vgallery->feature_image=$FeatureImageName;
-            }
+            $vgallery->link=$request->link;
+            
             $vgallery->status=$request->status;
             if($vgallery->save()){
             Toastr::success('Video Gallery Create Successfully!');
@@ -89,9 +84,8 @@ class VideoGalleryController extends Controller
     public function edit($id)
     {
         $vGalleryCat= VideoGallaryCategory::all();
-        $year = year::all();
         $videogallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
-        return view('video_gallery.edit',compact('videogallery','vGalleryCat','year'));
+        return view('video_gallery.edit',compact('videogallery','vGalleryCat'));
     }
 
     /**
@@ -107,12 +101,8 @@ class VideoGalleryController extends Controller
             $vgallery=VideoGallery::findOrFail(encryptor('decrypt',$id));
             $vgallery->caption=$request->caption;
             $vgallery->video_gallary_category_id=$request->album;
-            $vgallery->year_id=$request->year;
-            if($request->hasFile('FeatureImage')){
-                $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
-                $request->FeatureImage->move(public_path('uploads/vgallery_image'), $FeatureImageName);
-                $vgallery->feature_image=$FeatureImageName;
-            }
+            $vgallery->link=$request->link;
+            
             $vgallery->status=$request->status;
             if($vgallery->save()){
             Toastr::success('Video Gallery Updateed Successfully!');

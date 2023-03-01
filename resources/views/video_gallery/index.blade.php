@@ -24,9 +24,8 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Caption')}}</th>
-                                <th scope="col">{{__('Feature Image')}}</th>
+                                <th scope="col">{{__('Video Link')}}</th>
                                 <th scope="col">{{__('Album')}}</th>
-                                <th scope="col">{{__('Video Year')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
@@ -36,9 +35,8 @@
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->caption}}</td>
-                                <td><img width="50px" src="{{asset('uploads/vgallery_image/'.$p->feature_image)}}" alt=""></td>
+                                <td>{{$p->link}}</td>
                                 <td>{{$p->video_gallary_category?->name}}</td>
-                                <td>{{$p->year?->year }}</td>
                                 <td>{{ $p->status == 1?"Active":"Inactive" }}</td>
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.vgallery.edit',encryptor('encrypt',$p->id))}}">
@@ -55,7 +53,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <th colspan="7" class="text-center">No Data Found</th>
+                                <th colspan="6" class="text-center">No Data Found</th>
                             </tr>
                             @endforelse
                         </tbody>

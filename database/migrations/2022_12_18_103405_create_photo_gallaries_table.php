@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('Caption')->nullable();
             $table->string('feature_image')->nullable();
             $table->string('photo_gallary_category_id');
-            $table->string('year_id');
             $table->string('status')->default(0);
             $table->timestamps();
         });

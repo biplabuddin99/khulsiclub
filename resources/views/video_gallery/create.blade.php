@@ -27,12 +27,8 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="FeatureImage">Feature Image</label>
-                                            <input type="file" id="FeatureImage" class="form-control"
-                                                placeholder="FeatureImage" name="FeatureImage">
-                                                @if($errors->has('FeatureImage'))
-                                                    <span class="text-danger"> {{ $errors->first('FeatureImage') }}</span>
-                                                @endif
+                                            <label for="link">Video link</label>
+                                            <input type="text" name="link" class="form-control" value="{{ old('link')}}">
                                         </div>
                                     </div>
 
@@ -50,20 +46,6 @@
                                         </div>
                                     </div>
 
-
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="photoyear">{{__('Video Year')}}:</label>
-                                            <select class="form-control form-select" name="year" id="year" required>
-                                                <option value="">Select video year</option>
-                                                @forelse($year as $d)
-                                                    <option value="{{$d->id}}" {{ old('year')==$d->id?"selected":""}}> {{ $d->year}}</option>
-                                                @empty
-                                                    <option value="">No Data found</option>
-                                                @endforelse
-                                            </select>
-                                        </div>
-                                    </div>
                                     <fieldset class="col-md-6 col-12">
                                         <legend class="col-form-label col-sm-2 pt-0">Status:</legend>
                                         <div class="col-sm-10">

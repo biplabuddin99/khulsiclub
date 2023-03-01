@@ -20,7 +20,6 @@
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Caption')}}</th>
                                         <th scope="col">{{__('Album')}}</th>
-                                        <th scope="col">{{__('Photos Year')}}</th>
                                         <th scope="col">{{__('Feature Image')}}</th>
                                         <th scope="col">{{__('Status')}}</th>
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
@@ -32,7 +31,6 @@
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$cat->Caption}}</td>
                                         <td>{{$cat->photo_gallary_category?->name }}</td>
-                                        <td>{{$cat->year?->year}}</td>
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/pGgallery/'.$cat->feature_image)}}" alt=""></td>
                                         <td>{{ $cat->status == 1?"Active":"Inactive" }}</td>
                                         <td class="white-space-nowrap">

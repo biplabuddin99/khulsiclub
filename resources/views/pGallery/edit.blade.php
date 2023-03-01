@@ -33,19 +33,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label for="year" class="col-sm-2 offset-1 col-form-label"><b>{{__('Photo Year')}}:</b></label>
-                                <div class="col-sm-6 offset-1">
-                                    <select class="form-control form-select" name="year" id="year">
-                                        <option value="">Select Photo year</option>
-                                        @forelse($year as $d)
-                                            <option value="{{$d->id}}" {{ old('year',$pGallery->year_id)==$d->id?"selected":""}}> {{ $d->year}}</option>
-                                        @empty
-                                            <option value="">No Data found</option>
-                                        @endforelse
-                                    </select>
-                                </div>
-                            </div>
+                           
                             <div class="row mb-3">
                                 <label for="status" class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}:</b></label>
                                 <div class="col-sm-6 offset-1">

@@ -1,5 +1,7 @@
 @extends('frontend.app')
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
 <section class="about-support">
     <span class="shape"></span>
     <span class="shape2"></span>
@@ -46,24 +48,42 @@
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
-            <div class="row gallery photo align-items-center">
+            <div class="row gallery-photo align-items-center">
                 @forelse ($photo as $p)
-                <div class="col-lg-3">
-                    <div class="card card-gallery shadow-sm">
-                        <a href="{{asset('uploads/pGgallery/'.$p->feature_image)}}" data-toggle="lightbox" data-gallery="gallery">
-                            <img src="{{asset('uploads/pGgallery/thumb/'.$p->feature_image)}}" class="img-fluid">
+                    <div class="col-lg-3">
+                        <a data-fancybox="gallery" href="{{asset('uploads/pGgallery/'.$p->feature_image)}}" data-caption="{{$p->Caption}}">
+                            <div class="card card-gallery shadow-sm">
+                                <img src="{{asset('uploads/pGgallery/thumb/'.$p->feature_image)}}" class="img-fluid">
+                            </div>
                         </a>
                     </div>
-                </div>
                 @empty
-                <div class="col-lg-3">
-                    <div class="card card-gallery shadow-sm">
-                        <img class="img-fluid" data-src="" src="" alt="" lazy="loaded">
+                    <div class="col-lg-3">
+                        <div class="text-center">
+                            <h4>There is no Photo uploaded yet</h4>
+                        </div>
                     </div>
-                </div>
                 @endforelse
+                
             </div>
         </div>
     </div>
 </div>
 @endsection
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script>
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+            "slideShow",
+            "thumbs",
+            "zoom",
+            "fullScreen",
+            "share",
+            "close"
+        ],
+        loop: false,
+        protect: true
+    });
+</script>
+@endpush

@@ -32,8 +32,7 @@ class PhotoGallaryController extends Controller
     public function create()
     {
         $pGalleryCat= photoGallaryCategory::all();
-        $year = year::all();
-        return view('pGallery.create',compact('year','pGalleryCat'));
+        return view('pGallery.create',compact('pGalleryCat'));
     }
 
     /**
@@ -49,7 +48,6 @@ class PhotoGallaryController extends Controller
 
             $pgc->Caption=$request->Caption;
             $pgc->photo_gallary_category_id=$request->album;
-            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
             if($request->has('feature_image'))
                 $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
@@ -91,9 +89,8 @@ class PhotoGallaryController extends Controller
     public function edit($id)
     {
         $pGalleryCat= photoGallaryCategory::all();
-        $year = year::all();
         $pGallery=photoGallary::findOrFail(encryptor('decrypt',$id));
-        return view('pGallery.edit',compact('pGallery','year','pGalleryCat'));
+        return view('pGallery.edit',compact('pGallery','pGalleryCat'));
     }
 
     /**
@@ -110,7 +107,6 @@ class PhotoGallaryController extends Controller
 
             $pgc->Caption=$request->Caption;
             $pgc->photo_gallary_category_id=$request->album;
-            $pgc->year_id=$request->year;
             $pgc->status=$request->status;
             
             $path='uploads/pGgallery';
