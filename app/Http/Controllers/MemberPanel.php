@@ -43,6 +43,18 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+        $companyName = $request->input('company');
+        $members = OurMember::where('company', 'like', '%'.$companyName.'%')->get();
+        return view('frontend.membership.memberList', compact('members'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
     public function memberPassword()
     {
         

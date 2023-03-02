@@ -153,7 +153,7 @@
                         </legend>
                         <div id="advance-search" class="py-2 px-5 collapse">
                             <form action="" class="row">
-                                <div class="form-group pb-3">
+                                <div class="form-group p-1">
                                     <label for="all_member"> <input type="radio" id="all_member" name="radio" checked="checked"> All</label>
                                     <label for="donor_member"> <input type="radio" id="donor_member" name="radio"> Donor Member</label>
                                     <label for="life_member"> <input type="radio" id="life_member" name="radio"> Life Member</label>

@@ -76,6 +76,7 @@ Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registra
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
+Route::get('/search-members', [MemberPanel::class,'search'])->name('member.search');
 
 // photo and video gallery
 Route::get('photo_gallery', [media::class,'pGallery'])->name('pGallery');
