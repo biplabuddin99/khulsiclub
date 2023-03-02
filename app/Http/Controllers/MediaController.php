@@ -63,6 +63,18 @@ class MediaController extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    public function video($slug)
+    {
+        $cat= VideoGallaryCategory::where('id', $slug)->first();
+        $video = VideoGallery::whereIn('video_gallary_category_id', [$cat->id])->where('status', '1')->orderby('id', 'asc')->paginate('12');
+        return view('frontend.media.video',compact('video'));
+    }
+     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
     public function photo($slug)
     {
         $cat= photoGallaryCategory::where('id', $slug)->first();

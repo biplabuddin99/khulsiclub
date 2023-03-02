@@ -18,7 +18,7 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
-                                        <th scope="col">{{__('Name')}}</th>
+                                        <th scope="col">{{__('Album Name')}}</th>
                                         <th scope="col">{{__('Photo Year')}}</th>
                                         <th scope="col">{{__('Feature Image')}}</th>
                                         <th scope="col">{{__('Status')}}</th>
@@ -39,7 +39,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <th colspan="4" class="text-center">No Category Found</th>
+                                        <th colspan="6" class="text-center">No data Found</th>
                                     </tr>
                                     @endforelse
                                 </tbody>

@@ -83,6 +83,7 @@ Route::get('/album/{slug}', [media::class,'album'])->name('album');
 Route::get('/photo/{slug}', [media::class,'photo'])->name('photo');
 Route::get('video_gallery', [media::class,'vGallery'])->name('vGallery');
 Route::get('/vAlbum/{slug}', [media::class,'videoAlbum'])->name('vAlbum');
+Route::get('/video/{slug}', [media::class,'video'])->name('video');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){

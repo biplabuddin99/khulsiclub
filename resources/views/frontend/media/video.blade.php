@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">Photo Gallery</h3>
+                <h3 class="mb-0">Video Gallery</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
@@ -16,7 +16,7 @@
                             <a href="#" class="breadcrumb-item router-link-active">Media</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="">photo gallery</a>
+                            <a href="">Video gallery</a>
                         </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
@@ -47,15 +47,15 @@
         </div>
         <div class="col-lg-9 px-2 ">
             <div class="row gallery photo">
-                @forelse ($photoYear as $p)
+                @forelse ($video as $p)
                 <div class="col-lg-4 text-center">
-                    <a href="{{route('album',$p->id)}}">
+                    <a href="#">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/yearPhoto/thumb/'.$p->feature_photo)}}" alt="">
+                                <iframe class="notice-img" width="100%" height="auto" src="https://www.youtube.com/embed/{{$p->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                             <div class="card-body my-2">
-                                <h4>Photos of {{$p->year}}</h4>
+                                <h4>{{$p->caption}}</h4>
                             </div>
                         </div>
                     </a>
@@ -63,7 +63,7 @@
                 @empty
                 <div class="col-lg-4 text-center">
                     <div class="text-center">
-                        <h4>There is no Photo uploaded yet</h4>
+                        <h4>There is no Video uploaded yet</h4>
                     </div>
                 </div>
                 @endforelse

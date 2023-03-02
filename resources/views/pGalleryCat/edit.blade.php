@@ -14,10 +14,10 @@
                               @csrf
                               @method('patch')
                                   <div class="row mb-3">
-                                      <label for="name"class="col-sm-2 offset-1 col-form-label"><b>{{__('Name')}}:</b></label>
+                                      <label for="name"class="col-sm-2 offset-1 col-form-label"><b>{{__('Album Name')}}:</b></label>
                                       <div class="col-sm-6 offset-1">
                                           <input type="text" id="name" value="{{ old('name',$pGalleryCat->name)}}" class="form-control"
-                                              placeholder="Category Name" name="name">
+                                              placeholder="Album Name" name="name">
                                       </div>
                                       @if($errors->has('category'))
                                       <span class="text-danger"> {{ $errors->first('category') }}</span>

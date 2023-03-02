@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="name">Name:</label>
+                                            <label for="name">Album Name:</label>
                                             <input type="text" id="name" class="form-control" value="{{ old('name')}}" name="name">
                                             @if($errors->has('name'))
                                                 <span class="text-danger"> {{ $errors->first('name') }}</span>

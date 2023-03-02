@@ -49,7 +49,7 @@
             <div class="row gallery photo">
                 @forelse ($vAlbum as $p)
                 <div class="col-lg-4 text-center">
-                    <a href="#">
+                    <a href="{{route('video',$p->id)}}">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
                                 <img class="img-fluid" src="{{asset('uploads/vgallerycat_image/'.$p->feature_img)}}" alt="">
@@ -62,16 +62,9 @@
                 </div>
                 @empty
                 <div class="col-lg-4 text-center">
-                    <a href="">
-                        <div class="card shadow-sm mb-3">
-                            <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('img/fasi.jpg')}}" alt="">
-                            </div>
-                            <div class="card-body my-2">
-                                <h4>Videos of 2022</h4>
-                            </div>
-                        </div>
-                    </a>
+                    <div class="text-center">
+                        <h4>There is no Video uploaded yet</h4>
+                    </div>
                 </div>
                 @endforelse
             </div>

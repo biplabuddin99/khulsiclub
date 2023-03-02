@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
-                                <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Album Name')}}</th>
                                 <th scope="col">{{__('Video Year')}}</th>
                                 <th scope="col">{{__('Feature Image')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
