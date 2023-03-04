@@ -518,6 +518,16 @@
                                                     <input type="text" id="membershipno" class="form-control" value="{{ old('membershipno',$member->membership_no)}}" name="membershipno">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="status">Request for approval</label>
+                                                    <select class="form-control form-select" name="status" id="status">
+                                                        <option value="">Select yes for approval</option>
+                                                        <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>No</option>
+                                                        <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
                                             <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>

@@ -28,6 +28,8 @@ class isMember
                 return redirect()->route('memberLogOut');
             }else if(currentUser() != 'member'){
                 return redirect()->back()->with($this->resMessageHtml(false,'error','Access Denied'));
+            }else if(!in_array($user->status, [0,2])){
+                return redirect()->back()->with($this->resMessageHtml(false,'error','Access Denied'));
             }else{
                 return $next($request);
             }

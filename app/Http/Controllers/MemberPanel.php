@@ -193,6 +193,7 @@ class MemberPanel extends Controller
             $member->fb_link=$request->fb_link;
             $member->show_font=$request->show_font;
             $member->order_b=$request->order_b;
+            $member->status=$request->status;
             $member->twter_link=$request->twter_link;
             $member->linkdin_link=$request->linkdin_link;
             $member->youtube_link=$request->youtube_link;
@@ -202,6 +203,7 @@ class MemberPanel extends Controller
                         'full_name'=>encryptor('encrypt',$member->full_name),
                         'email'=>encryptor('encrypt',$member->email),
                         'phone'=>encryptor('encrypt',$member->cell_number),
+                        'status'=>encryptor('encrypt',$member->status),
                     ]);
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){

@@ -144,6 +144,7 @@ class AuthenticationController extends Controller
                     'roleIdentity'=>encryptor('encrypt',$member->role->identity),
                     'email'=>encryptor('encrypt',$member->email),
                     'phone'=>encryptor('encrypt',$member->cell_number),
+                    'status'=>encryptor('encrypt',$member->status),
                     'full_name'=>encryptor('encrypt',$member->full_name)
                 ]
             );

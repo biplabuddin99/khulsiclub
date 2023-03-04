@@ -1,5 +1,18 @@
 @extends('frontend.members.memberApp')
 @section('memberContent')
+
+@php
+    $status = encryptor('decrypt', request()->session()->get('status'));
+    if ($status == 1) {
+        $statusText = 'In Progress';
+    } elseif ($status == 2) {
+        $statusText = 'Approved';
+    }elseif ($status == 3) {
+        $statusText = 'Suspended';
+    } else {
+        $statusText = 'Pending';
+    }
+@endphp
         
 <div class="dashboard">
     <div class="member-service">
@@ -40,7 +53,7 @@
                             <tr>
                                 <th width="40">Application Status</th>
                                 <td width="2">:</td>
-                                <td width="58"><p class="badge text-center badge-info">Application Incomplete</p></td>
+                                <td width="58"><p class="badge text-center badge-info">{{ $statusText }}</p></td>
                             </tr>
                         </table>
                     </div>
