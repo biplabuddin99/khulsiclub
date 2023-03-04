@@ -299,7 +299,7 @@
 
               <div class="col-12 item bg-transparent pe-3 ps-3">
                 <div class="card mb-3 shadow bg-transparent ">
-                  <img  src="{{ asset('img/slider-3-1.png')}}" alt="" />
+                  <img class="gallery-zoom"  src="{{ asset('img/slider-3-1.png')}}" alt="" />
                   <div class="heading">
                     <h4>AGE -2021</h4>
                   </div>
