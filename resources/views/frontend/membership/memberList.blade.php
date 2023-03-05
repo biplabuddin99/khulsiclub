@@ -48,14 +48,15 @@
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
+            <form action="" method="get">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="member-search">
                         <div class="search-body">
                             <h1>Member Search</h1>
                             <div class="searchBox">
-                                <input type="text" id="search" placeholder="Company Name">
-                                <span class="bi bi-search"></span>
+                                <input type="text" value="{{ request()->input('name', '') }}" name="name" id="search" placeholder="Company Name">
+                                <button type="submit"><span class="bi bi-search"></span></button>
                             </div>
                             <div class="search-menu">
                                 <ul class="nav flex-row justify-content-between">
@@ -239,6 +240,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>

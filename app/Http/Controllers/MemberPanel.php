@@ -32,10 +32,20 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
-    public function memberlist()
+    public function memberlist(Request $request)
     {
-        $member=OurMember::paginate(10);
-        return view('frontend.membership.memberList',compact('member'));
+        $members = OurMember::query();
+
+        // if ($request->filled('name')) {
+        //     $members->where('company', $request->input('name'));
+        // }
+        if($request->name){
+            $members=$members->where('company',$request->name);
+        }
+
+        $member = $members->paginate(10);
+
+        return view('frontend.membership.memberList', compact('member'));
     }
     /**
      * Show the form for editing the specified resource.
