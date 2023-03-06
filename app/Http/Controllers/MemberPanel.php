@@ -32,32 +32,39 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
-    public function memberlist(Request $request)
+    public function memberlist(Request $request, $letter = null)
     {
+        $search = $request['name']?? "";
+        $memberType = $request['member_type'] ?? "";
+        $member_id = $request->input('member_id', '');
+        $member_name = $request->input('member_name', '');
         $members = OurMember::query();
 
-        // if ($request->filled('name')) {
-        //     $members->where('company', $request->input('name'));
-        // }
-        if($request->name){
-            $members=$members->where('company',$request->name);
+        if ($search != "") {
+            $members->where('company', 'LIKE', '%'.$search.'%');
+        }
+
+        if ($letter) {
+            $members->where('company', 'LIKE', $letter.'%');
+        }
+
+        if ($memberType != "") {
+            $members->where('membership_applied', $memberType);
+        }
+
+        if (!empty($member_id) && !empty($member_name)) {
+            $members->where(function ($query) use ($member_id, $member_name) {
+                $query->where('member_id', $member_id)
+                      ->where('full_name', 'LIKE', '%'.$member_name.'%');
+            });
+        } elseif (!empty($member_id)) {
+            $members->where('member_id', $member_id);
+        } elseif (!empty($member_name)) {
+            $members->where('full_name'.'', 'LIKE', '%'.$member_name.'%');
         }
 
         $member = $members->paginate(10);
-
-        return view('frontend.membership.memberList', compact('member'));
-    }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function search(Request $request)
-    {
-        $companyName = $request->input('company');
-        $members = OurMember::where('company', 'like', '%'.$companyName.'%')->get();
-        return view('frontend.membership.memberList', compact('members'));
+        return view('frontend.membership.memberList', compact('member','search','memberType', 'member_id', 'member_name'));
     }
     /**
      * Show the form for editing the specified resource.

@@ -1539,6 +1539,12 @@ figure{
   border: 0;
   outline: none;
 }
+.searchBox button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
 .searchBox span {
   background: var(--red);
   color: #fff;
