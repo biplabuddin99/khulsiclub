@@ -5,8 +5,8 @@
   --blue: #0a66c2;
 }
 @font-face {
-  font-family: Montserrat-Regular;
-  src: url(../assets/fonts/Montserrat-Regular.ttf);
+  font-family: SourceSansPro-Regular;
+  src: url(../assets/fonts/SourceSansPro-Regular.ttf);
 }
 .sticky-top .col-sm-4{
     padding-top:10px;

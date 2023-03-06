@@ -55,12 +55,12 @@ class MemberPanel extends Controller
         if (!empty($member_id) && !empty($member_name)) {
             $members->where(function ($query) use ($member_id, $member_name) {
                 $query->where('member_id', $member_id)
-                      ->where('full_name', 'LIKE', '%'.$member_name.'%');
+                      ->where('given_name', 'LIKE', '%'.$member_name.'%');
             });
         } elseif (!empty($member_id)) {
             $members->where('member_id', $member_id);
         } elseif (!empty($member_name)) {
-            $members->where('full_name'.'', 'LIKE', '%'.$member_name.'%');
+            $members->where('given_name'.'', 'LIKE', '%'.$member_name.'%');
         }
 
         $member = $members->paginate(10);
