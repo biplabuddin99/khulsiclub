@@ -146,7 +146,7 @@ body {
     border-right: 12px solid transparent;
     border-bottom: 12px solid #ec5757;
     position: absolute;
-    top: 90%;
+    top: 75%;
     left: 30px;
     z-index: 9999999;
     display: -webkit-box;
@@ -167,9 +167,9 @@ body {
 }
 .mega-menu {
 	padding: 10px 0px ! important;
-	width: 600px;
+	width: 510px;
   position: absolute !important;
-  margin-top: 7.5px;
+  margin-top: 0;
   border-radius: 3px;
   border-color: transparent;
 }
@@ -1035,6 +1035,11 @@ footer img {
 /*576px  */
 
 @media screen and (max-width: 768px) {
+  .mega-menu {
+    width: 180px !important ;
+  }
+
+  
   /* <!-- Member Reg. --> */
   .member-reg .member-reg-backgroud {
     top: 0;
@@ -1066,6 +1071,7 @@ footer img {
     padding-bottom: 5px;
     width: 100%;
     overflow-y: auto;
+    padding-bottom: 60px !important;
   }
   .viewbutton{
     padding:15px;
@@ -1672,3 +1678,10 @@ figure{
   margin-bottom: 10px;
 }
 /* photo gallery end*/
+
+
+@media screen and (min-width: 1400px) {
+  .logo-sec img {
+    padding-top: 13px;
+  }
+}

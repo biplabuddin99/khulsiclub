@@ -48,7 +48,7 @@
     
               <div class="col-sm-8 col-5 header-right">
                   
-                <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-sm-flex scicon">
+                <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-md-flex scicon">
                   <a class="pt-2" href="#"><i class="bi bi-facebook"></i></a>
                   <a class="pt-2" href="#"><i class="bi bi-twitter"></i></a>
                   <a class="pt-2" href="#"><i class="bi bi-linkedin"></i></a>
@@ -61,7 +61,7 @@
                 <div class="row">
                   <div class="col-sm-12 col-12 d-flex justify-content-end " >
                     
-                    <nav class="navbar navbar-expand-lg navbar-light pb-0">
+                    <nav class="navbar navbar-expand-md navbar-light pb-0">
                       <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -84,19 +84,18 @@
                                     @endif
                                 </a>
 
-                                <div class="dropDown dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                                <div style="width:{{170*count($rows_second)}}px" class="dropDown dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
                                   <div class="row m-0">
                                     @foreach($rows_second as $ms)
-                                      <div class="col-md-4 pe-0 ">
+                                      <div class="col-sm pe-0 ">
                                         <ul class="ps-2">
                                           <h4 class="menu-head">
                                             <a href="{{url($ms->href)}}">{{$ms->name}}</a>
                                           </h4>
                                           @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
                                           @forelse($rows_third as $mt)
-                                          <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
+                                            <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
                                           @empty
-
                                           @endforelse
                                         </ul>
                                       </div>
