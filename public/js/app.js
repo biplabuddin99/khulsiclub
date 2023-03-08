@@ -1,12 +1,12 @@
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();
-    if (window.scrollY > 100 && !$(".scicon").hasClass('d-sm-none')) {
+    if (window.scrollY > 100 && !$(".scicon").hasClass('d-md-none')) {
         $("header").addClass('sticky-top');
-        $(".scicon").addClass('d-sm-none');
+        $(".scicon").addClass('d-md-none');
         $('.logo-sec').addClass('shrink');
 	} else if (window.scrollY < 100) {
         $("header").removeClass('sticky-top');
-    	$(".scicon").removeClass('d-sm-none');
+    	$(".scicon").removeClass('d-md-none');
         $('.logo-sec').removeClass('shrink');
 	}
   
