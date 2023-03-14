@@ -289,7 +289,9 @@
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
                 <div class="card mb-3 shadow bg-transparent ">
-                  <img class="gallery-zoom"  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
+                  <a href="{{route('pGallery')}}">
+                    <img class="gallery-zoom"  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
+                  </a>
                   <div class="heading">
                     <h4>{{$p->name}}</h4>
                   </div>
