@@ -211,6 +211,7 @@
                                 <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" class="btn-custom text-danger">[PDF Profile]</a>
                                 @else
                                 <a href="#" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
+                                @endif
                             </div>
                             <div class="col-lg-6 align-self-center">
                                 <h4><a href="#">{{$m->company}}</a></h4>
