@@ -34,12 +34,17 @@
                         <span class="shape"></span>
                         <span class="shape2"></span>
                         <div class="card-header">
-                            <h5>{{$page_data->page_title}}</h5>
+                            <h5>{{$page_data->page_title}} </h5>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">About Khulsi Club</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Benefits</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Facilities</a></li>
+                        @php 
+                            $curl=request()->path();
+                            $rows=DB::select("SELECT * from front_menus where parent_id = (select parent_id from front_menus where href='$curl') and status =1 order by rang");
+                        @endphp
+                            @forelse($rows as $r)
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
+                            @empty
+                            @endforelse
                         </ul>
 
                     </div>

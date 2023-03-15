@@ -81,7 +81,7 @@
                                     <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                       ×
                                     </button>
-                                    @endif
+                                  @endif
                                 </a>
 
                                 <div style="width:{{170*count($rows_second)}}px" class="dropDown dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
