@@ -207,7 +207,10 @@
                                     @elseif($m->membership_applied == 8){{'Diplomate Member'}}
                                     @endif
                                 </h5>
-                                <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
+                                @if($m->attach_pdf)
+                                <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" class="btn-custom text-danger">[PDF Profile]</a>
+                                @else
+                                <a href="#" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a>
                             </div>
                             <div class="col-lg-6 align-self-center">
                                 <h4><a href="#">{{$m->company}}</a></h4>
