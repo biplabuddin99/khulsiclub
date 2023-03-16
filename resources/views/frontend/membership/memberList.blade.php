@@ -38,9 +38,9 @@
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.list')}}">Member List</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Member Services</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Non-Member Services</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Membership Process</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('memLogin')}}">Member Login</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member_registration')}}">Become a member</a></li>
                         </ul>
 
                     </div>
