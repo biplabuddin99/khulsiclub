@@ -531,7 +531,7 @@
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-end">
                                             <button type="button" class="btn btn-secondary prev-step m-2">Previous</button>
-                                            <button type="submit" class="btn btn-danger m-2">Update</button>
+                                            <button type="submit" class="btn btn-danger m-2">Preview</button>
                                         </div>
                                     </div>
                                 </div>
