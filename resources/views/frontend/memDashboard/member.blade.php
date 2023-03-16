@@ -3,7 +3,7 @@
 @php
     $status = encryptor('decrypt', request()->session()->get('status'));
     if ($status == 1) {
-        $statusText = 'In Progress';
+        $statusText = 'Applied for approval';
     } elseif ($status == 2) {
         $statusText = 'Approved';
     }elseif ($status == 3) {

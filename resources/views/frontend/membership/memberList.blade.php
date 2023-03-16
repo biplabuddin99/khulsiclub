@@ -162,8 +162,8 @@
                                     <label for="donor_member"><input type="radio" id="donor_member" name="member_type" value="1" {{ request('member_type') == '1' ? 'checked' : '' }}> Donor Member</label>
                                     <label for="life_member"><input type="radio" id="life_member" name="member_type" value="2" {{ request('member_type') == '2' ? 'checked' : '' }}> Life Member</label>
                                     <label for="service_member"><input type="radio" id="service_member" name="member_type" value="3" {{ request('member_type') == '3' ? 'checked' : '' }}> Service Member</label>
-                                    <label for="pm_member"><input type="radio" id="pm_member" name="member_type" value="4" {{ request('member_type') == '4' ? 'checked' : '' }}> Permanent Member</label>
-                                    <label for="temp_member"><input type="radio" id="temp_member" name="member_type" value="5" {{ request('member_type') == '5' ? 'checked' : '' }}> Temporary Member</label>
+                                    <label for="temp_member"><input type="radio" id="temp_member" name="member_type" value="4" {{ request('member_type') == '4' ? 'checked' : '' }}> Temporary Member</label>
+                                    <label for="pm_member"><input type="radio" id="pm_member" name="member_type" value="5" {{ request('member_type') == '5' ? 'checked' : '' }}> Permanent Member</label>
                                     <label for="honor_member"><input type="radio" id="honor_member" name="member_type" value="6" {{ request('member_type') == '6' ? 'checked' : '' }}> Honorary Member</label>
                                     <label for="corporate_member"><input type="radio" id="corporate_member" name="member_type" value="7" {{ request('member_type') == '7' ? 'checked' : '' }}> Corporate Member</label>
                                     <label for="diplomate_member"><input type="radio" id="diplomate_member" name="member_type" value="8" {{ request('member_type') == '8' ? 'checked' : '' }}> Diplomate Member</label>

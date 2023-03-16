@@ -44,7 +44,7 @@
                                 <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.memdashboard')}}">Dashborad</a></li>
-                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-5-menu" href="{{route('memLogOut')}}">Logout</a></li>
+                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-5-menu" href="{{route('memberLogOut')}}">Logout</a></li>
                                     </ul>
                                 </div>
                             </button>

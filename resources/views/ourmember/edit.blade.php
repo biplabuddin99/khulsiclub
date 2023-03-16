@@ -652,7 +652,7 @@
                                                 <select class="form-control form-select" name="status" id="status">
                                                     <option value="">Select Status</option>
                                                     <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>Pending</option>
-                                                    <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>In Progress</option>
+                                                    <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Applied for approval</option>
                                                     <option value="2" {{ old('status',$member->status)=='2' ? 'selected':''}}>Approvbed</option>
                                                     <option value="3" {{ old('status',$member->status)=='3' ? 'selected':''}}>Suspended</option>
                                                 </select>

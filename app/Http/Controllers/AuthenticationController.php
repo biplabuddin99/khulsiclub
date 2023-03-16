@@ -168,12 +168,8 @@ class AuthenticationController extends Controller
         request()->session()->flush();
         return redirect('login')->with($this->resMessageHtml(false,'error',currentUserId()));
     }
-    public function memSingOut(){
-        request()->session()->flush();
-        return redirect('memLogin')->with($this->resMessageHtml(false,'error',currentUserId()));
-    }
     public function memberSingOut(){
         request()->session()->flush();
-        return redirect('memberLogin')->with($this->resMessageHtml(false,'error',currentUserId()));
+        return redirect()->route('front');
     }
 }

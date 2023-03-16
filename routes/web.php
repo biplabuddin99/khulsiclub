@@ -61,7 +61,6 @@ Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut')
 // Member login
 Route::get('/mlogin', [auth::class,'memSignInForm'])->name('memLogin');
 Route::post('/mlogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
-Route::get('/mlogOut', [auth::class,'memSingOut'])->name('memLogOut');
 
 
 Route::get('/', [front::class,'index'])->name('front');

@@ -21,19 +21,19 @@ class isMember
     public function handle(Request $request, Closure $next)
     {
         if(!Session::has('userId')){
-            return redirect()->route('memberLogOut');
+            return redirect()->route('front');
         }else{
             $user=OurMember::findOrFail(currentUserId());
             if(!$user){
-                return redirect()->route('memberLogOut');
+                return redirect()->route('front');
             }else if(currentUser() != 'member'){
                 return redirect()->back()->with($this->resMessageHtml(false,'error','Access Denied'));
-            }else if(!in_array($user->status, [0,2])){
+            }else if(!in_array($user->status, [0,1,2])){
                 return redirect()->back()->with($this->resMessageHtml(false,'error','Access Denied'));
             }else{
                 return $next($request);
             }
         }
-        return redirect()->route('memberLogOut');
+        return redirect()->route('front');
     }
 }
