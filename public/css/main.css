@@ -1519,6 +1519,9 @@ figure{
 }
 
 /* membership css start */
+::placeholder{
+  color: #c4c4c7 !important;
+}
 .member-search h1 {
   font-weight: 700;
   font-size: 2.5rem;
