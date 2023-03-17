@@ -84,21 +84,29 @@
                                   @endif
                                 </a>
 
-                                <div style="width:{{170*count($rows_second)}}px" class="dropDown dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                                <div style="width:{{180*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
                                   <div class="row m-0">
                                     @foreach($rows_second as $ms)
-                                      <div class="col-sm pe-0 ">
+                                      @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
+                                      @if($rows_third)
+                                        <div class="col-sm pe-0 ">
+                                          <ul class="ps-2">
+                                              <h4 class="menu-head">
+                                                <a href="{{url($ms->href)}}">{{$ms->name}}</a>
+                                              </h4>
+                                              @foreach($rows_third as $mt)
+                                                <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
+                                              @endforeach
+                                          </ul>
+                                        </div>
+                                      @else
+                                        <script>
+                                          document.getElementsByClassName('rowsecond{{$i}}')[0].style.width='170px';
+                                        </script>
                                         <ul class="ps-2">
-                                          <h4 class="menu-head">
-                                            <a href="{{url($ms->href)}}">{{$ms->name}}</a>
-                                          </h4>
-                                          @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
-                                          @forelse($rows_third as $mt)
-                                            <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
-                                          @empty
-                                          @endforelse
+                                          <li class="subMenu"><a href="{{url($ms->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
                                         </ul>
-                                      </div>
+                                      @endif
                                     @endforeach
                                   </div>
                                 </div>
