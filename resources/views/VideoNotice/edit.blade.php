@@ -23,7 +23,6 @@
                                         <input type="text" class="form-control" name="link" value="{{ old('link',$videoNotice->link)}}" required>
                                     </div>
                                 </div>
-                                  
                                 <div class="col-8 offset-2 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
                                 </div>

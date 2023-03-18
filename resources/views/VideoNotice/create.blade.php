@@ -12,7 +12,6 @@
                       <div class="card-body">
                           <form class="form" method="post" action="{{route(currentUser().'.vNotice.store')}}">
                               @csrf
-                                
                                 <div class="row mb-3">
                                     <div class="col-8 offset-2">
                                         <label for="text"><b>{{__('Title')}}:</b></label>
@@ -23,7 +22,6 @@
                                         <input type="text" class="form-control" name="link" value="{{ old('link')}}" required>
                                     </div>
                                 </div>
-                                  
                                 <div class="col-8 offset-2 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
                                 </div>
