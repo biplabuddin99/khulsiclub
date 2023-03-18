@@ -32,6 +32,7 @@ use App\Http\Controllers\FrontendController as front;
 use App\Http\Controllers\PageController as page;
 use App\Http\Controllers\MediaController as media;
 use App\Http\Controllers\ScrollNoticeController as scrollN;
+use App\Http\Controllers\VideoNoticeController as vNotice;
 use App\Http\Controllers\FrontMenuController as frontMenu;
 /* Middleware */
 use App\Http\Middleware\isMember;
@@ -112,6 +113,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('blog',blog::class,['as'=>'admin']);
         Route::resource('benefit',benefit::class,['as'=>'admin']);
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
+        Route::resource('vNotice',vNotice::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
         Route::get('front_menu', [frontMenu::class, 'index'])->name('admin.front_menu.index');

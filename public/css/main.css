@@ -1551,7 +1551,10 @@ figure{
 .searchBox button {
   border: none;
   background-color: transparent;
-  padding: 0;
+  /* padding: 4px; */
+  padding-top: 0.3rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0;
   margin: 0;
 }
 .searchBox span {

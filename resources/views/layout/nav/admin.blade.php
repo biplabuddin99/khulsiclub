@@ -34,6 +34,7 @@
                 <a href="#" class='sidebar-link'> {{__('Notice & Facilities')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.notice.index')}}">{{__('Notice')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.vNotice.index')}}">{{__('Video Notice')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.facilities.index')}}">{{__('Facilities')}}</a></li>
                 </ul>
             </li>

@@ -124,9 +124,15 @@
               </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                @forelse ($vNotice as $v)
+                <div class="carousel-item active">
+                 <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                @empty
                 <div class="carousel-item active">
                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
+                @endforelse
                 @forelse ($notice as $notic)
                 <div class="carousel-item ">
                   <img

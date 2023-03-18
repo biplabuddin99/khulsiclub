@@ -9,6 +9,7 @@ use App\Models\Frontend;
 use App\Models\Notice;
 use App\Models\scroll_notice;
 use App\Models\photoGallaryCategory;
+use App\Models\video_notice;
 use App\Models\OurMember;
 use App\Models\MemberChildren;
 use App\Models\setting;
@@ -38,6 +39,7 @@ class FrontendController extends Controller
                             $query->where('unpublished_date', '>',$today);
                             $query->orWhereNull('unpublished_date');
                         })->latest()->limit(12)->get();
+        $vNotice= video_notice::all();
         $facilities=Facilities::get();
         $pgallery_cat=photoGallaryCategory::where('status',1)->get();
         $donor = OurMember::where('membership_applied',1)->count();
@@ -50,7 +52,7 @@ class FrontendController extends Controller
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
         $benefit = BenefitsOfMember::latest()->take(6)->get();
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','scroll_notice'));
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','scroll_notice','vNotice'));
     }
     /**
      * Show the form for creating a new resource.
