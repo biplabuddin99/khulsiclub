@@ -320,7 +320,7 @@ body {
 marquee ul li{
   display: inline;
   list-style: none;
-  border-right:1px solid var(--red);
+  border-right:2px solid var(--red);
 }
 marquee ul li:last-child{
   border-right:0;

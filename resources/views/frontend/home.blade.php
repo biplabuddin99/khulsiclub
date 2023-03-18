@@ -193,7 +193,7 @@
               <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
                 <ul class="m-0">
                   @forelse ($scroll_notice as $sn)
-                    <li><p>{{$sn->text}}</p></li>
+                    <li><p class="px-2">{{$sn->text}}</p></li>
                   @empty
                     {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
                   @endforelse
