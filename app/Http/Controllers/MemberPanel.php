@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OurMember;
 use App\Models\MemberChildren;
+use App\Models\terms_of_membership;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use Illuminate\Support\Facades\Validator;
@@ -25,6 +26,17 @@ class MemberPanel extends Controller
         
         $member=OurMember::where('id',currentUserId())->first();
         return view('frontend.members.memberProfile',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function termsConditon()
+    {
+        $terms = terms_of_membership::latest()->take(1)->first();
+        return view('frontend.members.terms',compact('terms'));
     }
     /**
      * Show the form for editing the specified resource.

@@ -21,15 +21,15 @@
                     <div class="col-lg-8">
                         <div class="text-center pt-4">
                             <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                            <p class="p-0 m-0">Login</p>
-                            <p>Become a Member</p>
+                            <p class="p-0 m-0">reset</p>
+                            <p>Password</p>
                         </div>
                         <div class="p-4 mem-form">
-                            <form class="form" method="post" action="{{route('memberlogin.check')}}">
+                            <form class="form" method="post" action="#">
                                 @csrf
                                 <div class="col-12 py-2">
                                     <div class="form-group">
-                                        <label for="company">Email Address:</label>
+                                        <label for="company">Your Email:</label>
                                         <input type="text" id="EmailAddress" class="form-control input-bg" placeholder="ie: member@mail.com" onfocus="this.placeholder = ''" value="{{ old('EmailAddress')}}" onblur="this.placeholder = 'ie: member@mail.com'" name="EmailAddress">
                                     </div>
                                     @if($errors->has('EmailAddress'))
@@ -38,23 +38,8 @@
                                         </small>
                                     @endif
                                 </div>
-                                <div class="col-12 py-2">
-                                    <div class="form-group">
-                                        <label for="company">password:</label>
-                                        <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
-                                    </div>
-                                    @if($errors->has('password'))
-                                        <small class="d-block text-danger">
-                                            {{$errors->first('password')}}
-                                        </small>
-                                    @endif
-                                </div>
-                                <div>
-                                    <a href="{{route('passwordReset')}}">Forgot Password?</a><br>
-                                    <span>Don't have an account? </span><a href="{{route('member_registration')}}">Sign up.</a>
-                                </div>
                                 <div class="col-12 py-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger">Login</button>
+                                    <button type="submit" class="btn btn-danger">Send Request</button>
                                 </div>
                             </form>
                         </div>
@@ -65,4 +50,4 @@
   </div>
 </section>
 <!-- // Basic multiple Column Form section end -->
-    @endsection
+@endsection

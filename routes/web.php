@@ -25,6 +25,7 @@ use App\Http\Controllers\TagController as tag;
 use App\Http\Controllers\BlogCategoryController as blogcat;
 use App\Http\Controllers\BlogController as blog;
 use App\Http\Controllers\BenefitsOfMemberController as benefit;
+use App\Http\Controllers\TermsOfMembershipController as terms;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
@@ -58,6 +59,7 @@ Route::post('/memberRegister', [auth::class,'memberSignUpStore'])->name('memberR
 Route::get('/memberLogin', [auth::class,'memberSignInForm'])->name('memberLogin');
 Route::post('/memberLogin', [auth::class,'memberSignInCheck'])->name('memberlogin.check');
 Route::get('/memberLogOut', [auth::class,'memberSingOut'])->name('memberLogOut');
+Route::get('/password-reset', [auth::class,'memberPasswordReset'])->name('passwordReset');
 
 // Member login
 Route::get('/mlogin', [auth::class,'memSignInForm'])->name('memLogin');
@@ -77,6 +79,7 @@ Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('mem
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
 Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('searchByLetter');
+Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 
 // photo and video gallery
 Route::get('photo_gallery', [media::class,'pGallery'])->name('pGallery');
@@ -112,6 +115,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('blogcategory',blogcat::class,['as'=>'admin']);
         Route::resource('blog',blog::class,['as'=>'admin']);
         Route::resource('benefit',benefit::class,['as'=>'admin']);
+        Route::resource('terms',terms::class,['as'=>'admin']);
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
         Route::resource('vNotice',vNotice::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);

@@ -28,6 +28,10 @@ class AuthenticationController extends Controller
         return view('frontend.members.memberRegister');
     }
 
+    public function memberPasswordReset(){
+        return view('frontend.members.reset');
+    }
+
     public function memberSignUpStore(MemberSignupRequest $request){
         try{
             $user=new OurMember;
