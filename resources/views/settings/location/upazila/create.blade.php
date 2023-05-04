@@ -17,8 +17,8 @@
                                     
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="district_id">District</label>
-                                            <select class="form-control form-select" name="district_id" id="district_id">
+                                            <label for="district_id">District<span class="text-danger">*</span></label>
+                                            <select required class="form-control form-select" name="district_id" id="district_id">
                                                 <option value="">Select District</option>
                                                 @forelse($districts as $d)
                                                     <option value="{{$d->id}}" {{ old('district_id')==$d->id?"selected":""}}> {{ $d->name}}</option>
@@ -30,8 +30,8 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="upazilaName">Upazila Name</label>
-                                            <input type="text" id="upazilaName" class="form-control" value="{{ old('upazilaName')}}" name="upazilaName">
+                                            <label for="upazilaName">Upazila Name<span class="text-danger">*</span></label>
+                                            <input required type="text" id="upazilaName" class="form-control" value="{{ old('upazilaName')}}" name="upazilaName">
                                             @if($errors->has('upazilaName'))
                                                 <span class="text-danger"> {{ $errors->first('upazilaName') }}</span>
                                             @endif
