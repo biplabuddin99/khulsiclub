@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Album')}}:</b></label>
+                                <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Album')}}<span class="text-danger">*</span></b></label>
                                 <div class="col-sm-6 offset-1">
                                     <select class="form-control form-select" name="album" id="album">
                                         <option value="">Select Album</option>
@@ -35,7 +35,7 @@
                             </div>
                            
                             <div class="row mb-3">
-                                <label for="status" class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}:</b></label>
+                                <label for="status" class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}<span class="text-danger">*</span></b></label>
                                 <div class="col-sm-6 offset-1">
                                     <select class="form-control form-select" name="status">
                                     <option value="">Select Status</option>

@@ -14,10 +14,10 @@
                               @csrf
                               @method('patch')
                                   <div class="row mb-3">
-                                  <label for="benefit" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Benefit')}}:</b></label>
+                                  <label for="benefit" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Benefit')}}<span class="text-danger">*</span></b></label>
                                       <div class="col-sm-6 offset-1 m-0">
                                           <input type="text" id="benefit" value="{{ old('benefit',$benefit->benefit)}}" class="form-control text-start"
-                                              placeholder="Benefit" name="benefit">
+                                              placeholder="Benefit" name="benefit" required>
                                       </div>
                                   </div>
                                   <div class="row mb-3">

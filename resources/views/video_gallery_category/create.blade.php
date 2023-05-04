@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="year">{{__('Video Year')}}:</label>
+                                            <label for="year">{{__('Video Year')}}<span class="text-danger">*</span></label>
                                             <select class="form-control form-select" name="year" id="year" required>
                                                 <option value="">Select Video year</option>
                                                 @forelse($year as $d)
@@ -50,7 +50,7 @@
                                     </div>
 
                                     <fieldset class="col-md-6 col-12">
-                                        <legend class="col-form-label col-sm-2 pt-0">Status:</legend>
+                                        <legend class="col-form-label col-sm-2 pt-0">Status</legend>
                                         <div class="col-sm-10">
                                           <input type="radio" value="1" name="status" checked> Active
                                           &nbsp;

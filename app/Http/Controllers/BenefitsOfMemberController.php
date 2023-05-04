@@ -46,12 +46,12 @@ class BenefitsOfMemberController extends Controller
                 Toastr::success('Benefits Create Successfully!');
                 return redirect()->route(currentUser().'.benefit.index');
             }else{
-                Toastr::success('Please try Again!');
+                Toastr::warning('Please try Again!');
                 return redirect()->back();
             }
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return back()->withInput();
 
         }
@@ -97,13 +97,13 @@ class BenefitsOfMemberController extends Controller
                 Toastr::success('Benefits Updated Successfully!');
                 return redirect()->route(currentUser().'.benefit.index');
             }else{
-                Toastr::success('Please try Again!');
+                Toastr::warning('Please try Again!');
                 return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return back()->withInput();
         }
     }

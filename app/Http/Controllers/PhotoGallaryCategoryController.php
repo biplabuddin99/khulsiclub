@@ -55,14 +55,14 @@ class PhotoGallaryCategoryController extends Controller
             Toastr::success('Photo Category Create Successfully!');
             return redirect()->route(currentUser().'.pGalleryCat.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -117,14 +117,14 @@ class PhotoGallaryCategoryController extends Controller
             Toastr::success('Photo Category Updated Successfully!');
             return redirect()->route(currentUser().'.pGalleryCat.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

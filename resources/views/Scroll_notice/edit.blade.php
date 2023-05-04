@@ -15,21 +15,21 @@
                               @method('patch')
                               <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="text"><b>{{__('Text')}}:</b></label>
+                                        <label for="text"><b>{{__('Text')}}<span class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="text" class="form-control" rows="3">{{ old('text',$srn->text)}}</textarea>
+                                        <textarea required name="text" class="form-control" rows="3">{{ old('text',$srn->text)}}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-6">
-                                        <label for="public date"><b>{{__('Published date')}}:</b></label>
-                                        <input type="date" value="{{ old('published_date',$srn->published_date)}}" class="form-control"
+                                        <label for="public date"><b>{{__('Published date')}}<span class="text-danger">*</span></b></label>
+                                        <input required type="date" value="{{ old('published_date',$srn->published_date)}}" class="form-control"
                                          name="published_date">
                                     </div>
                                     <div class="col-6">
-                                        <label for="unpublic date"><b>{{__('Unpublished date')}}:</b></label>
-                                        <input type="date" value="{{ old('unpublished_date',$srn->unpublished_date)}}" class="form-control"
+                                        <label for="unpublic date"><b>{{__('Unpublished date')}}<span class="text-danger">*</span></b></label>
+                                        <input required type="date" value="{{ old('unpublished_date',$srn->unpublished_date)}}" class="form-control"
                                          name="unpublished_date">
                                     </div>
                                 </div>

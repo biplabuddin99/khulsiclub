@@ -55,12 +55,13 @@ class VideoGallaryCategoryController extends Controller
             return redirect()->route(currentUser().'.vgalleryCat.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -114,12 +115,13 @@ class VideoGallaryCategoryController extends Controller
             return redirect()->route(currentUser().'.vgalleryCat.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

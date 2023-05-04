@@ -34,7 +34,7 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="videoId">{{__('Album')}}:</label>
+                                            <label for="videoId">{{__('Album')}}<span class="text-danger">*</span></label>
                                             <select class="form-control form-select" name="album" id="album" required>
                                                 <option value="">Select Album</option>
                                                 @forelse($vGalleryCat as $d)

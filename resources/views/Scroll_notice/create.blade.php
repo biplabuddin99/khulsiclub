@@ -15,22 +15,22 @@
                                 
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="text"><b>{{__('Text')}}:</b></label>
+                                        <label for="text"><b>{{__('Text')}}<span class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="text" class="form-control" rows="3">{{ old('text')}}</textarea>
+                                        <textarea required name="text" class="form-control" rows="3">{{ old('text')}}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-6">
-                                        <label for="public date"><b>{{__('Published date')}}:</b></label>
+                                        <label for="public date"><b>{{__('Published date')}}<span class="text-danger">*</span></b></label>
                                         <input type="date" value="{{ old('published_date')}}" class="form-control"
-                                         name="published_date">
+                                         name="published_date" required>
                                     </div>
                                     <div class="col-6">
-                                        <label for="unpublic date"><b>{{__('Unpublished date')}}:</b></label>
+                                        <label for="unpublic date"><b>{{__('Unpublished date')}}<span class="text-danger">*</span></b></label>
                                         <input type="date" value="{{ old('unpublished_date')}}" class="form-control"
-                                         name="unpublished_date">
+                                         name="unpublished_date" required>
                                     </div>
                                 </div>
                                   

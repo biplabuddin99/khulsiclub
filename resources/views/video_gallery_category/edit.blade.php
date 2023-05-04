@@ -28,7 +28,7 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="year">{{__('Video Year')}}:</label>
+                                            <label for="year">{{__('Video Year')}}<span class="text-danger">*</span></label>
                                             <select class="form-control form-select" name="year" id="year" required>
                                                 <option value="">Select Video year</option>
                                                 @forelse($year as $d)

@@ -23,7 +23,7 @@
                                       @endif
                                   </div>
                                   <div class="row mb-3">
-                                    <label for="year" class="col-sm-2 offset-1 col-form-label"><b>{{__('Photo Year')}}:</b></label>
+                                    <label for="year" class="col-sm-2 offset-1 col-form-label"><b>{{__('Photo Year')}}<span class="text-danger">*</span></b></label>
                                     <div class="col-sm-6 offset-1">
                                             <select class="form-control form-select" name="year" id="year" required>
                                                 <option value="">Select Photo year</option>
@@ -43,7 +43,7 @@
                                       </div>
                                   </div>
                                   <div class="row mb-3">
-                                      <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}:</b></label>
+                                      <label for="date" class="col-sm-2 offset-1 col-form-label"><b>{{__('Status')}}<span class="text-danger">*</span></b></label>
                                       <div class="col-sm-6 offset-1">
                                           <select class="form-control form-select" value="{{ old('status')}}" name="status" required>
                                             <option value="">Select Status</option>

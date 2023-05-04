@@ -49,14 +49,14 @@ class ScrollNoticeController extends Controller
                 Toastr::success('Created Successfully');
                 return redirect()->route(currentUser().'.scrollN.index');
             }else{
-                Toastr::success('please try again');
+                Toastr::warning('please try again');
                 return redirect()->back();
             }
 
         }
         catch(Exception $e){
-            Toastr::success('Please try again');
-            dd($e);
+            Toastr::warning('Please try again');
+            // dd($e);
             return back()->withInput();
         }
         
@@ -105,14 +105,14 @@ class ScrollNoticeController extends Controller
                 Toastr::success('Updated Successfully');
                 return redirect()->route(currentUser().'.scrollN.index');
             }else{
-                Toastr::success('Please Try again');
+                Toastr::warning('Please Try again');
                 return redirect()->back();
             }
 
         }
         catch(Exception $e){
-            Toastr::success('Please try again');
-            dd($e);
+            Toastr::warning('Please try again');
+            // dd($e);
             return back()->withInput();
         }
     }

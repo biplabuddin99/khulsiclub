@@ -53,12 +53,13 @@ class VideoGalleryController extends Controller
             return redirect()->route(currentUser().'.vgallery.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -109,12 +110,13 @@ class VideoGalleryController extends Controller
             return redirect()->route(currentUser().'.vgallery.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
