@@ -22,7 +22,7 @@
                               <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$page->id)}}">
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="title"><b>{{__('Title')}}:</b></label>
+                                        <label for="title"><b>{{__('Title')}}<span class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
                                         <input type="text" id="title" value="{{ old('title',$page->page_title)}}" class="form-control"
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="published"><b>{{__('Published')}}:</b></label>
+                                        <label for="published"><b>{{__('Published')}}<span class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
                                         <select class="form-control form-select" value="{{ old('published')}}" name="published" required>

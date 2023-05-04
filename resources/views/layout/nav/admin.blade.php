@@ -38,14 +38,14 @@
                     <li class="py-1"><a href="{{route(currentUser().'.facilities.index')}}">{{__('Facilities')}}</a></li>
                 </ul>
             </li>
-            <li class="submenu-item sidebar-item has-sub">
+            {{-- <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Blog')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.tag.index')}}">{{__('Tags')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.blogcategory.index')}}">{{__('Category')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.blog.index')}}">{{__('Blogs')}}</a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
                 <ul class="submenu">
