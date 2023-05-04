@@ -18,8 +18,8 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="title">Title</label>
-                                            <input type="text" id="title" class="form-control" value="{{ old('title',$faci->title)}}" name="title">
+                                            <label for="title">Title<span class="text-danger">*</span></label>
+                                            <input required type="text" id="title" class="form-control" value="{{ old('title',$faci->title)}}" name="title">
                                             @if($errors->has('title'))
                                                 <span class="text-danger"> {{ $errors->first('title') }}</span>
                                             @endif
@@ -27,8 +27,8 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="Picture">Image</label>
-                                            <input type="file" id="Picture" class="form-control"
+                                            <label for="Picture">Image<span class="text-danger">*</span></label>
+                                            <input required type="file" id="Picture" class="form-control"
                                                 placeholder="Picture" name="Picture">
                                                 <img width="50px" src="{{asset('uploads/facilities/'.$faci->image)}}" alt="">
                                                 @if($errors->has('Picture'))

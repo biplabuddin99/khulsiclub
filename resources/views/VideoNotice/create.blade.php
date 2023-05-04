@@ -14,7 +14,7 @@
                               @csrf
                                 <div class="row mb-3">
                                     <div class="col-8 offset-2">
-                                        <label for="text"><b>{{__('Title')}}:</b></label>
+                                        <label for="text"><b>{{__('Title')}}<span class="text-danger">*</span></b></label>
                                         <input type="text" class="form-control" name="title" value="{{ old('title')}}" required>
                                     </div>
                                     <div class="col-8 offset-2">

@@ -17,24 +17,24 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="title">Title:</label>
-                                            <input type="text" id="title" class="form-control" value="{{ old('title')}}" name="title">
+                                            <label for="title">Title<span class="text-danger">*</span></label>
+                                            <input type="text" id="title" class="form-control" value="{{ old('title')}}" name="title" required>
                                             @if($errors->has('title'))
                                                 <span class="text-danger"> {{ $errors->first('title') }}</span>
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    {{-- <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="Details">Details:</label>
                                             <textarea  class="form-control" id="Details"
                                                 placeholder="Details" name="Details" rows="3">{{ old('Details')}}</textarea>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="publishedDate">Published Date</label>
-                                            <input type="date" id="publishedDate" class="form-control" value="{{ old('publishedDate')}}" name="publishedDate">
+                                            <label for="publishedDate">Published Date<span class="text-danger">*</span></label>
+                                            <input type="date" id="publishedDate" class="form-control" value="{{ old('publishedDate')}}" name="publishedDate" required>
                                             @if($errors->has('publishedDate'))
                                                 <span class="text-danger"> {{ $errors->first('publishedDate') }}</span>
                                             @endif
@@ -43,8 +43,8 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="unpublishedDate">Unpublished Date</label>
-                                            <input type="date" id="unpublishedDate" class="form-control" value="{{ old('unpublishedDate')}}" name="unpublishedDate">
+                                            <label for="unpublishedDate">Unpublished Date<span class="text-danger">*</span></label>
+                                            <input type="date" id="unpublishedDate" class="form-control" value="{{ old('unpublishedDate')}}" name="unpublishedDate" required>
                                             @if($errors->has('unpublishedDate'))
                                                 <span class="text-danger"> {{ $errors->first('unpublishedDate') }}</span>
                                             @endif

@@ -51,8 +51,8 @@ class FacilitiesController extends Controller
             return redirect()->route(currentUser().'.facilities.index');
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -104,14 +104,14 @@ class FacilitiesController extends Controller
                 Toastr::success('Facilities Update Successfully!');
             return redirect()->route(currentUser().'.facilities.index');
             }else{
-                Toastr::success('Please try Again!');
+                Toastr::warning('Please try Again!');
                 return redirect()->back();
 
             }
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

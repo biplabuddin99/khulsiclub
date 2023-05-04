@@ -53,7 +53,7 @@ class VideoNoticeController extends Controller
 
         }catch (Exception $e){
             Toastr::warning('Please try Again!');
-            dd($e);
+            // dd($e);
             return back()->withInput();
         }
     }
@@ -104,7 +104,7 @@ class VideoNoticeController extends Controller
 
         }catch (Exception $e){
             Toastr::warning('Please try Again!');
-            dd($e);
+            // dd($e);
             return back()->withInput();
         }
     }
