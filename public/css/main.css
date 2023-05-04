@@ -1691,3 +1691,8 @@ figure{
     padding-top: 13px;
   }
 }
+.merber-reg-card .contact-border{
+  border: solid 2px !important;
+  border-color: rgb(242, 158, 158) !important;
+  padding: 11px;
+}

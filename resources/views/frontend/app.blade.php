@@ -206,12 +206,14 @@
                                   Media
                                 </a>
                                   <ul class="ps-4 dropdown-menu shadow small-menu">
+                                    <li class="subMenu"><a href="{{route('all-notice')}}"><span><i class="bi bi-chevron-double-right"></i></span> Notice</a></li>
+                                    <li class="subMenu"><a href="#"><span><i class="bi bi-chevron-double-right"></i></span> News & Events</a></li>
                                     <li class="subMenu"><a href="{{route('pGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Photo Gallery</a></li>
                                     <li class="subMenu"><a href="{{route('vGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Video Gallery</a></li>
                                   </ul>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link nav_contact_padding" href="">Contact Us</a>
+                                <a class="nav-link nav_contact_padding" href="{{route('contact-Us')}}">Contact Us</a>
                               </li>
                               <li class="nav-item d-flex d-sm-none">
                                 <a class="nav-link nav_a_padding" href="">Member Login</a>

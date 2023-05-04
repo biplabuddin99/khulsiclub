@@ -64,6 +64,33 @@ class FrontendController extends Controller
         $benefit=BenefitsOfMember::all();
         return view('frontend.benefit',compact('benefit'));
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contactUs()
+    {
+        return view('frontend.membership.contact');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allNotice()
+    {
+        $today=\Carbon\Carbon::today()->toDateString();
+
+        $notice=Notice::where('published_date', '<=',$today)->where(function ($query) use ($today) {
+            $query->where('unpublished_date', '>',$today);
+            $query->orWhereNull('unpublished_date');
+        })->get();
+
+        return view('frontend.notice.notice',compact('notice'));
+    }
     
     /* get daynamic page */
     public function page($slug)

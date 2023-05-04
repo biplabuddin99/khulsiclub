@@ -186,7 +186,7 @@
               @endforelse
             </div>
             <div class="views-notice">
-              <a href="#">Views All Notices</a>
+              <a href="{{route('all-notice')}}">Views All Notices</a>
             </div>
           </div>
           <div class="col-12">

@@ -29,6 +29,7 @@
                                 'Home'					=>'/',
                                 'Blank'					=>'#',
                                 'Member Login' 		    =>'mlogin',
+                                'Notice' 		        =>'all-notice',
                                 'Mamber List' 		    =>'memberlist',
                                 'Photo Gallery' 		=>'photo_gallery',
                                 'Video Gallery' 		=>'video_gallery',
