@@ -74,14 +74,14 @@ class SettingController extends Controller
             Toastr::success('Settings Create Successfully!');
             return redirect()->route(currentUser().'.settings.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -165,14 +165,14 @@ class SettingController extends Controller
             Toastr::success('Settings Updated Successfully!');
             return redirect()->route(currentUser().'.settings.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

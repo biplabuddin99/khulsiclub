@@ -74,14 +74,14 @@ class PageController extends Controller
             Toastr::success('Post created Successfully!');
             return redirect()->route(currentUser().'.page.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -132,14 +132,14 @@ class PageController extends Controller
             Toastr::success('Post Updated Successfully!');
             return redirect()->route(currentUser().'.page.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

@@ -54,8 +54,8 @@ class TermsOfMembershipController extends Controller
 
         }
         catch(Exception $e){
-            Toastr::success('Please try again');
-            dd($e);
+            Toastr::warning('Please try again');
+            // dd($e);
             return back()->withInput();
         }
     }
@@ -102,14 +102,14 @@ class TermsOfMembershipController extends Controller
                 Toastr::success('Updated Successfully');
                 return redirect()->route(currentUser().'.terms.index');
             }else{
-                Toastr::success('Please Try again');
+                Toastr::warning('Please Try again');
                 return redirect()->back();
             }
 
         }
         catch(Exception $e){
-            Toastr::success('Please try again');
-            dd($e);
+            Toastr::warning('Please try again');
+            // dd($e);
             return back()->withInput();
         }
     }

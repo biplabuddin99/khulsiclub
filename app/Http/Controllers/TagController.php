@@ -47,14 +47,14 @@ class TagController extends Controller
             Toastr::success('Tag Create Successfully!');
             return redirect()->route(currentUser().'.tag.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -101,14 +101,14 @@ class TagController extends Controller
             Toastr::success('Tag Updated Successfully!');
             return redirect()->route(currentUser().'.tag.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

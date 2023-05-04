@@ -133,14 +133,14 @@ class OurMemberController extends Controller
             Toastr::success('our Member Create Successfully!');
             return redirect()->route(currentUser().'.ourMember.index');
             }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return redirect()->back();
             }
 
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -276,14 +276,14 @@ class OurMemberController extends Controller
                 Toastr::success('our Member Update Successfully!');
                 return redirect()->route(currentUser().'.ourMember.index');
             }else{
-                Toastr::success('Please try Again!');
+                Toastr::warning('Please try Again!');
                 return redirect()->back();
             }
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
 
         }
 

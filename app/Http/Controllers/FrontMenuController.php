@@ -6,7 +6,7 @@ use App\Models\FrontMenu;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-
+use Exception;
 class FrontMenuController extends Controller
 {
     /**
@@ -43,7 +43,7 @@ class FrontMenuController extends Controller
             return redirect()->route(currentUser().'.front_menu.index');
         }
         catch (Exception $e){
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             return back()->withInput();
         }
     }

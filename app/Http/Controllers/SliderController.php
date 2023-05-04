@@ -52,13 +52,14 @@ class SliderController extends Controller
             Toastr::success('Slider Create Successfully!');
             return redirect()->route(currentUser().'.slider.index');
             } else{
-            Toastr::success('Please try Again!');
-             return redirect()->back();
-            }
-
+            Toastr::warning('Please try Again!');
+            return redirect()->back();
         }
-        catch (Exception $e){
-            dd($e);
+        
+    }
+    catch (Exception $e){
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }
@@ -111,13 +112,14 @@ class SliderController extends Controller
             Toastr::success('Slider Update Successfully!');
             return redirect()->route(currentUser().'.slider.index');
             } else{
-             Toastr::success('Please try Again!');
-            return redirect()->back();
+             Toastr::warning('Please try Again!');
+             return redirect()->back();
             }
-
+            
         }
         catch (Exception $e){
-            dd($e);
+            Toastr::warning('Please try Again!');
+            // dd($e);
             return back()->withInput();
 
         }

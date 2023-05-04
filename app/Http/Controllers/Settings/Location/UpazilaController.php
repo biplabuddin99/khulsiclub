@@ -55,7 +55,7 @@ class UpazilaController extends Controller
             else
                 return redirect()->back()->withInput()->with($this->resMessageHtml(false,'error','please try again'));    
         }catch(Exception $e){
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with($this->resMessageHtml(false,'error','Please try again'));
         }
     }
@@ -103,7 +103,7 @@ class UpazilaController extends Controller
                 else
                 return redirect()->back()->withInput()->with($this->resMessageHtml(false,'error','Please try again'));
         }catch(Exception $e){
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with($this->resMessageHtml(false,'error','Please try again'));
         }
     }

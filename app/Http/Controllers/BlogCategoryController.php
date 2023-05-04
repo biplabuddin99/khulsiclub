@@ -51,12 +51,12 @@ class BlogCategoryController extends Controller
             return redirect()->route(currentUser().'.blogcategory.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }
@@ -105,12 +105,12 @@ class BlogCategoryController extends Controller
             return redirect()->route(currentUser().'.blogcategory.index');
             }else{
             return redirect()->back();
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
             }
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }
