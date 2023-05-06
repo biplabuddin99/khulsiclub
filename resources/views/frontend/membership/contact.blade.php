@@ -1,3 +1,4 @@
+@php $setting=\App\Models\setting::first(); @endphp
 @extends('frontend.app')
 @section('content')
 <section class="about-support">
@@ -103,26 +104,26 @@
                 <span class="contact-border">
                     <i class="bi bi-geo-alt-fill"></i>
                   <p>
-                    Holding No - 611/1614, Concord Amusement Park Road, Opposite of Ansar Camp, Foyslake, Chattogram, Bangladesh.
+                    {{ $setting?->address }}
                   </p>
                 </span>
                 <h4>Contact Us</h4>
                 <div class="contact-border">
                     <span>
                         <i class="bi bi-telephone-fill"></i>
-                        <p>031-657221</p>
+                        <p>{{ $setting?->contact_no }}</p>
                     </span>
                     <span>
                         <i class="bi bi-envelope-fill"></i>
-                        <p>info@ckclbd.com</p>
+                        <p>{{ $setting?->email_address }}</p>
                     </span>
                 </div>
                 <h4 class="mt-4 mb-2">Connect With Us</h4>
                 <div class="contact-border social-icon">
-                    <a href=""><i class="bi bi-facebook ms-0 ps-0"></i></a>
-                    <a href=""><i class="bi bi-twitter ms-0 ps-0"></i></a>
-                    <a href=""><i class="bi bi-linkedin ms-0 ps-0"></i></a>
-                    <a href=""><i class="bi bi-youtube ms-0 ps-0"></i></a>
+                    <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
+                    <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
+                    <a href="{{ $setting?->linkdin_link }}"><i class="bi bi-linkedin ms-0 ps-0"></i></a>
+                    <a href="{{ $setting?->youtube_link }}"><i class="bi bi-youtube ms-0 ps-0"></i></a>
                 </div>
             </div>
         </div>

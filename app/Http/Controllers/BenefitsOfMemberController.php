@@ -120,7 +120,7 @@ class BenefitsOfMemberController extends Controller
         if($b->delete()){
             Toastr::success('Benefits Deleted Successfully!');
         }else{
-            Toastr::success('Please try Again!');
+            Toastr::warning('Please try Again!');
         }
         return redirect()->back();
     }

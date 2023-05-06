@@ -25,6 +25,7 @@ use App\Http\Controllers\TagController as tag;
 use App\Http\Controllers\BlogCategoryController as blogcat;
 use App\Http\Controllers\BlogController as blog;
 use App\Http\Controllers\BenefitsOfMemberController as benefit;
+use App\Http\Controllers\ContactReasonController as creason;
 use App\Http\Controllers\TermsOfMembershipController as terms;
 
 use App\Http\Controllers\Products\UnitController as unit;
@@ -117,6 +118,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('blogcategory',blogcat::class,['as'=>'admin']);
         Route::resource('blog',blog::class,['as'=>'admin']);
         Route::resource('benefit',benefit::class,['as'=>'admin']);
+        Route::resource('creason',creason::class,['as'=>'admin']);
         Route::resource('terms',terms::class,['as'=>'admin']);
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
         Route::resource('vNotice',vNotice::class,['as'=>'admin']);

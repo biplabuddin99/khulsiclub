@@ -44,7 +44,4 @@
             
         </div>
     </section>
-    <!-- Bordered table end -->
-</div>
-
 @endsection

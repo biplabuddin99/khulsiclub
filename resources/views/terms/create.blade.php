@@ -35,8 +35,6 @@
           </div>
       </div>
   </section>
-  <!-- // Basic multiple Column Form section end -->
-</div>
 @endsection
 @push('scripts')
 <script src="{{ asset('/assets/extensions/tinymce/tinymce.min.js')}}"></script>

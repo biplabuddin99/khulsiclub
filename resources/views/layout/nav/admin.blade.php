@@ -18,6 +18,7 @@
                     <li class="py-1"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('Scroll Notice')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.benefit.index')}}">{{__('Benefits')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Contact Reason')}}</a></li>
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">

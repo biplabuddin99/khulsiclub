@@ -87,6 +87,4 @@
             </div>
         </div>
     </section>
-    <!-- // Basic multiple Column Form section end -->
-</div>
 @endsection
