@@ -31,7 +31,7 @@
             <div class="member-search">
                 <div class="search-body">
                     <h1>News Search</h1>
-                    <form action="" method="get">
+                    <form action="{{route('news.search')}}" method="get">
                         <div class="searchBox">
                             <input type="text" value="{{ request()->input('name', '') }}"  name="name" id="search" placeholder="Search by title">
                             <button type="submit">
@@ -72,6 +72,9 @@
            </div>
         </div>
         @empty
+        <div class="text-center p-4">
+            No Data Found
+        </div>
         @endforelse
         <div class=" my-3">
             {!! $newsEv->links()!!}

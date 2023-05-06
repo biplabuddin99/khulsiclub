@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Sales;
+namespace App\Http\Requests\videoNotice;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class AddNewRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'short_description'=>'string|max:100',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'short_description.string' => 'Title 1 must be a string.',
+            'short_description.max' => 'Short Description may not be greater than 100 characters long.',
         ];
     }
 }

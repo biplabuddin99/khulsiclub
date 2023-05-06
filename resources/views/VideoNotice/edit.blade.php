@@ -21,6 +21,9 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="text"><b>{{__('Short Description')}}</b></label>
                                         <textarea name="short_description" class="form-control" rows="2">{{ old('short_description',$videoNotice->short_description)}}</textarea>
+                                        @if($errors->has('short_description'))
+                                            <span class="text-danger"> {{ $errors->first('short_description') }}</span>
+                                        @endif
                                     </div>
                                     {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="text"><b>{{__('Long Description')}}</b></label>

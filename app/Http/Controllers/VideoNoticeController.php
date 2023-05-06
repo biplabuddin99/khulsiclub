@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\video_notice;
 use Illuminate\Http\Request;
+use App\Http\Requests\videoNotice\AddNewRequest;
+use App\Http\Requests\videoNotice\UpdateRequest;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
 use Exception;
@@ -39,7 +41,7 @@ class VideoNoticeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try{
             $vn = new video_notice;
@@ -101,7 +103,7 @@ class VideoNoticeController extends Controller
      * @param  \App\Models\video_notice  $video_notice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try{
             $vn = video_notice::findOrFail(encryptor('decrypt',$id));

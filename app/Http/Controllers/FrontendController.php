@@ -102,8 +102,8 @@ class FrontendController extends Controller
             $news->where('title', 'LIKE', '%'.$search.'%');
         }
 
-        $news = $news->paginate(12);
-        return view('frontend.notice.newsEvents', compact('news','search'));
+        $newsEv = $news->paginate(12);
+        return view('frontend.notice.newsEvents', compact('newsEv','search'));
     }
 
     /**
