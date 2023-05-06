@@ -87,7 +87,7 @@ class FrontendController extends Controller
         $notice=Notice::where('published_date', '<=',$today)->where(function ($query) use ($today) {
             $query->where('unpublished_date', '>',$today);
             $query->orWhereNull('unpublished_date');
-        })->get();
+        })->paginate(20);
 
         return view('frontend.notice.notice',compact('notice'));
     }

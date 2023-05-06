@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <div class="mt-3 d-flex notice-div-one">
                         <span class="material-icons me-2"> today </span>
-                        <p class="fs-4 mb-1 pt-1">Notice</p>
+                        <p class="fs-4 mb-1 pt-1">All Notice</p>
                     </div>
                 </div>
                 <div class="height-300">
@@ -34,6 +34,9 @@
                             </div>
                         </div>
                     @endforelse
+                        <div class=" my-3">
+                            {!! $notice->links()!!}
+                        </div>
                 </div>
             </div>
           </div>
