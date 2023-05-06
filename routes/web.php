@@ -25,6 +25,7 @@ use App\Http\Controllers\TagController as tag;
 use App\Http\Controllers\BlogCategoryController as blogcat;
 use App\Http\Controllers\BlogController as blog;
 use App\Http\Controllers\BenefitsOfMemberController as benefit;
+use App\Http\Controllers\ContactUsController as contact;
 use App\Http\Controllers\ContactReasonController as creason;
 use App\Http\Controllers\TermsOfMembershipController as terms;
 
@@ -66,6 +67,9 @@ Route::get('/password-reset', [auth::class,'memberPasswordReset'])->name('passwo
 Route::get('/mlogin', [auth::class,'memSignInForm'])->name('memLogin');
 Route::post('/mlogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
 
+// Contact Us
+Route::get('/contact-us', [contact::class,'store'])->name('contact.us');
+
 
 Route::get('/', [front::class,'index'])->name('front');
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
@@ -76,6 +80,7 @@ Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
 Route::get('/benfit_of_membrer', [front::class,'benefit'])->name('member.benefit');
 Route::get('/all-notice', [front::class,'allNotice'])->name('all-notice');
+Route::get('/news-events', [front::class,'newsEvents'])->name('event-notice');
 Route::get('/contact_us', [front::class,'contactUs'])->name('contact-Us');
 Route::get('/become_a_member', [front::class,'mem_regi'])->name('member.registration');
 Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('member.registration.store');
@@ -119,6 +124,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('blog',blog::class,['as'=>'admin']);
         Route::resource('benefit',benefit::class,['as'=>'admin']);
         Route::resource('creason',creason::class,['as'=>'admin']);
+        Route::resource('contact',contact::class,['as'=>'admin']);
         Route::resource('terms',terms::class,['as'=>'admin']);
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
         Route::resource('vNotice',vNotice::class,['as'=>'admin']);

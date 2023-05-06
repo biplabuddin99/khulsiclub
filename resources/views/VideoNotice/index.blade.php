@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Video notice List'))
+@section('pageTitle',trans('News & Events List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -19,6 +19,9 @@
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Title')}}</th>
+                                        <th scope="col">{{__('Short Description')}}</th>
+                                        <th scope="col">{{__('Picture')}}</th>
+                                        <th scope="col">{{__('Publish Date')}}</th>
                                         <th scope="col">{{__('Link')}}</th>
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
@@ -28,6 +31,9 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$m->title}}</td>
+                                        <td>{{$m->short_description}}</td>
+                                        <td><img width="50px" src="{{asset('uploads/video_notice/'.$m->image)}}" alt=""></td>
+                                        <td>{{$m->publish_date}}</td>
                                         <td>{{$m->link}}</td>
                                         <td class="white-space-nowrap">
                                             <a class="btn btn-sm btn-success" href="{{route(currentUser().'.vNotice.edit',encryptor('encrypt',$m->id))}}">Edit</a>

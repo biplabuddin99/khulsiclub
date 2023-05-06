@@ -19,6 +19,7 @@
                     <li class="py-1"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.benefit.index')}}">{{__('Benefits')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Contact Reason')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Contact Us List')}}</a></li>
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
@@ -35,7 +36,7 @@
                 <a href="#" class='sidebar-link'> {{__('Notice & Facilities')}}</a>
                 <ul class="submenu">
                     <li class="py-1"><a href="{{route(currentUser().'.notice.index')}}">{{__('Notice')}}</a></li>
-                    <li class="py-1"><a href="{{route(currentUser().'.vNotice.index')}}">{{__('Video Notice')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.vNotice.index')}}">{{__('News & Events')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.facilities.index')}}">{{__('Facilities')}}</a></li>
                 </ul>
             </li>

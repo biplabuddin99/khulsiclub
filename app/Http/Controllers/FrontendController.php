@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facilities;
+use App\Models\contact_reason;
 use App\Models\BenefitsOfMember;
 use App\Models\Page;
 use App\Models\Frontend;
@@ -72,7 +73,37 @@ class FrontendController extends Controller
      */
     public function contactUs()
     {
-        return view('frontend.membership.contact');
+        $contactReason = contact_reason::all();
+        return view('frontend.membership.contact',compact('contactReason'));
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function newsEvents()
+    {
+        $newsEv = video_notice::paginate(12);
+        return view('frontend.notice.newsEvents',compact('newsEv'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function nwesSearch(Request $request)
+    {
+        $search = $request['name']?? "";
+        $news = video_notice::query();
+
+        if ($search != "") {
+            $news->where('title', 'LIKE', '%'.$search.'%');
+        }
+
+        $news = $news->paginate(12);
+        return view('frontend.notice.newsEvents', compact('news','search'));
     }
 
     /**

@@ -26,22 +26,32 @@
 <div class="container py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8">
-          <div class="card shadow">
+          <div class="card shadow" id="contact_us">
           <span class="shape" ></span>
-              @if(Session::has('response'))
-                  {!!Session::get('response')['message']!!}
-              @endif
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif 
+                    
+                @if ($message = Session::get('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
               <div class=" px-4 pt-3 pb-0">
                 <h4 style="font-weight: bold;">Contact Us</h4>
                 <p>“Got a Question? We'd love to hear from you. Send us a message and we'll respond as soon as possible”</p>
               </div>
               <div class=" px-4 pt-0 pb-2 mem-form">
-                <form class="form" method="post" enctype="multipart/form-data" action="{{route('memberRegister.store')}}">
+                <form class="form" method="GET" enctype="multipart/form-data" action="{{route('contact.us')}}">
                     @csrf
                     <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Name<span class="text-danger">*</span></label>
                             <input type="text" class="form-control input-bg" placeholder="Your Name" onfocus="this.placeholder = ''" value="{{ old('name')}}" onblur="this.placeholder = 'Your Name'" name="name">
                         </div>
                         @if($errors->has('name'))
@@ -63,7 +73,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="form-group">
-                            <label for="Mobile">Mobile Number</label>
+                            <label for="Mobile">Phone Number<span class="text-danger">*</span></label>
                             <input type="text" class="form-control input-bg" placeholder="ie: 01****" onfocus="this.placeholder = ''" value="{{ old('PhoneNumber')}}" onblur="this.placeholder = 'ie: 01****'" name="PhoneNumber">
                         </div>
                         @if($errors->has('PhoneNumber'))
@@ -74,11 +84,20 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="form-group">
-                            <label for="lookingfor">Looking for</label>
+                            <label for="lookingfor">Looking for<span class="text-danger">*</span></label>
                             <select required name="lookingfor" class="form-control form-select input-bg">
                                 <option value="">Select</option>
-                                <option value="">apply</option>
+                                @forelse($contactReason as $d)
+                                    <option value="{{$d->id}}" {{ old('lookingfor')==$d->id?"selected":""}}> {{ $d->reason}}</option>
+                                @empty
+                                    <option value="">No Data found</option>
+                                @endforelse
                             </select>
+                            @if($errors->has('lookingfor'))
+                            <small class="d-block text-danger">
+                                {{$errors->first('lookingfor')}}
+                            </small>
+                        @endif
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12 col-md-12 py-2">

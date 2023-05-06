@@ -1696,3 +1696,49 @@ figure{
   border-color: rgb(242, 158, 158) !important;
   padding: 11px;
 }
+.card.card-body.events-card {
+  height: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+  border: 1px solid #afafaf44;
+}
+.text-black, a.text-black:focus, a.text-black:hover, a.text-dark:focus, a.text-dark:hover {
+  color: #000!important;
+}
+h6.events-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(33 37 41);
+}
+span.events-date {
+  color: rgb(237 28 36);
+  font-weight: 600;
+}
+.description.events {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Raleway';
+  text-align: justify;
+  opacity: .9;
+}
+img.events-image {
+  width: 100%;
+  height: 9em;
+  object-fit: cover;
+  box-shadow: -3px -3px 0px 3px #fababa;
+  border-radius: 30px 0px;
+}
+.events.shape1 {
+  width: 150px;
+  height: 150px;
+  background: #fababa;
+  opacity: 0.6;
+  position: absolute;
+  top: -80px;
+  left: 86%;
+  border-radius: 50%;
+  -webkit-transform: rotate( 45deg);
+  transform: rotate( 45deg);
+}
+.events-card {
+  overflow: hidden;
+}

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\video_notice;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class VideoNoticeController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -40,10 +42,21 @@ class VideoNoticeController extends Controller
     public function store(Request $request)
     {
         try{
-            $videoNotice = new video_notice;
-            $videoNotice->title = $request->title;
-            $videoNotice->link = $request->link;
-            if($videoNotice->save()){
+            $vn = new video_notice;
+            $vn->title = $request->title;
+            $vn->short_description = $request->short_description;
+            $vn->long_description = $request->long_description;
+            if($request->has('image'))
+                $vn->image=$this->resizeImage($request->image,'uploads/video_notice',true,160,120,false);
+
+            if($request->hasFile('notice_file')){
+                $noticefileName = rand(111,999).time().'.'.$request->notice_file->extension();
+                $request->notice_file->move(public_path('uploads/video_notice'), $noticefileName);
+                $vn->notice_file=$noticefileName;
+            }
+            $vn->publish_date = $request->publish_date;
+            $vn->link = $request->link;
+            if($vn->save()){
                 Toastr::success('Create Successfully!');
                 return redirect()->route(currentUser().'.vNotice.index');
                 }else{
@@ -53,7 +66,7 @@ class VideoNoticeController extends Controller
 
         }catch (Exception $e){
             Toastr::warning('Please try Again!');
-            // dd($e);
+             dd($e);
             return back()->withInput();
         }
     }
@@ -91,10 +104,24 @@ class VideoNoticeController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $videoNotice = video_notice::findOrFail(encryptor('decrypt',$id));
-            $videoNotice->title = $request->title;
-            $videoNotice->link = $request->link;
-            if($videoNotice->save()){
+            $vn = video_notice::findOrFail(encryptor('decrypt',$id));
+            $vn->title = $request->title;
+            $vn->short_description = $request->short_description;
+            $vn->long_description = $request->long_description;
+
+            $path='uploads/video_notice';
+            if($request->has('image') && $request->image)
+            if($this->deleteImage($vn->image,$path))
+                $vn->image=$this->resizeImage($request->image,$path,true,160,120,false);
+
+            if($request->hasFile('notice_file')){
+                $noticefileName = rand(111,999).time().'.'.$request->notice_file->extension();
+                $request->notice_file->move(public_path('uploads/video_notice'), $noticefileName);
+                $vn->notice_file=$noticefileName;
+            }
+            $vn->publish_date = $request->publish_date;
+            $vn->link = $request->link;
+            if($vn->save()){
                 Toastr::success('Updated Successfully!');
                 return redirect()->route(currentUser().'.vNotice.index');
                 }else{
