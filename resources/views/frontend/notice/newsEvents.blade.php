@@ -16,7 +16,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-end bg-transparent mb-0">
                         <li class="breadcrumb-item">
-                            <a href="{{route('front')}}" class="breadcrumb-item router-link-active">News & Events</a>
+                            <a href="#" class="breadcrumb-item router-link-active">News & Events</a>
                         </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
