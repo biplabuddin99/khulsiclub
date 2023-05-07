@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-12 py-2">
                         <div class="form-group">
-                            <input type="checkbox" id="terms-condition" class="form-check-input">
+                            <input type="checkbox" id="terms-condition" class="form-check-input" required>
                             <label>You must agree with above <a href="{{route('terms')}}">Terms & Conditions</a></label>
                         </div>
                     </div>
