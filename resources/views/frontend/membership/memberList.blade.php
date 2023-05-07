@@ -13,7 +13,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-end bg-transparent mb-0">
                         <li class="breadcrumb-item">
-                            <a href="{{route('front')}}" class="breadcrumb-item router-link-active">Members</a>
+                            <a href="{{route('front')}}" class="breadcrumb-item router-link-active">Home</a>
                         </li>
                         <li class="breadcrumb-item">
                             <a href="">member list</a>
@@ -36,11 +36,20 @@
                         <div class="card-header">
                             <h4>Membership</h4>
                         </div>
-                        <ul class="sideber-nav flex-culumn ps-3">
+                        {{-- <ul class="sideber-nav flex-culumn ps-3">
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.list')}}">Member List</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="">Membership Process</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('memLogin')}}">Member Login</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member_registration')}}">Become a member</a></li>
+                        </ul> --}}
+                        <ul class="sideber-nav flex-culumn ps-3">
+                        @php 
+                            $curl=request()->path();
+                            $rows=DB::select("SELECT * from front_menus where parent_id = (select parent_id from front_menus where href='$curl') and status =1 order by rang");
+                        @endphp
+                            @forelse($rows as $r)
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
+                            @empty
+                            @endforelse
                         </ul>
 
                     </div>
