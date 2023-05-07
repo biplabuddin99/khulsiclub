@@ -51,7 +51,7 @@ class PhotoGallaryController extends Controller
             $pgc->status=$request->status;
             if($request->has('feature_image'))
                 $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
-
+            
             if($pgc->save()){
             Toastr::success('Photo Gallery Create Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');

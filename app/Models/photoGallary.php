@@ -14,4 +14,5 @@ class photoGallary extends Model
     public function year(){
         return $this->belongsTo(year::class);
     }
+    
 }
