@@ -29,8 +29,10 @@
                                 'Home'					=>'/',
                                 'Blank'					=>'#',
                                 'Member Login' 		    =>'mlogin',
+                                'Become a Member' 		=>'memberRegister',
                                 'Notice' 		        =>'all-notice',
-                                'Mamber List' 		    =>'memberlist',
+                                'News & Events' 		=>'news-events',
+                                'Member List' 		    =>'memberlist',
                                 'Photo Gallery' 		=>'photo_gallery',
                                 'Video Gallery' 		=>'video_gallery',
                                 'Contact Us' 			=>'contact_us'
