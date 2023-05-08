@@ -20,6 +20,7 @@
                     <li class="py-1"><a href="{{route(currentUser().'.benefit.index')}}">{{__('Benefits')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Contact Reason')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Contact Us List')}}</a></li>
+                    <li class="py-1"><a href="{{route(currentUser().'.tdue.index')}}">{{__('Total Dues')}}</a></li>
                 </ul>
             </li>
             <li class="submenu-item sidebar-item has-sub">
