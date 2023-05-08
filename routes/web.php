@@ -91,6 +91,8 @@ Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list')
 Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('searchByLetter');
 Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 
+Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
+
 // photo and video gallery
 Route::get('photo_gallery', [media::class,'pGallery'])->name('pGallery');
 Route::get('/album/{slug}', [media::class,'album'])->name('album');

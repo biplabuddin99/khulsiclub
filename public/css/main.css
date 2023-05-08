@@ -1742,3 +1742,9 @@ img.events-image {
 .events-card {
   overflow: hidden;
 }
+.border-bottom-red{
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 4px solid var(--red) !important;
+}

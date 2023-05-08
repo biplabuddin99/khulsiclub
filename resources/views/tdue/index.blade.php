@@ -19,25 +19,26 @@
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Member Type')}}</th>
-                                        <th scope="col">{{__('Name')}}</th>
-                                        <th scope="col">{{__('Membership-code')}}</th>
-                                        <th scope="col">{{__('Y-2016')}}</th>
-                                        <th scope="col">{{__('Y-2017')}}</th>
-                                        <th scope="col">{{__('Y-2018')}}</th>
-                                        <th scope="col">{{__('Y-2019')}}</th>
-                                        <th scope="col">{{__('Y-2020')}}</th>
-                                        <th scope="col">{{__('Y-2021')}}</th>
-                                        <th scope="col">{{__('Subs-Interest')}}</th>
-                                        <th scope="col">{{__('Land-Interest')}}</th>
-                                        <th scope="col">{{__('Land dev-fee')}}</th>
+                                        <th scope="col">{{__('Member Name')}}</th>
+                                        <th scope="col">{{__('Membership code')}}</th>
+                                        <th scope="col">{{__('2016')}}</th>
+                                        <th scope="col">{{__('2017')}}</th>
+                                        <th scope="col">{{__('2018')}}</th>
+                                        <th scope="col">{{__('2019')}}</th>
+                                        <th scope="col">{{__('2020')}}</th>
+                                        <th scope="col">{{__('2021')}}</th>
+                                        <th scope="col">{{__('10% Interest in Subscription')}}</th>
+                                        <th scope="col">{{__('Land Development Fee Dues 10% Interest')}}</th>
+                                        <th scope="col">{{__('Land Development Fee Due')}}</th>
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
                                     @forelse($data as $m)
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
-                                        <td>{{$m->member_type}}</td>
+                                        <td>{{$mt[$m->member_type]}}</td>
                                         <td>{{$m->member_name}}</td>
                                         <td>{{$m->membership_code}}</td>
                                         <td>{{$m->y2016}}</td>

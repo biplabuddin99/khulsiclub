@@ -18,15 +18,15 @@ return new class extends Migration
             $table->string('member_type')->nullable();
             $table->string('member_name')->nullable();
             $table->string('membership_code')->nullable();
-            $table->string('y2016')->nullable();
-            $table->string('y2017')->nullable();
-            $table->string('y2018')->nullable();
-            $table->string('y2019')->nullable();
-            $table->string('y2020')->nullable();
-            $table->string('y2021')->nullable();
-            $table->string('subscription_interest')->nullable();
-            $table->string('land_interest')->nullable();
-            $table->string('land_developmnet_fee')->nullable();
+            $table->decimal('y2016',10,2)->nullable()->default(0);
+            $table->decimal('y2017',10,2)->nullable()->default(0);
+            $table->decimal('y2018',10,2)->nullable()->default(0);
+            $table->decimal('y2019',10,2)->nullable()->default(0);
+            $table->decimal('y2020',10,2)->nullable()->default(0);
+            $table->decimal('y2021',10,2)->nullable()->default(0);
+            $table->decimal('subscription_interest',10,2)->nullable()->default(0);
+            $table->decimal('land_interest',10,2)->nullable()->default(0);
+            $table->decimal('land_developmnet_fee',10,2)->nullable()->default(0);
             $table->timestamps();
         });
     }

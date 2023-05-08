@@ -15,6 +15,7 @@ use App\Models\OurMember;
 use App\Models\MemberChildren;
 use App\Models\setting;
 use App\Models\Slider;
+use App\Models\total_due;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
@@ -130,38 +131,15 @@ class FrontendController extends Controller
         return view('frontend.Page.index',compact('page_data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Frontend $frontend)
+    /* get daynamic page */
+    public function club_dues()
     {
-        //
+        $founder_data= total_due::where('member_type',1)->get();
+        $life_data= total_due::where('member_type',2)->get();
+        $perm_data= total_due::where('member_type',3)->get();
+        $permter_data= total_due::where('member_type',4)->get();
+        return view('frontend.club_dues',compact('founder_data','life_data','perm_data','permter_data'));
     }
+
     
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Frontend $frontend)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Frontend $frontend)
-    {
-        //
-    }
 }
