@@ -38,7 +38,7 @@ class FoundingCommitteeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
