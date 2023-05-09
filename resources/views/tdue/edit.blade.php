@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update Scroll Notice'))
+@section('pageTitle',trans('Update Total Dues'))
 @section('pageSubTitle',trans('Update'))
 
 @section('content')

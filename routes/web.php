@@ -29,6 +29,7 @@ use App\Http\Controllers\ContactUsController as contact;
 use App\Http\Controllers\ContactReasonController as creason;
 use App\Http\Controllers\TermsOfMembershipController as terms;
 use App\Http\Controllers\TotalDueController as tdue;
+use App\Http\Controllers\FoundingCommitteeController as foundCommittee;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
@@ -133,6 +134,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('scrollN',scrollN::class,['as'=>'admin']);
         Route::resource('vNotice',vNotice::class,['as'=>'admin']);
         Route::resource('tdue',tdue::class,['as'=>'admin']);
+        Route::resource('foundCommittee',foundCommittee::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
         Route::get('front_menu', [frontMenu::class, 'index'])->name('admin.front_menu.index');

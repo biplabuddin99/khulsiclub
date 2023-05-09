@@ -11,6 +11,7 @@ use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
+use Carbon\Carbon;
 
 class OurMemberController extends Controller
 {
@@ -253,6 +254,13 @@ class OurMemberController extends Controller
             $member->show_font=$request->show_font;
             $member->order_b=$request->order_b;
             $member->status=$request->status;
+
+            if($request->status==2){
+                $member->member_id='0'.Carbon::now()->format('y'). str_pad((OurMember::whereYear('created_at', Carbon::now()->year)->where('status',2)->count() + 1),3,"0",STR_PAD_LEFT);
+            }else{
+                $member->member_id = null;
+            }
+
             $member->twter_link=$request->twter_link;
             $member->linkdin_link=$request->linkdin_link;
             $member->youtube_link=$request->youtube_link;

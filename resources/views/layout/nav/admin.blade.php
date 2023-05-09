@@ -79,4 +79,10 @@
             <li class="py-1"><a href="{{route(currentUser().'.ourMember.create')}}">{{__('Add New')}}</a></li>
         </ul>
     </li>
+    <li class="submenu-item sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Founding Committee')}}</span></a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.foundCommittee.index')}}">{{__('List')}}</a></li>
+        </ul>
+    </li>
 </ul>
