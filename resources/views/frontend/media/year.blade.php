@@ -63,7 +63,7 @@
                 @empty
                 <div class="col-lg-4 text-center">
                     <div class="text-center">
-                        <h4>There is no Photo uploaded yet</h4>
+                        <h3 class="mt-5">There is no Photo uploaded yet</h3>
                     </div>
                 </div>
                 @endforelse
