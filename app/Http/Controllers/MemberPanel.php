@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
+use DB;
 
 class MemberPanel extends Controller
 {
@@ -26,6 +27,21 @@ class MemberPanel extends Controller
         
         $member=OurMember::where('id',currentUserId())->first();
         return view('frontend.members.memberProfile',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function foundingMember()
+    {
+        
+        $fondMember = DB::table('our_members')
+                ->join('founding_committees', 'our_members.member_id', '=', 'founding_committees.member_id')
+                ->select('our_members.*')
+                ->paginate(10);
+        return view('frontend.membership.foundingMember',compact('fondMember'));
     }
     /**
      * Show the form for editing the specified resource.

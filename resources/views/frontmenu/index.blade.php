@@ -30,6 +30,7 @@
                                 'Blank'					=>'#',
                                 'Member Login' 		    =>'mlogin',
                                 'Become a Member' 		=>'memberRegister',
+                                'Founding Committee' 	=>'founding-member',
                                 'Notice' 		        =>'all-notice',
                                 'News & Events' 		=>'news-events',
                                 'Member List' 		    =>'memberlist',
