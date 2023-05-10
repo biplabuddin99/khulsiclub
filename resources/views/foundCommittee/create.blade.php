@@ -1,11 +1,11 @@
 @extends('layout.app')
-@section('pageTitle',trans('Add Executive'))
+@section('pageTitle',trans('Add Founding Executive Committee'))
 @section('pageSubTitle',trans('add'))
 
 @section('content')
 <div class="row m-3">
     <div class="col-lg-4 offset-lg-4 col-sm-12 text-center mb-4">
-        <h4 class="p-2 text-uppercase bg-danger text-white">Add New Executive Member</h4>
+        <h4 class="p-2 text-uppercase bg-danger text-white">Add Founding Executive</h4>
     </div>
     <div class="col-lg-8 offset-lg-2 col-sm-12 ">
         <input type="text" name="" id="item_search" class="form-control  ui-autocomplete-input" placeholder="Search by name or id" style="border-color: red;">

@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Our Executive List'))
+@section('pageTitle',trans('Founding Executive Committee List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
