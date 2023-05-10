@@ -1,9 +1,8 @@
 @extends('layout.app')
 @section('pageTitle',trans('Profile Statistics'))
-
 @section('content')
 
-<div class="page-content">
+<div class="page-content py-3">
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">

@@ -1,26 +1,24 @@
 @extends('layout.app')
-@section('pageTitle',trans('Create Facilities'))
-@section('pageSubTitle',trans('Create'))
+@section('pageTitle',trans('Add Executive'))
+@section('pageSubTitle',trans('add'))
 
 @section('content')
 <div class="row m-3">
-    <div class="col-8 offset-2">
-        <input type="text" name="" id="item_search" class="form-control  ui-autocomplete-input" placeholder="Search Product">
+    <div class="col-lg-5 offset-lg-3 col-sm-12 text-center mb-4">
+        <h3 class="p-2 text-uppercase bg-danger text-white">Add New Executive Member</h3>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-sm-12 ">
+        <input type="text" name="" id="item_search" class="form-control  ui-autocomplete-input" placeholder="Search Member">
     </div>
 </div>
-<div class="row">
+<div class="row m-3">
     <div class="col-lg-12 col-sm-12 col-md-12 tbl-scroll">
         <table class="table mb-5">
             <thead>
                 <tr class="bg-primary text-white">
-                    <th class="p-2">Product Name</th>
-                    <th class="p-2">Quantity</th>
-                    <th class="p-2">Purchase Price</th>
-                    <th class="p-2">Tax %</th>
-                    <th class="p-2">Discount Type</th>
-                    <th class="p-2">Discount</th>
-                    <th class="p-2">Unit Cost</th>
-                    <th class="p-2">Total Amount</th>
+                    <th class="p-2">Member Name</th>
+                    <th class="p-2">Member ID</th>
+                    <th class="p-2">Contact</th>
                     <th class="p-2">Action</th>
                 </tr>
             </thead>
