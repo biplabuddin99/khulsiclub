@@ -23,8 +23,19 @@ class OurMemberController extends Controller
      */
     public function index()
     {
-        $ourmember=OurMember::paginate(10);
+        $ourmember=OurMember::whereNot('status',2)->paginate(10);
         return view('ourmember.index',compact('ourmember'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function approvedMember()
+    {
+        $ourmember=OurMember::where('status',2)->paginate(10);
+        return view('ourmember.approveMember',compact('ourmember'));
     }
     
     /**

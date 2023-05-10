@@ -4,28 +4,34 @@
 
 @section('content')
 <div class="row m-3">
-    <div class="col-lg-5 offset-lg-3 col-sm-12 text-center mb-4">
-        <h3 class="p-2 text-uppercase bg-danger text-white">Add New Executive Member</h3>
+    <div class="col-lg-4 offset-lg-4 col-sm-12 text-center mb-4">
+        <h4 class="p-2 text-uppercase bg-danger text-white">Add New Executive Member</h4>
     </div>
     <div class="col-lg-8 offset-lg-2 col-sm-12 ">
-        <input type="text" name="" id="item_search" class="form-control  ui-autocomplete-input" placeholder="Search Member">
+        <input type="text" name="" id="item_search" class="form-control  ui-autocomplete-input" placeholder="Search by name or id" style="border-color: red;">
     </div>
 </div>
 <div class="row m-3">
     <div class="col-lg-12 col-sm-12 col-md-12 tbl-scroll">
-        <table class="table mb-5">
-            <thead>
-                <tr class="bg-primary text-white">
-                    <th class="p-2">Member Name</th>
-                    <th class="p-2">Member ID</th>
-                    <th class="p-2">Contact</th>
-                    <th class="p-2">Action</th>
-                </tr>
-            </thead>
-            <tbody id="details_data">
-
-            </tbody>
-        </table>
+        <form method="post" action="{{route(currentUser().'.foundCommittee.store')}}">
+            @csrf
+            <table class="table mb-5">
+                <thead>
+                    <tr class="bg-primary text-white text-center">
+                        <th class="p-2">Member Name</th>
+                        <th class="p-2">Member ID</th>
+                        <th class="p-2">Contact</th>
+                        <th class="p-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="details_data">
+    
+                </tbody>
+            </table>
+            <div class="col-2 offset-5 d-flex justify-content-center">
+                <button type="submit" class="btn btn-block btn-primary">Save</button>
+            </div>
+        </form>
     </div>
 </div>
 @endsection
@@ -61,7 +67,7 @@
                     if (res.length) {
                         result = $.map(res, function(el){
                             return {
-                                label: el.value +'--'+ el.label,
+                                label: el.value1 +' '+ el.value2 +'['+ el.label+']',
                                 value: '',
                                 id: el.id,
                                 item_name: el.value
@@ -105,8 +111,30 @@
             },   
             //loader end
     });
-
-
 });
+function return_row_with_data(item_id){
+  $("#item_search").addClass('ui-autocomplete-loader-center');
+    $.ajax({
+            autoFocus:true,
+                url: "{{route(currentUser().'.member_search_data')}}",
+                method: 'GET',
+                dataType: 'json',
+                data: {
+                    item_id: item_id
+                },
+                success: function(res){
+                    $('#details_data').append(res);
+                    $("#item_search").val('');
+                    $("#item_search").removeClass('ui-autocomplete-loader-center');
+                },error: function(e){
+                    console.log("error "+e);
+                }
+            });
+	
+}
+//INCREMENT ITEM
+function removerow(e){
+  $(e).parents('tr').remove();
+}
 </script>
 @endpush

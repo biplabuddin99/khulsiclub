@@ -137,6 +137,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('foundCommittee',foundCommittee::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
+        Route::get('approved-member', [member::class, 'approvedMember'])->name('admin.approve_member');
         Route::get('front_menu', [frontMenu::class, 'index'])->name('admin.front_menu.index');
         Route::post('menu_save_update/{id?}', [frontMenu::class, 'save_update'])->name('admin.front_menu.save');
         Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('admin.front_menu.mss');
@@ -144,6 +145,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
 
         //member search
         Route::get('/member-search', [foundCommittee::class,'search'])->name('admin.member_search');
+        Route::get('/member_search_data', [foundCommittee::class,'member_search_data'])->name('admin.member_search_data');
 
     });
 });

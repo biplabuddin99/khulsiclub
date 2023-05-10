@@ -18,8 +18,6 @@
                     <li class="py-1"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('Scroll Notice')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.benefit.index')}}">{{__('Benefits')}}</a></li>
-                    <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Contact Reason')}}</a></li>
-                    <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Contact Us List')}}</a></li>
                     <li class="py-1"><a href="{{route(currentUser().'.tdue.index')}}">{{__('Total Dues')}}</a></li>
                 </ul>
             </li>
@@ -75,14 +73,21 @@
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Our Members')}}</span></a>
         <ul class="submenu">
-            <li class="py-1"><a href="{{route(currentUser().'.ourMember.index')}}">{{__('List')}}</a></li>
-            <li class="py-1"><a href="{{route(currentUser().'.ourMember.create')}}">{{__('Add New')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.ourMember.index')}}">{{__('Applied Member list')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.approve_member')}}">{{__('Approve Member list')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Founding Committee')}}</span></a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.foundCommittee.index')}}">{{__('List')}}</a></li>
+        </ul>
+    </li>
+    <li class="submenu-item sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Contact Us')}}</span></a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Create Reason')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Contact Us List')}}</a></li>
         </ul>
     </li>
 </ul>

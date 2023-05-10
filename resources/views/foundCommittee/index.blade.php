@@ -22,10 +22,11 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Member ID')}}</th>
                                 <th scope="col">{{__('Mother\'s Name')}}</th>
                                 <th scope="col">{{__('Nominee')}}</th>
                                 <th scope="col">{{__('Profession')}}</th>
-                                <th scope="col">{{__('Emergency Contact No')}}</th>
+                                <th scope="col">{{__('Contact No')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
@@ -33,7 +34,8 @@
                             @forelse($ourmember as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td>{{$p->full_name}}</td>
+                                <td>{{$p->given_name}} {{$p->surname}}</td>
+                                <td>{{$p->member_id}}</td>
                                 <td>{{$p->mother_name}}</td>
                                 <td>{{$p->nominee}}</td>
                                 <td>{{$p->profession}}</td>
@@ -43,7 +45,7 @@
                                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.ourMember.destroy',encryptor('encrypt',$p->id))}}" method="post">
+                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.foundCommittee.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -56,7 +58,7 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-end my-3">
+                    <div class=" my-3">
                         {!! $ourmember->links()!!}
                     </div>
                 </div>

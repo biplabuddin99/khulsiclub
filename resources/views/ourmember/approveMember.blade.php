@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Our Member List'))
+@section('pageTitle',trans('Approved Member List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -12,9 +12,9 @@
                 @if(Session::has('response'))
                     {!!Session::get('response')['message']!!}
                 @endif
-                <div>
+                {{-- <div>
                     <a class="float-end" href="{{route(currentUser().'.ourMember.create')}}" style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
-                </div>
+                </div> --}}
                 <!-- table bordered -->
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
@@ -26,8 +26,7 @@
                                 <th scope="col">{{__('Mother\'s Name')}}</th>
                                 <th scope="col">{{__('Nominee')}}</th>
                                 <th scope="col">{{__('Profession')}}</th>
-                                <th scope="col">{{__('Contact No')}}</th>
-                                <th scope="col">{{__('Status')}}</th>
+                                <th scope="col">{{__('Emergency Contact No')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
@@ -41,10 +40,6 @@
                                 <td>{{$p->nominee}}</td>
                                 <td>{{$p->profession}}</td>
                                 <td>{{$p->cell_number}}</td>
-                                <td>@if($p->status == 1) {{'Applied for approval'}} 
-                                    @elseif ($p->status == 3) {{'Suspended'}}
-                                    @else {{'Pending'}} 
-                                    @endif</td>
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-eye-fill"></i>
