@@ -368,6 +368,10 @@ marquee p{
 .notice-div-one span {
   padding-top: 10px;
 }
+.notice-div-one a{
+  text-decoration: none;
+  color: var(--red);
+}
 .notice-title, .notice-carousel {
   margin-top: 7px;
 }

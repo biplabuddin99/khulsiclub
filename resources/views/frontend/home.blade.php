@@ -120,7 +120,9 @@
           <div class="col-sm-12 col-md-12 col-lg-7">
               <div class="mt-3 d-flex notice-div-one ">
                 <span class="material-icons me-2"> today </span>
-                <p class="fs-4 mb-1 pt-1">News & Events</p>
+                <a href="{{route('event-notice')}}">
+                  <p class="fs-4 mb-1 pt-1">News & Events</p>
+                </a>
               </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner n-item-center notice-carousel shadow text-center">
@@ -159,7 +161,9 @@
           <div class="col-sm-12 col-md-12 col-lg-5 notice">
             <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
-              <p class="fs-4 mb-1 pt-1">Notice</p>
+              <a href="{{route('all-notice')}}">
+                <p class="fs-4 mb-1 pt-1">Notice</p>
+              </a>
             </div>
             <div class="height-300">
                 @forelse ($notice as $n)
