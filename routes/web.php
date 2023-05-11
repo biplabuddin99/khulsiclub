@@ -30,6 +30,8 @@ use App\Http\Controllers\ContactReasonController as creason;
 use App\Http\Controllers\TermsOfMembershipController as terms;
 use App\Http\Controllers\TotalDueController as tdue;
 use App\Http\Controllers\FoundingCommitteeController as foundCommittee;
+use App\Http\Controllers\CommitteeSessionController as committeeSession;
+use App\Http\Controllers\ExecutiveCommitteeController as exeCommittee;
 
 use App\Http\Controllers\Products\UnitController as unit;
 
@@ -136,6 +138,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('vNotice',vNotice::class,['as'=>'admin']);
         Route::resource('tdue',tdue::class,['as'=>'admin']);
         Route::resource('foundCommittee',foundCommittee::class,['as'=>'admin']);
+        Route::resource('committeeSession',committeeSession::class,['as'=>'admin']);
+        Route::resource('exeCommittee',exeCommittee::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
         Route::get('approved-member', [member::class, 'approvedMember'])->name('admin.approve_member');

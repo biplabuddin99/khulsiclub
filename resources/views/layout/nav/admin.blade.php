@@ -78,9 +78,11 @@
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Founding Committee')}}</span></a>
+        <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Committees & Forums')}}</span></a>
         <ul class="submenu">
-            <li class="py-1"><a href="{{route(currentUser().'.foundCommittee.index')}}">{{__('List')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.committeeSession.index')}}">{{__('Committee Session')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.foundCommittee.index')}}">{{__('Foundind Committees')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.exeCommittee.index')}}">{{__('Executive Committee')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
