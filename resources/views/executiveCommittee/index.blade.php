@@ -18,6 +18,8 @@
                                 <tr class="text-center">
                                     <th scope="col">{{__('#SL')}}</th>
                                     <th scope="col">{{__('Member')}}</th>
+                                    <th scope="col">{{__('Member ID')}}</th>
+                                    <th scope="col">{{__('Contact No')}}</th>
                                     <th scope="col">{{__('Session')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                 </tr>
@@ -27,6 +29,8 @@
                                 <tr class="text-center">
                                 <th scope="row">{{ ++$loop->index }}</th>
                                     <td>{{$b->member?->full_name}}</td>
+                                    <td>{{$b->member?->member_id}}</td>
+                                    <td>{{$b->member?->cell_number}}</td>
                                     <td>{{$b->session?->session_name}}</td>
                                     <td class="white-space-nowrap">
                                         <a href="{{route(currentUser().'.exeCommittee.edit',encryptor('encrypt',$b->id))}}">
