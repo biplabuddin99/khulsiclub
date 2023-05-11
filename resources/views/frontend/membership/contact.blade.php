@@ -138,7 +138,7 @@
                     </span>
                 </div>
                 <h4 class="mt-4 mb-2">Connect With Us</h4>
-                <div class="contact-border social-icon">
+                <div class=" social-icon">
                     <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
                     <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
                     <a href="{{ $setting?->linkdin_link }}"><i class="bi bi-linkedin ms-0 ps-0"></i></a>

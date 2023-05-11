@@ -366,7 +366,7 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text my-auto">
-                <p><span>BECOME A <span class="theme-color">MEMBER</span></span></p>
+                <p><span>Become a <span class="theme-color">Member</span></span></p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 apply-text">
                 <a class="shadow" href="{{route('member_registration')}}">Apply Now</a>
