@@ -101,7 +101,9 @@
                     </div>
                 </div>
                 @empty
-                    
+                <div class="col-12 text-center p-5">
+                    <h3>No Data Found</h3>
+                </div>  
                 @endforelse
             </div>
             

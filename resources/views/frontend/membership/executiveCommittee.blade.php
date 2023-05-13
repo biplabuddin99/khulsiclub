@@ -72,8 +72,8 @@
                         <span class="shape"></span>
                         <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->member?->image)}}" alt="No Photos">
                         <div class="card-body">
-                            <span class="member-degignation">{{$fm->member?->profession}}</span>
-                            <h4 class="member-title">{{$fm->given_name }} {{$fm->member?->surname }}</h4>
+                            <span class="member-degignation">{{$fm->designation}}</span>
+                            <h4 class="member-title">{{$fm->member?->full_name }}</h4>
                             <small>
                                 <strong>Email:</strong>
                                 {{$fm->member?->email }}
@@ -96,7 +96,9 @@
                     </div>
                 </div>
                 @empty
-                    
+                <div class="col-12 text-center p-5">
+                    <h3>No Data Found</h3>
+                </div> 
                 @endforelse
             </div>
             
