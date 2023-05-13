@@ -46,6 +46,7 @@ class ExecutiveCommitteeController extends Controller
             $b= new executive_committee;
             $b->member_id=$request->member_id;
             $b->committee_sessions_id=$request->session_id;
+            $b->designation=$request->designation;
             if($b->save()){
                 Toastr::success('Created Successfully!');
                 return redirect()->route(currentUser().'.exeCommittee.index');
@@ -99,6 +100,7 @@ class ExecutiveCommitteeController extends Controller
             $b= executive_committee::findOrFail(encryptor('decrypt',$id));
             $b->member_id=$request->member_id;
             $b->committee_sessions_id=$request->session_id;
+            $b->designation=$request->designation;
             if($b->save()){
                 Toastr::success('Updated Successfully!');
                 return redirect()->route(currentUser().'.exeCommittee.index');

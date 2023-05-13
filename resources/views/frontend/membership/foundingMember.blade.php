@@ -67,7 +67,17 @@
                         <span class="shape"></span>
                         <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
                         <div class="card-body">
-                            <span class="member-degignation">{{$fm->profession}}</span>
+                            <span class="member-degignation">
+                                @if ($fm->membership_applied == 1){{'Donor Member'}}
+                                @elseif($fm->membership_applied == 2){{'Life Member'}}
+                                @elseif($fm->membership_applied == 3){{'Service Member'}}
+                                @elseif($fm->membership_applied == 4){{'Temporary Member'}}
+                                @elseif($fm->membership_applied == 5){{'Permanent Member'}}
+                                @elseif($fm->membership_applied == 6){{'Honorary Member'}}
+                                @elseif($fm->membership_applied == 7){{'Corporate Member'}}
+                                @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
+                                @endif
+                            </span>
                             <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
                             <small>
                                 <strong>Email:</strong>

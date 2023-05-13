@@ -38,6 +38,12 @@
                                         </select>
                                       </div>
                                   </div>
+                                  <div class="row mb-3">
+                                      <label for="session" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Designation')}}<span class="text-danger">*</span></b></label>
+                                      <div class="col-sm-6 offset-1 m-0">
+                                        <input type="text" class="form-control" value="{{ old('designation')}}" name="designation">
+                                      </div>
+                                  </div>
                                   <div class="col-6 offset-3 d-flex justify-content-end">
                                       <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
                                   </div>

@@ -19,6 +19,7 @@
                                     <th scope="col">{{__('#SL')}}</th>
                                     <th scope="col">{{__('Member')}}</th>
                                     <th scope="col">{{__('Member ID')}}</th>
+                                    <th scope="col">{{__('Designation')}}</th>
                                     <th scope="col">{{__('Contact No')}}</th>
                                     <th scope="col">{{__('Session')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
@@ -30,6 +31,7 @@
                                 <th scope="row">{{ ++$loop->index }}</th>
                                     <td>{{$b->member?->full_name}}</td>
                                     <td>{{$b->member?->member_id}}</td>
+                                    <td>{{$b->designation}}</td>
                                     <td>{{$b->member?->cell_number}}</td>
                                     <td>{{$b->session?->session_name}}</td>
                                     <td class="white-space-nowrap">
@@ -48,7 +50,7 @@
                                 </tr>
                                 @empty
                                 <tr class="text-center">
-                                    <th colspan="4" class="text-center">No Data Found</th>
+                                    <th colspan="6" class="text-center">No Data Found</th>
                                 </tr>
                                 @endforelse
                             </tbody>
