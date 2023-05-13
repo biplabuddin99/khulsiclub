@@ -31,6 +31,7 @@
                                 'Member Login' 		    =>'mlogin',
                                 'Become a Member' 		=>'memberRegister',
                                 'Founding Committee' 	=>'founding-member',
+                                'Executive Committee' 	=>'executive-session-member',
                                 'Notice' 		        =>'all-notice',
                                 'News & Events' 		=>'news-events',
                                 'Member List' 		    =>'memberlist',

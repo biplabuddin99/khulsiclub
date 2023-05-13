@@ -92,6 +92,8 @@ Route::post('/become_a_member/save', [front::class,'mem_regi_store'])->name('mem
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::get('memberlist', [MemberPanel::class,'memberlist'])->name('member.list');
 Route::get('founding-member', [MemberPanel::class,'foundingMember'])->name('foundmember.list');
+Route::get('executive-session-member', [MemberPanel::class,'executiveSession'])->name('exe-session-list');
+Route::get('/executive-member{slug}', [MemberPanel::class,'executiveMember'])->name('exe-member-list');
 Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('searchByLetter');
 Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 

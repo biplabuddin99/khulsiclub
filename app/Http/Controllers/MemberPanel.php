@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurMember;
+use App\Models\committee_session;
+use App\Models\executive_committee;
 use App\Models\MemberChildren;
 use App\Models\terms_of_membership;
 use Illuminate\Http\Request;
@@ -39,9 +41,33 @@ class MemberPanel extends Controller
         
         $foundMember = DB::table('our_members')
                 ->join('founding_committees', 'our_members.member_id', '=', 'founding_committees.member_id')
-                ->select('our_members.*')
-                ->paginate(10);
+                ->select('our_members.*')->get();
         return view('frontend.membership.foundingMember',compact('foundMember'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function executiveSession()
+    {
+        $committeeSession = committee_session::all();
+        return view('frontend.membership.committeeSession',compact('committeeSession'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function executiveMember($slug)
+    {
+        $committeeSession = committee_session::all();
+        $session = committee_session::where('id', $slug)->first();
+        $exMember = executive_committee::where('committee_sessions_id', $session->id)->get();
+        return view('frontend.membership.executiveCommittee', compact('exMember','committeeSession'));
     }
     /**
      * Show the form for editing the specified resource.

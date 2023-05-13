@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">Founding Committee List</h3>
+                <h3 class="mb-0">Executive Committee List</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
@@ -50,6 +50,11 @@
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
                             @empty
                             @endforelse
+                            @forelse ($committeeSession as $cs)
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
+                            @empty
+                                
+                            @endforelse
                         </ul>
 
                     </div>
@@ -58,34 +63,34 @@
         </div>
         <div class="col-lg-9 px-2 ">
             <div class="about-title" id="grad">
-                <h6 class="text-uppercase p-1">Founding Committee List</h6>
+                <h6 class="text-uppercase p-1">Executive Committee List</h6>
             </div>
             <div class="row">
-                @forelse ($foundMember as $fm)
+                @forelse ($exMember as $fm)
                 <div class="col-md-4 py-2">
                     <div class="card member-box shadow-lg">
                         <span class="shape"></span>
-                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->member?->image)}}" alt="No Photos">
                         <div class="card-body">
-                            <span class="member-degignation">{{$fm->profession}}</span>
-                            <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
+                            <span class="member-degignation">{{$fm->member?->profession}}</span>
+                            <h4 class="member-title">{{$fm->given_name }} {{$fm->member?->surname }}</h4>
                             <small>
                                 <strong>Email:</strong>
-                                {{$fm->email }}
+                                {{$fm->member?->email }}
                             </small>
                             <br>
                             <small>
                                 <strong>Company:</strong>
-                                {{$fm->company}}
+                                {{$fm->member?->company}}
                             </small>
                         </div>
                         <div class="card-footer">
                             <div class="social">
                                 <big>Follow:</big>
-                                <span class="social-icon"><a href="{{$fm->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
-                                <span class="social-icon"><a href="{{$fm->twter_link }}" target="_blank"><i class="bi bi-twitter ms-0 ps-0"></i></a></span>
-                                <span class="social-icon"><a href="{{$fm->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
-                                <span class="social-icon"><a href="{{$fm->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->twter_link }}" target="_blank"><i class="bi bi-twitter ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
                             </div>
                         </div>
                     </div>
