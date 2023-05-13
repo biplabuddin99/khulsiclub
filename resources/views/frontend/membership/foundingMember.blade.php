@@ -57,51 +57,39 @@
             </div>
         </div>
         <div class="col-lg-9 px-2 ">
-            <div class="row py-3">
-                <div class="col-lg-12">
-                    <div class="card card-body shadow-sm">
-                        @forelse ($fondMember as $m)
-                        <div class="search-list-item row ">
-                            <div class="col-lg-2 align-self-center text-center">
-                                <img src="{{asset('uploads/member_image/thumb/'.$m->image)}}" alt="No Image" width="100px">
-                            </div>
-                            <div class="col-lg-2 text-center border-end ps-0 pe-0">
-                                <h1> [{{$m->member_id}}]</h1>
-                                <h5>
-                                    @if ($m->membership_applied == 1){{'Donor Member'}}
-                                    @elseif($m->membership_applied == 2){{'Life Member'}}
-                                    @elseif($m->membership_applied == 3){{'Service Member'}}
-                                    @elseif($m->membership_applied == 4){{'Temporary Member'}}
-                                    @elseif($m->membership_applied == 5){{'Permanent Member'}}
-                                    @elseif($m->membership_applied == 6){{'Honorary Member'}}
-                                    @elseif($m->membership_applied == 7){{'Corporate Member'}}
-                                    @elseif($m->membership_applied == 8){{'Diplomate Member'}}
-                                    @endif
-                                </h5>
-                                @if($m->attach_pdf)
-                                {{-- <a href="{{asset('uploads/company_pdf/'.$m->attach_pdf)}}" target="_blank" class="btn-custom text-danger">[PDF Profile]</a> --}}
-                                @else
-                                {{-- <a href="#" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a> --}}
-                                @endif
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                                <h4><a href="#">{{$m->company}}</a></h4>
-                                <p>{{$m->description}}</p>
-                            </div>
-                            <div class="col-lg-2 align-self-center text-center">
-                                <a href="#" class="btn btn-sm btn-outline-explore">More Details</a>
-                            </div>
+            <div class="about-title" id="grad">
+                <h6 class="text-uppercase p-1">Founding Committee List</h6>
+            </div>
+            <div class="row">
+                @forelse ($foundMember as $fm)
+                <div class="col-md-4 py-2">
+                    <div class="card member-box shadow-lg">
+                        <span class="shape"></span>
+                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                        <div class="card-body">
+                            <span class="member-degignation"></span>
+                            <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
+                            <small>
+                                <strong>Email:</strong>
+                                {{$fm->email }}
+                            </small>
+                            <br>
+                            <small>
+                                <strong>Company:</strong>
+                                {{$fm->company}}
+                            </small>
                         </div>
-                        @empty
-                        <div class="search-list-item row ">
-                            <div class="text-center">No Data Found</div>
-                        </div>
-                        @endforelse
-                        <div class="d-flex justify-content-end mt-2">
-                            {!! $fondMember->links()!!}
+                        <div class="card-footer">
+                            <div class="social">
+                                <big>Follow:</big>
+                                <span><a href=""></a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                @empty
+                    
+                @endforelse
             </div>
             
         </div>

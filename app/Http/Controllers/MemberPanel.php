@@ -37,11 +37,11 @@ class MemberPanel extends Controller
     public function foundingMember()
     {
         
-        $fondMember = DB::table('our_members')
+        $foundMember = DB::table('our_members')
                 ->join('founding_committees', 'our_members.member_id', '=', 'founding_committees.member_id')
                 ->select('our_members.*')
                 ->paginate(10);
-        return view('frontend.membership.foundingMember',compact('fondMember'));
+        return view('frontend.membership.foundingMember',compact('foundMember'));
     }
     /**
      * Show the form for editing the specified resource.

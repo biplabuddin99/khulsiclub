@@ -1759,3 +1759,54 @@ img.events-image {
   padding-bottom: 5px;
   border-bottom: 4px solid var(--red) !important;
 }
+
+/* founding committee */
+.member-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.member-box .shape {
+  width: 200px;
+  height: 200px;
+  background: #fababa;
+  opacity: .2;
+  position: absolute;
+  top: 0;
+  right: -100px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.member-box .card-img-top {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  border-bottom: 5px solid #fababa;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+}
+.member-box .card-body {
+  position: relative;
+  height: 155px;
+}
+.member-box .member-title {
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  letter-spacing: -.025em;
+}
+.member-box .card-footer {
+  background-color: transparent;
+  border: 0;
+}
+.member-box .social {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}

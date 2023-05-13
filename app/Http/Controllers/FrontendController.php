@@ -54,7 +54,8 @@ class FrontendController extends Controller
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
         $benefit = BenefitsOfMember::latest()->take(6)->get();
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','scroll_notice','vNotice'));
+        $showViewMoreButton = BenefitsOfMember::count() > 6;
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','showViewMoreButton','scroll_notice','vNotice'));
     }
     /**
      * Show the form for creating a new resource.

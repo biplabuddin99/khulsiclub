@@ -361,9 +361,11 @@
                     </li>
                   @endforelse
                 </ul>
-                <div class="ps-1 viewbutton">
-                  <a class="btn btn-sm btn-danger" href="{{route('member.benefit')}}">View more</a>
-                </div>
+                  @if($showViewMoreButton)
+                      <div class="ps-1 viewbutton">
+                          <a class="btn btn-sm btn-danger" href="{{ route('member.benefit') }}">View more</a>
+                      </div>
+                  @endif
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text my-auto">
                 <p><span>Become a <span class="theme-color">Member</span></span></p>
