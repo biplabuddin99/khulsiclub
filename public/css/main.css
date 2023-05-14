@@ -1174,8 +1174,8 @@ footer img {
     right: -47px;
     top: 59px;
 }
-.member .owl-prev,.member .owl-next {
-  top: 104px;
+.owl-member .owl-prev,.owl-member .owl-next {
+  top: 157px;
 }
 /*1200px  */
 
