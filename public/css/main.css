@@ -1174,8 +1174,8 @@ footer img {
     right: -47px;
     top: 59px;
 }
-.member .owl-prev,.member .owl-next {
-  top: 104px;
+.owl-member .owl-prev,.owl-member .owl-next {
+  top: 157px;
 }
 /*1200px  */
 
@@ -1795,7 +1795,7 @@ img.events-image {
   height: 155px;
 }
 .member-box .member-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   height: 40px;
   letter-spacing: -.025em;
