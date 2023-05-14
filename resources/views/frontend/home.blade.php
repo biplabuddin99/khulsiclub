@@ -249,30 +249,49 @@
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="member-background">
-        <section class="container member pb-5 ">
+        <section class="container pb-5 ">
           <h4 class="animate-title">OUR MEMBERS</h4>
           <div class="row owl-member owl-theme">
-          @forelse ($ourMember as $member)
-            <div class="col-12 item pe-3 ps-3">
-              <div class="shadow p-2 mb-3 memeber-card ">
-                <div class="border-member">
-                  <img src="{{asset('uploads/member_image/thumb/'.$member->image)}}" alt="Photo" />
-                  <p>{{$member->full_name}}</p>
-                  <p>{{$member->company}}, {{$member->profession}}</p>
-                  <p>@if($member->membership_applied == 1) {{__('Donor Member, DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-
-                    @elseif ($member->membership_applied == 2) {{__('Service Member, SM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 3) {{__('Life Member, LM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 4) {{__('Temporary Member, TM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 5) {{__('Permanent Member, PM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 6) {{__('Honorary Member, HM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 7) {{__('Corporate Member, CM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-                    @elseif ($member->membership_applied == 8) {{__('Diplomate Member DM') }}{{str_pad($member->id, 3, "0", STR_PAD_LEFT)}}
-
-                    @else {{__('') }} @endif</p>
+          @forelse ($ourMember as $fm)
+          <div class="col-12 item pe-3 ps-3">
+            <div class="card member-box shadow-lg">
+                <span class="shape"></span>
+                <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                <div class="card-body">
+                    <span class="member-degignation">
+                        @if ($fm->membership_applied == 1){{'Donor Member'}}
+                        @elseif($fm->membership_applied == 2){{'Life Member'}}
+                        @elseif($fm->membership_applied == 3){{'Service Member'}}
+                        @elseif($fm->membership_applied == 4){{'Temporary Member'}}
+                        @elseif($fm->membership_applied == 5){{'Permanent Member'}}
+                        @elseif($fm->membership_applied == 6){{'Honorary Member'}}
+                        @elseif($fm->membership_applied == 7){{'Corporate Member'}}
+                        @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
+                        @endif
+                    </span>
+                    <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
+                    <small>
+                        <strong>Email:</strong>
+                        {{$fm->email }}
+                    </small>
+                    <br>
+                    <small>
+                        <strong>Company:</strong>
+                        {{$fm->company}}
+                    </small>
                 </div>
-              </div>
+                <div class="card-footer">
+                    <div class="social">
+                        <big>Follow:</big>
+                        <span class="social-icon"><a href="{{$fm->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                        <span class="social-icon"><a href="{{$fm->twter_link }}" target="_blank"><i class="bi bi-twitter ms-0 ps-0"></i></a></span>
+                        <span class="social-icon"><a href="{{$fm->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
+                        <span class="social-icon"><a href="{{$fm->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
+                    </div>
+                </div>
             </div>
+        </div>
+            
           @empty
             <div class="col-12 item pe-3 ps-3">
               <div class="shadow p-2 mb-3"style="background: #FFF">
