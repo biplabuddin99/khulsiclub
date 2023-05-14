@@ -33,12 +33,12 @@
                         <span class="shape"></span>
                         <span class="shape2"></span>
                         <div class="card-header">
-                            <h4>Member Categories</h4>
+                            <h4>Member Type</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
                             @php $m=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
                             @forelse ($memberType as $mt)
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$mt->id)}}">{{$m[$mt->member_type]}}</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues_members',$mt->id)}}">{{$m[$mt->member_type]}}</a></li>
                             @empty
                                 
                             @endforelse
