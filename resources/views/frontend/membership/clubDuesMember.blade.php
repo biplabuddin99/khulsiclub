@@ -52,9 +52,25 @@
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">Total Dues</h6>
             </div>
-            <?php 
-            print_r($members);
-            ?>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="member-search">
+                        <div class="search-body">
+                            <h1>Member Search</h1>
+                            <form action="{{ route('club_members_search') }}" method="get">
+                                <input type="hidden" name="member_type" value="{{ $slug }}">
+                                <div class="searchBox">
+                                    <input type="text" value="{{ request()->input('name', '') }}"  name="membership_code" id="search" placeholder="Membership code">
+                                    <button type="submit">
+                                        <span class="bi bi-search"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
