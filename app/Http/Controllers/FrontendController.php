@@ -142,5 +142,19 @@ class FrontendController extends Controller
         return view('frontend.club_dues',compact('founder_data','life_data','perm_data','permter_data'));
     }
 
+    /* get daynamic page */
+    public function club_dues_member_type()
+    {
+        $memberType= total_due::all();
+        return view('frontend.membership.clubDuesMemberType',compact('memberType'));
+    }
+    /* get daynamic page */
+    public function club_dues_member($slug)
+    {
+        $memberType= total_due::all();
+        $members= total_due::where('member_type',$slug)->get();
+        return view('frontend.membership.clubDuesMember',compact('members','memberType'));
+    }
+
     
 }
