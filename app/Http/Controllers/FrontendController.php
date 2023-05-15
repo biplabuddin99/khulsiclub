@@ -83,6 +83,17 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function newsEventsDetail($id)
+    {
+        $detail = video_notice::where('id',$id)->first();
+        $newsEv = video_notice::all();
+        return view('frontend.notice.newsEventsDetails',compact('newsEv','detail'));
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function newsEvents()
     {
         $newsEv = video_notice::paginate(12);

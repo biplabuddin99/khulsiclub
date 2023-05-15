@@ -84,6 +84,7 @@ Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
 Route::get('/benfit_of_membrer', [front::class,'benefit'])->name('member.benefit');
 Route::get('/all-notice', [front::class,'allNotice'])->name('all-notice');
+Route::get('/news-events-detail{id}', [front::class,'newsEventsDetail'])->name('event_notice_detail');
 Route::get('/news-events', [front::class,'newsEvents'])->name('event-notice');
 Route::get('event-news-search', [front::class,'nwesSearch'])->name('news.search');
 Route::get('/contact_us', [front::class,'contactUs'])->name('contact-Us');
@@ -97,7 +98,7 @@ Route::get('/executive-member{slug}', [MemberPanel::class,'executiveMember'])->n
 Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('searchByLetter');
 Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 
-Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
+// Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
 Route::get('/club-member-dues', [front::class,'club_dues_member_type'])->name('club_members_type');
 Route::get('/club-dues-member-search', [front::class,'club_dues_member_search'])->name('club_members_search');
 

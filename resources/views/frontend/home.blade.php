@@ -135,10 +135,10 @@
                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 @endforelse
-                @forelse ($notice as $notic)
+                @forelse ($vNotice as $notic)
                 <div class="carousel-item ">
                   <img
-                    src="{{asset('uploads/notice_image/'.$notic->image)}}"
+                    src="{{asset('uploads/video_notice/'.$notic->image)}}"
                     class="d-block w-100 notice-img"
                     alt="..."/>
                 </div>

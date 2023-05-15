@@ -51,7 +51,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    {{-- <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="Picture">Image</label>
                                             <input type="file" id="Picture" class="form-control"
@@ -61,7 +61,7 @@
                                                     <span class="text-danger"> {{ $errors->first('Picture') }}</span>
                                                 @endif
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="noticefile">Notice File</label>
