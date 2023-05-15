@@ -87,7 +87,7 @@ class FrontendController extends Controller
     {
         $detail = video_notice::where('id',$id)->first();
         $newsEv = video_notice::all();
-        return view('frontend.notice.newsEventsDetails',compact('newsEv','detail'));
+        return view('frontend.notice.newsEvents',compact('newsEv','detail'));
     }
     /**
      * Show the form for creating a new resource.
@@ -96,8 +96,9 @@ class FrontendController extends Controller
      */
     public function newsEvents()
     {
+        $detail = video_notice::first();
         $newsEv = video_notice::paginate(12);
-        return view('frontend.notice.newsEvents',compact('newsEv'));
+        return view('frontend.notice.newsEvents',compact('newsEv','detail'));
     }
 
     /**
