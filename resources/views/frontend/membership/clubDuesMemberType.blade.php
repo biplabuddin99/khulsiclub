@@ -33,15 +33,16 @@
                         <span class="shape"></span>
                         <span class="shape2"></span>
                         <div class="card-header">
-                            <h4>Member Categories</h4>
+                            <h4>Member Type</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
                             @php $m=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
-                            @forelse ($memberType as $mt)
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues_members',$mt->id)}}">{{$m[$mt->member_type]}}</a></li>
-                            @empty
-                                
-                            @endforelse
+                            
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_members_type')}}?slug=1">Founder Member</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_members_type')}}?slug=2">Life Member</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_members_type')}}?slug=3">Permanent Member</a></li>
+                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_members_type')}}?slug=4">Permanent Terminated Member</a></li>
+                            
                         </ul>
 
                     </div>
@@ -52,7 +53,24 @@
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">Total Dues</h6>
             </div>
-            
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="member-search">
+                        <div class="search-body">
+                            <h1>Member Search</h1>
+                            <form action="{{ route('club_members_search') }}" method="get">
+                                <input type="hidden" name="member_type" value="{{ isset($_GET['slug'])?$_GET['slug']:0 }}">
+                                <div class="searchBox">
+                                    <input type="text" value="{{ request()->input('name', '') }}"  name="membership_code" id="search" placeholder="Membership code">
+                                    <button type="submit">
+                                        <span class="bi bi-search"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -143,18 +143,10 @@ class FrontendController extends Controller
     }
 
     /* get daynamic page */
-    public function club_dues_member_type()
+    public function club_dues_member_type(Request $r)
     {
         $memberType= total_due::all();
         return view('frontend.membership.clubDuesMemberType',compact('memberType'));
-    }
-    
-    /* get daynamic page */
-    public function club_dues_member($slug)
-    {
-        $memberType= total_due::all();
-        $members= total_due::where('member_type',$slug)->get();
-        return view('frontend.membership.clubDuesMember',compact('members','memberType','slug'));
     }
 
     /* get daynamic page */

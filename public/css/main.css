@@ -569,6 +569,12 @@ marquee p{
   color: var(--red);
   font-weight: bold;
 }
+.our-members h4{
+  text-align: center;
+  margin: 0px 0 50px 0;
+  color: var(--red);
+  font-weight: bold;
+}
 .facilities div img {
   max-width: 332px;
   /* border-radius: 10px; */

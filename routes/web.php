@@ -98,8 +98,7 @@ Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('sear
 Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 
 Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
-Route::get('/clubDues-member-type', [front::class,'club_dues_member_type'])->name('club_members_type');
-Route::get('/club-dues-member{slug}', [front::class,'club_dues_member'])->name('club_dues_members');
+Route::get('/club-member-dues', [front::class,'club_dues_member_type'])->name('club_members_type');
 Route::get('/club-dues-member-search', [front::class,'club_dues_member_search'])->name('club_members_search');
 
 // photo and video gallery

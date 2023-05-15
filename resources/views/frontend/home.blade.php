@@ -248,8 +248,10 @@
     <!-- Facilities ends -->
     <!-- OUr Member -->
     <div class="memberdiv">
-      <div class="member-background">
+      <div class="our-members member-background">
         <section class="container pb-5 ">
+          {{-- <div class="our-members">
+          </div> --}}
           <h4 class="animate-title">OUR MEMBERS</h4>
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $fm)
@@ -269,7 +271,7 @@
                         @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
                         @endif
                     </span>
-                    <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
+                    <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
                     <small>
                         <strong>Email:</strong>
                         {{$fm->email }}
