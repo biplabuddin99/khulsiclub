@@ -32,12 +32,12 @@
                                         <label for="Picture"><b>{{__('Picture')}}</b></label>
                                         <input type="file" class="form-control" name="image">
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="notice"><b>{{__('Notice File')}}</b></label>
                                         <input type="file" class="form-control" name="notice_file">
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <label for="text"><b>{{__('Video link for Notice')}}:</b></label>
+                                        <label for="text"><b>{{__('Video link')}}:</b></label>
                                         <input type="text" class="form-control" name="link" value="{{ old('link')}}" required>
                                     </div>
                                     {{-- <div class="col-lg-4 col-md-6 col-sm-12">
