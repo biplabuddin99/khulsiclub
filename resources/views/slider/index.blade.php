@@ -24,9 +24,9 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Image')}}</th>
-                                <th scope="col">{{__('Link')}}</th>
+                                {{-- <th scope="col">{{__('Link')}}</th>
                                 <th scope="col">{{__('Short Description')}}</th>
-                                <th scope="col">{{__('Long Description')}}</th>
+                                <th scope="col">{{__('Long Description')}}</th> --}}
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
@@ -35,9 +35,9 @@
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td><img width="100px" src="{{asset('uploads/Slide_image/'.$p->image)}}" alt=""></td>
-                                <td>{{$p->link}}</td>
+                                {{-- <td>{{$p->link}}</td>
                                 <td>{{$p->short_title}}</td>
-                                <td>{{$p->long_title}}</td>
+                                <td>{{$p->long_title}}</td> --}}
                                 <!-- or <td>{{ $p->status == 1?"Active":"Inactive" }}</td>-->
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.slider.edit',encryptor('encrypt',$p->id))}}">

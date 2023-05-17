@@ -28,7 +28,7 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    {{-- <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="Link">link</label>
                                             <input type="text" id="Link" class="form-control" value="{{ old('Link',$slider->link)}}" name="Link">
@@ -53,7 +53,7 @@
                                             <textarea  class="form-control" id="LongTitle"
                                                 placeholder="Long Title" name="LongTitle" rows="3">{{ old('LongTitle',$slider->long_title)}}</textarea>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
