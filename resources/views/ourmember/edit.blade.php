@@ -153,6 +153,12 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
+                                                <label for="designation">Designation:</label>
+                                                <input type="text" class="form-control" value="{{ old('designation',$member->designation)}}" name="designation">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
                                                 <label for="company">Company:</label>
                                                 <input type="text" id="company" class="form-control" value="{{ old('profession',$member->company)}}" name="company">
                                             </div>
@@ -500,7 +506,6 @@
                                                     <th class="p-2">Sex</th>
                                                     <th class="p-2">Date of Birth</th>
                                                     <th class="p-2">Occupation With Address</th>
-                                                    <th class="p-2">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="details_data">

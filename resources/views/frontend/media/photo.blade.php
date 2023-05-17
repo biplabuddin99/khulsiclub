@@ -63,7 +63,9 @@
                         </div>
                     </div>
                 @endforelse
-                
+            </div>
+            <div class="my-3">
+                {!! $photo->links()!!}
             </div>
         </div>
     </div>

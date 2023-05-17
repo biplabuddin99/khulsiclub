@@ -17,7 +17,7 @@ class VideoGallaryCategoryController extends Controller
      */
     public function index()
     {
-        $vgallery_cat=VideoGallaryCategory::all();
+        $vgallery_cat=VideoGallaryCategory::paginate(10);
         return view('video_gallery_category.index',compact('vgallery_cat'));
     }
 

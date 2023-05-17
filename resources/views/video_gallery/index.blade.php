@@ -58,6 +58,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="my-3">
+                        {!! $caption->links()!!}
+                    </div>
                 </div>
             </div>
         </div>

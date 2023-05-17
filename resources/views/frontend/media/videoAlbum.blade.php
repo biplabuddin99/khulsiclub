@@ -67,6 +67,9 @@
                 </div>
                 @endforelse
             </div>
+            <div class="my-3">
+                {!! $vAlbum->links()!!}
+            </div>
         </div>
     </div>
 </div>

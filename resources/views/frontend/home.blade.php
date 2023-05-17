@@ -273,8 +273,8 @@
                     </span>
                     <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
                     <small>
-                        <strong>Email:</strong>
-                        {{$fm->email }}
+                        <strong>Designation:</strong>
+                        {{$fm->designation }}
                     </small>
                     <br>
                     <small>
@@ -282,7 +282,7 @@
                         {{$fm->company}}
                     </small>
                 </div>
-                <div class="card-footer">
+                {{-- <div class="card-footer">
                     <div class="social">
                         <big>Follow:</big>
                         <span class="social-icon"><a href="{{$fm->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
@@ -290,7 +290,7 @@
                         <span class="social-icon"><a href="{{$fm->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
                         <span class="social-icon"><a href="{{$fm->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
             

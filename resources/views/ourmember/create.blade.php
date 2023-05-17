@@ -16,104 +16,108 @@
                         <div class="card-body">
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.ourMember.store')}}">
                                 @csrf
-                                <div class="row">
                                     <div class="row">
-                                        <div class="form-group">
-                                            <label for="givenName">Given Name</label>
-                                            <input type="text" id="givenName" class="form-control" value="{{ old('given_name')}}" name="given_name">
-                                            @if($errors->has('given_name'))
-                                                <span class="text-danger"> {{ $errors->first('given_name') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="surname">Surname</label>
-                                            <input type="text" id="surname" class="form-control" value="{{ old('surname')}}" name="surname">
-                                            @if($errors->has('surname'))
-                                                <span class="text-danger"> {{ $errors->first('surname') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="Fathers">2. Father's Name:</label>
-                                            <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers')}}" name="Fathers">
-                                            @if($errors->has('Fathers'))
-                                                <span class="text-danger"> {{ $errors->first('Fathers') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="husbanName">2.1 Husband's Name:</label>
-                                            <input type="text" id="husbanName" class="form-control" value="{{ old('husbanName')}}" name="husbanName">
-                                            @if($errors->has('husbanName'))
-                                                <span class="text-danger"> {{ $errors->first('husbanName') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="mothersName">3. Mother's Name:</label>
-                                            <input type="text" id="mothersName" class="form-control" value="{{ old('mothersName')}}" name="mothersName">
-                                            @if($errors->has('mothersName'))
-                                                <span class="text-danger"> {{ $errors->first('mothersName') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="nominee">4. Nominee:</label>
-                                            <input type="text" id="nominee" class="form-control" name="nominee">
-                                                @if($errors->has('nominee'))
-                                                    <span class="text-danger"> {{ $errors->first('nominee') }}</span>
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="givenName">Given Name</label>
+                                                <input type="text" id="givenName" class="form-control" value="{{ old('given_name')}}" name="given_name">
+                                                @if($errors->has('given_name'))
+                                                    <span class="text-danger"> {{ $errors->first('given_name') }}</span>
                                                 @endif
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="dateOfBirth">5. Date and Place of Birth:</label>
-                                            <input type="text" id="dateOfBirth" class="form-control" name="dateOfBirth">
-                                                @if($errors->has('dateOfBirth'))
-                                                    <span class="text-danger"> {{ $errors->first('dateOfBirth') }}</span>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="surname">Surname</label>
+                                                <input type="text" id="surname" class="form-control" value="{{ old('surname')}}" name="surname">
+                                                @if($errors->has('surname'))
+                                                    <span class="text-danger"> {{ $errors->first('surname') }}</span>
                                                 @endif
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="Fathers">2. Father's Name:</label>
+                                                <input type="text" id="Fathers" class="form-control" value="{{ old('Fathers')}}" name="Fathers">
+                                                @if($errors->has('Fathers'))
+                                                    <span class="text-danger"> {{ $errors->first('Fathers') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="husbanName">2.1 Husband's Name:</label>
+                                                <input type="text" id="husbanName" class="form-control" value="{{ old('husbanName')}}" name="husbanName">
+                                                @if($errors->has('husbanName'))
+                                                    <span class="text-danger"> {{ $errors->first('husbanName') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="mothersName">3. Mother's Name:</label>
+                                                <input type="text" id="mothersName" class="form-control" value="{{ old('mothersName')}}" name="mothersName">
+                                                @if($errors->has('mothersName'))
+                                                    <span class="text-danger"> {{ $errors->first('mothersName') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="nominee">4. Nominee:</label>
+                                                <input type="text" id="nominee" class="form-control" name="nominee">
+                                                    @if($errors->has('nominee'))
+                                                        <span class="text-danger"> {{ $errors->first('nominee') }}</span>
+                                                    @endif
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="dateOfBirth">5. Date and Place of Birth:</label>
+                                                <input type="text" id="dateOfBirth" class="form-control" name="dateOfBirth">
+                                                    @if($errors->has('dateOfBirth'))
+                                                        <span class="text-danger"> {{ $errors->first('dateOfBirth') }}</span>
+                                                    @endif
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="photo">Photo:</label>
                                                 <input type="file" id="image" class="form-control" name="image">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="facebook">Facebook link:</label>
                                                 <input type="text" id="fb_link" class="form-control" name="fb_link">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="twitter">Twitter link:</label>
                                                 <input type="text" id="twter_link" class="form-control" name="twter_link">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="linkedin">Linkedin link:</label>
                                                 <input type="text" id="linkdin_link" class="form-control" name="linkdin_link">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="youtube">Youtube link:</label>
                                                 <input type="text" id="youtube_link" class="form-control" name="youtube_link">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="nationality">Nationality:</label>
                                                 <input type="text" id="nationality" class="form-control" name="nationality">
@@ -122,7 +126,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="profession">Profession:</label>
                                                 <input type="text" id="profession" class="form-control" name="profession">
@@ -131,13 +135,19 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="designation">Designation:</label>
+                                                <input type="text" class="form-control" value="{{ old('designation')}}" name="designation">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="company">Company:</label>
                                                 <input type="text" id="company" class="form-control" name="company">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="cellno">Cell No:</label>
                                                 <input type="text" id="cellno" class="form-control" name="CellNo">
@@ -146,7 +156,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="tel">Tel:</label>
                                                 <input type="text" id="tel" class="form-control" name="tel">
@@ -155,7 +165,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="fax">Fax:</label>
                                                 <input type="text" id="fax" class="form-control" name="fax">
@@ -164,7 +174,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="email">E-mail:</label>
                                                 <input type="email" id="email" class="form-control" name="emailAddress" placeholder="Email">
@@ -173,7 +183,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="password">Password:</label>
                                                 <input type="password" class="form-control" name="password" placeholder="Password">
@@ -182,7 +192,7 @@
                                                     @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="bloodGroup">Blood Group:</label>
                                                     <select class="form-control form-select" name="bloodGroup" id="blood">
@@ -212,7 +222,7 @@
                                                 @endif
                                         </div>
                                     </div> --}}
-                                </div>
+                                
                                 <div class="row">
                                     <label for="nationalid">6. </label>
                                     <div class="col-md-6 col-12">
@@ -243,49 +253,48 @@
                                             @endif
                                     </div>
                                 </div>
+                                
+                                <label class="my-3" for="permanentaddress">8. Permanent Address:</label>
                                 <div class="row">
-                                    <label class="my-3" for="permanentaddress">8. Permanent Address:</label>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="vill">Vill:</label>
-                                                <input type="text" id="vill" class="form-control" name="vill">
-                                                    @if($errors->has('vill'))
-                                                        <span class="text-danger"> {{ $errors->first('vill') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="postoffice">P.O:</label>
-                                                <input type="text" id="postoffice" class="form-control" name="postoffice">
-                                                    @if($errors->has('postoffice'))
-                                                        <span class="text-danger"> {{ $errors->first('postoffice') }}</span>
-                                                    @endif
-                                            </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="vill">Vill:</label>
+                                            <input type="text" id="vill" class="form-control" name="vill">
+                                                @if($errors->has('vill'))
+                                                    <span class="text-danger"> {{ $errors->first('vill') }}</span>
+                                                @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="upazila">P.S/UP:</label>
-                                                <input type="text" id="upazila" class="form-control" name="upazila">
-                                                    @if($errors->has('upazila'))
-                                                        <span class="text-danger"> {{ $errors->first('upazila') }}</span>
-                                                    @endif
-                                            </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="postoffice">P.O:</label>
+                                            <input type="text" id="postoffice" class="form-control" name="postoffice">
+                                                @if($errors->has('postoffice'))
+                                                    <span class="text-danger"> {{ $errors->first('postoffice') }}</span>
+                                                @endif
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="district">Dist:</label>
-                                                <input type="text" id="district" class="form-control" name="district">
-                                                    @if($errors->has('district'))
-                                                        <span class="text-danger"> {{ $errors->first('district') }}</span>
-                                                    @endif
-                                            </div>
+                                    </div>
+                                
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="upazila">P.S/UP:</label>
+                                            <input type="text" id="upazila" class="form-control" name="upazila">
+                                                @if($errors->has('upazila'))
+                                                    <span class="text-danger"> {{ $errors->first('upazila') }}</span>
+                                                @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="district">Dist:</label>
+                                            <input type="text" id="district" class="form-control" name="district">
+                                                @if($errors->has('district'))
+                                                    <span class="text-danger"> {{ $errors->first('district') }}</span>
+                                                @endif
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="presentAddress">9. Present/Mailing Residential Address:</label>
@@ -304,94 +313,94 @@
                                             @endif
                                     </div>
                                 </div>
+                                
+                                <label class="my-3" for="othersclub">11. Details Of Other Club Membership(IF Any):</label>
                                 <div class="row">
-                                    <label class="my-3" for="othersclub">11. Details Of Other Club Membership(IF Any):</label>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="othersdate">Date:</label>
-                                                <input type="othersdate" id="othersdate" class="form-control" name="othersdate">
-                                                    @if($errors->has('othersdate'))
-                                                        <span class="text-danger"> {{ $errors->first('othersdate') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="signatureApplicant">Signature Of Applicant:</label>
-                                                <input type="file" id="signatureApplicant" class="form-control" name="signatureApplicant">
-                                                    @if($errors->has('signatureApplicant'))
-                                                        <span class="text-danger"> {{ $errors->first('signatureApplicant') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="identifyPresident">Identified by President/Vice President:</label>
-                                                <input type="text" id="identifyPresident" class="form-control" name="identifyPresident">
-                                                    @if($errors->has('identifyPresident'))
-                                                        <span class="text-danger"> {{ $errors->first('identifyPresident') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="memberNo">Member No:</label>
-                                                <input type="text" id="memberNo" class="form-control" name="memberNo">
-                                                    @if($errors->has('memberNo'))
-                                                        <span class="text-danger"> {{ $errors->first('memberNo') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="mrormis">Mr./Mis.:</label>
-                                            <input type="text" id="mrormis" class="form-control" name="mrormis">
-                                                @if($errors->has('mrormis'))
-                                                    <span class="text-danger"> {{ $errors->first('mrormis') }}</span>
+                                            <label for="othersdate">Date:</label>
+                                            <input type="othersdate" id="othersdate" class="form-control" name="othersdate">
+                                                @if($errors->has('othersdate'))
+                                                    <span class="text-danger"> {{ $errors->first('othersdate') }}</span>
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="otheraddress">Address:</label>
-                                            <input type="text" id="otheraddress" class="form-control" name="otheraddress">
-                                                @if($errors->has('otheraddress'))
-                                                    <span class="text-danger"> {{ $errors->first('otheraddress') }}</span>
+                                            <label for="signatureApplicant">Signature Of Applicant:</label>
+                                            <input type="file" id="signatureApplicant" class="form-control" name="signatureApplicant">
+                                                @if($errors->has('signatureApplicant'))
+                                                    <span class="text-danger"> {{ $errors->first('signatureApplicant') }}</span>
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="signaturefounderpresident">Signature Of Founder President:</label>
-                                                <input type="file" id="signaturefounderpresident" class="form-control" name="signaturefounderpresident">
-                                                    @if($errors->has('signaturefounderpresident'))
-                                                        <span class="text-danger"> {{ $errors->first('signaturefounderpresident') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="foundervicepresident">Signature Of Founder Vice President:</label>
-                                                <input type="file" id="foundervicepresident" class="form-control" name="foundervicepresident">
-                                                    @if($errors->has('foundervicepresident'))
-                                                        <span class="text-danger"> {{ $errors->first('foundervicepresident') }}</span>
-                                                    @endif
-                                            </div>
+                                
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="identifyPresident">Identified by President/Vice President:</label>
+                                            <input type="text" id="identifyPresident" class="form-control" name="identifyPresident">
+                                                @if($errors->has('identifyPresident'))
+                                                    <span class="text-danger"> {{ $errors->first('identifyPresident') }}</span>
+                                                @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-12">
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="remarks">Remarks:</label>
-                                            <textarea  class="form-control" id="remarks"
-                                                placeholder="remarks" name="remarks" rows="5">{{ old('remarks')}}</textarea>
+                                            <label for="memberNo">Member No:</label>
+                                            <input type="text" id="memberNo" class="form-control" name="memberNo">
+                                                @if($errors->has('memberNo'))
+                                                    <span class="text-danger"> {{ $errors->first('memberNo') }}</span>
+                                                @endif
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="mrormis">Mr./Mis.:</label>
+                                        <input type="text" id="mrormis" class="form-control" name="mrormis">
+                                            @if($errors->has('mrormis'))
+                                                <span class="text-danger"> {{ $errors->first('mrormis') }}</span>
+                                            @endif
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="otheraddress">Address:</label>
+                                        <input type="text" id="otheraddress" class="form-control" name="otheraddress">
+                                            @if($errors->has('otheraddress'))
+                                                <span class="text-danger"> {{ $errors->first('otheraddress') }}</span>
+                                            @endif
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="signaturefounderpresident">Signature Of Founder President:</label>
+                                            <input type="file" id="signaturefounderpresident" class="form-control" name="signaturefounderpresident">
+                                                @if($errors->has('signaturefounderpresident'))
+                                                    <span class="text-danger"> {{ $errors->first('signaturefounderpresident') }}</span>
+                                                @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="foundervicepresident">Signature Of Founder Vice President:</label>
+                                            <input type="file" id="foundervicepresident" class="form-control" name="foundervicepresident">
+                                                @if($errors->has('foundervicepresident'))
+                                                    <span class="text-danger"> {{ $errors->first('foundervicepresident') }}</span>
+                                                @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="remarks">Remarks:</label>
+                                        <textarea  class="form-control" id="remarks"
+                                            placeholder="remarks" name="remarks" rows="5">{{ old('remarks')}}</textarea>
+                                    </div>
+                                </div>
+                                
+
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="updateincometax">12. Updated Income Tax Paid With TIN/GIR No:</label>
@@ -410,11 +419,11 @@
                                             @endif
                                     </div>
                                 </div>
+                                
+                                <label class="" for="permanentaddress">14. <b>a)Details of Passport:</b></label>
                                 <div class="row">
-                                    <label class="mt-3" for="permanentaddress">14.</label>
-                                    <label class="mx-3" for="permanentaddress">a)Details of Passport:</label>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="passportnotype">1)Passport No and Type:</label>
                                             <input type="text" id="passportnotype" class="form-control" name="passportnotype">
                                                 @if($errors->has('passportnotype'))
@@ -422,8 +431,9 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+                                
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="pdateissue">2)Place and Date of Issue:</label>
                                             <input type="text" id="pdateissue" class="form-control" name="pdateissue">
                                                 @if($errors->has('pdateissue'))
@@ -431,8 +441,9 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+                                
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="issuingAuthority">3)Issuing Authority:</label>
                                             <input type="text" id="issuingAuthority" class="form-control" name="issuingAuthority">
                                                 @if($errors->has('issuingAuthority'))
@@ -440,8 +451,9 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+                                
+                                    <div class="col-lg-3 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="validity">4)Validity:</label>
                                             <input type="text" id="validity" class="form-control" name="validity">
                                                 @if($errors->has('validity'))
@@ -449,9 +461,10 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <label class="mx-3" for="permanentaddress">b)Family Details:</label>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+                                
+                                    <label class="" for="permanentaddress"> <b>b)Family Details:</b></label>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="namespouse">1)Name of Spouse:</label>
                                             <input type="text" id="namespouse" class="form-control" name="namespouse">
                                                 @if($errors->has('namespouse'))
@@ -459,8 +472,9 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group ms-5">
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for="occupationSpouse">2)Occupation of Spouse:</label>
                                             <input type="text" id="occupationSpouse" class="form-control" name="occupationSpouse">
                                                 @if($errors->has('occupationSpouse'))
@@ -469,36 +483,39 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="row">
-                                    <div class="form-group">
-                                        <label for="detailschildresns" class="mt-3">15. Details of Childrens:(Must be Added with Birth Certificate copy):</label>
-                                        <table class="table mb-5">
-                                            <thead>
-                                                <tr class="bg-primary text-white text-center">
-                                                    <th class="p-2">Serial</th>
-                                                    <th class="p-2">Name</th>
-                                                    <th class="p-2">Sex</th>
-                                                    <th class="p-2">Date of Birth</th>
-                                                    <th class="p-2">Occupation With Address</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="details_data">
-                                                @for($i=0;$i<5;$i++ )
-                                                    <tr>
-                                                        <td>{{$j=$i + 1}}.</td>
-                                                        <td><input type="text" id="Name{{$i}}" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
-                                                        <td><input type="radio" id="male{{$i}}" name="cgender[{{$i}}]" value="1" {{ old('cgender')=="1" ? "checked":"" }}> <label for="male{{$i}}">Male</label>
-                                                            <input type="radio" id="female{{$i}}" name="cgender[{{$i}}]" value="2" {{ old('cgender')=="2" ? "checked":"" }}> <label for="female{{$i}}">Female</label></td>
-                                                        <td><input type="date" id="birth_date{{$i}}" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
-                                                        <td><input type="text" id="occupation{{$i}}" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="detailschildresns" class="mt-3">15. Details of Childrens:(Must be Added with Birth Certificate copy):</label>
+                                            <table class="table mb-5">
+                                                <thead>
+                                                    <tr class="bg-primary text-white text-center">
+                                                        <th class="p-2">Serial</th>
+                                                        <th class="p-2">Name</th>
+                                                        <th class="p-2">Sex</th>
+                                                        <th class="p-2">Date of Birth</th>
+                                                        <th class="p-2">Occupation With Address</th>
                                                     </tr>
-                                                @endfor
-                                            </tbody>
-                                        </table>
-                                        {{-- <input type="text" id="detailschildresns" class="form-control" name="detailschildresns">
-                                            @if($errors->has('detailschildresns'))
-                                                <span class="text-danger"> {{ $errors->first('detailschildresns') }}</span>
-                                            @endif --}}
+                                                </thead>
+                                                <tbody id="details_data">
+                                                    @for($i=0;$i<5;$i++ )
+                                                        <tr>
+                                                            <td>{{$j=$i + 1}}.</td>
+                                                            <td><input type="text" id="Name{{$i}}" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
+                                                            <td><input type="radio" id="male{{$i}}" name="cgender[{{$i}}]" value="1" {{ old('cgender')=="1" ? "checked":"" }}> <label for="male{{$i}}">Male</label>
+                                                                <input type="radio" id="female{{$i}}" name="cgender[{{$i}}]" value="2" {{ old('cgender')=="2" ? "checked":"" }}> <label for="female{{$i}}">Female</label></td>
+                                                            <td><input type="date" id="birth_date{{$i}}" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                                            <td><input type="text" id="occupation{{$i}}" class="form-control" name="coccupation[]" placeholder="Occupation With Address"></td>
+                                                        </tr>
+                                                    @endfor
+                                                </tbody>
+                                            </table>
+                                            {{-- <input type="text" id="detailschildresns" class="form-control" name="detailschildresns">
+                                                @if($errors->has('detailschildresns'))
+                                                    <span class="text-danger"> {{ $errors->first('detailschildresns') }}</span>
+                                                @endif --}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">

@@ -58,6 +58,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="my-3">
+                        {!! $vgallery_cat->links()!!}
+                    </div>
                 </div>
             </div>
         </div>

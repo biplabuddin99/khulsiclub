@@ -18,7 +18,7 @@ class VideoGalleryController extends Controller
      */
     public function index()
     {
-        $caption=VideoGallery::get();
+        $caption=VideoGallery::paginate(10);
         return view('video_gallery.index',compact('caption'));
     }
 

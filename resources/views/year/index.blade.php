@@ -40,7 +40,7 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-end my-3">
+                            <div class="my-3">
                                 {!! $year->links()!!}
                             </div>
                         </div>
