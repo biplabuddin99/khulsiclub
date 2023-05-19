@@ -98,9 +98,7 @@ Route::get('/executive-member{slug}', [MemberPanel::class,'executiveMember'])->n
 Route::get('memberlist/{letter}', [MemberPanel::class,'memberlist'])->name('searchByLetter');
 Route::get('terms-condition', [MemberPanel::class,'termsConditon'])->name('terms');
 
-// Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
-Route::get('/club-member-dues', [front::class,'club_dues_member_type'])->name('club_members_type');
-Route::get('/club-dues-member-search', [front::class,'club_dues_member_search'])->name('club_members_search');
+Route::get('/club-dues', [front::class,'club_dues'])->name('club_dues');
 
 // photo and video gallery
 Route::get('photo_gallery', [media::class,'pGallery'])->name('pGallery');

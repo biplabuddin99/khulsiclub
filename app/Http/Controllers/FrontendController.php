@@ -145,31 +145,15 @@ class FrontendController extends Controller
     }
 
     /* get daynamic page */
-    public function club_dues()
+    public function club_dues(Request $r)
     {
-        $founder_data= total_due::where('member_type',1)->get();
-        $life_data= total_due::where('member_type',2)->get();
-        $perm_data= total_due::where('member_type',3)->get();
-        $permter_data= total_due::where('member_type',4)->get();
-        return view('frontend.club_dues',compact('founder_data','life_data','perm_data','permter_data'));
-    }
-
-    /* get daynamic page */
-    public function club_dues_member_type(Request $r)
-    {
-        $memberType= total_due::all();
-        return view('frontend.membership.clubDuesMemberType',compact('memberType'));
-    }
-
-    /* get daynamic page */
-    public function club_dues_member_search(Request $request)
-    {
-        $memberType = total_due::all();
-        $members = total_due::where('member_type', $request->input('member_type'))
-                            ->where('membership_code', $request->input('membership_code'))
+        $members = array();
+        if($r->input('member_type') && $r->input('membership_code')){
+            $members = total_due::where('member_type', $r->input('member_type'))
+                            ->where('membership_code', $r->input('membership_code'))
                             ->first();
-        return view('frontend.membership.clubDuesMember', compact('members', 'memberType'));
+        }
+        return view('frontend.club_dues',compact('members'));
     }
-
     
 }
