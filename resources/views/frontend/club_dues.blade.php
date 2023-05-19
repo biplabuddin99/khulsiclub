@@ -36,13 +36,12 @@
                             <h4>Member Type</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            @php $m=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
+                            {{-- @php $member=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp --}}
                             
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=1">Founder Member</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=2">Life Member</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=3">Permanent Member</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=4">Permanent Terminated Member</a></li>
-                            
                         </ul>
                     </div>
                 </div>
@@ -58,9 +57,9 @@
                         <div class="search-body">
                             <h1>Member Search</h1>
                             <form action="" method="get">
-                                <input type="hidden" name="member_type" value="{{ isset($_GET['slug'])?$_GET['slug']:0 }}">
+                                <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}">
                                 <div class="searchBox">
-                                    <input type="text" value="{{ request()->input('name', '') }}"  name="membership_code" id="search" placeholder="Membership code">
+                                    <input type="text" value="{{ request()->input('membership_code', '') }}"  name="membership_code" placeholder="Membership code">
                                     <button type="submit">
                                         <span class="bi bi-search"></span>
                                     </button>
