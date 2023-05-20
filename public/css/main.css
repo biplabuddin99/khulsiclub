@@ -197,6 +197,11 @@ body {
       left: auto;
     }
   }
+  @media (min-width: 768px) {
+    .small-view {
+      display: none;
+    }
+  }
 .small-menu {
 	width: 250px;
   margin-top: 7.5px;
