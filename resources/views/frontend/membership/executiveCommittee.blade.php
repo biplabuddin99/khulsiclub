@@ -36,11 +36,6 @@
                         <div class="card-header">
                             <h4>Committee</h4>
                         </div>
-                        {{-- <ul class="sideber-nav flex-culumn ps-3">
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member.list')}}">Member List</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('memLogin')}}">Member Login</a></li>
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('member_registration')}}">Become a member</a></li>
-                        </ul> --}}
                         <ul class="sideber-nav flex-culumn ps-3">
                         @php 
                             $curl=request()->path();
@@ -82,14 +77,6 @@
                         </div>
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                             <ul class="sideber-nav flex-culumn ps-3 accordion-body">
-                                @php 
-                                    $curl=request()->path();
-                                    $rows=DB::select("SELECT * from front_menus where parent_id = (select parent_id from front_menus where href='$curl') and status =1 order by rang");
-                                @endphp
-                                    @forelse($rows as $r)
-                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
-                                    @empty
-                                    @endforelse
                                     @forelse ($committeeSession as $cs)
                                     <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
                                     @empty

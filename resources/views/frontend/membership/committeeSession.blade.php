@@ -37,7 +37,6 @@
                             <h4>Committee</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                        
                             @forelse ($committeeSession as $cs)
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
                             @empty
@@ -53,7 +52,33 @@
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">Executive Committee List</h6>
             </div>
-            
+            <div class="row small-view">
+                <div class="col-lg-12">
+                    <div class="card mt-3 pb-4 rounded-10 bg-light">
+                        <div class="card-header">
+                            <h4
+                                class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo"
+                                aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Committee
+                                </button>
+                            </h4>
+                        </div>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <ul class="sideber-nav flex-culumn ps-3 accordion-body">
+                                    @forelse ($committeeSession as $cs)
+                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
+                                    @empty
+                                        
+                                    @endforelse
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
