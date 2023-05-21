@@ -63,7 +63,7 @@
             <div class="row small-view">
                 <div class="col-lg-12">
                     <div class="card mt-3 pb-4 rounded-10 bg-light">
-                        <div class="card-header">
+                        <div class="card-header ">
                             <h4
                                 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button"
