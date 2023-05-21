@@ -26,7 +26,7 @@
 </section>
 <div class="container py-4">
     <div class="row">
-        <div class="col-lg-3 mobileview">
+        {{-- <div class="col-lg-3 mobileview">
             <div class="sidebar-menu vue-affix affix-top ">
                 <div class="leftside-menu">
                     <div class="card  pb-4 me-4 rounded-10 bg-light">
@@ -36,7 +36,7 @@
                             <h4>Member Type</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
-                            {{-- @php $member=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp --}}
+                           
                             
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=1">Founder Member</a></li>
                             <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=2">Life Member</a></li>
@@ -46,61 +46,50 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-9 px-2 ">
-            <div class="about-title" id="grad">
-                <h6 class="text-uppercase p-1">Total Dues</h6>
-            </div>
-            <div class="row small-view">
-                <div class="col-lg-12">
-                    <div class="card mt-3 pb-4 rounded-10 bg-light">
-                        <div class="card-header">
-                            <h4
-                                class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseTwo"
-                                aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne">
-                                Member Type
-                                </button>
-                            </h4>
-                        </div>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                            <ul class="sideber-nav flex-culumn ps-3 accordion-body">
-                                {{-- @php $member=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp --}}
+        </div> --}}
+        <div class="col-lg-12 px-2 ">
+            <form action="" method="get">
+                <div class="row justify-content-center my-3">
+                    <div class="col-lg-4">
+                        <div class="member-search">
+                            <div class="search-body">
+                                <h1>Member Type</h1>
                                 
-                                <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=1">Founder Member</a></li>
-                                <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=2">Life Member</a></li>
-                                <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=3">Permanent Member</a></li>
-                                <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('club_dues')}}?slug=4">Permanent Terminated Member</a></li>
-                            </ul>
+                                    {{-- <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}"> --}}
+                                    <div class=" selectBox">
+                                        <select name="member_type" class="memberTypeSelect">
+                                            <option value="1" {{ old('member_type') == 1 ? 'selected' : '' }}>Founder Member</option>
+                                            <option value="2" {{ old('member_type') == 2 ? 'selected' : '' }}>Life Member</option>
+                                            <option value="3" {{ old('member_type') == 3 ? 'selected' : '' }}>Permanent Member</option>
+                                            <option value="4" {{ old('member_type') == 4 ? 'selected' : '' }}>Permanent Terminated Member</option>
+                                        </select>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="member-search">
+                            <div class="search-body">
+                                <h1>Member Search</h1>
+                                
+                                    {{-- <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}"> --}}
+                                    <div class="searchBox">
+                                        <input type="text" value="{{ request()->input('search', '') }}"  name="search" placeholder="Membership code">
+                                        <button type="submit">
+                                            <span class="bi bi-search"></span>
+                                        </button>
+                                    </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-7">
-                    <div class="member-search">
-                        <div class="search-body">
-                            <h1>Member Search</h1>
-                            <form action="" method="get">
-                                <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}">
-                                <div class="searchBox">
-                                    <input type="text" value="{{ request()->input('membership_code', '') }}"  name="membership_code" placeholder="Membership code">
-                                    <button type="submit">
-                                        <span class="bi bi-search"></span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
+            </form>
+            <div class="row justify-content-center mt-5">
                 @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
                 @if ($members)
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <div class="card company-info shadow-sm mb-3">
                         <div class="card-header">
                             <h5>Member Information</h5>
@@ -108,25 +97,45 @@
                         <div class="card-body" style="min-height:290px;">
                             <table class="table table-sm table-borderless">
                                 <tr>
-                                    <th width="40">Name</th>
-                                    <td width="2">:</td>
-                                    <td width="58">{{$members->member_name}}</td>
+                                    <th width="30%">Name</th>
+                                    <td width="1">:</td>
+                                    <td width="68">{{$members->member_name}}</td>
                                 </tr>
                                 <tr>
-                                    <th width="40">Member Type</th>
+                                    <th width="37%">Member Type</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{$mt[$members->member_type]}}</td>
+                                    <td width="61">{{$mt[$members->member_type]}}</td>
                                 </tr>
                                 <tr>
-                                    <th width="40">Membership Code</th>
+                                    <th width="37%">Membership Code</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{$members->membership_code}}</td>
+                                    <td width="61">{{$members->membership_code}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="37%">Email</th>
+                                    <td width="2">:</td>
+                                    <td width="61"></td>
+                                </tr>
+                                <tr>
+                                    <th width="37%">Contact</th>
+                                    <td width="2">:</td>
+                                    <td width="61"></td>
+                                </tr>
+                                <tr>
+                                    <th width="37%">Address</th>
+                                    <td width="2">:</td>
+                                    <td width="61"></td>
+                                </tr>
+                                <tr>
+                                    <th width="37%">Status</th>
+                                    <td width="2">:</td>
+                                    <td width="61"></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                     <div class="card company-info shadow-sm mb-3">
                         <div class="card-header" >
                             <h5>Total Dues</h5>

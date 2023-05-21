@@ -1546,7 +1546,7 @@ figure{
 }
 .member-search h1 {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   letter-spacing: .2125rem;
   text-transform: uppercase;
   text-align: center;
@@ -1563,12 +1563,33 @@ figure{
   border-radius: 50px;
   border: 1px solid var(--red);
 }
+.selectBox {
+  background: transparent;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 3px;
+  border-radius: 50px;
+  border: 1px solid var(--red);
+}
 .searchBox input {
   padding: 0.5rem;
   width: 90%;
   border-radius: 50px;
   border: 0;
   outline: none;
+  background-color: transparent;
+}
+.memberTypeSelect {
+  padding: 0.5rem;
+  width: 95%;
+  border-radius: 50px;
+  border: 0;
+  outline: none;
+  background-color: transparent;
 }
 .searchBox button {
   border: none;

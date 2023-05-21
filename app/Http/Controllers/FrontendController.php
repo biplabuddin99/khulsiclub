@@ -148,12 +148,12 @@ class FrontendController extends Controller
     public function club_dues(Request $r)
     {
         $members = array();
-        if($r->input('member_type') && $r->input('membership_code')){
+        if($r->input('member_type') && $r->input('search')){
             $members = total_due::where('member_type', $r->input('member_type'))
-                            ->where('membership_code', $r->input('membership_code'))
+                            ->where('membership_code', $r->input('search'))
+                            ->orwhere('member_name', $r->input('search'))
                             ->first();
         }
         return view('frontend.club_dues',compact('members'));
     }
-    
 }
