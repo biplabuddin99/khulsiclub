@@ -1798,6 +1798,7 @@ img.events-image {
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 30px;
+  padding-bottom:15px;
 }
 .member-box .shape {
   width: 200px;
