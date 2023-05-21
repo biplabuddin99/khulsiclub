@@ -94,7 +94,7 @@ class AuthenticationController extends Controller
 
     public function memSignInCheck(MemSigninRequest $request){
         try{
-            $member=OurMember::where('member_id',$request->memberId)->first();
+            $member=OurMember::where('membership_no',$request->memberId)->first();
             if($member){
                 if(Hash::check($request->password , $member->password)){
                     $this->memberSetSession($member);

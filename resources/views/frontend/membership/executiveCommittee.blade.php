@@ -101,13 +101,13 @@
                                 {{$fm->member?->email }}
                             </small> --}}
                             <small>
-                                <strong>Designation:</strong>
-                                {{$fm->designation }}
+                                <strong>Company:</strong>
+                                {{$fm->member?->company}}
                             </small>
                             <br>
                             <small>
-                                <strong>Company:</strong>
-                                {{$fm->member?->company}}
+                                <strong>Designation:</strong>
+                                {{$fm->designation }}
                             </small>
                         </div>
                         {{-- <div class="card-footer">

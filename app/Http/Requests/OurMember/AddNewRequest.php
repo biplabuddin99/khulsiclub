@@ -26,6 +26,7 @@ class AddNewRequest extends FormRequest
         return [
             'emailAddress'=>'required|unique:our_members,email',
             'CellNo'=>'required',
+            'membershipno'=>'unique:our_members,membership_no',
             'password'=>'required'
         ];
     }

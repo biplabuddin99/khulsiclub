@@ -54,17 +54,14 @@
                         <div class="member-search">
                             <div class="search-body">
                                 <h1>Member Type</h1>
-                                
-                                    {{-- <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}"> --}}
-                                    <div class=" selectBox">
-                                        <select name="member_type" class="memberTypeSelect">
-                                            <option value="1" {{ old('member_type') == 1 ? 'selected' : '' }}>Founder Member</option>
-                                            <option value="2" {{ old('member_type') == 2 ? 'selected' : '' }}>Life Member</option>
-                                            <option value="3" {{ old('member_type') == 3 ? 'selected' : '' }}>Permanent Member</option>
-                                            <option value="4" {{ old('member_type') == 4 ? 'selected' : '' }}>Permanent Terminated Member</option>
-                                        </select>
-                                    </div>
-                                
+                                <div class=" selectBox">
+                                    <select name="member_type" class="memberTypeSelect">
+                                        <option value="1" {{ old('member_type') == 1 ? 'selected' : '' }}>Founder Member</option>
+                                        <option value="2" {{ old('member_type') == 2 ? 'selected' : '' }}>Life Member</option>
+                                        <option value="3" {{ old('member_type') == 3 ? 'selected' : '' }}>Permanent Member</option>
+                                        <option value="4" {{ old('member_type') == 4 ? 'selected' : '' }}>Permanent Terminated Member</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -72,15 +69,12 @@
                         <div class="member-search">
                             <div class="search-body">
                                 <h1>Member Search</h1>
-                                
-                                    {{-- <input type="hidden" name="member_type" value="{{ request()->input('member_type', '') }} {{ isset($_GET['slug'])?$_GET['slug']:'' }}"> --}}
-                                    <div class="searchBox">
-                                        <input type="text" value="{{ request()->input('search', '') }}"  name="search" placeholder="Membership code">
-                                        <button type="submit">
-                                            <span class="bi bi-search"></span>
-                                        </button>
-                                    </div>
-                                
+                                <div class="searchBox">
+                                    <input type="text" value="{{ request()->input('search', '') }}"  name="search" placeholder="Membership code">
+                                    <button type="submit">
+                                        <span class="bi bi-search"></span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

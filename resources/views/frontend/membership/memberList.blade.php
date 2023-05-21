@@ -204,7 +204,7 @@
                                 <img src="{{asset('uploads/member_image/thumb/'.$m->image)}}" alt="No Image" width="100px">
                             </div>
                             <div class="col-lg-2 text-center border-end ps-0 pe-0">
-                                <h1> [{{$m->member_id}}]</h1>
+                                <h1> [{{$m->membership_no}}]</h1>
                                 <h5>
                                     @if ($m->membership_applied == 1){{'Donor Member'}}
                                     @elseif($m->membership_applied == 2){{'Life Member'}}

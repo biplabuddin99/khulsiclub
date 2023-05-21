@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
         $id=encryptor('decrypt',$r->uptoken);
         return [
             'emailAddress'=>'required|unique:our_members,email,'.$id,
+            'membershipno'=>'unique:our_members,membership_no',
             'CellNo'=>'required'
         ];
     }
