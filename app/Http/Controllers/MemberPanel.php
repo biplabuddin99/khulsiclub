@@ -40,7 +40,7 @@ class MemberPanel extends Controller
     {
         
         $foundMember = DB::table('our_members')
-                ->join('founding_committees', 'our_members.member_id', '=', 'founding_committees.member_id')
+                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
                 ->select('our_members.*')->get();
         return view('frontend.membership.foundingMember',compact('foundMember'));
     }
