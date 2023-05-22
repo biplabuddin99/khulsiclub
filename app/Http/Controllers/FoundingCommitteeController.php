@@ -17,9 +17,8 @@ class FoundingCommitteeController extends Controller
      */
     public function index()
     {
-        // $ourmember= DB::select("SELECT * FROM `our_members` INNER JOIN founding_committees ON our_members.member_id=founding_committees.member_id");
         $ourmember = DB::table('our_members')
-                ->join('founding_committees', 'our_members.member_id', '=', 'founding_committees.member_id')
+                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
                 ->select('our_members.*')
                 ->paginate(10);
 
@@ -45,8 +44,8 @@ class FoundingCommitteeController extends Controller
     public function search(Request $request)
     {
         if($request->name){
-            $members=OurMember::select('id','given_name as value1','surname as value2','member_id as label','cell_number')->where(function($query) use ($request) {
-                        $query->where('given_name','like', '%' . $request->name . '%')->orWhere('member_id','like', '%' . $request->name . '%');
+            $members=OurMember::select('id','given_name as value1','surname as value2','membership_no as label','cell_number')->where(function($query) use ($request) {
+                        $query->where('given_name','like', '%' . $request->name . '%')->orWhere('membership_no','like', '%' . $request->name . '%');
                         })->get();
                       print_r(json_encode($members));  
         }
@@ -62,8 +61,8 @@ class FoundingCommitteeController extends Controller
         if($request->item_id){
             $members=OurMember::where('id',$request->item_id)->first();
             $data='<tr class="text-center">';
-            $data.='<td class="p-2">'.$members->full_name.'<input name="member_id[]" type="hidden" value="'.$members->id.'"></td>';
-            $data.='<td class="p-2">'.$members->member_id.'<input name="memberId[]" type="hidden" value="'.$members->member_id.'"></td>';
+            $data.='<td class="p-2">'.$members->full_name.'<input name="member_name[]" type="hidden" value="'.$members->id.'"></td>';
+            $data.='<td class="p-2">'.$members->membership_no.'<input name="membership_no[]" type="hidden" value="'.$members->membership_no.'"></td>';
             $data.='<td class="p-2">'.$members->cell_number.'<input name="phone[]" type="hidden"></td>';
             $data.='<td class="p-2 text-danger"><i style="font-size:1.7rem" onclick="removerow(this)" class="bi bi-dash-circle-fill"></i></td>';
             $data.='</tr>';
@@ -82,10 +81,10 @@ class FoundingCommitteeController extends Controller
     public function store(Request $request)
     {
         try{
-            if($request->member_id){
-                foreach($request->member_id as $i=>$member_id){
+            if($request->membership_no){
+                foreach($request->membership_no as $i=>$membership_no){
                     $fc=new founding_committee;
-                    $fc->member_id=$request->memberId[$i];
+                    $fc->member_id=$request->membership_no[$i];
 
                 }
             }
@@ -101,7 +100,7 @@ class FoundingCommitteeController extends Controller
         }
         catch (Exception $e){
             Toastr::warning('Please try Again!');
-            //  dd($e);
+             dd($e);
             return back()->withInput();
 
         }

@@ -27,7 +27,7 @@
                             <tr class="text-center">
                             <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$b->member?->full_name}}</td>
-                                <td>{{$b->member?->member_id}}</td>
+                                <td>{{$b->member?->membership_no}}</td>
                                 <td>{{$b->designation}}</td>
                                 <td>{{$b->member?->cell_number}}</td>
                                 <td>{{$b->session?->session_name}}</td>

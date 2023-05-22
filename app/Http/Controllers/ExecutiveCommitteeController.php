@@ -29,7 +29,7 @@ class ExecutiveCommitteeController extends Controller
      */
     public function create()
     {
-        $ourMember= OurMember::all();
+        $ourMember= OurMember::where('status', 2)->get();
         $comSession = committee_session::all();
         return view('executiveCommittee.create',compact('comSession','ourMember'));
     }
@@ -81,7 +81,7 @@ class ExecutiveCommitteeController extends Controller
      */
     public function edit($id)
     {
-        $ourMember= OurMember::all();
+        $ourMember= OurMember::where('status', 2)->get();
         $comSession = committee_session::all();
         $exeCommittee = executive_committee::findOrFail(encryptor('decrypt',$id));
         return view('executiveCommittee.edit',compact('comSession','ourMember','exeCommittee'));

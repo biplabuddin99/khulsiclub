@@ -137,8 +137,11 @@ class PhotoGallaryController extends Controller
      * @param  \App\Models\photoGallary  $photoGallary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(photoGallary $photoGallary)
+    public function destroy($id)
     {
-        //
+        $cat= photoGallary::findOrFail(encryptor('decrypt',$id));
+        $cat->delete();
+        Toastr::warning('Deleted Permanently!');
+        return redirect()->back();
     }
 }

@@ -70,7 +70,7 @@
                             <div class="search-body">
                                 <h1>Member Search</h1>
                                 <div class="searchBox">
-                                    <input type="text" value="{{ request()->input('search', '') }}" name="search" placeholder="Membership code">
+                                    <input type="text" value="{{ request()->input('search', '') }}" name="search" placeholder="Membership code/name">
                                     <button type="submit">
                                         <span class="bi bi-search"></span>
                                     </button>

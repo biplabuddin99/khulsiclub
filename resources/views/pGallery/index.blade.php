@@ -4,9 +4,6 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
-
-
-    <!-- Bordered table start -->
     <section class="section">
         <div class="row" id="table-bordered">
             <div class="col-12">
@@ -34,7 +31,17 @@
                                         <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/pGgallery/'.$cat->feature_image)}}" alt=""></td>
                                         <td>{{ $cat->status == 1?"Active":"Inactive" }}</td>
                                         <td class="white-space-nowrap">
-                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.pGallery.edit',encryptor('encrypt',$cat->id))}}">Edit</a>
+                                            <a  href="{{route(currentUser().'.pGallery.edit',encryptor('encrypt',$cat->id))}}">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            {{-- <a href="javascript:void()" onclick="$('#form{{$cat->id}}').submit()">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                            <form id="form{{$cat->id}}" action="{{route(currentUser().'.pGallery.destroy',encryptor('encrypt',$cat->id))}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                            </form> --}}
                                         </td>
                                     </tr>
                                     @empty
