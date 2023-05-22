@@ -43,6 +43,10 @@ class TotalDueController extends Controller
 
             $tag->member_type=$request->member_type;
             $tag->member_name=$request->member_name;
+            $tag->email=$request->email;
+            $tag->contact=$request->contact;
+            $tag->address=$request->address;
+            $tag->status=$request->status;
             $tag->membership_code=$request->membership_code;
             $tag->y2016=$request->y2016;
             $tag->y2017=$request->y2017;
@@ -108,6 +112,10 @@ class TotalDueController extends Controller
 
             $tag->member_type=$request->member_type;
             $tag->member_name=$request->member_name;
+            $tag->email=$request->email;
+            $tag->contact=$request->contact;
+            $tag->address=$request->address;
+            $tag->status=$request->status;
             $tag->membership_code=$request->membership_code;
             $tag->y2016=$request->y2016;
             $tag->y2017=$request->y2017;

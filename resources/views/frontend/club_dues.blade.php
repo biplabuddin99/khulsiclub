@@ -82,6 +82,7 @@
             </form>
             <div class="row justify-content-center mt-5">
                 @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
+                @php $st=array("","Active","Inactive","Terminated"); @endphp
                 @if ($members)
                 <div class="col-lg-6">
                     <div class="card company-info shadow-sm mb-3">
@@ -108,22 +109,22 @@
                                 <tr>
                                     <th width="37%">Email</th>
                                     <td width="2">:</td>
-                                    <td width="61"></td>
+                                    <td width="61">{{$members->email}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Contact</th>
                                     <td width="2">:</td>
-                                    <td width="61"></td>
+                                    <td width="61">{{$members->contact}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Address</th>
                                     <td width="2">:</td>
-                                    <td width="61"></td>
+                                    <td width="61">{{$members->address}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Status</th>
                                     <td width="2">:</td>
-                                    <td width="61"></td>
+                                    <td width="61">{{$st[$members->status]}}</td>
                                 </tr>
                             </table>
                         </div>
@@ -136,66 +137,114 @@
                         </div>
                         <div class="card-body" style="min-height:290px;">
                             <table class="table table-sm table-borderless">
+                                @if ($members->y2016 != null)
                                 <tr>
                                     <th width="40">2016</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2016}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2017 != null)
                                 <tr>
                                     <th width="40">2017</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2017}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2018 != null)
                                 <tr>
                                     <th width="40">2018</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2018}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2019 != null)
                                 <tr>
                                     <th width="40">2019</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2019}}</td>
                                 </tr>
+                                @else
+                                @endif
+                                
+                                @if ($members->y2020 != null)
                                 <tr>
                                     <th width="40">2020</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2020}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2021 != null)
                                 <tr>
                                     <th width="40">2021</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2021}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2020 != null)
                                 <tr>
                                     <th width="40">31th Dec"2020"</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2020}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2021 != null)
                                 <tr>
                                     <th width="40">31th Mar"2021"</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2021}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->y2021 != null)
                                 <tr>
                                     <th width="40">31th Aug"2021"</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2021}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->subscription_interest != null)
                                 <tr>
                                     <th width="40">10% interest in subscription</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->subscription_interest}}</td>
                                 </tr>
+                                @else
+                                @endif
+                                
+                                @if ($members->land_developmnet_fee != null)
                                 <tr>
                                     <th width="40">Land Development Fee Dues</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->land_developmnet_fee}}</td>
                                 </tr>
+                                @else
+                                @endif
+
+                                @if ($members->land_interest != null)
                                 <tr>
                                     <th width="40">10% Interest in Subscription & Land Fee</th>
                                     <td width="2">:</td>
                                     <td width="58">{{$members->land_interest}}</td>
                                 </tr>
+                                @else
+                                @endif
+
                                 <tr>
                                     <th width="40" colspan="3"><hr></th>
                                 </tr>

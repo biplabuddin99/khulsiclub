@@ -34,6 +34,36 @@
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input type="email"class="form-control" value="{{ old('email')}}" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Contact</label>
+                                            <input type="text"class="form-control" value="{{ old('contact')}}" name="contact">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Address</label>
+                                            <textarea class="form-control" name="address"  rows="2">{{ old('address')}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="mtype">Status</label>
+                                            <select class="form-control form-select" name="status">
+                                                <option value="">Select member status</option>
+                                                <option value="1">Active</option>
+                                                <option value="2">Inactive</option>
+                                                <option value="3">Terminated</option>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
                                             <label for=""> Membership Code</label>
                                             <input type="text"class="form-control" value="{{ old('membership_code')}}" name="membership_code">
                                         </div>

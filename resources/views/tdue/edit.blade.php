@@ -35,6 +35,36 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email"class="form-control" value="{{ old('email',$tdue->email)}}" name="email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Contact</label>
+                                        <input type="text"class="form-control" value="{{ old('contact',$tdue->contact)}}" name="contact">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Address</label>
+                                        <textarea class="form-control" name="address"  rows="2">{{ old('address',$tdue->address)}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="mtype">Status</label>
+                                        <select class="form-control form-select" name="status">
+                                            <option value="">Select member status</option>
+                                            <option value="1" {{ old('status',$tdue->status=="1"?"selected":"")}}>Active</option>
+                                            <option value="2" {{ old('status',$tdue->status=="2"?"selected":"")}}>Inactive</option>
+                                            <option value="3" {{ old('status',$tdue->status=="3"?"selected":"")}}>Terminated</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label for=""> Membership Code</label>
                                         <input type="text"class="form-control" value="{{ old('membership_code',$tdue->membership_code)}}" name="membership_code">
                                     </div>

@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('member_type')->nullable();
             $table->string('member_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('address')->nullable();
             $table->string('membership_code')->nullable();
             $table->decimal('y2016',10,2)->nullable()->default(0);
             $table->decimal('y2017',10,2)->nullable()->default(0);
@@ -27,6 +30,7 @@ return new class extends Migration
             $table->decimal('subscription_interest',10,2)->nullable()->default(0);
             $table->decimal('land_interest',10,2)->nullable()->default(0);
             $table->decimal('land_developmnet_fee',10,2)->nullable()->default(0);
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
