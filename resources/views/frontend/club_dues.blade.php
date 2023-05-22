@@ -54,12 +54,12 @@
                         <div class="member-search">
                             <div class="search-body">
                                 <h1>Member Type</h1>
-                                <div class=" selectBox">
+                                <div class="selectBox">
                                     <select name="member_type" class="memberTypeSelect">
-                                        <option value="1" {{ old('member_type') == 1 ? 'selected' : '' }}>Founder Member</option>
-                                        <option value="2" {{ old('member_type') == 2 ? 'selected' : '' }}>Life Member</option>
-                                        <option value="3" {{ old('member_type') == 3 ? 'selected' : '' }}>Permanent Member</option>
-                                        <option value="4" {{ old('member_type') == 4 ? 'selected' : '' }}>Permanent Terminated Member</option>
+                                        <option value="1" {{ (old('member_type') == 1 || request()->input('member_type') == 1) ? 'selected' : '' }}>Founder Member</option>
+                                        <option value="2" {{ (old('member_type') == 2 || request()->input('member_type') == 2) ? 'selected' : '' }}>Life Member</option>
+                                        <option value="3" {{ (old('member_type') == 3 || request()->input('member_type') == 3) ? 'selected' : '' }}>Permanent Member</option>
+                                        <option value="4" {{ (old('member_type') == 4 || request()->input('member_type') == 4) ? 'selected' : '' }}>Permanent Terminated Member</option>
                                     </select>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="search-body">
                                 <h1>Member Search</h1>
                                 <div class="searchBox">
-                                    <input type="text" value="{{ request()->input('search', '') }}"  name="search" placeholder="Membership code">
+                                    <input type="text" value="{{ request()->input('search', '') }}" name="search" placeholder="Membership code">
                                     <button type="submit">
                                         <span class="bi bi-search"></span>
                                     </button>
@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </form>
+            
             <div class="row justify-content-center mt-5">
                 @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
                 @php $st=array("","Active","Inactive","Terminated"); @endphp
