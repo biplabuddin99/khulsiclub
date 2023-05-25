@@ -144,8 +144,11 @@ class VideoNoticeController extends Controller
      * @param  \App\Models\video_notice  $video_notice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(video_notice $video_notice)
+    public function destroy($id)
     {
-        //
+        $vn= video_notice::findOrFail(encryptor('decrypt',$id));
+        $vn->delete();
+        Toastr::warning('Deleted Permanently!');
+        return redirect()->back();
     }
 }

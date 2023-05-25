@@ -36,7 +36,17 @@
                                         {{-- <td>{{$m->publish_date}}</td> --}}
                                         <td>{{$m->link}}</td>
                                         <td class="white-space-nowrap">
-                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.vNotice.edit',encryptor('encrypt',$m->id))}}">Edit</a>
+                                            <a  href="{{route(currentUser().'.vNotice.edit',encryptor('encrypt',$m->id))}}">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            <a href="javascript:void()" onclick="$('#form{{$m->id}}').submit()">
+                                            <i class="bi bi-trash"></i>
+                                            </a>
+                                            <form id="form{{$m->id}}" action="{{route(currentUser().'.vNotice.destroy',encryptor('encrypt',$m->id))}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                            </form>
                                         </td>
                                     </tr>
                                     @empty
