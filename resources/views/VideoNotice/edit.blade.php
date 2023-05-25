@@ -39,7 +39,7 @@
                                     </div> --}}
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="text"><b>{{__('Video link')}}:</b></label>
-                                        <input type="text" class="form-control" name="link" value="{{ old('link',$videoNotice->link)}}" required>
+                                        <input type="text" class="form-control" name="link" value="{{ old('link',$videoNotice->link)}}">
                                     </div>
                                     {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="date"><b>{{__('Publish Date')}}:</b></label>
