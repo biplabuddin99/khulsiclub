@@ -262,8 +262,8 @@
                 <div class="card-body">
                     <span class="member-degignation">
                         @if ($fm->membership_applied == 1){{'Donor Member'}}
-                        @elseif($fm->membership_applied == 2){{'Life Member'}}
-                        @elseif($fm->membership_applied == 3){{'Service Member'}}
+                        @elseif($fm->membership_applied == 2){{'Service Member'}}
+                        @elseif($fm->membership_applied == 3){{'Life Member'}}
                         @elseif($fm->membership_applied == 4){{'Temporary Member'}}
                         @elseif($fm->membership_applied == 5){{'Permanent Member'}}
                         @elseif($fm->membership_applied == 6){{'Honorary Member'}}

@@ -34,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
+                                    @php $mt=array("","Founding Member","Life Member","Permanent Member","Donor Member","Service Member","Temporary Member","Honorary Member","Corporate Member","Diplomate Member"); @endphp
                                     @forelse($data as $m)
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>

@@ -18,10 +18,15 @@
                                             <label for="mtype">Member Type</label>
                                             <select class="form-control form-select" name="member_type">
                                                 <option value="">Select Member Type</option>
-                                                <option value="1">Founder Members</option>
+                                                <option value="1">Founding Members</option>
                                                 <option value="2">Life Member</option>
                                                 <option value="3">Permanent Member</option>
-                                                <option value="4">Permanent Terminated Member</option>
+                                                <option value="4">Donor Member</option>
+                                                <option value="5">Service Member</option>
+                                                <option value="6">Temporary Member</option>
+                                                <option value="7">Honorary Member</option>
+                                                <option value="8">Corporate Member</option>
+                                                <option value="9">Diplomate Member</option>
                                             </select>
                                             
                                         </div>

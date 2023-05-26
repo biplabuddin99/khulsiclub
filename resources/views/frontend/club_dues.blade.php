@@ -55,11 +55,17 @@
                             <div class="search-body">
                                 <h1>Member Type</h1>
                                 <div class="selectBox">
-                                    <select name="member_type" class="memberTypeSelect">
-                                        <option value="1" {{ (old('member_type') == 1 || request()->input('member_type') == 1) ? 'selected' : '' }}>Founder Member</option>
+                                    <select name="member_type" class="memberTypeSelect" required>
+                                        <option value="">Select Member Type</option>
+                                        <option value="1" {{ (old('member_type') == 1 || request()->input('member_type') == 1) ? 'selected' : '' }}>Founding Member</option>
                                         <option value="2" {{ (old('member_type') == 2 || request()->input('member_type') == 2) ? 'selected' : '' }}>Life Member</option>
                                         <option value="3" {{ (old('member_type') == 3 || request()->input('member_type') == 3) ? 'selected' : '' }}>Permanent Member</option>
-                                        <option value="4" {{ (old('member_type') == 4 || request()->input('member_type') == 4) ? 'selected' : '' }}>Permanent Terminated Member</option>
+                                        <option value="4" {{ (old('member_type') == 4 || request()->input('member_type') == 4) ? 'selected' : '' }}>Donor Member</option>
+                                        <option value="5" {{ (old('member_type') == 5 || request()->input('member_type') == 5) ? 'selected' : '' }}>Service Member</option>
+                                        <option value="6" {{ (old('member_type') == 6 || request()->input('member_type') == 6) ? 'selected' : '' }}>Temporary Member</option>
+                                        <option value="7" {{ (old('member_type') == 7 || request()->input('member_type') == 7) ? 'selected' : '' }}>Honorary Member</option>
+                                        <option value="8" {{ (old('member_type') == 8 || request()->input('member_type') == 8) ? 'selected' : '' }}>Corporate Member</option>
+                                        <option value="9" {{ (old('member_type') == 9 || request()->input('member_type') == 9) ? 'selected' : '' }}>Diplomate Member</option>
                                     </select>
                                 </div>
                             </div>
@@ -82,7 +88,7 @@
             </form>
             
             <div class="row justify-content-center mt-5">
-                @php $mt=array("","Founder Member","Life Member","Permanent Member","Permanent Terminated Member"); @endphp
+                @php $mt=array("","Founding Member","Life Member","Permanent Member","Donor Member","Service Member","Temporary Member","Honorary Member","Corporate Member","Diplomate Member"); @endphp
                 @php $st=array("","Active","Inactive","Terminated"); @endphp
                 @if ($members)
                 <div class="col-lg-6">

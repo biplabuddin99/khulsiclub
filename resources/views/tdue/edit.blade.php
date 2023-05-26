@@ -19,10 +19,15 @@
                                         <label for="mtype">Member Type</label>
                                         <select class="form-control form-select" name="member_type">
                                             <option value="">Select Member Type</option>
-                                            <option value="1" {{ old('member_type',$tdue->member_type=="1"?"selected":"")}}>Founder Member</option>
+                                            <option value="1" {{ old('member_type',$tdue->member_type=="1"?"selected":"")}}>Founding Member</option>
                                             <option value="2" {{ old('member_type',$tdue->member_type=="2"?"selected":"")}}>Life Member</option>
                                             <option value="3" {{ old('member_type',$tdue->member_type=="3"?"selected":"")}}>Permanent Member</option>
-                                            <option value="4" {{ old('member_type',$tdue->member_type=="4"?"selected":"")}}>Permanent Terminated Member</option>
+                                            <option value="4" {{ old('member_type',$tdue->member_type=="4"?"selected":"")}}>Donor Member</option>
+                                            <option value="5" {{ old('member_type',$tdue->member_type=="5"?"selected":"")}}>Service Member</option>
+                                            <option value="6" {{ old('member_type',$tdue->member_type=="6"?"selected":"")}}>Temporary Member</option>
+                                            <option value="7" {{ old('member_type',$tdue->member_type=="7"?"selected":"")}}>Honorary Member</option>
+                                            <option value="8" {{ old('member_type',$tdue->member_type=="8"?"selected":"")}}>Corporate Member</option>
+                                            <option value="9" {{ old('member_type',$tdue->member_type=="9"?"selected":"")}}>Diplomate Member</option>
                                         </select>
                                         
                                     </div>
