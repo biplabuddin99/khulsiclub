@@ -204,7 +204,7 @@
                                 <img src="{{asset('uploads/member_image/thumb/'.$m->image)}}" alt="No Image" width="100px">
                             </div>
                             <div class="col-lg-2 text-center border-end ps-0 pe-0">
-                                <h1> [{{$m->membership_no}}]</h1>
+                                <h1> {{$m->full_name}}</h1>
                                 <h5>
                                     @if ($m->membership_applied == 1){{'Donor Member'}}
                                     @elseif($m->membership_applied == 2){{'Life Member'}}
@@ -224,11 +224,11 @@
                             </div>
                             <div class="col-lg-6 align-self-center">
                                 <h4><a href="#">{{$m->company}}</a></h4>
-                                <p>{{$m->description}}</p>
+                                <p>{{$m->designation}}</p>
                             </div>
-                            <div class="col-lg-2 align-self-center text-center">
+                            {{-- <div class="col-lg-2 align-self-center text-center">
                                 <a href="#" class="btn btn-sm btn-outline-explore">More Details</a>
-                            </div>
+                            </div> --}}
                         </div>
                         @empty
                         <div class="search-list-item row ">
