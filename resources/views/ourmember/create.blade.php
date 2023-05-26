@@ -137,7 +137,13 @@
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="form-group">
-                                                <label for="designation">Designation:</label>
+                                                <label for="designation">Club Designation:</label>
+                                                <input type="text" class="form-control" value="{{ old('club_designation')}}" name="club_designation">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="designation">Company Designation:</label>
                                                 <input type="text" class="form-control" value="{{ old('designation')}}" name="designation">
                                             </div>
                                         </div>

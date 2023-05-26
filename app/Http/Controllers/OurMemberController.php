@@ -69,6 +69,7 @@ class OurMemberController extends Controller
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
             $member->designation=$request->designation;
+            $member->club_designation=$request->club_designation;
             $member->company=$request->company;
             $member->cell_number=$request->CellNo;
             $member->tel_number=$request->tel;
@@ -206,6 +207,7 @@ class OurMemberController extends Controller
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
             $member->designation=$request->designation;
+            $member->club_designation=$request->club_designation;
             $member->company=$request->company;
             $member->cell_number=$request->CellNo;
             $member->tel_number=$request->tel;

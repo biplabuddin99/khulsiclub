@@ -153,7 +153,13 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="designation">Designation:</label>
+                                                <label for="designation">Club Designation:</label>
+                                                <input type="text" class="form-control" value="{{ old('club_designation',$member->club_designation)}}" name="club_designation">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="designation">Comapny Designation:</label>
                                                 <input type="text" class="form-control" value="{{ old('designation',$member->designation)}}" name="designation">
                                             </div>
                                         </div>
@@ -667,7 +673,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                        <button type="submit" class="btn btn-info me-1 mb-1">Update</button>
                                     </div>
                                 </div>
                             </form>
