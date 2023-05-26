@@ -201,7 +201,6 @@ class MemberPanel extends Controller
             $member->nationality=$request->nationality;
             $member->profession=$request->profession;
             $member->designation=$request->designation;
-            $member->club_designation=$request->club_designation;
             $member->company=$request->company;
             $member->description=$request->description;
             if($request->hasFile('attach_pdf')){

@@ -130,12 +130,6 @@
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group">
-                                                    <label for="designation">Club Designation:</label>
-                                                    <input type="text" class="form-control" value="{{ old('club_designation',$member->club_designation)}}" name="club_designation">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group">
                                                     <label for="designation">Comapny Designation:</label>
                                                     <input type="text" class="form-control" value="{{ old('designation',$member->designation)}}" name="designation">
                                                 </div>

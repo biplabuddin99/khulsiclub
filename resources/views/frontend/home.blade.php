@@ -256,7 +256,7 @@
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $fm)
           <div class="col-12 item pe-3 ps-3">
-            <div class="card member-box shadow-lg">
+            <div class="card member-box shadow">
                 <span class="shape"></span>
                 <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
                 <div class="card-body">
