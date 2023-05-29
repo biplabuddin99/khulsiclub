@@ -151,8 +151,11 @@ class TotalDueController extends Controller
      * @param  \App\Models\total_due  $total_due
      * @return \Illuminate\Http\Response
      */
-    public function destroy(total_due $total_due)
+    public function destroy($id)
     {
-        //
+        $cat= total_due::findOrFail(encryptor('decrypt',$id));
+        $cat->delete();
+        Toastr::warning('Data Deleted');
+        return redirect()->back();
     }
 }

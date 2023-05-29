@@ -58,7 +58,14 @@
                                         <td>{{$m->land_developmnet_fee}}</td>
                                         
                                         <td class="white-space-nowrap">
-                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.tdue.edit',encryptor('encrypt',$m->id))}}">Edit</a>
+                                            <a href="{{route(currentUser().'.tdue.edit',encryptor('encrypt',$m->id))}}"><i class="bi bi-pencil-square"></i></a>
+                                            <a class="text-danger" href="javascript:void()" onclick="$('#form{{$m->id}}').submit()">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                            <form id="form{{$m->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.tdue.destroy',encryptor('encrypt',$m->id))}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                            </form>
                                         </td>
                                     </tr>
                                     @empty
