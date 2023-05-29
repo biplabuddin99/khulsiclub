@@ -27,6 +27,9 @@
                                         <th scope="col">{{__('2019')}}</th>
                                         <th scope="col">{{__('2020')}}</th>
                                         <th scope="col">{{__('2021')}}</th>
+                                        <th scope="col">{{__('2022')}}</th>
+                                        <th scope="col">{{__('2023')}}</th>
+                                        <th scope="col">{{__('2024')}}</th>
                                         <th scope="col">{{__('10% Interest in Subscription')}}</th>
                                         <th scope="col">{{__('Land Development Fee Dues 10% Interest')}}</th>
                                         <th scope="col">{{__('Land Development Fee Due')}}</th>
@@ -39,14 +42,17 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$mt[$m->member_type]}}</td>
-                                        <td>{{$m->member_name}}</td>
-                                        <td>{{$m->membership_code}}</td>
+                                        <td>{{$m->member->full_name}}</td>
+                                        <td>{{$m->member->membership_no}}</td>
                                         <td>{{$m->y2016}}</td>
                                         <td>{{$m->y2017}}</td>
                                         <td>{{$m->y2018}}</td>
                                         <td>{{$m->y2019}}</td>
                                         <td>{{$m->y2020}}</td>
                                         <td>{{$m->y2021}}</td>
+                                        <td>{{$m->y2022}}</td>
+                                        <td>{{$m->y2023}}</td>
+                                        <td>{{$m->y2024}}</td>
                                         <td>{{$m->subscription_interest}}</td>
                                         <td>{{$m->land_interest}}</td>
                                         <td>{{$m->land_developmnet_fee}}</td>

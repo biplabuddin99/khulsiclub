@@ -28,33 +28,22 @@
                                                 <option value="8">Corporate Member</option>
                                                 <option value="9">Diplomate Member</option>
                                             </select>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="">Member Name</label>
-                                            <input type="text"class="form-control" value="{{ old('member_name')}}" name="member_name">
+                                            <select class="form-control form-select" name="member_id" required>
+                                                <option value="">Select Member</option>
+                                                @forelse($ourmember as $d)
+                                                    <option value="{{$d->id}}" {{ old('member_id')==$d->id?"selected":""}}> {{ $d->full_name}} - {{ $d->membership_no}}</option>
+                                                @empty
+                                                    <option value="">No Data found</option>
+                                                @endforelse
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="">Email</label>
-                                            <input type="email"class="form-control" value="{{ old('email')}}" name="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="">Contact</label>
-                                            <input type="text"class="form-control" value="{{ old('contact')}}" name="contact">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="">Address</label>
-                                            <textarea class="form-control" name="address"  rows="2">{{ old('address')}}</textarea>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="mtype">Status</label>
@@ -64,13 +53,6 @@
                                                 <option value="2">Inactive</option>
                                                 <option value="3">Terminated</option>
                                             </select>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for=""> Membership Code</label>
-                                            <input type="text"class="form-control" value="{{ old('membership_code')}}" name="membership_code">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -107,6 +89,24 @@
                                         <div class="form-group">
                                             <label for="">2021</label>
                                             <input type="text"class="form-control" value="{{ old('y2021')}}" name="y2021">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">2022</label>
+                                            <input type="text"class="form-control" value="{{ old('y2022')}}" name="y2022">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">2023</label>
+                                            <input type="text"class="form-control" value="{{ old('y2023')}}" name="y2023">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">2024</label>
+                                            <input type="text"class="form-control" value="{{ old('y2024')}}" name="y2024">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">

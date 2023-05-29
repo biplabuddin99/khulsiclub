@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\total_due;
+use App\Models\OurMember;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
@@ -27,7 +28,8 @@ class TotalDueController extends Controller
      */
     public function create()
     {
-        return view('tdue.create');
+        $ourmember=OurMember::select('given_name','surname','membership_no','membership_applied','id')->where('status',2)->get();
+        return view('tdue.create',compact('ourmember'));
     }
 
     /**
@@ -42,18 +44,17 @@ class TotalDueController extends Controller
             $tag=new total_due;
 
             $tag->member_type=$request->member_type;
-            $tag->member_name=$request->member_name;
-            $tag->email=$request->email;
-            $tag->contact=$request->contact;
-            $tag->address=$request->address;
+            $tag->member_id=$request->member_id;
             $tag->status=$request->status;
-            $tag->membership_code=$request->membership_code;
             $tag->y2016=$request->y2016;
             $tag->y2017=$request->y2017;
             $tag->y2018=$request->y2018;
             $tag->y2019=$request->y2019;
             $tag->y2020=$request->y2020;
             $tag->y2021=$request->y2021;
+            $tag->y2022=$request->y2022;
+            $tag->y2022=$request->y2022;
+            $tag->y2023=$request->y2023;
             $tag->subscription_interest=$request->subscription_interest;
             $tag->land_interest=$request->land_interest;
             $tag->land_developmnet_fee=$request->land_developmnet_fee;
@@ -94,8 +95,9 @@ class TotalDueController extends Controller
      */
     public function edit($id)
     {
+        $ourmember=OurMember::select('given_name','surname','membership_no','membership_applied','id')->where('status',2)->get();
         $tdue = total_due::findOrFail(encryptor('decrypt',$id));
-        return view('tdue.edit',compact('tdue'));
+        return view('tdue.edit',compact('tdue','ourmember'));
     }
 
     /**
@@ -111,18 +113,17 @@ class TotalDueController extends Controller
             $tag= total_due::findOrFail(encryptor('decrypt',$id));
 
             $tag->member_type=$request->member_type;
-            $tag->member_name=$request->member_name;
-            $tag->email=$request->email;
-            $tag->contact=$request->contact;
-            $tag->address=$request->address;
+            $tag->member_id=$request->member_id;
             $tag->status=$request->status;
-            $tag->membership_code=$request->membership_code;
             $tag->y2016=$request->y2016;
             $tag->y2017=$request->y2017;
             $tag->y2018=$request->y2018;
             $tag->y2019=$request->y2019;
             $tag->y2020=$request->y2020;
             $tag->y2021=$request->y2021;
+            $tag->y2022=$request->y2022;
+            $tag->y2022=$request->y2022;
+            $tag->y2023=$request->y2023;
             $tag->subscription_interest=$request->subscription_interest;
             $tag->land_interest=$request->land_interest;
             $tag->land_developmnet_fee=$request->land_developmnet_fee;

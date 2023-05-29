@@ -149,10 +149,16 @@ class FrontendController extends Controller
     {
         $members = array();
         if($r->input('member_type') && $r->input('search')){
+            $searchText=$r->input('search');
             $members = total_due::where('member_type', $r->input('member_type'))
-                            ->where('membership_code', $r->input('search'))
-                            ->orwhere('member_name', $r->input('search'))
-                            ->first();
+                            ->where(function($query) use ($searchText){
+                                $query->orWhereHas('member', function($q) use ($searchText) {
+                                    $q->where(function($q) use ($searchText) {
+                                        $q->where('membership_no', $searchText);
+                                        $q->orwhere('given_name', $searchText);
+                                    });
+                                });
+                            })->first();
         }
         return view('frontend.club_dues',compact('members'));
     }

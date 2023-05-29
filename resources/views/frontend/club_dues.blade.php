@@ -101,7 +101,7 @@
                                 <tr>
                                     <th width="30%">Name</th>
                                     <td width="1">:</td>
-                                    <td width="68">{{$members->member_name}}</td>
+                                    <td width="68">{{$members->member->full_name}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Member Type</th>
@@ -111,22 +111,22 @@
                                 <tr>
                                     <th width="37%">Membership Code</th>
                                     <td width="2">:</td>
-                                    <td width="61">{{$members->membership_code}}</td>
+                                    <td width="61">{{$members->member->membership_no}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Email</th>
                                     <td width="2">:</td>
-                                    <td width="61">{{$members->email}}</td>
+                                    <td width="61">{{$members->member->email}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Contact</th>
                                     <td width="2">:</td>
-                                    <td width="61">{{$members->contact}}</td>
+                                    <td width="61">{{$members->member->cell_number}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Address</th>
                                     <td width="2">:</td>
-                                    <td width="61">{{$members->address}}</td>
+                                    <td width="61">{{$members->member->present_address}}</td>
                                 </tr>
                                 <tr>
                                     <th width="37%">Status</th>
@@ -195,34 +195,30 @@
                                     <td width="2">:</td>
                                     <td width="58">{{$members->y2021}}</td>
                                 </tr>
-                                @else
                                 @endif
 
-                                @if ($members->y2020 != null)
+                                @if ($members->y2022 != null)
                                 <tr>
-                                    <th width="40">31th Dec"2020"</th>
+                                    <th width="40">2022</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{$members->y2020}}</td>
+                                    <td width="58">{{$members->y2022}}</td>
                                 </tr>
-                                @else
                                 @endif
 
-                                @if ($members->y2021 != null)
+                                @if ($members->y2023 != null)
                                 <tr>
-                                    <th width="40">31th Mar"2021"</th>
+                                    <th width="40">2023</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{$members->y2021}}</td>
+                                    <td width="58">{{$members->y2023}}</td>
                                 </tr>
-                                @else
                                 @endif
 
-                                @if ($members->y2021 != null)
+                                @if ($members->y2024 != null)
                                 <tr>
-                                    <th width="40">31th Aug"2021"</th>
+                                    <th width="40">2024</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{$members->y2021}}</td>
+                                    <td width="58">{{$members->y2024}}</td>
                                 </tr>
-                                @else
                                 @endif
 
                                 @if ($members->subscription_interest != null)
@@ -258,7 +254,7 @@
                                 <tr>
                                     <th width="40">Total Dues</th>
                                     <td width="2">:</td>
-                                    <td width="58">{{ ($members->y2017 + $members->y2018 + $members->y2019 + $members->y2020 + $members->subscription_interest + $members->land_interest) }}</td>
+                                    <td width="58">{{ ($members->y2016 +$members->y2017 + $members->y2018 + $members->y2019 + $members->y2020 +$members->y2021+$members->y2022+$members->y2023+$members->y2024 + $members->subscription_interest + $members->land_interest+ $members->land_developmnet_fee) }}</td>
                                 </tr>
                             </table>
                         </div>
