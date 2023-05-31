@@ -42,8 +42,8 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$mt[$m->member_type]}}</td>
-                                        <td>{{$m->member->full_name}}</td>
-                                        <td>{{$m->member->membership_no}}</td>
+                                        <td>{{$m->member?->full_name}}</td>
+                                        <td>{{$m->member?->membership_no}}</td>
                                         <td>{{$m->y2016}}</td>
                                         <td>{{$m->y2017}}</td>
                                         <td>{{$m->y2018}}</td>
