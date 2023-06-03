@@ -5,7 +5,7 @@
     if ($status == 1) {
         $statusText = 'Applied for approval';
     } elseif ($status == 2) {
-        $statusText = 'Approved';
+        $statusText = 'Active';
     }elseif ($status == 3) {
         $statusText = 'Suspended';
     } else {
@@ -38,7 +38,7 @@
                     <div class="card-body" style="min-height:50px;">
                         <table class="table table-sm table-borderless">
                             <tr>
-                                <th class="text-end"><button class="me-5 btn border-danger text-success">Active</button></th>
+                                <th class="text-end"><button class="me-5 btn border-danger text-success">{{$statusText}}</button></th>
                             </tr>
                         </table>
                     </div>
