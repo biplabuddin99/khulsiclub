@@ -52,7 +52,7 @@
                     <div class="col-lg-3">
                         <a data-fancybox="gallery" href="{{asset('uploads/pGgallery/'.$p->feature_image)}}" data-caption="{{$p->Caption}}">
                             <div class="card card-gallery shadow-sm">
-                                <img src="{{asset('uploads/pGgallery/thumb/'.$p->feature_image)}}" class="img-fluid">
+                                <img src="{{asset('uploads/pGgallery/'.$p->feature_image)}}" class="img-fluid">
                             </div>
                         </a>
                     </div>

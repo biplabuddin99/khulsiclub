@@ -8,6 +8,7 @@ use App\Models\photoGallaryCategory;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
+use Illuminate\Support\Facades\Storage;
 use Exception;
 
 class PhotoGallaryController extends Controller
@@ -49,9 +50,14 @@ class PhotoGallaryController extends Controller
             $pgc->Caption=$request->Caption;
             $pgc->photo_gallary_category_id=$request->album;
             $pgc->status=$request->status;
-            if($request->has('feature_image'))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
-            
+            // if($request->has('feature_image'))
+            //     $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
+
+            if($request->hasFile('feature_image')){
+                $data = rand(111,999).time().'.'.$request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/pGgallery'), $data);
+                $pgc->feature_image=$data;
+            }
             if($pgc->save()){
             Toastr::success('Photo Gallery Create Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');
@@ -109,11 +115,31 @@ class PhotoGallaryController extends Controller
             $pgc->photo_gallary_category_id=$request->album;
             $pgc->status=$request->status;
             
-            $path='uploads/pGgallery';
-            if($request->has('feature_image') && $request->feature_image)
-            if($this->deleteImage($pgc->feature_image,$path))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
+            // $path='uploads/pGgallery';
+            // if($request->has('feature_image') && $request->feature_image)
+            // if($this->deleteImage($pgc->feature_image,$path))
+            //     $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
+
+            // if($request->hasFile('feature_image')){
+            //     $data = rand(111,999).time().'.'.$request->feature_image->extension();
+            //     $request->feature_image->move(public_path('uploads/pGgallery'), $data);
+            //     $pgc->feature_image=$data;
+            // }
             
+            $previousImage = $pgc->feature_image;
+            if ($request->hasFile('feature_image')) {
+                // Delete the previous image if it exists
+                if ($previousImage && Storage::exists('uploads/pGgallery/' . $previousImage)) {
+                    Storage::delete('uploads/pGgallery/' . $previousImage);
+                }
+                // Generate a unique filename for the new image
+                $data = rand(111, 999) . time() . '.' . $request->feature_image->extension();
+                // Move the new image to the desired location
+                $request->feature_image->move(public_path('uploads/pGgallery'), $data);
+                // Update the feature_image field with the new image name
+                $pgc->feature_image = $data;
+            }
+
             if($pgc->save()){
             Toastr::success('Photo Gallery Updated Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');
