@@ -148,8 +148,12 @@ class AuthenticationController extends Controller
                     'roleIdentity'=>encryptor('encrypt',$member->role->identity),
                     'email'=>encryptor('encrypt',$member->email),
                     'phone'=>encryptor('encrypt',$member->cell_number),
+                    'membership_no'=>encryptor('encrypt',$member->membership_no),
+                    'membership_type'=>encryptor('encrypt',$member->membership_applied),
+                    'address'=>encryptor('encrypt',$member->present_address),
                     'status'=>encryptor('encrypt',$member->status),
-                    'full_name'=>encryptor('encrypt',$member->full_name)
+                    'full_name'=>encryptor('encrypt',$member->full_name),
+                    'image'=>encryptor('encrypt',$member->image)
                 ]
             );
     }

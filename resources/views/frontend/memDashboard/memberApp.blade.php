@@ -30,6 +30,10 @@
                     <div class="card-header">
                         <div class="user">
                             <div class="userName text-center">
+                                <div class="mb-2">
+                                    <img src="{{asset('uploads/member_image/thumb/'.encryptor('decrypt', request()->session()->get('image')))}}" alt="">
+                                    
+                                </div>
                                 <h5 class="text-uppercase">{{encryptor('decrypt', request()->session()->get('full_name'))}}</h5>
                             </div>
                         </div>

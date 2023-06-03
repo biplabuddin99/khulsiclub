@@ -1467,6 +1467,9 @@ figure{
   border-top: 3px solid;
   color: var(--red);
 }
+.dashboard-scroll{
+  background-color: #f30d15;
+}
 .member-service .badge-info{
   background-color: var(--red);
   color: #ffffff;
