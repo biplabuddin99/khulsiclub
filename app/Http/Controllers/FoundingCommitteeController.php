@@ -44,7 +44,7 @@ class FoundingCommitteeController extends Controller
     public function search(Request $request)
     {
         if($request->name){
-            $members=OurMember::select('id','given_name as value1','surname as value2','membership_no as label','cell_number')->where(function($query) use ($request) {
+            $members=OurMember::select('id','given_name as value1','surname as value2','membership_no as label','cell_number')->where('status',2)->where(function($query) use ($request) {
                         $query->where('given_name','like', '%' . $request->name . '%')->orWhere('membership_no','like', '%' . $request->name . '%');
                         })->get();
                       print_r(json_encode($members));  

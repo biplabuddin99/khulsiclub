@@ -59,12 +59,6 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label for=""> Membership Code</label>
-                                        <input type="text"class="form-control" value="{{ old('membership_code',$tdue->membership_code)}}" name="membership_code">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                    <div class="form-group">
                                         <label for="">2016</label>
                                         <input type="text"class="form-control" value="{{ old('y2016',$tdue->y2016)}}" name="y2016">
                                     </div>

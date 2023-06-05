@@ -55,6 +55,7 @@ class TotalDueController extends Controller
             $tag->y2022=$request->y2022;
             $tag->y2022=$request->y2022;
             $tag->y2023=$request->y2023;
+            $tag->y2024=$request->y2024;
             $tag->subscription_interest=$request->subscription_interest;
             $tag->land_interest=$request->land_interest;
             $tag->land_developmnet_fee=$request->land_developmnet_fee;
@@ -124,6 +125,7 @@ class TotalDueController extends Controller
             $tag->y2022=$request->y2022;
             $tag->y2022=$request->y2022;
             $tag->y2023=$request->y2023;
+            $tag->y2024=$request->y2024;
             $tag->subscription_interest=$request->subscription_interest;
             $tag->land_interest=$request->land_interest;
             $tag->land_developmnet_fee=$request->land_developmnet_fee;

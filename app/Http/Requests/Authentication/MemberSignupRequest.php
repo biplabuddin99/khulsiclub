@@ -33,7 +33,8 @@ class MemberSignupRequest extends FormRequest
     }
     public function messages(){
         return [
-            'required' => "The :attribute filed is required"
+            'required' => "The :attribute filed is required",
+            'unique' => "The :attribute already used. Please try another",
         ];
     }
 }

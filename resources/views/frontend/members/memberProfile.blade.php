@@ -129,17 +129,18 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="company">Company Name:</label>
+                                                    <input type="text" id="company" class="form-control" value="{{ old('profession',$member->company)}}" name="company">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group">
                                                     <label for="designation">Comapny Designation:</label>
                                                     <input type="text" class="form-control" value="{{ old('designation',$member->designation)}}" name="designation">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <label for="company">Company:</label>
-                                                    <input type="text" id="company" class="form-control" value="{{ old('profession',$member->company)}}" name="company">
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="description">Description</label>
