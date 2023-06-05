@@ -17,12 +17,14 @@ class FoundingCommitteeController extends Controller
      */
     public function index()
     {
-        $ourmember = DB::table('our_members')
-                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
-                ->select('our_members.*')
-                ->paginate(10);
+        // $ourmember = DB::table('our_members')
+        //         ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
+        //         ->select('our_members.*')
+        //         ->paginate(10);
 
-        return view('foundCommittee.index',compact('ourmember'));
+        $foundingMember = founding_committee::paginate(10);      
+
+        return view('foundCommittee.index',compact('foundingMember'));
     }
 
     /**

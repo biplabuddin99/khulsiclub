@@ -31,21 +31,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($ourmember as $p)
+                            @forelse($foundingMember as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td>{{$p->given_name}} {{$p->surname}}</td>
-                                <td>{{$p->membership_no}}</td>
-                                <td>{{$p->mother_name}}</td>
-                                <td>{{$p->nominee}}</td>
-                                <td>{{$p->profession}}</td>
-                                <td>{{$p->cell_number}}</td>
+                                <td>{{$p->member?->full_name}} </td>
+                                <td>{{$p->member?->membership_no}}</td>
+                                <td>{{$p->member?->mother_name}}</td>
+                                <td>{{$p->member?->nominee}}</td>
+                                <td>{{$p->member?->profession}}</td>
+                                <td>{{$p->member?->cell_number}}</td>
                                 <td class="white-space-nowrap">
                                     
-                                    <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
+                                    <a class="text-danger" href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$p->id}}" action="{{route(currentUser().'.foundCommittee.destroy',encryptor('encrypt',$p->id))}}" method="post">
+                                    <form id="form{{$p->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.foundCommittee.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -59,7 +59,7 @@
                         </tbody>
                     </table>
                     <div class=" my-3">
-                        {!! $ourmember->links()!!}
+                        {!! $foundingMember->links()!!}
                     </div>
                 </div>
             </div>
