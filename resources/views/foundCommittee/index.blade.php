@@ -23,8 +23,8 @@
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Name')}}</th>
                                 <th scope="col">{{__('Member ID')}}</th>
-                                <th scope="col">{{__('Mother\'s Name')}}</th>
-                                <th scope="col">{{__('Nominee')}}</th>
+                                <th scope="col">{{__('Email')}}</th>
+                                <th scope="col">{{__('Club Designation')}}</th>
                                 <th scope="col">{{__('Profession')}}</th>
                                 <th scope="col">{{__('Contact No')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
@@ -36,8 +36,8 @@
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->member?->full_name}} </td>
                                 <td>{{$p->member?->membership_no}}</td>
-                                <td>{{$p->member?->mother_name}}</td>
-                                <td>{{$p->member?->nominee}}</td>
+                                <td>{{$p->member?->email}}</td>
+                                <td>{{$p->member?->club_designation}}</td>
                                 <td>{{$p->member?->profession}}</td>
                                 <td>{{$p->member?->cell_number}}</td>
                                 <td class="white-space-nowrap">
