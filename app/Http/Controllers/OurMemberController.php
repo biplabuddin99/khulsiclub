@@ -296,15 +296,18 @@ class OurMemberController extends Controller
                         }
                     }
                 }
-                Toastr::success('our Member Update Successfully!');
-                return redirect()->route(currentUser().'.ourMember.index');
+                if ($request->status == 2) {
+                    return redirect()->route(currentUser() . '.approve_member');
+                } else {
+                    return redirect()->route(currentUser() . '.ourMember.index');
+                }
             }else{
                 Toastr::warning('Please try Again!');
                 return redirect()->back();
             }
         }
         catch (Exception $e){
-            // dd($e);
+            dd($e);
             return back()->withInput();
             Toastr::warning('Please try Again!');
 
