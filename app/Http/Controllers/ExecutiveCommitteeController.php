@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\executive_committee;
+use App\Models\founding_committee;
 use App\Models\committee_session;
 use App\Models\OurMember;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
+use DB;
 
 class ExecutiveCommitteeController extends Controller
 {
@@ -29,7 +31,11 @@ class ExecutiveCommitteeController extends Controller
      */
     public function create()
     {
-        $ourMember= OurMember::where('status', 2)->get();
+        $ourMember = DB::table('our_members')
+                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
+                ->select('our_members.*')
+                ->get();
+        //$ourMember= OurMember::where('status', 2)->get();
         $comSession = committee_session::all();
         return view('executiveCommittee.create',compact('comSession','ourMember'));
     }
@@ -81,7 +87,11 @@ class ExecutiveCommitteeController extends Controller
      */
     public function edit($id)
     {
-        $ourMember= OurMember::where('status', 2)->get();
+        $ourMember = DB::table('our_members')
+                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
+                ->select('our_members.*')
+                ->get();
+        //$ourMember= OurMember::where('status', 2)->get();
         $comSession = committee_session::all();
         $exeCommittee = executive_committee::findOrFail(encryptor('decrypt',$id));
         return view('executiveCommittee.edit',compact('comSession','ourMember','exeCommittee'));

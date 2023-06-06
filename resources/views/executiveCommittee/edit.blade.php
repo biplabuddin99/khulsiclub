@@ -19,7 +19,7 @@
                                     <select class="form-control form-select" name="member_id" required>
                                         <option value="">Select Member</option>
                                         @forelse($ourMember as $d)
-                                            <option value="{{$d->id}}" {{ old('member_id',$exeCommittee->member_id)==$d->id?"selected":""}}> {{ $d->full_name}}</option>
+                                            <option value="{{$d->id}}" {{ old('member_id',$exeCommittee->member_id)==$d->id?"selected":""}}> {{ $d->given_name}} {{ $d->surname}}</option>
                                         @empty
                                             <option value="">No Data found</option>
                                         @endforelse
