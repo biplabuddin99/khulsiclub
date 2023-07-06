@@ -128,7 +128,7 @@ class MemberPanel extends Controller
      */
     public function memberPassword()
     {
-        $member=OurMember::where('id',currentUserId())->where('status', 2)->first();
+        $member=OurMember::where('id',currentUserId())->first();
         return view('frontend.memDashboard.memberPassword',compact('member'));
     }
     /**
