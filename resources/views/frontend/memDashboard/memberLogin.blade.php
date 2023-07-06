@@ -62,5 +62,4 @@
       </div>
   </div>
 </section>
-<!-- // Basic multiple Column Form section end -->
-    @endsection
+@endsection

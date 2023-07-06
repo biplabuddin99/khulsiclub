@@ -1426,6 +1426,31 @@ figure{
 }
 
 
+.sidemenu ul li ul {
+  display: none;
+  padding-left: 1rem;
+}
+.sidemenu ul li:hover ul {
+  display: block;
+}
+.sidemenu ul li .down-arrow {
+  margin-left: 3rem;
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  position: absolute;
+  padding-top: 17px;
+}
+.down-arrow .bi{
+  font-size: 12px !important;
+}
+
+.sidemenu ul li.active .down-arrow {
+  transform: rotate(-90deg);
+}
+.sidemenu ul li ul li {
+  list-style: none;
+}
 .sidemenu ul li a {
   text-decoration: none;
   color: #646262 !important;
