@@ -30,10 +30,10 @@
                                         <a href="{{route(currentUser().'.creason.edit',encryptor('encrypt',$b->id))}}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="javascript:void()" onclick="$('#form{{$b->id}}').submit()">
+                                        <a class="text-danger" href="javascript:void()" onclick="$('#form{{$b->id}}').submit()">
                                             <i class="bi bi-trash"></i>
                                         </a>
-                                        <form id="form{{$b->id}}" action="{{route(currentUser().'.creason.destroy',encryptor('encrypt',$b->id))}}" method="post">
+                                        <form id="form{{$b->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.creason.destroy',encryptor('encrypt',$b->id))}}" method="post">
                                             @csrf
                                             @method('delete')
                                             

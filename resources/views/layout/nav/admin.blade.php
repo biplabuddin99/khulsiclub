@@ -89,8 +89,9 @@
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-telephone-fill"></i> <span>{{__('Contact Us')}}</span></a>
         <ul class="submenu">
-            <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Create Reason')}}</a></li>
-            <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Contact Us List')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Website')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Website Contact List')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.mcreason.index')}}">{{__('Member Portal')}}</a></li>
         </ul>
     </li>
 </ul>
