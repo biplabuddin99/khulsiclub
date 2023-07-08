@@ -194,6 +194,8 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::post('/password_update', [MemberPanel::class,'mem_pass_update'])->name('member.passwordUpdate');
         Route::get('/memberPrint', [MemberPanel::class,'mem_regi_success'])->name('member.registration.success');
         Route::get('/bank-list', [MemberPanel::class,'bankList'])->name('member.bank');
+        Route::get('/online-help', [MemberPanel::class,'helpDesk'])->name('member.help');
+        Route::post('/online-help-submited', [MemberPanel::class,'memberContactUs'])->name('member.help.store');
 
     });
 });

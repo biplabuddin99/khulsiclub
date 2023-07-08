@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurMember;
+use App\Models\member_contact;
 use App\Models\Banklist;
 use App\Models\committee_session;
 use App\Models\executive_committee;
@@ -120,6 +121,37 @@ class MemberPanel extends Controller
 
         $member = $members->paginate(10);
         return view('frontend.membership.memberList', compact('member','search','memberType', 'member_id', 'member_name'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function helpDesk()
+    {
+        return view('frontend.memDashboard.help');
+    }
+
+    public function memberContactUs(Request $request)
+    {
+        try{
+            $b= new member_contact;
+            $b->member_id=$request->member_id;
+            $b->reason_id=$request->topic;
+            $b->subject=$request->subject;
+            $b->message=$request->message;
+            if($b->save()){
+                return redirect()->back()->withFragment('#contact_us')->with('success','Submited Successfully!');;
+            }else{
+                return redirect()->back()->withFragment('#contact_us')->with('error','Please try Again!')->withInput();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::warning('Please try Again!');
+            return back()->withInput();
+        }
     }
     /**
      * Show the form for editing the specified resource.
