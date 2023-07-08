@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurMember;
+use App\Models\Banklist;
 use App\Models\committee_session;
 use App\Models\executive_committee;
 use App\Models\MemberChildren;
@@ -119,6 +120,17 @@ class MemberPanel extends Controller
 
         $member = $members->paginate(10);
         return view('frontend.membership.memberList', compact('member','search','memberType', 'member_id', 'member_name'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function bankList()
+    {
+        $bank= Banklist::all();
+        return view('frontend.memDashboard.bank',compact('bank'));
     }
     /**
      * Show the form for editing the specified resource.
