@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <table class="table table-bordered mb-0">
                         <thead>
-                            <tr class="text-center">
+                            <tr class="text-center bg-danger text-white">
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Bank Name')}}</th>
                                 <th scope="col">{{__('Branch Name')}}</th>

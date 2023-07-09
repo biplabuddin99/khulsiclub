@@ -32,10 +32,10 @@
                 <div class="card-header mem-password">
                     <h5>Change Request</h5>
                     <div>
-                       <a class="btn btn-sm btn-outline-danger" href=""><span>Pending Request</span></a>
+                       <a class="btn btn-sm btn-outline-danger" href="{{route('member.pending_request')}}"><span>Pending Request</span></a>
                     </div>
                     <div>
-                       <a class="btn btn-sm btn-outline-danger" href=""><span>Request History</span></a>
+                       <a class="btn btn-sm btn-outline-danger" href="{{route('member.request_history')}}"><span>Request History</span></a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -44,25 +44,25 @@
                         $decryptedType = encryptor('decrypt', $membershipType);
                         $decryptedValue = $mt[$decryptedType];
                     @endphp
-                    <form id="myForm" class="form" method="post" enctype="multipart/form-data" action="">
+                    <form id="myForm" class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.changeReq.store')}}">
                         @csrf
                         <input type="hidden" name="member_id" value="{{encryptor('decrypt', request()->session()->get('userId'))}}">
                         <div class="row mb-4">
                             <div class="col-12 d-flex justify-content-between mb-2">
                                 <div class="mobileChange">
-                                    <input type="checkbox" id="mobile">
+                                    <input type="checkbox" name="changeType[]" value="Mobile Number" id="mobile">
                                     <label for="mobile"><b>Mobile Number</b></label>
                                 </div>
                                 <div class="emailChange">
-                                    <input type="checkbox" id="email">
+                                    <input type="checkbox" name="changeType[]" value="Email" id="email">
                                     <label for="email"><b>Email</b></label>
                                 </div>
                                 <div class="addressChange">
-                                    <input type="checkbox" id="address">
+                                    <input type="checkbox" name="changeType[]" value="Address" id="address">
                                     <label for="address"><b>Address</b></label>
                                 </div>
                                 <div class="memberTypeChange">
-                                    <input type="checkbox" id="type">
+                                    <input type="checkbox" name="changeType[]" value="Member Type" id="type">
                                     <label for="type"><b>Member Type</b></label>
                                 </div>
                             </div>

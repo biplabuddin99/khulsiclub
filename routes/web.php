@@ -26,6 +26,7 @@ use App\Http\Controllers\TagController as tag;
 use App\Http\Controllers\BlogCategoryController as blogcat;
 use App\Http\Controllers\BlogController as blog;
 use App\Http\Controllers\BenefitsOfMemberController as benefit;
+use App\Http\Controllers\ChangeRequestController as changeReq;
 use App\Http\Controllers\ContactUsController as contact;
 use App\Http\Controllers\PaymentPurposeController as ppurpose;
 use App\Http\Controllers\ContactReasonController as creason;
@@ -197,6 +198,10 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/online-help', [MemberPanel::class,'helpDesk'])->name('member.help');
         Route::get('/change-request', [MemberPanel::class,'changeRequest'])->name('member.request');
         Route::post('/online-help-submited', [MemberPanel::class,'memberContactUs'])->name('member.help.store');
+        
+        Route::resource('changeReq',changeReq::class,['as'=>'member']);
+        Route::get('/pending-request', [changeReq::class,'pendingRequest'])->name('member.pending_request');
+        Route::get('/request-history', [changeReq::class,'requetHistory'])->name('member.request_history');
 
     });
 });

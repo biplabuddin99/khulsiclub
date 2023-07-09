@@ -130,7 +130,7 @@ class MemberPanel extends Controller
      */
     public function changeRequest()
     {
-        return view('frontend.memDashboard.request');
+        return view('frontend.memDashboard.request.request');
     }
     /**
      * Show the form for editing the specified resource.
