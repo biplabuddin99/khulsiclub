@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\contact_us;
+use App\Models\member_contact;
 use App\Models\contact_reason;
 use Illuminate\Http\Request;
 use App\Http\Requests\contact\AddNewRequest;
@@ -20,6 +21,17 @@ class ContactUsController extends Controller
     {
         $data = contact_us::paginate(10);
         return view('contactUs.index',compact('data'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function memberContact()
+    {
+        $data = member_contact::paginate(10);
+        return view('contactUs.memberContact',compact('data'));
     }
 
     /**
@@ -124,6 +136,16 @@ class ContactUsController extends Controller
     public function destroy($id)
     {
         $b= contact_us::findOrFail(encryptor('decrypt',$id));
+        if($b->delete()){
+            Toastr::success('Deleted Successfully!');
+        }else{
+            Toastr::warning('Please try Again!');
+        }
+        return redirect()->back();
+    }
+    public function memberContactDelete($id)
+    {
+        $b= member_contact::findOrFail(encryptor('decrypt',$id));
         if($b->delete()){
             Toastr::success('Deleted Successfully!');
         }else{

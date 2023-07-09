@@ -92,12 +92,19 @@
             <li class="py-1"><a href="{{route(currentUser().'.creason.index')}}">{{__('Website')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.contact.index')}}">{{__('Website Contact List')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.mcreason.index')}}">{{__('Member Portal')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.member_contact')}}">{{__('Member Portal Contact List')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-cash-coin"></i> <span>{{__('Payment')}}</span></a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.ppurpose.index')}}">{{__('Payment Purpose')}}</a></li>
+        </ul>
+    </li>
+    <li class="submenu-item sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-cash-coin"></i> <span>{{__('Change Request')}}</span></a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.changeReq.index')}}">{{__('Change Request')}}</a></li>
         </ul>
     </li>
 </ul>
