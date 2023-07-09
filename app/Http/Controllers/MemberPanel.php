@@ -128,6 +128,16 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    public function changeRequest()
+    {
+        return view('frontend.memDashboard.request');
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
     public function helpDesk()
     {
         return view('frontend.memDashboard.help');
