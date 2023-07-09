@@ -16,7 +16,7 @@ class ChangeRequestController extends Controller
      */
     public function index()
     {
-        $data = change_request::paginate(10);
+        $data = change_request::where('status','0')->paginate(10);
         return view('changeRequest.index',compact('data'));
     }
 
