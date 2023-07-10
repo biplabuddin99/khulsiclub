@@ -16,7 +16,7 @@ class ChangeRequestController extends Controller
      */
     public function index()
     {
-        $data = change_request::where('status','0')->paginate(10);
+        $data = change_request::orderBy('status','asc')->paginate(10);
         return view('changeRequest.index',compact('data'));
     }
 
@@ -95,9 +95,10 @@ class ChangeRequestController extends Controller
      * @param  \App\Models\change_request  $change_request
      * @return \Illuminate\Http\Response
      */
-    public function edit(change_request $change_request)
+    public function edit($id)
     {
-        //
+        $mrequest = change_request::findOrFail(encryptor('decrypt',$id));
+        return view('changeRequest.edit',compact('mrequest'));
     }
 
     /**
@@ -107,9 +108,24 @@ class ChangeRequestController extends Controller
      * @param  \App\Models\change_request  $change_request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, change_request $change_request)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $b= change_request::findOrFail(encryptor('decrypt',$id));
+            $b->status=$request->status;
+            if($b->save()){
+                Toastr::success('Updated Successfully!');
+                return redirect()->route(currentUser().'.changeReq.index');
+            }else{
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::warning('Please try Again!');
+            return back()->withInput();
+        }
     }
 
     /**

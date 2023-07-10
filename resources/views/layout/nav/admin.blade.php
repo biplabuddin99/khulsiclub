@@ -102,9 +102,9 @@
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-cash-coin"></i> <span>{{__('Change Request')}}</span></a>
+        <a href="#" class='sidebar-link'><i class="bi bi-envelope"></i> <span>{{__('Change Request')}}</span></a>
         <ul class="submenu">
-            <li class="py-1"><a href="{{route(currentUser().'.changeReq.index')}}">{{__('Change Request')}}</a></li>
+            <li class="py-1"><a href="{{route(currentUser().'.changeReq.index')}}">{{__('Change Request List')}}</a></li>
         </ul>
     </li>
 </ul>
