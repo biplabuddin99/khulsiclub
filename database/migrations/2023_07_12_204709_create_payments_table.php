@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payment_purposes', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('purpose')->nullable();
-            $table->decimal('amount',14)->nullable();
+            $table->integer('member_id');
+            $table->integer('purpose_id')->nullable();
+            $table->date('apply_date');
+            $table->string('invoice_id')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_purposes');
+        Schema::dropIfExists('payments');
     }
 };

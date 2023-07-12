@@ -98,6 +98,7 @@
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-cash-coin"></i> <span>{{__('Payment')}}</span></a>
         <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.payment.index')}}">{{__('Payments')}}</a></li>
             <li class="py-1"><a href="{{route(currentUser().'.ppurpose.index')}}">{{__('Payment Purpose')}}</a></li>
         </ul>
     </li>
