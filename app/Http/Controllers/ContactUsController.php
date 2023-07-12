@@ -143,9 +143,10 @@ class ContactUsController extends Controller
         }
         return redirect()->back();
     }
-    public function memberContactDelete($id)
+    
+    public function memberContactDelete(Request $request)
     {
-        $b= member_contact::findOrFail(encryptor('decrypt',$id));
+        $b= member_contact::find($request->id);
         if($b->delete()){
             Toastr::success('Deleted Successfully!');
         }else{
@@ -153,4 +154,5 @@ class ContactUsController extends Controller
         }
         return redirect()->back();
     }
+    
 }

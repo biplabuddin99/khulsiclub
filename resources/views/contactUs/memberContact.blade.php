@@ -17,7 +17,7 @@
                                 <th scope="col">{{__('Reason')}}</th>
                                 <th scope="col">{{__('Subject')}}</th>
                                 <th scope="col">{{__('Message')}}</th>
-                                {{-- <th class="white-space-nowrap">{{__('ACTION')}}</th> --}}
+                                <th class="white-space-nowrap">{{__('ACTION')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,16 +28,15 @@
                             <td>{{$b->contact_reason?->reason}}</td>
                                 <td>{{$b->subject}}</td>
                                 <td>{{$b->message}}</td>
-                                {{-- <td class="white-space-nowrap">
+                                <td class="white-space-nowrap">
                                     <a class="text-danger" href="javascript:void()" onclick="$('#form{{$b->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$b->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.member_contact_delete',encryptor('encrypt',$b->id))}}" method="post">
+                                    <form id="form{{$b->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.member_contact_delete',$b->id)}}">
                                         @csrf
                                         @method('delete')
-                                        
                                     </form>
-                                </td> --}}
+                                </td>
                             </tr>
                             @empty
                             <tr>
