@@ -29,7 +29,6 @@
                                 <td>{{$b->invoice_id}}</td>
                                 <td>{{$b->ppurpose?->purpose}}</td>
                                 <td>{{$b->ppurpose?->amount}}</td>
-                                {{-- <td class="text-warning fw-bold">@if($b->status == 0) {{__('Pending') }} @else {{__('Paid') }} @endif</td> --}}
                                 @if($b->status == 0)
                                     <td class="text-danger fw-bold">Pending</td>
                                 @else
