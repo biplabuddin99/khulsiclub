@@ -8,6 +8,7 @@ use App\Models\OurMember;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
+use Carbon\Carbon;
 
 class PaymentsController extends Controller
 {
@@ -48,6 +49,7 @@ class PaymentsController extends Controller
             $b->purpose_id=$request->purpose_id;
             $b->apply_date= now();
             $b->invoice_id=$request->invoice_id;
+            $b->invoice_id='CKCL-0'.Carbon::now()->format('yy'). str_pad((payments::whereYear('created_at', Carbon::now()->year)->count() + 1),3,"0",STR_PAD_LEFT);
             if($b->save()){
                 Toastr::success('Created Successfully!');
                 return redirect()->route(currentUser().'.payment.index');
@@ -101,7 +103,6 @@ class PaymentsController extends Controller
             $b= payments::findOrFail(encryptor('decrypt',$id));
             $b->member_id=$request->member_id;
             $b->purpose_id=$request->purpose_id;
-            $b->invoice_id=$request->invoice_id;
             $b->status=$request->status;
             if($b->save()){
                 Toastr::success('Update Successfully!');

@@ -11,6 +11,7 @@ use App\Models\MemberChildren;
 use App\Models\terms_of_membership;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\payments;
 use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
@@ -121,6 +122,17 @@ class MemberPanel extends Controller
 
         $member = $members->paginate(10);
         return view('frontend.membership.memberList', compact('member','search','memberType', 'member_id', 'member_name'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function paymentHistory()
+    {
+        $data = payments::where('member_id',currentUserId())->paginate(10);
+        return view('frontend.memDashboard.payment.history',compact('data'));
     }
     /**
      * Show the form for editing the specified resource.
