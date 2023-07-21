@@ -2,17 +2,6 @@
 @section('memberContent')
         
 <section class="py-0">
-    <style>
-        .card-header.mem-password {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    
-        .card-header.mem-password > div {
-            margin-right: 10px;
-        }
-    </style>
     <div class="row">
         <div class="col-12 member-service">
             <div class="card shadow-sm ">
