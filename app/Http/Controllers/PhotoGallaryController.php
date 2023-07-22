@@ -58,6 +58,7 @@ class PhotoGallaryController extends Controller
                 $request->feature_image->move(public_path('uploads/pGgallery'), $data);
                 $pgc->feature_image=$data;
             }
+            
             if($pgc->save()){
             Toastr::success('Photo Gallery Create Successfully!');
             return redirect()->route(currentUser().'.pGallery.index');
