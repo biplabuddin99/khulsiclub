@@ -51,7 +51,7 @@
                     <a href="{{route('photo',$p->id)}}">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="">
+                                <img class="img-fluid" src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="">
                             </div>
                             <div class="card-body my-2">
                                 <h4>{{$p->name}}</h4>

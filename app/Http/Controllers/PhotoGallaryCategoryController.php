@@ -48,8 +48,15 @@ class PhotoGallaryCategoryController extends Controller
             $pgc->name=$request->name;
             $pgc->year_id=$request->year;
             $pgc->status=$request->status;
-            if($request->has('feature_image'))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,700,300,false);
+
+            // if($request->has('feature_image'))
+            //     $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGcategory',true,700,300,false);
+
+            if($request->hasFile('feature_image')){
+                $data = rand(111,999).time().'.'.$request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/pGcategory'), $data);
+                $pgc->feature_image=$data;
+            }
 
             if($pgc->save()){
             Toastr::success('Photo Category Create Successfully!');
@@ -108,10 +115,18 @@ class PhotoGallaryCategoryController extends Controller
             $pgc->year_id=$request->year;
             $pgc->status=$request->status;
 
+            // $path='uploads/pGcategory';
+            // if($request->has('feature_image') && $request->feature_image)
+            // if($this->deleteImage($pgc->feature_image,$path))
+            //     $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,700,300,false);
+
             $path='uploads/pGcategory';
-            if($request->has('feature_image') && $request->feature_image)
-            if($this->deleteImage($pgc->feature_image,$path))
-                $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,700,300,false);
+            if($request->hasFile('feature_image')){
+                $this->deleteImage($pgc->feature_image,$path);
+                $data = rand(111,999).time().'.'.$request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/pGcategory'), $data);
+                $pgc->feature_image=$data;
+            }
 
             if($pgc->save()){
             Toastr::success('Photo Category Updated Successfully!');

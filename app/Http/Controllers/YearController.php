@@ -44,11 +44,23 @@ class YearController extends Controller
             $y=new year;
 
             $y->year=$request->year;
-            if($request->has('feature_photo'))
-                $y->feature_photo=$this->resizeImage($request->feature_photo,'uploads/yearPhoto',true,400,300,false);
+            // if($request->has('feature_photo'))
+            //     $y->feature_photo=$this->resizeImage($request->feature_photo,'uploads/yearPhoto',true,400,300,false);
 
-            if($request->has('feature_video'))
-                $y->feature_video=$this->resizeImage($request->feature_video,'uploads/yearVideo',true,400,300,false);
+            if($request->hasFile('feature_photo')){
+                $data = rand(111,999).time().'.'.$request->feature_photo->extension();
+                $request->feature_photo->move(public_path('uploads/yearPhoto'), $data);
+                $y->feature_photo=$data;
+            }
+            
+            // if($request->has('feature_video'))
+            //     $y->feature_video=$this->resizeImage($request->feature_video,'uploads/yearVideo',true,400,300,false);
+
+            if($request->hasFile('feature_video')){
+                $data = rand(111,999).time().'.'.$request->feature_video->extension();
+                $request->feature_video->move(public_path('uploads/yearVideo'), $data);
+                $y->feature_video=$data;
+            }
 
             if($y->save()){
             Toastr::success('Year Create Successfully!');
@@ -104,14 +116,29 @@ class YearController extends Controller
             $y->year=$request->year;
 
             $path='uploads/yearPhoto';
-            if($request->has('feature_photo') && $request->feature_photo)
-            if($this->deleteImage($y->feature_photo,$path))
-                $y->feature_photo=$this->resizeImage($request->feature_photo,$path,true,400,300,false);
+            if($request->hasFile('feature_photo')){
+                $this->deleteImage($y->feature_photo,$path);
+                $data = rand(111,999).time().'.'.$request->feature_photo->extension();
+                $request->feature_photo->move(public_path('uploads/yearPhoto'), $data);
+                $y->feature_photo=$data;
+            }
 
             $path2='uploads/yearVideo';
-            if($request->has('feature_video') && $request->feature_video)
-            if($this->deleteImage($y->feature_video,$path2))
-                $y->feature_video=$this->resizeImage($request->feature_video,$path2,true,400,300,false);
+            if($request->hasFile('feature_video')){
+                $this->deleteImage($y->feature_video,$path2);
+                $data = rand(111,999).time().'.'.$request->feature_video->extension();
+                $request->feature_video->move(public_path('uploads/yearVideo'), $data);
+                $y->feature_video=$data;
+            }
+            // $path='uploads/yearPhoto';
+            // if($request->has('feature_photo') && $request->feature_photo)
+            // if($this->deleteImage($y->feature_photo,$path))
+            //     $y->feature_photo=$this->resizeImage($request->feature_photo,$path,true,400,300,false);
+
+            // $path2='uploads/yearVideo';
+            // if($request->has('feature_video') && $request->feature_video)
+            // if($this->deleteImage($y->feature_video,$path2))
+            //     $y->feature_video=$this->resizeImage($request->feature_video,$path2,true,400,300,false);
 
             if($y->save()){
             Toastr::success('Year Updated Successfully!');

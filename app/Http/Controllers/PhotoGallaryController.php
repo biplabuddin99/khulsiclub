@@ -120,24 +120,12 @@ class PhotoGallaryController extends Controller
             // if($this->deleteImage($pgc->feature_image,$path))
             //     $pgc->feature_image=$this->resizeImage($request->feature_image,$path,true,200,200,false);
 
-            // if($request->hasFile('feature_image')){
-            //     $data = rand(111,999).time().'.'.$request->feature_image->extension();
-            //     $request->feature_image->move(public_path('uploads/pGgallery'), $data);
-            //     $pgc->feature_image=$data;
-            // }
-            
-            $previousImage = $pgc->feature_image;
-            if ($request->hasFile('feature_image')) {
-                // Delete the previous image if it exists
-                if ($previousImage && Storage::exists('uploads/pGgallery/' . $previousImage)) {
-                    Storage::delete('uploads/pGgallery/' . $previousImage);
-                }
-                // Generate a unique filename for the new image
-                $data = rand(111, 999) . time() . '.' . $request->feature_image->extension();
-                // Move the new image to the desired location
+            $path='uploads/pGgallery';
+            if($request->hasFile('feature_image')){
+                $this->deleteImage($pgc->feature_image,$path);
+                $data = rand(111,999).time().'.'.$request->feature_image->extension();
                 $request->feature_image->move(public_path('uploads/pGgallery'), $data);
-                // Update the feature_image field with the new image name
-                $pgc->feature_image = $data;
+                $pgc->feature_image=$data;
             }
 
             if($pgc->save()){

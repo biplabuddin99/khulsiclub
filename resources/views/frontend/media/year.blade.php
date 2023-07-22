@@ -52,7 +52,7 @@
                     <a href="{{route('album',$p->id)}}">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/yearPhoto/thumb/'.$p->feature_photo)}}" alt="">
+                                <img class="img-fluid" src="{{asset('uploads/yearPhoto/'.$p->feature_photo)}}" alt="">
                             </div>
                             <div class="card-body my-2">
                                 <h4>Photos of {{$p->year}}</h4>

@@ -322,10 +322,16 @@ class MemberPanel extends Controller
             $member->proposed_name=$request->proposedname;
             $member->membership_no=$request->membershipno;
 
-            $path='uploads/member_image';
-            if($request->has('image') && $request->image)
-            if($this->deleteImage($member->image,$path))
-                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+            // $path='uploads/member_image';
+            // if($request->has('image') && $request->image)
+            // if($this->deleteImage($member->image,$path))
+            //     $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+
+            if($request->hasFile('image')){
+                $data = rand(111,999).time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/member_image'), $data);
+                $member->image=$data;
+            }
 
             $member->fb_link=$request->fb_link;
             $member->show_font=$request->show_font;

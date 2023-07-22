@@ -52,7 +52,7 @@
                     <a href="{{route('vAlbum',$p->id)}}">
                         <div class="card shadow-sm mb-3">
                             <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/yearVideo/thumb/'.$p->feature_video)}}" alt="">
+                                <img class="img-fluid" src="{{asset('uploads/yearVideo/'.$p->feature_video)}}" alt="">
                             </div>
                             <div class="card-body my-2">
                                 <h4>Videos of {{$p->year}}</h4>

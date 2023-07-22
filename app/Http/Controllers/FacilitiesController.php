@@ -44,7 +44,14 @@ class FacilitiesController extends Controller
             $facilities=new Facilities;
             $facilities->title=$request->title;
             if($request->has('Picture'))
-            $facilities->image=$this->resizeImage($request->Picture,'uploads/facilities',true,660,380,false);
+            // $facilities->image=$this->resizeImage($request->Picture,'uploads/facilities',true,660,380,false);
+
+            if($request->hasFile('Picture')){
+                $data = rand(111,999).time().'.'.$request->Picture->extension();
+                $request->Picture->move(public_path('uploads/facilities'), $data);
+                $facilities->image=$data;
+            }
+
             $facilities->details=$request->Details;
             $facilities->save();
             Toastr::success('Facilities Create Successfully!');
@@ -94,10 +101,17 @@ class FacilitiesController extends Controller
             $facilities=Facilities::findOrFail(encryptor('decrypt',$id));
             $facilities->title=$request->title;
 
+            // $path='uploads/facilities';
+            // if($request->has('Picture') && $request->Picture)
+            // if($this->deleteImage($facilities->image,$path))
+            // $facilities->image=$this->resizeImage($request->Picture,$path,true,660,380,false);
             $path='uploads/facilities';
-            if($request->has('Picture') && $request->Picture)
-            if($this->deleteImage($facilities->image,$path))
-            $facilities->image=$this->resizeImage($request->Picture,$path,true,660,380,false);
+            if($request->hasFile('Picture')){
+                $this->deleteImage($facilities->image,$path);
+                $data = rand(111,999).time().'.'.$request->Picture->extension();
+                $request->Picture->move(public_path('uploads/facilities'), $data);
+                $facilities->image=$data;
+            }
 
             $facilities->details=$request->Details;
             if($facilities->save()){

@@ -104,7 +104,10 @@ class VideoGallaryCategoryController extends Controller
             $vgallerycat=VideoGallaryCategory::findOrFail(encryptor('decrypt',$id));
             $vgallerycat->name=$request->name;
             $vgallerycat->year_id=$request->year;
+
+            $path='uploads/vgallerycat_image';
             if($request->hasFile('FeatureImage')){
+                $this->deleteImage($vgallerycat->FeatureImage,$path);
                 $FeatureImageName = rand(111,999).time().'.'.$request->FeatureImage->extension();
                 $request->FeatureImage->move(public_path('uploads/vgallerycat_image'), $FeatureImageName);
                 $vgallerycat->feature_img=$FeatureImageName;
