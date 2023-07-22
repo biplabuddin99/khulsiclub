@@ -6,10 +6,12 @@ use App\Models\VideoGallaryCategory;
 use App\Models\year;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
 class VideoGallaryCategoryController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
