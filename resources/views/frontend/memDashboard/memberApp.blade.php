@@ -13,7 +13,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-end bg-transparent mb-0">
                         <li class="breadcrumb-item">
-                            <a href="" class="breadcrumb-item router-link-active">Profile</a>
+                            <a href="{{route('member.memdashboard')}}" class="breadcrumb-item router-link-active">Profile</a>
                         </li>
                         <li class="breadcrumb-item">data</li>
                     </ol>
