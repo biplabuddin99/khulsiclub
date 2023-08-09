@@ -577,7 +577,6 @@
 @endsection
 @push('scripts')
 <script>
-    // Member profile jQuery start
 $(document).ready(function() {
 
 $('.next-step').click(function() {
@@ -612,6 +611,5 @@ $('.nav-item a').click(function(e) {
 });
 
 });
-//Member profile jQuery end
 </script>
 @endpush
