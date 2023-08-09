@@ -44,6 +44,7 @@
                                 <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.dashboard')}}">Dashborad</a></li>
+                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-2-menu" href="{{route('member.profile')}}">Membership Form</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-2-menu" href="{{route('member.profile')}}">Review</a></li>
                                         {{-- <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-4-menu" href="{{route('member.password')}}">Password Change</a></li> --}}
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-5-menu" href="{{route('memberLogOut')}}">Logout</a></li>
