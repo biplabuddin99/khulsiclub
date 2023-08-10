@@ -24,8 +24,6 @@
                                 <th scope="col">{{__('Name')}}</th>
                                 <th scope="col">{{__('Member ID')}}</th>
                                 <th scope="col">{{__('Email')}}</th>
-                                <th scope="col">{{__('Mother\'s Name')}}</th>
-                                <th scope="col">{{__('Nominee')}}</th>
                                 <th scope="col">{{__('Contact No')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
@@ -38,8 +36,6 @@
                                 <td>{{$p->full_name}}</td>
                                 <td>{{$p->membership_no}}</td>
                                 <td>{{$p->email}}</td>
-                                <td>{{$p->mother_name}}</td>
-                                <td>{{$p->nominee}}</td>
                                 <td>{{$p->cell_number}}</td>
                                 <td>@if($p->status == 1) {{'Applied for approval'}} 
                                     @elseif ($p->status == 3) {{'Suspended'}}
@@ -63,7 +59,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <th colspan="8" class="text-center">No Pruduct Found</th>
+                                <th colspan="7" class="text-center">No Data Found</th>
                             </tr>
                             @endforelse
                         </tbody>

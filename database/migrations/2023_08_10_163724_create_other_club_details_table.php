@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('our_members', function (Blueprint $table) {
-            $table->string('designation')->after('profession')->nullable();
+        Schema::create('other_club_details', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('member_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('membership_type')->nullable();
+            $table->string('year')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('our_members', function (Blueprint $table) {
-            $table->dropColumn('designation');
-        });
+        Schema::dropIfExists('other_club_details');
     }
 };

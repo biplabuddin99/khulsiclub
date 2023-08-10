@@ -263,13 +263,13 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('district',$member->district)}}" name="district">
+                                                    <input type="text" class="form-control" value="{{ old('preDistrict',$member->preDistrict)}}" name="preDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('country')}}" name="country">
+                                                    <input type="text" class="form-control" value="{{ old('preCountry')}}" name="preCountry">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -351,7 +351,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="company">Company:</label>
-                                                    <input type="text" id="company" class="form-control" value="{{ old('profession',$member->company)}}" name="company">
+                                                    <input type="text" id="company" class="form-control" value="{{ old('company',$member->company)}}" name="company">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -551,11 +551,13 @@
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group">
-                                                    <label for="status">Request for approval</label>
+                                                    <label for="status">Status</label>
                                                     <select class="form-control form-select" name="status" id="status">
-                                                        <option value="">Select yes for approval</option>
-                                                        <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>No</option>
-                                                        <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Yes</option>
+                                                        <option value="">Select Status</option>
+                                                        <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>Pending</option>
+                                                        <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Applied for approval</option>
+                                                        <option value="2" {{ old('status',$member->status)=='2' ? 'selected':''}}>Approvbed</option>
+                                                        <option value="3" {{ old('status',$member->status)=='3' ? 'selected':''}}>Suspended</option>
                                                     </select>
                                                 </div>
                                             </div>

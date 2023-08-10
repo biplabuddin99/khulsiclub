@@ -28,7 +28,6 @@ class UpdateRequest extends FormRequest
         return [
             'emailAddress'=>'required|unique:our_members,email,'.$id,
             'membershipno'=>'unique:our_members,membership_no,'.$id,
-            'CellNo'=>'required'
         ];
     }
 
