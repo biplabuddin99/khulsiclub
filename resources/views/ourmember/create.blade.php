@@ -250,7 +250,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostoffice')}}" name="perPostoffice">
+                                                    <input type="text" class="form-control" value="{{ old('perPostOffice')}}" name="perPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -262,13 +262,13 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('district')}}" name="perDistrict">
+                                                    <input type="text" class="form-control" value="{{ old('perDistrict')}}" name="perDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('country')}}" name="perCountry">
+                                                    <input type="text" class="form-control" value="{{ old('perCountry')}}" name="perCountry">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -352,7 +352,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profPostoffice')}}" name="profPostoffice">
+                                                    <input type="text" class="form-control" value="{{ old('profPostOffice')}}" name="profPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">

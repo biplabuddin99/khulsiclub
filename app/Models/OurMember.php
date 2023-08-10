@@ -67,4 +67,8 @@ class OurMember extends Model
     public function children(){
         return $this->hasMany(MemberChildren::class,'member_id','id');
     }
+
+    public function otherClub(){
+        return $this->hasMany(OtherClubDetails::class,'member_id','id');
+    }
 }

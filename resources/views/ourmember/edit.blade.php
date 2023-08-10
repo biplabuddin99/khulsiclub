@@ -15,7 +15,8 @@
                     <div class="card-body">
                         <form method="post" enctype="multipart/form-data" action="{{route(currentUser().'.ourMember.update',encryptor('encrypt',$member->id))}}">
                             @csrf
-                            @method('POST')
+                            @method('PATCH')
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$member->id)}}">
                             <div class="steps progress-tabmenu d-flex flex-column">
                                 <ul class="nav nav-pills mt-3 mb-5" id="pills-tab" role="tablist">
                                     <li class="nav-item">
@@ -68,28 +69,28 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <fieldset>
                                                     <legend>Marital Status</legend>
-                                                    <input type="radio"  name="marit_status" value="1">
+                                                    <input type="radio"  name="marit_status" value="0" {{ old('marit_status',$member->marital_status)=="0" ? "checked":"" }}>
                                                     <label for="">Single</label>
-                                                    <input type="radio"  name="marit_status" value="2">
+                                                    <input type="radio"  name="marit_status" value="1" {{ old('marit_status',$member->marital_status)=="1" ? "checked":"" }}>
                                                     <label for="">Married</label>
                                                 </fieldset>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="anniversary">Anniversary:</label>
-                                                    <input type="text" id="anniversary" class="form-control" value="{{ old('anniversary')}}" name="anniversary">
+                                                    <input type="text" id="anniversary" class="form-control" value="{{ old('anniversary',$member->anniversary)}}" name="anniversary">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="">Spouse Name:</label>
-                                                    <input type="text" class="form-control" value="{{ old('namespouse',$member->name_spouse)}}" name="namespouse">
+                                                    <input type="text" class="form-control" value="{{ old('namespouse',$member->name_of_spouse)}}" name="namespouse">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="professionOfSpouse">Profession:</label>
-                                                    <input type="text" class="form-control" value="{{ old('occupation_spouse',$member->occupation_spouse)}}" name="occupation_spouse">
+                                                    <input type="text" class="form-control" value="{{ old('occupation_spouse',$member->occupation_of_spouse)}}" name="occupation_spouse">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -101,7 +102,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="placeOfBirth">Place:</label>
-                                                    <input type="text" class="form-control" value="{{ old('placeOfBirth')}}" name="placeOfBirth">
+                                                    <input type="text" class="form-control" value="{{ old('placeOfBirth',$member->place_of_birth)}}" name="placeOfBirth">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -152,7 +153,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="passportno">Passport No:</label>
-                                                    <input type="text" class="form-control" value="{{ old('passportNo')}}" name="passportNo">
+                                                    <input type="text" class="form-control" value="{{ old('passportNo',$member->passport_no)}}" name="passportNo">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -180,13 +181,13 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="namOfInstitution">Institution Name:</label>
-                                                    <input type="text" class="form-control" value="{{ old('namOfInstitution')}}" name="namOfInstitution">
+                                                    <input type="text" class="form-control" value="{{ old('namOfInstitution',$member->name_of_institute)}}" name="namOfInstitution">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="tinNo">e- TIN No:</label>
-                                                    <input type="text" class="form-control" value="{{ old('tinNo')}}" name="tinNo">
+                                                    <input type="text" class="form-control" value="{{ old('tinNo',$member->e_tin_number)}}" name="tinNo">
                                                 </div>
                                             </div>
                                             
@@ -212,19 +213,19 @@
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('block')}}" name="block">
+                                                    <input type="text" class="form-control" value="{{ old('block',$member->block)}}" name="block">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('policeStation')}}" name="policeStation">
+                                                    <input type="text" class="form-control" value="{{ old('policeStation',$member->police_station)}}" name="policeStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" id="postoffice" class="form-control" value="{{ old('postoffice',$member->postoffice)}}" name="postoffice">
+                                                    <input type="text" id="postoffice" class="form-control" value="{{ old('postoffice',$member->post_office)}}" name="postoffice">
                                                 </div>
                                             </div>
                                             <div>
@@ -233,43 +234,43 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('perVillage')}}" name="perVillage">
+                                                    <input type="text" class="form-control" value="{{ old('perVillage',$member->perVillage)}}" name="perVillage">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('perBlock')}}" name="perBlock">
+                                                    <input type="text" class="form-control" value="{{ old('perBlock',$member->perBlock)}}" name="perBlock">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPoliceStation')}}" name="perPoliceStation">
+                                                    <input type="text" class="form-control" value="{{ old('perPoliceStation',$member->perPoliceStation)}}" name="perPoliceStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostoffice')}}" name="perPostoffice">
+                                                    <input type="text" class="form-control" value="{{ old('perPostOffice',$member->perPostOffice)}}" name="perPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postcode">Postal Code:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostalCode')}}" name="perPostalCode">
+                                                    <input type="text" class="form-control" value="{{ old('perPostalCode',$member->perPostalCode)}}" name="perPostalCode">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('preDistrict',$member->preDistrict)}}" name="preDistrict">
+                                                    <input type="text" class="form-control" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('preCountry')}}" name="preCountry">
+                                                    <input type="text" class="form-control" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -316,10 +317,6 @@
 
                                                         </tbody>
                                                     </table>
-                                                    {{-- <input type="text" id="detailschildresns" class="form-control" name="detailschildresns">
-                                                        @if($errors->has('detailschildresns'))
-                                                            <span class="text-danger"> {{ $errors->first('detailschildresns') }}</span>
-                                                        @endif --}}
                                                 </div>
                                             </div> 
                                         </div>
@@ -357,43 +354,43 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('profVillage')}}" name="profVillage">
+                                                    <input type="text" class="form-control" value="{{ old('profVillage',$member->profVillage)}}" name="profVillage">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('profBlock')}}" name="profBlock">
+                                                    <input type="text" class="form-control" value="{{ old('profBlock',$member->profBlock)}}" name="profBlock">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profPoliceStation')}}" name="profPoliceStation">
+                                                    <input type="text" class="form-control" value="{{ old('profPoliceStation',$member->profPoliceStation)}}" name="profPoliceStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profPostoffice')}}" name="profPostoffice">
+                                                    <input type="text" class="form-control" value="{{ old('profPostOffice',$member->profPostOffice)}}" name="profPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postcode">Postal Code:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profPostalCode')}}" name="profPostalCode">
+                                                    <input type="text" class="form-control" value="{{ old('profPostalCode',$member->profPostalCode)}}" name="profPostalCode">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profDistrict')}}" name="profDistrict">
+                                                    <input type="text" class="form-control" value="{{ old('profDistrict',$member->profDistrict)}}" name="profDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profCountry')}}" name="profCountry">
+                                                    <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry">
                                                 </div>
                                             </div>
                                             <div class="section-heading">
@@ -470,29 +467,27 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="details_data">
-                                                            @if($member->children)
-                                                            @foreach($member->children as $c)
+                                                            @if($member->otherClub)
+                                                            @foreach($member->otherClub as $c)
                                                                 <tr class="text-center">
                                                                     <td>{{$j=$loop->index + 1}}.
                                                                         <input type="hidden" name="id[]" value="{{$c->id}}">
                                                                     </td>
-                                                                    <td><input type="text" id="Name{{$loop->index}}" class="form-control" name="cname[]" value="{{ $c->name }}" placeholder=" Enter Name"></td>
-                                                                    <td><input type="radio" id="male{{$loop->index}}" name="cgender[{{$loop->index}}]" value="1" {{ old('cgender',$c->gender)=="1" ? "checked":"" }}> <label for="male{{$loop->index}}">Male</label>
-                                                                        <input type="radio" id="female{{$loop->index}}" name="cgender[{{$loop->index}}]" value="2" {{ old('cgender',$c->gender)=="2" ? "checked":"" }}> <label for="female{{$loop->index}}">Female</label></td>
-                                                                    <td><input type="date" id="birth_date{{$loop->index}}" class="form-control" name="cbirth_date[]" value="{{ $c->birth_date }}" placeholder="Date of Birth"></td>
+                                                                    <td><input type="text" id="Name{{$loop->index}}" class="form-control" name="clubName[]" value="{{ $c->name }}" placeholder=" Enter Name"></td>
+                                                                    <td><input type="text" id="memberType{{$loop->index}}" class="form-control" name="membershipType[]" value="{{ $c->membership_type }}"></td>
+                                                                    <td><input type="text" id="year{{$loop->index}}" class="form-control" name="year[]" value="{{ $c->year }}"></td>
                                                                 </tr>
                                                             @endforeach
                                                             @endif
                                                             
-                                                            @for($i=$member->children->count();$i<5;$i++ )
+                                                            @for($i=$member->otherClub->count();$i<5;$i++ )
                                                             <tr class="text-center">
                                                                 <td>{{$j=$i + 1}}.
                                                                     <input type="hidden" name="id[]" value="">
                                                                 </td>
-                                                                <td><input type="text" id="Name{{$i}}" class="form-control" name="cname[]" placeholder=" Enter Name"></td>
-                                                                <td><input type="radio" id="male{{$i}}" name="cgender[{{$i}}]" value="1" {{ old('cgender')=="1" ? "checked":"" }}> <label for="male{{$i}}">Male</label>
-                                                                    <input type="radio" id="female{{$i}}" name="cgender[{{$i}}]" value="2" {{ old('cgender')=="2" ? "checked":"" }}> <label for="female{{$i}}">Female</label></td>
-                                                                <td><input type="date" id="birth_date{{$i}}" class="form-control" name="cbirth_date[]" placeholder="Date of Birth"></td>
+                                                                <td><input type="text" id="Name{{$i}}" class="form-control" name="clubName[]" placeholder=" Enter Name"></td>
+                                                                <td><input type="text" id="memberType{{$i}}" class="form-control" name="membershipType[]"></td>
+                                                                <td><input type="text" id="year{{$i}}" class="form-control" name="year[]"></td>
                                                             </tr>
                                                             @endfor
 
@@ -512,7 +507,7 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="membershipid">Membership ID:</label>
-                                                    <input type="text" class="form-control" value="{{ old('memberNo',$member->member_no)}}" name="memberNo">
+                                                    <input type="text" class="form-control" value="{{ old('memberNo',$member->proposed_membership_id)}}" name="memberNo">
                                                 </div>
                                             </div>
                                             <div class="section-heading">

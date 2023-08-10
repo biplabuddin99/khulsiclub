@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OtherClubDetails extends Model
 {
     use HasFactory;
+    public function member(){
+        return $this->belongsTo(OurMember::class,'member_id','id');
+    }
 }
