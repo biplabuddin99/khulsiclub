@@ -9,6 +9,10 @@
   src: url(../assets/fonts/SourceSansPro-Regular.ttf);
 }
 @font-face {
+  font-family: Montserrat-Regular;
+  src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
   font-family: BRUSHSCI;
   src: url(../assets/fonts/BRUSHSCI.ttf);
 }
@@ -380,6 +384,9 @@ marquee p{
 .notice-div-one span {
   padding-top: 10px;
 }
+.notice-div-one p{
+  font-family: Montserrat-Regular !important;
+}
 .notice-div-one a{
   text-decoration: none;
   color: var(--red);
@@ -567,12 +574,13 @@ marquee p{
   }
 }
 .gallery h4,
-.member h4,
+.our-members h4,
 .facilities h4 {
   text-align: center;
   margin: 10px 0 50px 0;
   color: var(--red);
   font-weight: bold;
+  font-family: Montserrat-Regular !important;
 }
 .our-members h4{
   text-align: center;
