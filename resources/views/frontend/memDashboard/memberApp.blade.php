@@ -48,7 +48,7 @@
                                 <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.memdashboard')}}">Dashborad</a></li>
-                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="">Personal Information</a></li>
+                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.approveMember')}}">Personal Information</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="">Payments <span class="down-arrow"><i class="bi bi-chevron-right"></i></span></a>
                                             <ul class="submenu">
                                                 <li class="nav-item"></i><a class="nav-link" href="">Account Status</a></li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurMember;
+use App\Models\OtherClubDetails;
 use App\Models\member_contact;
 use App\Models\Banklist;
 use App\Models\committee_session;
@@ -32,6 +33,18 @@ class MemberPanel extends Controller
         
         $member=OurMember::where('id',currentUserId())->first();
         return view('frontend.members.memberProfile',compact('member'));
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Frontend  $frontend
+     * @return \Illuminate\Http\Response
+     */
+    public function approveMemberProfile()
+    {
+        
+        $member=OurMember::where('id',currentUserId())->first();
+        return view('frontend.memDashboard.profile',compact('member'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -259,87 +272,54 @@ class MemberPanel extends Controller
             $member->given_name=$request->given_name;
             $member->surname=$request->surname;
             $member->father_name=$request->Fathers;
-            $member->husban_name=$request->husbanName;
             $member->mother_name=$request->mothersName;
-            $member->nominee=$request->nominee;
+            $member->marital_status=$request->marit_status;
+            $member->anniversary=$request->anniversary;
+            $member->name_of_spouse=$request->namespouse;
+            $member->occupation_of_spouse=$request->occupation_spouse;
             $member->birth_date=$request->dateOfBirth;
+            $member->place_of_birth=$request->placeOfBirth;
+            $member->cell_number=$request->cellno;
+            $member->tel_number=$request->tel;
+            $member->email=$request->emailAddress;
             $member->nationality=$request->nationality;
+            $member->national_id=$request->nationalid;
+            $member->passport_no=$request->passportNo;
+            $member->blood_group=$request->bloodGroup;
+            $member->qualification=$request->qualification;
+            $member->name_of_institute=$request->namOfInstitution;
+            $member->e_tin_number=$request->tinNo;
+            $member->village=$request->vill;
+            $member->block=$request->block;
+            $member->police_station=$request->policeStation;
+            $member->post_office=$request->postoffice;
+            $member->perVillage=$request->perVillage;
+            $member->perBlock=$request->perBlock;
+            $member->perPoliceStation=$request->perPoliceStation;
+            $member->perPostOffice=$request->perPostOffice;
+            $member->perPostalCode=$request->perPostalCode;
+            $member->perDistrict=$request->perDistrict;
+            $member->perCountry=$request->perCountry;
             $member->profession=$request->profession;
             $member->designation=$request->designation;
             $member->company=$request->company;
-            $member->description=$request->description;
-            if($request->hasFile('attach_pdf')){
-                $filename = rand(111,999).time().'.'.$request->attach_pdf->extension();
-                $request->attach_pdf->move(public_path('uploads/company_pdf'), $filename);
-                $member->attach_pdf=$filename;
-            }
-            $member->cell_number=$request->cellno;
-            $member->tel_number=$request->tel;
-            $member->fax_number=$request->fax;
-            $member->email=$request->email;
-            $member->role_id=5;
-
-            $member->blood_group=$request->bloodGroup;
-            $member->national_id=$request->nationalid;
-            $member->qualification=$request->qualification;
-            $member->village=$request->vill;
-            $member->postoffice=$request->postoffice;
-            $member->upazila=$request->upazila;
-            $member->district=$request->district;
-            $member->present_address=$request->presentAddress;
-            $member->office_address=$request->officeAddress;
-            $member->others_date=$request->othersdate;
-            // $member->signature_applicant=$request->signatureApplicant;
-            if($request->hasFile('signatureApplicant')){
-                $signatureApplicantName = rand(111,999).time().'.'.$request->signatureApplicant->extension();
-                $request->signatureApplicant->move(public_path('uploads/our_member'), $signatureApplicantName);
-                $member->signature_applicant=$signatureApplicantName;
-            }
-            $member->identify_president=$request->identifyPresident;
-            $member->member_no=$request->memberNo;
-            $member->mr_mis=$request->mrormis;
-            $member->other_address=$request->otheraddress;
-            if($request->hasFile('signaturefounderpresident')){
-                $signaturefounderpresident = rand(1111,9999).time().'.'.$request->signaturefounderpresident->extension();
-                $request->signaturefounderpresident->move(public_path('uploads/signature'), $signaturefounderpresident);
-                $member->signature_founder_president=$signaturefounderpresident;
-            }
-            if($request->hasFile('foundervicepresident')){
-                $foundervicepresident = rand(11,99).time().'.'.$request->foundervicepresident->extension();
-                $request->foundervicepresident->move(public_path('uploads/signature'), $foundervicepresident);
-                $member->signature_founder_vicepresident=$foundervicepresident;
-            }
-            $member->remarks=$request->remarks;
-            $member->update_incometax=$request->updateincometax;
-            $member->emergency_contact=$request->emergencycontact;
-            $member->passport_notype=$request->passportnotype;
-            $member->pdate_issue=$request->pdateissue;
-            $member->issuing_authority=$request->issuingAuthority;
-            $member->validity=$request->validity;
-            $member->name_spouse=$request->namespouse;
-            $member->occupation_spouse=$request->occupationSpouse;
+            $member->profVillage=$request->profVillage;
+            $member->profBlock=$request->profBlock;
+            $member->profPoliceStation=$request->profPoliceStation;
+            $member->profPostOffice=$request->profPostOffice;
+            $member->profPostalCode=$request->profPostalCode;
+            $member->profDistrict=$request->profDistrict;
+            $member->profCountry=$request->profCountry;
             $member->membership_applied=$request->categorymembership;
             $member->proposed_name=$request->proposedname;
-            $member->membership_no=$request->membershipno;
+            $member->proposed_membership_id=$request->memberNo;
 
-            // $path='uploads/member_image';
-            // if($request->has('image') && $request->image)
-            // if($this->deleteImage($member->image,$path))
-            //     $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+            $path='uploads/member_image';
+            if($request->has('image') && $request->image)
+            if($this->deleteImage($member->image,$path))
+                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
 
-            if($request->hasFile('image')){
-                $data = rand(111,999).time().'.'.$request->image->extension();
-                $request->image->move(public_path('uploads/member_image'), $data);
-                $member->image=$data;
-            }
-
-            $member->fb_link=$request->fb_link;
-            $member->show_font=$request->show_font;
-            $member->order_b=$request->order_b;
             $member->status=$request->status;
-            $member->twter_link=$request->twter_link;
-            $member->linkdin_link=$request->linkdin_link;
-            $member->youtube_link=$request->youtube_link;
             if($member->save()){
                 request()->session()->put(
                     [
@@ -347,6 +327,7 @@ class MemberPanel extends Controller
                         'email'=>encryptor('encrypt',$member->email),
                         'phone'=>encryptor('encrypt',$member->cell_number),
                         'status'=>encryptor('encrypt',$member->status),
+                        'address'=>encryptor('encrypt',$member->perVillage.', '.$member->perPoliceStation.', '.$member->perDistrict.', '.$member->perPostalCode),
                     ]);
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){
@@ -361,6 +342,19 @@ class MemberPanel extends Controller
                             $mc->birth_date=$request->cbirth_date[$i];
                             $mc->occupation=$request->coccupation[$i];
                             $mc->save();
+                        }
+                    }
+                }
+                if($request->clubName){
+                    OtherClubDetails::where('member_id',$member->id)->delete();
+                    foreach($request->clubName as $i=>$clubName){
+                        if($request->clubName[$i]>0){
+                            $mcl=new OtherClubDetails;
+                            $mcl->member_id=$member->id;
+                            $mcl->name=$clubName;
+                            $mcl->membership_type=$request->membershipType[$i];
+                            $mcl->year=$request->year[$i];
+                            $mcl->save();
                         }
                     }
                 }

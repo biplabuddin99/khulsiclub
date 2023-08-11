@@ -1,4 +1,4 @@
-@extends('frontend.members.memberApp')
+@extends('frontend.memDashboard.memberApp')
 @section('memberContent')
 <div class="regi-form tab-pane">
     <div class="member-service">
@@ -6,7 +6,7 @@
             <div class="col-lg-12 col-sm-12 col-md-12 ">
                 <div class="card regi-form shadow-sm mb-3">
                     <div class="card-header">
-                        <h5>Membership Form</h5>
+                        <h5>Personal Information</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">
@@ -40,13 +40,15 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="givenName">Given Name</label>
-                                                    <input type="text" id="givenName" class="form-control" value="{{ old('given_name',$member->given_name)}}" name="given_name">
+                                                    <input type="text" class="form-control" value="{{ old('given_name',$member->given_name)}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('given_name',$member->given_name)}}" name="given_name">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="surname">Surname</label>
-                                                    <input type="text" id="surname" class="form-control" value="{{ old('surname',$member->surname)}}" name="surname">
+                                                    <input type="text" class="form-control" value="{{ old('surname',$member->surname)}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('surname',$member->surname)}}" name="surname">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -103,7 +105,8 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="cellno">Cell No:</label>
-                                                    <input type="text" id="cellno" class="form-control" value="{{ old('cellno',$member->cell_number)}}" name="cellno">
+                                                    <input type="text"  class="form-control" value="{{ $member->cell_number}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('cellno',$member->cell_number)}}" name="cellno">
                                                         @if($errors->has('cellno'))
                                                             <span class="text-danger"> {{ $errors->first('cellno') }}</span>
                                                         @endif
@@ -118,7 +121,8 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group">
                                                     <label for="email">E-mail:</label>
-                                                    <input type="email" class="form-control" value="{{ old('emailAddress',$member->email)}}" name="emailAddress">
+                                                    <input type="email" class="form-control" value="{{$member->email}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ $member->email}}" name="emailAddress">
                                                         @if($errors->has('emailAddress'))
                                                             <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
                                                         @endif
@@ -193,25 +197,29 @@
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('vill',$member->village)}}" name="vill">
+                                                    <input type="text" class="form-control" value="{{ $member->village}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('vill',$member->village)}}" name="vill">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('block',$member->block)}}" name="block">
+                                                    <input type="text" class="form-control" value="{{ $member->block}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('block',$member->block)}}" name="block">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('policeStation',$member->police_station)}}" name="policeStation">
+                                                    <input type="text" class="form-control" value="{{ $member->police_station}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('policeStation',$member->police_station)}}" name="policeStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" id="postoffice" class="form-control" value="{{ old('postoffice',$member->post_office)}}" name="postoffice">
+                                                    <input type="text"  class="form-control" value="{{$member->post_office}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('postoffice',$member->post_office)}}" name="postoffice">
                                                 </div>
                                             </div>
                                             <div>
@@ -220,43 +228,50 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('perVillage',$member->perVillage)}}" name="perVillage">
+                                                    <input type="text" class="form-control" value="{{ $member->perVillage}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perVillage',$member->perVillage)}}" name="perVillage">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('perBlock',$member->perBlock)}}" name="perBlock">
+                                                    <input type="text" class="form-control" value="{{ $member->perBlock}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perBlock',$member->perBlock)}}" name="perBlock">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPoliceStation',$member->perPoliceStation)}}" name="perPoliceStation">
+                                                    <input type="text" class="form-control" value="{{ $member->perPoliceStation}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perPoliceStation',$member->perPoliceStation)}}" name="perPoliceStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostOffice',$member->perPostOffice)}}" name="perPostOffice">
+                                                    <input type="text" class="form-control" value="{{ $member->perPostOffice}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perPostOffice',$member->perPostOffice)}}" name="perPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postcode">Postal Code:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostalCode',$member->perPostalCode)}}" name="perPostalCode">
+                                                    <input type="text" class="form-control" value="{{ $member->perPostalCode}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perPostalCode',$member->perPostalCode)}}" name="perPostalCode">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict">
+                                                    <input type="text" class="form-control" value="{{$member->perDistrict}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry">
+                                                    <input type="text" class="form-control" value="{{$member->perCountry}}" disabled>
+                                                    <input type="hidden" class="form-control" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -379,52 +394,52 @@
                                                     <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry">
                                                 </div>
                                             </div>
-                                            <div class="section-heading">
+                                            <div class="section-heading d-none">
                                                 <h5 class="text-uppercase m-0"><b>Category Of Membership</b></h5>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="donermember" name="categorymembership" value="1" {{ old('categorymembership',$member->membership_applied)=="1" ? "checked":"" }}>
                                                     <label for="donermember">Donor Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="servicemember" name="categorymembership" value="2" {{ old('categorymembership',$member->membership_applied)=="2" ? "checked":"" }}>
                                                     <label for="servicemember">Service Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="lifemember" name="categorymembership" value="3" {{ old('categorymembership',$member->membership_applied)=="3" ? "checked":"" }}>
                                                     <label for="lifemember">Life Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="temporarymember" name="categorymembership" value="4" {{ old('categorymembership',$member->membership_applied)=="4" ? "checked":"" }}>
                                                     <label for="temporarymember">Temporary Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="permanentmember" name="categorymembership" value="5" {{ old('categorymembership',$member->membership_applied)=="5" ? "checked":"" }}>
                                                     <label for="permanentmember">Permanent Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="honorarymember" name="categorymembership" value="6" {{ old('categorymembership',$member->membership_applied)=="6" ? "checked":"" }}>
                                                     <label for="honorarymember">Honorary Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="cprporatemember" name="categorymembership" value="7" {{ old('categorymembership',$member->membership_applied)=="7" ? "checked":"" }}>
                                                     <label for="cprporatemember">Corporate Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="diplomatedmember" name="categorymembership" value="8" {{ old('categorymembership',$member->membership_applied)=="8" ? "checked":"" }}>
                                                     <label for="diplomatedmember">Diplomate and Foreing National Member</label>
@@ -505,13 +520,15 @@
                                                     <input type="file" id="image" class="form-control" name="image">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="status">Request for approval</label>
-                                                    <select class="form-control form-select" name="status" id="status">
+                                                    <select class="form-control form-select" name="status" id="status" readonly>
                                                         <option value="">Select yes for approval</option>
-                                                        <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>No</option>
-                                                        <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Yes</option>
+                                                        <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>Pending</option>
+                                                        <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Applied for approval</option>
+                                                        <option value="2" {{ old('status',$member->status)=='2' ? 'selected':''}}>Approvbed</option>
+                                                        <option value="3" {{ old('status',$member->status)=='3' ? 'selected':''}}>Suspended</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -531,4 +548,3 @@
     </div>
 </div>
 @endsection
-

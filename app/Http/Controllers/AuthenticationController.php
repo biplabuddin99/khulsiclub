@@ -150,7 +150,7 @@ class AuthenticationController extends Controller
                     'phone'=>encryptor('encrypt',$member->cell_number),
                     'membership_no'=>encryptor('encrypt',$member->membership_no),
                     'membership_type'=>encryptor('encrypt',$member->membership_applied),
-                    'address'=>encryptor('encrypt',$member->present_address),
+                    'address'=>encryptor('encrypt',$member->perVillage.', '.$member->perPoliceStation.', '.$member->perDistrict.', '.$member->perPostalCode),
                     'status'=>encryptor('encrypt',$member->status),
                     'full_name'=>encryptor('encrypt',$member->full_name),
                     'image'=>encryptor('encrypt',$member->image)
