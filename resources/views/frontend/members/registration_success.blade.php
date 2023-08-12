@@ -220,19 +220,19 @@
             <table class = "gfg" style="width:100%">
                 <tbody >
                     <tr>
-                        <th style="text-align: left; width: 35%;">Full Name:</th>
+                        <th style="text-align: left;">Full Name:</th>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left; width: 35%;">Father's Name:</th>
+                        <th style="text-align: left;">Father's Name:</th>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->father_name . $show_data->husban_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left; width: 35%;">Mother's Name:</th>
+                        <th style="text-align: left;">Mother's Name:</th>
                         <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->mother_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left; width: 35%;">Marital Status:</th>
+                        <th style="text-align: left;">Marital Status:</th>
                         <td >
                             <input type="radio"  value="" {{ old('marit_status',$show_data->marital_status)=="0" ? "checked":"" }} name="marital_status">
                             <label for="">Single</label>

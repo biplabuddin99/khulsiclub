@@ -68,7 +68,7 @@
                         @php $mt=array("","Life Member","Permanent Member","Donor Member","Service Member","Temporary Member","Honorary Member","Corporate Member","Diplomate Member");
                             $membershipType = request()->session()->get('membership_type');
                             $decryptedType = encryptor('decrypt', $membershipType);
-                            $decryptedValue = $mt[$decryptedType];
+                            $decryptedValue = isset($mt[$decryptedType])?$mt[$decryptedType]:0;
                         @endphp
                         <table class="table table-sm table-borderless">
                             <tr>
