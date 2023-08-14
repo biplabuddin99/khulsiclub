@@ -22,7 +22,8 @@
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
         }
         input:focus {
             border-color: green
@@ -31,7 +32,7 @@
 
         .gfg {
             border-collapse:separate;
-            border-spacing:0 27px;
+            border-spacing:0 25px;
         }
         .gfg2 {
             border-collapse:separate;
@@ -59,13 +60,13 @@
         .photo{
 
             margin: auto;
-            padding-top: 2.3rem;
+            padding-top: 1.3rem;
 
 
         }
         .pdiv{
             position: relative;
-            background-color: rgba(53, 123, 189, 0.6);
+            background-color: rgb(240, 235, 235) !important;
             padding: 10px;
 
         }
@@ -78,8 +79,11 @@
             border-color: #3939b3; */
             text-align: center;
             position: absolute;
-            bottom: 5px;
+            bottom: 9px;
             right: 80px;
+            background-color: rgb(248, 239, 239);
+            padding-bottom: 6px;
+            padding-top: 26px;
 
 
         }
@@ -91,43 +95,49 @@
         .section-heading{
             font-family: Montserrat !important;
         }
-        /* body{
-            font-family: "Montserrat";
-        } */
+        body{
+            background-color: rgb(252, 245, 245);
+        }
         .binput {
             width: 100%;
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
+            
         }
         .sinput {
             width: 100%;
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
         }
         .finput {
             width: 30%;
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
         }
         .bottominput {
             width: 80%;
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
         }
         .bottom2input {
             width: 32%;
             outline: 0;
             border-style: solid;
             border-width: 0 0 1px;
-            border-color: blue
+            border-color: blue;
+            background-color: transparent;
         }
        
         .btn {
@@ -193,27 +203,29 @@
         </button>
     </div>
     <div class="bg1"  style="width:800px; margin:0 auto;">
-        <div>
-            <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="100%" height="70px" alt="">
+        <div style="text-align: center;">
+            <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
         </div>
-        <div style="margin-bottom: 3rem; margin-top: 3rem;">
+        <div style="margin-bottom: 1.5rem; margin-top: 1.5rem;">
             <h1 class="font" style="text-align: center;">Membership Form</h1>
         </div>
 
         <div class="pdiv">
             <div class="tbl1">
-                <p style="margin: 0px;">Govt. Reg No: CH-10511/13</p>
-                <p style="margin: 0px;">Holding No - 1471/2184/1, Concord</p>
-                <p style="margin: 0px;">Amusement Park Road, Opposite of Ansar</p>
-                <p style="margin: 0px;">Sadar Doptor, Foy'slake, Khulshi,</p>
-                <p style="margin: 0px;">Chattogram, Bangladesh</p>
-                <p style="margin: 0px;">Contact: +88019 88 896 906, +88019 70 896 905</p>
+                <p style="margin: 0px; font-weight:bold;"><em>Govt. Reg No: CH-10511/13</em></p>
+                <p style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p style="margin: 0px; font-weight:bold;"><em>Holding No - 1471/2184/1, Concord</em></p>
+                <p style="margin: 0px; font-weight:bold;"><em>Amusement Park Road, Opposite of Ansar</em></p>
+                <p style="margin: 0px; font-weight:bold;"><em>Sadar Doptor, Foy'slake, Khulshi,</em></p>
+                <p style="margin: 0px; font-weight:bold;"><em>Chattogram, Bangladesh</em></p>
+                <p style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p style="margin: 0px; font-weight:bold;"><em>Contact: +88019 88 896 906, +88019 70 896 905</em></p>
             </div>
             <div class="pbox">
-                <td ><p class="photo">Photo 4 Copies Passport Size</p></td>
+                <td ><p class="photo"><em>4 Copies of Passport Size Photo</em></p></td>
             </div>
         </div>
-        <div style="margin-top: 5rem;">
+        <div style="margin-top: 2.5rem;">
             <h4 class="section-heading" style="margin: 0px;"><b>PERSONAL INFORMATION</b></h4>
         </div>
         <form action="">
