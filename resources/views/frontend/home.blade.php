@@ -121,7 +121,7 @@
               <div class="mt-3 d-flex notice-div-one ">
                 <span class="material-icons me-2"> today </span>
                 <a href="{{route('event-notice')}}">
-                  <p class="fs-4 mb-1 pt-1">News & Events</p>
+                  <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
                 </a>
               </div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -162,7 +162,7 @@
             <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
               <a href="{{route('all-notice')}}">
-                <p class="fs-4 mb-1 pt-1">Notice</p>
+                <p class="fs-4 mb-1 pt-1 title-heading">Notice</p>
               </a>
             </div>
             <div class="height-300">
@@ -212,7 +212,7 @@
     <section class="facilities-main">
       <div class="facilities text-center py-5">
         <div class="container my-4">
-          <h4 class="section-title animate-title">FACILITIES</h4>
+          <h4 class="section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item  d-flex justify-content-center">
@@ -252,13 +252,13 @@
         <section class="container pb-5 ">
           {{-- <div class="our-members">
           </div> --}}
-          <h4 class="animate-title">OUR MEMBERS</h4>
+          <h4 class="animate-title title-heading">Our Members</h4>
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $fm)
           <div class="col-12 item pe-3 ps-3">
             <div class="card member-box shadow">
                 <span class="shape"></span>
-                <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
                 <div class="card-body">
                     <span class="member-degignation">
                         @if ($fm->membership_applied == 1){{'Donor Member'}}
@@ -315,7 +315,7 @@
     <section class="gallery">
       <div class="galler-background py-3">
         <div class="container">
-          <h4 class="pt-5 animate-title">GALLERY</h4>
+          <h4 class="pt-5 animate-title title-heading">Gallery</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent pe-3 ps-3">
