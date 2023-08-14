@@ -84,8 +84,6 @@
             background-color: rgb(248, 239, 239);
             padding-bottom: 6px;
             padding-top: 26px;
-
-
         }
         .font{
             font-family: AdmiralScriptW01-Regular;
