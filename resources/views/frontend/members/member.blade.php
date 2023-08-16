@@ -20,24 +20,24 @@
             <div class="col-lg-6">
                 <div class="card company-info shadow-sm mb-3">
                     <div class="card-header">
-                        <h5>Company Information</h5>
+                        <h5>Personal Information</h5>
                     </div>
                     <div class="card-body" style="min-height:290px;">
                         <table class="table table-sm table-borderless">
                             <tr>
-                                <th width="40">Name</th>
+                                <th width="45">Name</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
                             </tr>
                             <tr>
-                                <th width="40">Contact No</th>
+                                <th width="45">Contact No</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('phone'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('phone'))}}</td>
                             </tr>
                             <tr>
-                                <th width="40">Email</th>
+                                <th width="45">Email</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
                             </tr>
                         </table>
                     </div>

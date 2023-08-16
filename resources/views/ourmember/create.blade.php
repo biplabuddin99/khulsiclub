@@ -205,88 +205,88 @@
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('vill')}}" name="vill">
+                                                    <input type="text" class="form-control" id="presentVillage" value="{{ old('vill')}}" name="vill">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('block')}}" name="block">
+                                                    <input type="text" class="form-control" id="presentBlock" value="{{ old('block')}}" name="block">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('policeStation')}}" name="policeStation">
+                                                    <input type="text" class="form-control" id="presentPoliceStation" value="{{ old('policeStation')}}" name="policeStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" id="postoffice" class="form-control" value="{{ old('postoffice')}}" name="postoffice">
+                                                    <input type="text" class="form-control" id="presentPostOffice" value="{{ old('postoffice')}}" name="postoffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postcode">Postal Code:</label>
-                                                    <input type="text" class="form-control" value="{{ old('postalCode')}}" name="postalCode">
+                                                    <input type="text" class="form-control"  id="presentPostalCode" value="{{ old('postalCode')}}" name="postalCode">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('district')}}" name="district">
+                                                    <input type="text" class="form-control" id="presentDistrict" value="{{ old('district')}}" name="district">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('country')}}" name="country">
+                                                    <input type="text" class="form-control" id="presentCountry" value="{{ old('country')}}" name="country">
                                                 </div>
                                             </div>
                                             <div>
-                                                <h6><b>Permanent Address</b></h6>
+                                                <h6><b>Permanent Address</b>&nbsp;&nbsp;<input type="checkbox" id="sameAsPresent" name="sameAsPresent">&nbsp;Same As Present Address</h6>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
-                                                    <input type="text" class="form-control" value="{{ old('perVillage')}}" name="perVillage">
+                                                    <input type="text" class="form-control" id="permanentVillage" value="{{ old('perVillage')}}" name="perVillage">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
-                                                    <input type="text" class="form-control" value="{{ old('perBlock')}}" name="perBlock">
+                                                    <input type="text" class="form-control" id="permanentBlock" value="{{ old('perBlock')}}" name="perBlock">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPoliceStation')}}" name="perPoliceStation">
+                                                    <input type="text" class="form-control" id="permanentPoliceStation" value="{{ old('perPoliceStation')}}" name="perPoliceStation">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostOffice')}}" name="perPostOffice">
+                                                    <input type="text" class="form-control" id="permanentPostOffice" value="{{ old('perPostOffice')}}" name="perPostOffice">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postcode">Postal Code:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perPostalCode')}}" name="perPostalCode">
+                                                    <input type="text" class="form-control" id="permanentPostalCode" value="{{ old('perPostalCode')}}" name="perPostalCode">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perDistrict')}}" name="perDistrict">
+                                                    <input type="text" class="form-control" id="permanentDistrict" value="{{ old('perDistrict')}}" name="perDistrict">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('perCountry')}}" name="perCountry">
+                                                    <input type="text" class="form-control" id="permanentCountry" value="{{ old('perCountry')}}" name="perCountry">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -571,5 +571,35 @@ $('.nav-item a').click(function(e) {
 });
 
 });
+</script>
+<script>
+    const sameAsPresentCheckbox = document.getElementById('sameAsPresent');
+    const permanentVillage = document.getElementById('permanentVillage');
+    const permanentBlock = document.getElementById('permanentBlock');
+    const permanentPoliceStation = document.getElementById('permanentPoliceStation');
+    const permanentPostOffice = document.getElementById('permanentPostOffice');
+    const permanentPostalCode = document.getElementById('permanentPostalCode');
+    const permanentDistrict = document.getElementById('permanentDistrict');
+    const permanentCountry = document.getElementById('permanentCountry');
+
+    sameAsPresentCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            permanentVillage.value = document.getElementById('presentVillage').value;
+            permanentBlock.value = document.getElementById('presentBlock').value;
+            permanentPoliceStation.value = document.getElementById('presentPoliceStation').value;
+            permanentPostOffice.value = document.getElementById('presentPostOffice').value;
+            permanentPostalCode.value = document.getElementById('presentPostalCode').value;
+            permanentDistrict.value = document.getElementById('presentDistrict').value;
+            permanentCountry.value = document.getElementById('presentCountry').value;
+        } else {
+            permanentVillage.value = '';
+            permanentBlock.value = '';
+            permanentPoliceStation.value = '';
+            permanentPostOffice.value = '';
+            permanentPostalCode.value = '';
+            permanentDistrict.value = '';
+            permanentCountry.value = '';
+        }
+    });
 </script>
 @endpush

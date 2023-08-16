@@ -293,6 +293,9 @@ class MemberPanel extends Controller
             $member->block=$request->block;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
+            $member->postalCode=$request->postalCode;
+            $member->district=$request->district;
+            $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
             $member->perPoliceStation=$request->perPoliceStation;
@@ -315,9 +318,36 @@ class MemberPanel extends Controller
             $member->proposed_membership_id=$request->memberNo;
 
             $path='uploads/member_image';
-            if($request->has('image') && $request->image)
-            if($this->deleteImage($member->image,$path))
-                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+            if($request->hasFile('image')){
+                $this->deleteImage($member->image,$path);
+                $data = rand(111,999).time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/member_image'), $data);
+                $member->image=$data;
+            }
+
+            $path2='uploads/nid';
+            if($request->hasFile('nid')){
+                $this->deleteImage($member->nid,$path2);
+                $data = rand(111,999).time().'.'.$request->nid->extension();
+                $request->nid->move(public_path('uploads/nid'), $data);
+                $member->nid=$data;
+            }
+
+            $path3='uploads/passport';
+            if($request->hasFile('passport')){
+                $this->deleteImage($member->passport,$path3);
+                $data = rand(111,999).time().'.'.$request->passport->extension();
+                $request->passport->move(public_path('uploads/passport'), $data);
+                $member->passport=$data;
+            }
+
+            $path4='uploads/etin';
+            if($request->hasFile('etin')){
+                $this->deleteImage($member->etin,$path4);
+                $data = rand(111,999).time().'.'.$request->etin->extension();
+                $request->etin->move(public_path('uploads/etin'), $data);
+                $member->etin=$data;
+            }
 
             $member->status=$request->status;
             if($member->save()){

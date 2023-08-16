@@ -1844,6 +1844,10 @@ img.events-image {
   margin-bottom: 30px;
   padding-bottom:15px;
 }
+.member-title,.member-company,.member-designation{
+  color: #282828;
+  font-weight: bolder !important;
+}
 .member-box .shape {
   width: 200px;
   height: 200px;

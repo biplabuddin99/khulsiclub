@@ -201,14 +201,14 @@
                         @forelse ($member as $m)
                         <div class="search-list-item row ">
                             <div class="col-lg-2 align-self-center text-center">
-                                <img src="{{asset('uploads/member_image/thumb/'.$m->image)}}" alt="No Image" width="100px">
+                                <img src="{{asset('uploads/member_image/'.$m->image)}}" alt="No Image" width="100px">
                             </div>
                             <div class="col-lg-2 text-center border-end ps-0 pe-0">
                                 <h1> {{$m->full_name}}</h1>
                                 <h5>
                                     @if ($m->membership_applied == 1){{'Donor Member'}}
-                                    @elseif($m->membership_applied == 2){{'Life Member'}}
-                                    @elseif($m->membership_applied == 3){{'Service Member'}}
+                                    @elseif($m->membership_applied == 2){{'Service Member'}}
+                                    @elseif($m->membership_applied == 3){{'Life Member'}}
                                     @elseif($m->membership_applied == 4){{'Temporary Member'}}
                                     @elseif($m->membership_applied == 5){{'Permanent Member'}}
                                     @elseif($m->membership_applied == 6){{'Honorary Member'}}
@@ -222,7 +222,7 @@
                                 {{-- <a href="#" onclick="alert('Sorry!! profile has not uploaded yet')" class="btn-custom text-danger">[PDF Profile]</a> --}}
                                 @endif
                             </div>
-                            <div class="col-lg-6 align-self-center">
+                            <div class="col-lg-8 align-self-center">
                                 <h4><a href="#">{{$m->company}}</a></h4>
                                 <p>{{$m->designation}}</p>
                             </div>

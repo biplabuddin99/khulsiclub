@@ -36,7 +36,7 @@
         }
         .gfg2 {
             border-collapse:separate;
-            border-spacing:0 35px;
+            border-spacing:0 25px;
             }
 
         .gfg3 {
@@ -207,8 +207,8 @@
         <div style="text-align: center;">
             <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
         </div>
-        <div style="margin-bottom: 1.5rem; margin-top: 1.5rem;">
-            <h1 class="font" style="text-align: center;">Membership Form</h1>
+        <div style="margin-bottom: 1.5rem;">
+            <h1 class="font" style="text-align: center; margin-top:0;">Membership Form</h1>
         </div>
 
         <div class="pdiv">
@@ -223,7 +223,11 @@
                 <p style="margin: 0px; font-weight:bold;"><em>Contact: +88019 88 896 906, +88019 70 896 905</em></p>
             </div>
             <div class="pbox">
-                <td ><p class="photo"><em>4 Copies of Passport Size Photo</em></p></td>
+                @if ($show_data->image > 0)
+                <td><img src="{{asset('uploads/member_image/'.$show_data->image)}}" width="110px" height="110px" alt=""></td>
+                @else
+                <td ><p class="photo"><em>4 Copies of Passport Size Photo</em></p></td> 
+                @endif
             </div>
         </div>
         <div style="margin-top: 2.5rem;">
@@ -321,6 +325,14 @@
                     <td style="text-align: left; padding-left:5px;">Post Office:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->post_office }}"></td>
                 </tr>
+                <tr>
+                    <td style="text-align: left;">Postal Code:</td>
+                    <td ><input type="text" class="tinput" value="{{ $show_data->postalCode }}"></td>
+                    <td style="text-align: left; padding-left:5px;">District:</td>
+                    <td ><input type="text" class="tinput" value="{{ $show_data->district }}"></td>
+                    <td style="text-align: left; padding-left:5px;">Country:</td>
+                    <td ><input type="text" class="tinput" value="{{ $show_data->country }}"></td>
+                </tr>
             </table>
             <div>
                 <p style="margin: 0;">Permanent Address</p>
@@ -417,7 +429,7 @@
             <div>
                 <h4 class="section-heading" style="margin-top: 2rem;"><b>CATEGORY OF MEMBERSHIP</b></h4>
             </div>
-            <div style="padding-left: 40px; margin-bottom: 1rem;">
+            <div style="padding-left: 40px; margin-bottom: 1rem; padding-bottom:5rem;">
                 <table class = "gfg4" style=" width:100%">
                     <tr>
                         <td ><input type="checkbox" value="1" {{ $show_data->membership_applied=="1" ? "checked":"" }}>&nbsp;Donor Member</td>

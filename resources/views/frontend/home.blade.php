@@ -273,13 +273,12 @@
                     </span>
                     <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
                     <small>
-                        <strong>Company:</strong>
-                        {{$fm->company}}
+                      Company:<strong class="member-company"> {{$fm->company}}</strong>
+                        
                     </small>
                     <br>
                     <small>
-                      <strong>Designation:</strong>
-                      {{$fm->designation }}
+                      Designation:<strong class="member-designation"> {{$fm->designation }}</strong>
                   </small>
                 </div>
                 {{-- <div class="card-footer">

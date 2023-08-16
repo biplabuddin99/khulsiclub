@@ -85,6 +85,9 @@ class OurMemberController extends Controller
             $member->block=$request->block;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
+            $member->postalCode=$request->postalCode;
+            $member->district=$request->district;
+            $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
             $member->perPoliceStation=$request->perPoliceStation;
@@ -108,9 +111,30 @@ class OurMemberController extends Controller
 
             $member->role_id=5;
 
-            if($request->has('image'))
-                $member->image=$this->resizeImage($request->image,'uploads/member_image',true,140,175,false);
+            // if($request->has('image'))
+            //     $member->image=$this->resizeImage($request->image,'uploads/member_image',true,140,175,false);
 
+            if($request->hasFile('image')){
+                $data = rand(111,999).time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/member_image'), $data);
+                $member->image=$data;
+            }
+
+            if($request->hasFile('nid')){
+                $data = rand(111,999).time().'.'.$request->nid->extension();
+                $request->nid->move(public_path('uploads/nid'), $data);
+                $member->nid=$data;
+            }
+            if($request->hasFile('passport')){
+                $data = rand(111,999).time().'.'.$request->passport->extension();
+                $request->passport->move(public_path('uploads/passport'), $data);
+                $member->passport=$data;
+            }
+            if($request->hasFile('etin')){
+                $data = rand(111,999).time().'.'.$request->etin->extension();
+                $request->etin->move(public_path('uploads/etin'), $data);
+                $member->etin=$data;
+            }
            
             $member->show_font=0;
             $member->status=1;
@@ -219,6 +243,9 @@ class OurMemberController extends Controller
             $member->block=$request->block;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
+            $member->postalCode=$request->postalCode;
+            $member->district=$request->district;
+            $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
             $member->perPoliceStation=$request->perPoliceStation;
@@ -241,11 +268,37 @@ class OurMemberController extends Controller
             $member->proposed_membership_id=$request->memberNo;
 
             $path='uploads/member_image';
-            if($request->has('image') && $request->image)
-            if($this->deleteImage($member->image,$path))
-                $member->image=$this->resizeImage($request->image,$path,true,140,175,false);
+            if($request->hasFile('image')){
+                $this->deleteImage($member->image,$path);
+                $data = rand(111,999).time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/member_image'), $data);
+                $member->image=$data;
+            }
 
-            
+            $path2='uploads/nid';
+            if($request->hasFile('nid')){
+                $this->deleteImage($member->nid,$path2);
+                $data = rand(111,999).time().'.'.$request->nid->extension();
+                $request->nid->move(public_path('uploads/nid'), $data);
+                $member->nid=$data;
+            }
+
+            $path3='uploads/passport';
+            if($request->hasFile('passport')){
+                $this->deleteImage($member->passport,$path3);
+                $data = rand(111,999).time().'.'.$request->passport->extension();
+                $request->passport->move(public_path('uploads/passport'), $data);
+                $member->passport=$data;
+            }
+
+            $path4='uploads/etin';
+            if($request->hasFile('etin')){
+                $this->deleteImage($member->etin,$path4);
+                $data = rand(111,999).time().'.'.$request->etin->extension();
+                $request->etin->move(public_path('uploads/etin'), $data);
+                $member->etin=$data;
+            }
+
             $member->show_font=$request->show_font;
             $member->club_designation=$request->club_designation;
             $member->membership_no=$request->membershipno;

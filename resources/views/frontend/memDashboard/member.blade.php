@@ -72,39 +72,34 @@
                         @endphp
                         <table class="table table-sm table-borderless">
                             <tr>
-                                <th width="40">Name</th>
+                                <th width="45">Name</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
                             </tr>
                             <tr>
-                                <th width="40">Membership No</th>
+                                <th width="45">Membership No</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('membership_no'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('membership_no'))}}</td>
                             </tr>
                             <tr>
-                                <th width="40">Membership Type</th>
+                                <th width="45">Membership Type</th>
                                 <td width="2">:</td>
-                                <td width="58">{{ $decryptedValue }}</td>
-                            </tr>
-                            {{-- <tr>
-                                <th width="40">Membership Date</th>
-                                <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
-                            </tr> --}}
-                            <tr>
-                                <th width="40">Contact No</th>
-                                <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('phone'))}}</td>
+                                <td width="53">{{ $decryptedValue }}</td>
                             </tr>
                             <tr>
-                                <th width="40">Email</th>
+                                <th width="45">Contact No</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('phone'))}}</td>
                             </tr>
                             <tr>
-                                <th width="40">Address</th>
+                                <th width="45">Email</th>
                                 <td width="2">:</td>
-                                <td width="58">{{encryptor('decrypt', request()->session()->get('address'))}}</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
+                            </tr>
+                            <tr>
+                                <th width="45">Address</th>
+                                <td width="2">:</td>
+                                <td width="53">{{encryptor('decrypt', request()->session()->get('address'))}}</td>
                             </tr>
                         </table>
                     </div>
@@ -118,19 +113,19 @@
                     <div class="card-body" style="min-height:450px;">
                         <table class="table table-sm table-borderless">
                             <tr>
-                                <th width="40">Payment Method</th>
+                                <th width="45">Payment Method</th>
                                 <td width="2">:</td>
-                                <td width="58"></td>
+                                <td width="53"></td>
                             </tr>
                             <tr>
-                                <th width="40">Payment Status</th>
+                                <th width="45">Payment Status</th>
                                 <td width="2">:</td>
-                                <td width="58"></td>
+                                <td width="53"></td>
                             </tr>
                             <tr>
-                                <th width="40">Payment Date</th>
+                                <th width="45">Payment Date</th>
                                 <td width="2">:</td>
-                                <td width="58"></td>
+                                <td width="53"></td>
                             </tr>
                         </table>
                     </div>
