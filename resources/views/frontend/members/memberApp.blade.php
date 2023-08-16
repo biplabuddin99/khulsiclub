@@ -46,7 +46,7 @@
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.dashboard')}}">Dashboard</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-2-menu" href="{{route('member.profile')}}">Membership Form</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-2-menu" href="{{route('member.registration.success')}}">Preview</a></li>
-                                        {{-- <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-4-menu" href="{{route('member.password')}}">Password Change</a></li> --}}
+                                        <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-4-menu" href="{{route('member.memPassword')}}">Password Change</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-5-menu" href="{{route('memberLogOut')}}">Logout</a></li>
                                     </ul>
                                 </div>

@@ -1,4 +1,7 @@
-.progress-tabmenu .nav .nav-item a.active:before {
+body{
+  font-family: Montserrat !important;
+}
+  .progress-tabmenu .nav .nav-item a.active:before {
     background-color: rgb(240, 133, 133) !important;
   }
   .progress-tabmenu .nav .nav-item a.active span {

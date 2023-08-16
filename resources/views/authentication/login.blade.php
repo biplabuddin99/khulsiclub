@@ -1,40 +1,63 @@
 @extends('layout.auth')
 
 @section('content')
-@if(Session::has('response'))
-    {!!Session::get('response')['message']!!}
-@endif
-<form action="{{route('login.check')}}" method="post">
-    @csrf
-    <div class="form-group position-relative has-icon-left mb-3">
-        <input name="PhoneNumber" value="{{old('PhoneNumber')}}" type="text" class="form-control form-control-xl" placeholder="Phone Number">
-        <div class="form-control-icon">
-            <i class="bi bi-phone"></i>
-        </div>
-        @if($errors->has('PhoneNumber'))
-            <small class="d-block text-danger">
-                {{$errors->first('PhoneNumber')}}
-            </small>
-        @endif
-    </div>
-    <div class="form-group position-relative has-icon-left mb-3">
-        <input type="password" name="password" class="form-control form-control-xl" placeholder="Password">
-        <div class="form-control-icon">
-            <i class="bi bi-shield-lock"></i>
-        </div>
-        @if($errors->has('password'))
-            <small class="d-block text-danger">
-                {{$errors->first('password')}}
-            </small>
-        @endif
-    </div>
-    <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-2">Log in</button>
-</form>
-<div class="text-center mt-3 text-lg fs-4">
-    <p class="text-gray-600 m-0">Don't have an account? <a href="{{route('register')}}" class="font-bold">Sign
-            up</a>.</p>
-    <p><a class="font-bold" href="#">Forgot password?</a>.</p>
-</div>
+<section class="container py-4 mt-5">
+    <div class="row merber-reg-card">
+        <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
+          <div class="card shadow">
+                <span class="shape"></span>
+                @if(Session::has('response'))
+                    {!!Session::get('response')['message']!!}
+                @endif
+              <div class="row">
+                    <div class="col-lg-4 logo-side-section">
+                        <div class="loginSideText h-100 ">
+                            <div class="body h-100">
+                                <img class="align-self-center p-3" src="{{asset('img/khlogo3.png')}}" width="140px" alt="side image" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="text-center pt-4">
+                            <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
+                            <p class="p-0 m-0">Login</p>
+                        </div>
+                        <div class="p-4 mem-form">
+                            <form action="{{route('login.check')}}" method="post">
+                                @csrf
+                                <div class="col-12 py-2">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number:</label>
+                                        <input type="text" class="form-control input-bg" placeholder="Phone Number" onfocus="this.placeholder = ''" name="PhoneNumber" value="{{old('PhoneNumber')}}" onblur="this.placeholder = 'Phone Number'" >
+                                    </div>
+                                    @if($errors->has('PhoneNumber'))
+                                        <small class="d-block text-danger">
+                                            {{$errors->first('PhoneNumber')}}
+                                        </small>
+                                    @endif
+                                </div>
+                                <div class="col-12 py-2">
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                    </div>
+                                    @if($errors->has('password'))
+                                        <small class="d-block text-danger">
+                                            {{$errors->first('password')}}
+                                        </small>
+                                    @endif
+                                </div>
+                                <div class="col-12 py-4 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
 
 @endsection

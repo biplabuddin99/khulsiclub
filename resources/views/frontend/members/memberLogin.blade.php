@@ -1,7 +1,5 @@
 @extends('frontend.app')
 @section('content')
-
-<!-- // Basic multiple Column Form section start -->
 <section class="container py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
@@ -64,5 +62,4 @@
       </div>
   </div>
 </section>
-<!-- // Basic multiple Column Form section end -->
-    @endsection
+@endsection

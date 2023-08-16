@@ -210,6 +210,12 @@ class MemberPanel extends Controller
         $member=OurMember::where('id',currentUserId())->first();
         return view('frontend.memDashboard.memberPassword',compact('member'));
     }
+
+    public function memPassword()
+    {
+        $member=OurMember::where('id',currentUserId())->first();
+        return view('frontend.members.memberPassword',compact('member'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
