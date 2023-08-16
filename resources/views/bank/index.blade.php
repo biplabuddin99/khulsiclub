@@ -36,7 +36,7 @@
                                         <td>{{$b->account_number}}</td>
                                         <td>{{$b->routing_number}}</td>
                                         <td>{{$b->account_name}}</td>
-                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/banklogo/'.$b->logo)}}" alt="logo"></td>
+                                        <td><img width="80px" height="40px" class="float-first" src="{{asset('uploads/bankLogo/'.$b->logo)}}" alt="logo"></td>
                                         <td class="white-space-nowrap">
                                             <a href="{{route(currentUser().'.bank.edit',encryptor('encrypt',$b->id))}}">
                                                 <i class="bi bi-pencil-square"></i>
