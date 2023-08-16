@@ -20,7 +20,7 @@
         .tinput {
             width: 100%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -68,7 +68,9 @@
             position: relative;
             background-color: rgb(240, 235, 235) !important;
             padding: 10px;
-
+        }
+        .pdiv p{
+            font-family: 'Times New Roman', Times, serif !important;
         }
         .pbox{
             width: 120px;
@@ -90,16 +92,17 @@
         }
         
         
-        .section-heading{
+        /* .section-heading{
             font-family: Montserrat !important;
-        }
+        } */
         body{
             background-color: rgb(252, 245, 245);
+            font-family: Montserrat !important;
         }
         .binput {
             width: 100%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -108,7 +111,7 @@
         .sinput {
             width: 100%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -116,7 +119,7 @@
         .finput {
             width: 30%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -124,7 +127,7 @@
         .bottominput {
             width: 80%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -132,7 +135,7 @@
         .bottom2input {
             width: 32%;
             outline: 0;
-            border-style: solid;
+            border-style: dashed;
             border-width: 0 0 1px;
             border-color: blue;
             background-color: transparent;
@@ -230,70 +233,70 @@
             <table class = "gfg" style="width:100%">
                 <tbody >
                     <tr>
-                        <th style="text-align: left;">Full Name:</th>
+                        <td style="text-align: left;">Full Name:</td>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Father's Name:</th>
+                        <td style="text-align: left;">Fatder's Name:</th>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->father_name . $show_data->husban_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Mother's Name:</th>
+                        <td style="text-align: left;">Mother's Name:</td>
                         <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->mother_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Marital Status:</th>
+                        <td style="text-align: left;">Marital Status:</td>
                         <td >
                             <input type="radio"  value="" {{ old('marit_status',$show_data->marital_status)=="0" ? "checked":"" }} name="marital_status">
                             <label for="">Single</label>
                             <input type="radio" value="" {{ old('marit_status',$show_data->marital_status)=="1" ? "checked":"" }} name="marital_status">
                             <label for="">Married</label>
                         </td>
-                        <th style="text-align: left; ">Anniversary:</th>
+                        <td style="text-align: left; ">Anniversary:</td>
                         <td ><input type="text" class="sinput"  value="{{ $show_data->anniversary }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Spouse Name:</th>
+                        <td style="text-align: left;">Spouse Name:</td>
                         <td ><input type="text" class="sinput"  value="{{ $show_data->name_of_spouse }}"></td>
-                        <th style="text-align: left; padding-left:5px; ">Profession:</th>
+                        <td style="text-align: left; padding-left:5px; ">Profession:</td>
                         <td ><input type="text" class="sinput"  value="{{ $show_data->occupation_of_spouse }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Date of Birth:</th>
+                        <td style="text-align: left;">Date of Birth:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->birth_date }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Place:</th>
+                        <td style="text-align: left; padding-left:5px;">Place:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->place_of_birth }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Tel:</th>
+                        <td style="text-align: left;">Tel:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->tel_number }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Phone:</th>
+                        <td style="text-align: left; padding-left:5px;">Phone:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->cell_number }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Email:</th>
+                        <td style="text-align: left;">Email:</td>
                         <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->email }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Nationality:</th>
+                        <td style="text-align: left;">Nationality:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->nationality }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Blood Group:</th>
+                        <td style="text-align: left; padding-left:5px;">Blood Group:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->blood_group }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">National ID No:</th>
+                        <td style="text-align: left;">National ID No:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->national_id }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Passport No:</th>
+                        <td style="text-align: left; padding-left:5px;">Passport No:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->passport_no }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Educational Qualification:</th>
+                        <td style="text-align: left;">Educational Qualification:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->qualification }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Institution Name:</th>
+                        <td style="text-align: left; padding-left:5px;">Institution Name:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->name_of_institute }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">e-TIN No:</th>
+                        <td style="text-align: left;">e-TIN No:</td>
                         <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->e_tin_number }}"></td>
                     </tr>
                 </tbody>
@@ -307,15 +310,15 @@
         <form action="">
             <table class = "gfg2" style=" width:100%">
                 <tr>
-                    <th style="text-align: left;">House/Village:</th>
+                    <td style="text-align: left;">House/Village:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->village }}"></td>
-                    <th style="text-align: left; padding-left:5px;">Road/Block/Sector:</th>
+                    <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->block }}"></td>
                 </tr>
                 <tr>
-                    <th style="text-align: left;">Police Station:</th>
+                    <td style="text-align: left;">Police Station:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->police_station }}"></td>
-                    <th style="text-align: left; padding-left:5px;">Post Office:</th>
+                    <td style="text-align: left; padding-left:5px;">Post Office:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->post_office }}"></td>
                 </tr>
             </table>
@@ -325,23 +328,23 @@
             <table class = "gfg2" style=" width:100%">
                 <tbody >
                     <tr>
-                        <th style="text-align: left;">House/Village:</th>
+                        <td style="text-align: left;">House/Village:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perVillage }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Road/Block/Sector:</th>
+                        <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perBlock }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Police Station:</th>
+                        <td style="text-align: left;">Police Station:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perPoliceStation }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Post Office:</th>
+                        <td style="text-align: left; padding-left:5px;">Post Office:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perPostOffice }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Postal Code:</th>
+                        <td style="text-align: left;">Postal Code:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->perPostalCode }}"></td>
-                        <th style="text-align: left; padding-left:5px;">District:</th>
+                        <td style="text-align: left; padding-left:5px;">District:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->perDistrict }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Country:</th>
+                        <td style="text-align: left; padding-left:5px;">Country:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->perCountry }}"></td>
                     </tr>
                 </tbody>
@@ -380,33 +383,33 @@
             <table class = "gfg2" style=" width:100%">
                 <tbody >
                     <tr>
-                        <th style="text-align: left;">Profession:</th>
+                        <td style="text-align: left;">Profession:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profession }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Designation:</th>
+                        <td style="text-align: left; padding-left:5px;">Designation:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->designation }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Company:</th>
+                        <td style="text-align: left;">Company:</td>
                         <td colspan="5"><input type="text" class="tinput" value="{{ $show_data->company }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">House/Village:</th>
+                        <td style="text-align: left;">House/Village:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profVillage }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Road/Block/Sector:</th>
+                        <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profBlock }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Police Station:</th>
+                        <td style="text-align: left;">Police Station:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profPoliceStation }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Post Office:</th>
+                        <td style="text-align: left; padding-left:5px;">Post Office:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profPostOffice }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Postal Code:</th>
+                        <td style="text-align: left;">Postal Code:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->profPostalCode }}"></td>
-                        <th style="text-align: left; padding-left:5px;">District:</th>
+                        <td style="text-align: left; padding-left:5px;">District:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->profDistrict }}"></td>
-                        <th style="text-align: left; padding-left:5px;">Country:</th>
+                        <td style="text-align: left; padding-left:5px;">Country:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->profCountry }}"></td>
                     </tr>
                 </tbody>
@@ -467,13 +470,13 @@
             <table class = "gfg5" style=" width:100%">
                 <tbody >
                     <tr>
-                        <th style="text-align: left;">Name:</th>
+                        <td style="text-align: left;">Name:</td>
                         <td colspan="3"><input type="text" class="tinput" value="{{$show_data->proposed_name}}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">Membership ID:</th>
+                        <td style="text-align: left;">Membership ID:</td>
                         <td ><input type="text" class="tinput" value="{{$show_data->proposed_membership_id}}"></td>
-                        <th style="text-align: left; padding-left:5px;">Signature:</th>
+                        <td style="text-align: left; padding-left:5px;">Signature:</td>
                         <td ><input type="text" class="tinput" value=""></td>
                     </tr>
                 </tbody>
@@ -486,17 +489,17 @@
             <table class = "gfg5" style=" width:100%; margin-bottom: 5rem; padding-bottom: 60px;">
                 <tr>
                     <tr>
-                        <th style="text-align: left;">DATE:</th>
+                        <td style="text-align: left;">DATE:</td>
                         <td ><input type="text" class="tinput" value=""></td>
-                        <th style="text-align: left; padding-left: 5px;">APPLICANT SIGNATURE:</th>
+                        <td style="text-align: left; padding-left: 5px;">APPLICANT SIGNATURE:</td>
                         <td ><input type="text" class="tinput" value=""></td>
                     </tr>
                     <tr>
-                        <th colspan="2" style="text-align: left;">IDENTIFIED BY PRESIDENT / VICE PRESIDENT:</th>
+                        <td colspan="2" style="text-align: left;">IDENTIFIED BY PRESIDENT / VICE PRESIDENT:</td>
                         <td colspan="2"><input type="text" class="tinput" value=""></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left;">MEMBERSHIP NO:</th>
+                        <td style="text-align: left;">MEMBERSHIP NO:</td>
                         <td colspan="3"><input type="text" class="tinput" value="{{$show_data->membership_no}}"></td>
                     </tr>
                 </tr>
@@ -513,11 +516,11 @@
             <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
-                        <th  style="text-align: left; width: 12%;">Mr./Mrs.:</th>
+                        <td  style="text-align: left; width: 12%;">Mr./Mrs.:</td>
                         <td><input type="text" class="binput" value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <th style="text-align: left; width: 12%;">Address:</th>
+                        <td style="text-align: left; width: 12%;">Address:</td>
                         <td ><input type="text" class="binput" value="{{encryptor('decrypt', request()->session()->get('address'))}}"></td>
                     </tr>
                     <tr>

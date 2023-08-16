@@ -31,7 +31,7 @@
                                     <input type="text" value="{{ old('routing_number',$banklist->routing_number)}}" class="form-control" name="routing_number" required>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-                                    <label for="bank" ><b>{{__('Account Number')}}<span class="text-danger">*</span></b></label>
+                                    <label for="bank" ><b>{{__('Account Name')}}<span class="text-danger">*</span></b></label>
                                     <input type="text" value="{{ old('account_name',$banklist->account_name)}}" class="form-control" name="account_name" required>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12 mb-2">

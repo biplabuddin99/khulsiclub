@@ -34,7 +34,15 @@ return new class extends Migration
     public function down()
     {
         Schema::table('total_dues', function (Blueprint $table) {
-            //
+            $table->dropColumn('member_id');
+            $table->dropColumn('y2022');
+            $table->dropColumn('y2023');
+            $table->dropColumn('y2024');
+            $table->dropColumn('member_name');
+            $table->dropColumn('email');
+            $table->dropColumn('contact');
+            $table->dropColumn('address');
+            $table->dropColumn('membership_code');
         });
     }
 };

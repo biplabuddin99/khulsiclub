@@ -228,6 +228,24 @@
                                                     <input type="text" id="postoffice" class="form-control" value="{{ old('postoffice',$member->post_office)}}" name="postoffice">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="postcode">Postal Code:</label>
+                                                    <input type="text" class="form-control" value="{{ old('postalCode',$member->postalCode)}}" name="postalCode">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="district">District:</label>
+                                                    <input type="text" class="form-control" value="{{ old('district',$member->district)}}" name="district">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="country">Country:</label>
+                                                    <input type="text" class="form-control" value="{{ old('country',$member->country)}}" name="country">
+                                                </div>
+                                            </div>
                                             <div>
                                                 <h6><b>Permanent Address</b></h6>
                                             </div>
@@ -517,6 +535,24 @@
                                                 <div class="form-group py-2">
                                                     <label for="photo">Photo:</label>
                                                     <input type="file" id="image" class="form-control" name="image">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="photo">NID:</label>
+                                                    <input type="file" class="form-control" name="nid">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="photo">Passport:</label>
+                                                    <input type="file" class="form-control" name="passport">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="photo">ETIN:</label>
+                                                    <input type="file" class="form-control" name="etin">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
