@@ -50,8 +50,6 @@ class PhotoGallaryController extends Controller
             $pgc->Caption=$request->Caption;
             $pgc->photo_gallary_category_id=$request->album;
             $pgc->status=$request->status;
-            // if($request->has('feature_image'))
-            //     $pgc->feature_image=$this->resizeImage($request->feature_image,'uploads/pGgallery',true,200,200,false);
 
             if($request->hasFile('feature_image')){
                 $data = rand(111,999).time().'.'.$request->feature_image->extension();

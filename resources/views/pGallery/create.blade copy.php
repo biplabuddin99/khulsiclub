@@ -1,9 +1,7 @@
 @extends('layout.app')
+
 @section('pageTitle',trans('Create Photo Gallery'))
 @section('pageSubTitle',trans('Create'))
-@push("styles")
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css">
-@endpush
 
 @section('content')
   <section id="multiple-column-form">
@@ -48,7 +46,7 @@
                             <div class="row mb-3">
                                 <label for="image" class="col-sm-2 offset-1 col-form-label"><b>{{__('Gallery Photo')}}:</b></label>
                                 <div class="col-sm-6 offset-1">
-                                    <div id="dropzone" class="dropzone"></div>
+                                    <input type="file" id="feature_image" class="form-control" name="feature_image">
                                 </div>
                             </div>
                             
@@ -64,26 +62,3 @@
       </div>
   </section>
 @endsection
-@push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
-<script>
-    // Initialize Dropzone
-    Dropzone.options.dropzone = {
-        url: "{{ route(currentUser().'.pGallery.store') }}",
-        paramName: "feature_image", // Name of the input field
-        maxFilesize: 2, // Maximum file size in MB
-        acceptedFiles: ".jpg,.jpeg,.png", // Accepted file types
-        addRemoveLinks: true, // Show remove links
-        dictDefaultMessage: "Drag and drop an image here or click to upload",
-        success: function (file, response) {
-            // Handle successful upload here
-        },
-        error: function (file, errorMessage) {
-            // Handle error here
-        },
-        sending: function(file, xhr, formData) {
-            console.log('Sending file:', file);
-        },
-    };
-    </script>
-@endpush
