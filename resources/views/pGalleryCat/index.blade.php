@@ -35,6 +35,7 @@
                                         <td>{{ $cat->status == 1?"Active":"Inactive" }}</td>
                                         <td class="white-space-nowrap">
                                             <a class="btn btn-sm btn-success" href="{{route(currentUser().'.pGalleryCat.edit',encryptor('encrypt',$cat->id))}}">Edit</a>
+                                            <a class="btn btn-sm btn-info" href="{{route(currentUser().'.pGallery.show',encryptor('encrypt',$cat->id))}}">Photo</a>
                                         </td>
                                     </tr>
                                     @empty
