@@ -241,7 +241,7 @@
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Fatder's Name:</th>
+                        <td style="text-align: left;">Father's Name:</th>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->father_name . $show_data->husban_name }}"></td>
                     </tr>
                     <tr>
