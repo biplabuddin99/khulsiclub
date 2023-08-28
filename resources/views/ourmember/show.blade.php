@@ -26,7 +26,8 @@
             background-color: transparent;
         }
         input:focus {
-            border-color: green
+            border-color: green;
+            font-family: Montserrat !important;
         }
 
 

@@ -53,8 +53,8 @@
 <script>
     
 var myDropZone = new Dropzone("#image-upload", {
-	    maxFiles: 5, 
-        maxFilesize: 4,
+	    maxFiles: 55, 
+        maxFilesize: 256,
         acceptedFiles: ".jpeg,.jpg,.png,.gif",
         addRemoveLinks: true,
         timeout: 50000,
