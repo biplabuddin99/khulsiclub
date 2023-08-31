@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-2 ">
+        <div class="col-lg-9 px-2 custom-page-img">
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">{{$page_data?->page_title}}</h6>
             </div>

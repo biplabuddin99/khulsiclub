@@ -1897,3 +1897,8 @@ img.events-image {
 .ck .ck-icon, .ck-reset_all-excluded, .ck-icon_inherit-color *{
   display: none;
 }
+.custom-page-img img{
+    vertical-align: middle !important;
+    width: 100% !important;
+    height: auto !important;
+}
