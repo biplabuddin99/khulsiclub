@@ -225,7 +225,6 @@
                 </figure> --}}
                 <div class="card mb-3 shadow bg-transparent ">
                   <img class="zoom" width="100%" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
-                    
                   <div class="facilities-heading">
                     <h4>{{$fac->title}}</h4>
                   </div>
