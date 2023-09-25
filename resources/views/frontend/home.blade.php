@@ -49,7 +49,7 @@
     </section>
     <!-- slider end -->
     <!-- Member Counter -->
-    <section class="member-counter container my-5">
+    {{-- <section class="member-counter container my-5">
       <div class="row text-center member-animate">
         <div class="col member-1">
           <div class="card p-1 shadow my-2">
@@ -111,10 +111,10 @@
 
 
       
-    </section>
+    </section> --}}
     <!-- Member counter end -->
     <!-- Blog slide & Notice Section -->
-    <section class="pb-5">
+    <section class="pb-5 mt-5">
       <div class="container notice-blog bg-light shadow rounded-3">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-7">
@@ -215,14 +215,21 @@
           <h4 class="section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
-              <div class="col-12 item  d-flex justify-content-center">
-                <figure class="shadow">
-                  <img class=" zoom" src="{{asset('uploads/facilities/thumb/'.$fac->image)}}" alt="" />
+              <div class="col-12 item bg-transparent px-5 ">
+                {{-- <figure class="shadow">
+                  <img class="zoom" height="193px" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
                   
                   <div class="facilities-heading">
                     <h4>{{$fac->title}}</h4>
                   </div>
-                </figure>
+                </figure> --}}
+                <div class="card mb-3 shadow bg-transparent ">
+                  <img class="zoom" width="100%" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
+                    
+                  <div class="facilities-heading">
+                    <h4>{{$fac->title}}</h4>
+                  </div>
+                </div>
               </div>
             @empty
               <div class="col-12 item  d-flex justify-content-center">
@@ -317,10 +324,10 @@
           <h4 class="pt-5 animate-title title-heading">Gallery</h4>
           <div class="row justify-content-center pb-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
-              <div class="col-12 item bg-transparent pe-3 ps-3">
+              <div class="col-12 item bg-transparent px-5">
                 <div class="card mb-3 shadow bg-transparent ">
                   <a href="{{route('pGallery')}}">
-                    <img class="gallery-zoom"  src="{{asset('uploads/pGcategory/thumb/'.$p->feature_image)}}" alt="" />
+                    <img class="gallery-zoom" width="100%"  src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
                   </a>
                   <div class="heading">
                     <h4>{{$p->name}}</h4>

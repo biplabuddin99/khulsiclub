@@ -597,7 +597,7 @@ marquee p{
   font-weight: bold;
 }
 .facilities div img {
-  max-width: 332px;
+  /* max-width: 332px; */
   /* border-radius: 10px; */
 }
 .facilities div p {
@@ -1280,16 +1280,27 @@ footer img {
   /*padding: 4rem 0;*/
   background: hsla(0, 0%, 95.7%, .68)
 }
+.facilities-main .card {
+    background-color: #fff;
+    backdrop-filter: blur(100px);
+    border: none !important;
+    border-radius: 0px;
+    overflow: hidden;
+}
+.facilities-main .card img {
+  height: 186px;
+  object-fit: cover;
+}
 .facilities-heading {
   position: absolute;
   bottom: 0px;
+  left: 0;
+  right: 0;
   /* height: 50px; */
   opacity: 0.8;
   background-color: #fff;
   /*border-radius: 0 0 20px 20px;*/
   overflow: hidden;
-  width: 332px;
-  font-size: 14px;
 }
 .facilities-heading h4 {
   font-size: 22px;
