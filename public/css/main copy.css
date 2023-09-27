@@ -22,7 +22,7 @@
   src: url(../assets/fonts/BRUSHSCI.ttf);
 }
 .sticky-top .col-sm-4{
-    /* padding-top:10px; */
+    padding-top:10px;
 }
 .hidden{
   display: none;
@@ -53,8 +53,7 @@ header.sticky-top {
 body {
   font-family: "Montserrat-Regular";
   color: var(--gray);
-  /* background-color: rgb(248, 248, 248); */
-  background-color: #fff4e4;
+  background-color: rgb(248, 248, 248);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -103,7 +102,7 @@ body {
   to {height: 85px;}
 }
 .shrink img {
-  height: 70px;
+  height: 50px;
   padding-top: 7px;
   animation: scale;
   animation-duration: 0.9s;
@@ -114,8 +113,8 @@ body {
   animation-duration: 0.2s;
 }
 @keyframes scale {
-  from {height: 85px;}
-  to {height: 70px;}
+  from {height: 60px;}
+  to {height: 50px;}
 }
 
 @keyframes hide {
@@ -128,9 +127,6 @@ body {
 }
 .nav-item a:active {
     color: var(--red);
-}
-.small-view-nav{
-  margin-top: 22px !important;
 }
 #text-right-dec {
   margin-top: 10px;
@@ -213,11 +209,6 @@ body {
   @media (min-width: 768px) {
     .small-view {
       display: none;
-    }
-  }
-  @media (max-width: 767px) {
-    .contact span {
-      display: block;
     }
   }
 .small-menu {
@@ -1055,9 +1046,9 @@ footer img {
 .contact i {
   margin-right: 20px;
 }
-/* .contact span {
+.contact span {
   display: flex;
-} */
+}
 .social-icon i {
   margin-top: 40px;
   margin-right: 20px;
@@ -1169,13 +1160,7 @@ footer img {
     height: 82px;
   }
   .logo-sec img {
-    
-      display: block;
-      margin: auto;
-      padding-top: 15px;
-      width: 70%;
-      margin-left: 69px;
-  
+    padding-top: 15px;
   }
   header.sticky-top {
     -webkit-transform: translateY(-23px);
@@ -1184,13 +1169,7 @@ footer img {
     padding-top: 13px;
   }
   .sticky-top .logo-sec img {
-    /* padding-top: 5px; */
-  }
-  .shrink img{
-    height: 60px !important;
-  }
-  .become-member-text p{
-    font-size: 15vw !important;
+    padding-top: 5px;
   }
 }
 

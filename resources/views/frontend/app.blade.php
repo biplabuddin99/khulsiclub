@@ -42,11 +42,11 @@
         <header class="bg-white ">
           <div class="container">
             <div class="row">
-              <div class="col-sm-4 col-7 logo-sec">
+              <div class="col-sm-4 col-10 logo-sec">
                 <a href="{{route('front')}}"><img src="{{asset('uploads/settings/header_logo/'.$setting?->header_logo)}}" alt="" class="mw-100" /></a>
               </div>
     
-              <div class="col-sm-8 col-5 header-right">
+              <div class="col-sm-8 col-2 header-right">
                   
                 <div style="font-size: 10.1pt; " class="d-flex justify-content-end d-none d-md-flex scicon">
                   <a class="pt-2" href="#"><i class="bi bi-facebook"></i></a>
@@ -62,11 +62,11 @@
                   <div class="col-sm-12 col-12 d-flex justify-content-end " >
                     
                     <nav class="navbar navbar-expand-md navbar-light pb-0">
-                      <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                      <button class="navbar-toggler my-2 text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+                        <i class="bi bi-list"></i>
                       </button>
                     
-                      <div style="margin-top: 10px;" class="collapse navbar-collapse navbar-collapse-top " id="navbarNav">
+                      <div style="margin-top: 6px;" class="collapse navbar-collapse navbar-collapse-top small-view" id="navbarNav">
                         @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
                             $flcount=$rows->count();
                         @endphp
@@ -270,14 +270,12 @@
             <img src="{{asset('uploads/settings/footer_logo/'.$setting?->footer_logo)}}" alt="" />
           </div>
           <div class="row footer-nav">
-            <div class="col-sm-4">
+            <div class="col-sm-4 d-lg-none d-md-none text-center">
               <h6>Location</h6>
               <div class="contact">
-                <span
-                  ><i class="bi bi-geo-alt-fill"></i>
-                  <p>
-                    {{ $setting?->address }}
-                  </p>
+                <span>
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <p>{{ $setting?->address }}</p>
                 </span>
                 <span>
                   <i class="bi bi-telephone-fill"></i>
@@ -296,7 +294,31 @@
                 <a href="{{ $setting?->youtube_link }}"><i class="bi bi-youtube ms-0 ps-0"></i></a>
               </div>
             </div>
-            <div class="col-sm-8 justify-content-end">
+            <div class="col-lg-4 col-md-4 d-none d-sm-block">
+              <h6>Location</h6>
+              <div class="contact">
+                <span class="d-flex">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <p>{{ $setting?->address }}</p>
+                </span>
+                <span class="d-flex">
+                  <i class="bi bi-telephone-fill"></i>
+                  <p>{{ $setting?->contact_no }}</p>
+                </span>
+                <span class="d-flex">
+                  <i class="bi bi-envelope-fill"></i>
+                  <p>{{ $setting?->email_address }}</p>
+                </span>
+              </div>
+              <h5 class="mt-4 mb-2">Connect With Us</h5>
+              <div class="social-icon">
+                <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
+                <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
+                <a href="{{ $setting?->linkdin_link }}"><i class="bi bi-linkedin ms-0 ps-0"></i></a>
+                <a href="{{ $setting?->youtube_link }}"><i class="bi bi-youtube ms-0 ps-0"></i></a>
+              </div>
+            </div>
+            <div class="col-sm-8 col-lg-8 col-md-8 justify-content-end">
               <h6>Google Map</h6>
               <iframe
                 class="container-fluid footer-ifram"

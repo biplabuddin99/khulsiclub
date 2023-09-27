@@ -35,10 +35,20 @@
                             </ul>
                         </marquee>
                     </div>
-                    <div class="card-body" style="min-height:50px;">
-                        <table class="table table-sm table-borderless">
+                    <div class="card-body py-1" style="min-height:50px;">
+                        <table class="table table-sm table-borderless m-0">
                             <tr>
-                                <th class="text-end"><button class="me-5 btn border-danger text-success">{{$statusText}}</button></th>
+                                <td style="width:65%; padding-top: 9px;"><span class="bg-warning" style="padding: 0px 4px 0px 4px; border-radius: 5px; font-weight:bold;">warning</span><span class="text-danger">Please check your notice section regularly to get the latest updates.</span></td>
+                                <th class="text-end">
+                                    {{-- <button class="me-5 btn btn-sm border-danger text-success">{{$statusText}}</button> --}}
+                                    <div>
+                                        <span class="me-3 fs-5 text-danger"><i class="bi bi-bell"></i>
+                                        </span>
+                                        <a class="me-3 fs-5 text-danger" href="{{route('member.help')}}"><span><i class="bi bi-envelope"></i></span></a>
+                                        <span class="bg-danger text-white me-3" style="padding: 2px 6px 2px 6px; border-radius: 5px; font-weight:bold;">{{$statusText}}</span>
+                                        <a class="fs-5 text-danger" href="{{route('memberLogOut')}}" style="text-decoration:none;"><span><i class="bi bi-box-arrow-right"></i></span>Logout</a>
+                                    </div>
+                                </th>
                             </tr>
                         </table>
                     </div>
@@ -74,7 +84,7 @@
                             <tr>
                                 <th width="45">Name</th>
                                 <td width="2">:</td>
-                                <td width="53">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
+                                <td width="53" style="width: 60%;">{{encryptor('decrypt', request()->session()->get('full_name'))}}</td>
                             </tr>
                             <tr>
                                 <th width="45">Membership No</th>
@@ -94,7 +104,7 @@
                             <tr>
                                 <th width="45">Email</th>
                                 <td width="2">:</td>
-                                <td width="53">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
+                                <td width="53" style="font-size: 13px;">{{encryptor('decrypt', request()->session()->get('email'))}}</td>
                             </tr>
                             <tr>
                                 <th width="45">Address</th>

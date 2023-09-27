@@ -117,48 +117,48 @@
     <section class="pb-5 mt-5">
       <div class="container notice-blog bg-light shadow rounded-3">
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-7">
+          <div class="col-md-7 col-lg-7 d-none d-sm-block">
               <div class="mt-3 d-flex notice-div-one ">
-                <span class="material-icons me-2"> today </span>
-                <a href="{{route('event-notice')}}">
-                  <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
-                </a>
+                  <span class="material-icons me-2"> today </span>
+                  <a href="{{route('event-notice')}}">
+                    <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
+                  </a>
               </div>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner n-item-center notice-carousel shadow text-center">
-                @forelse ($vNotice as $v)
-                <div class="carousel-item active">
-                 <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                @empty
-                <div class="carousel-item active">
-                 <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                @endforelse
-                @forelse ($vNotice as $notic)
-                <div class="carousel-item ">
-                  <img
-                    src="{{asset('uploads/video_notice/'.$notic->image)}}"
-                    class="d-block w-100 notice-img"
-                    alt="..."/>
-                </div>
-                @empty
-                <div class="carousel-item active">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                  @forelse ($vNotice as $v)
+                  <div class="carousel-item active">
+                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
                   <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @endforelse
+                  @forelse ($vNotice as $notic)
+                  <div class="carousel-item ">
+                    <img
+                      src="{{asset('uploads/video_notice/'.$notic->image)}}"
+                      class="d-block w-100 notice-img"
+                      alt="..."/>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
+                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @endforelse
                 </div>
-                @endforelse
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-5 notice">
+          <div class="col-md-5 col-lg-5 d-none d-sm-block notice ">
             <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
               <a href="{{route('all-notice')}}">
@@ -193,6 +193,85 @@
               <a href="{{route('all-notice')}}">Views All Notices</a>
             </div>
           </div>
+
+          {{-- notice section for small view start --}}
+            <div class="col-sm-12 d-lg-none d-md-none">
+              <div class="mt-3 d-flex justify-content-center notice-div-one">
+                  <span class="material-icons me-2"> today </span>
+                  <a href="{{route('event-notice')}}">
+                    <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
+                  </a>
+              </div>
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                  @forelse ($vNotice as $v)
+                  <div class="carousel-item active">
+                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
+                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @endforelse
+                  @forelse ($vNotice as $notic)
+                  <div class="carousel-item ">
+                    <img
+                      src="{{asset('uploads/video_notice/'.$notic->image)}}"
+                      class="d-block w-100 notice-img"
+                      alt="..."/>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
+                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @endforelse
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-12 d-lg-none d-md-none notice ">
+              <div class="mt-3 d-flex justify-content-center notice-div-one">
+                <span class="material-icons me-2"> today </span>
+                <a href="{{route('all-notice')}}">
+                  <p class="fs-4 mb-1 pt-1 title-heading">Notice</p>
+                </a>
+              </div>
+              <div class="height-300">
+                  @forelse ($notice as $n)
+                    <div class="notice-title notice-div-two">
+                      <p class="mb-0">
+                        <a href="{{asset('uploads/notice_image/'.$n->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
+                      </p>
+                      <div class="d-flex notice-time">
+                        <span class="material-symbols-outlined"> alarm </span>
+                        <p class="mb-2">{{date('j F, Y', strtotime($n->published_date))}} </p>
+                      </div>
+                    </div>
+                  @empty
+                  <div class="notice-title">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dolores, numquam?
+                    </p>
+                    <div class="d-flex notice-time">
+                      <span class="material-symbols-outlined"> alarm </span>
+                      <p class="mb-2">19 January, 2023</p>
+                    </div>
+                  </div>
+                @endforelse
+              </div>
+              <div class="views-notice">
+                <a href="{{route('all-notice')}}">Views All Notices</a>
+              </div>
+            </div>
+          {{-- notice section for small view end --}}
           <div class="col-12">
               <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
                 <ul class="m-0">
@@ -374,7 +453,7 @@
         <span class="bubble5"></span>
           <div class="p-5 rounded shadow">
             <div class="row member-inner">
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <p class="animate-title">Benefits of Members</p>
                 <ul class="navbar-nav benefit">
                   @forelse ($benefit as $b)
@@ -393,10 +472,10 @@
                       </div>
                   @endif
               </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 become-member-text my-auto">
-                <p><span>Become a <span class="theme-color">Member</span></span></p>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 become-member-text my-auto">
+                <p style="font-size: 7vw;"><span>Become a <span class="theme-color">Member</span></span></p>
               </div>
-              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 apply-text">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 apply-text">
                 <a class="shadow" href="{{route('member_registration')}}">Apply Now</a>
               </div>
             </div>

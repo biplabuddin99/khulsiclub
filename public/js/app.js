@@ -3,10 +3,12 @@ $(window).scroll(function() {
     if (window.scrollY > 100 && !$(".scicon").hasClass('d-md-none')) {
         $("header").addClass('sticky-top');
         $(".scicon").addClass('d-md-none');
+        $(".small-view").addClass('small-view-nav');
         $('.logo-sec').addClass('shrink');
 	} else if (window.scrollY < 100) {
         $("header").removeClass('sticky-top');
     	$(".scicon").removeClass('d-md-none');
+      $(".small-view").removeClass('small-view-nav');
         $('.logo-sec').removeClass('shrink');
 	}
   

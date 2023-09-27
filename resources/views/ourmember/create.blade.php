@@ -128,15 +128,6 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
-                                                <div class="form-group">
-                                                    <label for="password">Password:</label>
-                                                    <input type="password" class="form-control" name="password" placeholder="Password">
-                                                        @if($errors->has('password'))
-                                                            <span class="text-danger"> {{ $errors->first('password') }}</span>
-                                                        @endif
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="nationality">Nationality:</label>
                                                     <input type="text" id="nationality" class="form-control" value="{{ old('nationality')}}" name="nationality">
@@ -517,6 +508,15 @@
                                                 <div class="form-group py-2">
                                                     <label for="photo">ETIN:</label>
                                                     <input type="file" class="form-control" name="etin">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group">
+                                                    <label for="password">Password:</label>
+                                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                                        @if($errors->has('password'))
+                                                            <span class="text-danger"> {{ $errors->first('password') }}</span>
+                                                        @endif
                                                 </div>
                                             </div>
                                         </div>

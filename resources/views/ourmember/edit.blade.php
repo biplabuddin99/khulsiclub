@@ -129,15 +129,7 @@
                                                         @endif
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
-                                                <div class="form-group">
-                                                    <label for="password">Password:</label>
-                                                    <input type="password" class="form-control" name="password" placeholder="Password">
-                                                        @if($errors->has('password'))
-                                                            <span class="text-danger"> {{ $errors->first('password') }}</span>
-                                                        @endif
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="nationality">Nationality:</label>
@@ -587,9 +579,18 @@
                                                         <option value="">Select Status</option>
                                                         <option value="0" {{ old('status',$member->status)=='0' ? 'selected':''}}>Pending</option>
                                                         <option value="1" {{ old('status',$member->status)=='1' ? 'selected':''}}>Applied for approval</option>
-                                                        <option value="2" {{ old('status',$member->status)=='2' ? 'selected':''}}>Approvbed</option>
+                                                        <option value="2" {{ old('status',$member->status)=='2' ? 'selected':''}}>Approved</option>
                                                         <option value="3" {{ old('status',$member->status)=='3' ? 'selected':''}}>Suspended</option>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group">
+                                                    <label for="password">Password:</label>
+                                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                                        @if($errors->has('password'))
+                                                            <span class="text-danger"> {{ $errors->first('password') }}</span>
+                                                        @endif
                                                 </div>
                                             </div>
                                         </div>
