@@ -521,7 +521,7 @@
           items : 4,
           itemsDesktop : [1199,4],
           itemsDesktopSmall : [980,3],
-          itemsTablet: [768,2],
+          itemsTablet: [768,1],
           itemsMobile : [479,1]
         })
         $('.owl-gallery').owlCarousel({
