@@ -302,7 +302,7 @@
     <section class="facilities-main d-none d-sm-block">
       <div class="facilities text-center py-5">
         <div class="container my-4">
-          <h4 class="section-title animate-title title-heading">Facilites</h4>
+          <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item bg-transparent px-5 ">
@@ -346,7 +346,7 @@
     <section class="facilities-main d-lg-none d-md-none">
       <div class="facilities text-center py-2">
         <div class="container my-1">
-          <h4 class="m-0 section-title animate-title title-heading" style="font-size: 35px !important;">Facilites</h4>
+          <h4 class="mb-3 section-title animate-title title-heading" style="font-size: 35px !important;">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item bg-transparent px-2 ">
@@ -450,7 +450,7 @@
         </section>
         {{-- This section is for small view start --}}
         <section class="container pb-2  d-lg-none d-md-none">
-          <h4 class="animate-title title-heading m-0" style="font-size: 32px !important;">Our Members</h4>
+          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Our Members</h4>
           <div class="row owl-member owl-theme">
           @forelse ($ourMember as $fm)
           <div class="col-12 item pe-3 ps-3">
@@ -548,7 +548,7 @@
     <section class="gallery d-lg-none d-md-none">
       <div class="galler-background py-1">
         <div class="container">
-          <h4 class="pt-2 m-0 animate-title title-heading" style="font-size: 35px !important;">Gallery</h4>
+          <h4 class="pt-2 mb-3 animate-title title-heading" style="font-size: 35px !important;">Gallery</h4>
           <div class="row justify-content-center pb-2 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent px-2">
