@@ -197,33 +197,33 @@
           {{-- notice section for small view start --}}
             <div class="col-sm-12 d-lg-none d-md-none">
               <div class="mt-3 d-flex justify-content-center notice-div-one">
-                  <span class="material-icons me-2"> today </span>
+                  <span class="material-icons me-2" style="font-size: 20px !important;"> today </span>
                   <a href="{{route('event-notice')}}">
-                    <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
+                    <p class="fs-4 m-0 p-0 title-heading">News & Events</p>
                   </a>
               </div>
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner n-item-center notice-carousel shadow text-center">
                   @forelse ($vNotice as $v)
-                  <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
+                    <div class="carousel-item active">
+                    <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                   @empty
-                  <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
+                    <div class="carousel-item active">
+                    <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                   @endforelse
                   @forelse ($vNotice as $notic)
-                  <div class="carousel-item ">
-                    <img
-                      src="{{asset('uploads/video_notice/'.$notic->image)}}"
-                      class="d-block w-100 notice-img"
-                      alt="..."/>
-                  </div>
+                    <div class="carousel-item ">
+                      <img
+                        src="{{asset('uploads/video_notice/'.$notic->image)}}"
+                        class="d-block w-100 notice-img"
+                        alt="..."/>
+                    </div>
                   @empty
-                  <div class="carousel-item active">
-                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
+                    <div class="carousel-item active">
+                      <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                   @endforelse
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -238,12 +238,12 @@
             </div>
             <div class="col-sm-12 d-lg-none d-md-none notice ">
               <div class="mt-3 d-flex justify-content-center notice-div-one">
-                <span class="material-icons me-2"> today </span>
+                <span class="material-icons me-2" style="font-size: 20px !important;"> today </span>
                 <a href="{{route('all-notice')}}">
-                  <p class="fs-4 mb-1 pt-1 title-heading">Notice</p>
+                  <p class="fs-4 m-0 p-0 title-heading">Notice</p>
                 </a>
               </div>
-              <div class="height-300">
+              <div class="height-200">
                   @forelse ($notice as $n)
                     <div class="notice-title notice-div-two">
                       <p class="mb-0">
@@ -268,11 +268,22 @@
                 @endforelse
               </div>
               <div class="views-notice">
-                <a href="{{route('all-notice')}}">Views All Notices</a>
+                <a href="{{route('all-notice')}}" style="font-size: 14px !important;">Views All Notices</a>
               </div>
             </div>
+            <div class="col-sm-12 d-lg-none d-md-none">
+                <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
+                  <ul class="m-0">
+                    @forelse ($scroll_notice as $sn)
+                      <li><p class="px-2" style="font-size: 14px !important;">{{$sn->text}}</p></li>
+                    @empty
+                      {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
+                    @endforelse
+                  </ul>
+                </marquee>
+            </div>
           {{-- notice section for small view end --}}
-          <div class="col-12">
+          <div class="col-12 d-none d-sm-block">
               <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
                 <ul class="m-0">
                   @forelse ($scroll_notice as $sn)
@@ -288,7 +299,7 @@
     </section>
     <!-- Blog & Notice end -->
     <!-- Facilities -->
-    <section class="facilities-main">
+    <section class="facilities-main d-none d-sm-block">
       <div class="facilities text-center py-5">
         <div class="container my-4">
           <h4 class="section-title animate-title title-heading">Facilites</h4>
@@ -330,11 +341,56 @@
       <div class="facilitics-circle2"></div>
       <div class="facilitics-circle3"></div>
     </section>
+
+    {{-- this section for small view start --}}
+    <section class="facilities-main d-lg-none d-md-none">
+      <div class="facilities text-center py-2">
+        <div class="container my-1">
+          <h4 class="m-0 section-title animate-title title-heading" style="font-size: 35px !important;">Facilites</h4>
+          <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
+            @forelse ($facilities as $fac)
+              <div class="col-12 item bg-transparent px-2 ">
+                {{-- <figure class="shadow">
+                  <img class="zoom" height="193px" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
+                  
+                  <div class="facilities-heading">
+                    <h4>{{$fac->title}}</h4>
+                  </div>
+                </figure> --}}
+                <div class="card mb-3 shadow bg-transparent ">
+                  <img class="zoom" width="100%" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
+                  <div class="facilities-heading">
+                    <h4>{{$fac->title}}</h4>
+                  </div>
+                </div>
+              </div>
+            @empty
+              <div class="col-12 item  d-flex justify-content-center">
+                <figure class="shadow">
+                  <img class=" zoom" src="{{ asset('img/fasi.jpg')}}" alt="" />
+                  
+                  <div class="facilities-heading">
+                    <h4>Restaurent</h4>
+                  </div>
+                </figure>
+              </div>
+            @endforelse
+
+          </div>
+        </div>
+      </div>
+      <!-- backgourd overlay animate clircle 
+      <div class="facilites-bg-shadow"></div>-->
+      <div class="facilitics-circle1"></div>
+      <div class="facilitics-circle2"></div>
+      <div class="facilitics-circle3"></div>
+    </section>
+    {{-- this section for small view end --}}
     <!-- Facilities ends -->
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="our-members member-background">
-        <section class="container pb-5 ">
+        <section class="container pb-5  d-none d-sm-block">
           {{-- <div class="our-members">
           </div> --}}
           <h4 class="animate-title title-heading">Our Members</h4>
@@ -392,11 +448,60 @@
           @endforelse
           </div>
         </section>
+        {{-- This section is for small view start --}}
+        <section class="container pb-2  d-lg-none d-md-none">
+          <h4 class="animate-title title-heading m-0" style="font-size: 32px !important;">Our Members</h4>
+          <div class="row owl-member owl-theme">
+          @forelse ($ourMember as $fm)
+          <div class="col-12 item pe-3 ps-3">
+            <div class="card member-box shadow">
+                <span class="shape"></span>
+                <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
+                <div class="card-body">
+                    <span class="member-degignation">
+                        @if ($fm->membership_applied == 1){{'Donor Member'}}
+                        @elseif($fm->membership_applied == 2){{'Service Member'}}
+                        @elseif($fm->membership_applied == 3){{'Life Member'}}
+                        @elseif($fm->membership_applied == 4){{'Temporary Member'}}
+                        @elseif($fm->membership_applied == 5){{'Permanent Member'}}
+                        @elseif($fm->membership_applied == 6){{'Honorary Member'}}
+                        @elseif($fm->membership_applied == 7){{'Corporate Member'}}
+                        @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
+                        @endif
+                    </span>
+                    <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
+                    <small>
+                      Company:<strong class="member-company"> {{$fm->company}}</strong>
+                        
+                    </small>
+                    <br>
+                    <small>
+                      Designation:<strong class="member-designation"> {{$fm->designation }}</strong>
+                  </small>
+                </div>
+            </div>
+          </div>
+            
+          @empty
+            <div class="col-12 item pe-3 ps-3">
+              <div class="shadow p-2 mb-3"style="background: #FFF">
+                <div class="border-member">
+                  <img src="{{ asset('img/Chairman or1.png')}}" alt="" />
+                  <p>Md. Rafique Uddin Babul</p>
+                  <p>Sizzing Group, Managing Director</p>
+                  <p>Liffe Member - LM-002</p>
+                </div>
+              </div>
+            </div>
+          @endforelse
+          </div>
+        </section>
+        {{-- This section is for small view end --}}
       </div>
     </div>
     <!-- Our Members end -->
     <!-- Gallery -->
-    <section class="gallery">
+    <section class="gallery d-none d-sm-block">
       <div class="galler-background py-3">
         <div class="container">
           <h4 class="pt-5 animate-title title-heading">Gallery</h4>
@@ -438,9 +543,54 @@
       <div class="gallery-top-overlay"></div>
       <div class="gallery-bootom-overlay"></div>
     </section>
+
+    {{-- This section is for small view start --}}
+    <section class="gallery d-lg-none d-md-none">
+      <div class="galler-background py-1">
+        <div class="container">
+          <h4 class="pt-2 m-0 animate-title title-heading" style="font-size: 35px !important;">Gallery</h4>
+          <div class="row justify-content-center pb-2 owl-gallery owl-theme">
+            @forelse ($pgallery_cat as $p)
+              <div class="col-12 item bg-transparent px-2">
+                <div class="card mb-3 shadow bg-transparent ">
+                  <a href="{{route('pGallery')}}">
+                    <img class="gallery-zoom" width="100%"  src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
+                  </a>
+                  <div class="heading">
+                    <h4>{{$p->name}}</h4>
+                  </div>
+                </div>
+              </div>
+            @empty
+
+              <div class="col-12 item bg-transparent pe-3 ps-3">
+                <div class="card mb-3 shadow bg-transparent ">
+                  <img class="gallery-zoom"  src="{{ asset('img/slider-3-1.png')}}" alt="" />
+                  <div class="heading">
+                    <h4>AGE -2021</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-12 item bg-transparent">
+                <div class="card rounded-4 shadow mb-3 bg-transparent">
+                  <img src="{{ asset('img/galary.pngz')}}" alt="" />
+                  <div class="heading">
+                    <h4>AGE -2021</h4>
+                  </div>
+                </div>
+              </div> -->
+            @endforelse
+
+          </div>
+        </div>
+      </div>
+      <div class="gallery-top-overlay"></div>
+      <div class="gallery-bootom-overlay"></div>
+    </section>
+    {{-- This section is for small view end --}}
     <!-- Gallery end -->
     <!-- Facilities -->
-    <section class="facilities-main px-5">
+    <section class="facilities-main px-5 d-none d-sm-block">
       <div class="facilities text-center5">
         <!-- Gallery end -->
         <!-- member reg. start -->
@@ -484,6 +634,52 @@
         <!-- member reg. end -->
       </div>
     </section>
+    {{-- This section is for small view start --}}
+    <section class="facilities-main px-4 d-lg-none d-md-none">
+      <div class="facilities text-center5">
+        <!-- Gallery end -->
+        <!-- member reg. start -->
+        <div class="justify-content-center bg-light member-section shadow">
+          <span class="shape"></span>
+        <span class="bubble1"></span>
+        <span class="bubble2"></span>
+        <span class="bubble3"></span>
+        <span class="bubble4"></span>
+        <span class="bubble5"></span>
+          <div class="p-1 rounded shadow">
+            <div class="row member-inner">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                <p class="animate-title" style="font-size: 20px;">Benefits of Members</p>
+                <ul class="navbar-nav benefit" style="padding-left: 8px !important; height: 65% !important; padding-bottom: 0 !important; background-color: transparent !important;">
+                  @forelse ($benefit as $b)
+                    <li class="nav-item">
+                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                    </li>
+                  @empty
+                    <li class="nav-item">
+                        <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
+                    </li>
+                  @endforelse
+                </ul>
+                  @if($showViewMoreButton)
+                      <div class="ps-1 viewbutton" style="background-color: transparent !important;">
+                          <a class="btn btn-sm btn-danger" href="{{ route('member.benefit') }}">View more</a>
+                      </div>
+                  @endif
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 become-member-text my-auto">
+                <p style="font-size: 7vw;"><span>Become a <span class="theme-color">Member</span></span></p>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 apply-text">
+                <a class="shadow" href="{{route('member_registration')}}">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- member reg. end -->
+      </div>
+    </section>
+    {{-- This section is for small view end --}}
     <!-- Facilities ends -->
     @endsection
     @push('scripts')

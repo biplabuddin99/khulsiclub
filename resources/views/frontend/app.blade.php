@@ -62,15 +62,19 @@
                   <div class="col-sm-12 col-12 d-flex justify-content-end " >
                     
                     <nav class="navbar navbar-expand-md navbar-light pb-0">
-                      <button class="navbar-toggler my-2 text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+                      <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; margin-top: 1.4rem;">
                         <i class="bi bi-list"></i>
                       </button>
                     
                       <div style="margin-top: 6px;" class="collapse navbar-collapse navbar-collapse-top small-view" id="navbarNav">
+                        
                         @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
                             $flcount=$rows->count();
                         @endphp
-                        <ul class="navbar-nav mr-auto pb-2 ">
+                        <ul class="navbar-nav mr-auto pb-2 text-center">
+                          <div class="text-center d-lg-none d-md-none" style="margin-top: 3rem; margin-bottom: 2rem;">
+                            <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
+                          </div>
                           @forelse($rows->get() as $i=>$mf)
                             @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                               @if($rows_second) 
@@ -247,7 +251,7 @@
     <!--  support -->
     <section class="support justify-content-center">
       <div class="container">
-        <div class="row">
+        <div class="row d-none d-sm-block">
           <div class="col-md-4 d-flex justify-content-center text-1">
           <i class="bi bi-headset my-auto"></i>
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
@@ -257,6 +261,18 @@
           </div>
           <div class="col-md-4 d-flex justify-content-center text-3">
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
+          </div>
+        </div>
+        <div class="row d-lg-none d-md-none">
+          <div class="col-md-4 d-flex justify-content-center text-1">
+          <i class="bi bi-headset my-auto"></i>
+            <p class="my-auto " style="font-size: 15px !important;">{{ $setting?->footer_top_p1_text }}</p>
+          </div>
+          <div class="col-md-4 d-flex text-center justify-content-between my-0 py-0 text-2">
+            <p class="my-auto py-sm-2 py-md-0 w-100 text-center" id="support-number" style="font-size: 15px !important;">{{ $setting?->footer_top_p2_text }}</p>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center text-3">
+            <p class="my-auto" style="font-size: 15px !important;">{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>
       </div>
@@ -271,7 +287,7 @@
           </div>
           <div class="row footer-nav">
             <div class="col-sm-4 d-lg-none d-md-none text-center">
-              <h6>Location</h6>
+              <h6>Contact Us</h6>
               <div class="contact">
                 <span>
                   <i class="bi bi-geo-alt-fill"></i>
