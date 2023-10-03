@@ -62,7 +62,7 @@
                   <div class="col-sm-12 col-12 d-flex justify-content-end " >
                     
                     <nav class="navbar navbar-expand-md navbar-light pb-0">
-                      <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; margin-top: 1.4rem;">
+                      <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; margin-top: 1.9rem;">
                         <i class="bi bi-list"></i>
                       </button>
                     
@@ -71,7 +71,7 @@
                         @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
                             $flcount=$rows->count();
                         @endphp
-                        <ul class="navbar-nav mr-auto pb-2 text-center">
+                        <ul class="navbar-nav md-screen mr-auto pb-2 text-center">
                           <div class="text-center d-lg-none d-md-none" style="margin-top: 3rem; margin-bottom: 2rem;">
                             <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
                           </div>
@@ -249,11 +249,11 @@
     
 
     <!--  support -->
-    <section class="support justify-content-center">
+    <section class="support justify-content-center d-none d-sm-block">
       <div class="container">
-        <div class="row d-none d-sm-block">
+        <div class="row">
           <div class="col-md-4 d-flex justify-content-center text-1">
-          <i class="bi bi-headset my-auto"></i>
+            <i class="bi bi-headset my-auto"></i>
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
           <div class="col-md-4 d-flex text-center justify-content-between my-3 py-3 py-sm-0 text-2">
@@ -263,7 +263,12 @@
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
           </div>
         </div>
-        <div class="row d-lg-none d-md-none">
+      </div>
+    </section>
+    {{-- This support section is for small view start --}}
+    <section class="support justify-content-center d-lg-none d-md-none">
+      <div class="container-fluid px-0">
+        <div class="row">
           <div class="col-md-4 d-flex justify-content-center text-1">
           <i class="bi bi-headset my-auto"></i>
             <p class="my-auto " style="font-size: 15px !important;">{{ $setting?->footer_top_p1_text }}</p>
@@ -277,6 +282,7 @@
         </div>
       </div>
     </section>
+     {{-- This support section is for small view end --}}
     <!--  support ends -->
     <!-- footer -->
     <footer class="position-relative">
@@ -311,7 +317,7 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-none d-sm-block">
-              <h6>Location</h6>
+              <h6>Contact Us</h6>
               <div class="contact">
                 <span class="d-flex">
                   <i class="bi bi-geo-alt-fill"></i>

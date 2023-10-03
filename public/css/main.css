@@ -210,7 +210,112 @@ body {
     .mega-menu.left-position{
       left: auto;
     }
+    .logo-sec img {
+      padding-top: 31px !important;
+      height: 72px !important;
+    }
+    .shrink img {
+      height: 54px !important;
+      padding-top: 17px !important;
+      animation: scale;
+      animation-duration: 0.9s;
+    }
+    .nav_a_padding {
+      padding-left: 8px !important;
+      padding-right: 0px !important;
+      font-size: 10px !important;
+    }
+    .facilities-main .title-heading{
+      margin-bottom: 1.5rem !important;
+      font-size: 37px !important;
+    }
+    .our-members .title-heading{
+      margin-bottom: 1.5rem !important;
+      font-size: 37px !important;
+    }
+
+    .notice-blog .carousel-inner {
+      height: 225px !important;
+    }
+    .notice-blog .carousel-item img {
+      height: 225px;
+    }
+    .height-300{
+      height: 225px !important;
+    }
+    .notice-div-one {
+      border-top: 2px solid rgb(48, 48, 48) !important;
+      border-bottom: 2px solid rgb(48, 48, 48);
+    }
+    .notice-div-two {
+      border-bottom: 1px solid #e1e1e1;
+    }
+    .notice-div-one p {
+      padding-top: 0px !important;
+    }
+    .notice-div-one span {
+      padding-top: 7px !important;
+    }
+    .notice-div-one p{
+      font-size: 25px !important;
+    }
+    marquee p {
+      margin: 0px;
+      padding: 0px;
+      font-size: 14px !important;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--red);
+    }
+    .views-notice {
+      text-align: center;
+      margin-top: 5px;
+      padding: 0px !important;
+    }
+    .views-notice a {
+      text-decoration: none;
+      text-align: center;
+      padding: 3px 5px !important;
+      background-color: var(--red);
+      color: #fff;
+      border-radius: 10px;
+    }
+    .facilities-main .item{
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .gallery .item{
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .shrink img {
+      height: 54px !important;
+      padding-top: 17px !important;
+      animation: scale;
+      animation-duration: 0.9s;
+      margin-top: 11px !important;
+    }
+    .benefit-of-member p{
+      font-size: 18px !important;
+    }
+    .benefit-of-member .nav-item span{
+      font-size: 14px !important;
+    }
+    .member-inner div:nth-of-type(3) a {
+      font-size: 15px !important;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 8px 9px !important;
+      border-radius: 10px;
+      background-color: var(--red);
+      text-decoration: none;
+      color: #fff;
+    }
+    .become-member-text p{
+      font-size: 5vh !important;
+    }
   }
+
   @media (min-width: 768px) {
     .small-view {
       display: none;
@@ -400,7 +505,7 @@ marquee p{
   padding-top: 17px;
 }
 .notice-div-one p{
-  font-size: 35px !important;
+  font-size: 35px;
 }
 .notice-div-one a{
   text-decoration: none;
@@ -1086,6 +1191,9 @@ footer img {
   .mega-menu {
     width: 180px !important ;
   }
+  .news_event{
+    margin-top: 1rem !important;
+  }
 
   
   /* <!-- Member Reg. --> */
@@ -1174,13 +1282,11 @@ footer img {
     height: 82px;
   }
   .logo-sec img {
-    
-      display: block;
-      margin: auto;
-      padding-top: 24px;
-      width: 80%;
-      margin-left: 36px;
-  
+    display: block;
+    margin: auto;
+    padding-top: 24px;
+    width: 80%;
+    margin-left: 36px;
   }
   header.sticky-top {
     -webkit-transform: translateY(-23px);
@@ -1281,7 +1387,7 @@ footer img {
     border-radius: 0;
     background: transparent;
     opacity: 1;
-}
+  }
 .owl-prev{
   position: absolute;
     left: -24px;
@@ -1369,7 +1475,7 @@ footer img {
 
 .facilities-main {
   /*padding: 4rem 0;*/
-  background: hsla(0, 0%, 95.7%, .68)
+  /* background: hsla(0, 0%, 95.7%, .68) */
 }
 .facilities-main .card {
     background-color: #fff;

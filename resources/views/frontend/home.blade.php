@@ -114,7 +114,7 @@
     </section> --}}
     <!-- Member counter end -->
     <!-- Blog slide & Notice Section -->
-    <section class="pb-5 mt-5">
+    <section class="pb-lg-5 pb-md-1 news_event mt-lg-5 mt-md-4">
       <div class="container notice-blog bg-light shadow rounded-3">
         <div class="row">
           <div class="col-md-7 col-lg-7 d-none d-sm-block">
@@ -300,7 +300,7 @@
     <!-- Blog & Notice end -->
     <!-- Facilities -->
     <section class="facilities-main d-none d-sm-block">
-      <div class="facilities text-center py-5">
+      <div class="facilities text-center py-lg-5">
         <div class="container my-4">
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
@@ -544,7 +544,7 @@
       <div class="gallery-bootom-overlay"></div>
     </section>
 
-    {{-- This section is for small view start --}}
+    {{-- This gallery section is for small view start --}}
     <section class="gallery d-lg-none d-md-none">
       <div class="galler-background py-1">
         <div class="container">
@@ -587,10 +587,10 @@
       <div class="gallery-top-overlay"></div>
       <div class="gallery-bootom-overlay"></div>
     </section>
-    {{-- This section is for small view end --}}
+    {{-- This gallery section is for small view end --}}
     <!-- Gallery end -->
     <!-- Facilities -->
-    <section class="facilities-main px-5 d-none d-sm-block">
+    <section class="facilities-main benefit-of-member px-5 d-none d-sm-block">
       <div class="facilities text-center5">
         <!-- Gallery end -->
         <!-- member reg. start -->
@@ -601,7 +601,7 @@
         <span class="bubble3"></span>
         <span class="bubble4"></span>
         <span class="bubble5"></span>
-          <div class="p-5 rounded shadow">
+          <div class="p-lg-5 p-md-4 rounded shadow">
             <div class="row member-inner">
               <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <p class="animate-title">Benefits of Members</p>
@@ -698,7 +698,7 @@
             "<i class='bi bi-chevron-right'></i>"
           ],
           itemsDesktop : [1199,4],
-          itemsDesktopSmall : [980,3],
+          itemsDesktopSmall : [980,2],
           itemsTablet: [768,1],
           itemsMobile : [479,1]
         })
@@ -716,7 +716,7 @@
           ],
           items : 4,
           itemsDesktop : [1199,4],
-          itemsDesktopSmall : [980,3],
+          itemsDesktopSmall : [980,2],
           itemsTablet: [768,1],
           itemsMobile : [479,1]
         })
@@ -733,7 +733,7 @@
           ],
           items : 3,
           itemsDesktop : [1199,4],
-          itemsDesktopSmall : [980,3],
+          itemsDesktopSmall : [980,2],
           itemsTablet: [768,1],
           itemsMobile : [479,1]
         })
