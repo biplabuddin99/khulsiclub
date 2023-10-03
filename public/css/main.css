@@ -1386,6 +1386,9 @@ footer img {
   .contact i {
     margin-right: 0px !important;
   }
+  .contact p{
+    font-size: 12px !important;
+  }
 }
 
   /* .owl-controls{
