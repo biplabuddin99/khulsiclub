@@ -296,7 +296,7 @@ body {
       margin-top: 11px !important;
     }
     .benefit-of-member p{
-      font-size: 18px !important;
+      font-size: 20px !important;
     }
     .benefit-of-member .nav-item span{
       font-size: 14px !important;
@@ -314,6 +314,24 @@ body {
     .become-member-text p{
       font-size: 5vh !important;
     }
+    .support p {
+      font-size: 14px !important;
+    }
+    .support i {
+      font-size: 18px !important;
+      margin-right: 10px;
+    }
+    .support {
+      background-color: var(--red);
+      height: auto;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 7px !important;
+      padding-bottom: 7px !important;
+      margin-top: 40px;
+  }
   }
 
   @media (min-width: 768px) {

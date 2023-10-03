@@ -257,7 +257,7 @@
             <p class="my-auto ">{{ $setting?->footer_top_p1_text }}</p>
           </div>
           <div class="col-md-4 d-flex text-center justify-content-between my-3 py-3 py-sm-0 text-2">
-            <p class="my-auto py-sm-2 py-md-0 w-100 text-center" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
+            <p class="my-auto py-sm-2 py-md-2 w-100 text-center" id="support-number">{{ $setting?->footer_top_p2_text }}</p>
           </div>
           <div class="col-md-4 d-flex justify-content-center text-3">
             <p class="my-auto">{{ $setting?->footer_top_p3_text }}</p>
@@ -299,13 +299,13 @@
                   <i class="bi bi-geo-alt-fill"></i>
                   <p>{{ $setting?->address }}</p>
                 </span>
-                <span>
+                <span class="d-flex justify-content-center">
                   <i class="bi bi-telephone-fill"></i>
-                  <p>{{ $setting?->contact_no }}</p>
+                  <p class="ps-2">{{ $setting?->contact_no }}</p>
                 </span>
-                <span>
+                <span class="d-flex justify-content-center">
                   <i class="bi bi-envelope-fill"></i>
-                  <p>{{ $setting?->email_address }}</p>
+                  <p class="ps-2">{{ $setting?->email_address }}</p>
                 </span>
               </div>
               <h5 class="mt-4 mb-2">Connect With Us</h5>

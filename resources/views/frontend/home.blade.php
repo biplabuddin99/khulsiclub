@@ -300,7 +300,7 @@
     <!-- Blog & Notice end -->
     <!-- Facilities -->
     <section class="facilities-main d-none d-sm-block">
-      <div class="facilities text-center py-lg-5">
+      <div class="facilities text-center py-lg-5 py-md-3">
         <div class="container my-4">
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
@@ -390,7 +390,7 @@
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="our-members member-background">
-        <section class="container pb-5  d-none d-sm-block">
+        <section class="container pb-lg-5  d-none d-sm-block">
           {{-- <div class="our-members">
           </div> --}}
           <h4 class="animate-title title-heading">Our Members</h4>
@@ -504,8 +504,8 @@
     <section class="gallery d-none d-sm-block">
       <div class="galler-background py-3">
         <div class="container">
-          <h4 class="pt-5 animate-title title-heading">Gallery</h4>
-          <div class="row justify-content-center pb-5 owl-gallery owl-theme">
+          <h4 class="pt-lg-5 mb-md-3 animate-title title-heading">Gallery</h4>
+          <div class="row justify-content-center pb-lg-5 owl-gallery owl-theme">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent px-5">
                 <div class="card mb-3 shadow bg-transparent ">
