@@ -686,10 +686,10 @@
           responsive:{
             0:{
               items:1,
-              nav:false
+              nav:true
             },820:{
               items:2,
-              nav:false
+              nav:true
             },1000:{
               items:3,
               nav:true
@@ -705,10 +705,10 @@
           responsive:{
             0:{
               items:2,
-              nav:false
+              nav:true
             },820:{
               items:2,
-              nav:false
+              nav:true
             },1000:{
               items:4,
               nav:true
@@ -724,10 +724,10 @@
           responsive:{
             0:{
               items:1,
-              nav:false
+              nav:true
             },820:{
               items:2,
-              nav:false
+              nav:true
             },1000:{
               items:3,
               nav:true
