@@ -686,25 +686,23 @@
     <script>
       
         $('.owl-facilities').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
+          loop:true,
+          autoPlay:true,
+          slideSpeed:1000,
+          margin:10,
+          responsive: true,
+          items : 3,
+          navigation:true,
+          navigationText: [
+            "<i class='bi bi-chevron-left'></i>",
+            "<i class='bi bi-chevron-right'></i>"
+          ],
+          itemsDesktop : [1199,4],
+          itemsDesktopSmall : [980,2],
+          itemsTablet: [768,1],
+          itemsMobile : [479,1]
+        })
+
         $('.owl-member').owlCarousel({
           loop:true,
           autoPlay:true,
