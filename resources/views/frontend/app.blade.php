@@ -249,7 +249,7 @@
     
 
   <!--  support -->
-  {{-- <section class="support justify-content-center d-none d-sm-block">
+  <section class="support justify-content-center d-none d-sm-block">
     <div class="container">
       <div class="row">
         <div class="col-md-4 d-flex justify-content-center text-1">
@@ -264,11 +264,11 @@
         </div>
       </div>
     </div>
-  </section> --}}
+  </section>
   {{-- This support section is for small view start --}}
-  {{-- <section class="support justify-content-center d-lg-none d-md-none">
+  <section class="support justify-content-center d-sm-none">
     <div class="container-fluid px-0">
-      <div class="row">
+      <div class="row mx-0">
         <div class="col-md-4 d-flex justify-content-center text-1">
           <i class="bi bi-headset my-auto"></i>
           <p class="my-auto " style="font-size: 15px !important;">{{ $setting?->footer_top_p1_text }}</p>
@@ -281,7 +281,7 @@
         </div>
       </div>
     </div>
-  </section> --}}
+  </section>
     {{-- This support section is for small view end --}}
   <!--  support ends -->
   <!-- footer -->
@@ -292,7 +292,7 @@
           <img src="{{asset('uploads/settings/footer_logo/'.$setting?->footer_logo)}}" alt="" />
         </div>
         <div class="row footer-nav">
-          <div class="col-sm-4 d-lg-none d-md-none text-center">
+          <div class="col-sm-4 d-sm-none text-center">
             <h6>Contact Us</h6>
             <div class="contact">
               <span>

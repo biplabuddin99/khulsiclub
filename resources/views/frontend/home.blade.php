@@ -35,12 +35,12 @@
             </div>
             @endforelse
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#sliderDiv"
+        <button class="carousel-control-prev d-none d-sm-block" type="button" data-bs-target="#sliderDiv"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#sliderDiv"
+        <button class="carousel-control-next d-none d-sm-block" type="button" data-bs-target="#sliderDiv"
           data-bs-slide="next" >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
@@ -195,7 +195,7 @@
           </div>
 
           {{-- notice section for small view start --}}
-            <div class="col-sm-12 d-lg-none d-md-none">
+            <div class="col-sm-12 d-sm-none">
               <div class="mt-3 d-flex justify-content-center notice-div-one">
                   <span class="material-icons me-2" style="font-size: 20px !important;"> today </span>
                   <a href="{{route('event-notice')}}">
@@ -226,17 +226,9 @@
                     </div>
                   @endforelse
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
             </div>
-            <div class="col-sm-12 d-lg-none d-md-none notice ">
+            <div class="col-sm-12 d-sm-none notice ">
               <div class="mt-3 d-flex justify-content-center notice-div-one">
                 <span class="material-icons me-2" style="font-size: 20px !important;"> today </span>
                 <a href="{{route('all-notice')}}">
@@ -303,7 +295,7 @@
       <div class="facilities text-center py-lg-5 py-md-3">
         <div class="container my-4">
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
-          <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
+          <div class="row justify-content-center owl-facilities owl-carousel animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item bg-transparent px-5 ">
                 {{-- <figure class="shadow">
@@ -343,11 +335,11 @@
     </section>
 
     {{-- this section for small view start --}}
-    <section class="facilities-main d-lg-none d-md-none">
+    <section class="facilities-main d-sm-none">
       <div class="facilities text-center py-2">
         <div class="container my-1">
           <h4 class="mb-3 section-title animate-title title-heading" style="font-size: 35px !important;">Facilites</h4>
-          <div class="row justify-content-center owl-facilities owl-theme animate-facilities">
+          <div class="row justify-content-center owl-facilities owl-carousel owl-theme animate-facilities">
             @forelse ($facilities as $fac)
               <div class="col-12 item bg-transparent px-2 ">
                 {{-- <figure class="shadow">
@@ -394,7 +386,7 @@
           {{-- <div class="our-members">
           </div> --}}
           <h4 class="animate-title title-heading">Our Members</h4>
-          <div class="row owl-member owl-theme">
+          <div class="row owl-member owl-theme owl-carousel">
           @forelse ($ourMember as $fm)
           <div class="col-12 item pe-3 ps-3">
             <div class="card member-box shadow">
@@ -449,9 +441,9 @@
           </div>
         </section>
         {{-- This section is for small view start --}}
-        <section class="container pb-2  d-lg-none d-md-none">
+        <section class="container pb-2  d-sm-none">
           <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Our Members</h4>
-          <div class="row owl-member owl-theme">
+          <div class="row owl-member owl-theme owl-carousel">
           @forelse ($ourMember as $fm)
           <div class="col-12 item pe-3 ps-3">
             <div class="card member-box shadow">
@@ -505,7 +497,7 @@
       <div class="galler-background py-3">
         <div class="container">
           <h4 class="pt-lg-5 mb-md-3 animate-title title-heading">Gallery</h4>
-          <div class="row justify-content-center pb-lg-5 owl-gallery owl-theme">
+          <div class="row justify-content-center pb-lg-5 owl-gallery owl-theme owl-carousel">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent px-5">
                 <div class="card mb-3 shadow bg-transparent ">
@@ -549,7 +541,7 @@
       <div class="galler-background py-1">
         <div class="container">
           <h4 class="pt-2 mb-3 animate-title title-heading" style="font-size: 35px !important;">Gallery</h4>
-          <div class="row justify-content-center pb-2 owl-gallery owl-theme">
+          <div class="row justify-content-center pb-2 owl-gallery owl-theme owl-carousel">
             @forelse ($pgallery_cat as $p)
               <div class="col-12 item bg-transparent px-2">
                 <div class="card mb-3 shadow bg-transparent ">
@@ -686,58 +678,61 @@
     <script>
       
         $('.owl-facilities').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
+          loop:true,
+          margin:10,
+          dots:false,
+          navText: ["<span class='bi bi-chevron-left'></span>","<span class='bi bi-chevron-right'></span>"],
+          responsiveClass:true,
+          responsive:{
+            0:{
+              items:1,
+              nav:false
+            },820:{
+              items:2,
+              nav:false
+            },1000:{
+              items:3,
+              nav:true
+            }
+          }
+        })
         $('.owl-member').owlCarousel({
           loop:true,
-          autoPlay:true,
-          slideSpeed:1000,
-          margin:25,
-          responsive: true,
-          navigation:true,
-          navigationText: [
-            "<span class='bi bi-chevron-left'></span>",
-            "<span class='bi bi-chevron-right'></span>"
-          ],
-          items : 4,
-          itemsDesktop : [1199,4],
-          itemsDesktopSmall : [980,2],
-          itemsTablet: [768,1],
-          itemsMobile : [479,1]
+          margin:10,
+          dots:false,
+          navText: ["<span class='bi bi-chevron-left'></span>","<span class='bi bi-chevron-right'></span>"],
+          responsiveClass:true,
+          responsive:{
+            0:{
+              items:1,
+              nav:false
+            },820:{
+              items:2,
+              nav:false
+            },1000:{
+              items:4,
+              nav:true
+            }
+          }
         })
         $('.owl-gallery').owlCarousel({
           loop:true,
-          autoPlay:true,
-          slideSpeed:1000,
-          margin:25,
-          responsive: true,
-          navigation:true,
-          navigationText: [
-            "<i class='bi bi-chevron-left'></i>",
-            "<i class='bi bi-chevron-right'></i>"
-          ],
-          items : 3,
-          itemsDesktop : [1199,4],
-          itemsDesktopSmall : [980,2],
-          itemsTablet: [768,1],
-          itemsMobile : [479,1]
+          margin:10,
+          dots:false,
+          navText: ["<span class='bi bi-chevron-left'></span>","<span class='bi bi-chevron-right'></span>"],
+          responsiveClass:true,
+          responsive:{
+            0:{
+              items:1,
+              nav:false
+            },820:{
+              items:2,
+              nav:false
+            },1000:{
+              items:3,
+              nav:true
+            }
+          }
         })
 
         
