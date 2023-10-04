@@ -120,8 +120,8 @@ body {
   to {height: 85px;}
 }
 .shrink img {
-  height: 70px;
-  padding-top: 7px;
+  height: 63px;
+  padding-top: 18px;
   animation: scale;
   animation-duration: 0.9s;
 }
