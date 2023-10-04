@@ -2124,7 +2124,7 @@ img.events-image {
 }
 .member-box .card-img-top {
   position: relative;
-  width: 150px;
+  width: 150px !important;
   height: 150px;
   border-radius: 50%;
   border-top-left-radius: 0;
