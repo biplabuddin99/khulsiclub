@@ -1330,14 +1330,31 @@ footer img {
     padding-top: 13px;
   }
   .sticky-top .logo-sec img {
-    /* padding-top: 5px; */
+    padding-top: 12px !important;
   }
   .shrink img{
-    height: 60px !important;
+    height: 51px !important;
+    animation: bscale;
   }
   @keyframes bscale {
-    from {height: 60px;}
-    to {height: 61px;}
+    from {height: 51px;}
+    to {height: 60px;}
+  }
+  .navbar-toggler{
+    border: none;
+     margin-top: 1.9rem;
+  }
+  .dropdown::before {
+    top: 20px;
+    left: 50%;
+  }
+  .mega-menu {
+    position: relative !important;
+    margin: 0 auto;
+}
+  .sticky-top .navbar-toggler{
+    border: none;
+     margin-top: 1rem;
   }
   .become-member-text p{
     font-size: 15vw !important;

@@ -62,7 +62,7 @@
             <div class="col-sm-12 col-12 d-flex justify-content-end " >
               
               <nav class="navbar navbar-expand-md navbar-light pb-0">
-                <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; margin-top: 1.9rem;">
+                <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="bi bi-list"></i>
                 </button>
               
