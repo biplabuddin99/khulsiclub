@@ -1,6 +1,6 @@
 @php $setting=\App\Models\setting::first(); @endphp
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -128,97 +128,6 @@
                           </li>
                         @endif
                       @empty
-                    
-                        <li class="nav-item ">
-                          <a class="nav-link nav_a_padding" href="{{route('front')}}">Home
-                            <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                              ×
-                            </button>
-                          </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            About Us
-                          </a>
-                          <div class="dropDown dropdown-menu mega-menu shadow megamenu-lg" aria-labelledby="navbarDropdown">
-                            <div class="row m-0 ">
-                              <div class="col-lg-4 pe-0">
-                                <ul class="ps-2">
-                                  <h4 class="menu-head">
-                                    <a href="">About</a>
-                                  </h4>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-lg-4 pe-0">
-                                <ul class="ps-2">
-                                  <h4 class="menu-head">
-                                    <a href="">Our Team</a>
-                                  </h4>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-lg-4 pe-0">
-                                <ul class="ps-2">
-                                  <h4 class="menu-head">
-                                    <a href="">Committees & Forums</a>
-                                  </h4>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                                  <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Club Facilities
-                          </a>
-                            <ul class="ps-4 dropdown-menu shadow small-menu">
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Members
-                          </a>
-                            <ul class="ps-4 dropdown-menu shadow small-menu">
-                              <li class="subMenu"><a href="{{route('member.list')}}"><span><i class="bi bi-chevron-double-right"></i></span> Member List</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Publications
-                          </a>
-                            <ul class="ps-4 dropdown-menu shadow small-menu">
-                              <li class="subMenu"><a href=""> <span><i class="bi bi-chevron-double-right"></i></span> Core values</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Mission</a></li>
-                              <li class="subMenu"><a href=""><span><i class="bi bi-chevron-double-right"></i></span> Vission</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Media
-                          </a>
-                            <ul class="ps-4 dropdown-menu shadow small-menu">
-                              <li class="subMenu"><a href="{{route('all-notice')}}"><span><i class="bi bi-chevron-double-right"></i></span> Notice</a></li>
-                              <li class="subMenu"><a href="{{route('event-notice')}}"><span><i class="bi bi-chevron-double-right"></i></span> News & Events</a></li>
-                              <li class="subMenu"><a href="{{route('pGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Photo Gallery</a></li>
-                              <li class="subMenu"><a href="{{route('vGallery')}}"><span><i class="bi bi-chevron-double-right"></i></span> Video Gallery</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link nav_contact_padding" href="{{route('contact-Us')}}">Contact Us</a>
-                        </li>
                         <li class="nav-item d-flex d-sm-none">
                           <a class="nav-link nav_a_padding" href="">Member Login</a>
                         </li>
@@ -269,14 +178,14 @@
   <section class="support justify-content-center d-sm-none">
     <div class="container-fluid px-0">
       <div class="row mx-0">
-        <div class="col-md-4 d-flex justify-content-center text-1">
+        <div class="col-md-4 px-0 d-flex justify-content-center text-1">
           <i class="bi bi-headset my-auto"></i>
           <p class="my-auto " style="font-size: 15px !important;">{{ $setting?->footer_top_p1_text }}</p>
         </div>
-        <div class="col-md-4 d-flex text-center justify-content-between my-0 py-0 text-2">
+        <div class="col-md-4 px-0 d-flex text-center justify-content-between my-0 py-0 text-2">
           <p class="my-auto py-sm-2 py-md-0 w-100 text-center" id="support-number" style="font-size: 15px !important;">{{ $setting?->footer_top_p2_text }}</p>
         </div>
-        <div class="col-md-4 d-flex justify-content-center text-3">
+        <div class="col-md-4 px-0 d-flex justify-content-center text-3">
           <p class="my-auto" style="font-size: 15px !important;">{{ $setting?->footer_top_p3_text }}</p>
         </div>
       </div>
