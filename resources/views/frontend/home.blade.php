@@ -235,7 +235,7 @@
                   <p class="fs-4 m-0 p-0 title-heading">Notice</p>
                 </a>
               </div>
-              <div class="height-200">
+              <div class="height-280">
                   @forelse ($notice as $n)
                     <div class="notice-title notice-div-two">
                       <p class="mb-0">

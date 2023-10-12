@@ -2182,5 +2182,7 @@ img.events-image {
   .contact p{
     font-size: 12px !important;
   }
-
+  .height-280{
+    min-height: 280px;
+  }
 }
