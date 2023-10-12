@@ -202,7 +202,7 @@
         </div>
         <div class="row footer-nav">
           <div class="col-sm-4 d-sm-none text-center">
-            <h6>Contact Us</h6>
+            <h4 class="title-heading">Contact Us</h4>
             <div class="contact">
               <span>
                 <i class="bi bi-geo-alt-fill"></i>
@@ -217,7 +217,7 @@
                 <p class="ps-2">{{ $setting?->email_address }}</p>
               </span>
             </div>
-            <h5 class="mt-4 mb-2">Connect With Us</h5>
+            <h4 class="mt-4 mb-2 title-heading">Connect With Us</h4>
             <div class="social-icon">
               <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
               <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
@@ -226,7 +226,7 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-4 d-none d-sm-block">
-            <h6>Contact Us</h6>
+            <h6 class="title-heading">Contact Us</h6>
             <div class="contact">
               <span class="d-flex">
                 <i class="bi bi-geo-alt-fill"></i>
@@ -241,7 +241,7 @@
                 <p>{{ $setting?->email_address }}</p>
               </span>
             </div>
-            <h5 class="mt-4 mb-2">Connect With Us</h5>
+            <h4 class="mt-4 mb-2 title-heading">Connect With Us</h4>
             <div class="social-icon">
               <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
               <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>
@@ -250,7 +250,6 @@
             </div>
           </div>
           <div class="col-sm-8 col-lg-8 col-md-8 justify-content-end">
-            <h6>Google Map</h6>
             <iframe
               class="container-fluid footer-ifram"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7379.432700144819!2d91.7877768!3d22.3643367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd9835bc79051%3A0xb69949986154c96c!2sChittagong%20Khulshi%20Club%20Limited!5e0!3m2!1sen!2sbd!4v1672998016439!5m2!1sen!2sbd"
@@ -274,7 +273,7 @@
             <img class="img-fluid" src="{{asset('uploads/settings/we_accept_2/'.$setting?->footer_top_p2_image)}}" alt="" />
             <img class="img-fluid" src="{{asset('uploads/settings/we_accept_3/'.$setting?->footer_top_p3_image)}}" alt="" />
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-5 mt-2 developer">
+          <div class="col-sm-12 col-md-12 col-lg-5 mt-2 mb-2 developer">
             Developed By :Texture Software Technology Ltd
           </div>
         </div>

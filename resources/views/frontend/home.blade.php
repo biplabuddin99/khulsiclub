@@ -537,7 +537,7 @@
     </section>
 
     {{-- This gallery section is for small view start --}}
-    <section class="gallery d-lg-none d-md-none">
+    <section class="gallery d-sm-none">
       <div class="galler-background py-1">
         <div class="container">
           <h4 class="pt-2 mb-3 animate-title title-heading" style="font-size: 35px !important;">Gallery</h4>
@@ -627,7 +627,7 @@
       </div>
     </section>
     {{-- This section is for small view start --}}
-    <section class="facilities-main px-4 d-lg-none d-md-none">
+    <section class="facilities-main px-4 d-sm-none">
       <div class="facilities text-center5">
         <!-- Gallery end -->
         <!-- member reg. start -->
@@ -640,7 +640,7 @@
         <span class="bubble5"></span>
           <div class="p-1 rounded shadow">
             <div class="row member-inner">
-              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
                 <p class="animate-title" style="font-size: 20px;">Benefits of Members</p>
                 <ul class="navbar-nav benefit" style="padding-left: 8px !important; height: 65% !important; padding-bottom: 0 !important; background-color: transparent !important;">
                   @forelse ($benefit as $b)
@@ -655,7 +655,7 @@
                 </ul>
                   @if($showViewMoreButton)
                       <div class="ps-1 viewbutton" style="background-color: transparent !important;">
-                          <a class="btn btn-sm btn-danger" href="{{ route('member.benefit') }}">View more</a>
+                          <a class="btn btn-sm btn-danger shadow" href="{{ route('member.benefit') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                       </div>
                   @endif
               </div>
