@@ -80,7 +80,7 @@
                         @if($rows_second) 
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle nav_a_padding" href="{{url($mf->href)}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{$mf->name}}
+                            <span class="menu-border-bottom">{{$mf->name}}</span>
                             @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×
@@ -88,8 +88,8 @@
                             @endif
                           </a>
 
-                          <div style="width:{{180*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
-                            <div class="row m-0">
+                          <div style="width:{{180*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                            <div class="row m-0 megamenu-small-align">
                               @foreach($rows_second as $ms)
                                 @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
                                 @if($rows_third)

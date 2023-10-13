@@ -2185,4 +2185,14 @@ img.events-image {
   .height-280{
     min-height: 280px;
   }
+  .menu-border-bottom{
+    border-bottom: solid 1px #7c7c7c;
+    color: #343333;
+  }
+  .megamenu-small{
+    width: 240px !important;
+  }
+  /* .megamenu-small-align{
+    text-align: left;
+  } */
 }
