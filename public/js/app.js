@@ -53,3 +53,28 @@ $(document).ready(function() {
 
 var activeurl = window.location;
 $('a[href="'+activeurl+'"]').addClass('active');
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const dropdownItems = document.querySelectorAll(".nav-item.dropdown");
+//   let openDropdown = null;
+
+//   dropdownItems.forEach(function(dropdownItem) {
+//     const dropdownMenu = dropdownItem.querySelector(".dropdown-menu");
+
+//     dropdownItem.addEventListener("click", function(event) {
+//       event.preventDefault();
+
+//       if (openDropdown !== dropdownMenu) {
+//         if (openDropdown) {
+//           openDropdown.style.display = "none";
+//         }
+//         dropdownMenu.style.display = "block";
+//         openDropdown = dropdownMenu;
+//       } else {
+//         dropdownMenu.style.display = (dropdownMenu.style.display === "block") ? "none" : "block";
+//         openDropdown = dropdownMenu.style.display === "block" ? dropdownMenu : null;
+//       }
+//     });
+//   });
+// });

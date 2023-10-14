@@ -118,7 +118,7 @@
                         @else
 
                           <li class="nav-item ">
-                            <a class="nav-link nav_a_padding" href="{{url($mf->href)}}">{{$mf->name}}
+                            <a class="nav-link nav_a_padding" href="{{url($mf->href)}}"><span class="menu-border-bottom">{{$mf->name}}</span>
                               @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×

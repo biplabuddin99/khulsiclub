@@ -3,7 +3,7 @@
 <style>
 /* Define a gradient background for list items */
 .card.sidemenu .nav-item {
-  background: linear-gradient(to bottom, #f4f4f4 0%, #eaeaea 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 100%)
 }
 
 /* Style the links inside the list items */
@@ -49,7 +49,7 @@
         <div class="col-lg-3">
             <div>
                 <div class="card sidebar shadow-sm mb-3">
-                    <div class="card-header">
+                    <div class="card-header bg-white">
                         <div class="user">
                             <div class="userName text-center">
                                 <div class="mb-2">

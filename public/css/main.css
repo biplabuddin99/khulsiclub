@@ -1981,9 +1981,9 @@ img.events-image {
   .mega-menu {
     width: 90% !important ;
   }
-  .megamenu-lg .row{
+  /* .megamenu-lg .row{
     text-align: center;
-  }
+  } */
   
   .news_event{
     margin-top: 1rem !important;
@@ -2192,7 +2192,8 @@ img.events-image {
   .megamenu-small{
     width: 240px !important;
   }
-  /* .megamenu-small-align{
+  .megamenu-small-align{
     text-align: left;
-  } */
+  }
+
 }
