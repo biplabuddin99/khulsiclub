@@ -32,10 +32,10 @@
         <div class="col-lg-3 mobileview">
             <div class="sidebar-menu vue-affix affix-top ">
                 <div class="leftside-menu">
-                    <div class="card  pb-4 me-4 rounded-10 bg-light">
+                    <div class="card shadow border-0 pb-4 me-4 rounded-10">
                         <span class="shape"></span>
                         <span class="shape2"></span>
-                        <div class="card-header">
+                        <div class="card-header bg-white">
                             <h4>Media Center</h4>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
