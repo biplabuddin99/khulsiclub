@@ -79,7 +79,7 @@
                       @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                         @if($rows_second) 
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="{{$mf->href?url($mf->href):''}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="menu-border-bottom">{{$mf->name}}</span>
                             @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -96,10 +96,10 @@
                                   <div class="col-sm pe-0 ">
                                     <ul class="ps-2">
                                         <h4 class="menu-head">
-                                          <a href="{{$ms->href?url($ms->href):''}}">{{$ms->name}}</a>
+                                          <a href="{{$ms->href?url($ms->href):'#'}}">{{$ms->name}}</a>
                                         </h4>
                                         @foreach($rows_third as $mt)
-                                          <li class="subMenu"><a href="{{$mt->href?url($mt->href):''}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
+                                          <li class="subMenu"><a href="{{$mt->href?url($mt->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
                                         @endforeach
                                     </ul>
                                   </div>
@@ -108,7 +108,7 @@
                                     document.getElementsByClassName('rowsecond{{$i}}')[0].style.width='170px';
                                   </script>
                                   <ul class="ps-2">
-                                    <li class="subMenu"><a href="{{$ms->href?url($ms->href):''}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
+                                    <li class="subMenu"><a href="{{$ms->href?url($ms->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
                                   </ul>
                                 @endif
                               @endforeach
@@ -118,7 +118,7 @@
                         @else
 
                           <li class="nav-item ">
-                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):''}}"><span class="menu-border-bottom">{{$mf->name}}</span>
+                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="menu-border-bottom">{{$mf->name}}</span>
                               @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×
