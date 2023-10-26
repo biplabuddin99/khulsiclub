@@ -81,8 +81,81 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-2 ">
+        <div class="col-lg-9 px-2 d-none d-sm-block">
             <div class="about-title" id="grad">
+                <h6 class="text-uppercase p-1">Executive Committee List</h6>
+            </div>
+            <div class="row small-view">
+                <div class="col-lg-12">
+                    <div class="card mt-3 pb-4 rounded-10 bg-light">
+                        <div class="card-header ">
+                            <h4
+                                class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo"
+                                aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Committee
+                                </button>
+                            </h4>
+                        </div>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <ul class="sideber-nav flex-culumn ps-3 accordion-body">
+                                    @forelse ($committeeSession as $cs)
+                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
+                                    @empty
+                                        
+                                    @endforelse
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse ($exMember as $fm)
+                <div class="col-md-4 py-2">
+                    <div class="card member-box shadow-lg">
+                        <span class="shape"></span>
+                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->member?->image)}}" alt="No Photos">
+                        <div class="card-body">
+                            <span class="member-degignation">{{$fm->member?->club_designation}}</span>
+                            <h4 class="member-title">{{$fm->member?->full_name }}</h4>
+                            {{-- <small>
+                                <strong>Email:</strong>
+                                {{$fm->member?->email }}
+                            </small> --}}
+                            <small>
+                                <strong>Company:</strong>
+                                {{$fm->member?->company}}
+                            </small>
+                            <br>
+                            <small>
+                                <strong>Designation:</strong>
+                                {{$fm->member?->designation }}
+                            </small>
+                        </div>
+                        {{-- <div class="card-footer">
+                            <div class="social">
+                                <big>Follow:</big>
+                                <span class="social-icon"><a href="{{$fm->member?->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->twter_link }}" target="_blank"><i class="bi bi-twitter ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->member?->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center p-5">
+                    <h3>No Data Found</h3>
+                </div> 
+                @endforelse
+            </div>
+            
+        </div>
+        <div class="col-lg-9 px-2 d-sm-none">
+            <div class="about-title text-center" id="grad">
                 <h6 class="text-uppercase p-1">Executive Committee List</h6>
             </div>
             <div class="row small-view">

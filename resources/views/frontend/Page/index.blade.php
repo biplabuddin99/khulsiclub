@@ -76,8 +76,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-2 custom-page-img">
+        <div class="col-lg-9 px-2 custom-page-img d-none d-sm-block">
             <div class="about-title" id="grad">
+                <h6 class="text-uppercase p-1">{{$page_data?->page_title}}</h6>
+            </div>
+            <p class="text-justify">
+                {!!$page_data?->details!!}
+            </p>
+        </div>
+        <div class="col-lg-9 px-2 custom-page-img d-sm-none">
+            <div class="about-title text-center" id="grad">
                 <h6 class="text-uppercase p-1">{{$page_data?->page_title}}</h6>
             </div>
             <p class="text-justify">

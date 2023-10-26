@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-1 ">
+        <div class="col-lg-9 px-1 d-none d-sm-block">
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">News & Events</h6>
             </div>
@@ -106,6 +106,27 @@
                     <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$detail->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div>
+                    <h3 class="text-danger">{{$detail->title}}</h3>
+                    <em><strong><p>{{date('j F, Y', strtotime($detail->created_at))}}</p></strong></em>
+                </div>
+                <div class="text-center">
+                    <p>{{$detail->short_description}}</p>
+                </div>
+                @else
+                    
+                @endif
+            </div>
+        </div>
+        <div class="col-lg-9 px-1 d-sm-none">
+            <div class="about-title text-center" id="grad">
+                <h6 class="text-uppercase p-1">News & Events</h6>
+            </div>
+            <div class="row mt-4">
+                @if ($detail)
+                <div class="col-lg-8 offset-lg-2">
+                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$detail->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="text-center">
                     <h3 class="text-danger">{{$detail->title}}</h3>
                     <em><strong><p>{{date('j F, Y', strtotime($detail->created_at))}}</p></strong></em>
                 </div>

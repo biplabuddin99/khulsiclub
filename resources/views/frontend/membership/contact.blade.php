@@ -63,9 +63,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-              <div class=" px-4 pt-3 pb-0">
-                <h4 style="font-weight: bold;">Contact Us</h4>
-                <p>“Got a Question? We'd love to hear from you. Send us a message and we'll respond as soon as possible”</p>
+              <div class=" px-4 pt-3 pb-0" style="text-align: justify;">
+                <h4 class="common-title-of-page" style="font-weight: bold;">Contact Us</h4>
+                <p >“Got a Question? We'd love to hear from you. Send us a message and we'll respond as soon as possible”</p>
               </div>
               <div class=" px-4 pt-0 pb-2 mem-form">
                 <form class="form" method="GET" enctype="multipart/form-data" action="{{route('contact.us')}}">
@@ -140,15 +140,15 @@
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="contact ps-3 mt-4">
-                <h3>Visit our office at</h3>
+            <div class="contact ps-lg-3 mt-4">
+                <h3 class="common-title-of-page">Visit our office at</h3>
                 <span class="contact-border d-flex">
                     <i class="bi bi-geo-alt-fill"></i>
                   <p>
                     {{ $setting?->address }}
                   </p>
                 </span>
-                <h4>Contact Us</h4>
+                <h4 class="common-title-of-page">Contact Us</h4>
                 <div class="contact-border">
                     <span class="d-flex">
                         <i class="bi bi-telephone-fill"></i>
@@ -159,7 +159,7 @@
                         <p>{{ $setting?->email_address }}</p>
                     </span>
                 </div>
-                <h4 class="mt-4 mb-2">Connect With Us</h4>
+                <h4 class="mt-4 mb-2 common-title-of-page">Connect With Us</h4>
                 <div class=" social-icon">
                     <a href="{{ $setting?->facebook_link }}"><i class="bi bi-facebook ms-0 ps-0"></i></a>
                     <a href="{{ $setting?->twitter_link }}"><i class="bi bi-twitter ms-0 ps-0"></i></a>

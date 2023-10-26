@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-2 ">
+        <div class="col-lg-9 px-2 d-none d-sm-block">
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">Founding Committee List</h6>
             </div>
@@ -92,6 +92,63 @@
                         <span class="shape"></span>
                         <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
                         <div class="card-body">
+                            <span class="member-degignation">
+                                {{-- @if ($fm->membership_applied == 1){{'Donor Member'}}
+                                @elseif($fm->membership_applied == 2){{'Life Member'}}
+                                @elseif($fm->membership_applied == 3){{'Service Member'}}
+                                @elseif($fm->membership_applied == 4){{'Temporary Member'}}
+                                @elseif($fm->membership_applied == 5){{'Permanent Member'}}
+                                @elseif($fm->membership_applied == 6){{'Honorary Member'}}
+                                @elseif($fm->membership_applied == 7){{'Corporate Member'}}
+                                @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
+                                @endif --}}
+                                {{$fm->club_designation }}
+                            </span>
+                            <h4 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h4>
+                            {{-- <small>
+                                <strong>Email:</strong>
+                                {{$fm->email }}
+                            </small> --}}
+                            <small>
+                                <strong>Company:</strong>
+                                {{$fm->company}}
+                            </small>
+                            <br>
+                            <small>
+                                <strong>Designation:</strong>
+                                {{$fm->designation }}
+                            </small>
+                        </div>
+                        {{-- <div class="card-footer">
+                            <div class="social">
+                                <big>Follow:</big>
+                                <span class="social-icon"><a href="{{$fm->linkdin_link }}" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->twter_link }}" target="_blank"><i class="bi bi-twitter ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->fb_link }}" target="_blank"><i class="bi bi-facebook ms-0 ps-0"></i></a></span>
+                                <span class="social-icon"><a href="{{$fm->youtube_link }}" target="_blank"><i class="bi bi-youtube ms-0 ps-0"></i></a></span>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center p-5">
+                    <h3>No Data Found</h3>
+                </div>  
+                @endforelse
+            </div>
+            
+        </div>
+        <div class="col-lg-9 px-2 d-sm-none">
+            <div class="about-title text-center" id="grad">
+                <h6 class="text-uppercase p-1">Founding Committee List</h6>
+            </div>
+            <div class="row">
+                @forelse ($foundMember as $fm)
+                <div class="col-md-4 py-2">
+                    <div class="card member-box shadow-lg">
+                        <span class="shape"></span>
+                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                        <div class="card-body text-center">
                             <span class="member-degignation">
                                 {{-- @if ($fm->membership_applied == 1){{'Donor Member'}}
                                 @elseif($fm->membership_applied == 2){{'Life Member'}}
