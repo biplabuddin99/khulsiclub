@@ -8,7 +8,6 @@
             justify-content: space-between;
             align-items: center;
         }
-    
         .card-header.mem-password > div {
             margin-right: 10px;
         }

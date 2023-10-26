@@ -132,6 +132,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('year',year::class,['as'=>'admin']);
         Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'admin']);
         Route::resource('pGallery',pGallery::class,['as'=>'admin']);
+        Route::get('pGallerydelete', [pGallery::class, 'delete'])->name('admin.image.delete'); 
+
         Route::resource('settings',settings::class,['as'=>'admin']);
         Route::resource('bank',bank::class,['as'=>'admin']);
         Route::resource('tag',tag::class,['as'=>'admin']);
@@ -155,6 +157,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('exeCommittee',exeCommittee::class,['as'=>'admin']);
         Route::resource('page',page::class,['as'=>'admin']);
         Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
+
+
         Route::get('approved-member', [member::class, 'approvedMember'])->name('admin.approve_member');
         Route::get('member-contact-list', [contact::class, 'memberContact'])->name('admin.member_contact');
         Route::get('member-contact-delete/{id}', [contact::class, 'memberContactDelete'])->name('admin.member_contact_delete');

@@ -26,7 +26,7 @@
 <div class="container py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8">
-          <div class="card shadow" id="contact_us">
+          <div class="card shadow border-0" id="contact_us">
           <span class="shape" ></span>
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -120,7 +120,7 @@
         <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="contact ps-3 mt-4">
                 <h3>Visit our office at</h3>
-                <span class="contact-border">
+                <span class="contact-border d-flex">
                     <i class="bi bi-geo-alt-fill"></i>
                   <p>
                     {{ $setting?->address }}
@@ -128,11 +128,11 @@
                 </span>
                 <h4>Contact Us</h4>
                 <div class="contact-border">
-                    <span>
+                    <span class="d-flex">
                         <i class="bi bi-telephone-fill"></i>
                         <p>{{ $setting?->contact_no }}</p>
                     </span>
-                    <span>
+                    <span class="d-flex">
                         <i class="bi bi-envelope-fill"></i>
                         <p>{{ $setting?->email_address }}</p>
                     </span>

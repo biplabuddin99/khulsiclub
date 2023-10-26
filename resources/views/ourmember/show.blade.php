@@ -26,7 +26,8 @@
             background-color: transparent;
         }
         input:focus {
-            border-color: green
+            border-color: green;
+            font-family: Montserrat !important;
         }
 
 
@@ -241,7 +242,7 @@
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Fatder's Name:</th>
+                        <td style="text-align: left;">Father's Name:</th>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->father_name . $show_data->husban_name }}"></td>
                     </tr>
                     <tr>
@@ -378,7 +379,7 @@
                     @if($show_data->children)
                         @foreach($show_data->children as $c)
                             <tr style="text-align: center;">
-                                <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{++$loop->index}}</th>
+                                <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$loop->index + 1}}</th>
                                 <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->name }}</td>
                                 <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($c->gender==1) Male @elseif($c->gender==2) Female @else @endif </td>
                                 <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->birth_date }}</td>
@@ -386,6 +387,15 @@
                             </tr>
                         @endforeach
                     @endif
+                    @for($i=$show_data->children->count();$i<5;$i++ )
+                        <tr style="text-align: center;">
+                            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$i + 1}}</th>
+                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        </tr>
+                    @endfor
                    
                 </tbody>
             </table>
@@ -466,13 +476,21 @@
                     @if($show_data->otherClub)
                         @foreach($show_data->otherClub as $c)
                             <tr style="text-align: center;">
-                                <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{++$loop->index}}</th>
+                                <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$loop->index + 1}}</th>
                                 <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->name }}</td>
                                 <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->membership_type }}</td>
                                 <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->year }}</td>
                             </tr>
                         @endforeach
                     @endif
+                    @for($i=$show_data->otherClub->count();$i<5;$i++ )
+                        <tr style="text-align: center;">
+                            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$i + 1}}</th>
+                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                        </tr>
+                    @endfor
                    
                 </tbody>
             </table>

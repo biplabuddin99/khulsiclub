@@ -30,10 +30,10 @@
         <div class="col-lg-3 mobileview">
             <div class="sidebar-menu vue-affix affix-top ">
                 <div class="leftside-menu">
-                    <div class="card  pb-4 me-4 rounded-10 bg-light">
+                    <div class="card  pb-4 me-4 rounded-10 shadow border-0">
                         <span class="shape"></span>
                         <span class="shape2"></span>
-                        <div class="card-header">
+                        <div class="card-header bg-white">
                             <h5>{{$page_data?->page_title}} </h5>
                         </div>
                         <ul class="sideber-nav flex-culumn ps-3">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-2 ">
+        <div class="col-lg-9 px-2 custom-page-img">
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">{{$page_data?->page_title}}</h6>
             </div>
