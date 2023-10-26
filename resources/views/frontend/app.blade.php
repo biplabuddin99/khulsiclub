@@ -88,7 +88,7 @@
                             @endif
                           </a>
 
-                          <div style="width:{{180*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                          <div style="width:{{200*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
                             <div class="row m-0 megamenu-small-align">
                               @foreach($rows_second as $ms)
                                 @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
@@ -204,7 +204,7 @@
           <div class="col-sm-4 d-sm-none text-center">
             <h4 class="title-heading">Contact Us</h4>
             <div class="contact">
-              <span>
+              <span class="d-flex justify-content-center">
                 <i class="bi bi-geo-alt-fill"></i>
                 <p>{{ $setting?->address }}</p>
               </span>

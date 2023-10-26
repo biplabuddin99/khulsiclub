@@ -433,7 +433,7 @@ body {
 }
 
 .become-member-text p span{
-  font-family: 'BRUSHSCI';
+  font-family: Moonbright;
 }
 
 .become-member{
@@ -733,7 +733,11 @@ marquee p{
 }
 .title-heading{
   font-family: Moonbright !important;
-  font-size: 45px;;
+  font-size: 45px;
+}
+.common-title-of-page{
+  font-family: Moonbright !important;
+  font-size: 40px;;
 }
 .our-members h4{
   text-align: center;
@@ -1718,6 +1722,9 @@ figure{
   color: var(--red);
   font-size: 12px;
   text-decoration: none;
+}
+.search-small-view span{
+  font-size: 8px !important;
 }
 .search-menu li a:before {
   content: "|";

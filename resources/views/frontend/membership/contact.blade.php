@@ -1,14 +1,36 @@
 @php $setting=\App\Models\setting::first(); @endphp
 @extends('frontend.app')
 @section('content')
-<section class="about-support">
+<section class="about-support d-none d-sm-block">
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">Contact Us</h3>
+                <h3 class="mb-0 common-title-of-page">Contact Us</h3>
+            </div>
+            <div class="col-lg-6">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-end bg-transparent mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="breadcrumb-item router-link-active">Contact US</a>
+                        </li>
+                        <li class="breadcrumb-item">data</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-support d-sm-none">
+    <span class="shape"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h3 class="mb-2 common-title-of-page">Contact Us</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
