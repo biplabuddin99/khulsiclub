@@ -2196,11 +2196,14 @@ img.events-image {
     border-bottom: solid 1px #7c7c7c;
     color: #343333;
   }
-  .megamenu-small{
+  /* .megamenu-small{
     width: 240px !important;
-  }
+  } */
   .megamenu-small-align{
     text-align: left;
   }
+  .dropdown-toggle::after {
+    display: none !important;
+}
 
 }
