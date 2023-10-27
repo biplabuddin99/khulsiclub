@@ -1724,7 +1724,7 @@ figure{
   text-decoration: none;
 }
 .search-small-view span{
-  font-size: 8px !important;
+  font-size: 6px !important;
 }
 .search-menu li a:before {
   content: "|";
@@ -2207,6 +2207,13 @@ img.events-image {
   }
   .dropdown-toggle::after {
     display: none !important;
+  }
+  .member-search h1 {
+    font-weight: 700;
+    font-size: 1.5rem !important;
+    letter-spacing: .2125rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 }
