@@ -78,7 +78,7 @@
                     @forelse($rows->get() as $i=>$mf)
                       @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                         @if($rows_second) 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown menu-li-border">
                           <a class="nav-link dropdown-toggle nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="menu-border-bottom">{{$mf->name}}</span>
                             @if($i==0)
@@ -117,7 +117,7 @@
                         </li>
                         @else
 
-                          <li class="nav-item ">
+                          <li class="nav-item menu-li-border">
                             <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="menu-border-bottom">{{$mf->name}}</span>
                               @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">

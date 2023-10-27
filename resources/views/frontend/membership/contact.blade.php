@@ -144,7 +144,7 @@
                 <h3 class="common-title-of-page">Visit our office at</h3>
                 <span class="contact-border d-flex">
                     <i class="bi bi-geo-alt-fill"></i>
-                  <p>
+                  <p class="ms-1">
                     {{ $setting?->address }}
                   </p>
                 </span>
@@ -152,11 +152,11 @@
                 <div class="contact-border">
                     <span class="d-flex">
                         <i class="bi bi-telephone-fill"></i>
-                        <p>{{ $setting?->contact_no }}</p>
+                        <p class="ms-1">{{ $setting?->contact_no }}</p>
                     </span>
                     <span class="d-flex">
                         <i class="bi bi-envelope-fill"></i>
-                        <p>{{ $setting?->email_address }}</p>
+                        <p class="ms-1">{{ $setting?->email_address }}</p>
                     </span>
                 </div>
                 <h4 class="mt-4 mb-2 common-title-of-page">Connect With Us</h4>

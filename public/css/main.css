@@ -2193,8 +2193,11 @@ img.events-image {
     min-height: 280px;
   }
   .menu-border-bottom{
-    border-bottom: solid 1px #7c7c7c;
+    /* border-bottom: solid 1px #7c7c7c; */
     color: #343333;
+  }
+  .menu-li-border{
+    border-bottom: solid 1px #7c7c7c;
   }
   /* .megamenu-small{
     width: 240px !important;
