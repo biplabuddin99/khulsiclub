@@ -433,7 +433,7 @@ body {
 }
 
 .become-member-text p span{
-  font-family: 'BRUSHSCI';
+  font-family: Moonbright;
 }
 
 .become-member{
@@ -733,7 +733,11 @@ marquee p{
 }
 .title-heading{
   font-family: Moonbright !important;
-  font-size: 45px;;
+  font-size: 45px;
+}
+.common-title-of-page{
+  font-family: Moonbright !important;
+  font-size: 40px;;
 }
 .our-members h4{
   text-align: center;
@@ -1719,6 +1723,9 @@ figure{
   font-size: 12px;
   text-decoration: none;
 }
+.search-small-view span{
+  font-size: 6px !important;
+}
 .search-menu li a:before {
   content: "|";
   padding-right: 0.2em;
@@ -2186,14 +2193,27 @@ img.events-image {
     min-height: 280px;
   }
   .menu-border-bottom{
-    border-bottom: solid 1px #7c7c7c;
+    /* border-bottom: solid 1px #7c7c7c; */
     color: #343333;
   }
-  .megamenu-small{
-    width: 240px !important;
+  .menu-li-border{
+    border-bottom: solid 1px #7c7c7c;
   }
+  /* .megamenu-small{
+    width: 240px !important;
+  } */
   .megamenu-small-align{
     text-align: left;
   }
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+  .member-search h1 {
+    font-weight: 700;
+    font-size: 1.5rem !important;
+    letter-spacing: .2125rem;
+    text-transform: uppercase;
+    text-align: center;
+}
 
 }

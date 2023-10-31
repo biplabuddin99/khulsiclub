@@ -3,14 +3,36 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
-<section class="about-support">
+<section class="about-support d-none d-sm-block">
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">News & Events</h3>
+                <h3 class="mb-0 common-title-of-page">News & Events</h3>
+            </div>
+            <div class="col-lg-6">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-end bg-transparent mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="breadcrumb-item router-link-active">News & Events</a>
+                        </li>
+                        <li class="breadcrumb-item">data</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-support d-sm-none">
+    <span class="shape"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h3 class="mb-2 common-title-of-page">News & Events</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
@@ -74,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 px-1 ">
+        <div class="col-lg-9 px-1 d-none d-sm-block">
             <div class="about-title" id="grad">
                 <h6 class="text-uppercase p-1">News & Events</h6>
             </div>
@@ -84,6 +106,27 @@
                     <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$detail->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div>
+                    <h3 class="text-danger">{{$detail->title}}</h3>
+                    <em><strong><p>{{date('j F, Y', strtotime($detail->created_at))}}</p></strong></em>
+                </div>
+                <div class="text-center">
+                    <p>{{$detail->short_description}}</p>
+                </div>
+                @else
+                    
+                @endif
+            </div>
+        </div>
+        <div class="col-lg-9 px-1 d-sm-none">
+            <div class="about-title text-center" id="grad">
+                <h6 class="text-uppercase p-1">News & Events</h6>
+            </div>
+            <div class="row mt-4">
+                @if ($detail)
+                <div class="col-lg-8 offset-lg-2">
+                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$detail->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="text-center">
                     <h3 class="text-danger">{{$detail->title}}</h3>
                     <em><strong><p>{{date('j F, Y', strtotime($detail->created_at))}}</p></strong></em>
                 </div>

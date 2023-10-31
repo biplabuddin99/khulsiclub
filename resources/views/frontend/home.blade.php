@@ -627,7 +627,7 @@
       </div>
     </section>
     {{-- This section is for small view start --}}
-    <section class="facilities-main px-4 d-sm-none">
+    <section class="facilities-main px-2 d-sm-none">
       <div class="facilities text-center5">
         <!-- Gallery end -->
         <!-- member reg. start -->

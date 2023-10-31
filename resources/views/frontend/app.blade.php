@@ -78,8 +78,8 @@
                     @forelse($rows->get() as $i=>$mf)
                       @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                         @if($rows_second) 
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="{{url($mf->href)}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item dropdown menu-li-border">
+                          <a class="nav-link dropdown-toggle nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="menu-border-bottom">{{$mf->name}}</span>
                             @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
                             @endif
                           </a>
 
-                          <div style="width:{{180*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                          <div style="width:{{200*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
                             <div class="row m-0 megamenu-small-align">
                               @foreach($rows_second as $ms)
                                 @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
@@ -96,10 +96,10 @@
                                   <div class="col-sm pe-0 ">
                                     <ul class="ps-2">
                                         <h4 class="menu-head">
-                                          <a href="{{url($ms->href)}}">{{$ms->name}}</a>
+                                          <a href="{{$ms->href?url($ms->href):'#'}}">{{$ms->name}}</a>
                                         </h4>
                                         @foreach($rows_third as $mt)
-                                          <li class="subMenu"><a href="{{url($mt->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
+                                          <li class="subMenu"><a href="{{$mt->href?url($mt->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
                                         @endforeach
                                     </ul>
                                   </div>
@@ -108,7 +108,7 @@
                                     document.getElementsByClassName('rowsecond{{$i}}')[0].style.width='170px';
                                   </script>
                                   <ul class="ps-2">
-                                    <li class="subMenu"><a href="{{url($ms->href)}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
+                                    <li class="subMenu"><a href="{{$ms->href?url($ms->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
                                   </ul>
                                 @endif
                               @endforeach
@@ -117,8 +117,8 @@
                         </li>
                         @else
 
-                          <li class="nav-item ">
-                            <a class="nav-link nav_a_padding" href="{{url($mf->href)}}"><span class="menu-border-bottom">{{$mf->name}}</span>
+                          <li class="nav-item menu-li-border">
+                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="menu-border-bottom">{{$mf->name}}</span>
                               @if($i==0)
                               <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×
@@ -204,7 +204,7 @@
           <div class="col-sm-4 d-sm-none text-center">
             <h4 class="title-heading">Contact Us</h4>
             <div class="contact">
-              <span>
+              <span class="d-flex justify-content-center">
                 <i class="bi bi-geo-alt-fill"></i>
                 <p>{{ $setting?->address }}</p>
               </span>

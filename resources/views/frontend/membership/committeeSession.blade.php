@@ -1,13 +1,38 @@
 @extends('frontend.app')
 @section('content')
-<section class="about-support">
+<section class="about-support d-none d-sm-block">
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-0">Executive Committee List</h3>
+                <h3 class="mb-0 common-title-of-page">Executive Committee List</h3>
+            </div>
+            <div class="col-lg-6">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-end bg-transparent mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="{{route('front')}}" class="breadcrumb-item router-link-active">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="">list</a>
+                        </li>
+                        <li class="breadcrumb-item">data</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-support d-sm-none">
+    <span class="shape"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h3 class="mb-2 common-title-of-page">Executive Committee List</h3>
             </div>
             <div class="col-lg-6">
                 <nav aria-label="breadcrumb">
