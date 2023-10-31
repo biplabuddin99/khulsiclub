@@ -128,11 +128,11 @@
                 <div class="carousel-inner n-item-center notice-carousel shadow text-center">
                   @forelse ($vNotice as $v)
                   <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="notice-img" width="100%" height="auto" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                   @empty
                   <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="notice-img" width="100%" height="auto" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                   @endforelse
                   @forelse ($vNotice as $notic)
@@ -297,14 +297,7 @@
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-carousel animate-facilities">
             @forelse ($facilities as $fac)
-              <div class="col-12 item bg-transparent px-5 ">
-                {{-- <figure class="shadow">
-                  <img class="zoom" height="193px" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
-                  
-                  <div class="facilities-heading">
-                    <h4>{{$fac->title}}</h4>
-                  </div>
-                </figure> --}}
+              <div class="col-12 item bg-transparent px-2 ">
                 <div class="card mb-3 shadow bg-transparent ">
                   <img class="zoom" width="100%" src="{{asset('uploads/facilities/'.$fac->image)}}" alt="" />
                   <div class="facilities-heading">
@@ -388,7 +381,7 @@
           <h4 class="animate-title title-heading">Our Members</h4>
           <div class="row owl-member owl-theme owl-carousel">
           @forelse ($ourMember as $fm)
-          <div class="col-12 item pe-3 ps-3">
+          <div class="col-12 item pe-2 ps-2">
             <div class="card member-box shadow">
                 <span class="shape"></span>
                 <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
@@ -693,6 +686,12 @@
             },1000:{
               items:3,
               nav:true
+            },1400:{
+              items:4,
+              nav:true
+            },1600:{
+              items:5,
+              nav:true
             }
           }
         })
@@ -712,6 +711,9 @@
             },1000:{
               items:4,
               nav:true
+            },1600:{
+              items:6,
+              nav:true
             }
           }
         })
@@ -730,6 +732,12 @@
               nav:true
             },1000:{
               items:3,
+              nav:true
+            },1400:{
+              items:4,
+              nav:true
+            },1600:{
+              items:5,
               nav:true
             }
           }
