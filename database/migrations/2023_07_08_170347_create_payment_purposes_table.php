@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('payment_purposes', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->string('purpose')->nullable();
-            $table->decimal('amount',14)->nullable();
+            $table->decimal('amount',10,2)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

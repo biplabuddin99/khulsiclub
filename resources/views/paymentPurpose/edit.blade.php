@@ -14,6 +14,12 @@
                               @csrf
                               @method('patch')
                                 <div class="row mb-3">
+                                    <label for="payment" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Code')}}<span class="text-danger">*</span></b></label>
+                                    <div class="col-sm-6 offset-1 m-0">
+                                        <input type="text" value="{{ old('code',$purpose->code)}}" class="form-control" name="code" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
                                     <label for="payment" class="col-sm-2 offset-1 col-form-label text-end"><b>{{__('Purpose')}}<span class="text-danger">*</span></b></label>
                                     <div class="col-sm-6 offset-1 m-0">
                                         <input type="text" value="{{ old('purpose',$purpose->purpose)}}" class="form-control" name="purpose" required>

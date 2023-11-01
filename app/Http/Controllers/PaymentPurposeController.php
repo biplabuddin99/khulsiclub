@@ -40,6 +40,7 @@ class PaymentPurposeController extends Controller
     {
         try{
             $b= new Payment_purpose;
+            $b->code=$request->code;
             $b->purpose=$request->purpose;
             $b->amount=$request->amount;
             if($b->save()){
@@ -91,6 +92,7 @@ class PaymentPurposeController extends Controller
     {
         try{
             $b= Payment_purpose::findOrFail(encryptor('decrypt',$id));
+            $b->code=$request->code;
             $b->purpose=$request->purpose;
             $b->amount=$request->amount;
             if($b->save()){
