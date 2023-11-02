@@ -804,6 +804,12 @@ marquee p{
   font-size: 20px !important;
   margin: 10px;
 }
+
+.bi-chevron-double-right::before{
+  content: "\f280";
+  margin-left: 5px;
+}
+
 .social-icon .bi-twitter,
 .member i:nth-of-type(2) {
   color: #00acee;
