@@ -17,6 +17,7 @@
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col">{{__('#SL')}}</th>
+                                    <th scope="col">{{__('Code')}}</th>
                                     <th scope="col">{{__('Purpose')}}</th>
                                     <th scope="col">{{__('Amount')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
@@ -26,6 +27,7 @@
                                 @forelse($data as $b)
                                 <tr class="text-center">
                                 <th scope="row">{{ ++$loop->index }}</th>
+                                    <td>{{$b->code}}</td>
                                     <td>{{$b->purpose}}</td>
                                     <td>{{$b->amount}}</td>
                                     <td class="white-space-nowrap">

@@ -1231,7 +1231,7 @@ footer img {
     font-weight: bold;
     color: #a9040a;
     padding: 14px 10px;
-    padding: 3px 18px;
+    padding: 3px 29px;
     font-size: 20px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -1351,7 +1351,7 @@ footer img {
   overflow: hidden;
 }
 .facilities-heading h4 {
-  font-size: 22px;
+  font-size: 17px;
   margin: auto;
   padding: 5px;
 }
@@ -1971,6 +1971,7 @@ img.events-image {
   }
 }
 @media screen and (max-width: 768px) {
+
   .contact span {
     display: block;
   }

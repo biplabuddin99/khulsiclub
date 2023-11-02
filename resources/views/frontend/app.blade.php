@@ -196,7 +196,7 @@
   <!-- footer -->
   <footer class="position-relative">
     <div class="footer">
-      <div class="container">
+      <div class="container-fluid">
         <div class="footer-logo">
           <img src="{{asset('uploads/settings/footer_logo/'.$setting?->footer_logo)}}" alt="" />
         </div>
