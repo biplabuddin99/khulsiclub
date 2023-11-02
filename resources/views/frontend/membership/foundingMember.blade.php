@@ -147,7 +147,7 @@
                 <div class="col-md-4 py-2">
                     <div class="card member-box shadow-lg">
                         <span class="shape"></span>
-                        <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->image)}}" alt="No Photos">
+                        <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
                         <div class="card-body text-center">
                             <span class="member-degignation">
                                 {{-- @if ($fm->membership_applied == 1){{'Donor Member'}}
