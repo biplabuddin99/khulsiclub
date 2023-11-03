@@ -5,7 +5,7 @@
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
-    <div class="container">
+    <div class="container-fluid px-lg-5">
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="mb-0 common-title-of-page">Contact Us</h3>
@@ -45,7 +45,7 @@
         </div>
     </div>
 </section>
-<div class="container py-4">
+<div class="container-fluid px-lg-5 py-4">
     <div class="row merber-reg-card">
         <div class="col-sm-12 col-md-12 col-lg-8">
           <div class="card shadow border-0" id="contact_us">

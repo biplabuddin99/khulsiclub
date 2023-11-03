@@ -115,7 +115,7 @@
     <!-- Member counter end -->
     <!-- Blog slide & Notice Section -->
     <section class="pb-lg-5 pb-md-1 news_event mt-lg-5 mt-md-4">
-      <div class="container-fluid notice-blog bg-light shadow rounded-3">
+      <div class="container-fluid px-lg-5 notice-blog bg-light shadow rounded-3">
         <div class="row">
           <div class="col-md-7 col-lg-7 d-none d-sm-block">
               <div class="mt-3 d-flex notice-div-one ">
@@ -128,11 +128,11 @@
                 <div class="carousel-inner n-item-center notice-carousel shadow text-center">
                   @forelse ($vNotice as $v)
                   <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="auto" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="notice-img" width="100%" height="350px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                   @empty
                   <div class="carousel-item active">
-                  <iframe class="notice-img" width="100%" height="auto" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="notice-img" width="100%" height="350x" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                   @endforelse
                   @forelse ($vNotice as $notic)
@@ -293,7 +293,7 @@
     <!-- Facilities -->
     <section class="facilities-main d-none d-sm-block">
       <div class="facilities text-center py-lg-5 py-md-3">
-        <div class="container-fluid my-4">
+        <div class="container-fluid px-5 my-4">
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-carousel animate-facilities">
             @forelse ($facilities as $fac)
@@ -375,7 +375,7 @@
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="our-members member-background">
-        <section class="container-fluid pb-lg-5  d-none d-sm-block">
+        <section class="container-fluid px-5 pb-lg-5  d-none d-sm-block">
           {{-- <div class="our-members">
           </div> --}}
           <h4 class="animate-title title-heading">Our Members</h4>
@@ -417,7 +417,7 @@
                     </div>
                 </div> --}}
             </div>
-        </div>
+          </div>
             
           @empty
             <div class="col-12 item pe-3 ps-3">
@@ -488,11 +488,11 @@
     <!-- Gallery -->
     <section class="gallery d-none d-sm-block">
       <div class="galler-background py-3">
-        <div class="container-fluid-fluid">
+        <div class="container-fluid px-5">
           <h4 class="pt-lg-5 mb-md-3 animate-title title-heading">Gallery</h4>
           <div class="row justify-content-center pb-lg-5 owl-gallery owl-theme owl-carousel">
             @forelse ($pgallery_cat as $p)
-              <div class="col-12 item bg-transparent px-5">
+              <div class="col-12 item bg-transparent px-1">
                 <div class="card mb-3 shadow bg-transparent ">
                   <a href="{{route('pGallery')}}">
                     <img class="gallery-zoom" width="100%"  src="{{asset('uploads/pGcategory/'.$p->feature_image)}}" alt="" />
@@ -593,7 +593,7 @@
                 <ul class="navbar-nav benefit">
                   @forelse ($benefit as $b)
                     <li class="nav-item">
-                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                      <span>{{$b->benefit}}</span>
                     </li>
                   @empty
                     <li class="nav-item">
@@ -602,7 +602,7 @@
                   @endforelse
                 </ul>
                   @if($showViewMoreButton)
-                      <div class="ps-1 viewbutton">
+                      <div class="viewbutton">
                           <a class="btn btn-sm btn-danger" href="{{ route('member.benefit') }}">View more</a>
                       </div>
                   @endif
@@ -638,7 +638,7 @@
                 <ul class="navbar-nav benefit" style="padding-left: 8px !important; height: 65% !important; padding-bottom: 0 !important; background-color: transparent !important;">
                   @forelse ($benefit as $b)
                     <li class="nav-item">
-                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                       <span>{{$b->benefit}}</span>
                     </li>
                   @empty
                     <li class="nav-item">
@@ -689,7 +689,7 @@
             },1400:{
               items:4,
               nav:true
-            },1600:{
+            },1700:{
               items:5,
               nav:true
             }
@@ -712,7 +712,7 @@
               items:4,
               nav:true
             },1600:{
-              items:6,
+              items:5,
               nav:true
             }
           }
@@ -736,7 +736,7 @@
             },1400:{
               items:4,
               nav:true
-            },1600:{
+            },1700:{
               items:5,
               nav:true
             }

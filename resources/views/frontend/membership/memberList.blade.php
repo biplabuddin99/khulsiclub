@@ -4,7 +4,7 @@
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
-    <div class="container">
+    <div class="container-fluid px-5">
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="mb-0 common-title-of-page">Member List</h3>
@@ -50,7 +50,7 @@
         </div>
     </div>
 </section>
-<div class="container py-4">
+<div class="container-fluid px-lg-5 py-4">
     <div class="row">
         <div class="col-lg-3 mobileview">
             <div class="sidebar-menu vue-affix affix-top ">
@@ -95,7 +95,7 @@
                                     </button>
                                 </div>
                             </form>
-                            <div class="search-menu">
+                            <div class="search-menu d-none">
                                 <ul class="nav flex-row justify-content-between">
                                     <li>
                                         <a href="{{ route('searchByLetter', ['letter' => 'A']) }}" class="char"><span>A</span></a>
@@ -282,7 +282,7 @@
                                     </button>
                                 </div>
                             </form>
-                            <div class="search-menu search-small-view">
+                            <div class="search-menu search-small-view d-none">
                                 <ul class="nav flex-row justify-content-between">
                                     <li>
                                         <a href="{{ route('searchByLetter', ['letter' => 'A']) }}" class="char"><span>A</span></a>
@@ -368,7 +368,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-2">
                 <div class="col-lg-12">
                     <fieldset class="advance-search-body border">
                         <legend >

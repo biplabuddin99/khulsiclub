@@ -4,7 +4,7 @@
     <span class="shape"></span>
     <span class="shape2"></span>
     <span class="shape3"></span>
-    <div class="container">
+    <div class="container-fluid px-lg-5">
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="mb-0 common-title-of-page">Photo Gallery</h3>
@@ -50,7 +50,7 @@
         </div>
     </div>
 </section>
-<div class="container py-4">
+<div class="container-fluid px-lg-5 py-4">
     <div class="row">
         <div class="col-lg-3 mobileview">
             <div class="sidebar-menu vue-affix affix-top ">

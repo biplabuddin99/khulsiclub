@@ -400,8 +400,8 @@ body {
 }
 .dropdown-menu .subMenu a span {
   position: absolute;
-  margin-top: 7px;
-  margin-left: -12px;
+  margin-top: 6px;
+  margin-left: -18px;
   font-size: 10px;
 }
 .dropdown-menu .subMenu a {
@@ -988,9 +988,9 @@ marquee p{
 }
 .sideber-nav .nav-item .bi{
   position: absolute;
-  left: 14px;
+  left: 9px;
   font-size: 11px;
-  padding-top: 4px;
+  padding-top: 2px;
   color: var(--red);
 }
 .sideber-nav a:hover {

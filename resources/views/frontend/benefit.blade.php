@@ -19,11 +19,11 @@
                     <ul class="navbar-nav benefit">
                     @forelse ($benefit as $b)
                       <li role="button" class="nav-item" onmouseover="show_details({{$b->id}})">
-                        <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                        <span>{{$b->benefit}}</span>
                       </li>
                     @empty
                       <li class="nav-item">
-                          <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
+                          <span>Advocacy for Software & ITES</span>
                       </li>
                     @endforelse
                     </ul>
@@ -65,11 +65,11 @@
                   <ul class="navbar-nav benefit" style="padding-left: 8px !important; !important; padding-bottom: 0 !important; background-color: transparent !important;">
                   @forelse ($benefit as $b)
                     <li role="button" class="nav-item" onmouseover="show_details({{$b->id}})">
-                      <i class="bi bi-caret-right-fill"></i> <span>{{$b->benefit}}</span>
+                     <span>{{$b->benefit}}</span>
                     </li>
                   @empty
                     <li class="nav-item">
-                        <i class="bi bi-caret-right-fill"></i> <span>Advocacy for Software & ITES</span>
+                      <span>Advocacy for Software & ITES</span>
                     </li>
                   @endforelse
                   </ul>
