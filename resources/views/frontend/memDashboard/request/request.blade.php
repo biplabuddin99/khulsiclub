@@ -134,21 +134,21 @@
 @endsection
 @push('scripts')
 <script>
-    $(document).ready(function() {
-        // Hide the button initially
-        $('button[type="submit"]').addClass('d-none');
+$(document).ready(function() {
+    // Hide the button initially
+    $('button[type="submit"]').addClass('d-none');
 
-        // Attach change event handler to checkboxes
-        $('.form input[type="checkbox"]').change(function() {
-            var targetId = $(this).attr('id') + 'Change';
-            $('#' + targetId).toggleClass('d-none', !this.checked);
+    // Attach change event handler to checkboxes
+    $('.form input[type="checkbox"]').change(function() {
+        var targetId = $(this).attr('id') + 'Change';
+        $('#' + targetId).toggleClass('d-none', !this.checked);
 
-            // Check if any checkbox is checked
-            var anyChecked = $('.form input[type="checkbox"]:checked').length > 0;
+        // Check if any checkbox is checked
+        var anyChecked = $('.form input[type="checkbox"]:checked').length > 0;
 
-            // Show/hide the button based on checkbox status
-            $('button[type="submit"]').toggleClass('d-none', !anyChecked);
-        });
+        // Show/hide the button based on checkbox status
+        $('button[type="submit"]').toggleClass('d-none', !anyChecked);
     });
+});
 </script>
 @endpush
