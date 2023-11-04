@@ -191,7 +191,7 @@
                     <div class="card member-box shadow-lg">
                         <span class="shape"></span>
                         <img class="card-img-top" src="{{asset('uploads/member_image/thumb/'.$fm->member?->image)}}" alt="No Photos">
-                        <div class="card-body text-center">
+                        <div class="card-body">
                             <span class="member-degignation">{{$fm->member?->club_designation}}</span>
                             <h4 class="member-title">{{$fm->member?->full_name }}</h4>
                             {{-- <small>
