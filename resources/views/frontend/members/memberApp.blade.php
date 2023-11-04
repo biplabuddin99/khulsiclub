@@ -83,8 +83,8 @@
                 <div class="card sidemenu shadow-sm mb-3">
                     <div class="card-body p-0">
                         <nav class="navbar navbar-expand-lg navbar-light py-0">
-                            <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="text-danger fs-2"><i class="bi bi-list"></i></span>
                             </button>
                                 <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">

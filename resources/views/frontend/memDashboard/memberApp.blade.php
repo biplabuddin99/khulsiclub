@@ -18,6 +18,10 @@
 .card.sidemenu .nav-item i {
   margin-right: 5px; /* Add space between the icon and the link text */
 }
+button:focus:not(:focus-visible) {
+    outline: 0;
+    color: transparent !important;
+}
 </style>
 <section class="about-support d-none d-sm-block">
     <span class="shape"></span>
@@ -83,10 +87,10 @@
                 <div class="card sidemenu shadow-sm mb-3">
                     <div class="card-body p-0">
                         <nav class="navbar navbar-expand-lg navbar-light pb-0 pt-0">
-                            <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="text-danger fs-2"><i class="bi bi-list"></i></span>
                             </button>
-                                <div id="memberNav dashbord-sidebar-nav" class="navbar-collapse collapse">
+                                <div id="memberNav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.memdashboard')}}">Dashboard</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.approveMember')}}">Personal Information</a></li>
