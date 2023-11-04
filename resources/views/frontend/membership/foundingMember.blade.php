@@ -5,7 +5,7 @@
     <span class="shape2"></span>
     <span class="shape3"></span>
     <div class="container-fluid px-5">
-        <div class="row">
+        <div class="row position-relative">
             <div class="col-lg-6">
                 <h3 class="mb-0 common-title-of-page">Founding Committee List</h3>
             </div>

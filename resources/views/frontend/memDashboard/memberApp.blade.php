@@ -28,7 +28,7 @@ button:focus:not(:focus-visible) {
     <span class="shape2"></span>
     <span class="shape3"></span>
     <div class="container-fluid px-lg-5">
-        <div class="row">
+        <div class="row position-relative">
             <div class="col-lg-6">
                 <h3 class="mb-0 common-title-of-page">Profile</h3>
             </div>
