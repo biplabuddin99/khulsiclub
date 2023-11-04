@@ -977,11 +977,12 @@ marquee p{
 }
 .sideber-nav {
   list-style: none;
+  z-index: 1;
 }
 .sideber-nav a {
   text-decoration: none;
   color: #515152;
-  padding-left: 12px;
+  padding-left: 30px;
 }
 .sideber-nav li a.active {
   color: var(--red) !important;
@@ -996,6 +997,14 @@ marquee p{
 .sideber-nav a:hover {
   font-weight: bolder !important;
   letter-spacing: 1px !important;
+  
+}
+.fontend-sidebar-nav li:hover{
+  border-left: solid 3px var(--red);
+}
+.fontend-sidebar-nav li{
+  border-bottom: solid 1px #ead3cc;
+  padding: .8rem 0 .8rem 0;
 }
 .about-title {
   background-color: var(--red);

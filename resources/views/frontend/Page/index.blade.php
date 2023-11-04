@@ -61,16 +61,16 @@
                         <div class="card-header bg-white">
                             <h5>{{$page_data?->page_title}} </h5>
                         </div>
-                        <ul class="sideber-nav flex-culumn ps-3">
+                        <ul class="sideber-nav flex-culumn fontend-sidebar-nav p-0">
                         @php 
                             $curl=request()->path();
                             $rows=DB::select("SELECT * from front_menus where parent_id = (select parent_id from front_menus where href='$curl' limit 1) and status =1 order by rang");
                         @endphp
                             @forelse($rows as $r)
                                 @if($r->href)
-                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
+                                    <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{url($r->href)}}">{{$r->name}}</a></li>
                                 @else
-                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="#">{{$r->name}}</a></li>
+                                    <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="#">{{$r->name}}</a></li>
                                 @endif
                             @empty
                             @endforelse

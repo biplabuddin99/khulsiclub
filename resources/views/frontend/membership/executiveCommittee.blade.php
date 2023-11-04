@@ -174,9 +174,9 @@
                             </h4>
                         </div>
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                            <ul class="sideber-nav flex-culumn ps-3 accordion-body">
+                            <ul class="sideber-nav flex-culumn fontend-sidebar-nav p-0 accordion-body">
                                     @forelse ($committeeSession as $cs)
-                                    <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
+                                    <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
                                     @empty
                                         
                                     @endforelse

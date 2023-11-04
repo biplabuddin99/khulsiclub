@@ -61,9 +61,9 @@
                         <div class="card-header bg-white">
                             <h4>Committee</h4>
                         </div>
-                        <ul class="sideber-nav flex-culumn ps-3">
+                        <ul class="sideber-nav flex-culumn fontend-sidebar-nav p-0">
                             @forelse ($committeeSession as $cs)
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
+                            <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('exe-member-list',$cs->id)}}">{{$cs->session_name}}</a></li>
                             @empty
                                 
                             @endforelse

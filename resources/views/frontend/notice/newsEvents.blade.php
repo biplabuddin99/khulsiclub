@@ -84,9 +84,9 @@
                         <div class="card-header bg-white">
                             <h4>Member Type</h4>
                         </div>
-                        <ul class="sideber-nav flex-culumn ps-3">
+                        <ul class="sideber-nav flex-culumn fontend-sidebar-nav p-0">
                             @forelse ($newsEv as $mt)
-                            <li class="nav-item my-2"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('event_notice_detail',$mt->id)}}">{{$mt->title}}</a></li>
+                            <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" href="{{route('event_notice_detail',$mt->id)}}">{{$mt->title}}</a></li>
                             @empty
                                 
                             @endforelse
