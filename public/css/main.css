@@ -1147,7 +1147,7 @@ marquee p{
   width: 4px;
 }
 #support-number {
-  font-size: 24px;
+  font-size: 23px !important;
   
 }
 /* footer */
