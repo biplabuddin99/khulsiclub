@@ -18,9 +18,6 @@
 .card.sidemenu .nav-item i {
   margin-right: 5px; /* Add space between the icon and the link text */
 }
-
-
-
 </style>
 <section class="about-support d-none d-sm-block">
     <span class="shape"></span>
@@ -89,7 +86,7 @@
                             <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                                <div id="memberNav" class="navbar-collapse collapse">
+                                <div id="memberNav dashbord-sidebar-nav" class="navbar-collapse collapse">
                                     <ul class="nav flex-column w-100">
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.memdashboard')}}">Dashboard</a></li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.approveMember')}}">Personal Information</a></li>

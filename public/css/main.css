@@ -1547,11 +1547,13 @@ figure{
 }
 .sidemenu ul li a.active {
   color: var(--red) !important;
+  border-right: solid 3px var(--red);
 }
 .sidemenu ul li a:hover{
   color: var(--red) !important;
   font-weight: bolder;
   letter-spacing: 1px;
+  border-right: solid 3px var(--red);
 }
 .merber-reg-card .card .shape {
   width: 400px;

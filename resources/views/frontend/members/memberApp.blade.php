@@ -1,5 +1,24 @@
 @extends('frontend.app')
 @section('content')
+<style>
+    /* Define a gradient background for list items */
+    .card.sidemenu .nav-item {
+      background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 100%)
+    }
+    
+    /* Style the links inside the list items */
+    .card.sidemenu .nav-item a.nav-link {
+      color: #333; /* Set the text color */
+      padding: 10px 10px 10px 18px; /* Add padding to the links for spacing */
+      display: block; /* Make links take up the full width of the list item */
+      text-decoration: none; /* Remove underlines from links */
+    }
+    
+    /* Style the icon (assuming you're using Bootstrap icons) */
+    .card.sidemenu .nav-item i {
+      margin-right: 5px; /* Add space between the icon and the link text */
+    }
+</style>
 <section class="about-support d-none d-sm-block">
     <span class="shape"></span>
     <span class="shape2"></span>
@@ -52,14 +71,18 @@
                     <div class="card-header">
                         <div class="user">
                             <div class="userName text-center">
+                                <div class="mb-2">
+                                    <img width="150px" height="auto" src="{{asset('uploads/member_image/'.encryptor('decrypt', request()->session()->get('image')))}}" alt="img">
+                                    
+                                </div>
                                 <h5 class="text-uppercase">{{encryptor('decrypt', request()->session()->get('full_name'))}}</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card sidemenu shadow-sm mb-3">
-                    <div class="card-body">
-                        <nav class="navbar navbar-expand-lg navbar-light pb-0">
+                    <div class="card-body p-0">
+                        <nav class="navbar navbar-expand-lg navbar-light py-0">
                             <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#memberNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
