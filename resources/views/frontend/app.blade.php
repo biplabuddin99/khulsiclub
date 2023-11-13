@@ -71,7 +71,7 @@
                   @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
                       $flcount=$rows->count();
                   @endphp
-                  <ul class="navbar-nav md-screen mr-auto pb-2 text-center">
+                  <ul class="navbar-nav md-screen mr-auto pb-2">
                     <div class="text-center d-lg-none d-md-none" style="margin-top: 3rem; margin-bottom: 2rem;">
                       <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
                     </div>
