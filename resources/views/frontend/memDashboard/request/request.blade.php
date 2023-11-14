@@ -115,6 +115,7 @@
                                         <option value="Honorary Member">Honorary Member</option>
                                         <option value="Corporate Member">Corporate Member</option>
                                         <option value="Diplomate Member">Diplomate Member</option>
+                                        <option value="Founding Member">Founding Member</option>
                                 </select>
                             </div>
                             <div class="col-12 mb-2">

@@ -239,6 +239,7 @@
                                     @elseif($m->membership_applied == 6){{'Honorary Member'}}
                                     @elseif($m->membership_applied == 7){{'Corporate Member'}}
                                     @elseif($m->membership_applied == 8){{'Diplomate Member'}}
+                                    @elseif($m->membership_applied == 9){{'Founding Member'}}
                                     @endif
                                 </h5>
                                 @if($m->attach_pdf)

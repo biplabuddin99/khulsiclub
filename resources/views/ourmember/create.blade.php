@@ -433,6 +433,12 @@
                                                     <label for="diplomatedmember">Diplomate and Foreing National Member</label>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <input type="radio" id="foundingmember" name="categorymembership" value="9" {{ old('categorymembership')=="9" ? "checked":"" }}>
+                                                    <label for="foundingmember">Founding Member</label>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                                             <button type="button" class="btn btn-info text-white me-2">Save as Draft</button>

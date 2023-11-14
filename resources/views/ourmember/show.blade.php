@@ -457,6 +457,9 @@
                         <td ><input type="checkbox" value="7" {{ $show_data->membership_applied=="7" ? "checked":"" }}>&nbsp;Corporate Member</td>
                         <td ><input type="checkbox" value="8" {{ $show_data->membership_applied=="8" ? "checked":"" }}>&nbsp;Diplomate and Foreing National Member</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"><input type="checkbox" value="9" {{ $show_data->membership_applied=="9" ? "checked":"" }}>&nbsp;Founding Member</td>
+                    </tr>
 
                 </table>
             </div>
