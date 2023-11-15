@@ -53,6 +53,7 @@ $(document).ready(function() {
 
 var activeurl = window.location;
 $('a[href="'+activeurl+'"]').addClass('active');
+$('a[href="'+activeurl+'"]').closest('li').addClass('activeLi');
 
 
 // document.addEventListener("DOMContentLoaded", function() {

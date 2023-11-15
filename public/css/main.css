@@ -1004,6 +1004,9 @@ marquee p{
 .fontend-sidebar-nav li:hover{
   border-left: solid 3px var(--red);
 }
+.fontend-sidebar-nav .activeLi{
+  border-left: solid 3px var(--red);
+}
 .fontend-sidebar-nav li{
   border-bottom: solid 1px #ead3cc;
   padding: .8rem 0 .8rem 0;
