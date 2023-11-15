@@ -445,7 +445,7 @@
                                                     <label for="diplomatedmember">Diplomate and Foreing National Member</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="foundingmember" name="categorymembership" value="9" {{ old('categorymembership',$member->membership_applied)=="9" ? "checked":"" }}>
                                                     <label for="foundingmember">Founding Member</label>

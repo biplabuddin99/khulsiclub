@@ -85,7 +85,7 @@
                         <h5>Personal Information</h5>
                     </div>
                     <div class="card-body" style="min-height:290px;">
-                        @php $mt=array("","Life Member","Permanent Member","Donor Member","Service Member","Temporary Member","Honorary Member","Corporate Member","Diplomate Member","Founding Member");
+                        @php $mt=array("","Donor Member","Service Member","Life Member","Temporary Member","Permanent Member","Honorary Member","Corporate Member","Diplomate Member","Founding Member");
                             $membershipType = request()->session()->get('membership_type');
                             $decryptedType = encryptor('decrypt', $membershipType);
                             $decryptedValue = isset($mt[$decryptedType])?$mt[$decryptedType]:0;

@@ -395,6 +395,7 @@
                         @elseif($fm->membership_applied == 6){{'Honorary Member'}}
                         @elseif($fm->membership_applied == 7){{'Corporate Member'}}
                         @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
+                        @elseif($fm->membership_applied == 9){{'Founding Member'}}
                         @endif
                     </span>
                     <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
