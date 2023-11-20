@@ -2221,7 +2221,7 @@ img.events-image {
     color: #343333;
   }
   .menu-li-border{
-    border-bottom: solid 1px #7c7c7c;
+    /* border-bottom: solid 1px #7c7c7c; */
   }
   /* .megamenu-small{
     width: 240px !important;
@@ -2238,6 +2238,15 @@ img.events-image {
     letter-spacing: .2125rem;
     text-transform: uppercase;
     text-align: center;
-}
+  }
+  .nav_a_padding{
+    display: inline-block !important;
+  }
+  .navbar-nav{
+    padding-top: 0px !important;
+  }
+  .small-view{
+    margin-top: 0px !important;
+  }
 
 }

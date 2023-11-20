@@ -6,9 +6,11 @@ use App\Models\FrontMenu;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Traits\ImageHandleTraits;
 use Exception;
 class FrontMenuController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -29,6 +31,8 @@ class FrontMenuController extends Controller
      */
     public function save_update(Request $request)
     {
+        // dd($request->all());
+        // die();
         try{
             if($request->id)
                 $data=FrontMenu::find($request->id);
@@ -36,6 +40,15 @@ class FrontMenuController extends Controller
                 $data=new FrontMenu;
 
             $data->name=$request->name;
+            // if($request->has('menuIcon'))
+            // $data->menu_icon=$this->resizeImage($request->menuIcon,'uploads/menu_image',true,30,30,true);
+
+            if($request->hasFile('menuIcon')){
+                $menu = rand(111,999).time().'.'.$request->menuIcon->extension();
+                $request->menuIcon->move(public_path('uploads/menu_image'), $menu);
+                $data->menu_icon=$menu;
+            }
+
             $data->href=$request->href;
             
             $data->save();

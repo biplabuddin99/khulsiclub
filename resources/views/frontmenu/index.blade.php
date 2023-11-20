@@ -60,7 +60,7 @@
                                             </ul>
                                             <div class="tab-content pt-3">
                                                 <div id="link" class="tab-pane container active">
-                                                    <form class="menu_form" action="{{route(currentUser().'.front_menu.save')}}" method="POST">
+                                                    <form class="menu_form" enctype="multipart/form-data" action="{{route(currentUser().'.front_menu.save')}}" method="POST">
                                                         @csrf
                                                         <div class="form-group">
                                                             <label>Menu Name</label>
@@ -76,6 +76,11 @@
                                                                         <option value="<?= $v ?>"><?= $k ?></option>
                                                                 <?php } } ?>
                                                             </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Menu Icon</label>
+                                                            <input type="file" class="form-control" name="menuIcon">
+                                                            <input type="hidden" name="id" value="0">
                                                         </div>
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-primary btn-label-left">Save</button>

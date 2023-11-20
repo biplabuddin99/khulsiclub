@@ -72,19 +72,21 @@
                       $flcount=$rows->count();
                   @endphp
                   <ul class="navbar-nav md-screen mr-auto pb-2">
-                    <div class="text-center d-lg-none d-md-none" style="margin-top: 3rem; margin-bottom: 2rem;">
+                    <div class="text-center d-lg-none d-md-none" style=" border-bottom: solid 1px; border-color:rgb(250, 210, 210); background:linear-gradient(190deg, rgb(250, 210, 210) 80%, #fff 0%); padding-top: 50px; padding-bottom: 50px;">
                       <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
                     </div>
                     @forelse($rows->get() as $i=>$mf)
                       @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
+                      
                         @if($rows_second) 
                         <li class="nav-item dropdown menu-li-border">
-                          <a class="nav-link dropdown-toggle nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="menu-border-bottom">{{$mf->name}}</span>
+                          <img class="d-lg-none d-sm-block ps-2 pb-1" src="{{asset('uploads/menu_image/'.$mf->menu_icon)}}" width="30px" alt="">
+                          <a class="nav-link dropdown-toggle nav_a_padding " href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="">{{$mf->name}}</span>
                             @if($i==0)
-                              <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                              {{-- <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×
-                              </button>
+                              </button> --}}
                             @endif
                           </a>
 
@@ -118,11 +120,12 @@
                         @else
 
                           <li class="nav-item menu-li-border">
-                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="menu-border-bottom">{{$mf->name}}</span>
+                            <img class="d-lg-none d-sm-block ps-2 pb-1" src="{{asset('uploads/menu_image/'.$mf->menu_icon)}}" width="30px" alt="">
+                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="">{{$mf->name}}</span>
                               @if($i==0)
-                              <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                              {{-- <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                                 ×
-                              </button>
+                              </button> --}}
                               @endif
                             </a>
                           </li>
@@ -292,6 +295,23 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"
   ></script>
+  <script>
+    // Toggle icon on show.bs.collapse and hide.bs.collapse events
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleButton = document.querySelector('.navbar-toggler');
+      var collapseElement = document.querySelector('.navbar-collapse');
+  
+      collapseElement.addEventListener('show.bs.collapse', function () {
+        // Change icon to 'X' when the navbar is collapsing
+        toggleButton.innerHTML = '<i class="bi bi-x"></i>';
+      });
+  
+      collapseElement.addEventListener('hide.bs.collapse', function () {
+        // Change icon to 'list' when the navbar is expanding
+        toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+      });
+    });
+  </script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
       ScrollReveal({ 
