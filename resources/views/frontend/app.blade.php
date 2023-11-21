@@ -267,16 +267,21 @@
         </div>
         <hr />
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-3 copyright">
+          <div class="col-12">
+            <img class="img-fluid" src="{{asset('images/weaccept.jpeg')}}" width="100%" alt="image" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-5 copyright">
             <p>&copy copyright 2023 CKCL</p>
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-4 d-flex payment-img">
+          {{-- <div class="col-sm-12 col-md-12 col-lg-4 d-flex payment-img">
             <p>We Accept</p>
             <img class="img-fluid" src="{{asset('uploads/settings/we_accept_1/'.$setting?->footer_top_p1_image)}}" alt="" />
             <img class="img-fluid" src="{{asset('uploads/settings/we_accept_2/'.$setting?->footer_top_p2_image)}}" alt="" />
             <img class="img-fluid" src="{{asset('uploads/settings/we_accept_3/'.$setting?->footer_top_p3_image)}}" alt="" />
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-5 mt-2 mb-2 developer">
+          </div> --}}
+          <div class="col-sm-12 col-md-12 col-lg-7 mt-2 mb-2 developer">
             Developed By :Texture Software Technology Ltd
           </div>
         </div>
