@@ -30,7 +30,7 @@
                             <div class="col-sm-6 offset-1 m-0">
                                 <select name="topic" class="form-control form-select" required>
                                     <option value="">Select</option>
-                                    @forelse (App\Models\member_contact_reason::all(); as $d)
+                                    @forelse (App\Models\member_contact_reason::all() as $d)
                                     <option value="{{$d->id}}" {{ old('topic')==$d->id?"selected":""}}> {{ $d->reason}}</option>
                                     @empty
                                     <option value="">No Data Found</option>
