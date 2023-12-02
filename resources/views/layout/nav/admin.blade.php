@@ -74,6 +74,7 @@
     <li class="submenu-item sidebar-item has-sub">
         <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i> <span>{{__('Our Members')}}</span></a>
         <ul class="submenu">
+            <li class="py-1 submenu-item"><a href="{{route(currentUser().'.memberType.index')}}">{{__('Member Type')}}</a></li>
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.ourMember.index')}}">{{__('Applied Member')}}</a></li>
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.approve_member')}}">{{__('Approved Member')}}</a></li>
         </ul>

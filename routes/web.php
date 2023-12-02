@@ -12,6 +12,7 @@ use App\Http\Controllers\Settings\Location\UpazilaController as upazila;
 use App\Http\Controllers\Settings\Location\ThanaController as thana;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\OurMemberController as member;
+use App\Http\Controllers\MembershipTypeController as memberType;
 use App\Http\Controllers\MemberPanel;
 use App\Http\Controllers\NoticeController as notice;
 use App\Http\Controllers\FacilitiesController as facilities;
@@ -126,6 +127,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('thana',thana::class,['as'=>'admin']);
         Route::resource('unit',unit::class,['as'=>'admin']);
         Route::resource('slider',SliderController::class,['as'=>'admin']);
+        Route::resource('memberType',memberType::class,['as'=>'admin']);
         Route::resource('ourMember',member::class,['as'=>'admin']);
         Route::resource('notice',notice::class,['as'=>'admin']);
         Route::resource('facilities',facilities::class,['as'=>'admin']);

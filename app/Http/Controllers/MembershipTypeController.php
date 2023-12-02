@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\MembershipType;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
+use DB;
 
 class MembershipTypeController extends Controller
 {
@@ -14,7 +17,8 @@ class MembershipTypeController extends Controller
      */
     public function index()
     {
-        //
+        $data = MembershipType::all();
+        return view('membershipType.index',compact('data'));
     }
 
     /**
@@ -24,7 +28,7 @@ class MembershipTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('membershipType.create');
     }
 
     /**
@@ -35,7 +39,23 @@ class MembershipTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $b= new MembershipType;
+            $b->member_type=$request->member_type;
+            $b->fee_amount=$request->fee_amount;
+            if($b->save()){
+                Toastr::success('Created Successfully!');
+                return redirect()->route(currentUser().'.memberType.index');
+            }else{
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::warning('Please try Again!');
+            return back()->withInput();
+        }
     }
 
     /**
@@ -55,9 +75,10 @@ class MembershipTypeController extends Controller
      * @param  \App\Models\MembershipType  $membershipType
      * @return \Illuminate\Http\Response
      */
-    public function edit(MembershipType $membershipType)
+    public function edit($id)
     {
-        //
+        $membertype = MembershipType::findOrFail(encryptor('decrypt',$id));
+        return view('membershipType.edit',compact('membertype'));
     }
 
     /**
@@ -67,9 +88,25 @@ class MembershipTypeController extends Controller
      * @param  \App\Models\MembershipType  $membershipType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MembershipType $membershipType)
+    public function update(Request $request, $id)
     {
-        //
+        try{
+            $b= MembershipType::findOrFail(encryptor('decrypt',$id));
+            $b->member_type=$request->member_type;
+            $b->fee_amount=$request->fee_amount;
+            if($b->save()){
+                Toastr::success('Update Successfully!');
+                return redirect()->route(currentUser().'.memberType.index');
+            }else{
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+
+        }
+        catch (Exception $e){
+            Toastr::warning('Please try Again!');
+            return back()->withInput();
+        }
     }
 
     /**
