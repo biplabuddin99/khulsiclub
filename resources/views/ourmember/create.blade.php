@@ -385,7 +385,23 @@
                                             <div class="section-heading">
                                                 <h5 class="text-uppercase m-0"><b>Category Of Membership</b></h5>
                                             </div>
+                                            @forelse ($memberType as $mt)
+                                                
                                             <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <input type="radio" id="type{{$mt->id}}" name="categorymembership" value="{{$mt->id}}" {{ old('categorymembership')=="$mt->id" ? "checked":"" }}>
+                                                    <label for="type{{$mt->id}}">{{$mt->member_type}}</label>
+                                                </div>
+                                            </div>
+                                            @empty
+                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <input type="radio" name="categorymembership" value="1" {{ old('categorymembership')=="1" ? "checked":"" }} disabled>
+                                                    <label for="donermember">No Data Found</label>
+                                                </div>
+                                            </div>
+                                            @endforelse
+                                            {{-- <div class="col-lg-6 col-sm-12 col-md-12">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="donermember" name="categorymembership" value="1" {{ old('categorymembership')=="1" ? "checked":"" }}>
                                                     <label for="donermember">Donor Member</label>
@@ -438,7 +454,7 @@
                                                     <input type="radio" id="foundingmember" name="categorymembership" value="9" {{ old('categorymembership')=="9" ? "checked":"" }}>
                                                     <label for="foundingmember">Founding Member</label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                                             <button type="button" class="btn btn-info text-white me-2">Save as Draft</button>

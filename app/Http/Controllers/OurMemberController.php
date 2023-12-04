@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\OurMember\AddNewRequest;
 use App\Http\Requests\OurMember\UpdateRequest;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\MembershipType;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -46,7 +47,8 @@ class OurMemberController extends Controller
      */
     public function create()
     {
-        return view('ourmember.create');
+        $memberType = MembershipType::all();
+        return view('ourmember.create',compact('memberType'));
     }
 
     /**
@@ -202,7 +204,8 @@ class OurMemberController extends Controller
     public function edit($id)
     {
         $member=OurMember::findOrFail(encryptor('decrypt',$id));
-        return view('ourmember.edit',compact('member'));
+        $memberType = MembershipType::all();
+        return view('ourmember.edit',compact('member','memberType'));
     }
 
     /**

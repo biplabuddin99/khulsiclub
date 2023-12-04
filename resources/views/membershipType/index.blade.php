@@ -7,9 +7,9 @@
     <div class="row" id="table-bordered">
         <div class="col-12">
             <div class="card">
-                <div>
+                {{-- <div>
                 <a class="float-end" href="{{route(currentUser().'.memberType.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
-                </div>
+                </div> --}}
                 @if(Session::has('response'))
                     {!!Session::get('response')['message']!!}
                 @endif

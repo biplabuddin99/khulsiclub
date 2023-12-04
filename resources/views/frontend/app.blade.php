@@ -58,7 +58,7 @@
             <a href="{{route('member_registration')}}" class="become-member">Become a Member</a>
           </div>
           
-          <div class="row">
+          <div class="row d-none d-sm-block">
             <div class="col-sm-12 col-12 d-flex justify-content-end " >
               
               <nav class="navbar navbar-expand-md navbar-light pb-0">
@@ -66,21 +66,17 @@
                   <i class="bi bi-list"></i>
                 </button>
               
-                <div style="margin-top: 6px;" class="collapse navbar-collapse navbar-collapse-top small-view" id="navbarNav">
+                <div style="margin-top: 6px;" class="collapse navbar-collapse navbar-collapse-top" id="navbarNav">
                   
                   @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
                       $flcount=$rows->count();
                   @endphp
                   <ul class="navbar-nav md-screen mr-auto pb-2">
-                    <div class="text-center d-lg-none d-md-none" style=" border-bottom: solid 1px; border-color:rgb(250, 210, 210); background:linear-gradient(190deg, rgb(250, 210, 210) 80%, #fff 0%); padding-top: 50px; padding-bottom: 50px;">
-                      <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
-                    </div>
                     @forelse($rows->get() as $i=>$mf)
                       @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
                       
                         @if($rows_second) 
-                        <li class="nav-item dropdown menu-li-border">
-                          <img class="d-lg-none d-sm-block ps-2 pb-1" src="{{asset('uploads/menu_image/'.$mf->menu_icon)}}" width="30px" alt="">
+                        <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle nav_a_padding " href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="">{{$mf->name}}</span>
                             @if($i==0)
@@ -90,8 +86,8 @@
                             @endif
                           </a>
 
-                          <div style="width:{{200*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
-                            <div class="row m-0 megamenu-small-align">
+                          <div style="width:{{200*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu shadow megamenu-lg @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                            <div class="row m-0">
                               @foreach($rows_second as $ms)
                                 @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
                                 @if($rows_third)
@@ -120,6 +116,98 @@
                         @else
 
                           <li class="nav-item menu-li-border">
+                            <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="">{{$mf->name}}</span>
+                              @if($i==0)
+                              {{-- <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                                ×
+                              </button> --}}
+                              @endif
+                            </a>
+                          </li>
+                        @endif
+                      @empty
+                        <li class="nav-item d-flex d-sm-none">
+                          <a class="nav-link nav_a_padding" href="">Member Login</a>
+                        </li>
+                        <li class="nav-item d-flex d-sm-none">
+                          <a class="nav-link nav_a_padding" href="">Become a Member</a>
+                        </li>
+                      @endforelse
+                    </ul>
+                </div>
+              </nav>
+            </div>
+            <!-- <div class="col-sm-4 d-none d-sm-flex d-flex justify-content-end mt-4">
+              <div class="social-icon">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-youtube"></i>
+              </div>
+            </div> -->
+          </div>
+          <div class="row d-sm-none">
+            <div class="col-sm-12 col-12 d-flex justify-content-end " >
+              
+              <nav class="navbar navbar-expand-md navbar-light pb-0">
+                <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="bi bi-list"></i>
+                </button>
+              
+                <div style="margin-top: 6px;" class="collapse navbar-collapse navbar-collapse-top small-view" id="navbarNav">
+                  
+                  @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
+                      $flcount=$rows->count();
+                  @endphp
+                  <ul class="navbar-nav md-screen mr-auto pb-2">
+                    <div class="text-center d-lg-none d-md-none" style=" border-bottom: solid 1px; border-color:rgb(250, 210, 210); background:linear-gradient(190deg, rgb(250, 210, 210) 80%, #fff 0%); padding-top: 50px; padding-bottom: 50px;">
+                      <a href="{{route('front')}}"><img src="{{asset('img/khlogo3.png')}}" width="80px" alt="" /></a>
+                    </div>
+                    @forelse($rows->get() as $i=>$mf)
+                      @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
+                      
+                        @if($rows_second) 
+                        <li class="nav-item dropdown menu-li-border py-2">
+                          <img class="d-lg-none d-sm-block ps-2 pb-1" src="{{asset('uploads/menu_image/'.$mf->menu_icon)}}" width="30px" alt="">
+                          <a class="nav-link dropdown-toggle nav_a_padding " href="{{$mf->href?url($mf->href):'#'}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="">{{$mf->name}}</span>
+                            @if($i==0)
+                              {{-- <button class="float-end  d-block d-sm-none home-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                                ×
+                              </button> --}}
+                            @endif
+                          </a>
+
+                          <div style="width:{{200*count($rows_second)}}px" class="dropDown rowsecond{{$i}} dropdown-menu mega-menu megamenu-lg megamenu-small @if($flcount>5 && $i<=1) left-position @else right-position @endif" aria-labelledby="navbarDropdown">
+                            <div class="row m-0 megamenu-small-align">
+                              @foreach($rows_second as $ms)
+                                @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$ms->id}' and status='1' ORDER BY rang"); @endphp
+                                @if($rows_third)
+                                  <div class="col-sm pe-0 ">
+                                    <ul class="ps-2">
+                                        <h4 class="menu-head">
+                                          <a href="{{$ms->href?url($ms->href):'#'}}">{{$ms->name}}</a>
+                                        </h4>
+                                        @foreach($rows_third as $mt)
+                                          <li class="subMenu"><a href="{{$mt->href?url($mt->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$mt->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                  </div>
+                                @else
+                                  <script>
+                                    document.getElementsByClassName('rowsecond{{$i}}')[0].style.width='170px';
+                                  </script>
+                                  <ul class="ps-2">
+                                    <li class="subMenu"><a href="{{$ms->href?url($ms->href):'#'}}"><span><i class="bi bi-chevron-double-right"></i></span> {{$ms->name}}</a></li>
+                                  </ul>
+                                @endif
+                              @endforeach
+                            </div>
+                          </div>
+                        </li>
+                        @else
+
+                          <li class="nav-item menu-li-border py-2">
                             <img class="d-lg-none d-sm-block ps-2 pb-1" src="{{asset('uploads/menu_image/'.$mf->menu_icon)}}" width="30px" alt="">
                             <a class="nav-link nav_a_padding" href="{{$mf->href?url($mf->href):'#'}}"><span class="">{{$mf->name}}</span>
                               @if($i==0)

@@ -2221,7 +2221,7 @@ img.events-image {
     color: #343333;
   }
   .menu-li-border{
-    /* border-bottom: solid 1px #7c7c7c; */
+    /* border-bottom: solid 1px #e7e6e6; */
   }
   /* .megamenu-small{
     width: 240px !important;
@@ -2247,6 +2247,19 @@ img.events-image {
   }
   .small-view{
     margin-top: 0px !important;
+  }
+  /* mobile menu */
+  .dropdown::before {
+    content: none !important;
+  }
+  
+  /* Display the dropdown menu when the dropdown is hovered */
+  .dropdown:hover > .dropdown-menu {
+    display: block !important;
+  }
+
+  .dropdown:hover > .dropdown-menu ~ ul > li {
+    border-top: 2px solid #333 !important;
   }
 
 }
