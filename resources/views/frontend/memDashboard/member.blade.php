@@ -74,7 +74,11 @@
                             <tr>
                                 <th width="40">Total Dues</th>
                                 <td width="2">:</td>
-                                <td width="50">10000.00</td>
+                                <td width="50">
+                                    @if($due)
+                                        {{$due[0]->due}}
+                                    @endif
+                                </td>
                                 <td width="8" class="text-end"><a class="btn btn-sm btn-danger" href="#">Pay Now</a></td>
                             </tr>
                         </table>
