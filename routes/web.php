@@ -56,6 +56,7 @@ use App\Http\Middleware\isSalesman;
 /* member panel */
 use App\Http\Controllers\Mamberpanel\DashboardController as memberdash;
 use App\Http\Controllers\Mamberpanel\MemberPanel;
+use App\Http\Controllers\Mamberpanel\sslController as sslcz;
 
 /*
 |--------------------------------------------------------------------------
@@ -199,6 +200,8 @@ Route::group(['middleware'=>isSalesman::class],function(){
 
     });
 });
+        Route::post('/deposit/ssl/notify', [sslcz::class,'notify'])->name('deposit.ssl.notify');
+        Route::post('/deposit/ssl/cancel', [sslcz::class,'cancel'])->name('deposit.ssl.cancel');
 Route::group(['middleware'=>isMember::class],function(){
     Route::prefix('member')->group(function(){
         Route::get('/loggedMem', [memberdash::class,'memDashboard'])->name('member.memdashboard');
@@ -219,6 +222,9 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::resource('changeReq',changeReq::class,['as'=>'member']);
         Route::get('/pending-request', [changeReq::class,'pendingRequest'])->name('member.pending_request');
         Route::get('/request-history', [changeReq::class,'requetHistory'])->name('member.request_history');
+        /* online payment */
+        // ssl Routes
+        Route::post('/deposit/ssl/submit', [sslcz::class,'store'])->name('deposit.ssl.submit');
 
     });
 });
