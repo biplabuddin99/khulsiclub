@@ -441,7 +441,19 @@
             </div>
             <div style="padding-left: 40px; margin-bottom: 1rem; padding-bottom:5rem;">
                 <table class = "gfg4" style=" width:100%">
-                    <tr>
+                    @foreach ($memberType as $key => $mt)
+                        @if ($key % 2 == 0)
+                            <tr>
+                        @endif
+                        <td>
+                            <input type="checkbox" id="type{{ $mt->id }}" value="{{ $mt->id }}" {{ $show_data->membership_applied == $mt->id ? "checked" : "" }}>
+                            <label for="type{{ $mt->id }}">&nbsp;{{ $mt->member_type }}</label>
+                        </td>
+                        @if ($key % 2 == 1 or $loop->last)
+                            </tr>
+                        @endif
+                    @endforeach
+                    {{-- <tr>
                         <td ><input type="checkbox" value="1" {{ $show_data->membership_applied=="1" ? "checked":"" }}>&nbsp;Donor Member</td>
                         <td ><input type="checkbox" value="2" {{ $show_data->membership_applied=="2" ? "checked":"" }}>&nbsp;Service Member</td>
                     </tr>
@@ -459,7 +471,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"><input type="checkbox" value="9" {{ $show_data->membership_applied=="9" ? "checked":"" }}>&nbsp;Founding Member</td>
-                    </tr>
+                    </tr> --}}
 
                 </table>
             </div>

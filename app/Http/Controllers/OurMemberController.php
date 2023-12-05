@@ -191,8 +191,9 @@ class OurMemberController extends Controller
      */
     public function show($id)
     {
+        $memberType = MembershipType::all();
         $show_data=OurMember::findOrFail(encryptor('decrypt',$id));
-        return view('ourmember.show',compact('show_data'));
+        return view('ourmember.show',compact('show_data','memberType'));
     }
 
     /**

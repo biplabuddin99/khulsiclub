@@ -23,6 +23,7 @@
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Name')}}</th>
                                 <th scope="col">{{__('Member ID')}}</th>
+                                <th scope="col">{{__('Membership Type')}}</th>
                                 <th scope="col">{{__('Email')}}</th>
                                 <th scope="col">{{__('Contact No')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
@@ -35,6 +36,7 @@
                                 <th scope="row">{{ ++$loop->index }}</th>
                                 <td>{{$p->full_name}}</td>
                                 <td>{{$p->membership_no}}</td>
+                                <td>{{$p->membership_type?->member_type}}</td>
                                 <td>{{$p->email}}</td>
                                 <td>{{$p->cell_number}}</td>
                                 <td>@if($p->status == 1) {{'Applied for approval'}} 

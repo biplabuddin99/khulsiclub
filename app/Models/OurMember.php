@@ -71,4 +71,8 @@ class OurMember extends Model
     public function otherClub(){
         return $this->hasMany(OtherClubDetails::class,'member_id','id');
     }
+
+    public function membership_type(){
+        return $this->belongsTo(MembershipType::class,'membership_applied','id');
+    }
 }

@@ -387,7 +387,8 @@
                 <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
                 <div class="card-body">
                     <span class="member-degignation">
-                        @if ($fm->membership_applied == 1){{'Donor Member'}}
+                      {{$fm->membership_type?->member_type}}
+                        {{-- @if ($fm->membership_applied == 1){{'Donor Member'}}
                         @elseif($fm->membership_applied == 2){{'Service Member'}}
                         @elseif($fm->membership_applied == 3){{'Life Member'}}
                         @elseif($fm->membership_applied == 4){{'Temporary Member'}}
@@ -396,7 +397,7 @@
                         @elseif($fm->membership_applied == 7){{'Corporate Member'}}
                         @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
                         @elseif($fm->membership_applied == 9){{'Founding Member'}}
-                        @endif
+                        @endif --}}
                     </span>
                     <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
                     <small>
@@ -445,16 +446,7 @@
                 <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
                 <div class="card-body">
                     <span class="member-degignation">
-                        @if ($fm->membership_applied == 1){{'Donor Member'}}
-                        @elseif($fm->membership_applied == 2){{'Service Member'}}
-                        @elseif($fm->membership_applied == 3){{'Life Member'}}
-                        @elseif($fm->membership_applied == 4){{'Temporary Member'}}
-                        @elseif($fm->membership_applied == 5){{'Permanent Member'}}
-                        @elseif($fm->membership_applied == 6){{'Honorary Member'}}
-                        @elseif($fm->membership_applied == 7){{'Corporate Member'}}
-                        @elseif($fm->membership_applied == 8){{'Diplomate Member'}}
-                        @elseif($fm->membership_applied == 9){{'Founding Member'}}
-                        @endif
+                        {{$fm->membership_type?->member_type}}
                     </span>
                     <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
                     <small>

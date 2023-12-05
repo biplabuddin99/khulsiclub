@@ -100,22 +100,28 @@
                         </div>
                         <div class="row d-none" id="typeChange">
                             <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                                <label for="member">Member Type</label>
-                                <input type="text" class="form-control" value="{{$decryptedValue}}" disabled>
+                                @foreach (App\Models\MembershipType::where('id',$decryptedType)->get(); as $mt)
+                                    <label for="member">Member Type</label>
+                                    <input type="text" class="form-control" value="{{$mt->member_type}}" disabled>
+                                @endforeach
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                                 <label for="member">New Member Type</label>
                                 <select name="memberType" class="form-control form-select">
                                     <option value="">Select Member Type</option>
-                                        <option value="Life Member">Life Member</option>
-                                        <option value="Permanent Member">Permanent Member</option>
+                                        @forelse ($memberType as $mt)
+                                        <option value="{{$mt->member_type}}">{{$mt->member_type}}</option>
+                                        @empty
+                                        <option value="">No Data Found</option>
+                                        @endforelse
+                                        {{-- <option value="Permanent Member">Permanent Member</option>
                                         <option value="Donor Member">Donor Member</option>
                                         <option value="Service Member">Service Member</option>
                                         <option value="Temporary Member">Temporary Member</option>
                                         <option value="Honorary Member">Honorary Member</option>
                                         <option value="Corporate Member">Corporate Member</option>
                                         <option value="Diplomate Member">Diplomate Member</option>
-                                        <option value="Founding Member">Founding Member</option>
+                                        <option value="Founding Member">Founding Member</option> --}}
                                 </select>
                             </div>
                             <div class="col-12 mb-2">

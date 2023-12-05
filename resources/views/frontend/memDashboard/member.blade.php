@@ -104,7 +104,11 @@
                             <tr>
                                 <th width="45">Membership Type</th>
                                 <td width="2">:</td>
-                                <td width="53">{{ $decryptedValue }}</td>
+                                <td width="53">
+                                    @foreach (App\Models\MembershipType::where('id',$decryptedType)->get(); as $mt)
+                                        {{$mt->member_type}}
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th width="45">Contact No</th>

@@ -12,6 +12,7 @@ use App\Models\MemberChildren;
 use App\Models\terms_of_membership;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\MembershipType;
 use App\Models\payments;
 use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
@@ -30,9 +31,9 @@ class MemberPanel extends Controller
      */
     public function memberProfile()
     {
-        
+        $memberType = MembershipType::all();
         $member=OurMember::where('id',currentUserId())->first();
-        return view('frontend.members.memberProfile',compact('member'));
+        return view('frontend.members.memberProfile',compact('member','memberType'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -42,9 +43,9 @@ class MemberPanel extends Controller
      */
     public function approveMemberProfile()
     {
-        
+        $memberType = MembershipType::all();
         $member=OurMember::where('id',currentUserId())->first();
-        return view('frontend.memDashboard.profile',compact('member'));
+        return view('frontend.memDashboard.profile',compact('member','memberType'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -104,6 +105,7 @@ class MemberPanel extends Controller
      */
     public function memberlist(Request $request, $letter = null)
     {
+        $membership_type = MembershipType::all();
         $search = $request['name']?? "";
         $memberType = $request['member_type'] ?? "";
         $member_id = $request->input('member_id', '');
@@ -134,7 +136,7 @@ class MemberPanel extends Controller
         }
 
         $member = $members->paginate(10);
-        return view('frontend.membership.memberList', compact('member','search','memberType', 'member_id', 'member_name'));
+        return view('frontend.membership.memberList', compact('member','membership_type','search','memberType', 'member_id', 'member_name'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -155,7 +157,8 @@ class MemberPanel extends Controller
      */
     public function changeRequest()
     {
-        return view('frontend.memDashboard.request.request');
+        $memberType = MembershipType::all();
+        return view('frontend.memDashboard.request.request',compact('memberType'));
     }
     /**
      * Show the form for editing the specified resource.
