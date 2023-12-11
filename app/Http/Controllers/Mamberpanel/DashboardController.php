@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mamberpanel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\OurMember; // custome
+use App\Models\OnlinePayment; // custome
 use DB;
 
 class DashboardController extends Controller
@@ -24,6 +25,7 @@ class DashboardController extends Controller
     */
     public function memDashboard(){
         $due=DB::select("SELECT sum( dr - cr ) as due FROM `general_ledgers` WHERE `child_two_id`=(select id from child_twos WHERE child_twos.head_code='1130".currentUserId()."')");
-        return view('frontend.memDashboard.member',compact('due'));
+        $online_payment=OnlinePayment::where("status",1)->sum('amount');
+        return view('frontend.memDashboard.member',compact('due','online_payment'));
     }
 }
