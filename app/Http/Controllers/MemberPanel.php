@@ -149,6 +149,11 @@ class MemberPanel extends Controller
         $data = payments::where('member_id',currentUserId())->paginate(10);
         return view('frontend.memDashboard.payment.history',compact('data'));
     }
+
+    public function member_due()
+    {
+        return view('frontend.memDashboard.payment.memberDue');
+    }
     /**
      * Show the form for editing the specified resource.
      *

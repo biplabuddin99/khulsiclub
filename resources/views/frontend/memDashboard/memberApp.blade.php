@@ -98,7 +98,7 @@ button:focus:not(:focus-visible) {
                                             <ul class="submenu">
                                                 <li class="nav-item"></i><a class="nav-link" href="">Account Status</a></li>
                                                 <li class="nav-item"></i><a class="nav-link" href="{{route('member.payment_history')}}">Payment History</a></li>
-                                                <li class="nav-item"></i><a class="nav-link" href="">Member Due</a></li>
+                                                <li class="nav-item"></i><a class="nav-link" href="{{route('member.member_due_view')}}">Member Due</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="{{route('member.bank')}}">Bank List</a></li>
