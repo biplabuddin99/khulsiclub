@@ -425,6 +425,13 @@
     <script src="{{ asset('OwlCarousel2-2.3.4/owl.carousel.min.js')}}"></script>
     <!-- My JS -->
     <script src="{{ asset('js/app.js')}}"></script>
+    
+  {{-- tostr css --}}
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
+
     @stack('scripts')
   </body>
 </html>

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Mamberpanel;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\OurMember;
 use App\Models\OtherClubDetails;
