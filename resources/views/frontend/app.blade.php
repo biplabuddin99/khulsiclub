@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="{{ asset('OwlCarousel2-2.3.4/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('OwlCarousel2-2.3.4/assets/owl.theme.default.min.css')}}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css')}}?id=1" />
+    @stack('styles')
   </head>
   <body>
   <!-- header section -->
@@ -59,7 +60,7 @@
           </div>
           
           <div class="row d-none d-sm-block">
-            <div class="col-sm-12 col-12 d-flex justify-content-end " >
+            <div class="col-sm-12 col-12 d-flex justify-content-end desktop-menu" >
               
               <nav class="navbar navbar-expand-md navbar-light pb-0">
                 {{-- <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,7 +148,7 @@
             </div> -->
           </div>
           <div class="row d-sm-none">
-            <div class="col-sm-12 col-12 d-flex justify-content-end " >
+            <div class="col-sm-12 col-12 d-flex justify-content-end mobile-menu" >
               
               <nav class="navbar navbar-expand-md navbar-light pb-0">
                 <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -424,7 +425,7 @@
     <script src="{{ asset('OwlCarousel2-2.3.4/vendors/jquery.min.js')}}"></script>
     <script src="{{ asset('OwlCarousel2-2.3.4/owl.carousel.min.js')}}"></script>
     <!-- My JS -->
-    <script src="{{ asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/app.js')}}?id=1"></script>
     
   {{-- tostr css --}}
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">

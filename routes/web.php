@@ -57,6 +57,7 @@ use App\Http\Middleware\isSalesman;
 use App\Http\Controllers\Mamberpanel\DashboardController as memberdash;
 use App\Http\Controllers\Mamberpanel\MemberPanel;
 use App\Http\Controllers\Mamberpanel\sslController as sslcz;
+use App\Http\Controllers\Mamberpanel\AccountReportController as accreport;
 
 /*
 |--------------------------------------------------------------------------
@@ -214,7 +215,6 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::post('/password_update', [MemberPanel::class,'mem_pass_update'])->name('member.passwordUpdate');
         Route::get('/memberPrint', [MemberPanel::class,'mem_regi_success'])->name('member.registration.success');
         Route::get('/bank-list', [MemberPanel::class,'bankList'])->name('member.bank');
-        Route::get('/payment-history', [MemberPanel::class,'paymentHistory'])->name('member.payment_history');
         Route::get('/online-help', [MemberPanel::class,'helpDesk'])->name('member.help');
         Route::get('/change-request', [MemberPanel::class,'changeRequest'])->name('member.request');
         Route::post('/online-help-submited', [MemberPanel::class,'memberContactUs'])->name('member.help.store');
@@ -226,6 +226,9 @@ Route::group(['middleware'=>isMember::class],function(){
         /* online payment */
         // ssl Routes
         Route::post('/deposit/ssl/submit', [sslcz::class,'store'])->name('deposit.ssl.submit');
+        /**account report */
+        Route::get('/account-statement', [accreport::class,'statement'])->name('member.account_statement');
+        Route::get('/online-payment-history', [accreport::class,'onlinePaymentHistory'])->name('member.online_payment_history');
 
     });
 });

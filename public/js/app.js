@@ -1,15 +1,15 @@
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();
     if (window.scrollY > 100 && !$(".scicon").hasClass('d-md-none')) {
-        $("header").addClass('sticky-top');
-        $(".scicon").addClass('d-md-none');
-        $(".small-view").addClass('small-view-nav');
-        $('.logo-sec').addClass('shrink');
+      $("header").addClass('sticky-top');
+      $(".scicon").addClass('d-md-none');
+      $(".small-view").addClass('small-view-nav');
+      $('.logo-sec').addClass('shrink');
 	} else if (window.scrollY < 100) {
-        $("header").removeClass('sticky-top');
-    	$(".scicon").removeClass('d-md-none');
+      $("header").removeClass('sticky-top');
+      $(".scicon").removeClass('d-md-none');
       $(".small-view").removeClass('small-view-nav');
-        $('.logo-sec').removeClass('shrink');
+      $('.logo-sec').removeClass('shrink');
 	}
   
 });
@@ -49,19 +49,28 @@ $(document).ready(function() {
   });
 
 });
-//Member profile jQuery end
 
-var activeurl = window.location;
-$('a[href="'+activeurl+'"]').addClass('active');
-$('a[href="'+activeurl+'"]').closest('li').addClass('activeLi');
+document.addEventListener("DOMContentLoaded", function() {
 
-
+  $(".mobile-menu .nav-item.dropdown").each(function(dropdownItem) {
+    $(this).click(function(event) {
+      event.preventDefault();
+      if($(this).hasClass('open-dropdown')){
+        $(this).removeClass('open-dropdown')
+        $(this).find('.dropdown-menu').hide('slow')
+      }else{
+        $(this).addClass('open-dropdown');
+        $(this).find('.dropdown-menu').show('slow')
+      }
+    });
+  });
+});
 // document.addEventListener("DOMContentLoaded", function() {
-//   const dropdownItems = document.querySelectorAll(".nav-item.dropdown");
+//   const dropdownItems = ;
 //   let openDropdown = null;
 
-//   dropdownItems.forEach(function(dropdownItem) {
-//     const dropdownMenu = dropdownItem.querySelector(".dropdown-menu");
+//   $(".mobile-menu .nav-item.dropdown").each(function(dropdownItem) {
+//     const dropdownMenu = $(this).find(".dropdown-menu");
 
 //     dropdownItem.addEventListener("click", function(event) {
 //       event.preventDefault();
@@ -79,3 +88,9 @@ $('a[href="'+activeurl+'"]').closest('li').addClass('activeLi');
 //     });
 //   });
 // });
+
+//Member profile jQuery end
+
+var activeurl = window.location;
+$('a[href="'+activeurl+'"]').addClass('active');
+$('a[href="'+activeurl+'"]').closest('li').addClass('activeLi');

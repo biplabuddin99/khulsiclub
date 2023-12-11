@@ -6,7 +6,7 @@
         <div class="col-12 member-service">
             <div class="card shadow-sm ">
                 <div class="card-header mem-password">
-                    <h5>Payemnt History</h5>
+                    <h5>Payment History</h5>
                 </div>
                 <div class="card-body table-responsive">
                     <table class="table table-bordered mb-0">
@@ -18,30 +18,34 @@
                                 <th scope="col">{{__('PURPOSE')}}</th>
                                 <th scope="col">{{__('AMOUNT')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
-                                <th class="white-space-nowrap">{{__('Action') }}</th>
+                                <th class="white-space-nowrap">{{__('Invoice') }}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($data as $b)
                             <tr class="text-center">
                             <th scope="row">{{ ++$loop->index }}</th>
-                                <td>{{$b->apply_date}}</td>
-                                <td>{{$b->invoice_id}}</td>
-                                <td>{{$b->ppurpose?->purpose}}</td>
-                                <td>{{$b->ppurpose?->amount}}</td>
-                                @if($b->status == 0)
-                                    <td class="text-danger fw-bold">Pending</td>
-                                @else
-                                    <td class="text-success fw-bold">Paid</td>
-                                @endif
-                                <td>
-                                    <a class="btn btn-sm btn-info text-white" href="#">Invoice</a>
-                                    @if($b->status == 0)
-                                        <a class="btn btn-sm btn-success text-white" href="#">Check Out</a>
-                                    @else
+                                <td>{{date('d M,Y',strtotime($b->created_at))}}</td>
+                                <td>{{$b->txnid}}</td>
+                                <td>Due Payment</td>
+                                <td>{{$b->amount}}</td>
+                                @if($b->status == 1)
+                                    <td class="text-danger fw-bold">In Review</td>
+                                    <td></td>
+                                @elseif($b->status == 3)
+                                    <td class="text-danger fw-bold">Paid</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info text-white" href="#">Invoice</a>
                                         <a class="btn btn-sm btn-success text-white" href="#">Money Receipts</a>
-                                    @endif
-                                </td>
+                                    </td>
+                                @elseif($b->status == 0)
+                                    <td class="text-success fw-bold">Pending</td>
+                                    <td></td>
+                                @else
+                                    <td class="text-success fw-bold">Fail</td>
+                                    <td></td>
+                                @endif
+                                
                             </tr>
                             @empty
                             <tr>
