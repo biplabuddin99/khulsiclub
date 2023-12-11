@@ -75,8 +75,10 @@
                                 <th width="40">Total Dues</th>
                                 <td width="2">:</td>
                                 <td width="50">
-                                    @if($due)
+                                    @if($due && ($due[0]->due - $online_payment) > 0)
                                         {{$due[0]->due - $online_payment}}
+                                    @else
+                                        0.00
                                     @endif
                                 </td>
                                 <td width="8" class="text-end"><a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" href="javascript:void(0)">Pay Now</a></td>
