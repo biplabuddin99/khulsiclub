@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $(".mobile-menu .nav-item.dropdown").each(function(dropdownItem) {
     $(this).click(function(event) {
-      event.preventDefault();
+      // event.preventDefault();
       if($(this).hasClass('open-dropdown')){
         $(this).removeClass('open-dropdown')
         $(this).find('.dropdown-menu').hide('slow')
