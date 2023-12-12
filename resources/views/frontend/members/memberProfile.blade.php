@@ -278,7 +278,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
-                                                <div class="py-2">
+                                                <div class="table-responsive py-2">
                                                     <label for="detailschildresns" class="mt-3">Details of Children:(Must be Added with Birth Certificate copy):</label>
                                                     <table class="table table-striped mb-3">
                                                         <thead>
@@ -481,7 +481,7 @@
                                         <!-- Step 4 -->
                                         <div class="row">
                                             <div class="col-lg-12 col-sm-12 col-md-12">
-                                                <div class="py-2">
+                                                <div class="table-responsive py-2">
                                                     <label for="detailschildresns" class="mt-3 text-uppercase"><b>Details of Other Club Membership (If any)</b>:</label>
                                                     <table class="table table-striped mb-3">
                                                         <thead>

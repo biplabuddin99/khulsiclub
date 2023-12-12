@@ -275,7 +275,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
-                                                <div class="py-2">
+                                                <div class="table-responsive py-2">
                                                     <label for="detailschildresns" class="mt-3">Details of Children:(Must be Added with Birth Certificate copy):</label>
                                                     <table class="table table-striped mb-3">
                                                         <thead>
@@ -398,15 +398,14 @@
                                                 <h5 class="text-uppercase m-0"><b>Category Of Membership</b></h5>
                                             </div>
                                             @forelse ($memberType as $mt)
-                                                
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" id="type{{$mt->id}}" name="categorymembership" value="{{$mt->id}}" {{ old('categorymembership',$member->membership_applied)=="$mt->id" ? "checked":"" }}>
                                                     <label for="type{{$mt->id}}">{{$mt->member_type}}</label>
                                                 </div>
                                             </div>
                                             @empty
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <input type="radio" name="categorymembership" value="1" {{ old('categorymembership')=="1" ? "checked":"" }} disabled>
                                                     <label for="donermember">No Data Found</label>

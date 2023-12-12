@@ -8,7 +8,7 @@
                 <div class="card-header mem-password">
                     <h5>Bank List</h5>
                 </div>
-                <div class="card-body">
+                <div class="table-responsive card-body">
                     <table class="table table-bordered mb-0">
                         <thead>
                             <tr class="text-center bg-danger text-white">
