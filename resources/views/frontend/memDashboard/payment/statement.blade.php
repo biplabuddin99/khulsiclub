@@ -87,7 +87,6 @@
 									<td class="tbl_border">Trans Date</td>
 									<td class="tbl_border">Voucher No</td>
 									<td class="tbl_border">Particulars</td>
-									<td class="tbl_border">Purpose</td>
 									<td class="tbl_border">Due</td>
 									<td class="tbl_border">Pay</td>
 									<td class="tbl_border">Balance</td>
@@ -100,7 +99,6 @@
 								@php if($opening_bal>0) $sumdr+=$opening_bal; else $sumcr+=$opening_bal; @endphp
 									<tr class="tbl_border">
 										<td class="tbl_border">{{date("d M, Y",strtotime($startDate))}}</td>
-										<td class="tbl_border"></td>
 										<td class="tbl_border"></td>
 										<td class="tbl_border">B/F</td>
 										<td class="tbl_border"></td>
@@ -123,7 +121,6 @@
 										<tr class="tbl_border">
 											<td class="tbl_border">{{date("d M, Y",strtotime($acc->rec_date))}}</td>
 											<td class="tbl_border">{{$acc->jv_id}}</td>
-											<td class="tbl_border">{{$acc->journal_title}}</td>
 											<td class="tbl_border">{{$acc->purpose}}</td>
 											<td class="tbl_border">{{money_format((float)$acc->dr, 2, '.', '')}} @php $deb+=$acc->dr; @endphp</td>
 											<td class="tbl_border">{{money_format((float)$acc->cr, 2, '.', '')}} @php $cre+=$acc->cr; @endphp</td>

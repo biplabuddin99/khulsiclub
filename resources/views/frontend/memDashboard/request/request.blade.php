@@ -100,7 +100,7 @@
                         </div>
                         <div class="row d-none" id="typeChange">
                             <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                                @foreach (App\Models\MembershipType::where('id',$decryptedType)->get(); as $mt)
+                                @foreach (App\Models\MembershipType::where('id',$decryptedType)->get() as $mt)
                                     <label for="member">Member Type</label>
                                     <input type="text" class="form-control" value="{{$mt->member_type}}" disabled>
                                 @endforeach
