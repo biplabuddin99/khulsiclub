@@ -81,14 +81,14 @@
                                         0.00
                                     @endif
                                 </td>
-                                <td width="8" class="text-end"><a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" href="javascript:void(0)">Pay Now</a></td>
+                                <td width="8" class="text-end"><a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#duepayment" href="javascript:void(0)">Pay Now</a></td>
                             </tr>
                         </table>
                     </div>
                 </div>
   
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="duepayment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <form action="{{route('deposit.ssl.submit')}}" method="post"> @csrf
@@ -99,7 +99,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="">Amount</label>
-                                        <input type="text" name="amount" id="" value="@if($due){{$due[0]->due}}@endif">
+                                        <input type="text" name="amount" readonly id="" value="@if($due){{$due[0]->due}}@endif">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
