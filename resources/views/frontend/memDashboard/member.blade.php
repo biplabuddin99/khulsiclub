@@ -99,7 +99,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="">Amount</label>
-                                        <input type="text" name="amount" readonly id="" value="@if($due){{$due[0]->due}}@endif">
+                                        <input type="text" name="amount" class="form-control" readonly id="" value="@if($due){{$due[0]->due}}@endif">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
