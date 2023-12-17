@@ -75,41 +75,19 @@
                                 <th width="40">Total Dues</th>
                                 <td width="2">:</td>
                                 <td width="50">
-                                    @if($due && ($due[0]->due - $online_payment) > 0)
-                                        {{$due[0]->due - $online_payment}}
+                                    @if($due)
+                                        {{$due}}
                                     @else
                                         0.00
                                     @endif
                                 </td>
-                                <td width="8" class="text-end"><a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#duepayment" href="javascript:void(0)">Pay Now</a></td>
+                                <td width="8" class="text-end"><a class="btn btn-sm btn-primary" href="{{route('deposit.ssl.submit')}}">Pay Now</a></td>
                             </tr>
                         </table>
                     </div>
                 </div>
   
-                <!-- Modal -->
-                <div class="modal fade" id="duepayment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form action="{{route('deposit.ssl.submit')}}" method="post"> @csrf
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Pay your due</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="">Amount</label>
-                                        <input type="text" name="amount" class="form-control" readonly id="" value="@if($due){{$due[0]->due}}@endif">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Pay Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
                 
                 <div class="card company-info shadow-sm mb-3">
                     <div class="card-header">

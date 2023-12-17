@@ -6,26 +6,39 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\OurMember;
 use App\Models\OnlinePayment;
+use App\Models\Accounts\MemberInvoice;
+use App\Models\Accounts\MemberVoucher;
+use App\Models\Accounts\MemberVoucherBkdn;
+use App\Models\Accounts\GeneralLedger;
+use App\Models\Accounts\GeneralVoucher;
+use App\Models\Accounts\Child_two;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class sslController extends Controller
 {
     public function store(Request $request){
         $user = OurMember::findOrFail(currentUserId());
         $txnid = "SSLCZ_TXN_".uniqid();
-        $item_amount = $request->amount;
+        $due=MemberInvoice::where("status",0)->where("member_id",currentUserId())->sum('total_amount');
+        $due_id=MemberInvoice::where("status",0)->where("member_id",currentUserId())->pluck('id')->toArray();
+
+        $item_amount = $due;
 
         //$settings = Generalsetting::findOrFail(1);
-
+        if(count($due_id) <= 0){
+            return redirect()->back();
+        }
       
         $deposit = new OnlinePayment;
         $deposit->member_id = $user->id;
         $deposit->currency = "BDT";
         $deposit->currency_code = "BDT";
-        $deposit->amount = $request->amount;
+        $deposit->amount = $due;
         $deposit->currency_value = 1;
         $deposit->method = 'SSLCommerz';
         $deposit->txnid = $txnid;
+        $deposit->invoice_id = implode(',',$due_id);
         $deposit->save();
         
 
@@ -128,6 +141,10 @@ class sslController extends Controller
 
             // store in transaction table
             if ($deposit->status == 1) {
+                $invoice_id=explode(',',$deposit->invoice_id);
+                foreach($invoice_id as $inv){
+                    $this->invoice_payment($inv,$deposit->txnid);
+                }
                 
             }
             \Toastr::success('Payment done!');
@@ -154,5 +171,134 @@ class sslController extends Controller
                     'image'=>encryptor('encrypt',$member->image)
                 ]
             );
+    }
+
+    public function create_voucher_no(){
+		$voucher_no="";
+		$query = GeneralVoucher::latest()->first();
+		if(!empty($query)){
+		    $voucher_no = $query->voucher_no;
+			$voucher_no+=1;
+			$gv=new GeneralVoucher;
+			$gv->voucher_no=$voucher_no;
+			if($gv->save())
+				return $voucher_no;
+			else
+				return $voucher_no="";
+		}else {
+			$voucher_no=10000001;
+			$gv=new GeneralVoucher;
+			$gv->voucher_no=$voucher_no;
+			if($gv->save())
+				return $voucher_no;
+			else
+				return $voucher_no="";
+		}
+    }
+
+    /* payment invoice voucher */
+    public function invoice_payment($id,$txnid)
+    {
+        DB::beginTransaction();
+        try{
+            $commitflag=0;
+
+            $voucher_no = $this->create_voucher_no();
+            if(!empty($voucher_no)){
+                $fee= MemberInvoice::find($id);
+
+                $jv=new MemberVoucher;
+                $jv->voucher_no=$voucher_no;
+                $jv->member_id=$fee->member_id;
+                $jv->txnid=$txnid;
+
+                $jv->current_date=\Carbon\Carbon::now()->format('Y-m-d');
+
+                $jv->eyear=$fee->year;
+                $jv->emonth=$fee->month;
+                $jv->pay_name="";
+                $jv->purpose=$fee->purpose." Payment";
+                $jv->credit_sum=$fee->total_amount;
+                $jv->debit_sum=$fee->total_amount;
+                $jv->created_by=currentUserId();
+                if($jv->save()){
+                    /* debit side */
+                    $jvb=new MemberVoucherBkdn;
+                    $jvb->member_id=$fee->member_id;
+                    $jvb->eyear=$fee->year;
+                    $jvb->emonth=$fee->month;
+                    $jvb->member_voucher_id=$jv->id;
+                    $jvb->particulars="Received from";
+                    $jvb->account_code="1121-Online Payment";
+                    $jvb->table_name="child_twos";
+                    $jvb->table_id="27";
+                    $jvb->debit=$fee->total_amount;
+                    if($jvb->save()){
+                        $gl=new GeneralLedger;
+                        $gl->member_voucher_id=$jv->id;
+                        $gl->journal_title=$jv->purpose;
+                        $gl->rec_date=$jv->current_date;
+                        $gl->jv_id=$voucher_no;
+                        $gl->member_voucher_bkdn_id=$jvb->id;
+                        $gl->created_by=currentUserId();
+                        $gl->dr=$fee->total_amount;
+                        $gl->child_two_id="27";
+                        $gl->save();
+                    }
+                    
+                    
+                    /* credit side */
+                    $headdata=Child_two::where('head_code',"1130".$fee->member_id)->first();
+                    
+                    $jvb=new MemberVoucherBkdn;
+                    $jvb->member_id=$fee->member_id;
+                    $jvb->eyear=$fee->year;
+                    $jvb->emonth=$fee->month;
+                    $jvb->member_voucher_id=$jv->id;
+                    $jvb->particulars="Due Payment";
+                    $jvb->account_code=$headdata->head_code.'-'.$headdata->head_name;
+                    $jvb->table_name="child_twos";
+                    $jvb->table_id=$headdata->id;
+                    $jvb->credit=$fee->total_amount;
+                    if($jvb->save()){
+                        $gl=new GeneralLedger;
+                        $gl->member_voucher_id=$jv->id;
+                        $gl->journal_title=$jv->purpose;
+                        $gl->rec_date=$jv->current_date;
+                        $gl->jv_id=$voucher_no;
+                        $gl->member_voucher_bkdn_id=$jvb->id;
+                        $gl->created_by=currentUserId();
+                        $gl->cr=$fee->total_amount;
+                        $gl->child_two_id=$jvb->table_id;
+                        $gl->save();
+                        $commitflag=1;
+                    }
+                    
+                    /* update jv id to invice details table */
+                    $fee->status=1;
+                    $fee->jv_id=$jv->id;
+                    $fee->save();
+                }
+                
+                if($commitflag==1){
+                    DB::commit();
+                    //Toastr::success('Update Successfully!');
+                    return true;
+                }else{
+                    DB::rollback();
+                    //Toastr::warning('Please try Again!');
+                    return false;
+                }
+            }else{
+                //Toastr::warning('Please try Again!');
+                return false;
+            }
+        }catch (Exception $e){
+            DB::rollback();
+            //Toastr::warning('Please try Again!');
+            // dd($e);
+            return false;
+
+        }
     }
 }

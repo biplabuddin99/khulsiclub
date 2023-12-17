@@ -225,7 +225,7 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/request-history', [changeReq::class,'requetHistory'])->name('member.request_history');
         /* online payment */
         // ssl Routes
-        Route::post('/deposit/ssl/submit', [sslcz::class,'store'])->name('deposit.ssl.submit');
+        Route::get('/deposit/ssl/submit', [sslcz::class,'store'])->name('deposit.ssl.submit');
         /**account report */
         Route::get('/account-statement', [accreport::class,'statement'])->name('member.account_statement');
         Route::get('/online-payment-history', [accreport::class,'onlinePaymentHistory'])->name('member.online_payment_history');
