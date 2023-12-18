@@ -14,6 +14,7 @@ use App\Models\MemberChildren;
 use App\Models\terms_of_membership;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\CRM\MemberInvoice;
 use App\Models\MembershipType;
 use App\Models\OnlinePayment;
 use Illuminate\Support\Facades\Validator;
@@ -145,6 +146,12 @@ class MemberPanel extends Controller
     public function member_due()
     {
         return view('frontend.memDashboard.payment.memberDue');
+    }
+
+    public function memberInvoice($id)
+    {
+        $data = MemberInvoice::where('member_id',$id)->get();
+        return view('frontend.memDashboard.payment.memberInvoice',compact('data'));
     }
     /**
      * Show the form for editing the specified resource.

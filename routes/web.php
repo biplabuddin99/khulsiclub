@@ -219,6 +219,7 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/change-request', [MemberPanel::class,'changeRequest'])->name('member.request');
         Route::post('/online-help-submited', [MemberPanel::class,'memberContactUs'])->name('member.help.store');
         Route::get('/member-due-view', [MemberPanel::class,'member_due'])->name('member.member_due_view');
+        Route::get('/member-invoice-view/{id}', [MemberPanel::class,'memberInvoice'])->name('member.member_invoice_view');
         
         Route::resource('changeReq',changeReq::class,['as'=>'member']);
         Route::get('/pending-request', [changeReq::class,'pendingRequest'])->name('member.pending_request');
