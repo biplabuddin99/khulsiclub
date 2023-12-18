@@ -320,6 +320,63 @@
                                         <!-- Step 3 -->
                                         <div class="row">
                                             <div class="section-heading">
+                                                <h5 class="text-uppercase m-0"><b>Nominee Information</b></h5>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Name:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_name')}}" name="nominee_name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Relation:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_relation')}}" name="nominee_relation">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Occupation:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_occupation')}}" name="nominee_occupation">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Date Of Birth:</label>
+                                                    <input type="date"class="form-control" value="{{ old('nominee_date_of_birth')}}" name="nominee_date_of_birth">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Place:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_place')}}" name="nominee_place">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Email:</label>
+                                                    <input type="email"class="form-control" value="{{ old('nominee_email')}}" name="nominee_email">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Phone:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_phone')}}" name="nominee_phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">NID NO:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_nid_no')}}" name="nominee_nid_no">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Passport NO:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_passport_no')}}" name="nominee_passport_no">
+                                                </div>
+                                            </div>
+                                            <div class="section-heading">
                                                 <h5 class="text-uppercase m-0"><b>Profession Information</b></h5>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -401,60 +458,6 @@
                                                 </div>
                                             </div>
                                             @endforelse
-                                            {{-- <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="donermember" name="categorymembership" value="1" {{ old('categorymembership')=="1" ? "checked":"" }}>
-                                                    <label for="donermember">Donor Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="servicemember" name="categorymembership" value="2" {{ old('categorymembership')=="2" ? "checked":"" }}>
-                                                    <label for="servicemember">Service Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="lifemember" name="categorymembership" value="3" {{ old('categorymembership')=="3" ? "checked":"" }}>
-                                                    <label for="lifemember">Life Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="temporarymember" name="categorymembership" value="4" {{ old('categorymembership')=="4" ? "checked":"" }}>
-                                                    <label for="temporarymember">Temporary Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="permanentmember" name="categorymembership" value="5" {{ old('categorymembership')=="5" ? "checked":"" }}>
-                                                    <label for="permanentmember">Permanent Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="honorarymember" name="categorymembership" value="6" {{ old('categorymembership')=="6" ? "checked":"" }}>
-                                                    <label for="honorarymember">Honorary Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="cprporatemember" name="categorymembership" value="7" {{ old('categorymembership')=="7" ? "checked":"" }}>
-                                                    <label for="cprporatemember">Corporate Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="diplomatedmember" name="categorymembership" value="8" {{ old('categorymembership')=="8" ? "checked":"" }}>
-                                                    <label for="diplomatedmember">Diplomate and Foreing National Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="foundingmember" name="categorymembership" value="9" {{ old('categorymembership')=="9" ? "checked":"" }}>
-                                                    <label for="foundingmember">Founding Member</label>
-                                                </div>
-                                            </div> --}}
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                                             <button type="button" class="btn btn-info text-white me-2">Save as Draft</button>
