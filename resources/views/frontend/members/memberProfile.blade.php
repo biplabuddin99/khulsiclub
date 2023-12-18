@@ -335,6 +335,63 @@
                                         <!-- Step 3 -->
                                         <div class="row">
                                             <div class="section-heading">
+                                                <h5 class="text-uppercase m-0"><b>Nominee Information</b></h5>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Name:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_name',$member->nominee_name)}}" name="nominee_name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Relation:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_relation',$member->nominee_relation)}}" name="nominee_relation">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Occupation:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_occupation',$member->nominee_occupation)}}" name="nominee_occupation">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Date Of Birth:</label>
+                                                    <input type="date"class="form-control" value="{{ old('nominee_date_of_birth',$member->nominee_date_of_birth)}}" name="nominee_date_of_birth">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Place:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_place',$member->nominee_place)}}" name="nominee_place">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Email:</label>
+                                                    <input type="email"class="form-control" value="{{ old('nominee_email',$member->nominee_email)}}" name="nominee_email">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Phone:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_phone',$member->nominee_phone)}}" name="nominee_phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">NID NO:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_nid_no',$member->nominee_nid_no)}}" name="nominee_nid_no">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="nominee">Passport NO:</label>
+                                                    <input type="text"class="form-control" value="{{ old('nominee_passport_no',$member->nominee_passport_no)}}" name="nominee_passport_no">
+                                                </div>
+                                            </div>
+                                            <div class="section-heading">
                                                 <h5 class="text-uppercase m-0"><b>Profession Information</b></h5>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">

@@ -399,6 +399,41 @@
                 </tbody>
             </table>
             <div>
+                <h4 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>NOMINEE INFORMATION</b></h4>
+            </div>
+            <table class = "gfg2" style=" width:100%">
+                <tbody >
+                    <tr>
+                        <td style="text-align: left;">Name:</td>
+                        <td colspan="5"><input type="text" class="tinput" value="{{ $show_data->nominee_name }}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Relation:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_relation }}"></td>
+                        <td style="text-align: left; padding-left:5px;">Occupation:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_occupation }}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Dath Of Birth:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_date_of_birth }}"></td>
+                        <td style="text-align: left; padding-left:5px;">Place:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Email:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_email }}"></td>
+                        <td style="text-align: left; padding-left:5px;">Phone:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_phone }}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">NID NO:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_nid_no }}"></td>
+                        <td style="text-align: left; padding-left:5px;">Passport No:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_passport_no }}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
                 <h4 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>PROFESSION INFORMATION</b></h4>
             </div>
             <table class = "gfg2" style=" width:100%">
