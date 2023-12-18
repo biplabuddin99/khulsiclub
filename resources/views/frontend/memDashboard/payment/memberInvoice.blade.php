@@ -29,13 +29,14 @@
                                 <td>{{$b->total_amount}}</td>
                                 @if($b->status == 1)
                                     <td class="text-success fw-bold">Paid</td>
+                                    <td></td>
                                 @elseif($b->status == 2)
-                                    <td class="text-warning fw-bold">Request to check</td>
+                                    <td class="text-info fw-bold">Request to check</td>
+                                    <td><a class="btn btn-sm btn-danger" href="#">Check Now</a></td>
                                 @else
                                     <td class="text-danger fw-bold">Pending</td>
+                                    <td><a class="btn btn-sm btn-danger" href="#">Pay Now</a></td>
                                 @endif
-                                <td><a class="btn btn-sm btn-danger" href="#">Pay Now</a></td>
-                                
                             </tr>
                             @empty
                             <tr>
