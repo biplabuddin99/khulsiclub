@@ -97,7 +97,7 @@ button:focus:not(:focus-visible) {
                                         <li class="nav-item"><i class="bi bi-chevron-double-right"></i><a class="nav-link" id="side-1-menu" href="">Payments <span class="down-arrow"><i class="bi bi-chevron-right"></i></span></a>
                                             <ul class="submenu">
                                                 <li class="nav-item"></i><a class="nav-link" href="{{route('member.account_statement')}}">Account Statement</a></li>
-                                                <li class="nav-item"></i><a class="nav-link" href="{{route('member.online_payment_history')}}">Online Payment History</a></li>
+                                                <li class="nav-item"></i><a class="nav-link" href="{{route('member.online_payment_history')}}">Payment History</a></li>
                                                 <li class="nav-item"></i><a class="nav-link" href="{{route('member.member_invoice_view',encryptor('decrypt', request()->session()->get('userId')))}}">Invoice</a></li>
                                             </ul>
                                         </li>
