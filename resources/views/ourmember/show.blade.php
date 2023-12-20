@@ -498,7 +498,7 @@
                 </tbody>
             </table>
             <div>
-                <h3 class="section-heading" style="margin-top: 3rem;"><b>CATEGORY OF MEMBERSHIP</b></h3>
+                <h3 class="section-heading" style="margin-top: 5rem;"><b>CATEGORY OF MEMBERSHIP</b></h3>
             </div>
             <div style="padding-left: 40px; margin-bottom: 0rem; padding-bottom:1rem;">
                 <table class = "gfg4" style=" width:100%">
