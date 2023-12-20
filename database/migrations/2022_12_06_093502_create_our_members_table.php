@@ -41,10 +41,12 @@ return new class extends Migration
             $table->string('e_tin_number')->nullable();
             $table->string('village')->nullable();
             $table->string('block')->nullable();
+            $table->text('address')->nullable();
             $table->string('police_station')->nullable();
             $table->string('post_office')->nullable();
             $table->string('perVillage')->nullable();
             $table->string('perBlock')->nullable();
+            $table->text('perAddress')->nullable();
             $table->string('perPoliceStation')->nullable();
             $table->string('perPostOffice')->nullable();
             $table->string('perPostalCode')->nullable();
@@ -55,6 +57,7 @@ return new class extends Migration
             $table->string('company')->nullable();
             $table->string('profVillage')->nullable();
             $table->string('profBlock')->nullable();
+            $table->text('profAddress')->nullable();
             $table->string('profPoliceStation')->nullable();
             $table->string('profPostOffice')->nullable();
             $table->string('profPostalCode')->nullable();

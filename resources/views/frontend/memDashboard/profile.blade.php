@@ -64,6 +64,15 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label class="pb-2" for="mothersName">Marital Status</label><br>
+                                                    <input type="radio"  name="marit_status" value="0" {{ old('marit_status',$member->marital_status)=="0" ? "checked":"" }}>
+                                                    <label for="">Single</label>
+                                                    <input type="radio"  name="marit_status" value="1" {{ old('marit_status',$member->marital_status)=="1" ? "checked":"" }}>
+                                                    <label for="">Married</label>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <fieldset>
                                                     <legend>Marital Status</legend>
                                                     <input type="radio"  name="marit_status" value="0" {{ old('marit_status',$member->marital_status)=="0" ? "checked":"" }}>
@@ -71,7 +80,7 @@
                                                     <input type="radio"  name="marit_status" value="1" {{ old('marit_status',$member->marital_status)=="1" ? "checked":"" }}>
                                                     <label for="">Married</label>
                                                 </fieldset>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="anniversary">Anniversary:</label>

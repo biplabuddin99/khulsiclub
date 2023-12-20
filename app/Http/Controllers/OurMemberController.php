@@ -85,6 +85,7 @@ class OurMemberController extends Controller
             $member->e_tin_number=$request->tinNo;
             $member->village=$request->vill;
             $member->block=$request->block;
+            $member->address=$request->address;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
             $member->postalCode=$request->postalCode;
@@ -92,6 +93,7 @@ class OurMemberController extends Controller
             $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
+            $member->perAddress=$request->perAddress;
             $member->perPoliceStation=$request->perPoliceStation;
             $member->perPostOffice=$request->perPostOffice;
             $member->perPostalCode=$request->perPostalCode;
@@ -111,6 +113,7 @@ class OurMemberController extends Controller
             $member->nominee_passport_no=$request->nominee_passport_no;
             $member->profVillage=$request->profVillage;
             $member->profBlock=$request->profBlock;
+            $member->profAddress=$request->profAddress;
             $member->profPoliceStation=$request->profPoliceStation;
             $member->profPostOffice=$request->profPostOffice;
             $member->profPostalCode=$request->profPostalCode;
@@ -145,6 +148,12 @@ class OurMemberController extends Controller
                 $data = rand(111,999).time().'.'.$request->etin->extension();
                 $request->etin->move(public_path('uploads/etin'), $data);
                 $member->etin=$data;
+            }
+
+            if($request->hasFile('nominee_photo')){
+                $data = rand(111,999).time().'.'.$request->nominee_photo->extension();
+                $request->nominee_photo->move(public_path('uploads/nominee'), $data);
+                $member->nominee_photo=$data;
             }
            
             $member->show_font=0;
@@ -254,6 +263,7 @@ class OurMemberController extends Controller
             $member->e_tin_number=$request->tinNo;
             $member->village=$request->vill;
             $member->block=$request->block;
+            $member->address=$request->address;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
             $member->postalCode=$request->postalCode;
@@ -261,6 +271,7 @@ class OurMemberController extends Controller
             $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
+            $member->perAddress=$request->perAddress;
             $member->perPoliceStation=$request->perPoliceStation;
             $member->perPostOffice=$request->perPostOffice;
             $member->perPostalCode=$request->perPostalCode;
@@ -280,6 +291,7 @@ class OurMemberController extends Controller
             $member->nominee_passport_no=$request->nominee_passport_no;
             $member->profVillage=$request->profVillage;
             $member->profBlock=$request->profBlock;
+            $member->profAddress=$request->profAddress;
             $member->profPoliceStation=$request->profPoliceStation;
             $member->profPostOffice=$request->profPostOffice;
             $member->profPostalCode=$request->profPostalCode;
@@ -319,6 +331,14 @@ class OurMemberController extends Controller
                 $data = rand(111,999).time().'.'.$request->etin->extension();
                 $request->etin->move(public_path('uploads/etin'), $data);
                 $member->etin=$data;
+            }
+
+            $path5='uploads/nominee';
+            if($request->hasFile('nominee_photo')){
+                $this->deleteImage($member->nominee_photo,$path5);
+                $data = rand(111,999).time().'.'.$request->nominee_photo->extension();
+                $request->nominee_photo->move(public_path('uploads/nominee'), $data);
+                $member->nominee_photo=$data;
             }
 
             $member->show_font=$request->show_font;

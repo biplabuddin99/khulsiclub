@@ -14,15 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::table('our_members', function (Blueprint $table) {
-            $table->text('nominee_name')->after('company')->nullable();
-            $table->text('nominee_relation')->after('nominee_name')->nullable();
-            $table->text('nominee_occupation')->after('nominee_relation')->nullable();
+            $table->string('nominee_name')->after('company')->nullable();
+            $table->string('nominee_relation')->after('nominee_name')->nullable();
+            $table->string('nominee_occupation')->after('nominee_relation')->nullable();
             $table->date('nominee_date_of_birth')->after('nominee_occupation')->nullable();
-            $table->text('nominee_place')->after('nominee_date_of_birth')->nullable();
-            $table->text('nominee_email')->after('nominee_place')->nullable();
-            $table->text('nominee_phone')->after('nominee_email')->nullable();
-            $table->text('nominee_nid_no')->after('nominee_phone')->nullable();
-            $table->text('nominee_passport_no')->after('nominee_nid_no')->nullable();
+            $table->string('nominee_place')->after('nominee_date_of_birth')->nullable();
+            $table->string('nominee_email')->after('nominee_place')->nullable();
+            $table->string('nominee_phone')->after('nominee_email')->nullable();
+            $table->string('nominee_nid_no')->after('nominee_phone')->nullable();
+            $table->string('nominee_passport_no')->after('nominee_nid_no')->nullable();
+            $table->string('nominee_photo')->after('nominee_passport_no')->nullable();
         });
     }
 

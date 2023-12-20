@@ -10,12 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: "Courier New Bold V1";
+            src: url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.eot");
+            src: url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.svg#Courier New Bold V1")format("svg");
+        }
         @media print
         {    
             .no-print, .no-print *
             {
                 display: none !important;
             }
+        }
+        .nomineeinput {
+            width: 115%;
+            outline: 0;
+            border-style: dashed;
+            border-width: 0 0 1px;
+            border-color: blue;
+            background-color: transparent;
         }
         .tinput {
             width: 100%;
@@ -27,7 +44,8 @@
         }
         input:focus {
             border-color: green;
-            font-family: Montserrat !important;
+            /* font-family: Montserrat !important; */
+            font-family: "Courier New Bold V1";
         }
 
 
@@ -71,25 +89,23 @@
             padding: 10px;
         }
         .pdiv p{
-            font-family: 'Times New Roman', Times, serif !important;
+            /* font-family: 'Times New Roman', Times, serif !important; */
+            font-family: "Courier New Bold V1";
         }
-        .pbox{
+        .pbox {
             width: 120px;
             height: 114px;
-            /* border-style: solid;
-            border-radius: 1rem;
-            border-width: 2px;
-            border-color: #3939b3; */
             text-align: center;
             position: absolute;
-            bottom: 9px;
-            right: 80px;
+            bottom: 42px;
+            right: 47px;
             background-color: rgb(248, 239, 239);
             padding-bottom: 6px;
-            padding-top: 26px;
+            padding-top: 1px;
         }
         .font{
-            font-family: AdmiralScriptW01-Regular;
+            /* font-family: AdmiralScriptW01-Regular; */
+            font-family: "Courier New Bold V1";
         }
         
         
@@ -98,7 +114,8 @@
         } */
         body{
             background-color: rgb(252, 245, 245);
-            font-family: Montserrat !important;
+            /* font-family: Montserrat !important; */
+            font-family: "Courier New Bold V1";
         }
         .binput {
             width: 100%;
@@ -209,30 +226,29 @@
             <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
         </div>
         <div style="margin-bottom: 1.5rem;">
-            <h1 class="font" style="text-align: center; margin-top:0;">Membership Form</h1>
+            <h1 class="font" style="text-align: center; margin-top:0;">MEMBERSHIP FORM</h1>
         </div>
 
         <div class="pdiv">
             <div class="tbl1">
-                <p style="margin: 0px; font-weight:bold;"><em>Govt. Reg No: CH-10511/13</em></p>
-                <p style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p style="margin: 0px; font-weight:bold;"><em>Holding No - 1471/2184/1, Concord</em></p>
-                <p style="margin: 0px; font-weight:bold;"><em>Amusement Park Road, Opposite of Ansar</em></p>
-                <p style="margin: 0px; font-weight:bold;"><em>Sadar Doptor, Foy'slake, Khulshi,</em></p>
-                <p style="margin: 0px; font-weight:bold;"><em>Chattogram, Bangladesh</em></p>
-                <p style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p style="margin: 0px; font-weight:bold;"><em>Contact: +88019 88 896 906, +88019 70 896 905</em></p>
+                <h3 style="margin: 0px; font-weight:bold;"><em>Govt. Reg No: CH-10511/13</em></h3>
+                <h3 style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                <h3 style="margin: 0px; font-weight:bold;"><em>Holding No - 1471/2184/1, Concord Amusement</em></h3>
+                <h3 style="margin: 0px; font-weight:bold;"><em>Park Road, Opposite of Ansar Sadar Doptor,</em></h3>
+                <h3 style="margin: 0px; font-weight:bold;"><em> Foy'slake, Khulshi, Chattogram, Bangladesh.</em></h3>
+                <h3 style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                <h3 style="margin: 0px; font-weight:bold;"><em>Contact: +88019 88 896 906, +88019 70 896 905</em></h3>
             </div>
             <div class="pbox">
                 @if ($show_data->image > 0)
-                <td><img src="{{asset('uploads/member_image/'.$show_data->image)}}" width="110px" height="110px" alt=""></td>
+                <td><img src="{{asset('uploads/member_image/'.$show_data->image)}}" width="130px" height="150px" alt=""></td>
                 @else
                 <td ><p class="photo"><em>4 Copies of Passport Size Photo</em></p></td> 
                 @endif
             </div>
         </div>
         <div style="margin-top: 2.5rem;">
-            <h4 class="section-heading" style="margin: 0px;"><b>PERSONAL INFORMATION</b></h4>
+            <h3 class="section-heading" style="margin: 0px;"><b>PERSONAL INFORMATION</b></h3>
         </div>
         <form action="">
             <table class = "gfg" style="width:100%">
@@ -289,7 +305,7 @@
                         <td ><input type="text" class="tinput" value="{{ $show_data->blood_group }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">National ID No:</td>
+                        <td style="text-align: left;">NID NO:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->national_id }}"></td>
                         <td style="text-align: left; padding-left:5px;">Passport No:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->passport_no }}"></td>
@@ -297,17 +313,18 @@
                     <tr>
                         <td style="text-align: left;">Educational Qualification:</td>
                         <td ><input type="text" class="tinput" value="{{ $show_data->qualification }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Institution Name:</td>
-                        <td ><input type="text" class="tinput" value="{{ $show_data->name_of_institute }}"></td>
+                        <td style="text-align: left; padding-left:5px;">E-TIN NO:</td>
+                        <td ><input type="text" class="tinput" value="{{ $show_data->e_tin_number }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">e-TIN No:</td>
-                        <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->e_tin_number }}"></td>
+                        <td style="text-align: left;">Institution Name:</td>
+                        <td colspan="3"><input type="text" class="tinput" value="{{ $show_data->name_of_institute }}"></td>
                     </tr>
                 </tbody>
             </table>
             <div>
-                <p style="margin: 0;"><b>Present Address</b></p>
+                {{-- <p style="margin: 0;"><b>Present Address</b></p> --}}
+                <h3 class="section-heading" style="margin: 0px;"><b>Present Address</b></h3>
             </div>
         </form>
     </div>
@@ -315,16 +332,16 @@
         <form action="">
             <table class = "gfg2" style=" width:100%">
                 <tr>
-                    <td style="text-align: left;">House/Village:</td>
-                    <td ><input type="text" class="tinput" value="{{ $show_data->village }}"></td>
-                    <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
-                    <td ><input type="text" class="tinput" value="{{ $show_data->block }}"></td>
+                    <td style="text-align: left;">Address:</td>
+                    <td colspan="6"><input type="text" class="tinput" value="{{ $show_data->address }}"></td>
+                    {{-- <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
+                    <td ><input type="text" class="tinput" value="{{ $show_data->block }}"></td> --}}
                 </tr>
                 <tr>
                     <td style="text-align: left;">Police Station:</td>
-                    <td ><input type="text" class="tinput" value="{{ $show_data->police_station }}"></td>
+                    <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->police_station }}"></td>
                     <td style="text-align: left; padding-left:5px;">Post Office:</td>
-                    <td ><input type="text" class="tinput" value="{{ $show_data->post_office }}"></td>
+                    <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->post_office }}"></td>
                 </tr>
                 <tr>
                     <td style="text-align: left;">Postal Code:</td>
@@ -336,15 +353,16 @@
                 </tr>
             </table>
             <div>
-                <p style="margin: 0;"><b>Permanent Address</b></p>
+                {{-- <p style="margin: 0;"><b>Permanent Address</b></p> --}}
+                <h3 class="section-heading" style="margin: 0px;"><b>Permanent Address</b></h3>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left;">House/Village:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perVillage }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perBlock }}"></td>
+                        <td style="text-align: left;">Address:</td>
+                        <td colspan="6"><input type="text" class="tinput" value="{{ $show_data->perAddress }}"></td>
+                        {{-- <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perBlock }}"></td> --}}
                     </tr>
                     <tr>
                         <td style="text-align: left;">Police Station:</td>
@@ -363,7 +381,8 @@
                 </tbody>
             </table>
             <div style="margin-top: 2rem;">
-                <p style="margin: 0;">Details of Children:</p>
+                {{-- <p style="margin: 0;">Details of Children:</p> --}}
+                <h3 class="section-heading" style="margin: 0px;"><b>Details of Children:</b></h3>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid; margin-bottom: 5rem;">
                 <thead style="">
@@ -400,42 +419,49 @@
                 </tbody>
             </table>
             <div>
-                <h4 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>NOMINEE INFORMATION</b></h4>
+                <h3 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>NOMINEE INFORMATION</b></h3>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tbody >
+                    <tr style="position: relative;">
+                        <td colspan="4" style="position: absolute; top: 10px; right: 0;">
+                            <img src="{{asset('uploads/nominee/'.$show_data->nominee_photo)}}" alt="Image" style="width: 160px; height: 180px;"> <!-- Adjust width and height as needed -->
+                        </td>
+                    </tr>
                     <tr>
                         <td style="text-align: left;">Name:</td>
-                        <td colspan="5"><input type="text" class="tinput" value="{{ $show_data->nominee_name }}"></td>
+                        <td colspan="2"><input type="text" class="nomineeinput" value="{{ $show_data->nominee_name }}"></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">Relation:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_relation }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Occupation:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_occupation }}"></td>
+                        <td colspan="2"><input type="text" class="nomineeinput" value="{{ $show_data->nominee_relation }}"></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">Dath Of Birth:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_date_of_birth }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Place:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td>
+                        <td colspan="2"><input type="text" class="nomineeinput" value="{{ $show_data->nominee_date_of_birth }}"></td>
+                        {{-- <td style="text-align: left; padding-left:5px;">Place:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td> --}}
                     </tr>
                     <tr>
                         <td style="text-align: left;">Email:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_email }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Phone:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_phone }}"></td>
+                        <td colspan="2"><input type="text" class="nomineeinput" value="{{ $show_data->nominee_email }}"></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">NID NO:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_nid_no }}"></td>
+                        <td ><input type="text" class="tinput" value="{{ $show_data->nominee_nid_no }}"></td>
                         <td style="text-align: left; padding-left:5px;">Passport No:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_passport_no }}"></td>
+                        <td ><input type="text" class="tinput" value="{{ $show_data->nominee_passport_no }}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding-left:5px;">Occupation:</td>
+                        <td ><input type="text" class="tinput" value="{{ $show_data->nominee_occupation }}"></td>
+                        <td style="text-align: left; padding-left:5px;">Phone:</td>
+                        <td ><input type="text" class="tinput" value="{{ $show_data->nominee_phone }}"></td>
                     </tr>
                 </tbody>
             </table>
             <div>
-                <h4 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>PROFESSION INFORMATION</b></h4>
+                <h3 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>PROFESSION INFORMATION</b></h3>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tbody >
@@ -450,10 +476,10 @@
                         <td colspan="5"><input type="text" class="tinput" value="{{ $show_data->company }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">House/Village:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profVillage }}"></td>
-                        <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
-                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profBlock }}"></td>
+                        <td style="text-align: left;">Address:</td>
+                        <td colspan="6"><input type="text" class="tinput" value="{{ $show_data->profAddress }}"></td>
+                        {{-- <td style="text-align: left; padding-left:5px;">Road/Block/Sector:</td>
+                        <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profBlock }}"></td> --}}
                     </tr>
                     <tr>
                         <td style="text-align: left;">Police Station:</td>
@@ -472,7 +498,7 @@
                 </tbody>
             </table>
             <div>
-                <h4 class="section-heading" style="margin-top: 2rem;"><b>CATEGORY OF MEMBERSHIP</b></h4>
+                <h3 class="section-heading" style="margin-top: 2rem;"><b>CATEGORY OF MEMBERSHIP</b></h3>
             </div>
             <div style="padding-left: 40px; margin-bottom: 1rem; padding-bottom:5rem;">
                 <table class = "gfg4" style=" width:100%">
@@ -511,7 +537,7 @@
                 </table>
             </div>
             <div style="margin-bottom: 5px; margin-top: 5rem; padding-top: 2rem;">
-                <h4 class="section-heading" style="margin:0;"><b>DETAILS OF OTHER CLUB MEMBERSHIP (IF ANY)</b></h4>
+                <h3 class="section-heading" style="margin:0;"><b>DETAILS OF OTHER CLUB MEMBERSHIP (IF ANY)</b></h3>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid;">
                 <thead style="padding-top: 10px; padding-bottom: 5px;">
@@ -545,7 +571,7 @@
                 </tbody>
             </table>
             <div style="margin-top: 5rem;">
-                <h4 class="section-heading" style="margin-top: 2rem;"><b>PROPOSED BY (ANY MEMBER OF CKCL)</b></h4>
+                <h3 class="section-heading" style="margin-top: 2rem;"><b>PROPOSED BY (ANY MEMBER OF CKCL)</b></h3>
             </div>
             <table class = "gfg5" style=" width:100%">
                 <tbody >
@@ -561,8 +587,8 @@
                     </tr>
                 </tbody>
             </table>
-            <div>
-                <p style="font-size: 16px; line-height: 27px;">Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
+            <div class="">
+                <p style="font-size: 16px; line-height: 27px; text-align:justify;">Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
                     I further declare that the above statement / particulars are correct therfore, request you to become a Donor, Life, Service, Permanent,
                     Temporary, Corporate,Honorary,Diplomat and Foreign National Member as per constitution of the <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p>
             </div>
