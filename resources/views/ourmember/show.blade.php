@@ -51,21 +51,21 @@
 
         .gfg {
             border-collapse:separate;
-            border-spacing:0 25px;
+            border-spacing:0 37px;
         }
         .gfg2 {
             border-collapse:separate;
-            border-spacing:0 25px;
+            border-spacing:0 30px;
             }
 
         .gfg3 {
             border-collapse:separate;
-            border-spacing:0 30px;
+            border-spacing:0 36px;
         }
 
         .gfg4 {
             border-collapse:separate;
-            border-spacing:0 10px;
+            border-spacing:0 30px;
         }
         .gfg5 {
             border-collapse:separate;
@@ -221,7 +221,7 @@
             Print
         </button>
     </div>
-    <div class="bg1"  style="width:800px; margin:0 auto;">
+    <div class="bg1"  style="width:100%; margin:0 auto;">
         <div style="text-align: center;">
             <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
         </div>
@@ -254,7 +254,7 @@
             <table class = "gfg" style="width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left;">Full Name:</td>
+                        <td style="text-align: left; width: 18%;">Full Name:</td>
                         <td colspan="3"><input type="text" class="tinput"  value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
@@ -328,9 +328,9 @@
             </div>
         </form>
     </div>
-    <div class="bg4" style="width:800px; margin:0 auto; padding-bottom: 1rem;">
+    <div class="bg4" style="width:100%; margin:0 auto; padding-bottom: 1rem;">
         <form action="">
-            <table class = "gfg2" style=" width:100%">
+            <table class = "gfg3" style=" width:100%">
                 <tr>
                     <td style="text-align: left;">Address:</td>
                     <td colspan="6"><input type="text" class="tinput" value="{{ $show_data->address }}"></td>
@@ -356,7 +356,7 @@
                 {{-- <p style="margin: 0;"><b>Permanent Address</b></p> --}}
                 <h3 class="section-heading" style="margin: 0px;"><b>Permanent Address</b></h3>
             </div>
-            <table class = "gfg2" style=" width:100%">
+            <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
                         <td style="text-align: left;">Address:</td>
@@ -498,9 +498,9 @@
                 </tbody>
             </table>
             <div>
-                <h3 class="section-heading" style="margin-top: 2rem;"><b>CATEGORY OF MEMBERSHIP</b></h3>
+                <h3 class="section-heading" style="margin-top: 3rem;"><b>CATEGORY OF MEMBERSHIP</b></h3>
             </div>
-            <div style="padding-left: 40px; margin-bottom: 1rem; padding-bottom:5rem;">
+            <div style="padding-left: 40px; margin-bottom: 0rem; padding-bottom:1rem;">
                 <table class = "gfg4" style=" width:100%">
                     @foreach ($memberType as $key => $mt)
                         @if ($key % 2 == 0)
@@ -536,7 +536,7 @@
 
                 </table>
             </div>
-            <div style="margin-bottom: 5px; margin-top: 5rem; padding-top: 2rem;">
+            <div style="margin-bottom: 5px; padding-top: 2rem;">
                 <h3 class="section-heading" style="margin:0;"><b>DETAILS OF OTHER CLUB MEMBERSHIP (IF ANY)</b></h3>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid;">
@@ -614,7 +614,7 @@
     </div>
 
 
-    <div class="bg3" style="width:800px; margin:0 auto; padding-top: 90px;">
+    <div class="bg3" style="width:100%; margin:0 auto; padding-top: 90px;">
         <form action="">
             <div style="text-align: center; margin-top: 5rem; ">
                 <h4 class="section-heading" style="margin-top: 5rem;"><b>FOR OFFICIAL USE ONLY</b></h4>
