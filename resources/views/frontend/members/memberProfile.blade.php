@@ -62,6 +62,15 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label class="pb-2" for="mothersName">Marital Status</label><br>
+                                                    <input type="radio"  name="marit_status" value="0" {{ old('marit_status',$member->marital_status)=="0" ? "checked":"" }}>
+                                                    <label for="">Single</label>
+                                                    <input type="radio"  name="marit_status" value="1" {{ old('marit_status',$member->marital_status)=="1" ? "checked":"" }}>
+                                                    <label for="">Married</label>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <fieldset>
                                                     <legend>Marital Status</legend>
                                                     <input type="radio"  name="marit_status" value="0" {{ old('marit_status',$member->marital_status)=="0" ? "checked":"" }}>
@@ -69,7 +78,7 @@
                                                     <input type="radio"  name="marit_status" value="1" {{ old('marit_status',$member->marital_status)=="1" ? "checked":"" }}>
                                                     <label for="">Married</label>
                                                 </fieldset>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="anniversary">Anniversary:</label>
@@ -190,25 +199,31 @@
                                             <div>
                                                 <h6><b>Present Address</b></h6>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
                                                     <input type="text" class="form-control" id="presentVillage" value="{{ old('vill',$member->village)}}" name="vill">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
                                                     <input type="text" class="form-control" id="presentBlock" value="{{ old('block',$member->block)}}" name="block">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="address">Address</label>
+                                                    <input type="text" class="form-control" id="presentAddress" value="{{ old('address',$member->address)}}" name="address">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="policeStation">Police Station:</label>
                                                     <input type="text" class="form-control" id="presentPoliceStation" value="{{ old('policeStation',$member->police_station)}}" name="policeStation">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="postoffice">Post Office:</label>
                                                     <input type="text" class="form-control" id="presentPostOffice" value="{{ old('postoffice',$member->post_office)}}" name="postoffice">
@@ -235,16 +250,22 @@
                                             <div>
                                                 <h6><b>Permanent Address</b>&nbsp;&nbsp;<input type="checkbox" id="sameAsPresent" name="sameAsPresent">&nbsp;Same As Present Address</h6>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
                                                     <input type="text" class="form-control" id="permanentVillage" value="{{ old('perVillage',$member->perVillage)}}" name="perVillage">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
                                                     <input type="text" class="form-control" id="permanentBlock" value="{{ old('perBlock',$member->perBlock)}}" name="perBlock">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="address">Address</label>
+                                                    <input type="text" class="form-control" id="permanentAddress" value="{{ old('perAddress',$member->perAddress)}}" name="perAddress">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -412,16 +433,22 @@
                                                     <input type="text" id="company" class="form-control" value="{{ old('company',$member->company)}}" name="company">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="vill">House/Village</label>
                                                     <input type="text" class="form-control" value="{{ old('profVillage',$member->profVillage)}}" name="profVillage">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                            <div class="col-lg-4 col-sm-6 col-md-12 d-none">
                                                 <div class="form-group py-2">
                                                     <label for="block">Road/Block/Sector</label>
                                                     <input type="text" class="form-control" value="{{ old('profBlock',$member->profBlock)}}" name="profBlock">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="address">Address</label>
+                                                    <input type="text" class="form-control" value="{{ old('profAddress',$member->profAddress)}}" name="profAddress">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -598,8 +625,14 @@
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
-                                                    <label for="photo">Photo:</label>
+                                                    <label for="photo">Applicant Photo:</label>
                                                     <input type="file" id="image" class="form-control" name="image">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6 col-md-12">
+                                                <div class="form-group py-2">
+                                                    <label for="photo">Nomimee Photo:</label>
+                                                    <input type="file" class="form-control" name="nominee_photo">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
@@ -651,6 +684,7 @@
     const sameAsPresentCheckbox = document.getElementById('sameAsPresent');
     const permanentVillage = document.getElementById('permanentVillage');
     const permanentBlock = document.getElementById('permanentBlock');
+    const permanentAddress = document.getElementById('permanentAddress');
     const permanentPoliceStation = document.getElementById('permanentPoliceStation');
     const permanentPostOffice = document.getElementById('permanentPostOffice');
     const permanentPostalCode = document.getElementById('permanentPostalCode');
@@ -661,6 +695,7 @@
         if (this.checked) {
             permanentVillage.value = document.getElementById('presentVillage').value;
             permanentBlock.value = document.getElementById('presentBlock').value;
+            permanentAddress.value = document.getElementById('presentAddress').value;
             permanentPoliceStation.value = document.getElementById('presentPoliceStation').value;
             permanentPostOffice.value = document.getElementById('presentPostOffice').value;
             permanentPostalCode.value = document.getElementById('presentPostalCode').value;
@@ -669,6 +704,7 @@
         } else {
             permanentVillage.value = '';
             permanentBlock.value = '';
+            permanentAddress.value = '';
             permanentPoliceStation.value = '';
             permanentPostOffice.value = '';
             permanentPostalCode.value = '';

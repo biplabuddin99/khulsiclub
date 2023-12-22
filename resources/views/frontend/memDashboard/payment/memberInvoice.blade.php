@@ -45,9 +45,9 @@
                             @endforelse
                         </tbody>
                     </table>
-                    {{-- <div class="my-3">
+                    <div class="my-3">
                         {!! $data->links()!!}
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

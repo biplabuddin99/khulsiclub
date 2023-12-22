@@ -141,16 +141,10 @@ class MemberPanel extends Controller
         $member = $members->paginate(10);
         return view('frontend.membership.memberList', compact('member','membership_type','search','memberType', 'member_id', 'member_name'));
     }
-    
-
-    public function member_due()
-    {
-        return view('frontend.memDashboard.payment.memberDue');
-    }
 
     public function memberInvoice($id)
     {
-        $data = MemberInvoice::where('member_id',$id)->get();
+        $data = MemberInvoice::where('member_id',$id)->whereIn('status',[0,2])->latest()->paginate(10);
         return view('frontend.memDashboard.payment.memberInvoice',compact('data'));
     }
     /**
@@ -270,7 +264,8 @@ class MemberPanel extends Controller
     public function mem_regi_success()
     {
         $show_data=OurMember::findOrFail(currentUserId());
-        return view('frontend.members.registration_success',compact('show_data'));
+        $memberType = MembershipType::all();
+        return view('frontend.members.registration_success',compact('show_data','memberType'));
     }
     /**
      * Show the form for creating a new resource.
@@ -304,6 +299,7 @@ class MemberPanel extends Controller
             $member->e_tin_number=$request->tinNo;
             $member->village=$request->vill;
             $member->block=$request->block;
+            $member->address=$request->address;
             $member->police_station=$request->policeStation;
             $member->post_office=$request->postoffice;
             $member->postalCode=$request->postalCode;
@@ -311,6 +307,7 @@ class MemberPanel extends Controller
             $member->country=$request->country;
             $member->perVillage=$request->perVillage;
             $member->perBlock=$request->perBlock;
+            $member->perAddress=$request->perAddress;
             $member->perPoliceStation=$request->perPoliceStation;
             $member->perPostOffice=$request->perPostOffice;
             $member->perPostalCode=$request->perPostalCode;
@@ -330,6 +327,7 @@ class MemberPanel extends Controller
             $member->nominee_passport_no=$request->nominee_passport_no;
             $member->profVillage=$request->profVillage;
             $member->profBlock=$request->profBlock;
+            $member->profAddress=$request->profAddress;
             $member->profPoliceStation=$request->profPoliceStation;
             $member->profPostOffice=$request->profPostOffice;
             $member->profPostalCode=$request->profPostalCode;
@@ -369,6 +367,14 @@ class MemberPanel extends Controller
                 $data = rand(111,999).time().'.'.$request->etin->extension();
                 $request->etin->move(public_path('uploads/etin'), $data);
                 $member->etin=$data;
+            }
+
+            $path5='uploads/nominee';
+            if($request->hasFile('nominee_photo')){
+                $this->deleteImage($member->nominee_photo,$path5);
+                $data = rand(111,999).time().'.'.$request->nominee_photo->extension();
+                $request->nominee_photo->move(public_path('uploads/nominee'), $data);
+                $member->nominee_photo=$data;
             }
 
             $member->status=$request->status;

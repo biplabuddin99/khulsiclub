@@ -90,6 +90,12 @@ body {
   text-decoration: none;
   color: #fff;
 }
+.bg-danger{
+  background-color: var(--red) !important;
+}
+.btn-danger{
+  background-color: var(--red) !important;
+}
 .button:hover {
   color: #fff;
 }

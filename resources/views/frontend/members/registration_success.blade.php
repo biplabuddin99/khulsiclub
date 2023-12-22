@@ -51,7 +51,7 @@
 
         .gfg {
             border-collapse:separate;
-            border-spacing:0 30px;
+            border-spacing:0 32px;
         }
         .gfg2 {
             border-collapse:separate;
