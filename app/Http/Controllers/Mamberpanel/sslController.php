@@ -236,7 +236,8 @@ class sslController extends Controller
                     if($jvb->save()){
                         $gl=new GeneralLedger;
                         $gl->member_voucher_id=$jv->id;
-                        $gl->journal_title=$jv->purpose;
+                        $gl->journal_title=$jvb->account_code;
+                        $gl->purpose=$jv->purpose;
                         $gl->rec_date=$jv->current_date;
                         $gl->jv_id=$voucher_no;
                         $gl->member_voucher_bkdn_id=$jvb->id;
@@ -263,7 +264,8 @@ class sslController extends Controller
                     if($jvb->save()){
                         $gl=new GeneralLedger;
                         $gl->member_voucher_id=$jv->id;
-                        $gl->journal_title=$jv->purpose;
+                        $gl->journal_title=$jvb->account_code;
+                        $gl->purpose=$jv->purpose;
                         $gl->rec_date=$jv->current_date;
                         $gl->jv_id=$voucher_no;
                         $gl->member_voucher_bkdn_id=$jvb->id;

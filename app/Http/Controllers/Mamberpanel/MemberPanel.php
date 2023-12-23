@@ -142,11 +142,6 @@ class MemberPanel extends Controller
         return view('frontend.membership.memberList', compact('member','membership_type','search','memberType', 'member_id', 'member_name'));
     }
 
-    public function memberInvoice($id)
-    {
-        $data = MemberInvoice::where('member_id',$id)->whereIn('status',[0,2])->latest()->paginate(10);
-        return view('frontend.memDashboard.payment.memberInvoice',compact('data'));
-    }
     /**
      * Show the form for editing the specified resource.
      *

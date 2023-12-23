@@ -47,4 +47,11 @@ class AccountReportController extends Controller{
         $data = OnlinePayment::where('member_id',currentUserId())->latest()->paginate(10);
         return view('frontend.memDashboard.payment.onlinehistory',compact('data'));
     }
+
+    /* member due list */
+    public function memberInvoice($id)
+    {
+        $data = MemberInvoice::where('member_id',$id)->whereIn('status',[0,2])->latest()->paginate(10);
+        return view('frontend.memDashboard.payment.memberInvoice',compact('data'));
+    }
 }
