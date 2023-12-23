@@ -1,5 +1,6 @@
 @extends('frontend.memDashboard.memberApp')
 @section('memberContent')
+{{-- <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script> --}}
 @php
     $status = encryptor('decrypt', request()->session()->get('status'));
     if ($status == 1) {
@@ -141,10 +142,10 @@
             <div class="col-lg-5">
                 <div class="card Payment-info shadow-sm mb-3">
                     <div class="card-header">
-                        <h5>Payment Info</h5>
+                        <h5>Find Us On Facebook</h5>
                     </div>
                     <div class="card-body" style="min-height:450px;">
-                        <table class="table table-sm table-borderless">
+                        {{-- <table class="table table-sm table-borderless">
                             <tr>
                                 <th width="45">Payment Method</th>
                                 <td width="2">:</td>
@@ -160,8 +161,13 @@
                                 <td width="2">:</td>
                                 <td width="53"></td>
                             </tr>
-                        </table>
-                    </div>
+                        </table> --}}
+                        <div class="fb-page" data-href="https://www.facebook.com/61554733808896" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/61554733808896" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/61554733808896">Your Page Name</a>
+                            </blockquote>
+                        </div>
+                        {{-- <div id="latestFacebookPost"></div> --}}
                 </div>
             </div>
         </div>

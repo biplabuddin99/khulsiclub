@@ -37,6 +37,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/main.css')}}?id=1" />
     @stack('styles')
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=221303001015879"></script>
   </head>
   <body>
   <!-- header section -->
