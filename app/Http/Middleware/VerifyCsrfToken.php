@@ -14,5 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'deposit/ssl/notify',
         'deposit/ssl/cancel',
+        'single_invoice/ssl/notify',
+        'single_invoice/ssl/cancel',
     ];
 }

@@ -35,7 +35,7 @@
                                     <td><a class="btn btn-sm btn-danger" href="#">Check Now</a></td>
                                 @else
                                     <td class="text-danger fw-bold">Pending</td>
-                                    <td><a class="btn btn-sm btn-danger" href="#">Pay Now</a></td>
+                                    <td><a class="btn btn-sm btn-danger" href="{{route('single_invoice.ssl.submit',$b->id)}}">Pay Now</a></td>
                                 @endif
                             </tr>
                             @empty

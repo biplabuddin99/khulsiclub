@@ -30,9 +30,6 @@
                                 <td>Due Payment</td>
                                 <td>{{$b->amount}}</td>
                                 @if($b->status == 1)
-                                    <td class="text-danger fw-bold">In Review</td>
-                                    <td></td>
-                                @elseif($b->status == 3)
                                     <td class="text-danger fw-bold">Paid</td>
                                     <td>
                                         <a class="btn btn-sm btn-info text-white" href="#">Invoice</a>
