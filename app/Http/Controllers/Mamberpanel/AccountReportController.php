@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Accounts\GeneralLedger;
 use App\Models\Accounts\Child_two;
+use App\Models\CRM\MemberInvoice;
 use App\Models\OnlinePayment;
 use App\Models\OurMember;
 use Illuminate\Http\Request;

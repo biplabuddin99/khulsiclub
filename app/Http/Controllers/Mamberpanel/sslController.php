@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\OurMember;
 use App\Models\OnlinePayment;
-use App\Models\Accounts\MemberInvoice;
+use App\Models\CRM\MemberInvoice;
 use App\Models\Accounts\MemberVoucher;
 use App\Models\Accounts\MemberVoucherBkdn;
 use App\Models\Accounts\GeneralLedger;
