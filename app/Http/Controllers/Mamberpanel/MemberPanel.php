@@ -17,6 +17,8 @@ use App\Http\Traits\ImageHandleTraits;
 use App\Models\CRM\MemberInvoice;
 use App\Models\MembershipType;
 use App\Models\OnlinePayment;
+use App\Models\Settings\Location\Country;
+use App\Models\Settings\Location\District;
 use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
@@ -35,8 +37,10 @@ class MemberPanel extends Controller
     public function memberProfile()
     {
         $memberType = MembershipType::all();
+        $country = Country::all();
+        $district = District::all();
         $member=OurMember::where('id',currentUserId())->first();
-        return view('frontend.members.memberProfile',compact('member','memberType'));
+        return view('frontend.members.memberProfile',compact('member','memberType','country','district'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -47,8 +51,10 @@ class MemberPanel extends Controller
     public function approveMemberProfile()
     {
         $memberType = MembershipType::all();
+        $country = Country::all();
+        $district = District::all();
         $member=OurMember::where('id',currentUserId())->first();
-        return view('frontend.memDashboard.profile',compact('member','memberType'));
+        return view('frontend.memDashboard.profile',compact('member','memberType','country','district'));
     }
     /**
      * Show the form for editing the specified resource.

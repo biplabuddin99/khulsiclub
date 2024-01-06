@@ -36,7 +36,15 @@
     <link rel="stylesheet" href="{{ asset('OwlCarousel2-2.3.4/assets/owl.theme.default.min.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/main.css')}}?id=1" />
+      {{-- choice css --}}
+  <link rel="stylesheet" href="{{ asset('assets/extensions/choices.js/public/assets/styles/choices.css') }}">
+  <style>
+    .choices__list--dropdown .choices__item--selectable {
+        padding-right: 0;
+    }
+</style>
     @stack('styles')
+    
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=221303001015879"></script>
   </head>
   <body>
@@ -390,6 +398,8 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"
   ></script>
+<script src="{{ asset('/assets/extensions/choices.js/public/assets/scripts/choices.min.js')}}"></script>
+<script src="{{ asset('/assets/js/pages/form-element-select.js')}}"></script>
   <script>
     // Toggle icon on show.bs.collapse and hide.bs.collapse events
     document.addEventListener('DOMContentLoaded', function () {

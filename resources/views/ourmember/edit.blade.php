@@ -244,13 +244,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" id="presentDistrict" value="{{ old('district',$member->district)}}" name="district">
+                                                    {{-- <input type="text" class="form-control" id="presentDistrict" value="{{ old('district',$member->district)}}" name="district"> --}}
+                                                    <select name="district" class="choices form-control form-select" id="presentDistrict">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('district',$member->district)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" id="presentCountry" value="{{ old('country',$member->country)}}" name="country">
+                                                    {{-- <input type="text" class="form-control" id="presentCountry" value="{{ old('country',$member->country)}}" name="country"> --}}
+                                                    <select name="country" class="choices form-control form-select" id="presentCountry">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}"{{ old('country',$member->country)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div>
@@ -295,13 +311,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" id="permanentDistrict" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict">
+                                                    {{-- <input type="text" class="form-control" id="permanentDistrict" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict"> --}}
+                                                    <select name="perDistrict" class="choices form-control form-select" id="permanentDistrict">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('perDistrict',$member->perDistrict)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" id="permanentCountry" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry">
+                                                    {{-- <input type="text" class="form-control" id="permanentCountry" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry"> --}}
+                                                    <select name="perCountry" class="choices form-control form-select" id="permanentCountry">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}"{{ old('perCountry',$member->perCountry)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -478,13 +510,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profDistrict',$member->profDistrict)}}" name="profDistrict">
+                                                    {{-- <input type="text" class="form-control" value="{{ old('profDistrict',$member->profDistrict)}}" name="profDistrict"> --}}
+                                                    <select name="profDistrict" class="choices form-control form-select">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('profDistrict',$member->profDistrict)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry">
+                                                    {{-- <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry"> --}}
+                                                    <select name="profCountry" class="choices form-control form-select">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}" {{ old('profCountry',$member->profCountry)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="section-heading">
@@ -506,60 +554,6 @@
                                                 </div>
                                             </div>
                                             @endforelse
-                                            {{-- <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="donermember" name="categorymembership" value="1" {{ old('categorymembership',$member->membership_applied)=="1" ? "checked":"" }}>
-                                                    <label for="donermember">Donor Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="servicemember" name="categorymembership" value="2" {{ old('categorymembership',$member->membership_applied)=="2" ? "checked":"" }}>
-                                                    <label for="servicemember">Service Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="lifemember" name="categorymembership" value="3" {{ old('categorymembership',$member->membership_applied)=="3" ? "checked":"" }}>
-                                                    <label for="lifemember">Life Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="temporarymember" name="categorymembership" value="4" {{ old('categorymembership',$member->membership_applied)=="4" ? "checked":"" }}>
-                                                    <label for="temporarymember">Temporary Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="permanentmember" name="categorymembership" value="5" {{ old('categorymembership',$member->membership_applied)=="5" ? "checked":"" }}>
-                                                    <label for="permanentmember">Permanent Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="honorarymember" name="categorymembership" value="6" {{ old('categorymembership',$member->membership_applied)=="6" ? "checked":"" }}>
-                                                    <label for="honorarymember">Honorary Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="cprporatemember" name="categorymembership" value="7" {{ old('categorymembership',$member->membership_applied)=="7" ? "checked":"" }}>
-                                                    <label for="cprporatemember">Corporate Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="diplomatedmember" name="categorymembership" value="8" {{ old('categorymembership',$member->membership_applied)=="8" ? "checked":"" }}>
-                                                    <label for="diplomatedmember">Diplomate and Foreing National Member</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-sm-12 col-md-12">
-                                                <div class="form-group py-2">
-                                                    <input type="radio" id="foundingmember" name="categorymembership" value="9" {{ old('categorymembership',$member->membership_applied)=="9" ? "checked":"" }}>
-                                                    <label for="foundingmember">Founding Member</label>
-                                                </div>
-                                            </div> --}}
                                         </div>
                                         <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                                             <button type="button" class="btn btn-info text-white me-2">Save as Draft</button>

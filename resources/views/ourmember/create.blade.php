@@ -236,7 +236,7 @@
                                                     <select name="district" class="choices form-control form-select" id="presentDistrict">
                                                         <option value="">Select</option>
                                                         @forelse ($district as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}"{{ old('district')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse
@@ -250,7 +250,7 @@
                                                     <select name="country" class="choices form-control form-select" id="presentCountry">
                                                         <option value="">Select</option>
                                                         @forelse ($country as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}"{{ old('country')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse
@@ -303,7 +303,7 @@
                                                     <select name="perDistrict" class="choices form-control form-select" id="permanentDistrict">
                                                         <option value="">Select</option>
                                                         @forelse ($district as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}"{{ old('perDistrict')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse
@@ -317,7 +317,7 @@
                                                     <select name="perCountry" class="choices form-control form-select" id="permanentCountry">
                                                         <option value="">Select</option>
                                                         @forelse ($country as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}"{{ old('perCountry')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse
@@ -484,7 +484,7 @@
                                                     <select name="profDistrict" class="choices form-control form-select">
                                                         <option value="">Select</option>
                                                         @forelse ($district as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}"{{ old('profDistrict')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse
@@ -498,7 +498,7 @@
                                                     <select name="profCountry" class="choices form-control form-select">
                                                         <option value="">Select</option>
                                                         @forelse ($country as $d)
-                                                            <option value="{{$d->id}}">{{$d->name}}</option>
+                                                            <option value="{{$d->id}}" {{ old('profCountry')== $d->id ? 'selected':''}}>{{$d->name}}</option>
                                                         @empty
                                                             <option value="">No Data Found</option>
                                                         @endforelse

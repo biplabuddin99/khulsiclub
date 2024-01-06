@@ -238,13 +238,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" id="presentDistrict" value="{{ old('district',$member->district)}}" name="district">
+                                                    {{-- <input type="text" class="form-control" id="presentDistrict" value="{{ old('district',$member->district)}}" name="district"> --}}
+                                                    <select name="district" class="choices form-control form-select" id="presentDistrict">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('district',$member->district)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" id="presentCountry" value="{{ old('country',$member->country)}}" name="country">
+                                                    {{-- <input type="text" class="form-control" id="presentCountry" value="{{ old('country',$member->country)}}" name="country"> --}}
+                                                    <select name="country" class="choices form-control form-select" id="presentCountry">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}"{{ old('country',$member->country)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div>
@@ -289,13 +305,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" id="permanentDistrict" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict">
+                                                    {{-- <input type="text" class="form-control" id="permanentDistrict" value="{{ old('perDistrict',$member->perDistrict)}}" name="perDistrict"> --}}
+                                                    <select name="perDistrict" class="choices form-control form-select" id="permanentDistrict">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('perDistrict',$member->perDistrict)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" id="permanentCountry" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry">
+                                                    {{-- <input type="text" class="form-control" id="permanentCountry" value="{{ old('perCountry',$member->perCountry)}}" name="perCountry"> --}}
+                                                    <select name="perCountry" class="choices form-control form-select" id="permanentCountry">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}"{{ old('perCountry',$member->perCountry)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-sm-12 col-md-12">
@@ -472,13 +504,29 @@
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="district">District:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profDistrict',$member->profDistrict)}}" name="profDistrict">
+                                                    {{-- <input type="text" class="form-control" value="{{ old('profDistrict',$member->profDistrict)}}" name="profDistrict"> --}}
+                                                    <select name="profDistrict" class="choices form-control form-select">
+                                                        <option value="">Select</option>
+                                                        @forelse ($district as $d)
+                                                            <option value="{{$d->id}}"{{ old('profDistrict',$member->profDistrict)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6 col-md-12">
                                                 <div class="form-group py-2">
                                                     <label for="country">Country:</label>
-                                                    <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry">
+                                                    {{-- <input type="text" class="form-control" value="{{ old('profCountry',$member->profCountry)}}" name="profCountry"> --}}
+                                                    <select name="profCountry" class="choices form-control form-select">
+                                                        <option value="">Select</option>
+                                                        @forelse ($country as $d)
+                                                            <option value="{{$d->id}}" {{ old('profCountry',$member->profCountry)== $d->id ? 'selected':''}}>{{$d->name}}</option>
+                                                        @empty
+                                                            <option value="">No Data Found</option>
+                                                        @endforelse
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="section-heading">
