@@ -15,30 +15,24 @@ use App\Models\Accounts\Child_two;
 use Illuminate\Support\Facades\Session;
 use DB;
 
-class sslController extends Controller
+class sslSingleController extends Controller
 {
-    public function store(Request $request){
+    public function store($invid,Request $request){
         $user = OurMember::findOrFail(currentUserId());
         $txnid = "SSLCZ_TXN_".uniqid();
-        $due=MemberInvoice::where("status",0)->where("member_id",currentUserId())->sum('total_amount');
-        $due_id=MemberInvoice::where("status",0)->where("member_id",currentUserId())->pluck('id')->toArray();
+        $member_due=MemberInvoice::where('id',$invid)->where('status',0)->first();
 
-        $item_amount = $due;
+        $item_amount = $member_due->total_amount;
 
-        //$settings = Generalsetting::findOrFail(1);
-        if(count($due_id) <= 0){
-            return redirect()->back();
-        }
-      
         $deposit = new OnlinePayment;
         $deposit->member_id = $user->id;
         $deposit->currency = "BDT";
         $deposit->currency_code = "BDT";
-        $deposit->amount = $due;
+        $deposit->amount = $item_amount;
         $deposit->currency_value = 1;
         $deposit->method = 'SSLCommerz';
         $deposit->txnid = $txnid;
-        $deposit->invoice_id = implode(',',$due_id);
+        $deposit->invoice_id = $member_due->id;
         $deposit->save();
         
 
@@ -48,9 +42,9 @@ class sslController extends Controller
         $post_data['total_amount'] = $item_amount;
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = $txnid;
-        $post_data['success_url'] =action([sslController::class, 'notify']);//action ('User\DsslController@notify');
-        $post_data['fail_url'] =  action([sslController::class, 'cancel']);//action('User\DsslController@cancle');
-        $post_data['cancel_url'] =  action([sslController::class, 'cancel']);//action('User\DsslController@cancle');
+        $post_data['success_url'] =action([sslSingleController::class, 'notify']);//action ('User\DsslController@notify');
+        $post_data['fail_url'] =  action([sslSingleController::class, 'cancel']);//action('User\DsslController@cancle');
+        $post_data['cancel_url'] =  action([sslSingleController::class, 'cancel']);//action('User\DsslController@cancle');
         # $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE
         
         
@@ -124,12 +118,12 @@ class sslController extends Controller
         $member = OurMember::findOrFail($deposit->member_id);
         $this->memberSetSession($member);
         \Toastr::warning('Payment Cancelled.');
-        return redirect()->route('member.memdashboard');
+        return redirect()->route('member.member_invoice_view',$deposit->member_id);
     }
 
     
     public function notify(Request $request){
-        $cancel_url = action([sslController::class, 'cancel']);
+        $cancel_url = action([sslSingleController::class, 'cancel']);
         $input = $request->all();
         if($input['status'] == 'VALID'){
             $deposit = OnlinePayment::where('txnid','=',$input['tran_id'])->orderBy('created_at','desc')->first();
@@ -141,18 +135,13 @@ class sslController extends Controller
 
             // store in transaction table
             if ($deposit->status == 1) {
-                $invoice_id=explode(',',$deposit->invoice_id);
-                foreach($invoice_id as $inv){
-                    $this->invoice_payment($inv,$deposit->txnid);
-                }
-                
+                $this->invoice_payment($deposit->invoice_id,$deposit->txnid);
             }
             \Toastr::success('Payment done!');
-            return redirect()->route('member.memdashboard');
+            return redirect()->route('member.member_invoice_view',$deposit->member_id);
         }
         else {
-            Toastr::warning('Please try Again!');
-            return redirect()->route('member.memdashboard');
+            return redirect($cancel_url);
         }
     }
     

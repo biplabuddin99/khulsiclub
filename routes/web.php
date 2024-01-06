@@ -57,6 +57,7 @@ use App\Http\Middleware\isSalesman;
 use App\Http\Controllers\Mamberpanel\DashboardController as memberdash;
 use App\Http\Controllers\Mamberpanel\MemberPanel;
 use App\Http\Controllers\Mamberpanel\sslController as sslcz;
+use App\Http\Controllers\Mamberpanel\sslSingleController as sslsinglecz;
 use App\Http\Controllers\Mamberpanel\AccountReportController as accreport;
 
 /*
@@ -201,8 +202,12 @@ Route::group(['middleware'=>isSalesman::class],function(){
 
     });
 });
-        Route::post('/deposit/ssl/notify', [sslcz::class,'notify'])->name('deposit.ssl.notify');
-        Route::post('/deposit/ssl/cancel', [sslcz::class,'cancel'])->name('deposit.ssl.cancel');
+Route::post('/deposit/ssl/notify', [sslcz::class,'notify'])->name('deposit.ssl.notify');
+Route::post('/deposit/ssl/cancel', [sslcz::class,'cancel'])->name('deposit.ssl.cancel');
+
+Route::post('/single_invoice/ssl/notify', [sslsinglecz::class,'notify'])->name('single_invoice.ssl.notify');
+Route::post('/single_invoice/ssl/cancel', [sslsinglecz::class,'cancel'])->name('single_invoice.ssl.cancel');
+
 Route::group(['middleware'=>isMember::class],function(){
     Route::prefix('member')->group(function(){
         Route::get('/loggedMem', [memberdash::class,'memDashboard'])->name('member.memdashboard');
@@ -219,7 +224,6 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/change-request', [MemberPanel::class,'changeRequest'])->name('member.request');
         Route::post('/online-help-submited', [MemberPanel::class,'memberContactUs'])->name('member.help.store');
         Route::get('/member-due-view', [MemberPanel::class,'member_due'])->name('member.member_due_view');
-        Route::get('/member-invoice-view/{id}', [MemberPanel::class,'memberInvoice'])->name('member.member_invoice_view');
         
         Route::resource('changeReq',changeReq::class,['as'=>'member']);
         Route::get('/pending-request', [changeReq::class,'pendingRequest'])->name('member.pending_request');
@@ -227,9 +231,11 @@ Route::group(['middleware'=>isMember::class],function(){
         /* online payment */
         // ssl Routes
         Route::get('/deposit/ssl/submit', [sslcz::class,'store'])->name('deposit.ssl.submit');
+        Route::get('/single_invoice/ssl/submit/{id}', [sslsinglecz::class,'store'])->name('single_invoice.ssl.submit');
         /**account report */
         Route::get('/account-statement', [accreport::class,'statement'])->name('member.account_statement');
         Route::get('/online-payment-history', [accreport::class,'onlinePaymentHistory'])->name('member.online_payment_history');
+        Route::get('/member-invoice-view/{id}', [accreport::class,'memberInvoice'])->name('member.member_invoice_view');
 
     });
 });

@@ -124,7 +124,7 @@
 											<td class="tbl_border">{{$acc->purpose}}</td>
 											<td class="tbl_border">{{money_format((float)$acc->dr, 2, '.', '')}} @php $deb+=$acc->dr; @endphp</td>
 											<td class="tbl_border">{{money_format((float)$acc->cr, 2, '.', '')}} @php $cre+=$acc->cr; @endphp</td>
-											<td class="tbl_border">{{$balance>0?money_format(abs($balance))." Due":money_format(abs($balance))." Balance"}}</td>
+											<td class="tbl_border">{{$balance>0?money_format(abs($balance))." Due":money_format(abs($balance))." "}}</td>
 										</tr>
 									@endforeach
 								@endif
@@ -134,7 +134,7 @@
 									<th class="tbl_border" colspan="4" style="text-align:right">Total</th>
 									<th class="tbl_border"><?= money_format($deb) ?></th>
 									<th class="tbl_border"><?= money_format($cre) ?></th>
-									<th class="tbl_border">{{$balance>0?money_format(abs($balance))." Due":money_format(abs($balance))." Balance"}}</th>
+									<th class="tbl_border">{{$balance>0?money_format(abs($balance))." Due":money_format(abs($balance))." "}}</th>
 								</tr>
 							</tfoot>
 						</table>
