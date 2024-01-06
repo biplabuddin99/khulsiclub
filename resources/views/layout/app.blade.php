@@ -16,7 +16,14 @@
 
   {{-- tostr css --}}
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+  {{-- choice css --}}
+<link rel="stylesheet" href="{{ asset('assets/extensions/choices.js/public/assets/styles/choices.css') }}">
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<style>
+    .choices__list--dropdown .choices__item--selectable {
+        padding-right: 0;
+    }
+</style>
   @stack('styles')
 </head>
 
@@ -110,6 +117,8 @@
 <script src="{{ asset('/assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('/assets/js/app.js') }}"></script>
 <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="{{ asset('/assets/extensions/choices.js/public/assets/scripts/choices.min.js')}}"></script>
+<script src="{{ asset('/assets/js/pages/form-element-select.js')}}"></script>
 
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}

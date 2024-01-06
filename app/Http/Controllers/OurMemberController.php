@@ -10,6 +10,8 @@ use App\Http\Requests\OurMember\AddNewRequest;
 use App\Http\Requests\OurMember\UpdateRequest;
 use App\Http\Traits\ImageHandleTraits;
 use App\Models\MembershipType;
+use App\Models\Settings\Location\Country;
+use App\Models\Settings\Location\District;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -47,8 +49,10 @@ class OurMemberController extends Controller
      */
     public function create()
     {
+        $country = Country::all();
+        $district = District::all();
         $memberType = MembershipType::all();
-        return view('ourmember.create',compact('memberType'));
+        return view('ourmember.create',compact('memberType','country','district'));
     }
 
     /**
@@ -223,8 +227,10 @@ class OurMemberController extends Controller
     public function edit($id)
     {
         $member=OurMember::findOrFail(encryptor('decrypt',$id));
+        $country = Country::all();
+        $district = District::all();
         $memberType = MembershipType::all();
-        return view('ourmember.edit',compact('member','memberType'));
+        return view('ourmember.edit',compact('member','memberType','country','district'));
     }
 
     /**

@@ -51,25 +51,25 @@
 
         .gfg {
             border-collapse:separate;
-            border-spacing:0 32px;
+            border-spacing:0 18px;
         }
         .gfg2 {
             border-collapse:separate;
-            border-spacing:0 30px;
+            border-spacing:0 20px;
             }
 
         .gfg3 {
             border-collapse:separate;
-            border-spacing:0 36px;
+            border-spacing:0 18px;
         }
 
         .gfg4 {
             border-collapse:separate;
-            border-spacing:0 23px;
+            border-spacing:0 12px;
         }
         .gfg5 {
             border-collapse:separate;
-            border-spacing:0 40px;
+            border-spacing:0 18px;
         }
         .dtable,td, th{
 
@@ -117,9 +117,10 @@
             /* background-color: rgb(252, 245, 245); */
             /* font-family: Montserrat !important; */
             font-family: "Courier New Bold V1";
+            font-size: 16px !important;
         }
         body h3{
-            font-size: 20px !important;
+            font-size: 16px !important;
         }
         .binput {
             width: 100%;
@@ -258,22 +259,22 @@
             <table class = "gfg" style="width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left; font-size: 18px; width: 18%;">Full Name</td>
+                        <td style="text-align: left; font-size: 16px; width: 22%;">Full Name</td>
                         <td>:</td>
                         <td colspan="4" style="border-bottom: 1px dashed;">{{ $show_data->full_name }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Father's Name</td>
+                        <td style="text-align: left; font-size: 16px;">Father's Name</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->father_name . $show_data->husban_name }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Mother's Name</td>
+                        <td style="text-align: left; font-size: 16px;">Mother's Name</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->mother_name }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Marital Status</td>
+                        <td style="text-align: left; font-size: 16px;">Marital Status</td>
                         <td>:</td>
                         <td >
                             <input type="radio"  value="" {{ old('marit_status',$show_data->marital_status)=="0" ? "checked":"" }} name="marital_status">
@@ -281,65 +282,65 @@
                             <input type="radio" value="" {{ old('marit_status',$show_data->marital_status)=="1" ? "checked":"" }} name="marital_status">
                             <label for="">Married</label>
                         </td>
-                        <td style="text-align: left; font-size: 18px; ">Anniversary</td>
+                        <td style="text-align: left; font-size: 16px; ">Anniversary</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->anniversary }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Spouse Name</td>
+                        <td style="text-align: left; font-size: 16px;">Spouse Name</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->name_of_spouse }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px; ">Profession:</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px; ">Profession:</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->occupation_of_spouse }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Date of Birth</td>
+                        <td style="text-align: left; font-size: 16px;">Date of Birth</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->birth_date }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Place:</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Place:</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->place_of_birth }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Tel</td>
+                        <td style="text-align: left; font-size: 16px;">Tel</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->tel_number }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Phone</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Phone</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->cell_number }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Email</td>
+                        <td style="text-align: left; font-size: 16px;">Email</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->email }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Nationality</td>
+                        <td style="text-align: left; font-size: 16px;">Nationality</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->nationality }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Blood Group</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Blood Group</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->blood_group }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">NID NO</td>
+                        <td style="text-align: left; font-size: 16px;">NID NO</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->national_id }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Passport No</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Passport No</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->passport_no }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Educational Qualification</td>
+                        <td style="text-align: left; font-size: 16px;">Educational Qualification</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->qualification }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">E-TIN NO</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">E-TIN NO</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->e_tin_number }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Institution Name</td>
+                        <td style="text-align: left; font-size: 16px;">Institution Name</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->name_of_institute }}</td>
                     </tr>
@@ -355,30 +356,48 @@
         <form action="">
             <table class = "gfg3" style=" width:100%">
                 <tr>
-                    <td style="text-align: left; font-size: 18px;">Address</td>
+                    <td style="text-align: left; font-size: 16px;">Address</td>
                     <td>:</td>
                     <td colspan="7"style="border-bottom: 1px dashed;">{{ $show_data->address }}</td>
-                    {{-- <td style="text-align: left; font-size: 18px; padding-left:5px;">Road/Block/Sector:</td>
+                    {{-- <td style="text-align: left; font-size: 16px; padding-left:5px;">Road/Block/Sector:</td>
                     <td ><input type="text" class="tinput" value="{{ $show_data->block }}"></td> --}}
                 </tr>
                 <tr>
-                    <td style="text-align: left; font-size: 18px;">Police Station</td>
+                    <td style="text-align: left; font-size: 16px;">Police Station</td>
                     <td>:</td>
                     <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->police_station }}</td>
-                    <td style="text-align: left; font-size: 18px; padding-left:5px;">Post Office</td>
+                    <td style="text-align: left; font-size: 16px; padding-left:5px;">Post Office</td>
                     <td>:</td>
                     <td style="border-bottom: 1px dashed;">{{ $show_data->post_office }}</td>
                 </tr>
                 <tr>
-                    <td style="text-align: left; font-size: 18px;">Postal Code</td>
+                    <td style="text-align: left; font-size: 16px;">Postal Code</td>
                     <td>:</td>
-                    <td style="border-bottom: 1px dashed;">{{ $show_data->postalCode }}</td>
-                    <td style="text-align: left; font-size: 18px; padding-left:5px;">District</td>
+                    <td style="border-bottom: 1px dashed;">
+                        @if($show_data->postalCode != '')
+                            {{$show_data->postalCode}}
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @endif
+                    </td>
+                    <td style="text-align: left; font-size: 16px; padding-left:5px;">District</td>
                     <td>:</td>
-                    <td style="border-bottom: 1px dashed;">{{ $show_data->district }}</td>
-                    <td style="text-align: left; font-size: 18px; padding-left:5px;">Country</td>
+                    <td style="border-bottom: 1px dashed;">
+                        @if($show_data->district != '')
+                            {{$show_data->district}}
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @endif
+                    </td>
+                    <td style="text-align: left; font-size: 16px; padding-left:5px;">Country</td>
                     <td>:</td>
-                    <td style="border-bottom: 1px dashed;">{{ $show_data->country }}</td>
+                    <td style="border-bottom: 1px dashed;">
+                        @if($show_data->country != '')
+                            {{$show_data->country}}
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @endif
+                    </td>
                 </tr>
             </table>
             <div>
@@ -388,30 +407,48 @@
             <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Address</td>
+                        <td style="text-align: left; font-size: 16px;">Address</td>
                         <td>:</td>
                         <td colspan="7"style="border-bottom: 1px dashed;">{{ $show_data->perAddress }}</td>
-                        {{-- <td style="text-align: left; font-size: 18px; padding-left:5px;">Road/Block/Sector:</td>
+                        {{-- <td style="text-align: left; font-size: 16px; padding-left:5px;">Road/Block/Sector:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->perBlock }}"></td> --}}
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Police Station</td>
+                        <td style="text-align: left; font-size: 16px;">Police Station</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->perPoliceStation }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Post Office</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Post Office</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->perPostOffice }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Postal Code</td>
+                        <td style="text-align: left; font-size: 16px;">Postal Code</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->perPostalCode }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">District</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->perPostalCode != '')
+                                {{$show_data->perPostalCode}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">District</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->perDistrict }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Country</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->perDistrict != '')
+                                {{$show_data->perDistrict}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Country</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->perCountry }}</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->perCountry != '')
+                                {{$show_data->perCountry}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -419,7 +456,7 @@
                 {{-- <p style="margin: 0;">Details of Children:</p> --}}
                 <h3 class="section-heading" style="margin: 0px;"><b>Details of Children:</b></h3>
             </div>
-            <table class="dtable" style=" width:100%; border: 1px solid; margin-bottom: 5rem;">
+            <table class="dtable" style=" width:100%; border: 1px solid; margin-bottom: 2rem;">
                 <thead style="">
                     <tr style="background-color: red; color: white; text-align: center; ">
                         <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(178, 178, 189);">Serial</th>
@@ -434,118 +471,184 @@
                         @foreach($show_data->children as $c)
                             <tr style="text-align: center;">
                                 <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$loop->index + 1}}</th>
-                                <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->name }}</td>
-                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);"> @if($c->gender==1) Male @elseif($c->gender==2) Female @else @endif </td>
-                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->birth_date }}</td>
-                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->occupation }}</td>
+                                <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->name != '')
+                                        {{ $c->name }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->gender != '')
+                                        @if($c->gender==1) Male @elseif($c->gender==2) Female @else @endif 
+                                    @else
+                                        N/A
+                                    @endif
+                                    </td>
+                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->birth_date != '')
+                                        {{ $c->birth_date }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->occupation != '')
+                                        {{ $c->occupation }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     @endif
                     @for($i=$show_data->children->count();$i<5;$i++ )
                         <tr style="text-align: center;">
                             <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$i + 1}}</th>
-                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
                         </tr>
                     @endfor
                    
                 </tbody>
             </table>
             <div>
-                <h3 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>NOMINEE INFORMATION</b></h3>
+                <h3 class="section-heading" style="margin-top: 0rem; margin-bottom: 0;"><b>NOMINEE INFORMATION</b></h3>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tbody >
                     <tr style="position: relative;">
-                        <td colspan="6" style="position: absolute; top: 30px; right: 0;">
+                        <td colspan="6" style="position: absolute; top: 0; right: 0;">
                             <img src="{{asset('uploads/nominee/'.$show_data->nominee_photo)}}" alt="Image" style="width: 160px; height: 180px;"> <!-- Adjust width and height as needed -->
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px; width: 15%;">Name</td>
+                        <td style="text-align: left; font-size: 16px; width: 15%;">Name</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_name }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Relation</td>
+                        <td style="text-align: left; font-size: 16px;">Relation</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_relation }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Dath Of Birth</td>
+                        <td style="text-align: left; font-size: 16px; width: 24%;">Dath Of Birth</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_date_of_birth }}</td>
-                        {{-- <td style="text-align: left; font-size: 18px; padding-left:5px;">Place:</td>
+                        {{-- <td style="text-align: left; font-size: 16px; padding-left:5px;">Place:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td> --}}
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Email</td>
+                        <td style="text-align: left; font-size: 16px;">Email</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_email }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">NID NO</td>
+                        <td style="text-align: left; font-size: 16px;">NID NO</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->nominee_nid_no }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Passport No</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->nominee_nid_no != '')
+                                {{ $show_data->nominee_nid_no }}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Passport No</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->nominee_passport_no }}</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->nominee_passport_no != '')
+                                {{ $show_data->nominee_passport_no }}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Occupation</td>
+                        <td style="text-align: left; font-size: 16px;">Occupation</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->nominee_occupation }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Phone</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->nominee_occupation != '')
+                                {{ $show_data->nominee_occupation }}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Phone</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->nominee_phone }}</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->nominee_phone != '')
+                                {{ $show_data->nominee_phone }}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <div>
-                <h3 class="section-heading" style="margin-top: 2rem; margin-bottom: 0;"><b>PROFESSION INFORMATION</b></h3>
+                <h3 class="section-heading" style="margin-top: 1rem; margin-bottom: 0;"><b>PROFESSION INFORMATION</b></h3>
             </div>
             <table class = "gfg2" style=" width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Profession</td>
+                        <td style="text-align: left; font-size: 16px;">Profession</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->profession }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Designation</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Designation</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->designation }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Company</td>
+                        <td style="text-align: left; font-size: 16px;">Company</td>
                         <td>:</td>
                         <td colspan="7"style="border-bottom: 1px dashed;">{{ $show_data->company }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Address</td>
+                        <td style="text-align: left; font-size: 16px;">Address</td>
                         <td>:</td>
                         <td colspan="7"style="border-bottom: 1px dashed;">{{ $show_data->profAddress }}</td>
-                        {{-- <td style="text-align: left; font-size: 18px; padding-left:5px;">Road/Block/Sector:</td>
+                        {{-- <td style="text-align: left; font-size: 16px; padding-left:5px;">Road/Block/Sector:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->profBlock }}"></td> --}}
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Police Station</td>
+                        <td style="text-align: left; font-size: 16px; width: 24%;">Police Station</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->profPoliceStation }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Post Office</td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Post Office</td>
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->profPostOffice }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Postal Code</td>
+                        <td style="text-align: left; font-size: 16px;">Postal Code</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->profPostalCode }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">District</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->profPostalCode != '')
+                                {{$show_data->profPostalCode}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">District</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->profDistrict }}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:5px;">Country</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->profDistrict != '')
+                                {{$show_data->profDistrict}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:5px;">Country</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{ $show_data->profCountry }}</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if($show_data->profCountry != '')
+                                {{$show_data->profCountry}}
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -558,7 +661,7 @@
                         @if ($key % 2 == 0)
                             <tr>
                         @endif
-                        <td style="font-size: 18px;">
+                        <td style="font-size: 16px;">
                             <input type="checkbox" id="type{{ $mt->id }}" value="{{ $mt->id }}" {{ $show_data->membership_applied == $mt->id ? "checked" : "" }}>
                             <label for="type{{ $mt->id }}">&nbsp;{{ $mt->member_type }}</label>
                         </td>
@@ -566,29 +669,9 @@
                             </tr>
                         @endif
                     @endforeach
-                    {{-- <tr>
-                        <td ><input type="checkbox" value="1" {{ $show_data->membership_applied=="1" ? "checked":"" }}>&nbsp;Donor Member</td>
-                        <td ><input type="checkbox" value="2" {{ $show_data->membership_applied=="2" ? "checked":"" }}>&nbsp;Service Member</td>
-                    </tr>
-                    <tr>
-                        <td ><input type="checkbox" value="3" {{ $show_data->membership_applied=="3" ? "checked":"" }}>&nbsp;Life Member</td>
-                        <td ><input type="checkbox" value="4" {{ $show_data->membership_applied=="4" ? "checked":"" }}>&nbsp;Temporary Member</td>
-                    </tr>
-                    <tr>
-                        <td ><input type="checkbox" value="5" {{ $show_data->membership_applied=="5" ? "checked":"" }}>&nbsp;Permanent Member</td>
-                        <td ><input type="checkbox" value="6" {{ $show_data->membership_applied=="6" ? "checked":"" }}>&nbsp;Honorary Member</td>
-                    </tr>
-                    <tr>
-                        <td ><input type="checkbox" value="7" {{ $show_data->membership_applied=="7" ? "checked":"" }}>&nbsp;Corporate Member</td>
-                        <td ><input type="checkbox" value="8" {{ $show_data->membership_applied=="8" ? "checked":"" }}>&nbsp;Diplomate and Foreing National Member</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="checkbox" value="9" {{ $show_data->membership_applied=="9" ? "checked":"" }}>&nbsp;Founding Member</td>
-                    </tr> --}}
-
                 </table>
             </div>
-            <div style="margin-bottom: 5px; padding-top: 2rem;">
+            <div style="margin-bottom: 5px; padding-top: 0rem;">
                 <h3 class="section-heading" style="margin:0;"><b>DETAILS OF OTHER CLUB MEMBERSHIP (IF ANY)</b></h3>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid;">
@@ -605,68 +688,94 @@
                         @foreach($show_data->otherClub as $c)
                             <tr style="text-align: center;">
                                 <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$loop->index + 1}}</th>
-                                <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->name }}</td>
-                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->membership_type }}</td>
-                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">{{ $c->year }}</td>
+                                <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->name != '')
+                                        {{ $c->name }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->membership_type != '')
+                                        {{ $c->membership_type }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                                <td style="border: 1px solid; border-color: rgb(96, 96, 102);">
+                                    @if ($c->year != '')
+                                        {{ $c->year }}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     @endif
                     @for($i=$show_data->otherClub->count();$i<5;$i++ )
                         <tr style="text-align: center;">
                             <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">{{$j=$i + 1}}</th>
-                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
-                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);"></td>
+                            <td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
+                            <td style="border: 1px solid; border-color: rgb(96, 96, 102);">N/A</td>
                         </tr>
                     @endfor
                    
                 </tbody>
             </table>
-            <div style="margin-top: 5rem;">
-                <h3 class="section-heading" style="margin-top: 2rem;"><b>PROPOSED BY (ANY MEMBER OF CKCL)</b></h3>
+            <div style="margin-top: 2rem;">
+                <h3 class="section-heading" style="margin-top: 1rem;"><b>PROPOSED BY (ANY MEMBER OF CKCL)</b></h3>
             </div>
             <table class = "gfg5" style=" width:100%">
                 <tbody >
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Name</td>
+                        <td style="text-align: left; font-size: 16px;">Name</td>
                         <td>:</td>
                         <td colspan="4"style="border-bottom: 1px dashed;">{{$show_data->proposed_name}}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px;">Membership ID</td>
+                        <td style="text-align: left; font-size: 16px;">Membership ID</td>
                         <td>:</td>
-                        <td style="border-bottom: 1px dashed;">{{$show_data->proposed_membership_id}}</td>
-                        <td style="text-align: left; font-size: 18px; padding-left:10px;">Signature</td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->proposed_membership_id != '')
+                                {{$show_data->proposed_membership_id}}
+                            @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
+                        <td style="text-align: left; font-size: 16px; padding-left:10px;">Signature</td>
                         <td>:</td>
                         <td ><input type="text" class="tinput" value=""></td>
                     </tr>
                 </tbody>
             </table>
             <div class="">
-                <p style="font-size: 18px; line-height: 27px; text-align:justify;">Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
+                <p style="font-size: 16px; line-height: 20px; text-align:justify;">Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
                     I further declare that the above statement / particulars are correct therfore, request you to become a Donor, Life, Service, Permanent,
                     Temporary, Corporate,Honorary,Diplomat and Foreign National Member as per constitution of the <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p>
             </div>
-            <table class = "gfg5" style=" width:100%; margin-bottom: 5rem; padding-bottom: 60px;">
+            <table class = "gfg5" style=" width:100%;">
                 <tr>
-                    <tr>
-                        <td style="text-align: left; font-size: 18px;">DATE</td>
-                        <td>:</td>
-                        <td ><input type="text" class="tinput" value=""></td>
-                        <td style="text-align: left; font-size: 18px; padding-left: 10px;">APPLICANT SIGNATURE</td>
-                        <td>:</td>
-                        <td ><input type="text" class="tinput" value=""></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="text-align: left; font-size: 18px;">IDENTIFIED BY PRESIDENT / VICE PRESIDENT</td>
-                        <td>:</td>
-                        <td><input type="text" class="tinput" value=""></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; font-size: 18px;">MEMBERSHIP NO</td>
-                        <td>:</td>
-                        <td colspan="4"><input type="text" class="tinput" value="{{$show_data->membership_no}}"></td>
-                    </tr>
+                    <td style="text-align: left; font-size: 16px;">DATE</td>
+                    <td>:</td>
+                    <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: left; font-size: 16px; padding-left: 10px; width: 30%;">APPLICANT SIGNATURE</td>
+                    <td>:</td>
+                    <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+            <table class = "gfg5" style=" width:100%;">
+                <tr>
+                    <td colspan="4" style="text-align: left; font-size: 16px;">IDENTIFIED BY PRESIDENT / VICE PRESIDENT</td>
+                    <td>:</td>
+                    <td  style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+            <table class = "gfg5" style=" width:100%; margin-bottom: 2rem; padding-bottom: 40px;">
+                <tr>
+                    <td style="text-align: left; font-size: 16px; width: 20%;">MEMBERSHIP NO</td>
+                    <td>:</td>
+                    <td colspan="4"><input type="text" class="tinput" value="{{$show_data->membership_no}}"></td>
                 </tr>
             </table>
         </form>
@@ -681,12 +790,12 @@
             <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
-                        <td  style="text-align: left; font-size: 18px; width: 12%;">Mr./Mrs.</td>
+                        <td  style="text-align: left; font-size: 16px; width: 12%;">Mr./Mrs.</td>
                         <td>:</td>
                         <td><input type="text" class="binput" value="{{ $show_data->full_name }}"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left; font-size: 18px; width: 12%;">Address</td>
+                        <td style="text-align: left; font-size: 16px; width: 12%;">Address</td>
                         <td>:</td>
                         <td ><input type="text" class="binput" value="{{encryptor('decrypt', request()->session()->get('address'))}}"></td>
                     </tr>
@@ -696,21 +805,21 @@
                 </tbody>
             </table>
             <div>
-                <p style="font-size: 18px; line-height: 27px;">The constitution of club does hereby
+                <p style="font-size: 16px; line-height: 27px;">The constitution of club does hereby
                     declare you as the <input type="text" class="finput" value=""> of <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b>
                     and your Membership No. is <input type="text" class="finput" value="{{$show_data->membership_no}}"></p>
             </div>
             <div>
-                <p style="font-size: 18px;"><b>Thank you</b></p>
+                <p style="font-size: 16px;"><b>Thank you</b></p>
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tr>
-                    <td style="font-size: 18px;"><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
-                    <td style="font-size: 18px;"><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Vice President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
+                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
+                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-color: blue; outline: 0; border-style: solid; width: 80%;">Vice President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
                 </tr>
             </table>
             <div>
-                <p style="font-size: 18px;"><b>Remarks:</b></p>
+                <p style="font-size: 16px;"><b>Remarks:</b></p>
             </div>
             <table class = "gfg3" style=" width:100%; margin-bottom: 30px;">
                 <tbody >
