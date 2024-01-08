@@ -77,7 +77,7 @@
                                 <span><em>"This is an electronically generated letter or invoice, no signature is required"</em></span>
                             </div>
                         </div>
-                        <div class="" style="border-top: 2px dashed;">
+                        <div class="" style="border-top: 2px dashed; margrin-bottom: 10px;">
                             <img class="img-fluid" src="{{asset('images/weaccept.jpeg')}}" width="100%" alt="image" />
                         </div>
                     </div>
