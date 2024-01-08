@@ -63,7 +63,7 @@
                             <p>You may also pay the fee using the online payment gateway of BASIS.</p>
                             <p style="color: red;">Please note that, as per the section no. 6.1 of our Memorandum of Association, the last date for payment is February 28, 2023.</p>
                         </div>
-                        <div style="margin-top: 2rem;">
+                        <div style="margin-top: 2rem; margin-bottom: 3rem;">
                             <span>Note:</span>
                             <div style="padding-left: 2rem;">
                                 <span>1. For Membership Certificate, you need to pay the annual subscription and complete your company
@@ -76,6 +76,9 @@
                             <div style="text-align: center; margin-top: 10px;">
                                 <span><em>"This is an electronically generated letter or invoice, no signature is required"</em></span>
                             </div>
+                        </div>
+                        <div class="" style="border-top: 2px dashed;">
+                            <img class="img-fluid" src="{{asset('images/weaccept.jpeg')}}" width="100%" alt="image" />
                         </div>
                     </div>
                 </div>
