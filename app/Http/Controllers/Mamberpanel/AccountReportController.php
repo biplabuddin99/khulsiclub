@@ -9,6 +9,7 @@ use App\Models\Accounts\Child_two;
 use App\Models\CRM\MemberInvoice;
 use App\Models\OnlinePayment;
 use App\Models\OurMember;
+use App\Models\setting;
 use Illuminate\Http\Request;
 
 class AccountReportController extends Controller{
@@ -47,6 +48,13 @@ class AccountReportController extends Controller{
     {
         $data = OnlinePayment::where('member_id',currentUserId())->latest()->paginate(10);
         return view('frontend.memDashboard.payment.onlinehistory',compact('data'));
+    }
+
+    public function paymentInvoice($id)
+    {
+        $data = OnlinePayment::where('id',$id)->first();
+        $setting = setting::first();
+        return view('frontend.memDashboard.payment.paymentInvoice',compact('data','setting'));
     }
 
     /* member due list */

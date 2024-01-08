@@ -37,7 +37,9 @@
                                     </td>
                                 @elseif($b->status == 0)
                                     <td class="text-success fw-bold">Pending</td>
-                                    <td></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-success" href="{{route('member.online_payment_invoice',$b->id)}}">view invoice</a>
+                                    </td>
                                 @else
                                     <td class="text-success fw-bold">Fail</td>
                                     <td></td>

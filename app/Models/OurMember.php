@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Settings\Location\Country;
+use App\Models\Settings\Location\District;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -62,6 +64,29 @@ class OurMember extends Model
     */
     public function role(){
         return $this->belongsTo(Role::class);
+    }
+
+    public function country_present(){
+        return $this->belongsTo(Country::class,'country','id');
+    }
+
+    public function country_permanent(){
+        return $this->belongsTo(Country::class,'perCountry','id');
+    }
+
+    public function country_professional(){
+        return $this->belongsTo(Country::class,'profCountry','id');
+    }
+
+    public function district_present(){
+        return $this->belongsTo(District::class,'district','id');
+    }
+    public function district_permanent(){
+        return $this->belongsTo(District::class,'perDistrict','id');
+    }
+
+    public function district_professional(){
+        return $this->belongsTo(District::class,'profDistrict','id');
     }
 
     public function children(){

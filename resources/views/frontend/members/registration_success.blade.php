@@ -384,7 +384,7 @@
                     <td>:</td>
                     <td style="border-bottom: 1px dashed;">
                         @if($show_data->district != '')
-                            {{$show_data->district}}
+                            {{$show_data->district_present?->name}}
                         @else
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         @endif
@@ -393,7 +393,7 @@
                     <td>:</td>
                     <td style="border-bottom: 1px dashed;">
                         @if($show_data->country != '')
-                            {{$show_data->country}}
+                            {{$show_data->country_present?->name}}
                         @else
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         @endif
@@ -435,7 +435,7 @@
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">
                             @if($show_data->perDistrict != '')
-                                {{$show_data->perDistrict}}
+                                {{$show_data->district_permanent?->name}}
                             @else
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
@@ -444,7 +444,7 @@
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">
                             @if($show_data->perCountry != '')
-                                {{$show_data->perCountry}}
+                                {{$show_data->country_permanent?->name}}
                             @else
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
@@ -459,11 +459,11 @@
             <table class="dtable" style=" width:100%; border: 1px solid; margin-bottom: 2rem;">
                 <thead style="">
                     <tr style="background-color: red; color: white; text-align: center; ">
-                        <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid; border-color: rgb(178, 178, 189);">Serial</th>
-                        <th style="border: 1px solid; border-color: rgb(178, 178, 189);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th style="border: 1px solid; border-color: rgb(178, 178, 189);">Sex</th>
-                        <th style="border: 1px solid; border-color: rgb(178, 178, 189);">Date of Birth</th>
-                        <th style="border: 1px solid; border-color: rgb(178, 178, 189);">Occupation with Address</th>
+                        <th style="padding-top: 10px; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; border: 1px solid; border-color: rgb(178, 178, 189);">Serial</th>
+                        <th style="padding-left: 5px; padding-right: 5px; border: 1px solid; border-color: rgb(178, 178, 189);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th style="padding-left: 5px; padding-right: 5px; border: 1px solid; border-color: rgb(178, 178, 189);">Sex</th>
+                        <th style="padding-left: 5px; padding-right: 5px; border: 1px solid; border-color: rgb(178, 178, 189);">Date of Birth</th>
+                        <th style="padding-left: 5px; padding-right: 5px; border: 1px solid; border-color: rgb(178, 178, 189);">Occupation with Address</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -635,7 +635,7 @@
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">
                             @if($show_data->profDistrict != '')
-                                {{$show_data->profDistrict}}
+                                {{$show_data->district_professional?->name}}
                             @else
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
@@ -644,7 +644,7 @@
                         <td>:</td>
                         <td style="border-bottom: 1px dashed;">
                             @if($show_data->profCountry != '')
-                                {{$show_data->profCountry}}
+                                {{$show_data->country_professional?->name}}
                             @else
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
