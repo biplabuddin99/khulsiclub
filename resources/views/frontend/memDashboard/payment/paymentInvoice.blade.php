@@ -87,3 +87,21 @@
     </div>
 </section> 
 @endsection
+@endsection
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js" defer></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<script>
+    function downloadPDF(divName) {
+        var element = document.getElementById(divName);
+
+        html2pdf(element, {
+            margin: 10,
+            filename: 'invoice.pdf',
+            image: { type: 'png', quality: 0.98 },
+            html2canvas: { scale: 1 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        });
+    }
+</script>
+@endpush

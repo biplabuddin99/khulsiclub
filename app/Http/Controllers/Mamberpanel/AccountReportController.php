@@ -57,6 +57,13 @@ class AccountReportController extends Controller{
         return view('frontend.memDashboard.payment.paymentInvoice',compact('data','setting'));
     }
 
+    public function moneyReceipt($id)
+    {
+        $data = OnlinePayment::where('id',$id)->first();
+        $setting = setting::first();
+        return view('frontend.memDashboard.payment.moneyReceipt',compact('data','setting'));
+    }
+
     /* member due list */
     public function memberInvoice($id)
     {

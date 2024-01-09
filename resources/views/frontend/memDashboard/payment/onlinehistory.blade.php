@@ -32,13 +32,14 @@
                                 @if($b->status == 1)
                                     <td class="text-danger fw-bold">Paid</td>
                                     <td>
-                                        <a class="btn btn-sm btn-info text-white" href="#">Invoice</a>
-                                        <a class="btn btn-sm btn-success text-white" href="#">Money Receipts</a>
+                                        <a class="btn btn-sm btn-info text-white" href="{{route('member.online_payment_invoice',$b->id)}}">view invoice</a>
+                                        <a class="btn btn-sm btn-success text-white" href="{{route('member.money_receipt',$b->id)}}">Money Receipts</a>
                                     </td>
                                 @elseif($b->status == 0)
                                     <td class="text-success fw-bold">Pending</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="{{route('member.online_payment_invoice',$b->id)}}">view invoice</a>
+                                        <a class="btn btn-sm btn-info text-white" href="{{route('member.online_payment_invoice',$b->id)}}">view invoice</a>
+                                        <a class="btn btn-sm btn-success" href="{{route('member.money_receipt',$b->id)}}">Money Receipts</a>
                                     </td>
                                 @else
                                     <td class="text-success fw-bold">Fail</td>

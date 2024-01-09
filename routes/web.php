@@ -236,6 +236,7 @@ Route::group(['middleware'=>isMember::class],function(){
         Route::get('/account-statement', [accreport::class,'statement'])->name('member.account_statement');
         Route::get('/online-payment-history', [accreport::class,'onlinePaymentHistory'])->name('member.online_payment_history');
         Route::get('/online-payment-invoice/{id}', [accreport::class,'paymentInvoice'])->name('member.online_payment_invoice');
+        Route::get('/money-receipt/{id}', [accreport::class,'moneyReceipt'])->name('member.money_receipt');
         Route::get('/member-invoice-view/{id}', [accreport::class,'memberInvoice'])->name('member.member_invoice_view');
 
     });
