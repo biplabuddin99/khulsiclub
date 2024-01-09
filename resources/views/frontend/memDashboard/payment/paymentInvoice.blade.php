@@ -8,10 +8,10 @@
                 <div class="card-header mem-password">
                     <h5>Payment Invoice</h5>
                 </div>
-                <div class="card-body table-responsive">
-                    <div class="text-center">
-                        <button class="btn btn-info text-white">Download</button>
-                    </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-info text-white no_print" onclick="downloadPDF('payment-invoice')">Download</button>
+                </div>
+                <div class="card-body table-responsive" id="payment-invoice" style="margin-right: 10px;">
                     <style>
 
                         .tbl_border{
@@ -20,7 +20,7 @@
                         }
                     </style>
                     <div class="logo" style="border-bottom: 2px dashed;">
-                        <img src="{{asset('uploads/settings/header_logo/'.$setting?->header_logo)}}" width="400px" height="auto" alt="" style="padding-bottom: 10px;">
+                        <img src="{{asset('uploads/settings/header_logo/'.$setting?->header_logo)}}" width="300px" height="auto" alt="" style="padding-bottom: 10px;">
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="ref"><p>Ref: General/Invoice/GE-16-06-793/13049</p></div>
@@ -38,17 +38,17 @@
                     </div>
                     <div class="">
                         <table style="width: 100%;">
-                            <tr class="tbl_border" style="text-align: center;">
+                            <tr style="text-align: center;">
                                 <td class="tbl_border" style="padding: 3px;">SL NO</td>
                                 <td class="tbl_border" style="padding: 3px;">Description</td>
                                 <td class="tbl_border" style="padding: 3px;">Amount</td>
-                            </tr class="tbl_border">
-                            <tr class="tbl_border" style="text-align: center;">
+                            </tr>
+                            <tr style="text-align: center;">
                                 <td class="tbl_border" style="padding: 3px;">01</td>
                                 <td class="tbl_border" style="padding: 3px;">Annual Subscription Fee- 2023</td>
                                 <td class="tbl_border" style="padding: 3px;">10,000.00</td>
                             </tr>
-                            <tr class="tbl_border" style="text-align: center;">
+                            <tr style="text-align: center;">
                                 <th colspan="2" class="tbl_border" style="text-align: right; padding: 3px;">Total=</th>
                                 <th class="tbl_border" style="padding: 3px;">10,000.00</th>
                             </tr>
@@ -86,7 +86,6 @@
         </div>
     </div>
 </section> 
-@endsection
 @endsection
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js" defer></script>
