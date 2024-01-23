@@ -28,48 +28,48 @@
                         <table style="width: 100%;">
                             <tr style="text-align: center;">
                                 <td style="padding: 3px; width: 5%; text-align:left;">SL</td>
-                                <td style=" border-bottom: 1px dashed; width: 25%;"><b>Description</b></td>
+                                <td style=" border-bottom: 1px dashed; width: 25%;"><b>{{str_pad($data->id,6,'0',STR_PAD_LEFT)}}</b></td>
                                 <td></td>
                                 <td style="padding: 3px; width: 5%;">Date: </td>
-                                <td style=" border-bottom: 1px dashed; width: 25%;"><b>Description</b></td>
+                                <td style=" border-bottom: 1px dashed; width: 25%;"><b>{{ \Carbon\Carbon::parse($data->created_at)->format('d/m/Y')}}</b></td>
                             </tr>
                         </table>
 
                         <table style="width: 100%; margin-top: 2rem;">
                             <tr>
                                 <td style="padding-top: 10px; width: 15%;">Invoice:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>Description</b></td>
+                                <td style=" border-bottom: 1px dashed;text-transform: uppercase;"><b>INV-{{ \Carbon\Carbon::parse($data->created_at)->format('Y')}}-{{$data->id}}</b></td>
                                 <td style="padding-top: 10px; width: 15%; text-align: center;">Transaction ID: </td>
-                                <td style=" border-bottom: 1px dashed;"><b>Description</b></td>
+                                <td style=" border-bottom: 1px dashed;text-transform: uppercase;"><b>{{$data->txnid}}</b></td>
                             </tr>
                         </table>
                         <table style="width: 100%;">
                             <tr>
                                 <td style="padding-top: 10px; width: 25%;">Received with thanks from:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>TEXTURE SOFTWARE TECHNOLOGY LIMITED</b></td>
+                                <td style=" border-bottom: 1px dashed;"><b>{{$data->member?->full_name}}</b></td>
                             </tr>
                         </table>
 
                         <table style="width: 100%;">
                             <tr>
                                 <td style="padding-top: 10px; width: 4%;">TK:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>1000.00</b></td>
+                                <td style=" border-bottom: 1px dashed;"><b>{{$data->amount}}</b></td>
                                 <td style="padding-top: 10px; width: 12%; text-align: center;">In Words:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>TEN THOUSAND TAKA ONLY</b></td>
+                                <td style=" border-bottom: 1px dashed;text-transform: uppercase;"><b>{{getBangladeshCurrency($data->amount)}}</b></td>
                             </tr>
                         </table>
                         <table style="width: 100%;">
                             <tr>
                                 <td style="padding-top: 10px; width: 17%;">Payment Method:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>SSL</b></td>
+                                <td style=" border-bottom: 1px dashed;text-transform: uppercase;"><b>{{$data->method}}</b></td>
                                 <td style="padding-top: 10px; width: 17%; text-align: center;">Payment Type:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>Online</b></td>
+                                <td style=" border-bottom: 1px dashed;text-transform: uppercase;"><b>Online</b></td>
                             </tr>
                         </table>
                         <table style="width: 100%;">
                             <tr>
                                 <td style="padding-top: 10px; width: 15%;">Payment For:</td>
-                                <td style=" border-bottom: 1px dashed;"><b>TEXTURE SOFTWARE TECHNOLOGY LIMITED</b></td>
+                                <td style=" border-bottom: 1px dashed;"><b>{{$data->member?->full_name}}</b></td>
                             </tr>
                         </table>
                         <div style="margin-top: 1rem;">
