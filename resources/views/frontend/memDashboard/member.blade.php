@@ -162,9 +162,9 @@
                                 <td width="53"></td>
                             </tr>
                         </table> --}}
-                        <div class="fb-page" data-href="https://www.facebook.com/61554733808896" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/61554733808896" class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/61554733808896">Your Page Name</a>
+                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61553697763621&mibextid=AEUHqQ" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/profile.php?id=61553697763621&mibextid=AEUHqQ" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/profile.php?id=61553697763621&mibextid=AEUHqQ">Your Page Name</a>
                             </blockquote>
                         </div>
                         {{-- <div id="latestFacebookPost"></div> --}}
