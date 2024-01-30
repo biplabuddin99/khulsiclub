@@ -143,7 +143,7 @@ class sslSingleController extends Controller
                     if($member->cell_number){
                         $phone=$member->cell_number;
                         $rand=$deposit->txnid;
-                        $msg_text="Sir, Due payment of ".$deposit->amount." Tk to Membership No: LM002 has been successfully Paid.\nThank you.\nChittagong khulshi Club Ltd.";
+                        $msg_text="Dear LM-0001,\n\nYour payment of BDT ".$deposit->amount." has been received successfully.\n\nThank you\nChittagong Khulshi Club Limited.";
                         if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
                             /* update member sms send status */
                             $deposit->sms_send=1;

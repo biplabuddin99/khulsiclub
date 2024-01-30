@@ -13,6 +13,7 @@ use App\Models\Accounts\GeneralLedger;
 use App\Models\Accounts\GeneralVoucher;
 use App\Models\Accounts\Child_two;
 use Illuminate\Support\Facades\Session;
+use App\Classes\sslSms;
 use DB;
 
 class sslController extends Controller
@@ -144,6 +145,21 @@ class sslController extends Controller
                 $invoice_id=explode(',',$deposit->invoice_id);
                 foreach($invoice_id as $inv){
                     $this->invoice_payment($inv,$deposit->txnid);
+
+                    if($deposit->sms_send !=1 ){ /** check member sms send before or not */
+                        $smsClass= new sslSms();
+                        if($member->cell_number){
+                            $phone=$member->cell_number;
+                            $rand=$deposit->txnid;
+                            $msg_text="Dear LM-0001,\n\nYour payment of BDT ".$deposit->amount." has been received successfully.\n\nThank you\nChittagong Khulshi Club Limited.";
+                            if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
+                                /* update member sms send status */
+                                $deposit->sms_send=1;
+                                $deposit->save();
+                            }
+                        }
+                    }
+
                 }
                 
             }
