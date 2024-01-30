@@ -13,6 +13,7 @@ use App\Models\Accounts\GeneralLedger;
 use App\Models\Accounts\GeneralVoucher;
 use App\Models\Accounts\Child_two;
 use Illuminate\Support\Facades\Session;
+use App\Classes\sslSms;
 use DB;
 
 class sslSingleController extends Controller
@@ -136,6 +137,21 @@ class sslSingleController extends Controller
             // store in transaction table
             if ($deposit->status == 1) {
                 $this->invoice_payment($deposit->invoice_id,$deposit->txnid);
+
+                if($deposit->sms_send !=1 ){ /** check member sms send before or not */
+                    $smsClass= new sslSms();
+                    if($member->cell_number){
+                        $phone=$member->cell_number;
+                        $rand=$deposit->txnid;
+                        $msg_text="Sir, Due payment of ".$deposit->amount." Tk to Membership No: LM002 has been successfully Paid.\nThank you.\nChittagong khulshi Club Ltd.";
+                        if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
+                            /* update member sms send status */
+                            $deposit->sms_send=1;
+                            $deposit->save();
+                        }
+                    }
+                }
+
             }
             \Toastr::success('Payment done!');
             return redirect()->route('member.member_invoice_view',$deposit->member_id);

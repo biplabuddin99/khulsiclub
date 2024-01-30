@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('method')->nullable();
             $table->string('txnid')->nullable();
             $table->text('invoice_id')->nullable();
+            $table->integer('sms_send')->default(0)->comment('0 pending, 1 send');
             $table->integer('status')->default(0)->comment('0 pending, 1 successfull, 2 fail');
             $table->timestamps();
         });
