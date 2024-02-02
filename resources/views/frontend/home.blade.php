@@ -769,4 +769,3 @@
         ScrollReveal().reveal('.memberdiv .owl-member, .gallery .owl-gallery', { delay: 200,  origin: 'top', interval: 30 });
     </script>
     @endpush
-
