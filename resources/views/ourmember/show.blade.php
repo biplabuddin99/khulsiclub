@@ -818,7 +818,7 @@
 
         html2pdf(element, {
             margin: 10,
-            filename: 'money-receipt.pdf',
+            filename: 'member-form.pdf',
             image: { type: 'jpeg', quality: 1 },
             html2canvas: { scale: 2, useCORS: true },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
