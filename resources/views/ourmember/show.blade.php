@@ -26,27 +26,6 @@
                 display: none !important;
             }
         }
-        .nomineeinput {
-            width: 80%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
-        .tinput {
-            width: 100%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
-        input:focus {
-            border-color: green;
-            /* font-family: Montserrat !important; */
-            font-family: "Courier New Bold V1";
-        }
 
 
         .gfg {
@@ -122,47 +101,6 @@
         body h3{
             font-size: 16px !important;
         }
-        .binput {
-            width: 100%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-            
-        }
-        .sinput {
-            width: 100%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
-        .finput {
-            width: 30%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
-        .bottominput {
-            width: 80%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
-        .bottom2input {
-            width: 32%;
-            outline: 0;
-            border-style: dashed;
-            border-width: 0 0 1px;
-            border-color: blue;
-            background-color: transparent;
-        }
        
         .btn {
     --bs-btn-padding-x: 0.75rem;
@@ -218,14 +156,20 @@
     
     <div>
         <a href="{{route(currentUser().'.dashboard')}}" class="btn no-print"> Go To Dashboard</a>
-        <button class="no-print btn" type="button" onclick="window.print()" style="float:right"> 
+        {{-- <button class="no-print btn" type="button" onclick="window.print()" style="float:right"> 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                 <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
                 <path d="M5 1a2 2 0 0 0-2 2v2h3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1h3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
               </svg>
             Print
-        </button>
+        </button> --}}
+        <button class="btn btn-info text-white no_print" onclick="downloadPDF('member-form')" style="float:right">Download</button>
+        <div class="text-center mt-3">
+        </div>
     </div>
+<div id="member-form">
+
+    
     <div class="bg1"  style="width:95%; margin:0 auto;">
         <div style="text-align: center;">
             <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
@@ -521,30 +465,30 @@
                 <tbody >
                     <tr style="position: relative;">
                         <td colspan="6" style="position: absolute; top: 0; right: 0;">
-                            <img src="{{asset('uploads/nominee/'.$show_data->nominee_photo)}}" alt="Image" style="width: 160px; height: 180px;"> <!-- Adjust width and height as needed -->
+                            <img src="{{asset('uploads/nominee/'.$show_data->nominee_photo)}}" alt="Image" style="height: 160px; border-left: solid 10px white;">
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px; width: 15%;">Name</td>
                         <td>:</td>
-                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_name }}</td>
+                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_name }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px;">Relation</td>
                         <td>:</td>
-                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_relation }}</td>
+                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_relation }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px; width: 24%;">Dath Of Birth</td>
                         <td>:</td>
-                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_date_of_birth }}</td>
+                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_date_of_birth }}</td>
                         {{-- <td style="text-align: left; font-size: 16px; padding-left:5px;">Place:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td> --}}
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px;">Email</td>
                         <td>:</td>
-                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_email }}</td>
+                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_email }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px;">NID NO</td>
@@ -553,7 +497,7 @@
                             @if ($show_data->nominee_nid_no != '')
                                 {{ $show_data->nominee_nid_no }}
                             @else
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
                         </td>
                         <td style="text-align: left; font-size: 16px; padding-left:5px;">Passport No</td>
@@ -562,7 +506,7 @@
                             @if ($show_data->nominee_passport_no != '')
                                 {{ $show_data->nominee_passport_no }}
                             @else
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
                         </td>
                     </tr>
@@ -573,7 +517,7 @@
                             @if ($show_data->nominee_occupation != '')
                                 {{ $show_data->nominee_occupation }}
                             @else
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
                         </td>
                         <td style="text-align: left; font-size: 16px; padding-left:5px;">Phone</td>
@@ -582,7 +526,7 @@
                             @if ($show_data->nominee_phone != '')
                                 {{ $show_data->nominee_phone }}
                             @else
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @endif
                         </td>
                     </tr>
@@ -745,12 +689,12 @@
                         </td>
                         <td style="text-align: left; font-size: 16px; padding-left:10px;">Signature</td>
                         <td>:</td>
-                        <td ><input type="text" class="tinput" value=""></td>
+                        <td style="border-bottom: 1px dashed;"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
                     </tr>
                 </tbody>
             </table>
             <div class="">
-                <p style="font-size: 16px; line-height: 20px; text-align:justify;">Declaration I, <input type="text" class="finput">hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
+                <p style="font-size: 16px; line-height: 20px; text-align:justify;">Declaration I, <span style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>hereby declare that I Have Neither Committed any illegal / Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
                     I further declare that the above statement / particulars are correct therfore, request you to become a Donor, Life, Service, Permanent,
                     Temporary, Corporate,Honorary,Diplomat and Foreign National Member as per constitution of the <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p>
             </div>
@@ -771,11 +715,17 @@
                     <td  style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
             </table>
-            <table class = "gfg5" style=" width:100%; margin-bottom: 2rem; padding-bottom: 40px;">
+            <table class = "gfg5" style=" width:100%; margin-bottom: 1rem; padding-bottom: 40px;">
                 <tr>
                     <td style="text-align: left; font-size: 16px; width: 20%;">MEMBERSHIP NO</td>
                     <td>:</td>
-                    <td colspan="4"><input type="text" class="tinput" value="{{$show_data->membership_no}}"></td>
+                    <td colspan="4" style="border-bottom: 1px dashed;">
+                        @if ($show_data->membership_no != '')
+                            {{$show_data->membership_no}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @endif
+                    </td>
                 </tr>
             </table>
         </form>
@@ -784,30 +734,36 @@
 
     <div class="bg3" style="width:95%; margin:0 auto;">
         <form action="">
-            <div style="text-align: center; margin-top: 5rem; ">
-                <h3 class="section-heading" style="margin-top: 5rem;"><b>FOR OFFICIAL USE ONLY</b></h3>
+            <div style="text-align: center;">
+                <h3 class="section-heading" style="margin-top: 1rem;"><b>FOR OFFICIAL USE ONLY</b></h3>
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tbody >
                     <tr>
                         <td  style="text-align: left; font-size: 16px; width: 12%;">Mr./Mrs.</td>
                         <td>:</td>
-                        <td><input type="text" class="binput" value="{{ $show_data->full_name }}"></td>
+                        <td style="border-bottom: 1px dashed;">
+                            @if ($show_data->full_name != '')
+                                {{$show_data->full_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @else
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @endif
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 16px; width: 12%;">Address</td>
                         <td>:</td>
-                        <td ><input type="text" class="binput" value="{{encryptor('decrypt', request()->session()->get('address'))}}"></td>
+                        <td style="border-bottom: 1px dashed;">{{encryptor('decrypt', request()->session()->get('address'))}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><input type="text" class="binput" ></td>
+                        <td colspan="3" style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                 </tbody>
             </table>
             <div>
                 <p style="font-size: 16px; line-height: 27px;">The constitution of club does hereby
-                    declare you as the <input type="text" class="finput" value=""> of <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b>
-                    and your Membership No. is <input type="text" class="finput" value="{{$show_data->membership_no}}"></p>
+                    declare you as the <span style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> of <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b>
+                    and your Membership No. is <span style="border-bottom: 1px dashed;">{{$show_data->membership_no}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
             </div>
             <div>
                 <p style="font-size: 16px;"><b>Thank you</b></p>
@@ -824,33 +780,49 @@
             <table class = "gfg3" style=" width:100%; margin-bottom: 30px;">
                 <tbody >
                     <tr>
-                        <td><input type="text" class="binput" value="{{ $show_data->remarks }}"></td>
+                        <td style="border-bottom: 1px dashed;">{{ $show_data->remarks }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="binput" ></td>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     
                 </tbody>
             </table>
         </form>
     </div>
+</div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js" defer></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<script>
+    function downloadPDF(divName) {
+        var element = document.getElementById(divName);
+
+        html2pdf(element, {
+            margin: 10,
+            filename: 'money-receipt.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        });
+    }
+</script>
 </html>

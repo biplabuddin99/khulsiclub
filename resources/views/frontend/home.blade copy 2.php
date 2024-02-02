@@ -128,100 +128,80 @@
     <section class="pb-lg-5 pb-md-1 news_event mt-lg-5 mt-md-4">
       <div class="container-fluid px-lg-5 notice-blog bg-light shadow rounded-3">
         <div class="row">
-          <div class="col-md-9 col-lg-9 d-none d-sm-block">
-            <div class="row">
-              <div class="col-12">
-                <div class="mt-3 d-flex notice-div-one ">
-                    <span class="material-icons me-2"> today </span>
-                    <a href="{{route('event-notice')}}">
-                      <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
-                    </a>
-                </div>
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 450px;">
-                  <div class="carousel-inner n-item-center notice-carousel shadow text-center" style="height: 450px;">
-                    @forelse ($vNotice as $v)
-                      @if ($v->link != '')
-                        <div class="carousel-item active">
-                          <iframe class="notice-img" width="100%" height="450px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                      @else
-                          
-                      @endif
-                    @empty
-                    <div class="carousel-item active">
-                    <iframe class="notice-img" width="100%" height="450x" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    @endforelse
-                    @forelse ($vNotice as $notic)
-                      @if ($notic->image != '')
-                        <div class="carousel-item ">
-                          <img
-                            src="{{asset('uploads/video_notice/'.$notic->image)}}"
-                            class="d-block w-100 notice-img"
-                            alt="..."/>
-                        </div>
-                      @else
-                      @endif
-                    @empty
-                    <div class="carousel-item active">
-                      <iframe class="notice-img" width="100%" height="350" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    @endforelse
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
+          <div class="col-md-7 col-lg-7 d-none d-sm-block">
+              <div class="mt-3 d-flex notice-div-one ">
+                  <span class="material-icons me-2"> today </span>
+                  <a href="{{route('event-notice')}}">
+                    <p class="fs-4 mb-1 pt-1 title-heading">News & Events</p>
+                  </a>
               </div>
-              <div class="col-12">
-                <div class="my-2 text-center">
-                  <p class="p-0 m-0" style="font-size: 20px; color: red; font-weight:bold;">Sticky Notice...</p>
-                </div>
-                <div class="" style="height: 450px;">
-                    @forelse ($notice as $n)
-                      <div class="notice-title notice-div-two">
-                        <p class="mb-0">
-                          <a href="{{asset('uploads/notice_image/'.$n->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
-                        </p>
-                        <div class="d-flex notice-time">
-                          <span class="material-symbols-outlined"> alarm </span>
-                          <p class="mb-2">{{date('j F, Y', strtotime($n->published_date))}} </p>
-                        </div>
-                      </div>
-                    @empty
-                    <div class="notice-title">
-                      <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                          Dolores, numquam?
-                      </p>
-                      <div class="d-flex notice-time">
-                        <span class="material-symbols-outlined"> alarm </span>
-                        <p class="mb-2">19 January, 2023</p>
-                      </div>
-                    </div>
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                  @forelse ($vNotice as $v)
+                  <div class="carousel-item active">
+                  <iframe class="notice-img" width="100%" height="350px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
+                  <iframe class="notice-img" width="100%" height="350x" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  @endforelse
+                  @forelse ($vNotice as $notic)
+                  <div class="carousel-item ">
+                    <img
+                      src="{{asset('uploads/video_notice/'.$notic->image)}}"
+                      class="d-block w-100 notice-img"
+                      alt="..."/>
+                  </div>
+                  @empty
+                  <div class="carousel-item active">
+                    <iframe class="notice-img" width="100%" height="315" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
                   @endforelse
                 </div>
-                <div class="views-notice">
-                  <a href="{{route('all-notice')}}">Views All Notices</a>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
-            </div>
-              
           </div>
-          <div class="col-md-3 col-lg-3 d-none d-sm-block notice ">
+          <div class="col-md-5 col-lg-5 d-none d-sm-block notice ">
             <div class="mt-3 d-flex notice-div-one">
               <span class="material-icons me-2"> today </span>
               <a href="{{route('all-notice')}}">
-                <p class="fs-4 mb-1 pt-1 title-heading">Our Facebook Page</p>
+                <p class="fs-4 mb-1 pt-1 title-heading">Notice</p>
               </a>
             </div>
-            <div class="height-300" style="padding-top: .7rem;">
-              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61553697763621%26mibextid%3DAEUHqQ&tabs=timeline&width=630&height=1006&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=221303001015879" width="100%" height="994px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <div class="height-300">
+                @forelse ($notice as $n)
+                  <div class="notice-title notice-div-two">
+                    <p class="mb-0">
+                      <a href="{{asset('uploads/notice_image/'.$n->noticefile)}}" class="notice_title" target="_blank">{{$n->title}}</a>
+                    </p>
+                    <div class="d-flex notice-time">
+                      <span class="material-symbols-outlined"> alarm </span>
+                      <p class="mb-2">{{date('j F, Y', strtotime($n->published_date))}} </p>
+                    </div>
+                  </div>
+                @empty
+                <div class="notice-title">
+                  <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolores, numquam?
+                  </p>
+                  <div class="d-flex notice-time">
+                    <span class="material-symbols-outlined"> alarm </span>
+                    <p class="mb-2">19 January, 2023</p>
+                  </div>
+                </div>
+              @endforelse
+            </div>
+            <div class="views-notice">
+              <a href="{{route('all-notice')}}">Views All Notices</a>
             </div>
           </div>
 
@@ -307,7 +287,15 @@
             </div>
           {{-- notice section for small view end --}}
           <div class="col-12 d-none d-sm-block">
-              
+              <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
+                <ul class="m-0">
+                  @forelse ($scroll_notice as $sn)
+                    <li><p class="px-2">{{$sn->text}}</p></li>
+                  @empty
+                    {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
+                  @endforelse
+                </ul>
+              </marquee>
           </div>
         </div>
       </div>
