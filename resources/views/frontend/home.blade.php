@@ -59,6 +59,46 @@
       </div>
     </section>
     <!-- slider end -->
+    {{-- founding member --}}
+    <div class="memberdiv">
+      <div class="our-members member-background">
+        <section class="container-fluid px-5 pb-lg-5  d-none d-sm-block">
+          {{-- <div class="our-members">
+          </div> --}}
+          <h4 class="animate-title title-heading">Founding Commitee</h4>
+          <div class="row owl-member owl-theme owl-carousel">
+          @forelse ($foundMember as $fm)
+          <div class="col-12 item pe-2 ps-2" style="height:300px">
+            <div class="card shadow">
+              <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:100%; object-fit: cover;">
+            </div>
+          </div>
+            
+          @empty
+          @endforelse
+          </div>
+        </section>
+        {{-- This section is for small view start --}}
+        <section class="container-fluid-fluid pb-2  d-sm-none">
+          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Founding Commitee</h4>
+          <div class="row owl-member owl-theme owl-carousel">
+          @forelse ($foundMember as $fm)
+          <div class="col-12 item pe-3 ps-3">
+            <div class="card member-box shadow">
+              <div class="card shadow">
+                <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:100%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+            
+          @empty
+          @endforelse
+          </div>
+        </section>
+        {{-- This section is for small view end --}}
+      </div>
+    </div>
+    {{-- founding member --}}
     <!-- Member Counter -->
     {{-- <section class="member-counter container my-5">
       <div class="row text-center member-animate">
@@ -389,74 +429,7 @@
     </section>
     {{-- this section for small view end --}}
     <!-- Facilities ends -->
-    {{-- founding member --}}
-    <div class="memberdiv">
-      <div class="our-members member-background">
-        <section class="container-fluid px-5 pb-lg-5  d-none d-sm-block">
-          {{-- <div class="our-members">
-          </div> --}}
-          <h4 class="animate-title title-heading">Founding Commitee</h4>
-          <div class="row owl-member owl-theme owl-carousel">
-          @forelse ($foundMember as $fm)
-          <div class="col-12 item pe-2 ps-2">
-            <div class="card member-box shadow">
-                <span class="shape"></span>
-                <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
-                <div class="card-body">
-                    <span class="member-degignation">
-                      {{$fm->club_designation }}
-                    </span>
-                    <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
-                    <small>
-                      Company:<strong class="member-company"> {{$fm->company}}</strong>
-                        
-                    </small>
-                    <br>
-                    <small>
-                      Designation:<strong class="member-designation"> {{$fm->designation }}</strong>
-                  </small>
-                </div>
-            </div>
-          </div>
-            
-          @empty
-          @endforelse
-          </div>
-        </section>
-        {{-- This section is for small view start --}}
-        <section class="container-fluid-fluid pb-2  d-sm-none">
-          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Founding Commitee</h4>
-          <div class="row owl-member owl-theme owl-carousel">
-          @forelse ($foundMember as $fm)
-          <div class="col-12 item pe-3 ps-3">
-            <div class="card member-box shadow">
-                <span class="shape"></span>
-                <img class="card-img-top" src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos">
-                <div class="card-body">
-                    <span class="member-degignation">
-                      {{$fm->club_designation }}
-                    </span>
-                    <h3 class="member-title">{{$fm->given_name }} {{$fm->surname }}</h3>
-                    <small>
-                      Company:<strong class="member-company"> {{$fm->company}}</strong>
-                        
-                    </small>
-                    <br>
-                    <small>
-                      Designation:<strong class="member-designation"> {{$fm->designation }}</strong>
-                  </small>
-                </div>
-            </div>
-          </div>
-            
-          @empty
-          @endforelse
-          </div>
-        </section>
-        {{-- This section is for small view end --}}
-      </div>
-    </div>
-    {{-- founding member --}}
+    
     <!-- OUr Member -->
     <div class="memberdiv">
       <div class="our-members member-background">
@@ -773,16 +746,16 @@
           responsive:{
             0:{
               items:1,
-              nav:true
+              nav:false
             },820:{
               items:2,
-              nav:true
+              nav:false
             },1000:{
               items:4,
-              nav:true
+              nav:false
             },1600:{
               items:5,
-              nav:true
+              nav:false
             }
           }
         })
