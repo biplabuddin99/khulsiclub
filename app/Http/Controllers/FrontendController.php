@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
-use DB;
+use Illuminate\Support\Facades\DB;
 class FrontendController extends Controller
 {
     use ImageHandleTraits;
@@ -53,9 +53,12 @@ class FrontendController extends Controller
         $Corporate = OurMember::where('membership_applied',7)->count();
         $Diplomate = OurMember::where('membership_applied',7)->count();
         $ourMember = OurMember::where('show_font',1)->get();
+        $foundMember = DB::table('our_members')
+                ->join('founding_committees', 'our_members.membership_no', '=', 'founding_committees.member_id')
+                ->select('our_members.*')->get();
         $benefit = BenefitsOfMember::latest()->take(6)->get();
         $showViewMoreButton = BenefitsOfMember::count() > 6;
-        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','showViewMoreButton','scroll_notice','vNotice'));
+        return view('frontend.home',compact('slider','notice','facilities','pgallery_cat','donor','Service','Life','Temporary','Permanent','Honorary','Corporate','Diplomate','ourMember','benefit','showViewMoreButton','scroll_notice','vNotice','foundMember'));
     }
     /**
      * Show the form for creating a new resource.
