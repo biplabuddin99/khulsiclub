@@ -78,7 +78,7 @@
             text-align: center;
             position: absolute;
             bottom: 20px;
-            right: 47px;
+            right: 0;
             background-color: rgb(248, 239, 239);
             padding-bottom: 6px;
             padding-top: 1px;
@@ -398,7 +398,7 @@
             </table>
             <div style="margin-top: 2rem;">
                 {{-- <p style="margin: 0;">Details of Children:</p> --}}
-                <h3 class="section-heading" style="margin: 0px;"><b>Details of Children:</b></h3>
+                <h3 class="section-heading" style="margin: 0px;"><b>DETAILS OF CHILDREN (IF ANY):</b></h3>
             </div>
             <table class="dtable" style=" width:100%; border: 1px solid; margin-bottom: 2rem;">
                 <thead style="">
@@ -471,24 +471,24 @@
                     <tr>
                         <td style="text-align: left; font-size: 14px; width: 15%;">Name</td>
                         <td>:</td>
-                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_name }}</td>
+                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_name }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 14px;">Relation</td>
                         <td>:</td>
-                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_relation }}</td>
+                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_relation }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 14px; width: 24%;">Dath Of Birth</td>
                         <td>:</td>
-                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_date_of_birth }}</td>
+                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_date_of_birth }}</td>
                         {{-- <td style="text-align: left; font-size: 14px; padding-left:5px;">Place:</td>
                         <td colspan="2"><input type="text" class="tinput" value="{{ $show_data->nominee_place }}"></td> --}}
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 14px;">Email</td>
                         <td>:</td>
-                        <td colspan="3"style="border-bottom: 1px dashed;">{{ $show_data->nominee_email }}</td>
+                        <td colspan="4"style="border-bottom: 1px dashed;">{{ $show_data->nominee_email }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left; font-size: 14px;">NID NO</td>
