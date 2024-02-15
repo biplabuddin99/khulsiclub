@@ -62,37 +62,43 @@
     {{-- founding member --}}
     <div class="memberdiv">
       <div class="our-members member-background">
-        <section class="container-fluid px-5 pb-lg-5  d-none d-sm-block">
+        <section class="container-fluid px-5 pb-lg-1  d-none d-sm-block">
           {{-- <div class="our-members">
           </div> --}}
-          <h4 class="animate-title title-heading">Founding Commitee</h4>
-          <div class="row owl-member owl-theme owl-carousel">
-          @forelse ($foundMember as $fm)
-          <div class="col-12 item pe-2 ps-2" style="height:300px">
-            <div class="card shadow">
-              <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:100%; object-fit: cover;">
+          <h4 class="animate-title title-heading my-4">Founding Executive Commitee</h4>
+          <div class="row">
+            <div class="col-12 item pe-3 ps-3">
+              <marquee width="100%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="">
+                <ul class="m-0">
+                  @forelse ($foundMember as $fm)
+                    @if($fm->image != '')
+                      <li class="px-4">
+                        <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:3cm; height: 4cm; object-fit: cover;">
+                      </li>
+                    @endif
+                  @empty
+                  @endforelse
+                </ul>
+              </marquee>
             </div>
-          </div>
-            
-          @empty
-          @endforelse
           </div>
         </section>
         {{-- This section is for small view start --}}
         <section class="container-fluid-fluid pb-2  d-sm-none">
-          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Founding Commitee</h4>
-          <div class="row owl-member owl-theme owl-carousel">
-          @forelse ($foundMember as $fm)
-          <div class="col-12 item pe-3 ps-3">
-            <div class="card member-box shadow">
-              <div class="card shadow">
-                <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:100%; object-fit: cover;">
-              </div>
+          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Founding Executive Commitee</h4>
+          <div class="row">
+            <div class="col-12 item pe-3 ps-3">
+              <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit">
+                <ul class="m-0">
+                  @forelse ($foundMember as $fm)
+                    <li class="px-2">
+                      <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:3cm; height: 4cm; object-fit: cover;">
+                    </li>
+                  @empty
+                  @endforelse
+                </ul>
+              </marquee>
             </div>
-          </div>
-            
-          @empty
-          @endforelse
           </div>
         </section>
         {{-- This section is for small view end --}}
@@ -165,7 +171,7 @@
     </section> --}}
     <!-- Member counter end -->
     <!-- Blog slide & Notice Section -->
-    <section class="pb-lg-5 pb-md-1 news_event mt-lg-5 mt-md-4">
+    <section class="pb-lg-5 pb-md-1 news_event mt-lg-3 mt-md-4">
       <div class="container-fluid px-lg-5 notice-blog bg-light shadow rounded-3">
         <div class="row">
           <div class="col-md-7 col-lg-7 d-none d-sm-block">
@@ -351,7 +357,7 @@
     <!-- Blog & Notice end -->
     <!-- Facilities -->
     <section class="facilities-main d-none d-sm-block">
-      <div class="facilities text-center py-lg-5 py-md-3">
+      <div class="facilities text-center pb-lg-5 pt-lg-2 py-md-3">
         <div class="container-fluid px-5 my-4">
           <h4 class=" section-title animate-title title-heading">Facilites</h4>
           <div class="row justify-content-center owl-facilities owl-carousel animate-facilities">
