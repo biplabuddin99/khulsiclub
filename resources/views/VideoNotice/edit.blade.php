@@ -19,11 +19,12 @@
                                         <input type="text" class="form-control" name="title" value="{{ old('title',$videoNotice->title)}}" required>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <label for="text"><b>{{__('Short Description')}}</b></label>
-                                        <textarea name="short_description" class="form-control" rows="2">{{ old('short_description',$videoNotice->short_description)}}</textarea>
-                                        @if($errors->has('short_description'))
-                                            <span class="text-danger"> {{ $errors->first('short_description') }}</span>
-                                        @endif
+                                        <label for="text"><b>{{__('Video Caption')}}</b></label>
+                                        <textarea name="video_caption" class="form-control" rows="2">{{ old('video_caption',$videoNotice->video_caption)}}</textarea>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <label for="text"><b>{{__('Image Caption')}}</b></label>
+                                        <textarea name="image_caption" class="form-control" rows="2">{{ old('image_caption',$videoNotice->image_caption)}}</textarea>
                                     </div>
                                     {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <label for="text"><b>{{__('Long Description')}}</b></label>

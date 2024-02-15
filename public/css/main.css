@@ -484,7 +484,7 @@ body {
 /* Notice */
 .carousel .n-item-center{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     vertical-align: middle;
 }
 .carousel-item .notice-img{
@@ -592,7 +592,7 @@ marquee p{
 }
 
 .notice-blog .carousel-inner {
-  height: 350px;
+  height: 395px;
 }
 .notice-blog .carousel-item img {
   height: 350px;

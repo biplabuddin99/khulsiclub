@@ -46,7 +46,8 @@ class VideoNoticeController extends Controller
         try{
             $vn = new video_notice;
             $vn->title = $request->title;
-            $vn->short_description = $request->short_description;
+            $vn->video_caption = $request->video_caption;
+            $vn->image_caption = $request->image_caption;
             $vn->long_description = $request->long_description;
             if($request->has('image'))
                 $vn->image=$this->resizeImage($request->image,'uploads/video_notice',true,160,120,false);
@@ -108,7 +109,8 @@ class VideoNoticeController extends Controller
         try{
             $vn = video_notice::findOrFail(encryptor('decrypt',$id));
             $vn->title = $request->title;
-            $vn->short_description = $request->short_description;
+            $vn->video_caption = $request->video_caption;
+            $vn->image_caption = $request->image_caption;
             $vn->long_description = $request->long_description;
 
             $path='uploads/video_notice';

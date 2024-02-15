@@ -19,10 +19,11 @@
                                     <tr class="text-center">
                                         <th scope="col">{{__('#SL')}}</th>
                                         <th scope="col">{{__('Title')}}</th>
-                                        <th scope="col">{{__('Short Description')}}</th>
-                                        <th scope="col">{{__('Picture')}}</th>
-                                        {{-- <th scope="col">{{__('Publish Date')}}</th> --}}
                                         <th scope="col">{{__('Video Link')}}</th>
+                                        <th scope="col">{{__('Video Caption')}}</th>
+                                        <th scope="col">{{__('Picture')}}</th>
+                                        <th scope="col">{{__('Image Caption')}}</th>
+                                        {{-- <th scope="col">{{__('Publish Date')}}</th> --}}
                                         <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                     </tr>
                                 </thead>
@@ -31,19 +32,20 @@
                                     <tr class="text-center">
                                     <th scope="row">{{ ++$loop->index }}</th>
                                         <td>{{$m->title}}</td>
-                                        <td>{{$m->short_description}}</td>
-                                        <td><img width="50px" src="{{asset('uploads/video_notice/'.$m->image)}}" alt=""></td>
-                                        {{-- <td>{{$m->publish_date}}</td> --}}
                                         <td>{{$m->link}}</td>
+                                        <td>{{$m->video_caption}}</td>
+                                        <td><img width="50px" src="{{asset('uploads/video_notice/'.$m->image)}}" alt=""></td>
+                                        <td>{{$m->image_caption}}</td>
+                                        {{-- <td>{{$m->publish_date}}</td> --}}
                                         <td class="white-space-nowrap">
                                             <a  href="{{route(currentUser().'.vNotice.edit',encryptor('encrypt',$m->id))}}">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
 
-                                            <a href="javascript:void()" onclick="$('#form{{$m->id}}').submit()">
+                                            <a class="text-danger" href="javascript:void()" onclick="$('#form{{$m->id}}').submit()">
                                             <i class="bi bi-trash"></i>
                                             </a>
-                                            <form id="form{{$m->id}}" action="{{route(currentUser().'.vNotice.destroy',encryptor('encrypt',$m->id))}}" method="post">
+                                            <form id="form{{$m->id}}" onsubmit="return confirm('Are you sure?')" action="{{route(currentUser().'.vNotice.destroy',encryptor('encrypt',$m->id))}}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

@@ -176,14 +176,14 @@
                   </a>
               </div>
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner n-item-center notice-carousel shadow text-center">
+                <div class="carousel-inner n-item-center notice-carousel shadow" style="position: relative;">
                   @forelse ($vNotice as $v)
                       @if ($v->link != '')
-                        <div class="carousel-item active">
-                          <iframe class="notice-img" width="100%" height="450px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="carousel-item active" >
+                          <iframe class="notice-img" width="100%" height="350px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                          <p style="position: absolute; font-size: 20px; color:red; bottom: -9px;">{{$v->video_caption}}</p>
                         </div>
                       @else
-                          
                       @endif
                     @empty
                     <div class="carousel-item active">
@@ -197,6 +197,7 @@
                             src="{{asset('uploads/video_notice/'.$notic->image)}}"
                             class="d-block w-100 notice-img"
                             alt="..."/>
+                            <p style="position: absolute; font-size: 20px; color:red; bottom: -9px;">{{$notic->image_caption}}</p>
                         </div>
                       @else
                       @endif
@@ -320,6 +321,7 @@
               <div class="views-notice">
                 <a href="{{route('all-notice')}}" style="font-size: 14px !important;">Views All Notices</a>
               </div>
+              
             </div>
             <div class="col-sm-12 d-lg-none d-md-none">
                 <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
