@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\sslSms;
 use App\Models\OurMember;
 use App\Models\MemberChildren;
 use App\Models\OtherClubDetails;
@@ -352,13 +353,27 @@ class OurMemberController extends Controller
             $member->membership_no=$request->membershipno;
             $member->status=$request->status;
 
-            if($request->status==2){
-                $member->member_id='0'.Carbon::now()->format('y'). str_pad((OurMember::whereYear('created_at', Carbon::now()->year)->where('status',2)->count() + 1),3,"0",STR_PAD_LEFT);
-            }else{
-                $member->member_id = null;
-            }
-
+            
             if($member->save()){
+                if($request->status==2){
+                    $member->member_id='0'.Carbon::now()->format('y'). str_pad((OurMember::whereYear('created_at', Carbon::now()->year)->where('status',2)->count() + 1),3,"0",STR_PAD_LEFT);
+                    if($member->sms_send !=1 ){ /** check member sms send before or not */
+                        $smsClass= new sslSms();
+                        if($member->cell_number){
+                            $phone=$member->cell_number;
+                            $rand=uniqid().rand(1000,9999);
+                            $msg_text="Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
+                            if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
+                                /* update member sms send status */
+                                $member->sms_send=1;
+                                $member->save();
+                            }
+                        }
+                    }
+                }else{
+                    $member->member_id = null;
+                    $member->save();
+                }
                 if($request->cname){
                     foreach($request->cname as $i=>$cname){
                         if($cname){

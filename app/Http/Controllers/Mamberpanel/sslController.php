@@ -13,8 +13,10 @@ use App\Models\Accounts\GeneralLedger;
 use App\Models\Accounts\GeneralVoucher;
 use App\Models\Accounts\Child_two;
 use Illuminate\Support\Facades\Session;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Classes\sslSms;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
 class sslController extends Controller
 {
@@ -124,7 +126,7 @@ class sslController extends Controller
         $deposit = OnlinePayment::where('txnid','=',$input['tran_id'])->orderBy('created_at','desc')->first();
         $member = OurMember::findOrFail($deposit->member_id);
         $this->memberSetSession($member);
-        \Toastr::warning('Payment Cancelled.');
+        Toastr::warning('Payment Cancelled.');
         return redirect()->route('member.memdashboard');
     }
 
@@ -163,7 +165,7 @@ class sslController extends Controller
                 }
                 
             }
-            \Toastr::success('Payment done!');
+            Toastr::success('Payment done!');
             return redirect()->route('member.memdashboard');
         }
         else {
