@@ -72,7 +72,7 @@
                 <ul class="m-0">
                   @forelse ($foundMember as $fm)
                     @if($fm->image != '')
-                      <li class="px-4">
+                      <li class="px-2">
                         <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:3cm; height: 4cm; object-fit: cover;">
                       </li>
                     @endif

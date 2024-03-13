@@ -8,16 +8,10 @@
     <link href="//db.onlinewebfonts.com/c/1d48b2cf83cd3bb825583f7eefd80149?family=AdmiralScriptW01-Regular" rel="stylesheet" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
         @font-face {
-            font-family: "Courier New Bold V1";
-            src: url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.eot");
-            src: url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.eot?#iefix")format("embedded-opentype"),
-            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.woff2")format("woff2"),
-            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.woff")format("woff"),
-            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.ttf")format("truetype"),
-            url("https://db.onlinewebfonts.com/t/53540286132e62b055ed9d953c1acc15.svg#Courier New Bold V1")format("svg");
+            font-family: Courier;
+            src: url(../assets/fonts/cour.ttf);
         }
         @media print
         {    
@@ -85,7 +79,7 @@
         }
         .font{
             /* font-family: AdmiralScriptW01-Regular; */
-            font-family: "Courier New Bold V1";
+            font-family: Courier;
         }
         
         
@@ -95,7 +89,7 @@
         body{
             /* background-color: rgb(252, 245, 245); */
             /* font-family: Montserrat !important; */
-            font-family: "Courier New Bold V1";
+            font-family: Courier;
             font-size: 14px !important;
         }
         body h3{
@@ -168,14 +162,12 @@
         </div>
     </div>
 <div id="member-form">
-
-    
     <div class="bg1"  style="width:98%; margin:0 auto;">
         <div style="text-align: center;">
             <img src="{{ asset('./images/khulsi_club_logo.png')}}" width="88%" height= auto; alt="">
         </div>
-        <div style="margin-bottom: 1.5rem;">
-            <h1 class="font" style="text-align: center; margin-top:0;">MEMBERSHIP FORM</h1>
+        <div style="margin-bottom: 2rem;">
+            <h1 class="font" style="text-align: center; margin-top:2rem;">MEMBERSHIP FORM</h1>
         </div>
 
         <div class="pdiv">
@@ -694,7 +686,7 @@
                 </tbody>
             </table>
             <div class="">
-                <p style="font-size: 14px; line-height: 19px; text-align:justify;">Declaration I, <span style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>hereby declare that I Have Neither Committed any illegal/Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
+                <p style="font-size: 14px; line-height: 20px; text-align:justify;">Declaration I, <span style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>hereby declare that I Have Neither Committed any illegal/Criminal act Judiciary Law of Bangladesh, nor been awarded any punishment by Bangladesh Court for any Offence.
                     I further declare that the above statement / particulars are correct therfore, request you to become a Donor, Life, Service, Permanent,
                     Temporary, Corporate,Honorary,Diplomat and Foreign National Member as per constitution of the <b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p>
             </div>
@@ -735,7 +727,7 @@
     <div class="bg3" style="width:98%; margin:0 auto;">
         <form action="">
             <div style="text-align: center;">
-                <h3 class="section-heading" style="margin-top: 4.5rem;"><b>FOR OFFICIAL USE ONLY</b></h3>
+                <h3 class="section-heading" style="margin-top: 2rem;"><b>FOR OFFICIAL USE ONLY</b></h3>
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tbody >
@@ -770,17 +762,41 @@
             </div>
             <table class = "gfg3" style=" width:100%">
                 <tr>
-                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-style: dashed; width: 80%;">President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
-                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-style: dashed; width: 80%;">Vice President<br><b>CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
+                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-style: dashed; width: 80%;">President<br><b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
+                    <td style="font-size: 14px;"><p style=" border-width: 1px 0 0; border-style: dashed; width: 80%;">Vice President<br><b style="color: red;">CHITTAGONG KHULSHI CLUB LIMITED</b></p></td>
                 </tr>
             </table>
             <div>
                 <p style="font-size: 14px;"><b>Remarks:</b></p>
             </div>
-            <table class = "gfg3" style=" width:100%; margin-bottom: 30px;">
+            <table class = "gfg3" style=" width:100%;">
                 <tbody >
                     <tr>
                         <td style="border-bottom: 1px dashed;">{{ $show_data->remarks }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px dashed;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
