@@ -65,7 +65,9 @@
         <section class="container-fluid px-5 pb-lg-1  d-none d-sm-block">
           {{-- <div class="our-members">
           </div> --}}
-          <h4 class="animate-title title-heading my-4">Founding Executive Commitee</h4>
+          <h4 class="animate-title title-heading my-4">
+            <a href="{{route('foundmember.list')}}" style="text-decoration: none; color:#e12a31;">Founding Executive Commitee</a>
+            </h4>
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
               <marquee width="100%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="">
