@@ -87,7 +87,9 @@
         </section>
         {{-- This section is for small view start --}}
         <section class="container-fluid-fluid pb-2  d-sm-none">
-          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">Founding Executive Commitee</h4>
+          <h4 class="animate-title title-heading mb-3" style="font-size: 32px !important;">
+            <a href="{{route('foundmember.list')}}" style="text-decoration: none; color:#e12a31;">Founding Executive Commitee</a>
+          </h4>
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
               <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit">
