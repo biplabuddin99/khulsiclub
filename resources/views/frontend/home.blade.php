@@ -189,7 +189,7 @@
                       @if ($v->link != '')
                         <div class="carousel-item active" >
                           <iframe class="notice-img" width="100%" height="350px" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                          <p style="position: absolute; font-size: 20px; color:red; bottom: -9px;">{{$v->video_caption}}</p>
+                          <p style="font-size: 20px; color:red; margin-top:6px; text-align:center;">{{$v->video_caption}}</p>
                         </div>
                       @else
                       @endif
@@ -201,11 +201,8 @@
                     @forelse ($vNotice as $notic)
                       @if ($notic->image != '')
                         <div class="carousel-item ">
-                          <img
-                            src="{{asset('uploads/video_notice/'.$notic->image)}}"
-                            class="d-block w-100 notice-img"
-                            alt="..."/>
-                            <p style="position: absolute; font-size: 20px; color:red; bottom: -9px;">{{$notic->image_caption}}</p>
+                          <img src="{{asset('uploads/video_notice/'.$notic->image)}}" class="d-block w-100 notice-img" alt="..."/>
+                          <p style="font-size: 20px; color:red; margin-top:6px; text-align:center; ">{{$notic->image_caption}}</p>
                         </div>
                       @else
                       @endif
@@ -272,21 +269,26 @@
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner n-item-center notice-carousel shadow text-center">
                   @forelse ($vNotice as $v)
+                    @if ($v->link != '')
                     <div class="carousel-item active">
-                    <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/{{$v->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <p style="font-size: 14px; color:red; margin-top:2px; text-align:center;">{{$v->video_caption}}</p>
                     </div>
+                    @else
+                    @endif
                   @empty
                     <div class="carousel-item active">
                     <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                   @endforelse
                   @forelse ($vNotice as $notic)
+                    @if ($notic->image != '')
                     <div class="carousel-item ">
-                      <img
-                        src="{{asset('uploads/video_notice/'.$notic->image)}}"
-                        class="d-block w-100 notice-img"
-                        alt="..."/>
+                      <img src="{{asset('uploads/video_notice/'.$notic->image)}}" class="d-block w-100 notice-img" alt="..."/>
+                      <p style="font-size: 14px; color:red; margin-top:2px; text-align:center; ">{{$notic->image_caption}}</p>
                     </div>
+                    @else
+                    @endif
                   @empty
                     <div class="carousel-item active">
                       <iframe class="notice-img" width="100%" height="200" src="https://www.youtube.com/embed/uA0ag5gEZt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
