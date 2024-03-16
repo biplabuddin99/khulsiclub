@@ -385,7 +385,6 @@
                 </figure>
               </div>
             @endforelse
-
           </div>
         </div>
       </div>
