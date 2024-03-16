@@ -3,7 +3,6 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
-
     <!-- slider -->
     <section class="slider">
       <div id="sliderDiv"  class="carousel slide" data-interval="3000"  data-bs-ride="carousel">
