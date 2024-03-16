@@ -19,7 +19,6 @@
             class="active" aria-current="true" aria-label="Slide 1">
           </button>
           @endforelse
-
         </div>
         <div class="carousel-inner">
             @forelse ($slider as $slide)
