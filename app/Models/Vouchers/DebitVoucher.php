@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Accounts;
+namespace App\Models\Vouchers;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MemberVoucherBkdn extends Model
+class DebitVoucher extends Model
 {
     use HasFactory;
 }

@@ -39,14 +39,6 @@
                     <li class="py-1 submenu-item"><a href="{{route(currentUser().'.facilities.index')}}">{{__('Facilities')}}</a></li>
                 </ul>
             </li>
-            {{-- <li class="submenu-item sidebar-item has-sub">
-                <a href="#" class='sidebar-link'> {{__('Blog')}}</a>
-                <ul class="submenu">
-                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.tag.index')}}">{{__('Tags')}}</a></li>
-                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.blogcategory.index')}}">{{__('Category')}}</a></li>
-                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.blog.index')}}">{{__('Blogs')}}</a></li>
-                </ul>
-            </li> --}}
             <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
                 <ul class="submenu">
@@ -106,6 +98,47 @@
         <a href="#" class='sidebar-link'><i class="bi bi-envelope"></i> <span>{{__('Change Request')}}</span></a>
         <ul class="submenu">
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.changeReq.index')}}">{{__('Change Request List')}}</a></li>
+        </ul>
+    </li>
+    <li class="submenu-item sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-people-fill"></i><span>{{__('CRM')}}</span></a>
+        <ul class="submenu">
+            <li  class="py-1 submenu-item"><a href="{{route(currentUser().'.memberType.index')}}">Member Type</a></li>
+            <li  class="py-1 submenu-item"><a href="{{route(currentUser().'.member-invoice.index')}}">Invoice</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-calculator"></i>
+            <span>{{__('Accounts')}}</span>
+        </a>
+        <ul class="submenu">
+            <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Accounts')}}</a>
+                <ul class="submenu">
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.master.index')}}">{{__('Master Head')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.sub_head.index')}}">{{__('Sub Head')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.child_one.index')}}">{{__('Child One')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.child_two.index')}}">{{__('Child Two')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.navigate.index')}}">{{__('Navigate View')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.incomeStatement')}}">{{__('Income Statement')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Voucher')}}</a>
+                <ul class="submenu">
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.credit_voucher.index')}}">{{__('Credit Voucher')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.debit_voucher.index')}}">{{__('Debit Voucher')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.journal_voucher.index')}}">{{__('Journal Voucher')}}</a></li>
+                </ul>
+            </li>
+            <li class="submenu-item sidebar-item has-sub">
+                <a href="#" class='sidebar-link'> {{__('Payment')}}</a>
+                <ul class="submenu">
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.onlinepayment.accepted')}}">{{__('Accepted Online Payment')}}</a></li>
+                    <li class="py-1 submenu-item"><a href="{{route(currentUser().'.onlinepayment')}}">{{__('Online Payment')}}</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
 </ul>
