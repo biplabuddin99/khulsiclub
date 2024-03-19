@@ -135,6 +135,7 @@
             <li class="submenu-item sidebar-item has-sub">
                 <a href="#" class='sidebar-link'> {{__('Payment')}}</a>
                 <ul class="submenu">
+                    
                     <li class="py-1 submenu-item"><a href="{{route(currentUser().'.fees_category.index')}}">{{__('Fee Category')}}</a></li>
                     <li class="py-1 submenu-item"><a href="{{route(currentUser().'.onlinepayment.accepted')}}">{{__('Accepted Online Payment')}}</a></li>
                     <li class="py-1 submenu-item"><a href="{{route(currentUser().'.onlinepayment')}}">{{__('Online Payment')}}</a></li>
