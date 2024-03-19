@@ -11,6 +11,9 @@ use App\Models\Accounts\Sub_head;
 use App\Models\CRM\MemberFeeCategory;
 use App\Models\CRM\MembershipType;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
+use Carbon\Carbon;
 
 class MemberFeeCategoryController extends Controller
 {
@@ -95,12 +98,12 @@ class MemberFeeCategoryController extends Controller
             $b->purpose=$request->purpose;
             $b->amount=$request->amount;
             if($b->save()){
-                \Toastr::success('Created Successfully!');
+                Toastr::success('Created Successfully!');
                 return redirect()->route(currentUser().'.fees_category.index');
             }
         }
         catch (Exception $e){
-            \Toastr::warning('Please try Again!');
+            Toastr::warning('Please try Again!');
             return back()->withInput();
         }
     }
@@ -190,12 +193,12 @@ class MemberFeeCategoryController extends Controller
             $b->purpose=$request->purpose;
             $b->amount=$request->amount;
             if($b->save()){
-                \Toastr::success('Update Successfully!');
+                Toastr::success('Update Successfully!');
                 return redirect()->route(currentUser().'.fees_category.index');
             }
         }
         catch (Exception $e){
-            \Toastr::warning('Please try Again!');
+            Toastr::warning('Please try Again!');
             return back()->withInput();
         }
     }
@@ -210,9 +213,9 @@ class MemberFeeCategoryController extends Controller
     {
         $b= MemberFeeCategory::findOrFail(encryptor('decrypt',$id));
         if($b->delete()){
-            \Toastr::success('Deleted Successfully!');
+            Toastr::success('Deleted Successfully!');
         }else{
-            \Toastr::warning('Please try Again!');
+            Toastr::warning('Please try Again!');
         }
         return redirect()->back();
     }

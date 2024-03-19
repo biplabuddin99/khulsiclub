@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 use Carbon\Carbon;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 
 class MemberInvoiceController extends VoucherController
