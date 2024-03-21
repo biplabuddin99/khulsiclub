@@ -15,6 +15,8 @@ use App\Models\Settings\Location\Country;
 use App\Models\Settings\Location\District;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 use Exception;
 use Carbon\Carbon;
 
@@ -357,19 +359,23 @@ class OurMemberController extends Controller
             if($member->save()){
                 if($request->status==2){
                     $member->member_id='0'.Carbon::now()->format('y'). str_pad((OurMember::whereYear('created_at', Carbon::now()->year)->where('status',2)->count() + 1),3,"0",STR_PAD_LEFT);
-                    if($member->sms_send !=1 ){ /** check member sms send before or not */
-                        $smsClass= new sslSms();
-                        if($member->cell_number){
-                            $phone=$member->cell_number;
-                            $rand=uniqid().rand(1000,9999);
-                            $msg_text="Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
-                            if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
-                                /* update member sms send status */
-                                $member->sms_send=1;
-                                $member->save();
-                            }
-                        }
-                    }
+                    // if($member->sms_send !=1 ){ /** check member sms send before or not */
+                    //     $smsClass= new sslSms();
+                    //     if($member->cell_number){
+                    //         $phone=$member->cell_number;
+                    //         $rand=uniqid().rand(1000,9999);
+                    //         $msg_text="Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
+                    //         if($smsClass->singleSms($phone, $msg_text, $rand)->status_code=="200"){
+                    //             /* update member sms send status */
+                    //             $member->sms_send=1;
+                    //             $member->save();
+                    //         }
+                    //     }
+                    // }
+                    $title = 'Approval Status';
+                    $body = "Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
+                    Mail::to('info@ckclbd.com')->send(new WelcomeMail($title, $body));
+                    $member->save();
                 }else{
                     $member->member_id = null;
                     $member->save();
