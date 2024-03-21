@@ -32,15 +32,9 @@ class WelcomeMail extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+    public function content()
     {
-        return new Content(
-            view: 'emails.welcome',
-            with: [
-                'title' => $this->title,
-                'body' => $this->body,
-            ],
-        );
+        return redirect()->route(currentUser() . '.approve_member');
     }
 
     /**
