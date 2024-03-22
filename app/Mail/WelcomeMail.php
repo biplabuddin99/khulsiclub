@@ -15,7 +15,7 @@ class WelcomeMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(private string $title, private string  $body)
+    public function __construct(private array $data)
     {
     }
 
@@ -25,22 +25,27 @@ class WelcomeMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome to laracoding.com EmailDemo',
+            subject: 'Approval Status',
         );
     }
 
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'ourmember.email',
+    //         with: [
+    //             'title' => $this->title,
+    //             'body' => $this->body,
+    //         ],
+    //     );
+    // }
+    public function build()
     {
-        return new Content(
-            view: 'ourmember.email',
-            with: [
-                'title' => $this->title,
-                'body' => $this->body,
-            ],
-        );
+        return $this->view('ourmember.email')
+            ->with($this->data);
     }
 
     /**

@@ -372,9 +372,14 @@ class OurMemberController extends Controller
                     //         }
                     //     }
                     // }
+                    //$body = "Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
                     $title = 'Approval Status';
-                    $body = "Dear ".$member->full_name.",\n\nYour application has been approved.".$member->membership_no." is your member ID.\n\nThank you\nChittagong Khulshi Club Limited.";
-                    Mail::to($member->email)->send(new WelcomeMail($title, $body));
+                    $data = [
+                        'name' => $member->full_name,
+                        'member_id' => $member->membership_no,
+                        'title' => $title,
+                    ];
+                    Mail::to($member->email)->send(new WelcomeMail($data));
                     $member->save();
                 }else{
                     $member->member_id = null;
