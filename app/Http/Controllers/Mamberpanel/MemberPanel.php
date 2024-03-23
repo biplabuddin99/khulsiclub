@@ -253,7 +253,7 @@ class MemberPanel extends Controller
 
     public function updateNewPassword(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'newpassword' => 'required',
             'confirmPassword' => 'required|confirmed',
@@ -274,6 +274,7 @@ class MemberPanel extends Controller
             return redirect()->back();
         }
         try {
+            dd($request->all());
             $user->password = Hash::make($request->newpassword);
             $user->save();
         } catch (\Exception $e) {
