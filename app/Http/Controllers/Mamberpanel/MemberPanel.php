@@ -274,9 +274,11 @@ class MemberPanel extends Controller
             return redirect()->back();
         }
         try {
-            dd($request->all());
+            // dd($request->all());
             $user->password = Hash::make($request->newpassword);
             $user->save();
+            Toastr::error('successfully Updated!');
+            return redirect()->back();
         } catch (\Exception $e) {
             dd($e);
             Toastr::error('Failed to update password.');
