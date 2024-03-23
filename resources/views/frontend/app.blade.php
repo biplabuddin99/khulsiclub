@@ -44,8 +44,9 @@
     }
 </style>
     @stack('styles')
-    
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=221303001015879"></script>
+    {{-- tostr css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   </head>
   <body>
   <!-- header section -->
@@ -439,7 +440,7 @@
     <script src="{{ asset('js/app.js')}}?id=1"></script>
     
   {{-- tostr css --}}
-  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
