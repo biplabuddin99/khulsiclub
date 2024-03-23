@@ -253,6 +253,7 @@ class MemberPanel extends Controller
 
     public function updateNewPassword(Request $request)
     {
+        dd($request->all());
         $validator = Validator::make($request->all(), [
             'newpassword' => 'required',
             'confirmPassword' => 'required|confirmed',
