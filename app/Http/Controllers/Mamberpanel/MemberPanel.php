@@ -237,7 +237,7 @@ class MemberPanel extends Controller
     public function resetPassOtpCheck(Request $request)
     {
         if($request->otp != ''){
-            $findMember = OurMember::findOrFail(encryptor('decrypt' ,$request->member_id));
+            $findMember = OurMember::where('id',$request->member_id)->first();
             if($findMember->password_reset_otp == $request->otp){
                 return view('frontend.memDashboard.forgetPassword.reset',compact('findMember'));
             }else{
