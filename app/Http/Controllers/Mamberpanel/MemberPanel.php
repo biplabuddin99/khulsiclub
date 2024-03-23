@@ -250,6 +250,38 @@ class MemberPanel extends Controller
         }
     }
 
+    public function updateNewPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'newpassword' => 'required',
+            'confirmPassword' => 'required|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $user = OurMember::find($request->member_id);
+        if (!$user) {
+            Toastr::error('User not found!');
+            return redirect()->back();
+        }
+        if ($request->newpassword !== $request->confirmPassword) {
+            Toastr::error('New Password and Confirm password not matched!');
+            return redirect()->back();
+        }
+        try {
+            $user->password = Hash::make($request->newpassword);
+            $user->save();
+        } catch (\Exception $e) {
+            Toastr::error('Failed to update password.');
+            return redirect()->back();
+        }
+
+        Toastr::success('Password changed successfully!');
+        return redirect()->back();
+    }
+
+
     public function memberPassword()
     {
         $member=OurMember::where('id',currentUserId())->first();

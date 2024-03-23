@@ -9,6 +9,25 @@
                 @if(Session::has('response'))
                     {!!Session::get('response')['message']!!}
                 @endif
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+                @if(session()->has('error'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('error') }}
+                    </div>
+                @endif
               <div class="row">
                     <div class="col-lg-4 logo-side-section">
                         <div class="loginSideText h-100 ">
@@ -23,7 +42,7 @@
                             <p>Reset Password</p>
                         </div>
                         <div class="p-4 mem-form">
-                            <form class="form" method="post" action="{{route('memlogin.check')}}">
+                            <form class="form" method="post" action="{{route('update_forget_password')}}">
                                 @csrf
                                 <div class="col-12 py-2">
                                     <input type="hidden" name="member_id" value="{{$findMember->id}}">
