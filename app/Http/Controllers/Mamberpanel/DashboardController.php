@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\OurMember; // custome
 use App\Models\OnlinePayment; // custome
-use App\Models\Accounts\MemberInvoice; // custome
+use App\Models\CRM\MemberInvoice; // custome
 use DB;
 
 class DashboardController extends Controller
