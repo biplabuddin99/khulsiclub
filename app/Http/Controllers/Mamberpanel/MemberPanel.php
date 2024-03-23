@@ -254,16 +254,16 @@ class MemberPanel extends Controller
     public function updateNewPassword(Request $request)
     {
         // dd($request->all());
-        $validator = Validator::make($request->all(), [
-            'newpassword' => 'required',
-            'confirmPassword' => 'required|confirmed',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'newpassword' => 'required',
+        //     'confirmPassword' => 'required|confirmed',
+        // ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
+        // if ($validator->fails()) {
+        //     return redirect()->back()
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
         $user = OurMember::find($request->member_id);
         if (!$user) {
             Toastr::error('User not found!');
