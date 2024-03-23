@@ -44,7 +44,6 @@
                         <div class="p-4 mem-form">
                             <form class="form" method="post" action="{{route('update_forget_password')}}">
                                 @csrf
-                                @method('PATCH')
                                 <div class="col-12 py-2">
                                     <input type="hidden" name="member_id" value="{{$findMember->id}}">
                                     <div class="form-group">

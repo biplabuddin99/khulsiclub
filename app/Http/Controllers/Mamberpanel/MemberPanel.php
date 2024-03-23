@@ -263,7 +263,7 @@ class MemberPanel extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        $user = OurMember::where('id',$request->member_id)->first();
+        $user = OurMember::find($request->member_id);
         if (!$user) {
             Toastr::error('User not found!');
             return redirect()->back();
@@ -276,6 +276,7 @@ class MemberPanel extends Controller
             $user->password = Hash::make($request->newpassword);
             $user->save();
         } catch (\Exception $e) {
+            dd($e);
             Toastr::error('Failed to update password.');
             return redirect()->back();
         }
