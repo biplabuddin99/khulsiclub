@@ -103,7 +103,7 @@ Route::post('/mlogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
 Route::get('/forget-password', [MemberPanel::class,'forgetPassword'])->name('forget_password');
 Route::post('/forget-password-reset', [MemberPanel::class,'resetPassValidation'])->name('forget_password_reset');
 Route::post('/forget-password-otp', [MemberPanel::class,'resetPassOtpCheck'])->name('forget_password_otp');
-Route::post('/password-reset-success', [MemberPanel::class,'updateNewPassword'])->name('update_forget_password');
+Route::post('/password-reset-update', [MemberPanel::class,'updateNewPassword'])->name('update_forget_password');
 
 // Contact Us
 Route::get('/contact-us', [contact::class,'store'])->name('contact.us');
