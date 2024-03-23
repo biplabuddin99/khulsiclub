@@ -264,16 +264,16 @@ class MemberPanel extends Controller
         //         ->withErrors($validator)
         //         ->withInput();
         // }
-        $user = OurMember::find($request->member_id);
-        if (!$user) {
-            Toastr::error('User not found!');
-            return redirect()->back();
-        }
-        if ($request->newpassword !== $request->confirmPassword) {
-            Toastr::error('New Password and Confirm password not matched!');
-            return redirect()->back();
-        }
         try {
+            $user = OurMember::find($request->member_id);
+            if (!$user) {
+                Toastr::error('User not found!');
+                return redirect()->back();
+            }
+            if ($request->newpassword !== $request->confirmPassword) {
+                Toastr::error('New Password and Confirm password not matched!');
+                return redirect()->back();
+            }
             // dd($request->all());
             $user->password = Hash::make($request->newpassword);
             $user->save();
