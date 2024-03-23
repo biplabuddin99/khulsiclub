@@ -239,6 +239,7 @@ class MemberPanel extends Controller
         if($request->otp != ''){
             $findMember = OurMember::where('id',$request->member_id)->first();
             if($findMember->password_reset_otp == $request->otp){
+                Toastr::success('successfully Submited');
                 return view('frontend.memDashboard.forgetPassword.reset',compact('findMember'));
             }else{
                 Toastr::error('OTP is not Correct!');
@@ -258,9 +259,11 @@ class MemberPanel extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
-        $user = OurMember::find($request->member_id);
+        $user = OurMember::where('id',$request->member_id)->first();
         if (!$user) {
             Toastr::error('User not found!');
             return redirect()->back();
