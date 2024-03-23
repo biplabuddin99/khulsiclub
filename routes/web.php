@@ -99,6 +99,10 @@ Route::get('/password-reset', [auth::class,'memberPasswordReset'])->name('passwo
 // Member login
 Route::get('/mlogin', [auth::class,'memSignInForm'])->name('memLogin');
 Route::post('/mlogin', [auth::class,'memSignInCheck'])->name('memlogin.check');
+// forget password
+Route::get('/forget-password', [MemberPanel::class,'forgetPassword'])->name('forget_password');
+Route::post('/forget-password-reset', [MemberPanel::class,'resetPassValidation'])->name('forget_password_reset');
+Route::post('/forget-password-otp', [MemberPanel::class,'resetPassOtpCheck'])->name('forget_password_otp');
 
 // Contact Us
 Route::get('/contact-us', [contact::class,'store'])->name('contact.us');

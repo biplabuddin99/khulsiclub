@@ -19,39 +19,37 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="text-center pt-4">
-                            <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                            <p>Member Login</p>
+                            <span class="text-danger">Insert New Password</span>
+                            <p>Reset Password</p>
                         </div>
                         <div class="p-4 mem-form">
                             <form class="form" method="post" action="{{route('memlogin.check')}}">
                                 @csrf
                                 <div class="col-12 py-2">
+                                    <input type="hidden" name="member_id" value="{{$findMember->id}}">
                                     <div class="form-group">
-                                        <label for="memberId">Member ID</label>
-                                        <input type="text" id="memberId" class="form-control input-bg" placeholder="Member id" onfocus="this.placeholder = ''" value="{{ old('memberId')}}" onblur="this.placeholder = 'Member id'" name="memberId">
+                                        <label for="newpassword">Create New Password</label>
+                                        <input type="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" value="{{ old('newpassword')}}" onblur="this.placeholder = '******'" name="newpassword" required>
                                     </div>
-                                    @if($errors->has('memberId'))
+                                    @if($errors->has('newpassword'))
                                         <small class="d-block text-danger">
-                                            {{$errors->first('memberId')}}
+                                            {{$errors->first('newpassword')}}
                                         </small>
                                     @endif
                                 </div>
                                 <div class="col-12 py-2">
                                     <div class="form-group">
-                                        <label for="company">password:</label>
-                                        <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                        <label for="confirm">Confirm Password</label>
+                                        <input type="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="confirmPassword" required>
                                     </div>
-                                    @if($errors->has('password'))
+                                    @if($errors->has('confirmPassword'))
                                         <small class="d-block text-danger">
-                                            {{$errors->first('password')}}
+                                            {{$errors->first('confirmPassword')}}
                                         </small>
                                     @endif
                                 </div>
-                                <div>
-                                    <a href="{{route('forget_password')}}">Forgot Password?</a>
-                                </div>
                                 <div class="col-12 py-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger">Login</button>
+                                    <button type="submit" class="btn btn-danger">Submit</button>
                                 </div>
                             </form>
                         </div>

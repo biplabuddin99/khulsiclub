@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
-use DB;
+use Illuminate\Support\Facades\DB;
+use App\Mail\ResetPasswordMail;
+use Illuminate\Support\Facades\Mail;
 
 class MemberPanel extends Controller
 {
@@ -207,6 +209,47 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    public function forgetPassword()
+    {
+        return view('frontend.memDashboard.forgetPassword.forgetPass');
+    }
+
+    public function resetPassValidation(Request $request)
+    {
+        if($request->memberId != '' && $request->email != ''){
+            $findMember = OurMember::where('membership_no',$request->memberId)->where('email',$request->email)->first();
+            if($findMember){
+                $otp = rand(111111, 999999);
+                Mail::to($findMember->email)->send(new ResetPasswordMail($otp));
+                $findMember->password_reset_otp = $otp;
+                $findMember->save();
+                Toastr::success('We have send a otp in your email');
+                return view('frontend.memDashboard.forgetPassword.otp',compact('findMember'));
+            }else{
+                Toastr::error('Member id or Email is not Correct!');
+                return redirect()->back()->withInput();
+            }
+        }else{
+            Toastr::warning('Member ID & Email is Required');
+            return redirect()->back()->withInput();
+        }
+    }
+    public function resetPassOtpCheck(Request $request)
+    {
+        if($request->otp != ''){
+            $findMember = OurMember::findOrFail(encryptor('decrypt' ,$request->member_id));
+            if($findMember->password_reset_otp == $request->otp){
+                return view('frontend.memDashboard.forgetPassword.reset',compact('findMember'));
+            }else{
+                Toastr::error('OTP is not Correct!');
+                return redirect()->back()->withInput();
+            }
+        }else{
+            Toastr::warning('OTP is Required');
+            return redirect()->back()->withInput();
+        }
+    }
+
     public function memberPassword()
     {
         $member=OurMember::where('id',currentUserId())->first();

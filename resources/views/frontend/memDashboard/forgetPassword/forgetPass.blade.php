@@ -19,16 +19,17 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="text-center pt-4">
-                            <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span>
-                            <p>Member Login</p>
+                            {{-- <span><i class="bi bi-person-circle" style="font-size: 3rem; color:#815B5B"></i></span> --}}
+                            <span class="text-danger">Please put your representative email & member id for</span>
+                            <p>Reset Password</p>
                         </div>
                         <div class="p-4 mem-form">
-                            <form class="form" method="post" action="{{route('memlogin.check')}}">
+                            <form class="form" method="post" action="{{route('forget_password_reset')}}">
                                 @csrf
                                 <div class="col-12 py-2">
                                     <div class="form-group">
                                         <label for="memberId">Member ID</label>
-                                        <input type="text" id="memberId" class="form-control input-bg" placeholder="Member id" onfocus="this.placeholder = ''" value="{{ old('memberId')}}" onblur="this.placeholder = 'Member id'" name="memberId">
+                                        <input type="text" id="memberId" class="form-control input-bg" placeholder="Member id" onfocus="this.placeholder = ''" value="{{ old('memberId')}}" onblur="this.placeholder = 'Member id'" name="memberId" required>
                                     </div>
                                     @if($errors->has('memberId'))
                                         <small class="d-block text-danger">
@@ -38,20 +39,17 @@
                                 </div>
                                 <div class="col-12 py-2">
                                     <div class="form-group">
-                                        <label for="company">password:</label>
-                                        <input type="password" id="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="password">
+                                        <label for="company">Email:</label>
+                                        <input type="email" class="form-control input-bg" placeholder="example@gmail.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'example@gmail.com'" name="email" required>
                                     </div>
-                                    @if($errors->has('password'))
+                                    @if($errors->has('email'))
                                         <small class="d-block text-danger">
-                                            {{$errors->first('password')}}
+                                            {{$errors->first('email')}}
                                         </small>
                                     @endif
                                 </div>
-                                <div>
-                                    <a href="{{route('forget_password')}}">Forgot Password?</a>
-                                </div>
                                 <div class="col-12 py-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger">Login</button>
+                                    <button type="submit" class="btn btn-danger">Next</button>
                                 </div>
                             </form>
                         </div>

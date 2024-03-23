@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 use Exception;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class MemberPanel extends Controller
 {
@@ -205,6 +205,8 @@ class MemberPanel extends Controller
      * @param  \App\Models\Frontend  $frontend
      * @return \Illuminate\Http\Response
      */
+    
+
     public function memberPassword()
     {
         $member=OurMember::where('id',currentUserId())->first();
