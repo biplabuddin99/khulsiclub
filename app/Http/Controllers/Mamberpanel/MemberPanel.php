@@ -257,10 +257,7 @@ class MemberPanel extends Controller
         try {
             if($request->newpassword != '' && $request->confirmPassword != ''){
                 $user = OurMember::find($request->member_id);
-                if (!$user) {
-                    Toastr::error('User not found!');
-                    return redirect()->back();
-                }else{
+                if ($user) {
                     if ($request->newpassword == $request->confirmPassword) {
                         $user->password = Hash::make($request->newpassword);
                         $user->save();
@@ -271,10 +268,14 @@ class MemberPanel extends Controller
                         Toastr::error('New Password and Confirm password do not match!');
                         return redirect()->back()->withInput();
                     }
+                }else{
+                    Toastr::error('User not found!');
+                    return redirect()->back();
                 }
+            }else{
+                Toastr::error('New Password & Confirm Password Field is Required!');
+                return redirect()->back()->withInput();
             }
-            Toastr::error('New Password & Confirm Password Field is Required!');
-            return redirect()->back()->withInput();
         } catch (\Exception $e) {
             Log::error($e);
             Toastr::error('Failed to update password.');
