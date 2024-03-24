@@ -253,18 +253,17 @@ class MemberPanel extends Controller
 
     public function updateNewPassword(Request $request)
     {
-        // dd($request->all());
-        // $validator = Validator::make($request->all(), [
-        //     'newpassword' => 'required',
-        //     'confirmPassword' => 'required|confirmed',
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return redirect()->back()
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
         try {
+             $validator = Validator::make($request->all(), [
+                'newpassword' => 'required',
+                'confirmPassword' => 'required|confirmed',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
             $user = OurMember::find($request->member_id);
             if (!$user) {
                 Toastr::error('User not found!');
@@ -272,13 +271,12 @@ class MemberPanel extends Controller
             }
             if ($request->newpassword !== $request->confirmPassword) {
                 Toastr::error('New Password and Confirm password not matched!');
-                return redirect()->back();
+                return redirect()->back()->withInput();
             }
-            // dd($request->all());
             $user->password = Hash::make($request->newpassword);
             $user->save();
             Toastr::error('successfully Updated!');
-            return redirect()->back();
+            return redirect()->route('memLogin');
         } catch (\Exception $e) {
             dd($e);
             Toastr::error('Failed to update password.');
