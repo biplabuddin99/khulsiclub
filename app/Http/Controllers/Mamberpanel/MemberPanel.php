@@ -275,7 +275,7 @@ class MemberPanel extends Controller
             }
             $user->password = Hash::make($request->newpassword);
             $user->save();
-            Toastr::error('successfully Updated!');
+            Toastr::error('Password changed successfully!');
             return redirect()->route('memLogin');
         } catch (\Exception $e) {
             dd($e);
