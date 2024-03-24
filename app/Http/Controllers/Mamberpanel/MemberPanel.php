@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Hash;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use App\Mail\ResetPasswordMail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class MemberPanel extends Controller
@@ -254,29 +255,28 @@ class MemberPanel extends Controller
     public function updateNewPassword(Request $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                'newpassword' => 'required',
-                'confirmPassword' => 'required|same:newpassword',
-            ]);
+            if($request->newpassword != '' && $request->confirmPassword != ''){
+                $user = OurMember::find($request->member_id);
+                if (!$user) {
+                    Toastr::error('User not found!');
+                    return redirect()->back();
+                }else{
+                    if ($request->newpassword == $request->confirmPassword) {
+                        $user->password = Hash::make($request->newpassword);
+                        $user->save();
 
-            if ($validator->fails()) {
-                return redirect()->back()
-                    ->withErrors($validator)
-                    ->withInput();
+                        Toastr::success('Password changed successfully!');
+                        return redirect()->route('memLogin');
+                    }else{
+                        Toastr::error('New Password and Confirm password do not match!');
+                        return redirect()->back()->withInput();
+                    }
+                }
             }
-
-            $user = OurMember::find($request->member_id);
-            if (!$user) {
-                Toastr::error('User not found!');
-                return redirect()->back();
-            }
-
-            $user->password = Hash::make($request->newpassword);
-            $user->save();
-
-            Toastr::success('Password changed successfully!');
-            return redirect()->route('memLogin');
+            Toastr::error('New Password & Confirm Password Field is Required!');
+            return redirect()->back()->withInput();
         } catch (\Exception $e) {
+            Log::error($e);
             Toastr::error('Failed to update password.');
             return redirect()->back();
         }
