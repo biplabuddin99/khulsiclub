@@ -26,7 +26,7 @@
                             <form class="form" method="post" action="{{route('update_forget_password')}}">
                                 @csrf
                                 <div class="col-12 py-2">
-                                    <input type="hidden" name="member_id" value="{{$findMember->id}}">
+                                    {{-- <input type="hidden" name="member_id" value="{{$findMember->id}}"> --}}
                                     <div class="form-group">
                                         <label for="newpassword">Create New Password</label>
                                         <input type="password" id="newPass" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" value="{{ old('newpassword')}}" onblur="this.placeholder = '******'" name="newpassword" required>
@@ -40,7 +40,7 @@
                                 <div class="col-12 py-2">
                                     <div class="form-group">
                                         <label for="confirm">Confirm Password</label>
-                                        <input type="password" onkeyup="passwordValidation(this)" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="confirmPassword" required>
+                                        <input type="password" onkeyup="passwordValidation(this)" id="confirmPass" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="confirmPassword" required>
                                         <span class="error-message" style="color: red; display: none;"></span>
                                     </div>
                                     @if($errors->has('confirmPassword'))
@@ -63,18 +63,16 @@
 @endsection
 @push('scripts')
 <script>
-     function passwordValidation(e){
-        var newp= document.getElementById("newPass").value;
-        var conf= $(e).val().trim();
+      function passwordValidation() {
+        var newPass = document.getElementById("newPass").value;
+        var confirmPass = document.getElementById("confirmPass").value;
+        var errorMessage = $('#confirmPass').next('.error-message');
 
-        var isMatched = conf.includes(newp);
-        var errorMessage = $(e).next('.error-message');
-
-        if (!isMatched) {
+        if (newPass !== confirmPass) {
             $('#submitBtn').prop('disabled', true);
-            errorMessage.text('Not Matched').css('color', 'red').show();
+            errorMessage.text('Password not matched').css('color', 'red').show();
         } else {
-            $('#submitBtn').removeAttr('disabled');
+            $('#submitBtn').prop('disabled', false);
             errorMessage.hide();
         }
     }
