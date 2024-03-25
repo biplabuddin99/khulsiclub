@@ -212,7 +212,7 @@ class MemberPanel extends Controller
      */
     public function forgetPassword()
     {
-        return view('frontend.memDashboard.forgetPassword.reset');
+        return view('frontend.memDashboard.forgetPassword.forgetPass');
     }
 
     public function resetPassValidation(Request $request)
