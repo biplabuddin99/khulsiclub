@@ -29,7 +29,7 @@
                                     <input type="hidden" name="member_id" value="{{$findMember->id}}">
                                     <div class="form-group">
                                         <label for="newpassword">Create New Password</label>
-                                        <input type="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" value="{{ old('newpassword')}}" onblur="this.placeholder = '******'" name="newpassword" required>
+                                        <input type="password" id="newPass" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" value="{{ old('newpassword')}}" onblur="this.placeholder = '******'" name="newpassword" required>
                                     </div>
                                     @if($errors->has('newpassword'))
                                         <small class="d-block text-danger">
@@ -40,7 +40,8 @@
                                 <div class="col-12 py-2">
                                     <div class="form-group">
                                         <label for="confirm">Confirm Password</label>
-                                        <input type="password" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="confirmPassword" required>
+                                        <input type="password" onkeyup="passwordValidation(this)" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" onblur="this.placeholder = '******'" name="confirmPassword" required>
+                                        <span class="error-message" style="color: red; display: none;"></span>
                                     </div>
                                     @if($errors->has('confirmPassword'))
                                         <small class="d-block text-danger">
@@ -49,7 +50,7 @@
                                     @endif
                                 </div>
                                 <div class="col-12 py-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="submit" class="btn btn-danger" id="submitBtn" disabled>Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -60,3 +61,22 @@
   </div>
 </section>
 @endsection
+@push('scripts')
+<script>
+     function passwordValidation(e){
+        var newp= document.getElementById("newPass").value;
+        var conf= $(e).val().trim();
+
+        var isMatched = conf.includes(newp);
+        var errorMessage = $(e).next('.error-message');
+
+        if (!isMatched) {
+            $('#submitBtn').prop('disabled', true);
+            errorMessage.text('Not Matched').css('color', 'red').show();
+        } else {
+            $('#submitBtn').removeAttr('disabled');
+            errorMessage.hide();
+        }
+    }
+</script>
+@endpush
