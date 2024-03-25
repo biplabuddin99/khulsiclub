@@ -26,7 +26,7 @@
                             <form class="form" method="post" action="{{route('update_forget_password')}}">
                                 @csrf
                                 <div class="col-12 py-2">
-                                    {{-- <input type="hidden" name="member_id" value="{{$findMember->id}}"> --}}
+                                    <input type="hidden" name="member_id" value="{{$findMember->id}}">
                                     <div class="form-group">
                                         <label for="newpassword">Create New Password</label>
                                         <input type="password" id="newPass" class="form-control input-bg" placeholder="******" onfocus="this.placeholder = ''" value="{{ old('newpassword')}}" onblur="this.placeholder = '******'" name="newpassword" required>
