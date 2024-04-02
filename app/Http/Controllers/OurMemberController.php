@@ -6,6 +6,7 @@ use App\Classes\sslSms;
 use App\Models\OurMember;
 use App\Models\MemberChildren;
 use App\Models\OtherClubDetails;
+use App\Models\SendSms;
 use Illuminate\Http\Request;
 use App\Http\Requests\OurMember\AddNewRequest;
 use App\Http\Requests\OurMember\UpdateRequest;
@@ -19,6 +20,7 @@ use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 use Exception;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class OurMemberController extends Controller
 {
@@ -43,6 +45,49 @@ class OurMemberController extends Controller
     {
         $ourmember=OurMember::where('status',2)->paginate(10);
         return view('ourmember.approveMember',compact('ourmember'));
+    }
+
+    public function smsToMember()
+    {
+        $ourmember=OurMember::select('id','given_name','surname','membership_no','membership_applied','cell_number')->where('status',2)->with('membership_type')->get();
+        return view('ourmember.smsMember',compact('ourmember'));
+    }
+
+    public function sendSmsToMember(Request $request){
+         try {
+            if($request->member_id){
+                foreach ($request->member_id as $memberId) {
+                    $member = OurMember::where('id', $memberId)->first();
+                    if($member){
+                            $smsClass = new sslSms();
+                            $phone = $member->cell_number;
+                            $rand = uniqid() . rand(1000, 9999);
+                            $msg_text= $request->sms;
+
+                            $checksendsms=$smsClass->singleSms($phone, $msg_text, $rand);
+                            Log::info($checksendsms->status_code.'-'.$phone);
+                            if ($checksendsms->status_code == "200") {
+                                $sendHistory = new SendSms;
+                                $sendHistory->phonenumber = $member->cell_number;
+                                $sendHistory->sms = $request->sms;
+                                $sendHistory->save();
+        
+                                Toastr::success('Sms Send Successfully!');
+                                return redirect()->route(currentUser().'.sms_to_member');
+                            } else {
+                                Toastr::error('Failed to send SMS!');
+                                return back()->withInput();
+                            }
+                    }else {
+                        Toastr::error('Member Not Found');
+                        return back()->withInput();
+                    }
+                }
+            }
+        } catch (\Exception $e) {
+            Toastr::warning('Please try Again!');
+            return back()->withInput();
+        }
     }
     
     /**
