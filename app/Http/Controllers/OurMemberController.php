@@ -65,8 +65,7 @@ class OurMemberController extends Controller
                             $msg_text= $request->sms;
 
                             $checksendsms=$smsClass->singleSms($phone, $msg_text, $rand);
-                            Log::info($checksendsms->status_code.'-'.$phone);
-                            if ($checksendsms->status_code == "200") {
+                            if ($checksendsms) {
                                 $sendHistory = new SendSms;
                                 $sendHistory->phonenumber = $member->cell_number;
                                 $sendHistory->sms = $request->sms;
