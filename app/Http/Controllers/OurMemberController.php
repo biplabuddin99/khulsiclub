@@ -41,10 +41,23 @@ class OurMemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function approvedMember()
+    public function approvedMember(Request $request)
     {
-        $ourmember=OurMember::where('status',2)->paginate(10);
-        return view('ourmember.approveMember',compact('ourmember'));
+        $ourmember=OurMember::orderBy('id');
+        $member=OurMember::where('status',2)->get();
+        $mType=MembershipType::all();
+
+        if($request->member_id)
+            $ourmember=$ourmember->where('membership_no','like','%'.$request->member_id.'%');
+        if($request->mobile)
+            $ourmember=$ourmember->where('cell_number','like','%'.$request->mobile.'%');
+        if($request->member_type)
+            $ourmember=$ourmember->where('membership_applied',$request->member_type);
+        if($request->nane)
+            $ourmember=$ourmember->where('id',$request->nane);
+
+        $ourmember=$ourmember->where('status',2)->paginate(10);
+        return view('ourmember.approveMember',compact('ourmember','member','mType'));
     }
 
     public function smsToMember()
