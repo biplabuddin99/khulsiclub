@@ -198,6 +198,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::post('menu_save_update/{id?}', [frontMenu::class, 'save_update'])->name('admin.front_menu.save');
         Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('admin.front_menu.mss');
         Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('admin.front_menu.detroy');
+        Route::get('member-document/{id}', [member::class, 'documentShow'])->name('admin.member_document');
 
         //member search
         Route::get('/member-search', [foundCommittee::class,'search'])->name('admin.member_search');

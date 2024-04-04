@@ -90,6 +90,9 @@
                                     <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-eye-fill"></i>
                                     </a>&nbsp;
+                                    <a href="{{route(currentUser().'.member_document',encryptor('encrypt',$p->id))}}">
+                                        <i class="bi bi-card-image"></i>
+                                    </a>&nbsp;
                                     <a href="{{route(currentUser().'.ourMember.edit',encryptor('encrypt',$p->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a> &nbsp;

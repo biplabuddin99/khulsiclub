@@ -282,6 +282,12 @@ class OurMemberController extends Controller
         return view('ourmember.show',compact('show_data','memberType'));
     }
 
+    public function documentShow($id)
+    {
+        $show_data=OurMember::findOrFail(encryptor('decrypt',$id));
+        return view('ourmember.document',compact('show_data'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
