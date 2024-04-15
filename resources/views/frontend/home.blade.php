@@ -328,22 +328,20 @@
                   </div>
                 @endforelse
               </div>
-              <div class="views-notice">
+              <div class="views-notice" style="margin-bottom: 4px;">
                 <a href="{{route('all-notice')}}" style="font-size: 14px !important;">Views All Notices</a>
               </div>
-              
             </div>
-            <div class="col-sm-12 d-lg-none d-md-none">
+            {{-- <div class="col-sm-12 d-lg-none d-md-none">
                 <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
                   <ul class="m-0">
                     @forelse ($scroll_notice as $sn)
                       <li><p class="px-2" style="font-size: 14px !important;">{{$sn->text}}</p></li>
                     @empty
-                      {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
                     @endforelse
                   </ul>
                 </marquee>
-            </div>
+            </div> --}}
           {{-- notice section for small view end --}}
           <div class="col-12 d-none d-sm-block">
               {{-- <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
