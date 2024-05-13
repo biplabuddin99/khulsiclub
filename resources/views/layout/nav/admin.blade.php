@@ -68,7 +68,6 @@
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.memberType.index')}}">{{__('Member Type')}}</a></li>
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.ourMember.index')}}">{{__('Applied Member')}}</a></li>
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.approve_member')}}">{{__('Approved Member')}}</a></li>
-            <li class="py-1 submenu-item"><a href="{{route(currentUser().'.sms_to_member')}}">{{__('SMS To Member')}}</a></li>
         </ul>
     </li>
     <li class="submenu-item sidebar-item has-sub">
@@ -141,6 +140,12 @@
                     <li class="py-1 submenu-item"><a href="{{route(currentUser().'.onlinepayment')}}">{{__('Online Payment')}}</a></li>
                 </ul>
             </li>
+        </ul>
+    </li>
+    <li class="submenu-item sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-chat-dots-fill"></i><span>{{__('SMS')}}</span></a>
+        <ul class="submenu">
+            <li class="py-1 submenu-item"><a href="{{route(currentUser().'.sms_to_member')}}">{{__('SMS To Member')}}</a></li>
         </ul>
     </li>
 </ul>

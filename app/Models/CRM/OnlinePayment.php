@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\CRM;
 
+use App\Models\OurMember;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

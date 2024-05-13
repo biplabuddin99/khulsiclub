@@ -305,16 +305,16 @@
         <div class="row footer-nav">
           <div class="col-sm-4 d-sm-none text-center">
             <h4 class="title-heading">Contact Us</h4>
-            <div class="contact">
-              <span class="d-flex justify-content-center">
+            <div class="contact text-start">
+              <span class="d-flex ">
                 <i class="bi bi-geo-alt-fill"></i>
-                <p>{{ $setting?->address }}</p>
+                <p class="ps-1">{{ $setting?->address }}</p>
               </span>
-              <span class="d-flex justify-content-center">
+              <span class="d-flex ">
                 <i class="bi bi-telephone-fill"></i>
                 <p class="ps-2">{{ $setting?->contact_no }}</p>
               </span>
-              <span class="d-flex justify-content-center">
+              <span class="d-flex ">
                 <i class="bi bi-envelope-fill"></i>
                 <p class="ps-2">{{ $setting?->email_address }}</p>
               </span>

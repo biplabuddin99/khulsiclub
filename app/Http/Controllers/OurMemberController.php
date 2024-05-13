@@ -60,10 +60,20 @@ class OurMemberController extends Controller
         return view('ourmember.approveMember',compact('ourmember','member','mType'));
     }
 
-    public function smsToMember()
+    public function smsToMember(Request $request)
     {
-        $ourmember=OurMember::select('id','given_name','surname','membership_no','membership_applied','cell_number')->where('status',2)->with('membership_type')->get();
-        return view('ourmember.smsMember',compact('ourmember'));
+        $memberType = MembershipType::all();
+        $ourmember=OurMember::select('id','given_name','surname','membership_no','membership_applied','cell_number')->where('status',2)->with('membership_type');
+        
+        if($request->member_id)
+            $ourmember=$ourmember->where('membership_no',$request->member_id);
+        if($request->contact)
+            $ourmember=$ourmember->where('cell_number',$request->contact);
+        if($request->member_type)
+            $ourmember=$ourmember->whereIn('membership_applied',$request->member_type);
+
+        $ourmember=$ourmember->get();
+        return view('ourmember.smsMember',compact('ourmember','memberType'));
     }
 
     public function sendSmsToMember(Request $request){

@@ -3,6 +3,13 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
+<style>
+    @media (min-width: 1192px){
+        .choices__inner{
+            width: 546px !important;
+        }
+    }
+</style>
 <section class="section">
     <div class="row" id="table-bordered">
         <div class="col-12">
@@ -10,6 +17,40 @@
                 @if(Session::has('response'))
                     {!!Session::get('response')['message']!!}
                 @endif
+                <form action="" method="get">
+                    <div class="row my-2">
+                        <div class="text-center my-2"><h5>Member Search</h5></div>
+                        <div class="input-group input-group-sm d-flex justify-content-between">
+                            <div class="col-3 pe-1">
+                                <input type="text" class="form-control" name="member_id" value="{{request('member_id')}}" placeholder="Member ID">
+                            </div>
+                            <div class="col-3 pe-1">
+                                <input type="text" class="form-control" name="contact" value="{{request('contact')}}" placeholder="Contact">
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex">
+                                    <select class="choices form-select multiple-remove" name="member_type[]" multiple="multiple">
+                                        <option value="">Select Member Type</option>
+                                        @forelse ($memberType as $type)
+                                            <option value="{{$type->id}}" {{ (request('member_type') == $type->id ? 'selected' : '') }}>{{$type->member_type}}</option>
+                                        @empty
+                                            <option value="">No Data Found</option>
+                                        @endforelse
+                                    </select>
+                
+                                    <div class="input-group-append" style="margin-left: 6px;">
+                                        <button type="submit" class="btn btn-info">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="input-group-append" style="margin-left: -2px;">
+                                        <a class="btn btn-warning ms-2" href="{{route(currentUser().'.sms_to_member')}}" title="Clear"><i class="bi bi-arrow-clockwise"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <!-- table bordered -->
                 <form method="post" action="{{route(currentUser().'.sms_to_member_success')}}">
                     @csrf
