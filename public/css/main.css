@@ -1191,16 +1191,16 @@ footer {
   background-color: var(--red);
   z-index: 2;
 } */
-.footer-circle1 {
+/* .footer-circle1 {
   position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  left: 150px; /* Center horizontally */
+  left: 150px;
   bottom: -200px;
   background-color: var(--gray);
   z-index: 2;
-  -webkit-transform: translateX(-50%); /* Adjust the position */
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -1209,11 +1209,11 @@ footer {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  right: 150px; /* Center horizontally */
+  right: 150px; 
   bottom: -200px;
   background-color: var(--red);
   z-index: 2;
-  -webkit-transform: translateX(50%); /* Adjust the position */
+  -webkit-transform: translateX(50%);
   transform: translateX(50%);
 }
 
@@ -1224,7 +1224,7 @@ footer {
   top: 0;
   background-color: #e12a3060;
   z-index: 2;
-}
+} */
 
 footer .footer-logo {
   border-bottom: 1px solid var(--red);

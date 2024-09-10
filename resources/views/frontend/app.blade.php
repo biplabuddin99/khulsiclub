@@ -46,7 +46,8 @@
     @stack('styles')
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=221303001015879"></script>
   {{-- tostr css --}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> --}}
+  <link rel="stylesheet" href="{{ asset('/assets/extensions/laravel-toster/toastr.min.css') }}">
   </head>
   <body>
   <!-- header section -->
@@ -442,7 +443,8 @@
   {{-- tostr css --}}
   <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
-  <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {{-- <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script> --}}
+  <script src="{{ asset('/assets/extensions/laravel-toster/toastr.min.js') }}"></script>
   {!! Toastr::message() !!}
 
     @stack('scripts')
