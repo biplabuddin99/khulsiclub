@@ -502,7 +502,7 @@ marquee ul li:last-child{
 marquee ul{
   display:flex;
 }
-marquee p{
+.news-ticker p{
   margin: 0px;
   padding: 0px;
   font-size: 20px;

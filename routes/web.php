@@ -191,6 +191,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         
         Route::get('approved-member', [member::class, 'approvedMember'])->name('admin.approve_member');
         Route::get('sms-to-member', [member::class, 'smsToMember'])->name('admin.sms_to_member');
+        Route::get('sms-to-others', [member::class, 'smsToOther'])->name('admin.sms_to_other');
         Route::post('sms-to-member-success', [member::class, 'sendSmsToMember'])->name('admin.sms_to_member_success');
         Route::get('member-contact-list', [contact::class, 'memberContact'])->name('admin.member_contact');
         Route::get('member-contact-delete/{id}', [contact::class, 'memberContactDelete'])->name('admin.member_contact_delete');

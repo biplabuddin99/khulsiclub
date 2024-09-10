@@ -146,6 +146,7 @@
         <a href="#" class='sidebar-link'><i class="bi bi-chat-dots-fill"></i><span>{{__('SMS')}}</span></a>
         <ul class="submenu">
             <li class="py-1 submenu-item"><a href="{{route(currentUser().'.sms_to_member')}}">{{__('SMS To Member')}}</a></li>
+            <li class="py-1 submenu-item"><a href="{{route(currentUser().'.sms_to_other')}}">{{__('SMS To Others')}}</a></li>
         </ul>
     </li>
 </ul>

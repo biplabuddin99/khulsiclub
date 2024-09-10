@@ -75,6 +75,10 @@ class OurMemberController extends Controller
         $ourmember=$ourmember->get();
         return view('ourmember.smsMember',compact('ourmember','memberType'));
     }
+    public function smsToOther()
+    {
+        return view('ourmember.smsOhterMember');
+    }
 
     public function sendSmsToMember(Request $request){
         try {
@@ -106,6 +110,30 @@ class OurMemberController extends Controller
                    Toastr::error('Failed to send SMS!');
                    return back()->withInput();
                }
+           }elseif($request->recipiant_number){
+                $smsClass = new sslSms();
+                $phone = $request->recipiant_number;
+                $rand = uniqid() . rand(1000, 9999);
+                $msg_text= $request->sms;
+
+                $checksendsms=$smsClass->singleSms($phone, $msg_text, $rand);
+                if ($checksendsms) {
+                    $sendHistory = new SendSms;
+                    $sendHistory->phonenumber = $request->recipiant_number;
+                    $sendHistory->sms = $request->sms;
+                    $sendHistory->save();
+                    $success++;
+                } else {
+                    $error++;
+                }
+
+                if($success > 0){
+                    Toastr::success('Sms Send Successfully!');
+                    return redirect()->route(currentUser().'.sms_to_other');
+                }else{
+                    Toastr::error('Failed to send SMS!');
+                    return back()->withInput();
+                }
            }else{
                Toastr::error('Select member first');
                    return back()->withInput();
@@ -115,6 +143,45 @@ class OurMemberController extends Controller
            return back()->withInput();
        }
    }
+//     public function sendSmsToMember(Request $request){
+//         try {
+//             $success=0;
+//             $error=0;
+//            if($request->member_id){
+//                foreach ($request->member_id as $memberId) {
+//                    $member = OurMember::where('id', $memberId)->first();
+//                    $smsClass = new sslSms();
+//                    $phone = $member->cell_number;
+//                    $rand = uniqid() . rand(1000, 9999);
+//                    $msg_text= $request->sms;
+
+//                    $checksendsms=$smsClass->singleSms($phone, $msg_text, $rand);
+//                    if ($checksendsms) {
+//                        $sendHistory = new SendSms;
+//                        $sendHistory->phonenumber = $member->cell_number;
+//                        $sendHistory->sms = $request->sms;
+//                        $sendHistory->save();
+//                        $success++;
+//                    } else {
+//                        $error++;
+//                    }
+//                }
+//                if($success > 0){
+//                    Toastr::success('Sms Send Successfully!');
+//                    return redirect()->route(currentUser().'.sms_to_member');
+//                }else{
+//                    Toastr::error('Failed to send SMS!');
+//                    return back()->withInput();
+//                }
+//            }else{
+//                Toastr::error('Select member first');
+//                    return back()->withInput();
+//            }
+//        } catch (\Exception $e) {
+//            Toastr::warning('Please try Again!');
+//            return back()->withInput();
+//        }
+//    }
     
     /**
      * Show the form for creating a new resource.

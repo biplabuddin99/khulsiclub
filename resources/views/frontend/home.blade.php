@@ -3,6 +3,45 @@
 @section('pageSubTitle',trans('List'))
 
 @section('content')
+<style>
+  .news-ticker {
+    overflow: hidden;
+    width: 98%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.news-ticker ul {
+    display: flex;
+    width: 100%;
+    animation: scroll 30s linear infinite;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.news-ticker li {
+    flex-shrink: 0;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Optional: Pause animation on hover */
+.news-ticker:hover ul {
+    animation-play-state: paused;
+}
+
+</style>
     <!-- slider -->
     <section class="slider">
       <div id="sliderDiv"  class="carousel slide" data-interval="3000"  data-bs-ride="carousel">
@@ -44,16 +83,13 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div>
-        <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="p-2">
-          <ul class="m-0">
-            @forelse ($scroll_notice as $sn)
-              <li><p class="px-2">{{$sn->text}}</p></li>
-            @empty
-              {{-- <li><p class="px-2">There is no update at this momment</p></li> --}}
-            @endforelse
+      <div class="news-ticker">
+          <ul>
+              @forelse ($scroll_notice as $sn)
+                  <li><p>{{$sn->text}}</p></li>
+              @empty
+              @endforelse
           </ul>
-        </marquee>
       </div>
     </section>
     <!-- slider end -->
@@ -68,7 +104,7 @@
             </h4>
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
-              <marquee width="100%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit" class="">
+              <div class="news-ticker">
                 <ul class="m-0">
                   @forelse ($foundMember as $fm)
                     @if($fm->image != '')
@@ -79,7 +115,7 @@
                   @empty
                   @endforelse
                 </ul>
-              </marquee>
+              </div>
             </div>
           </div>
         </section>
@@ -90,7 +126,7 @@
           </h4>
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
-              <marquee width="98%"  onmouseover="this.stop();" onmouseout="this.start();" direction="left" height="content-fit">
+              <div class="news-ticker">
                 <ul class="m-0">
                   @forelse ($foundMember as $fm)
                     <li class="px-2">
@@ -99,7 +135,7 @@
                   @empty
                   @endforelse
                 </ul>
-              </marquee>
+              </div>
             </div>
           </div>
         </section>
@@ -800,17 +836,17 @@
         ScrollReveal({ 
           reset: true ,
           distance: '60px',
-          duration: 800,
-          delay: 200
+          duration: 600,
+          delay: 150
         });
-        ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 200, origin: 'right', interval: 30  });
-        ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities', { delay: 200,  origin: 'bottom', interval: 30 });
-        ScrollReveal().reveal('.viewbutton', { delay: 200,  origin: 'bottom' });
-        ScrollReveal().reveal('.become-member-text', { delay: 200,  origin: 'top' });
-        ScrollReveal().reveal('.apply-text', { delay: 200,  origin: 'right' });
-        ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 200,  origin: 'left' });
-        ScrollReveal().reveal('.benefit li', { delay: 200,  origin: 'left', interval: 30 });
-        ScrollReveal().reveal('.memberdiv .owl-member, .gallery .owl-gallery', { delay: 200,  origin: 'top', interval: 30 });
+        ScrollReveal().reveal('.notice-title p,.views-notice', { delay: 150, origin: 'right', interval: 30  });
+        ScrollReveal().reveal('.member-animate .card, .facilities-main .animate-facilities', { delay: 150,  origin: 'bottom', interval: 30 });
+        ScrollReveal().reveal('.viewbutton', { delay: 150,  origin: 'bottom' });
+        ScrollReveal().reveal('.become-member-text', { delay: 150,  origin: 'top' });
+        ScrollReveal().reveal('.apply-text', { delay: 150,  origin: 'right' });
+        ScrollReveal().reveal('.news-event-text, .animate-title', { delay: 150,  origin: 'left' });
+        ScrollReveal().reveal('.benefit li', { delay: 150,  origin: 'left', interval: 30 });
+        ScrollReveal().reveal('.memberdiv .owl-member, .gallery .owl-gallery', { delay: 150,  origin: 'top', interval: 30 });
     </script>
     @endpush
 
