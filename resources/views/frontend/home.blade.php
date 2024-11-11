@@ -4,21 +4,38 @@
 
 @section('content')
 <style>
-  .news-ticker {
+.news-ticker {
     overflow: hidden;
     width: 98%;
     background-color: #f8f9fa;
     padding: 10px 0;
     box-sizing: border-box;
+    position: relative;
 }
 
-.news-ticker ul {
+#scroll-list {
     display: flex;
-    width: 100%;
-    animation: scroll 30s linear infinite;
     padding: 0;
     margin: 0;
     list-style: none;
+    animation: scroll linear infinite;
+    animation-play-state: running;
+}
+#scroll-image {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: scroll linear infinite;
+    animation-play-state: running;
+}
+#scroll-image-mobile {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: scroll linear infinite;
+    animation-play-state: running;
 }
 
 .news-ticker li {
@@ -32,15 +49,19 @@
         transform: translateX(100%);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% - var(--total-width)));
     }
 }
 
-/* Optional: Pause animation on hover */
-.news-ticker:hover ul {
+.news-ticker:hover #scroll-list {
     animation-play-state: paused;
 }
-
+.news-ticker:hover #scroll-image {
+    animation-play-state: paused;
+}
+.news-ticker:hover #scroll-image-mobile {
+    animation-play-state: paused;
+}
 </style>
     <!-- slider -->
     <section class="slider">
@@ -84,7 +105,7 @@
         </button>
       </div>
       <div class="news-ticker">
-          <ul>
+          <ul id="scroll-list">
               @forelse ($scroll_notice as $sn)
                   <li><p>{{$sn->text}}</p></li>
               @empty
@@ -105,7 +126,7 @@
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
               <div class="news-ticker">
-                <ul class="m-0">
+                <ul class="m-0" id="scroll-image">
                   @forelse ($foundMember as $fm)
                     @if($fm->image != '')
                       <li class="px-2">
@@ -127,7 +148,7 @@
           <div class="row">
             <div class="col-12 item pe-3 ps-3">
               <div class="news-ticker">
-                <ul class="m-0">
+                <ul class="m-0" id="scroll-image-mobile">
                   @forelse ($foundMember as $fm)
                     <li class="px-2">
                       <img src="{{asset('uploads/member_image/'.$fm->image)}}" alt="No Photos" style="width:3cm; height: 4cm; object-fit: cover;">
@@ -755,6 +776,46 @@
     <!-- Facilities ends -->
     @endsection
     @push('scripts')
+    <script>
+      // document.addEventListener("DOMContentLoaded", function() {
+      //     const scrollList = document.getElementById("scroll-list");
+      //     const listItems = scrollList.querySelectorAll("li");
+          
+      //     let totalWidth = 0;
+      //     listItems.forEach(item => {
+      //         totalWidth += item.offsetWidth + 40;
+      //     });
+
+      //     scrollList.style.setProperty("--total-width", `${totalWidth}px`);
+
+      //     const scrollDuration = totalWidth / 70;
+      //     scrollList.style.animationDuration = `${scrollDuration}s`;
+      // });
+      document.addEventListener("DOMContentLoaded", function() {
+        function setupScrollTicker(tickerId, speedFactor) {
+            const tickerElement = document.getElementById(tickerId);
+            const listItems = tickerElement.querySelectorAll("li");
+
+            // Calculate total width of all items
+            let totalWidth = 0;
+            listItems.forEach(item => {
+                totalWidth += item.offsetWidth + 40; // 40px padding
+            });
+
+            // Set total width to CSS variable
+            tickerElement.style.setProperty("--total-width", `${totalWidth}px`);
+
+            // Adjust animation duration based on total width and speed factor
+            const scrollDuration = totalWidth / speedFactor;
+            tickerElement.style.animationDuration = `${scrollDuration}s`;
+        }
+
+        setupScrollTicker("scroll-list", 70);
+        setupScrollTicker("scroll-image", 50);
+        setupScrollTicker("scroll-image-mobile", 50);
+      });
+
+    </script>
     <script>
       
         $('.owl-facilities').owlCarousel({
